@@ -1,7 +1,12 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4022.30">
-	<Project ProjectGUID="{A09982C8-E87D-4F3B-944D-C3EA0DB6717C}" Target64Bit="true" ShowHideConfigurations="#x306">
+<?xml version="1.0"?>
+<TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4024.10">
+	<Project ProjectGUID="{A09982C8-E87D-4F3B-944D-C3EA0DB6717C}" TargetNetId="172.21.132.34.1.1" ShowHideConfigurations="#x306">
 		<System>
+			<Licenses>
+				<Target>
+					<ManualSelect>{3FF18E97-7754-401B-93FB-70544DE28A13}</ManualSelect>
+				</Target>
+			</Licenses>
 			<Tasks>
 				<Task Id="3" Priority="20" CycleTime="100000" AmsPort="350" AdtTasks="true">
 					<Name>PlcTask</Name>
@@ -11,5 +16,8 @@
 		<Plc>
 			<Project File="plc_lamp_vac.xti"/>
 		</Plc>
+		<Io>
+			<Device File="Device 1 (EtherCAT).xti" Id="1"/>
+		</Io>
 	</Project>
 </TcSmProject>
