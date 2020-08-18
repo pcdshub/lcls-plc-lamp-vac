@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <POU Name="MAIN" Id="{10e78606-31f0-4232-96b0-d270d72b55f0}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN
+VAR
+	
+	fbLogHandler : FB_LogHandler;
+	
+//	ctuTest : CTU;
+	
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[//fb_to_LAMP_Arbiter(Arbiter := g_fbArbiter1, fbFFHWO := g_FastFaultOutput1);
+fbLogHandler();
+(*//Writes watchdog bit to remote vac_TMO reading the vacuum components
+fb_ADS_WATCHDOG_VAC_LAMP_TMO(
+	sNetId:= '172.21.88.32.1.1', 
+	nPort:= 851, 
+	sVarName:= 'MAIN.iWatchdog', 
+	bError=> );*)
+// Run the Diagnostics PRG
+DIAGNOSTICS();
+
+(*PIRANI Gauges*)
+	TV1L0_GPI_01(b937A:=TRUE, PG=>);
+
+(*uPIRANI Gauges*)
+	//TV1L0_GPI_01(b937A:=TRUE, PG=>);	
+
+(*Cold Cathode Gauges*)
+	BT2L0_PLEG_GCC_01(PG:=BT2L0_PLEG_GPI_01.PG,IG=>,bEP:=TRUE);
+	
+(*TRUBO Pumps*)
+
+(*Vacuum Gate Valve*)
+	IM1L0_XTES_VGC_01(
+	i_stUSG:= RTDSL0_PIP_03.q_IG, 
+	i_stDSG:= IM1L0_XTES_PIP_01.q_IG, 
+	i_xDis_DPIlk:= FALSE , 
+	i_xEPS_OK:= TRUE, 
+	i_xPMPS_OK:= TRUE, 
+	i_xExt_OK:= TRUE, 
+	i_xOverrideMode:= xSystemOverrideMode_LAMP, 
+	i_xReset:= xReset_PMPS_FFO1, 
+	i_sDevName:= 'IM1L0:XTES:VGC:01', 
+	iq_stValve=> , 
+	xMPS_OK=> , 
+	io_fbFFHWO:= g_FastFaultOutput1);]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>
