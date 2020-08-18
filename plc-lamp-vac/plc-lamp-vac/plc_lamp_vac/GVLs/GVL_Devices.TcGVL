@@ -4,6 +4,166 @@
     <Declaration><![CDATA[//{attribute 'qualified_only'}
 VAR_GLOBAL
 	
+(*Rack Mounted Turbo Pumps*)
+
+
+(*Onboard Turbo Pumps*)
+
+(*KTOF Turbo Pump*)
+
+(*Pirani MKS 275 Gauges*)
+	{attribute 'TcLinkTo' := 	'.i_iPRESS_R	:=	TIIB[LAMP_PNL2_EP19_EP3174-0002]^AI Standard Channel 1^Value
+	'}
+	{attribute 'pytmc' := '
+		pv: LAMP:C2:GPI:01
+		io: io
+	'}
+	LAMP_C2_GPI_01 : FB_MKS275;
+	
+(*	{attribute 'TcLinkTo' := 	'.i_iPRESS_R	:=	TIIB[LAMP_PNL2_EP19_EP3174-0002]^AI Standard Channel 2^Value
+	'}
+	{attribute 'pytmc' := '
+		pv: LAMP:CATCH:GPI:01
+		io: io
+	'}
+	LAMP_CATCH_GPI_01 : FB_MKS275; //NO GAUGE INSTALLED
+*)	
+	{attribute 'TcLinkTo' := 	'.i_iPRESS_R	:=	TIIB[LAMP_PNL2_EP19_EP3174-0002]^AI Standard Channel 3^Value
+	'}
+	{attribute 'pytmc' := '
+		pv: LAMP:GJ2:GPI:01
+		io: io
+	'}
+	LAMP_GJ2_GPI_01 : FB_MKS275;
+	
+	{attribute 'TcLinkTo' := 	'.i_iPRESS_R	:=	TIIB[LAMP_PNL2_EP19_EP3174-0002]^AI Standard Channel 4^Value
+	'}
+	{attribute 'pytmc' := '
+		pv: LAMP:GJ1:GPI:01
+		io: io
+	'}
+	LAMP_GJ1_GPI_01 : FB_MKS275;
+
+(*MicroPirani MKS 925 Gauges*)
+	{attribute 'TcLinkTo' := 	'.i_iPRESS_R	:=	TIIB[LAMP_PNL2_EP20_EP3174-0002]^AI Standard Channel 1^Value
+	'}
+	{attribute 'pytmc' := '
+		pv: LAMP:ROUGH:GPI:01
+		io: io
+	'}
+	LAMP_ROUGH_GPI_01 : FB_9XX;
+	
+	{attribute 'TcLinkTo' := 	'.i_iPRESS_R	:=	TIIB[LAMP_PNL2_EP20_EP3174-0002]^AI Standard Channel 2^Value
+	'}
+	{attribute 'pytmc' := '
+		pv: LAMP:ROUGH:GPI:02
+		io: io
+	'}
+	LAMP_ROUGH_GPI_02 : FB_9XX;
+	
+	{attribute 'TcLinkTo' := 	'.i_iPRESS_R	:=	TIIB[LAMP_PNL2_EP20_EP3174-0002]^AI Standard Channel 3^Value
+	'}
+	{attribute 'pytmc' := '
+		pv: LAMP:ROUGH:GPI:03
+		io: io
+	'}
+	LAMP_ROUGH_GPI_03 : FB_9XX;
+	
+	{attribute 'TcLinkTo' := 	'.i_iPRESS_R	:=	TIIB[LAMP_PNL2_EP20_EP3174-0002]^AI Standard Channel 4^Value
+	'}
+	{attribute 'pytmc' := '
+		pv: LAMP:ROUGH:GPI:04
+		io: io
+	'}
+	LAMP_ROUGH_GPI_04 : FB_9XX;
+
+(*Cold Cathode MKS 500 Gauges*)
+	{attribute 'TcLinkTo' := 	'.i_iPRESS_R	:=	TIIB[LAMP_PNL2_EP21_EP3174-0002]^AI Standard Channel 1^Value;
+								 .q_xHV_DIS		:= 	TIIB[LAMP_PNL2_EP22_EP2624-0002]^Channel 1^Output
+	'}	
+	{attribute 'pytmc' := '
+		pv: LAMP:C2:GCC:01
+		io: io
+	'}
+	LAMP_C2_GCC_01 : FB_MKS500;
+	
+	{attribute 'TcLinkTo' := 	'.i_iPRESS_R	:=	TIIB[LAMP_PNL2_EP21_EP3174-0002]^AI Standard Channel 2^Value;
+								 .q_xHV_DIS		:= 	TIIB[LAMP_PNL2_EP22_EP2624-0002]^Channel 2^Output
+	'}	
+	{attribute 'pytmc' := '
+		pv: LAMP:CATCH:GCC:01
+		io: io
+	'}
+	LAMP_CATCH_GCC_01 : FB_MKS500;
+	
+	{attribute 'TcLinkTo' := 	'.i_iPRESS_R	:=	TIIB[LAMP_PNL2_EP21_EP3174-0002]^AI Standard Channel 3^Value;
+								 .q_xHV_DIS		:= 	TIIB[LAMP_PNL2_EP22_EP2624-0002]^Channel 3^Output
+	'}	
+	{attribute 'pytmc' := '
+		pv: LAMP:CATCH:GCC:02
+		io: io
+	'}
+	LAMP_CATCH_GCC_02 : FB_MKS500;
+	
+	{attribute 'TcLinkTo' := 	'.i_iPRESS_R	:=	TIIB[LAMP_PNL2_EP21_EP3174-0002]^AI Standard Channel 4^Value;
+								 .q_xHV_DIS		:= 	TIIB[LAMP_PNL2_EP22_EP2624-0002]^Channel 4^Output
+	'}	
+	{attribute 'pytmc' := '
+		pv: LAMP:GJ1:GCC:01
+		io: io
+	'}
+	LAMP_GJ1_GCC_01 : FB_MKS500;
+	
+	{attribute 'TcLinkTo' := 	'.i_iPRESS_R	:=	TIIB[LAMP_PNL2_EP23_EP3174-0002]^AI Standard Channel 1^Value;
+								 .q_xHV_DIS		:= 	TIIB[LAMP_PNL2_EP24_EP2624-0002]^Channel 1^Output
+	'}	
+	{attribute 'pytmc' := '
+		pv: LAMP:GJ2:GCC:01
+		io: io
+	'}
+	LAMP_GJ2_GCC_01 : FB_MKS500;
+
+(*Hot Cathode MKS 909 Gauges*)
+	{attribute 'TcLinkTo' := 	'.i_iPRESS_R	:=	TIIB[LAMP_PNL2_EP23_EP3174-0002]^AI Standard Channel 2^Value;
+								 .q_xHV_DIS		:= 	TIIB[LAMP_PNL2_EP24_EP2624-0002]^Channel 2^Output
+	'}	
+	{attribute 'pytmc' := '
+		pv: LAMP:C1:GHC:01
+		io: io
+	'}
+	LAMP_C1_GHC_01 : FB_MKS909;
+
+(*Normally Closed Valve with Readback*)
+	{attribute 'TcLinkTo' := 	'.i_xOpnLS	:=	TIIB[LAMP_PNL2_EP25_EP2338-0002]^Channel 1^Input;
+								 .i_xClsLS	:=	TIIB[LAMP_PNL2_EP25_EP2338-0002]^Channel 2^Input;
+								 .q_xOPN_DO	:=	TIIB[LAMP_PNL2_EP25_EP2338-0002]^Channel 11^Output
+	'}
+	{attribute 'pytmc' := '
+		pv: LAMP:ROUGH:VRC:01
+		io: io
+	'}
+	LAMP_ROUGH_VRC_01 : FB_VRC;
+	
+	{attribute 'TcLinkTo' := 	'.i_xOpnLS	:=	TIIB[LAMP_PNL2_EP26_EP2338-0002]^Channel 1^Input;
+								 .i_xClsLS	:=	TIIB[LAMP_PNL2_EP26_EP2338-0002]^Channel 2^Input;
+								 .q_xOPN_DO	:=	TIIB[LAMP_PNL2_EP26_EP2338-0002]^Channel 11^Output
+	'}
+	{attribute 'pytmc' := '
+		pv: LAMP:ROUGH:VRC:03
+		io: io
+	'}
+	LAMP_ROUGH_VRC_03 : FB_VRC;
+
+(*Normally Open Valve with Readback*)
+	{attribute 'TcLinkTo' := 	'.i_xOpnLS	:=	TIIB[LAMP_PNL2_EP25_EP2338-0002]^Channel 5^Input;
+								 .i_xClsLS	:=	TIIB[LAMP_PNL2_EP25_EP2338-0002]^Channel 6^Input;
+								 .q_xOPN_DO	:=	TIIB[LAMP_PNL2_EP25_EP2338-0002]^Channel 15^Output
+	'}
+	{attribute 'pytmc' := '
+		pv: LAMP:ROUGH:VRC:02
+		io: io
+	'}
+	LAMP_ROUGH_VRC_02 : FB_VRC_NO;
 
 END_VAR]]></Declaration>
   </GVL>

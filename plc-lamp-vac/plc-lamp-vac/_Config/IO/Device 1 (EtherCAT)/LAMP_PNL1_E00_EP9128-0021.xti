@@ -7,94 +7,94 @@
 		<Name>__FILENAME__</Name>
 		<ImageId>1000</ImageId>
 		<EtherCAT SlaveType="1" PdiType="#x0d00" CycleMBoxPollingTime="0" VendorId="#x00000002" ProductCode="#x23a84052" RevisionNo="#x00130015" PortPhys="4881" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="EP9128-0021 8x EtherCAT junction" Desc="EP9128-0021"/>
-		<Box File="PNL1_E01_EP2338-0002.xti" Id="13">
+		<Box File="LAMP_PNL1_E01_EP2338-0002.xti" Id="13">
 			<EtherCAT PortABoxInfo="#x0300000c"/>
 		</Box>
-		<Box File="PNL1_E02_EP2624-0002.xti" Id="14">
+		<Box File="LAMP_PNL1_E02_EP2624-0002.xti" Id="14">
 			<EtherCAT PortABoxInfo="#x0100000d"/>
 		</Box>
-		<Box File="PNL1_E03_EP6002-0002.xti" Id="15">
+		<Box File="LAMP_PNL1_E03_EP6002-0002.xti" Id="15">
 			<EtherCAT PortABoxInfo="#x0100000e"/>
 		</Box>
-		<Box File="PNL1_E04_EP2338-0002.xti" Id="16">
+		<Box File="LAMP_PNL1_E04_EP2338-0002.xti" Id="16">
 			<EtherCAT PortABoxInfo="#x0100000f"/>
 		</Box>
-		<Box File="PNL1_E05_EP2624-0002.xti" Id="17">
+		<Box File="LAMP_PNL1_E05_EP2624-0002.xti" Id="17">
 			<EtherCAT PortABoxInfo="#x01000010"/>
 		</Box>
-		<Box File="PNL1_E06_EP6002-0002.xti" Id="18">
+		<Box File="LAMP_PNL1_E06_EP6002-0002.xti" Id="18">
 			<EtherCAT PortABoxInfo="#x01000011"/>
 		</Box>
-		<Box File="PNL1_E07_EP2338-0002.xti" Id="19">
+		<Box File="LAMP_PNL1_E07_EP2338-0002.xti" Id="19">
 			<EtherCAT PortABoxInfo="#x01000012"/>
 		</Box>
-		<Box File="PNL1_E08_EP2624-0002.xti" Id="20">
+		<Box File="LAMP_PNL1_E08_EP2624-0002.xti" Id="20">
 			<EtherCAT PortABoxInfo="#x01000013"/>
 		</Box>
-		<Box File="PNL1_E09_EP6002-0002.xti" Id="21">
+		<Box File="LAMP_PNL1_E09_EP6002-0002.xti" Id="21">
 			<EtherCAT PortABoxInfo="#x01000014"/>
 		</Box>
-		<Box File="PNL1_E10_EP2338-0002.xti" Id="22">
+		<Box File="LAMP_PNL1_E10_EP2338-0002.xti" Id="22">
 			<EtherCAT PortABoxInfo="#x01000015"/>
 		</Box>
-		<Box File="PNL1_E11_EP2624-0002.xti" Id="23">
+		<Box File="LAMP_PNL1_E11_EP2624-0002.xti" Id="23">
 			<EtherCAT PortABoxInfo="#x01000016"/>
 		</Box>
-		<Box File="PNL1_E12_EP6002-0002.xti" Id="24">
+		<Box File="LAMP_PNL1_E12_EP6002-0002.xti" Id="24">
 			<EtherCAT PortABoxInfo="#x01000017"/>
 		</Box>
-		<Box File="PNL2_E13_EP2338-0002.xti" Id="25">
+		<Box File="LAMP_PNL2_E13_EP2338-0002.xti" Id="25">
 			<EtherCAT PortABoxInfo="#x01000018"/>
 		</Box>
-		<Box File="PNL2_E14_EP2624-0002.xti" Id="26">
+		<Box File="LAMP_PNL2_E14_EP2624-0002.xti" Id="26">
 			<EtherCAT PortABoxInfo="#x01000019"/>
 		</Box>
-		<Box File="PNL2_E15_EP6002-0002.xti" Id="27">
+		<Box File="LAMP_PNL2_E15_EP6002-0002.xti" Id="27">
 			<EtherCAT PortABoxInfo="#x0100001a"/>
 		</Box>
-		<Box File="PNL2_E16_EP2338-0002.xti" Id="28">
+		<Box File="LAMP_PNL2_E16_EP2338-0002.xti" Id="28">
 			<EtherCAT PortABoxInfo="#x0100001b"/>
 		</Box>
-		<Box File="PNL2_E17_EP2624-0002.xti" Id="29">
+		<Box File="LAMP_PNL2_E17_EP2624-0002.xti" Id="29">
 			<EtherCAT PortABoxInfo="#x0100001c"/>
 		</Box>
-		<Box File="PNL2_E18_EP6002-0002.xti" Id="30">
+		<Box File="LAMP_PNL2_E18_EP6002-0002.xti" Id="30">
 			<EtherCAT PortABoxInfo="#x0100001d"/>
 		</Box>
-		<Box File="PNL2_E19_EP3174-0002.xti" Id="31">
+		<Box File="LAMP_PNL2_E19_EP3174-0002.xti" Id="31">
 			<EtherCAT PortABoxInfo="#x0100001e"/>
 		</Box>
-		<Box File="PNL2_E20_EP3174-0002.xti" Id="32">
+		<Box File="LAMP_PNL2_E20_EP3174-0002.xti" Id="32">
 			<EtherCAT PortABoxInfo="#x0100001f"/>
 		</Box>
-		<Box File="PNL2_E21_EP3174-0002.xti" Id="33">
+		<Box File="LAMP_PNL2_E21_EP3174-0002.xti" Id="33">
 			<EtherCAT PortABoxInfo="#x01000020"/>
 		</Box>
-		<Box File="PNL2_E22_EP2624-0002.xti" Id="34">
+		<Box File="LAMP_PNL2_E22_EP2624-0002.xti" Id="34">
 			<EtherCAT PortABoxInfo="#x01000021"/>
 		</Box>
-		<Box File="PNL2_E23_EP3174-0002.xti" Id="35">
+		<Box File="LAMP_PNL2_E23_EP3174-0002.xti" Id="35">
 			<EtherCAT PortABoxInfo="#x01000022"/>
 		</Box>
-		<Box File="PNL2_E24_EP2624-0002.xti" Id="74">
+		<Box File="LAMP_PNL2_E24_EP2624-0002.xti" Id="74">
 			<EtherCAT PortABoxInfo="#x01000023"/>
 		</Box>
-		<Box File="PNL2_E25_EP2338-0002.xti" Id="75">
+		<Box File="LAMP_PNL2_E25_EP2338-0002.xti" Id="75">
 			<EtherCAT PortABoxInfo="#x0100004a"/>
 		</Box>
-		<Box File="PNL2_E26_EP2338-0002.xti" Id="76">
+		<Box File="LAMP_PNL2_E26_EP2338-0002.xti" Id="76">
 			<EtherCAT PortABoxInfo="#x0100004b"/>
 		</Box>
-		<Box File="KTOF_E0_EP1111.xti" Id="80">
+		<Box File="KTOF_PNL1_E0_EP1111.xti" Id="80">
 			<EtherCAT PortABoxInfo="#x0100000c"/>
 		</Box>
-		<Box File="KTOF_E1_EP2338-0002.xti" Id="81">
+		<Box File="KTOF_PNL1_E1_EP2338-0002.xti" Id="81">
 			<EtherCAT PortABoxInfo="#x01000050"/>
 		</Box>
-		<Box File="KTOF_E2_EP2624-0002.xti" Id="82">
+		<Box File="KTOF_PNL1_E2_EP2624-0002.xti" Id="82">
 			<EtherCAT PortABoxInfo="#x01000051"/>
 		</Box>
-		<Box File="KTOF_E3_EP6002-0002.xti" Id="83">
+		<Box File="KTOF_PNL1_E3_EP6002-0002.xti" Id="83">
 			<EtherCAT PortABoxInfo="#x01000052"/>
 		</Box>
 		<Box Id="36" BoxType="9099">
