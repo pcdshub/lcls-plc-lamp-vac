@@ -28,21 +28,22 @@ VAR_GLOBAL
 	'}
 	LAMP_CATCH_GPI_01 : FB_MKS275; //NO GAUGE INSTALLED
 *)	
-	{attribute 'TcLinkTo' := 	'.i_iPRESS_R	:=	TIIB[LAMP_PNL2_EP19_EP3174-0002]^AI Standard Channel 3^Value
-	'}
-	{attribute 'pytmc' := '
-		pv: LAMP:GJ2:GPI:01
-		io: io
-	'}
-	LAMP_GJ2_GPI_01 : FB_MKS275;
 	
-	{attribute 'TcLinkTo' := 	'.i_iPRESS_R	:=	TIIB[LAMP_PNL2_EP19_EP3174-0002]^AI Standard Channel 4^Value
+	{attribute 'TcLinkTo' := 	'.i_iPRESS_R	:=	TIIB[LAMP_PNL2_EP19_EP3174-0002]^AI Standard Channel 3^Value
 	'}
 	{attribute 'pytmc' := '
 		pv: LAMP:GJ1:GPI:01
 		io: io
 	'}
 	LAMP_GJ1_GPI_01 : FB_MKS275;
+	
+	{attribute 'TcLinkTo' := 	'.i_iPRESS_R	:=	TIIB[LAMP_PNL2_EP19_EP3174-0002]^AI Standard Channel 4^Value
+	'}
+	{attribute 'pytmc' := '
+		pv: LAMP:GJ2:GPI:01
+		io: io
+	'}
+	LAMP_GJ2_GPI_01 : FB_MKS275;
 
 (*MicroPirani MKS 925 Gauges*)
 	{attribute 'TcLinkTo' := 	'.i_iPRESS_R	:=	TIIB[LAMP_PNL2_EP20_EP3174-0002]^AI Standard Channel 1^Value
@@ -124,7 +125,7 @@ VAR_GLOBAL
 	LAMP_GJ2_GCC_01 : FB_MKS500;
 
 (*Hot Cathode MKS 909 Gauges*)
-	{attribute 'TcLinkTo' := 	'.i_iPRESS_R	:=	TIIB[LAMP_PNL2_EP23_EP3174-0002]^AI Standard Channel 2^Value;
+(*	{attribute 'TcLinkTo' := 	'.i_iPRESS_R	:=	TIIB[LAMP_PNL2_EP23_EP3174-0002]^AI Standard Channel 2^Value;
 								 .q_xHV_DIS		:= 	TIIB[LAMP_PNL2_EP24_EP2624-0002]^Channel 2^Output
 	'}	
 	{attribute 'pytmc' := '
@@ -132,7 +133,7 @@ VAR_GLOBAL
 		io: io
 	'}
 	LAMP_C1_GHC_01 : FB_MKS909;
-
+*)
 (*Normally Closed Valve with Readback*)
 	{attribute 'TcLinkTo' := 	'.i_xOpnLS	:=	TIIB[LAMP_PNL2_EP25_EP2338-0002]^Channel 1^Input;
 								 .i_xClsLS	:=	TIIB[LAMP_PNL2_EP25_EP2338-0002]^Channel 2^Input;
@@ -157,7 +158,7 @@ VAR_GLOBAL
 (*Normally Open Valve with Readback*)
 	{attribute 'TcLinkTo' := 	'.i_xOpnLS	:=	TIIB[LAMP_PNL2_EP25_EP2338-0002]^Channel 5^Input;
 								 .i_xClsLS	:=	TIIB[LAMP_PNL2_EP25_EP2338-0002]^Channel 6^Input;
-								 .q_xOPN_DO	:=	TIIB[LAMP_PNL2_EP25_EP2338-0002]^Channel 15^Output
+								 .q_xCLS_DO	:=	TIIB[LAMP_PNL2_EP25_EP2338-0002]^Channel 15^Output
 	'}
 	{attribute 'pytmc' := '
 		pv: LAMP:ROUGH:VRC:02
