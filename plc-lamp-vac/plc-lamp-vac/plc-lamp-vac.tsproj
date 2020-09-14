@@ -40,6 +40,9 @@
 				<Task Id="3" Priority="20" CycleTime="100000" AmsPort="350" AdtTasks="true">
 					<Name>PlcTask</Name>
 				</Task>
+				<Task Id="4" Priority="1" CycleTime="100000" AmsPort="351" AdtTasks="true">
+					<Name>ComTask</Name>
+				</Task>
 			</Tasks>
 		</System>
 		<Plc>
@@ -58,6 +61,280 @@
 							<Name>LCLS_Vacuum.Global_Variables.g_stSystem.I_EcatMaster1</Name>
 							<Comment><![CDATA[ AMS Net ID used for FB_EcatDiag, among others ]]></Comment>
 							<Type GUID="{18071995-0000-0000-0000-000000000041}">AMSNETID</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_GJ2_PTM_01.i_xAtSpd</Name>
+							<Comment><![CDATA[ Normaml operation when true]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_GJ2_PTM_01.i_xFaultNC</Name>
+							<Comment><![CDATA[ Error Active when no Error is present]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_GJ2_PTM_02.i_xAtSpd</Name>
+							<Comment><![CDATA[ Normaml operation when true]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_GJ2_PTM_02.i_xFaultNC</Name>
+							<Comment><![CDATA[ Error Active when no Error is present]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_GJ2_PTM_03.i_xAtSpd</Name>
+							<Comment><![CDATA[ Normaml operation when true]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_GJ2_PTM_03.i_xFaultNC</Name>
+							<Comment><![CDATA[ Error Active when no Error is present]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_GJ2_PTM_04.i_xAtSpd</Name>
+							<Comment><![CDATA[ Normaml operation when true]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_GJ2_PTM_04.i_xFaultNC</Name>
+							<Comment><![CDATA[ Error Active when no Error is present]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_C2_PTM_01.i_xAtSpd</Name>
+							<Comment><![CDATA[ Normaml operation when true]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_C2_PTM_01.i_xFaultNC</Name>
+							<Comment><![CDATA[ Error]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_C2_PTM_01.i_xWarn</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_C2_PTM_01.i_xRemote</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_C2_PTM_02.i_xAtSpd</Name>
+							<Comment><![CDATA[ Normaml operation when true]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_C2_PTM_02.i_xFaultNC</Name>
+							<Comment><![CDATA[ Error]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_C2_PTM_02.i_xWarn</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_C2_PTM_02.i_xRemote</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_C2_PTM_03.i_xAtSpd</Name>
+							<Comment><![CDATA[ Normaml operation when true]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_C2_PTM_03.i_xFaultNC</Name>
+							<Comment><![CDATA[ Error]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_C2_PTM_03.i_xWarn</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_C2_PTM_03.i_xRemote</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_C2_PTM_04.i_xAtSpd</Name>
+							<Comment><![CDATA[ Normaml operation when true]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_C2_PTM_04.i_xFaultNC</Name>
+							<Comment><![CDATA[ Error]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_C2_PTM_04.i_xWarn</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_C2_PTM_04.i_xRemote</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_GJ1_PTM_01.i_xAtSpd</Name>
+							<Comment><![CDATA[ Normaml operation when true]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_GJ1_PTM_01.i_xFaultNC</Name>
+							<Comment><![CDATA[ Error]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_GJ1_PTM_01.i_xWarn</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_GJ1_PTM_01.i_xRemote</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_GJ1_PTM_02.i_xAtSpd</Name>
+							<Comment><![CDATA[ Normaml operation when true]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_GJ1_PTM_02.i_xFaultNC</Name>
+							<Comment><![CDATA[ Error]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_GJ1_PTM_02.i_xWarn</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_GJ1_PTM_02.i_xRemote</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_GJ1_PTM_03.i_xAtSpd</Name>
+							<Comment><![CDATA[ Normaml operation when true]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_GJ1_PTM_03.i_xFaultNC</Name>
+							<Comment><![CDATA[ Error]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_GJ1_PTM_03.i_xWarn</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_GJ1_PTM_03.i_xRemote</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_GJ1_PTM_04.i_xAtSpd</Name>
+							<Comment><![CDATA[ Normaml operation when true]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_GJ1_PTM_04.i_xFaultNC</Name>
+							<Comment><![CDATA[ Error]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_GJ1_PTM_04.i_xWarn</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_GJ1_PTM_04.i_xRemote</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_CATCH_PTM_01.i_xAtSpd</Name>
+							<Comment><![CDATA[ Normaml operation when true]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_CATCH_PTM_01.i_xFaultNC</Name>
+							<Comment><![CDATA[ Error]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_CATCH_PTM_01.i_xWarn</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_CATCH_PTM_01.i_xRemote</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_CATCH_PTM_02.i_xAtSpd</Name>
+							<Comment><![CDATA[ Normaml operation when true]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_CATCH_PTM_02.i_xFaultNC</Name>
+							<Comment><![CDATA[ Error]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_CATCH_PTM_02.i_xWarn</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_CATCH_PTM_02.i_xRemote</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_ROUGH_PTM_01.i_xAtSpd</Name>
+							<Comment><![CDATA[ Normaml operation when true]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_ROUGH_PTM_01.i_xFaultNC</Name>
+							<Comment><![CDATA[ Error]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_ROUGH_PTM_01.i_xWarn</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_ROUGH_PTM_01.i_xRemote</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_C1_PTM_01.i_xAtSpd</Name>
+							<Comment><![CDATA[ Normaml operation when true]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_C1_PTM_01.i_xFaultNC</Name>
+							<Comment><![CDATA[ Error]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_C1_PTM_01.i_xWarn</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_C1_PTM_01.i_xRemote</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.KTOF_PTM_01.i_xAtSpd</Name>
+							<Comment><![CDATA[ Normaml operation when true]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.KTOF_PTM_01.i_xFaultNC</Name>
+							<Comment><![CDATA[ Error]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.KTOF_PTM_01.i_xWarn</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.KTOF_PTM_01.i_xRemote</Name>
+							<Type>BOOL</Type>
 						</Var>
 						<Var>
 							<Name>GVL_Devices.LAMP_C2_GPI_01.i_iPRESS_R</Name>
@@ -200,6 +477,260 @@
 					<Vars VarGrpType="2">
 						<Name>PlcTask Outputs</Name>
 						<Var>
+							<Name>GVL_Devices.LAMP_GJ2_PTM_01.q_RunDO</Name>
+							<Comment><![CDATA[ Start/Stop]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_GJ2_PTM_02.q_RunDO</Name>
+							<Comment><![CDATA[ Start/Stop]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_GJ2_PTM_03.q_RunDO</Name>
+							<Comment><![CDATA[ Start/Stop]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_GJ2_PTM_04.q_RunDO</Name>
+							<Comment><![CDATA[ Start/Stop]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_C2_PTM_01.q_RunDO</Name>
+							<Comment><![CDATA[ Start/Stop for TC110 link this output to the Pumping station bit]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_C2_PTM_01.q_PumpingStation</Name>
+							<Comment><![CDATA[ Start/Stop interlock]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_C2_PTM_01.q_xRemote</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_C2_PTM_01.q_xReset</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_C2_PTM_02.q_RunDO</Name>
+							<Comment><![CDATA[ Start/Stop for TC110 link this output to the Pumping station bit]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_C2_PTM_02.q_PumpingStation</Name>
+							<Comment><![CDATA[ Start/Stop interlock]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_C2_PTM_02.q_xRemote</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_C2_PTM_02.q_xReset</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_C2_PTM_03.q_RunDO</Name>
+							<Comment><![CDATA[ Start/Stop for TC110 link this output to the Pumping station bit]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_C2_PTM_03.q_PumpingStation</Name>
+							<Comment><![CDATA[ Start/Stop interlock]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_C2_PTM_03.q_xRemote</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_C2_PTM_03.q_xReset</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_C2_PTM_04.q_RunDO</Name>
+							<Comment><![CDATA[ Start/Stop for TC110 link this output to the Pumping station bit]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_C2_PTM_04.q_PumpingStation</Name>
+							<Comment><![CDATA[ Start/Stop interlock]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_C2_PTM_04.q_xRemote</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_C2_PTM_04.q_xReset</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_GJ1_PTM_01.q_RunDO</Name>
+							<Comment><![CDATA[ Start/Stop for TC110 link this output to the Pumping station bit]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_GJ1_PTM_01.q_PumpingStation</Name>
+							<Comment><![CDATA[ Start/Stop interlock]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_GJ1_PTM_01.q_xRemote</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_GJ1_PTM_01.q_xReset</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_GJ1_PTM_02.q_RunDO</Name>
+							<Comment><![CDATA[ Start/Stop for TC110 link this output to the Pumping station bit]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_GJ1_PTM_02.q_PumpingStation</Name>
+							<Comment><![CDATA[ Start/Stop interlock]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_GJ1_PTM_02.q_xRemote</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_GJ1_PTM_02.q_xReset</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_GJ1_PTM_03.q_RunDO</Name>
+							<Comment><![CDATA[ Start/Stop for TC110 link this output to the Pumping station bit]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_GJ1_PTM_03.q_PumpingStation</Name>
+							<Comment><![CDATA[ Start/Stop interlock]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_GJ1_PTM_03.q_xRemote</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_GJ1_PTM_03.q_xReset</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_GJ1_PTM_04.q_RunDO</Name>
+							<Comment><![CDATA[ Start/Stop for TC110 link this output to the Pumping station bit]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_GJ1_PTM_04.q_PumpingStation</Name>
+							<Comment><![CDATA[ Start/Stop interlock]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_GJ1_PTM_04.q_xRemote</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_GJ1_PTM_04.q_xReset</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_CATCH_PTM_01.q_RunDO</Name>
+							<Comment><![CDATA[ Start/Stop for TC110 link this output to the Pumping station bit]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_CATCH_PTM_01.q_PumpingStation</Name>
+							<Comment><![CDATA[ Start/Stop interlock]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_CATCH_PTM_01.q_xRemote</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_CATCH_PTM_01.q_xReset</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_CATCH_PTM_02.q_RunDO</Name>
+							<Comment><![CDATA[ Start/Stop for TC110 link this output to the Pumping station bit]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_CATCH_PTM_02.q_PumpingStation</Name>
+							<Comment><![CDATA[ Start/Stop interlock]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_CATCH_PTM_02.q_xRemote</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_CATCH_PTM_02.q_xReset</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_ROUGH_PTM_01.q_RunDO</Name>
+							<Comment><![CDATA[ Start/Stop for TC110 link this output to the Pumping station bit]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_ROUGH_PTM_01.q_PumpingStation</Name>
+							<Comment><![CDATA[ Start/Stop interlock]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_ROUGH_PTM_01.q_xRemote</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_ROUGH_PTM_01.q_xReset</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_C1_PTM_01.q_RunDO</Name>
+							<Comment><![CDATA[ Start/Stop for TC110 link this output to the Pumping station bit]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_C1_PTM_01.q_PumpingStation</Name>
+							<Comment><![CDATA[ Start/Stop interlock]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_C1_PTM_01.q_xRemote</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_C1_PTM_01.q_xReset</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.KTOF_PTM_01.q_RunDO</Name>
+							<Comment><![CDATA[ Start/Stop for TC110 link this output to the Pumping station bit]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.KTOF_PTM_01.q_PumpingStation</Name>
+							<Comment><![CDATA[ Start/Stop interlock]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.KTOF_PTM_01.q_xRemote</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.KTOF_PTM_01.q_xReset</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
 							<Name>GVL_Devices.LAMP_C2_GCC_01.q_xHV_DIS</Name>
 							<Comment><![CDATA[ Enable High Voltage when True // 'TcLinkTo' (EP2624) ^Output]]></Comment>
 							<Type>BOOL</Type>
@@ -272,10 +803,130 @@
 		<Io>
 			<Device File="Device 1 (EtherCAT).xti" Id="1"/>
 		</Io>
+		<SymbolWatch>
+			<Variable>TIID^Device 1 (EtherCAT)^LAMP_PNL1_EP00_EP9128-0021^LAMP_PNL2_EP25_EP2338-0002^Channel 1^Input</Variable>
+			<Variable>TIID^Device 1 (EtherCAT)^LAMP_PNL1_EP00_EP9128-0021^LAMP_PNL2_EP25_EP2338-0002^Channel 2^Input</Variable>
+			<Variable>TIID^Device 1 (EtherCAT)^LAMP_PNL1_EP00_EP9128-0021^LAMP_PNL2_EP25_EP2338-0002^Channel 11^Output</Variable>
+			<Variable>TIID^Device 1 (EtherCAT)^LAMP_PNL1_EP00_EP9128-0021^LAMP_PNL2_EP25_EP2338-0002^Channel 5^Input</Variable>
+			<Variable>TIID^Device 1 (EtherCAT)^LAMP_PNL1_EP00_EP9128-0021^LAMP_PNL2_EP25_EP2338-0002^Channel 6^Input</Variable>
+			<Variable>TIID^Device 1 (EtherCAT)^LAMP_PNL1_EP00_EP9128-0021^LAMP_PNL2_EP25_EP2338-0002^Channel 15^Output</Variable>
+			<Variable>TIID^Device 1 (EtherCAT)^LAMP_PNL1_EP00_EP9128-0021^LAMP_PNL2_EP26_EP2338-0002^Channel 1^Input</Variable>
+			<Variable>TIID^Device 1 (EtherCAT)^LAMP_PNL1_EP00_EP9128-0021^LAMP_PNL2_EP26_EP2338-0002^Channel 2^Input</Variable>
+			<Variable>TIID^Device 1 (EtherCAT)^LAMP_PNL1_EP00_EP9128-0021^LAMP_PNL2_EP26_EP2338-0002^Channel 11^Output</Variable>
+		</SymbolWatch>
 	</Project>
 	<Mappings>
 		<MappingInfo Identifier="{00000000-2001-0850-0020-500810000403}" Id="#x02030010"/>
 		<OwnerA Name="TIPC^plc_lamp_vac^plc_lamp_vac Instance">
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^LAMP_PLC_E0_EK1200^LAMP_PLC_E6_EL1004">
+				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_GJ2_PTM_01.i_xAtSpd" VarB="Channel 2^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_GJ2_PTM_01.i_xFaultNC" VarB="Channel 1^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_GJ2_PTM_02.i_xAtSpd" VarB="Channel 4^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_GJ2_PTM_02.i_xFaultNC" VarB="Channel 3^Input" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^LAMP_PLC_E0_EK1200^LAMP_PLC_E7_EL2794">
+				<Link VarA="PlcTask Outputs^GVL_Devices.LAMP_GJ2_PTM_01.q_RunDO" VarB="Channel 1^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_Devices.LAMP_GJ2_PTM_02.q_RunDO" VarB="Channel 3^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_Devices.LAMP_GJ2_PTM_03.q_RunDO" VarB="Channel 2^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_Devices.LAMP_GJ2_PTM_04.q_RunDO" VarB="Channel 4^Output" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^LAMP_PLC_E0_EK1200^LAMP_PLC_E8_EL1004">
+				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_GJ2_PTM_03.i_xAtSpd" VarB="Channel 2^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_GJ2_PTM_03.i_xFaultNC" VarB="Channel 1^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_GJ2_PTM_04.i_xAtSpd" VarB="Channel 4^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_GJ2_PTM_04.i_xFaultNC" VarB="Channel 3^Input" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^LAMP_PNL1_EP00_EP9128-0021^KTOF_PNL1_EP01_EP2338-0002">
+				<Link VarA="PlcTask Inputs^GVL_Devices.KTOF_PTM_01.i_xAtSpd" VarB="Channel 1^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.KTOF_PTM_01.i_xFaultNC" VarB="Channel 2^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.KTOF_PTM_01.i_xRemote" VarB="Channel 3^Input" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^LAMP_PNL1_EP00_EP9128-0021^KTOF_PNL1_EP02_EP2624-0002">
+				<Link VarA="PlcTask Outputs^GVL_Devices.KTOF_PTM_01.q_RunDO" VarB="Channel 1^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_Devices.KTOF_PTM_01.q_xReset" VarB="Channel 2^Output" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^LAMP_PNL1_EP00_EP9128-0021^LAMP_PNL1_EP01_EP2338-0002">
+				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_C2_PTM_01.i_xAtSpd" VarB="Channel 1^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_C2_PTM_01.i_xFaultNC" VarB="Channel 2^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_C2_PTM_01.i_xRemote" VarB="Channel 3^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_C2_PTM_02.i_xAtSpd" VarB="Channel 5^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_C2_PTM_02.i_xFaultNC" VarB="Channel 6^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_C2_PTM_02.i_xRemote" VarB="Channel 7^Input" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^LAMP_PNL1_EP00_EP9128-0021^LAMP_PNL1_EP02_EP2624-0002">
+				<Link VarA="PlcTask Outputs^GVL_Devices.LAMP_C2_PTM_01.q_RunDO" VarB="Channel 1^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_Devices.LAMP_C2_PTM_01.q_xReset" VarB="Channel 2^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_Devices.LAMP_C2_PTM_02.q_RunDO" VarB="Channel 3^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_Devices.LAMP_C2_PTM_02.q_xReset" VarB="Channel 4^Output" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^LAMP_PNL1_EP00_EP9128-0021^LAMP_PNL1_EP04_EP2338-0002">
+				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_C2_PTM_03.i_xAtSpd" VarB="Channel 1^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_C2_PTM_03.i_xFaultNC" VarB="Channel 2^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_C2_PTM_03.i_xRemote" VarB="Channel 3^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_C2_PTM_04.i_xAtSpd" VarB="Channel 5^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_C2_PTM_04.i_xFaultNC" VarB="Channel 6^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_C2_PTM_04.i_xRemote" VarB="Channel 7^Input" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^LAMP_PNL1_EP00_EP9128-0021^LAMP_PNL1_EP05_EP2624-0002">
+				<Link VarA="PlcTask Outputs^GVL_Devices.LAMP_C2_PTM_03.q_RunDO" VarB="Channel 1^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_Devices.LAMP_C2_PTM_03.q_xReset" VarB="Channel 2^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_Devices.LAMP_C2_PTM_04.q_RunDO" VarB="Channel 3^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_Devices.LAMP_C2_PTM_04.q_xReset" VarB="Channel 4^Output" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^LAMP_PNL1_EP00_EP9128-0021^LAMP_PNL1_EP07_EP2338-0002">
+				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_GJ1_PTM_01.i_xAtSpd" VarB="Channel 1^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_GJ1_PTM_01.i_xFaultNC" VarB="Channel 2^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_GJ1_PTM_01.i_xRemote" VarB="Channel 3^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_GJ1_PTM_02.i_xAtSpd" VarB="Channel 5^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_GJ1_PTM_02.i_xFaultNC" VarB="Channel 6^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_GJ1_PTM_02.i_xRemote" VarB="Channel 7^Input" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^LAMP_PNL1_EP00_EP9128-0021^LAMP_PNL1_EP08_EP2624-0002">
+				<Link VarA="PlcTask Outputs^GVL_Devices.LAMP_GJ1_PTM_01.q_RunDO" VarB="Channel 1^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_Devices.LAMP_GJ1_PTM_01.q_xReset" VarB="Channel 2^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_Devices.LAMP_GJ1_PTM_02.q_RunDO" VarB="Channel 3^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_Devices.LAMP_GJ1_PTM_02.q_xReset" VarB="Channel 4^Output" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^LAMP_PNL1_EP00_EP9128-0021^LAMP_PNL1_EP10_EP2338-0002">
+				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_GJ1_PTM_03.i_xAtSpd" VarB="Channel 1^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_GJ1_PTM_03.i_xFaultNC" VarB="Channel 2^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_GJ1_PTM_03.i_xRemote" VarB="Channel 3^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_GJ1_PTM_04.i_xAtSpd" VarB="Channel 5^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_GJ1_PTM_04.i_xFaultNC" VarB="Channel 6^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_GJ1_PTM_04.i_xRemote" VarB="Channel 7^Input" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^LAMP_PNL1_EP00_EP9128-0021^LAMP_PNL1_EP11_EP2624-0002">
+				<Link VarA="PlcTask Outputs^GVL_Devices.LAMP_GJ1_PTM_03.q_RunDO" VarB="Channel 1^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_Devices.LAMP_GJ1_PTM_03.q_xReset" VarB="Channel 2^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_Devices.LAMP_GJ1_PTM_04.q_RunDO" VarB="Channel 3^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_Devices.LAMP_GJ1_PTM_04.q_xReset" VarB="Channel 4^Output" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^LAMP_PNL1_EP00_EP9128-0021^LAMP_PNL2_EP13_EP2338-0002">
+				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_C1_PTM_01.i_xAtSpd" VarB="Channel 5^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_C1_PTM_01.i_xFaultNC" VarB="Channel 6^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_C1_PTM_01.i_xRemote" VarB="Channel 7^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_ROUGH_PTM_01.i_xAtSpd" VarB="Channel 1^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_ROUGH_PTM_01.i_xFaultNC" VarB="Channel 2^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_ROUGH_PTM_01.i_xRemote" VarB="Channel 3^Input" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^LAMP_PNL1_EP00_EP9128-0021^LAMP_PNL2_EP14_EP2624-0002">
+				<Link VarA="PlcTask Outputs^GVL_Devices.LAMP_C1_PTM_01.q_RunDO" VarB="Channel 3^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_Devices.LAMP_C1_PTM_01.q_xReset" VarB="Channel 4^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_Devices.LAMP_ROUGH_PTM_01.q_RunDO" VarB="Channel 1^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_Devices.LAMP_ROUGH_PTM_01.q_xReset" VarB="Channel 2^Output" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^LAMP_PNL1_EP00_EP9128-0021^LAMP_PNL2_EP16_EP2338-0002">
+				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_CATCH_PTM_01.i_xAtSpd" VarB="Channel 1^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_CATCH_PTM_01.i_xFaultNC" VarB="Channel 2^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_CATCH_PTM_02.i_xAtSpd" VarB="Channel 5^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_CATCH_PTM_02.i_xFaultNC" VarB="Channel 6^Input" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^LAMP_PNL1_EP00_EP9128-0021^LAMP_PNL2_EP17_EP2624-0002">
+				<Link VarA="PlcTask Outputs^GVL_Devices.LAMP_CATCH_PTM_01.q_RunDO" VarB="Channel 1^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_Devices.LAMP_CATCH_PTM_01.q_xReset" VarB="Channel 2^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_Devices.LAMP_CATCH_PTM_02.q_RunDO" VarB="Channel 3^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_Devices.LAMP_CATCH_PTM_02.q_xReset" VarB="Channel 4^Output" AutoLink="true"/>
+			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^LAMP_PNL1_EP00_EP9128-0021^LAMP_PNL2_EP19_EP3174-0002">
 				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_C2_GPI_01.i_iPRESS_R" VarB="AI Standard Channel 1^Value" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_GJ1_GPI_01.i_iPRESS_R" VarB="AI Standard Channel 3^Value" AutoLink="true"/>

@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.4">
+  <POU Name="PRG_COM" Id="{3e6f2d60-d447-49f2-a2a6-3124f962902d}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM PRG_COM
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[(*Instanitate Serial port com function *) 
+fbSerialLineControl_LAMP_C2_PTM_01(
+	Mode:= SERIALLINEMODE_EL6_22B,
+	pComIn:= ADR(stComIn_LAMP_C2_PTM_01),
+	pComOut:=ADR(stComOut_LAMP_C2_PTM_01),
+	SizeComIn:= SIZEOF(stComIn_LAMP_C2_PTM_01),
+	TxBuffer:= SerialTXBuffer_LAMP_C2_PTM_01,
+	RxBuffer:= SerialRXBuffer_LAMP_C2_PTM_01,
+	Error=> ,
+	ErrorID=> );
+	
+fbSerialLineControl_LAMP_C2_PTM_02(
+	Mode:= SERIALLINEMODE_EL6_22B,
+	pComIn:= ADR(stComIn_LAMP_C2_PTM_02),
+	pComOut:=ADR(stComOut_LAMP_C2_PTM_02),
+	SizeComIn:= SIZEOF(stComIn_LAMP_C2_PTM_02),
+	TxBuffer:= SerialTXBuffer_LAMP_C2_PTM_02,
+	RxBuffer:= SerialRXBuffer_LAMP_C2_PTM_02,
+	Error=> ,
+	ErrorID=> );
+	
+fbSerialLineControl_LAMP_C2_PTM_03(
+	Mode:= SERIALLINEMODE_EL6_22B,
+	pComIn:= ADR(stComIn_LAMP_C2_PTM_03),
+	pComOut:=ADR(stComOut_LAMP_C2_PTM_03),
+	SizeComIn:= SIZEOF(stComIn_LAMP_C2_PTM_03),
+	TxBuffer:= SerialTXBuffer_LAMP_C2_PTM_03,
+	RxBuffer:= SerialRXBuffer_LAMP_C2_PTM_03,
+	Error=> ,
+	ErrorID=> );
+	
+fbSerialLineControl_LAMP_C2_PTM_04(
+	Mode:= SERIALLINEMODE_EL6_22B,
+	pComIn:= ADR(stComIn_LAMP_C2_PTM_04),
+	pComOut:=ADR(stComOut_LAMP_C2_PTM_04),
+	SizeComIn:= SIZEOF(stComIn_LAMP_C2_PTM_04),
+	TxBuffer:= SerialTXBuffer_LAMP_C2_PTM_04,
+	RxBuffer:= SerialRXBuffer_LAMP_C2_PTM_04,
+	Error=> ,
+	ErrorID=> );
+	
+fbSerialLineControl_LAMP_GJ1_PTM_01(
+	Mode:= SERIALLINEMODE_EL6_22B,
+	pComIn:= ADR(stComIn_LAMP_GJ1_PTM_01),
+	pComOut:=ADR(stComOut_LAMP_GJ1_PTM_01),
+	SizeComIn:= SIZEOF(stComIn_LAMP_GJ1_PTM_01),
+	TxBuffer:= SerialTXBuffer_LAMP_GJ1_PTM_01,
+	RxBuffer:= SerialRXBuffer_LAMP_GJ1_PTM_01,
+	Error=> ,
+	ErrorID=> );
+	
+fbSerialLineControl_LAMP_GJ1_PTM_02(
+	Mode:= SERIALLINEMODE_EL6_22B,
+	pComIn:= ADR(stComIn_LAMP_GJ1_PTM_02),
+	pComOut:=ADR(stComOut_LAMP_GJ1_PTM_02),
+	SizeComIn:= SIZEOF(stComIn_LAMP_GJ1_PTM_02),
+	TxBuffer:= SerialTXBuffer_LAMP_GJ1_PTM_02,
+	RxBuffer:= SerialRXBuffer_LAMP_GJ1_PTM_02,
+	Error=> ,
+	ErrorID=> );
+	
+fbSerialLineControl_LAMP_GJ1_PTM_03(
+	Mode:= SERIALLINEMODE_EL6_22B,
+	pComIn:= ADR(stComIn_LAMP_GJ1_PTM_03),
+	pComOut:=ADR(stComOut_LAMP_GJ1_PTM_03),
+	SizeComIn:= SIZEOF(stComIn_LAMP_GJ1_PTM_03),
+	TxBuffer:= SerialTXBuffer_LAMP_GJ1_PTM_03,
+	RxBuffer:= SerialRXBuffer_LAMP_GJ1_PTM_03,
+	Error=> ,
+	ErrorID=> );
+	
+fbSerialLineControl_LAMP_GJ1_PTM_04(
+	Mode:= SERIALLINEMODE_EL6_22B,
+	pComIn:= ADR(stComIn_LAMP_GJ1_PTM_04),
+	pComOut:=ADR(stComOut_LAMP_GJ1_PTM_04),
+	SizeComIn:= SIZEOF(stComIn_LAMP_GJ1_PTM_04),
+	TxBuffer:= SerialTXBuffer_LAMP_GJ1_PTM_04,
+	RxBuffer:= SerialRXBuffer_LAMP_GJ1_PTM_04,
+	Error=> ,
+	ErrorID=> );
+	
+fbSerialLineControl_LAMP_ROUGH_PTM_01(
+	Mode:= SERIALLINEMODE_EL6_22B,
+	pComIn:= ADR(stComIn_LAMP_ROUGH_PTM_01),
+	pComOut:=ADR(stComOut_LAMP_ROUGH_PTM_01),
+	SizeComIn:= SIZEOF(stComIn_LAMP_ROUGH_PTM_01),
+	TxBuffer:= SerialTXBuffer_LAMP_ROUGH_PTM_01,
+	RxBuffer:= SerialRXBuffer_LAMP_ROUGH_PTM_01,
+	Error=> ,
+	ErrorID=> );
+	
+fbSerialLineControl_LAMP_C1_PTM_01(
+	Mode:= SERIALLINEMODE_EL6_22B,
+	pComIn:= ADR(stComIn_LAMP_C1_PTM_01),
+	pComOut:=ADR(stComOut_LAMP_C1_PTM_01),
+	SizeComIn:= SIZEOF(stComIn_LAMP_C1_PTM_01),
+	TxBuffer:= SerialTXBuffer_LAMP_C1_PTM_01,
+	RxBuffer:= SerialRXBuffer_LAMP_C1_PTM_01,
+	Error=> ,
+	ErrorID=> );
+	
+fbSerialLineControl_LAMP_CATCH_PTM_01(
+	Mode:= SERIALLINEMODE_EL6_22B,
+	pComIn:= ADR(stComIn_LAMP_CATCH_PTM_01),
+	pComOut:=ADR(stComOut_LAMP_CATCH_PTM_01),
+	SizeComIn:= SIZEOF(stComIn_LAMP_CATCH_PTM_01),
+	TxBuffer:= SerialTXBuffer_LAMP_CATCH_PTM_01,
+	RxBuffer:= SerialRXBuffer_LAMP_CATCH_PTM_01,
+	Error=> ,
+	ErrorID=> );
+	
+fbSerialLineControl_LAMP_CATCH_PTM_02(
+	Mode:= SERIALLINEMODE_EL6_22B,
+	pComIn:= ADR(stComIn_LAMP_CATCH_PTM_02),
+	pComOut:=ADR(stComOut_LAMP_CATCH_PTM_02),
+	SizeComIn:= SIZEOF(stComIn_LAMP_CATCH_PTM_02),
+	TxBuffer:= SerialTXBuffer_LAMP_CATCH_PTM_02,
+	RxBuffer:= SerialRXBuffer_LAMP_CATCH_PTM_02,
+	Error=> ,
+	ErrorID=> );
+	
+fbSerialLineControl_KTOF_PTM_01(
+	Mode:= SERIALLINEMODE_EL6_22B,
+	pComIn:= ADR(stComIn_KTOF_PTM_01),
+	pComOut:=ADR(stComOut_KTOF_PTM_01),
+	SizeComIn:= SIZEOF(stComIn_KTOF_PTM_01),
+	TxBuffer:= SerialTXBuffer_KTOF_PTM_01,
+	RxBuffer:= SerialRXBuffer_KTOF_PTM_01,
+	Error=> ,
+	ErrorID=> );
+	
+	
+]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

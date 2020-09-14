@@ -50,7 +50,6 @@ VAR_GLOBAL
 								 .i_xFaultNC		:=	TIIB[LAMP_PNL1_EP01_EP2338-0002]^Channel 2^Input;
 								 .i_xRemote			:=	TIIB[LAMP_PNL1_EP01_EP2338-0002]^Channel 3^Input;
 								 .q_RunDO			:=	TIIB[LAMP_PNL1_EP02_EP2624-0002]^Channel 1^Output;
-								 .q_PumpingStation	:=	TIIB[LAMP_PNL1_EP02_EP2624-0002]^Channel 1^Output;
 								 .q_xReset 			:=	TIIB[LAMP_PNL1_EP02_EP2624-0002]^Channel 2^Output				 
 	'}
 	{attribute 'pytmc' := '
@@ -63,7 +62,6 @@ VAR_GLOBAL
 								 .i_xFaultNC		:=	TIIB[LAMP_PNL1_EP01_EP2338-0002]^Channel 6^Input;
 								 .i_xRemote			:=	TIIB[LAMP_PNL1_EP01_EP2338-0002]^Channel 7^Input;
 								 .q_RunDO			:=	TIIB[LAMP_PNL1_EP02_EP2624-0002]^Channel 3^Output;
-								 .q_PumpingStation	:=	TIIB[LAMP_PNL1_EP02_EP2624-0002]^Channel 3^Output;
 								 .q_xReset 			:=	TIIB[LAMP_PNL1_EP02_EP2624-0002]^Channel 4^Output				 
 	'}
 	{attribute 'pytmc' := '
@@ -76,7 +74,6 @@ VAR_GLOBAL
 								 .i_xFaultNC		:=	TIIB[LAMP_PNL1_EP04_EP2338-0002]^Channel 2^Input;
 								 .i_xRemote			:=	TIIB[LAMP_PNL1_EP04_EP2338-0002]^Channel 3^Input;
 								 .q_RunDO			:=	TIIB[LAMP_PNL1_EP05_EP2624-0002]^Channel 1^Output;
-								 .q_PumpingStation	:=	TIIB[LAMP_PNL1_EP05_EP2624-0002]^Channel 1^Output;
 								 .q_xReset 			:=	TIIB[LAMP_PNL1_EP05_EP2624-0002]^Channel 2^Output				 
 	'}
 	{attribute 'pytmc' := '
@@ -89,7 +86,6 @@ VAR_GLOBAL
 								 .i_xFaultNC		:=	TIIB[LAMP_PNL1_EP04_EP2338-0002]^Channel 6^Input;
 								 .i_xRemote			:=	TIIB[LAMP_PNL1_EP04_EP2338-0002]^Channel 7^Input;
 								 .q_RunDO			:=	TIIB[LAMP_PNL1_EP05_EP2624-0002]^Channel 3^Output;
-								 .q_PumpingStation	:=	TIIB[LAMP_PNL1_EP05_EP2624-0002]^Channel 3^Output;
 								 .q_xReset 			:=	TIIB[LAMP_PNL1_EP05_EP2624-0002]^Channel 4^Output				 
 	'}
 	{attribute 'pytmc' := '
@@ -102,7 +98,6 @@ VAR_GLOBAL
 								 .i_xFaultNC		:=	TIIB[LAMP_PNL1_EP07_EP2338-0002]^Channel 2^Input;
 								 .i_xRemote			:=	TIIB[LAMP_PNL1_EP07_EP2338-0002]^Channel 3^Input;
 								 .q_RunDO			:=	TIIB[LAMP_PNL1_EP08_EP2624-0002]^Channel 1^Output;
-								 .q_PumpingStation	:=	TIIB[LAMP_PNL1_EP08_EP2624-0002]^Channel 1^Output;
 								 .q_xReset 			:=	TIIB[LAMP_PNL1_EP08_EP2624-0002]^Channel 2^Output				 
 	'}
 	{attribute 'pytmc' := '
@@ -115,7 +110,6 @@ VAR_GLOBAL
 								 .i_xFaultNC		:=	TIIB[LAMP_PNL1_EP07_EP2338-0002]^Channel 6^Input;
 								 .i_xRemote			:=	TIIB[LAMP_PNL1_EP07_EP2338-0002]^Channel 7^Input;
 								 .q_RunDO			:=	TIIB[LAMP_PNL1_EP08_EP2624-0002]^Channel 3^Output;
-								 .q_PumpingStation	:=	TIIB[LAMP_PNL1_EP08_EP2624-0002]^Channel 3^Output;
 								 .q_xReset 			:=	TIIB[LAMP_PNL1_EP08_EP2624-0002]^Channel 4^Output				 
 	'}
 	{attribute 'pytmc' := '
@@ -128,7 +122,6 @@ VAR_GLOBAL
 								 .i_xFaultNC		:=	TIIB[LAMP_PNL1_EP10_EP2338-0002]^Channel 2^Input;
 								 .i_xRemote			:=	TIIB[LAMP_PNL1_EP10_EP2338-0002]^Channel 3^Input;
 								 .q_RunDO			:=	TIIB[LAMP_PNL1_EP11_EP2624-0002]^Channel 1^Output;
-								 .q_PumpingStation	:=	TIIB[LAMP_PNL1_EP11_EP2624-0002]^Channel 1^Output;
 								 .q_xReset 			:=	TIIB[LAMP_PNL1_EP11_EP2624-0002]^Channel 2^Output				 
 	'}
 	{attribute 'pytmc' := '
@@ -141,7 +134,6 @@ VAR_GLOBAL
 								 .i_xFaultNC		:=	TIIB[LAMP_PNL1_EP10_EP2338-0002]^Channel 6^Input;
 								 .i_xRemote			:=	TIIB[LAMP_PNL1_EP10_EP2338-0002]^Channel 7^Input;
 								 .q_RunDO			:=	TIIB[LAMP_PNL1_EP11_EP2624-0002]^Channel 3^Output;
-								 .q_PumpingStation	:=	TIIB[LAMP_PNL1_EP11_EP2624-0002]^Channel 3^Output;
 								 .q_xReset 			:=	TIIB[LAMP_PNL1_EP11_EP2624-0002]^Channel 4^Output				 
 	'}
 	{attribute 'pytmc' := '
@@ -150,11 +142,10 @@ VAR_GLOBAL
 	'}
 	LAMP_GJ1_PTM_04 : FB_PTM_Pfeiffer;
 	
-	{attribute 'TcLinkTo' := 	'.i_xAtSpd			:=	TIIB[LAMP_PNL1_EP16_EP2338-0002]^Channel 1^Input;
-								 .i_xFaultNC		:=	TIIB[LAMP_PNL1_EP16_EP2338-0002]^Channel 2^Input;
-								 .q_RunDO			:=	TIIB[LAMP_PNL1_EP17_EP2624-0002]^Channel 1^Output;
-								 .q_PumpingStation	:=	TIIB[LAMP_PNL1_EP17_EP2624-0002]^Channel 1^Output;
-								 .q_xReset 			:=	TIIB[LAMP_PNL1_EP17_EP2624-0002]^Channel 2^Output				 
+	{attribute 'TcLinkTo' := 	'.i_xAtSpd			:=	TIIB[LAMP_PNL2_EP16_EP2338-0002]^Channel 1^Input;
+								 .i_xFaultNC		:=	TIIB[LAMP_PNL2_EP16_EP2338-0002]^Channel 2^Input;
+								 .q_RunDO			:=	TIIB[LAMP_PNL2_EP17_EP2624-0002]^Channel 1^Output;
+								 .q_xReset 			:=	TIIB[LAMP_PNL2_EP17_EP2624-0002]^Channel 2^Output				 
 	'}
 	{attribute 'pytmc' := '
 		pv: LAMP:CATCH:PTM:01
@@ -162,11 +153,10 @@ VAR_GLOBAL
 	'}
 	LAMP_CATCH_PTM_01 : FB_PTM_Pfeiffer;
 	
-	{attribute 'TcLinkTo' := 	'.i_xAtSpd			:=	TIIB[LAMP_PNL1_EP16_EP2338-0002]^Channel 5^Input;
-								 .i_xFaultNC		:=	TIIB[LAMP_PNL1_EP16_EP2338-0002]^Channel 6^Input;
-								 .q_RunDO			:=	TIIB[LAMP_PNL1_EP17_EP2624-0002]^Channel 3^Output;
-								 .q_PumpingStation	:=	TIIB[LAMP_PNL1_EP17_EP2624-0002]^Channel 3^Output;
-								 .q_xReset 			:=	TIIB[LAMP_PNL1_EP17_EP2624-0002]^Channel 4^Output				 
+	{attribute 'TcLinkTo' := 	'.i_xAtSpd			:=	TIIB[LAMP_PNL2_EP16_EP2338-0002]^Channel 5^Input;
+								 .i_xFaultNC		:=	TIIB[LAMP_PNL2_EP16_EP2338-0002]^Channel 6^Input;
+								 .q_RunDO			:=	TIIB[LAMP_PNL2_EP17_EP2624-0002]^Channel 3^Output;
+								 .q_xReset 			:=	TIIB[LAMP_PNL2_EP17_EP2624-0002]^Channel 4^Output				 
 	'}
 	{attribute 'pytmc' := '
 		pv: LAMP:CATCH:PTM:02
@@ -174,12 +164,11 @@ VAR_GLOBAL
 	'}
 	LAMP_CATCH_PTM_02 : FB_PTM_Pfeiffer;
 	
-	{attribute 'TcLinkTo' := 	'.i_xAtSpd			:=	TIIB[LAMP_PNL1_EP13_EP2338-0002]^Channel 1^Input;
-								 .i_xFaultNC		:=	TIIB[LAMP_PNL1_EP13_EP2338-0002]^Channel 2^Input;
-								 .i_xRemote			:=	TIIB[LAMP_PNL1_EP13_EP2338-0002]^Channel 3^Input;
-								 .q_RunDO			:=	TIIB[LAMP_PNL1_EP14_EP2624-0002]^Channel 1^Output;
-								 .q_PumpingStation	:=	TIIB[LAMP_PNL1_EP14_EP2624-0002]^Channel 1^Output;
-								 .q_xReset 			:=	TIIB[LAMP_PNL1_EP14_EP2624-0002]^Channel 2^Output				 
+	{attribute 'TcLinkTo' := 	'.i_xAtSpd			:=	TIIB[LAMP_PNL2_EP13_EP2338-0002]^Channel 1^Input;
+								 .i_xFaultNC		:=	TIIB[LAMP_PNL2_EP13_EP2338-0002]^Channel 2^Input;
+								 .i_xRemote			:=	TIIB[LAMP_PNL2_EP13_EP2338-0002]^Channel 3^Input;
+								 .q_RunDO			:=	TIIB[LAMP_PNL2_EP14_EP2624-0002]^Channel 1^Output;
+								 .q_xReset 			:=	TIIB[LAMP_PNL2_EP14_EP2624-0002]^Channel 2^Output				 
 	'}
 	{attribute 'pytmc' := '
 		pv: LAMP:ROUGH:PTM:01
@@ -187,12 +176,11 @@ VAR_GLOBAL
 	'}
 	LAMP_ROUGH_PTM_01 : FB_PTM_Pfeiffer;
 	
-	{attribute 'TcLinkTo' := 	'.i_xAtSpd			:=	TIIB[LAMP_PNL1_EP13_EP2338-0002]^Channel 5^Input;
-								 .i_xFaultNC		:=	TIIB[LAMP_PNL1_EP13_EP2338-0002]^Channel 6^Input;
-								 .i_xRemote			:=	TIIB[LAMP_PNL1_EP13_EP2338-0002]^Channel 7^Input;
-								 .q_RunDO			:=	TIIB[LAMP_PNL1_EP14_EP2624-0002]^Channel 3^Output;
-								 .q_PumpingStation	:=	TIIB[LAMP_PNL1_EP14_EP2624-0002]^Channel 3^Output;
-								 .q_xReset 			:=	TIIB[LAMP_PNL1_EP14_EP2624-0002]^Channel 4^Output				 
+	{attribute 'TcLinkTo' := 	'.i_xAtSpd			:=	TIIB[LAMP_PNL2_EP13_EP2338-0002]^Channel 5^Input;
+								 .i_xFaultNC		:=	TIIB[LAMP_PNL2_EP13_EP2338-0002]^Channel 6^Input;
+								 .i_xRemote			:=	TIIB[LAMP_PNL2_EP13_EP2338-0002]^Channel 7^Input;
+								 .q_RunDO			:=	TIIB[LAMP_PNL2_EP14_EP2624-0002]^Channel 3^Output;
+								 .q_xReset 			:=	TIIB[LAMP_PNL2_EP14_EP2624-0002]^Channel 4^Output				 
 	'}
 	{attribute 'pytmc' := '
 		pv: LAMP:C1:PTM:01
@@ -208,7 +196,6 @@ VAR_GLOBAL
 								 .i_xFaultNC		:=	TIIB[KTOF_PNL1_EP01_EP2338-0002]^Channel 2^Input;
 								 .i_xRemote			:=	TIIB[KTOF_PNL1_EP01_EP2338-0002]^Channel 3^Input;
 								 .q_RunDO			:=	TIIB[KTOF_PNL1_EP02_EP2624-0002]^Channel 1^Output;
-								 .q_PumpingStation	:=	TIIB[KTOF_PNL1_EP02_EP2624-0002]^Channel 1^Output;
 								 .q_xReset 			:=	TIIB[KTOF_PNL1_EP02_EP2624-0002]^Channel 2^Output				 
 	'}
 	{attribute 'pytmc' := '
@@ -371,6 +358,60 @@ VAR_GLOBAL
 		io: io
 	'}
 	LAMP_ROUGH_VRC_02 : FB_VRC_NO;
+	
+(*Pfeiffer*)
+	// They share the same serial port
+	st_Pfeiffer_CTRL_LAMP_C2_PTM_01 		: ARRAY[1..20] OF ST_PfeifferControl;
+	st_Pfeiffer_RBK_LAMP_C2_PTM_01 			: ARRAY[1..20] OF ST_PfeifferStatus;
+	fb_PfeifferCom_LAMP_C2_PTM_01 			: FB_PFEIFFER_COM;
+	
+	st_Pfeiffer_CTRL_LAMP_C2_PTM_02 		: ARRAY[1..20] OF ST_PfeifferControl;
+	st_Pfeiffer_RBK_LAMP_C2_PTM_02 			: ARRAY[1..20] OF ST_PfeifferStatus;
+	fb_PfeifferCom_LAMP_C2_PTM_02 			: FB_PFEIFFER_COM;
+	
+	st_Pfeiffer_CTRL_LAMP_C2_PTM_03 		: ARRAY[1..20] OF ST_PfeifferControl;
+	st_Pfeiffer_RBK_LAMP_C2_PTM_03 			: ARRAY[1..20] OF ST_PfeifferStatus;
+	fb_PfeifferCom_LAMP_C2_PTM_03 			: FB_PFEIFFER_COM;
+	
+	st_Pfeiffer_CTRL_LAMP_C2_PTM_04			: ARRAY[1..20] OF ST_PfeifferControl;
+	st_Pfeiffer_RBK_LAMP_C2_PTM_04 			: ARRAY[1..20] OF ST_PfeifferStatus;
+	fb_PfeifferCom_LAMP_C2_PTM_04 			: FB_PFEIFFER_COM;
+	
+	st_Pfeiffer_CTRL_LAMP_GJ1_PTM_01 		: ARRAY[1..20] OF ST_PfeifferControl;
+	st_Pfeiffer_RBK_LAMP_GJ1_PTM_01 		: ARRAY[1..20] OF ST_PfeifferStatus;
+	fb_PfeifferCom_LAMP_GJ1_PTM_01 			: FB_PFEIFFER_COM;
+	
+	st_Pfeiffer_CTRL_LAMP_GJ1_PTM_02 		: ARRAY[1..20] OF ST_PfeifferControl;
+	st_Pfeiffer_RBK_LAMP_GJ1_PTM_02 		: ARRAY[1..20] OF ST_PfeifferStatus;
+	fb_PfeifferCom_LAMP_GJ1_PTM_02 			: FB_PFEIFFER_COM;
+	
+	st_Pfeiffer_CTRL_LAMP_GJ1_PTM_03 		: ARRAY[1..20] OF ST_PfeifferControl;
+	st_Pfeiffer_RBK_LAMP_GJ1_PTM_03 		: ARRAY[1..20] OF ST_PfeifferStatus;
+	fb_PfeifferCom_LAMP_GJ1_PTM_03 			: FB_PFEIFFER_COM;
+	
+	st_Pfeiffer_CTRL_LAMP_GJ1_PTM_04 		: ARRAY[1..20] OF ST_PfeifferControl;
+	st_Pfeiffer_RBK_LAMP_GJ1_PTM_04 		: ARRAY[1..20] OF ST_PfeifferStatus;
+	fb_PfeifferCom_LAMP_GJ1_PTM_04 			: FB_PFEIFFER_COM;
+	
+	st_Pfeiffer_CTRL_LAMP_ROUGH_PTM_01 		: ARRAY[1..20] OF ST_PfeifferControl;
+	st_Pfeiffer_RBK_LAMP_ROUGH_PTM_01 		: ARRAY[1..20] OF ST_PfeifferStatus;
+	fb_PfeifferCom_LAMP_ROUGH_PTM_01 		: FB_PFEIFFER_COM;
+	
+	st_Pfeiffer_CTRL_LAMP_C1_PTM_01 		: ARRAY[1..20] OF ST_PfeifferControl;
+	st_Pfeiffer_RBK_LAMP_C1_PTM_01 			: ARRAY[1..20] OF ST_PfeifferStatus;
+	fb_PfeifferCom_LAMP_C1_PTM_01 			: FB_PFEIFFER_COM;
+	
+	st_Pfeiffer_CTRL_LAMP_CATCH_PTM_01 		: ARRAY[1..20] OF ST_PfeifferControl;
+	st_Pfeiffer_RBK_LAMP_CATCH_PTM_01 		: ARRAY[1..20] OF ST_PfeifferStatus;
+	fb_PfeifferCom_LAMP_CATCH_PTM_01 		: FB_PFEIFFER_COM;
+	
+	st_Pfeiffer_CTRL_LAMP_CATCH_PTM_02 		: ARRAY[1..20] OF ST_PfeifferControl;
+	st_Pfeiffer_RBK_LAMP_CATCH_PTM_02 		: ARRAY[1..20] OF ST_PfeifferStatus;
+	fb_PfeifferCom_LAMP_CATCH_PTM_02 		: FB_PFEIFFER_COM;
+	
+	st_Pfeiffer_CTRL_KTOF_PTM_01 			: ARRAY[1..20] OF ST_PfeifferControl;
+	st_Pfeiffer_RBK_KTOF_PTM_01 			: ARRAY[1..20] OF ST_PfeifferStatus;
+	fb_PfeifferCom_KTOF_PTM_01 				: FB_PFEIFFER_COM;
 
 END_VAR]]></Declaration>
   </GVL>
