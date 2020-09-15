@@ -1,0 +1,111 @@
+<?xml version="1.0"?>
+<TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4024.10" ClassName="CFlbTermDef" SubType="9099">
+	<ImageDatas>
+		<ImageData Id="1000">424d360300000000000036000000280000001000000010000000010018000000000000000000120b0000120b00000000000000000000ff00ffff00ffff00ff000000000000000000000000000000000000000000000000000000000000ff00ffff00ffff00ffff00ffff00ffff00ff000000000000808080808080000000000000808080808080000000000000ff00ffff00ffff00ffff00ffff00ffff00ff000000000000808080808080000000000000808080808080000000000000ff00ffff00ffff00ffff00ffff00ffff00ff000000000000000000000000000000000000000000000000000000000000ff00ffff00ffff00ffff00ffff00ffff00ff000000000000000000000000000000000000000000000000000000000000ff00ffff00ffff00ffff00ffff00ffff00ff00000000000000ff0000000000000000000000000000ff00000000000000ff00ffff00ffff00ffff00ffff00ffff00ff000000000000000000000000000000000000000000000000000000000000ff00ffff00ffff00ffff00ffff00ffff00ff000000000000000000000000000000000000000000000000000000000000ff00ffff00ffff00ffff00ffff00ffff00ff00000000000000ff0000000000000000000000000000ff00000000000000ff00ffff00ffff00ffff00ffff00ffff00ff000000000000000000000000000000000000000000000000000000000000ff00ffff00ffff00ffff00ffff00ffff00ff000000000000000000000000000000000000000000000000000000000000ff00ffff00ffff00ffff00ffff00ffff00ff00000000000000ff0000000000000000000000000000ff00000000000000ff00ffff00ffff00ffff00ffff00ffff00ff000000000000000000000000000000000000000000000000000000000000ff00ffff00ffff00ffff00ffff00ffff00ff000000000000000000000000000000000000000000000000000000000000ff00ffff00ffff00ffff00ffff00ffff00ff00000000000000ff0000000000000000000000000000ff00000000000000ff00ffff00ffff00ffff00ffff00ffff00ff000000000000000000000000000000000000000000000000000000000000ff00ffff00ffff00ff</ImageData>
+	</ImageDatas>
+	<Box Id="12" BoxType="9099">
+		<Name>__FILENAME__</Name>
+		<ImageId>1000</ImageId>
+		<EtherCAT SlaveType="1" PdiType="#x0d00" CycleMBoxPollingTime="0" VendorId="#x00000002" ProductCode="#x23a84052" RevisionNo="#x00130015" PortPhys="4881" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="EP9128-0021 8x EtherCAT junction" Desc="EP9128-0021"/>
+		<Box File="LAMP_PNL1_EP01_EP2338-0002.xti" Id="13">
+			<EtherCAT PortABoxInfo="#x0300000c"/>
+		</Box>
+		<Box File="LAMP_PNL1_EP02_EP2624-0002.xti" Id="14">
+			<EtherCAT PortABoxInfo="#x0100000d"/>
+		</Box>
+		<Box File="LAMP_PNL1_EP03_EP6002-0002.xti" Id="15">
+			<EtherCAT PortABoxInfo="#x0100000e"/>
+		</Box>
+		<Box File="LAMP_PNL1_EP04_EP2338-0002.xti" Id="16">
+			<EtherCAT PortABoxInfo="#x0100000f"/>
+		</Box>
+		<Box File="LAMP_PNL1_EP05_EP2624-0002.xti" Id="17">
+			<EtherCAT PortABoxInfo="#x01000010"/>
+		</Box>
+		<Box File="LAMP_PNL1_EP06_EP6002-0002.xti" Id="18">
+			<EtherCAT PortABoxInfo="#x01000011"/>
+		</Box>
+		<Box File="LAMP_PNL1_EP07_EP2338-0002.xti" Id="19">
+			<EtherCAT PortABoxInfo="#x01000012"/>
+		</Box>
+		<Box File="LAMP_PNL1_EP08_EP2624-0002.xti" Id="20">
+			<EtherCAT PortABoxInfo="#x01000013"/>
+		</Box>
+		<Box File="LAMP_PNL1_EP09_EP6002-0002.xti" Id="21">
+			<EtherCAT PortABoxInfo="#x01000014"/>
+		</Box>
+		<Box File="LAMP_PNL1_EP10_EP2338-0002.xti" Id="22">
+			<EtherCAT PortABoxInfo="#x01000015"/>
+		</Box>
+		<Box File="LAMP_PNL1_EP11_EP2624-0002.xti" Id="23">
+			<EtherCAT PortABoxInfo="#x01000016"/>
+		</Box>
+		<Box File="LAMP_PNL1_EP12_EP6002-0002.xti" Id="24">
+			<EtherCAT PortABoxInfo="#x01000017"/>
+		</Box>
+		<Box File="LAMP_PNL2_EP13_EP2338-0002.xti" Id="25">
+			<EtherCAT PortABoxInfo="#x01000018"/>
+		</Box>
+		<Box File="LAMP_PNL2_EP14_EP2624-0002.xti" Id="26">
+			<EtherCAT PortABoxInfo="#x01000019"/>
+		</Box>
+		<Box File="LAMP_PNL2_EP15_EP6002-0002.xti" Id="27">
+			<EtherCAT PortABoxInfo="#x0100001a"/>
+		</Box>
+		<Box File="LAMP_PNL2_EP16_EP2338-0002.xti" Id="28">
+			<EtherCAT PortABoxInfo="#x0100001b"/>
+		</Box>
+		<Box File="LAMP_PNL2_EP17_EP2624-0002.xti" Id="29">
+			<EtherCAT PortABoxInfo="#x0100001c"/>
+		</Box>
+		<Box File="LAMP_PNL2_EP18_EP6002-0002.xti" Id="30">
+			<EtherCAT PortABoxInfo="#x0100001d"/>
+		</Box>
+		<Box File="LAMP_PNL2_EP19_EP3174-0002.xti" Id="31">
+			<EtherCAT PortABoxInfo="#x0100001e"/>
+		</Box>
+		<Box File="LAMP_PNL2_EP20_EP3174-0002.xti" Id="32">
+			<EtherCAT PortABoxInfo="#x0100001f"/>
+		</Box>
+		<Box File="LAMP_PNL2_EP21_EP3174-0002.xti" Id="33">
+			<EtherCAT PortABoxInfo="#x01000020"/>
+		</Box>
+		<Box File="LAMP_PNL2_EP22_EP2624-0002.xti" Id="34">
+			<EtherCAT PortABoxInfo="#x01000021"/>
+		</Box>
+		<Box File="LAMP_PNL2_EP23_EP3174-0002.xti" Id="35">
+			<EtherCAT PortABoxInfo="#x01000022"/>
+		</Box>
+		<Box File="LAMP_PNL2_EP24_EP2624-0002.xti" Id="74">
+			<EtherCAT PortABoxInfo="#x01000023"/>
+		</Box>
+		<Box File="LAMP_PNL2_EP25_EP2338-0002.xti" Id="75">
+			<EtherCAT PortABoxInfo="#x0100004a"/>
+		</Box>
+		<Box File="LAMP_PNL2_EP26_EP2338-0002.xti" Id="76">
+			<EtherCAT PortABoxInfo="#x0100004b"/>
+		</Box>
+		<Box File="KTOF_PNL1_EP00_EP1111.xti" Id="80">
+			<EtherCAT PortABoxInfo="#x0100000c"/>
+		</Box>
+		<Box File="KTOF_PNL1_EP01_EP2338-0002.xti" Id="81">
+			<EtherCAT PortABoxInfo="#x01000050"/>
+		</Box>
+		<Box File="KTOF_PNL1_EP02_EP2624-0002.xti" Id="82">
+			<EtherCAT PortABoxInfo="#x01000051"/>
+		</Box>
+		<Box File="KTOF_PNL1_EP03_EP6002-0002.xti" Id="83">
+			<EtherCAT PortABoxInfo="#x01000052"/>
+		</Box>
+		<Box Id="36" BoxType="9099">
+			<Name>Term 36 (EP9128-1021)</Name>
+			<ImageId>1000</ImageId>
+			<EtherCAT SlaveType="1" PdiType="#x0d00" CycleMBoxPollingTime="0" VendorId="#x00000002" ProductCode="#x23a84052" RevisionNo="#x001303fd" PortPhys="4883" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="EP9128-1021 8x EtherCAT junction - Dev A" Desc="EP9128-1021" PortABoxInfo="#x0200000c"/>
+		</Box>
+		<Box Id="37" BoxType="9099">
+			<Name>Term 37 (EP9128-2021)</Name>
+			<ImageId>1000</ImageId>
+			<EtherCAT SlaveType="1" PdiType="#x0d00" CycleMBoxPollingTime="0" VendorId="#x00000002" ProductCode="#x23a84052" RevisionNo="#x001307e5" PortPhys="4371" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="EP9128-2021 8x EtherCAT junction - Dev B" Desc="EP9128-2021" PortABoxInfo="#x02000024"/>
+		</Box>
+	</Box>
+</TcSmItem>
