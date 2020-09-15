@@ -412,6 +412,19 @@ VAR_GLOBAL
 	st_Pfeiffer_CTRL_KTOF_PTM_01 			: ARRAY[1..20] OF ST_PfeifferControl;
 	st_Pfeiffer_RBK_KTOF_PTM_01 			: ARRAY[1..20] OF ST_PfeifferStatus;
 	fb_PfeifferCom_KTOF_PTM_01 				: FB_PFEIFFER_COM;
+	
+	//Leybold status
+	st_TD20_RBK_LAMP_GJ2_PTM_01 		: ST_TD20Status;
+	fb_TD20Com_LAMP_GJ2_PTM_01 			: FB_OERLIKON_TD20_COM;
+	
+	st_TD20_RBK_LAMP_GJ2_PTM_02 		: ST_TD20Status;
+	fb_TD20Com_LAMP_GJ2_PTM_02 			: FB_OERLIKON_TD20_COM;
+	
+	st_TD20_RBK_LAMP_GJ2_PTM_03 		: ST_TD20Status;
+	fb_TD20Com_LAMP_GJ2_PTM_03 			: FB_OERLIKON_TD20_COM;
+	
+	st_TD20_RBK_LAMP_GJ2_PTM_04 		: ST_TD20Status;
+	fb_TD20Com_LAMP_GJ2_PTM_04 			: FB_OERLIKON_TD20_COM;
 
 END_VAR]]></Declaration>
   </GVL>

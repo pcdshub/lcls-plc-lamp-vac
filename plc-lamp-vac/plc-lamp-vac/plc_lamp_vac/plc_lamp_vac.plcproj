@@ -14,8 +14,12 @@
     <Implicit_Jitter_Distribution>{2a394602-0deb-4031-b5c6-e8309de4fadd}</Implicit_Jitter_Distribution>
     <LibraryReferences>{c4b70952-5a81-4cde-ac42-4cc4eaee6f33}</LibraryReferences>
     <CompilerDefines>VISU_USEPROPERTYINFO</CompilerDefines>
+    <Released>false</Released>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="ComTask.TcTTO">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="GlobalTextList.TcGTLO">
       <SubType>Code</SubType>
     </Compile>

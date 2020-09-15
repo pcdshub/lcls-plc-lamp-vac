@@ -221,6 +221,28 @@ fb_PfeifferCom_KTOF_PTM_01(astPfeifferControl := st_Pfeiffer_CTRL_KTOF_PTM_01,
 							  SerialTXBuffer:= SerialTXBuffer_KTOF_PTM_01);
 KTOF_PTM_01.M_Serial_IO(st_Pfeiffer_CTRL_KTOF_PTM_01[1],st_Pfeiffer_RBK_KTOF_PTM_01[1]);
 
+//Leybolds
+fb_TD20Com_LAMP_GJ2_PTM_01(SerialRXBuffer:= SerialRXBuffer_LAMP_GJ2_PTM_01, 
+						   SerialTXBuffer:= SerialTXBuffer_LAMP_GJ2_PTM_01, 
+						   astTD20Status=> st_TD20_RBK_LAMP_GJ2_PTM_01);
+LAMP_GJ2_PTM_01.M_Serial_IO(i_st_TD20_RBK:= st_TD20_RBK_LAMP_GJ2_PTM_01);
+
+
+fb_TD20Com_LAMP_GJ2_PTM_02(SerialRXBuffer:= SerialRXBuffer_LAMP_GJ2_PTM_02, 
+						   SerialTXBuffer:= SerialTXBuffer_LAMP_GJ2_PTM_02, 
+						   astTD20Status=> st_TD20_RBK_LAMP_GJ2_PTM_02);
+LAMP_GJ2_PTM_02.M_Serial_IO(i_st_TD20_RBK:= st_TD20_RBK_LAMP_GJ2_PTM_02);
+
+fb_TD20Com_LAMP_GJ2_PTM_03(SerialRXBuffer:= SerialRXBuffer_LAMP_GJ2_PTM_03, 
+						   SerialTXBuffer:= SerialTXBuffer_LAMP_GJ2_PTM_03, 
+						   astTD20Status=> st_TD20_RBK_LAMP_GJ2_PTM_03);
+LAMP_GJ2_PTM_03.M_Serial_IO(i_st_TD20_RBK:= st_TD20_RBK_LAMP_GJ2_PTM_03);
+
+fb_TD20Com_LAMP_GJ2_PTM_04(SerialRXBuffer:= SerialRXBuffer_LAMP_GJ2_PTM_04, 
+						   SerialTXBuffer:= SerialTXBuffer_LAMP_GJ2_PTM_04, 
+						   astTD20Status=> st_TD20_RBK_LAMP_GJ2_PTM_04);
+LAMP_GJ2_PTM_04.M_Serial_IO(i_st_TD20_RBK:= st_TD20_RBK_LAMP_GJ2_PTM_04);
+
 
 (*Vacuum Gate Valve*)
 	LAMP_ROUGH_VRC_01(
