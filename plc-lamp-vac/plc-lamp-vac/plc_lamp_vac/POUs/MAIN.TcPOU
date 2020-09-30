@@ -123,7 +123,7 @@ fb_PfeifferCom_LAMP_C2_PTM_01(astPfeifferControl := st_Pfeiffer_CTRL_LAMP_C2_PTM
 							  SerialRXBuffer:= SerialRXBuffer_LAMP_C2_PTM_01,
 							  SerialTXBuffer:= SerialTXBuffer_LAMP_C2_PTM_01);
 (* Copy Status Pv's into the PTM structure*)
-LAMP_C2_PTM_01.M_Serial_IO(st_Pfeiffer_CTRL_LAMP_C2_PTM_01[1],st_Pfeiffer_RBK_LAMP_C2_PTM_01[1]);
+LAMP_C2_PTM_01.M_Serial_IO(st_Pfeiffer_CTRL_LAMP_C2_PTM_01[1],st_Pfeiffer_RBK_LAMP_C2_PTM_01[1], bInit:=TRUE);
 
 st_Pfeiffer_CTRL_LAMP_C2_PTM_02[1].iSerialAddress :=1;
 st_Pfeiffer_CTRL_LAMP_C2_PTM_02[1].xEnableComm := TRUE;
@@ -131,7 +131,7 @@ fb_PfeifferCom_LAMP_C2_PTM_02(astPfeifferControl := st_Pfeiffer_CTRL_LAMP_C2_PTM
 			   				  astPfeifferStatus:= st_Pfeiffer_RBK_LAMP_C2_PTM_02,
 							  SerialRXBuffer:= SerialRXBuffer_LAMP_C2_PTM_02,
 							  SerialTXBuffer:= SerialTXBuffer_LAMP_C2_PTM_02);
-LAMP_C2_PTM_02.M_Serial_IO(st_Pfeiffer_CTRL_LAMP_C2_PTM_02[1],st_Pfeiffer_RBK_LAMP_C2_PTM_02[1]);
+LAMP_C2_PTM_02.M_Serial_IO(st_Pfeiffer_CTRL_LAMP_C2_PTM_02[1],st_Pfeiffer_RBK_LAMP_C2_PTM_02[1], bInit:=TRUE);
 
 st_Pfeiffer_CTRL_LAMP_C2_PTM_03[1].iSerialAddress :=1;
 st_Pfeiffer_CTRL_LAMP_C2_PTM_03[1].xEnableComm := TRUE;
@@ -139,7 +139,7 @@ fb_PfeifferCom_LAMP_C2_PTM_03(astPfeifferControl := st_Pfeiffer_CTRL_LAMP_C2_PTM
 			   				  astPfeifferStatus:= st_Pfeiffer_RBK_LAMP_C2_PTM_03,
 							  SerialRXBuffer:= SerialRXBuffer_LAMP_C2_PTM_03,
 							  SerialTXBuffer:= SerialTXBuffer_LAMP_C2_PTM_03);
-LAMP_C2_PTM_03.M_Serial_IO(st_Pfeiffer_CTRL_LAMP_C2_PTM_03[1],st_Pfeiffer_RBK_LAMP_C2_PTM_03[1]);
+LAMP_C2_PTM_03.M_Serial_IO(st_Pfeiffer_CTRL_LAMP_C2_PTM_03[1],st_Pfeiffer_RBK_LAMP_C2_PTM_03[1], bInit:=TRUE);
 
 st_Pfeiffer_CTRL_LAMP_C2_PTM_04[1].iSerialAddress :=1;
 st_Pfeiffer_CTRL_LAMP_C2_PTM_04[1].xEnableComm := TRUE;
@@ -147,7 +147,7 @@ fb_PfeifferCom_LAMP_C2_PTM_04(astPfeifferControl := st_Pfeiffer_CTRL_LAMP_C2_PTM
 			   				  astPfeifferStatus:= st_Pfeiffer_RBK_LAMP_C2_PTM_04,
 							  SerialRXBuffer:= SerialRXBuffer_LAMP_C2_PTM_04,
 							  SerialTXBuffer:= SerialTXBuffer_LAMP_C2_PTM_04);
-LAMP_C2_PTM_04.M_Serial_IO(st_Pfeiffer_CTRL_LAMP_C2_PTM_04[1],st_Pfeiffer_RBK_LAMP_C2_PTM_04[1]);
+LAMP_C2_PTM_04.M_Serial_IO(st_Pfeiffer_CTRL_LAMP_C2_PTM_04[1],st_Pfeiffer_RBK_LAMP_C2_PTM_04[1], bInit:=TRUE);
 
 st_Pfeiffer_CTRL_LAMP_GJ1_PTM_01[1].iSerialAddress :=1;
 st_Pfeiffer_CTRL_LAMP_GJ1_PTM_01[1].xEnableComm := TRUE;
@@ -155,7 +155,7 @@ fb_PfeifferCom_LAMP_GJ1_PTM_01(astPfeifferControl := st_Pfeiffer_CTRL_LAMP_GJ1_P
 			   				  astPfeifferStatus:= st_Pfeiffer_RBK_LAMP_GJ1_PTM_01,
 							  SerialRXBuffer:= SerialRXBuffer_LAMP_GJ1_PTM_01,
 							  SerialTXBuffer:= SerialTXBuffer_LAMP_GJ1_PTM_01);
-LAMP_GJ1_PTM_01.M_Serial_IO(st_Pfeiffer_CTRL_LAMP_GJ1_PTM_01[1],st_Pfeiffer_RBK_LAMP_GJ1_PTM_01[1]);
+LAMP_GJ1_PTM_01.M_Serial_IO(st_Pfeiffer_CTRL_LAMP_GJ1_PTM_01[1],st_Pfeiffer_RBK_LAMP_GJ1_PTM_01[1], bInit:=TRUE);
 
 st_Pfeiffer_CTRL_LAMP_GJ1_PTM_02[1].iSerialAddress :=1;
 st_Pfeiffer_CTRL_LAMP_GJ1_PTM_02[1].xEnableComm := TRUE;
@@ -163,7 +163,7 @@ fb_PfeifferCom_LAMP_GJ1_PTM_02(astPfeifferControl := st_Pfeiffer_CTRL_LAMP_GJ1_P
 			   				  astPfeifferStatus:= st_Pfeiffer_RBK_LAMP_GJ1_PTM_02,
 							  SerialRXBuffer:= SerialRXBuffer_LAMP_GJ1_PTM_02,
 							  SerialTXBuffer:= SerialTXBuffer_LAMP_GJ1_PTM_02);
-LAMP_GJ1_PTM_02.M_Serial_IO(st_Pfeiffer_CTRL_LAMP_GJ1_PTM_02[1],st_Pfeiffer_RBK_LAMP_GJ1_PTM_02[1]);
+LAMP_GJ1_PTM_02.M_Serial_IO(st_Pfeiffer_CTRL_LAMP_GJ1_PTM_02[1],st_Pfeiffer_RBK_LAMP_GJ1_PTM_02[1], bInit:=TRUE);
 
 st_Pfeiffer_CTRL_LAMP_GJ1_PTM_03[1].iSerialAddress :=1;
 st_Pfeiffer_CTRL_LAMP_GJ1_PTM_03[1].xEnableComm := TRUE;
@@ -171,7 +171,7 @@ fb_PfeifferCom_LAMP_GJ1_PTM_03(astPfeifferControl := st_Pfeiffer_CTRL_LAMP_GJ1_P
 			   				  astPfeifferStatus:= st_Pfeiffer_RBK_LAMP_GJ1_PTM_03,
 							  SerialRXBuffer:= SerialRXBuffer_LAMP_GJ1_PTM_03,
 							  SerialTXBuffer:= SerialTXBuffer_LAMP_GJ1_PTM_03);
-LAMP_GJ1_PTM_03.M_Serial_IO(st_Pfeiffer_CTRL_LAMP_GJ1_PTM_03[1],st_Pfeiffer_RBK_LAMP_GJ1_PTM_03[1]);
+LAMP_GJ1_PTM_03.M_Serial_IO(st_Pfeiffer_CTRL_LAMP_GJ1_PTM_03[1],st_Pfeiffer_RBK_LAMP_GJ1_PTM_03[1], bInit:=TRUE);
 
 st_Pfeiffer_CTRL_LAMP_GJ1_PTM_04[1].iSerialAddress :=1;
 st_Pfeiffer_CTRL_LAMP_GJ1_PTM_04[1].xEnableComm := TRUE;
@@ -179,7 +179,7 @@ fb_PfeifferCom_LAMP_GJ1_PTM_04(astPfeifferControl := st_Pfeiffer_CTRL_LAMP_GJ1_P
 			   				  astPfeifferStatus:= st_Pfeiffer_RBK_LAMP_GJ1_PTM_04,
 							  SerialRXBuffer:= SerialRXBuffer_LAMP_GJ1_PTM_04,
 							  SerialTXBuffer:= SerialTXBuffer_LAMP_GJ1_PTM_04);
-LAMP_GJ1_PTM_04.M_Serial_IO(st_Pfeiffer_CTRL_LAMP_GJ1_PTM_04[1],st_Pfeiffer_RBK_LAMP_GJ1_PTM_04[1]);
+LAMP_GJ1_PTM_04.M_Serial_IO(st_Pfeiffer_CTRL_LAMP_GJ1_PTM_04[1],st_Pfeiffer_RBK_LAMP_GJ1_PTM_04[1], bInit:=TRUE);
 
 st_Pfeiffer_CTRL_LAMP_ROUGH_PTM_01[1].iSerialAddress :=1;
 st_Pfeiffer_CTRL_LAMP_ROUGH_PTM_01[1].xEnableComm := TRUE;
@@ -187,7 +187,7 @@ fb_PfeifferCom_LAMP_ROUGH_PTM_01(astPfeifferControl := st_Pfeiffer_CTRL_LAMP_ROU
 			   				  astPfeifferStatus:= st_Pfeiffer_RBK_LAMP_ROUGH_PTM_01,
 							  SerialRXBuffer:= SerialRXBuffer_LAMP_ROUGH_PTM_01,
 							  SerialTXBuffer:= SerialTXBuffer_LAMP_ROUGH_PTM_01);
-LAMP_ROUGH_PTM_01.M_Serial_IO(st_Pfeiffer_CTRL_LAMP_ROUGH_PTM_01[1],st_Pfeiffer_RBK_LAMP_ROUGH_PTM_01[1]);
+LAMP_ROUGH_PTM_01.M_Serial_IO(st_Pfeiffer_CTRL_LAMP_ROUGH_PTM_01[1],st_Pfeiffer_RBK_LAMP_ROUGH_PTM_01[1], bInit:=TRUE);
 
 st_Pfeiffer_CTRL_LAMP_C1_PTM_01[1].iSerialAddress :=1;
 st_Pfeiffer_CTRL_LAMP_C1_PTM_01[1].xEnableComm := TRUE;
@@ -195,7 +195,7 @@ fb_PfeifferCom_LAMP_C1_PTM_01(astPfeifferControl := st_Pfeiffer_CTRL_LAMP_C1_PTM
 			   				  astPfeifferStatus:= st_Pfeiffer_RBK_LAMP_C1_PTM_01,
 							  SerialRXBuffer:= SerialRXBuffer_LAMP_C1_PTM_01,
 							  SerialTXBuffer:= SerialTXBuffer_LAMP_C1_PTM_01);
-LAMP_C1_PTM_01.M_Serial_IO(st_Pfeiffer_CTRL_LAMP_C1_PTM_01[1],st_Pfeiffer_RBK_LAMP_C1_PTM_01[1]);
+LAMP_C1_PTM_01.M_Serial_IO(st_Pfeiffer_CTRL_LAMP_C1_PTM_01[1],st_Pfeiffer_RBK_LAMP_C1_PTM_01[1], bInit:=TRUE);
 
 st_Pfeiffer_CTRL_LAMP_CATCH_PTM_01[1].iSerialAddress :=1;
 st_Pfeiffer_CTRL_LAMP_CATCH_PTM_01[1].xEnableComm := TRUE;
@@ -203,7 +203,7 @@ fb_PfeifferCom_LAMP_CATCH_PTM_01(astPfeifferControl := st_Pfeiffer_CTRL_LAMP_CAT
 			   				  astPfeifferStatus:= st_Pfeiffer_RBK_LAMP_CATCH_PTM_01,
 							  SerialRXBuffer:= SerialRXBuffer_LAMP_CATCH_PTM_01,
 							  SerialTXBuffer:= SerialTXBuffer_LAMP_CATCH_PTM_01);
-LAMP_CATCH_PTM_01.M_Serial_IO(st_Pfeiffer_CTRL_LAMP_CATCH_PTM_01[1],st_Pfeiffer_RBK_LAMP_CATCH_PTM_01[1]);
+LAMP_CATCH_PTM_01.M_Serial_IO(st_Pfeiffer_CTRL_LAMP_CATCH_PTM_01[1],st_Pfeiffer_RBK_LAMP_CATCH_PTM_01[1], bInit:=TRUE);
 
 st_Pfeiffer_CTRL_LAMP_CATCH_PTM_02[1].iSerialAddress :=1;
 st_Pfeiffer_CTRL_LAMP_CATCH_PTM_02[1].xEnableComm := TRUE;
@@ -211,7 +211,7 @@ fb_PfeifferCom_LAMP_CATCH_PTM_02(astPfeifferControl := st_Pfeiffer_CTRL_LAMP_CAT
 			   				  astPfeifferStatus:= st_Pfeiffer_RBK_LAMP_CATCH_PTM_02,
 							  SerialRXBuffer:= SerialRXBuffer_LAMP_CATCH_PTM_02,
 							  SerialTXBuffer:= SerialTXBuffer_LAMP_CATCH_PTM_02);
-LAMP_CATCH_PTM_02.M_Serial_IO(st_Pfeiffer_CTRL_LAMP_CATCH_PTM_02[1],st_Pfeiffer_RBK_LAMP_CATCH_PTM_02[1]);
+LAMP_CATCH_PTM_02.M_Serial_IO(st_Pfeiffer_CTRL_LAMP_CATCH_PTM_02[1],st_Pfeiffer_RBK_LAMP_CATCH_PTM_02[1], bInit:=TRUE);
 
 st_Pfeiffer_CTRL_KTOF_PTM_01[1].iSerialAddress :=1;
 st_Pfeiffer_CTRL_KTOF_PTM_01[1].xEnableComm := TRUE;
@@ -219,7 +219,7 @@ fb_PfeifferCom_KTOF_PTM_01(astPfeifferControl := st_Pfeiffer_CTRL_KTOF_PTM_01,
 			   				  astPfeifferStatus:= st_Pfeiffer_RBK_KTOF_PTM_01,
 							  SerialRXBuffer:= SerialRXBuffer_KTOF_PTM_01,
 							  SerialTXBuffer:= SerialTXBuffer_KTOF_PTM_01);
-KTOF_PTM_01.M_Serial_IO(st_Pfeiffer_CTRL_KTOF_PTM_01[1],st_Pfeiffer_RBK_KTOF_PTM_01[1]);
+KTOF_PTM_01.M_Serial_IO(st_Pfeiffer_CTRL_KTOF_PTM_01[1],st_Pfeiffer_RBK_KTOF_PTM_01[1], bInit:=TRUE);
 
 //Leybolds
 fb_TD20Com_LAMP_GJ2_PTM_01(SerialRXBuffer:= SerialRXBuffer_LAMP_GJ2_PTM_01, 
