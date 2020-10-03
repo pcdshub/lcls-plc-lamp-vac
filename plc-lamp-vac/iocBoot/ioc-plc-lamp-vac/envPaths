@@ -1,2 +1,2 @@
-epicsEnvSet("IOC_TOP", "/c/Users/adpai/Desktop/lcls-plc-lamp-vac/plc-lamp-vac/iocBoot/ioc-plc-lamp-vac")
+epicsEnvSet("IOC_TOP", "/c/repos/lcls-plc-lamp-vac/plc-lamp-vac/iocBoot/ioc-plc-lamp-vac")
 epicsEnvSet("IOC_DATA", "C:\Users\adpai/iocData")
