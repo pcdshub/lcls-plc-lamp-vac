@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.4">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
   <POU Name="MAIN" Id="{10e78606-31f0-4232-96b0-d270d72b55f0}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM MAIN
 VAR
@@ -7,6 +7,7 @@ VAR
 //	fbLogHandler : FB_LogHandler;
 	
 //	ctuTest : CTU;
+
 	
 END_VAR
 ]]></Declaration>
@@ -21,6 +22,8 @@ fb_ADS_WATCHDOG_VAC_LAMP_TMO(
 	bError=> );*)
 // Run the Diagnostics PRG
 //DIAGNOSTICS();
+
+
 
 (*PIRANI Gauges*)
 	LAMP_C2_GPI_01(PG=>);
