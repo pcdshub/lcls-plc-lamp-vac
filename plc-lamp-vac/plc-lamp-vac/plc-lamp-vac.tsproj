@@ -1196,10 +1196,6 @@
 							<Name>GVL_Devices.LAMP_ROUGH_VRC_02.q_xCLS_DO</Name>
 							<Type>BOOL</Type>
 						</Var>
-						<Var>
-							<Name>MAIN.b_CloseVGCs</Name>
-							<Type>BOOL</Type>
-						</Var>
 					</Vars>
 					<Vars VarGrpType="8">
 						<Name>PlcTask Retains</Name>
@@ -1220,6 +1216,13 @@
 							<InOut>7</InOut>
 						</Var>
 					</Vars>
+					<UnrestoredVarLinks ImportTime="2020-10-08T14:34:26">
+						<OwnerA Name="OutputSrc" Prefix="TIPC^plc_lamp_vac^plc_lamp_vac Instance" Type="2">
+							<OwnerB Name="TIID^Device 1 (EtherCAT)^LAMP_PLC_E0_EK1200^LAMP_PLC_E9_EL2794">
+								<Link VarA="MAIN.b_CloseVGCs" TypeA="BOOL" InOutA="1" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 1^Output" AutoLink="true" Size="1" RestoreInfo="ANotFound"/>
+							</OwnerB>
+						</OwnerA>
+					</UnrestoredVarLinks>
 					<TaskPouOids>
 						<TaskPouOid Prio="15" OTCID="#x08502001"/>
 						<TaskPouOid Prio="20" OTCID="#x08502002"/>
@@ -1440,9 +1443,6 @@
 				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_GJ2_PTM_03.i_xFaultNC" VarB="Channel 1^Input" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_GJ2_PTM_04.i_xAtSpd" VarB="Channel 4^Input" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_GJ2_PTM_04.i_xFaultNC" VarB="Channel 3^Input" AutoLink="true"/>
-			</OwnerB>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^LAMP_PLC_E0_EK1200^LAMP_PLC_E9_EL2794">
-				<Link VarA="PlcTask Outputs^MAIN.b_CloseVGCs" VarB="Channel 1^Output" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^LAMP_PNL1_EP00_EP9128-0021^KTOF_PNL1_EP01_EP2338-0002">
 				<Link VarA="PlcTask Inputs^GVL_Devices.KTOF_PTM_01.i_xAtSpd" VarB="Channel 1^Input" AutoLink="true"/>

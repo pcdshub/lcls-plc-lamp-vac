@@ -4,6 +4,9 @@
     <Declaration><![CDATA[//{attribute 'qualified_only'}
 VAR_GLOBAL
 	(*TMO Beamline Vacuum*)
+	//Outputs
+	fb_ADS_WATCHDOG_VAC_LAMP_TMO:FB_ADS_WATCHDOG;
+	
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>
