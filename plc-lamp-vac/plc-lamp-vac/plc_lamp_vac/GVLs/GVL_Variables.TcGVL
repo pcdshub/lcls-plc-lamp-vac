@@ -8,6 +8,9 @@ VAR_GLOBAL
 		io: io
 	'}
 	xSystemOverrideMode_LAMP	: BOOL := FALSE; (* Global system override for the HXR Vacuum System EBD*)
+	
+	rHighVoltageMinPressure	: REAL := 1e-05; (*Hard coded High voltage Minimum Enable Pressure*)
+	
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>

@@ -7,6 +7,11 @@ VAR_GLOBAL
 	//Outputs
 	fb_ADS_WATCHDOG_VAC_LAMP_TMO:FB_ADS_WATCHDOG;
 	
+	(*ISEG HV Crate Safety Loop*)
+	{attribute 'TcLinkTo' := 	TIIB[LAMP_PLC_E10_EL2794]^Channel 1^Output;			 
+	'}
+	xHighVoltageSafteyLoopEnable AT %Q* : BOOL := FALSE; (*When Enables the High voltage Saftey loop is closed and HV can start.*)
+	
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>
