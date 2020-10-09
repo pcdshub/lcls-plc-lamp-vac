@@ -137,6 +137,45 @@ fbSerialLineControl_KTOF_PTM_01(
 	Error=> ,
 	ErrorID=> );
 	
+fbSerialLineControl_LAMP_GJ2_PTM_01(
+	Mode:= SERIALLINEMODE_EL6_22B, 
+	pComIn:= ADR(stComIn_LAMP_GJ2_PTM_01), 
+	pComOut:= ADR(stComOut_LAMP_GJ2_PTM_01),
+	SizeComIn:= SIZEOF(stComIn_LAMP_GJ2_PTM_01),
+	Error=> , 
+	ErrorID=> , 
+	TxBuffer:= SerialTXBuffer_LAMP_GJ2_PTM_01, 
+	RxBuffer:= SerialRXBuffer_LAMP_GJ2_PTM_01);
+	
+fbSerialLineControl_LAMP_GJ2_PTM_02(
+	Mode:= SERIALLINEMODE_EL6_22B, 
+	pComIn:= ADR(stComIn_LAMP_GJ2_PTM_02), 
+	pComOut:= ADR(stComOut_LAMP_GJ2_PTM_02),
+	SizeComIn:= SIZEOF(stComIn_LAMP_GJ2_PTM_02),
+	Error=> , 
+	ErrorID=> , 
+	TxBuffer:= SerialTXBuffer_LAMP_GJ2_PTM_02, 
+	RxBuffer:= SerialRXBuffer_LAMP_GJ2_PTM_02);
+
+fbSerialLineControl_LAMP_GJ2_PTM_03(
+	Mode:= SERIALLINEMODE_EL6_22B, 
+	pComIn:= ADR(stComIn_LAMP_GJ2_PTM_03), 
+	pComOut:= ADR(stComOut_LAMP_GJ2_PTM_03),
+	SizeComIn:= SIZEOF(stComIn_LAMP_GJ2_PTM_03),
+	Error=> , 
+	ErrorID=> , 
+	TxBuffer:= SerialTXBuffer_LAMP_GJ2_PTM_03, 
+	RxBuffer:= SerialRXBuffer_LAMP_GJ2_PTM_03);
+	
+fbSerialLineControl_LAMP_GJ2_PTM_04(
+	Mode:= SERIALLINEMODE_EL6_22B, 
+	pComIn:= ADR(stComIn_LAMP_GJ2_PTM_04), 
+	pComOut:= ADR(stComOut_LAMP_GJ2_PTM_04),
+	SizeComIn:= SIZEOF(stComIn_LAMP_GJ2_PTM_04),
+	Error=> , 
+	ErrorID=> , 
+	TxBuffer:= SerialTXBuffer_LAMP_GJ2_PTM_04, 
+	RxBuffer:= SerialRXBuffer_LAMP_GJ2_PTM_04);
 	
 ]]></ST>
     </Implementation>
