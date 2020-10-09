@@ -9,18 +9,12 @@ VAR
 //TMO Interface
 ITF_TMO_ROUGH1_VRC_01: FB_TVGC_2S_ADS; //FB for accessing "TMO_ROUGH1_VRC_01" VGC_2S data from PLC-TMO-VAC
 ITF_TMO_ROUGH2_VRC_01: FB_TVGC_2S_ADS; //FB for accessing "TMO_ROUGH2_VRC_01" VGC_2S data from PLC-TMO-VAC
-i_iWatchdog	:	UDINT; // Watchdog variable that PLC-TMO-VAC will write to
+i_iWatchdog	:	UDINT; // PLC-TMO-VAC will write to this Watchdog variable
 
 b_TurboPumpRunningFlag : BOOL;
 TurboPumpTOF : TOF;
 TurboPumpDelayTime : TIME := T#30s;
-{attribute 'TcLinkTo' :=	'TIIB[LAMP_PLC_E9_EL2794]^Channel 1^Output			 
-'}
-{attribute 'pytmc' := '
-	pv: LAMP:OVERALL:CLOSE_VGC:STATUS
-	io: i
-'}
-b_CloseVGCs : BOOL;
+b_PumpRunning : BOOL;
 	
 END_VAR
 ]]></Declaration>
@@ -30,13 +24,13 @@ fbLogHandler();
 (*PLC-TMO-VAC ADS interface*)
 //Writes watchdog bit to remote vac_TMO reading the vacuum components
 fb_ADS_WATCHDOG_VAC_LAMP_TMO(
-	sNetId:= '172.21.88.32.1.1', 
+	sNetId:= '172.21.132.22.1.1', 
 	nPort:= 851, 
-	sVarName:= 'MAIN.iWatchdog', 
+	sVarName:= 'PRG_ADS_Interfaces.i_iWatchdog', 
 	bError=> );
 	
 ITF_TMO_ROUGH1_VRC_01(
-	sNetId:= '172.21.88.32.1.1', 
+	sNetId:= '172.21.132.22.1.1', 
 	nPort:= 851, 
 	sVarName:= 'GVL_Hutch_Valves.TMO_ROUGH1_VRC_01', 
 	iWatchdog:= i_iWatchdog, 
@@ -44,7 +38,7 @@ ITF_TMO_ROUGH1_VRC_01(
 	bError=> );
 	
 ITF_TMO_ROUGH2_VRC_01(
-	sNetId:= '172.21.88.32.1.1', 
+	sNetId:= '172.21.132.22.1.1', 
 	nPort:= 851, 
 	sVarName:= 'GVL_Hutch_Valves.TMO_ROUGH2_VRC_01', 
 	iWatchdog:= i_iWatchdog, 
@@ -80,7 +74,7 @@ END_IF
 // Run the Diagnostics PRG
 DIAGNOSTICS();
 
-//TurboPump Flag to close all gate valves on beamline vacuum.
+//TurboPump running Flag with 30 second Turn Off delay.
 b_TurboPumpRunningFlag := (LAMP_GJ2_PTM_01.iq_stPtm.eState = E_PumpState.pumpRUNNING)  AND 
 	(LAMP_GJ2_PTM_02.iq_stPtm.eState = E_PumpState.pumpRUNNING) AND
 	(LAMP_GJ2_PTM_03.iq_stPtm.eState = E_PumpState.pumpRUNNING) AND
@@ -99,7 +93,7 @@ b_TurboPumpRunningFlag := (LAMP_GJ2_PTM_01.iq_stPtm.eState = E_PumpState.pumpRUN
 	(LAMP_ROUGH_PTM_01.iq_stPtm.eState = E_PumpState.pumpRUNNING) AND
 	(KTOF_PTM_01.iq_stPtm.eState = E_PumpState.pumpRUNNING);	
 TurboPumpTOF(IN:= b_TurboPumpRunningFlag, PT := TurboPumpDelayTime);
-b_CloseVGCs:= NOT(TurboPumpTOF.Q);
+b_PumpRunning:= TurboPumpTOF.Q;
 
 
 (*PIRANI Gauges*)
@@ -109,10 +103,14 @@ b_CloseVGCs:= NOT(TurboPumpTOF.Q);
 	LAMP_GJ1_GPI_01(PG=>);
 
 (*uPIRANI Gauges*)
-(*	LAMP_ROUGH_GPI_01(PG=>);
+	LAMP_ROUGH_GPI_01(PG=>);
+	LAMP_ROUGH_GPI_01.M_SetBits(32767);
 	LAMP_ROUGH_GPI_02(PG=>);
+	LAMP_ROUGH_GPI_02.M_SetBits(32767);
 	LAMP_ROUGH_GPI_03(PG=>);
-	LAMP_ROUGH_GPI_04(PG=>);	*)
+	LAMP_ROUGH_GPI_03.M_SetBits(32767);
+	LAMP_ROUGH_GPI_04(PG=>);
+	LAMP_ROUGH_GPI_04.M_SetBits(32767);	
 
 (*Cold Cathode Gauges*)
 	LAMP_C2_GCC_01(PG:=LAMP_C2_GPI_01.PG,IG=>,bEP:=TRUE);
@@ -127,103 +125,137 @@ b_CloseVGCs:= NOT(TurboPumpTOF.Q);
 (*TURBO Pumps*)
 	LAMP_GJ2_PTM_01(
 	i_xExtILKOk:= (LAMP_ROUGH_GPI_04.PG.rPRESS < 0.1) 
+	AND LAMP_ROUGH_GPI_04.PG.xPRESS_OK
 	AND (LAMP_GJ2_GPI_01.PG.rPRESS < 0.1)
+	AND LAMP_GJ2_GPI_01.PG.xPRESS_OK
 	AND (LAMP_ROUGH_VRC_03.iq_stValve.i_xOpnLS = TRUE), 
 	iq_stPtm=> );
 	
 	LAMP_GJ2_PTM_02(
 	i_xExtILKOk:= (LAMP_ROUGH_GPI_04.PG.rPRESS < 0.1) 
+	AND LAMP_ROUGH_GPI_04.PG.xPRESS_OK
 	AND (LAMP_GJ2_GPI_01.PG.rPRESS < 0.1)
+	AND LAMP_ROUGH_GPI_04.PG.xPRESS_OK
 	AND (LAMP_ROUGH_VRC_03.iq_stValve.i_xOpnLS = TRUE), 
 	iq_stPtm=> );
 	
 	LAMP_GJ2_PTM_03(
 	i_xExtILKOk:= (LAMP_ROUGH_GPI_04.PG.rPRESS < 0.1) 
+	AND LAMP_ROUGH_GPI_04.PG.xPRESS_OK
 	AND (LAMP_GJ2_GPI_01.PG.rPRESS < 0.1)
+	AND LAMP_GJ2_GPI_01.PG.xPRESS_OK
 	AND (LAMP_ROUGH_VRC_03.iq_stValve.i_xOpnLS = TRUE), 
 	iq_stPtm=> );
 	
 	LAMP_GJ2_PTM_04(
 	i_xExtILKOk:= (LAMP_ROUGH_GPI_04.PG.rPRESS < 0.1) 
+	AND LAMP_ROUGH_GPI_04.PG.xPRESS_OK
 	AND (LAMP_GJ2_GPI_01.PG.rPRESS < 0.1)
+	AND LAMP_GJ2_GPI_01.PG.xPRESS_OK
 	AND (LAMP_ROUGH_VRC_03.iq_stValve.i_xOpnLS = TRUE), 
 	iq_stPtm=> );
 	
 	LAMP_C1_PTM_01(
 	i_xExtIlkOK:= (LAMP_ROUGH_GPI_02.PG.rPRESS < 0.1) 
+	AND LAMP_ROUGH_GPI_02.PG.xPRESS_OK
 	AND (LAMP_C2_GPI_01.PG.rPRESS < 0.1)
+	AND LAMP_C2_GPI_01.PG.xPRESS_OK
 	AND (LAMP_ROUGH_VRC_01.iq_stValve.i_xOpnLS = TRUE), 
 	iq_stPTM=> );
 	
 	LAMP_C2_PTM_01(
 	i_xExtIlkOK:= (LAMP_ROUGH_GPI_02.PG.rPRESS < 0.1)
+	AND LAMP_ROUGH_GPI_02.PG.xPRESS_OK
 	AND (LAMP_C2_GPI_01.PG.rPRESS < 0.1)
+	AND LAMP_C2_GPI_01.PG.xPRESS_OK
 	AND (LAMP_ROUGH_VRC_01.iq_stValve.i_xOpnLS = TRUE), 
 	iq_stPTM=> );
 	
 	LAMP_C2_PTM_02(
 	i_xExtIlkOK:= (LAMP_ROUGH_GPI_02.PG.rPRESS < 0.1) 
+	AND LAMP_ROUGH_GPI_02.PG.xPRESS_OK
 	AND (LAMP_C2_GPI_01.PG.rPRESS < 0.1)
+	AND LAMP_C2_GPI_01.PG.xPRESS_OK
 	AND (LAMP_ROUGH_VRC_01.iq_stValve.i_xOpnLS = TRUE), 
 	iq_stPTM=> );
 	
 	LAMP_C2_PTM_03(
 	i_xExtIlkOK:= (LAMP_ROUGH_GPI_02.PG.rPRESS < 0.1) 
+	AND LAMP_ROUGH_GPI_02.PG.xPRESS_OK
 	AND (LAMP_C2_GPI_01.PG.rPRESS < 0.1)
+	AND LAMP_C2_GPI_01.PG.xPRESS_OK
 	AND (LAMP_ROUGH_VRC_01.iq_stValve.i_xOpnLS = TRUE), 
 	iq_stPTM=> );
 	
 	LAMP_C2_PTM_04(
 	i_xExtIlkOK:= (LAMP_ROUGH_GPI_02.PG.rPRESS < 0.1) 
+	AND LAMP_ROUGH_GPI_02.PG.xPRESS_OK
 	AND (LAMP_C2_GPI_01.PG.rPRESS < 0.1)
+	AND LAMP_C2_GPI_01.PG.xPRESS_OK
 	AND (LAMP_ROUGH_VRC_01.iq_stValve.i_xOpnLS = TRUE), 
 	iq_stPTM=> );
 	
 	LAMP_CATCH_PTM_01(
 	i_xExtIlkOK:= (LAMP_ROUGH_GPI_02.PG.rPRESS < 0.1) 
+	AND LAMP_ROUGH_GPI_02.PG.xPRESS_OK
 	AND (LAMP_C2_GPI_01.PG.rPRESS < 0.1)
+	AND LAMP_C2_GPI_01.PG.xPRESS_OK
 	AND (LAMP_ROUGH_VRC_01.iq_stValve.i_xOpnLS = TRUE), 
 	iq_stPTM=> );
 	
 	LAMP_CATCH_PTM_02(
 	i_xExtIlkOK:= (LAMP_ROUGH_GPI_02.PG.rPRESS < 0.1) 
+	AND LAMP_ROUGH_GPI_02.PG.xPRESS_OK
 	AND (LAMP_C2_GPI_01.PG.rPRESS < 0.1)
+	AND LAMP_C2_GPI_01.PG.xPRESS_OK
 	AND (LAMP_ROUGH_VRC_01.iq_stValve.i_xOpnLS = TRUE), 
 	iq_stPTM=> );
 	
 	LAMP_GJ1_PTM_01(
 	i_xExtIlkOK:= (LAMP_ROUGH_GPI_04.PG.rPRESS < 0.1) 
+	AND LAMP_ROUGH_GPI_04.PG.xPRESS_OK
 	AND (LAMP_GJ1_GPI_01.PG.rPRESS < 0.1)
+	AND LAMP_GJ1_GPI_01.PG.xPRESS_OK
 	AND (LAMP_ROUGH_VRC_03.iq_stValve.i_xOpnLS = TRUE), 
 	iq_stPTM=> );
 	
 	LAMP_GJ1_PTM_02(
 	i_xExtIlkOK:= (LAMP_ROUGH_GPI_04.PG.rPRESS < 0.1) 
+	AND LAMP_ROUGH_GPI_04.PG.xPRESS_OK
 	AND (LAMP_GJ1_GPI_01.PG.rPRESS < 0.1)
+	AND LAMP_GJ1_GPI_01.PG.xPRESS_OK
 	AND (LAMP_ROUGH_VRC_03.iq_stValve.i_xOpnLS = TRUE), 
 	iq_stPTM=> );
 	
 	LAMP_GJ1_PTM_03(
 	i_xExtIlkOK:= (LAMP_ROUGH_GPI_04.PG.rPRESS < 0.1) 
+	AND LAMP_ROUGH_GPI_04.PG.xPRESS_OK
 	AND (LAMP_GJ1_GPI_01.PG.rPRESS < 0.1)
+	AND LAMP_GJ1_GPI_01.PG.xPRESS_OK
 	AND (LAMP_ROUGH_VRC_03.iq_stValve.i_xOpnLS = TRUE), 
 	iq_stPTM=> );
 	
 	LAMP_GJ1_PTM_04(
 	i_xExtIlkOK:= (LAMP_ROUGH_GPI_04.PG.rPRESS < 0.1) 
+	AND LAMP_ROUGH_GPI_04.PG.xPRESS_OK
 	AND (LAMP_GJ1_GPI_01.PG.rPRESS < 0.1)
+	AND LAMP_GJ1_GPI_01.PG.xPRESS_OK
 	AND (LAMP_ROUGH_VRC_03.iq_stValve.i_xOpnLS = TRUE), 
 	iq_stPTM=> );
 	
 	LAMP_ROUGH_PTM_01(
 	i_xExtIlkOK:= (LAMP_ROUGH_GPI_02.PG.rPRESS < 0.1) 
+	AND LAMP_ROUGH_GPI_02.PG.xPRESS_OK
 	AND (LAMP_C2_GPI_01.PG.rPRESS < 0.1)
+	AND LAMP_C2_GPI_01.PG.xPRESS_OK
 	AND (LAMP_ROUGH_VRC_01.iq_stValve.i_xOpnLS = TRUE), 
 	iq_stPTM=> );
 	
 	KTOF_PTM_01(
 	i_xExtIlkOK:= (LAMP_ROUGH_GPI_02.PG.rPRESS < 0.1) 
+	AND LAMP_ROUGH_GPI_02.PG.xPRESS_OK
 	AND (LAMP_C2_GPI_01.PG.rPRESS < 0.1)
+	AND LAMP_C2_GPI_01.PG.xPRESS_OK
 	AND (LAMP_ROUGH_VRC_01.iq_stValve.i_xOpnLS = TRUE), 
 	iq_stPTM=> );
 	
