@@ -1,4 +1,3 @@
-
 ﻿<?xml version="1.0" encoding="utf-8"?><TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass" Hash="{8FEB9A42-396A-E159-91E2-4933672F29A0}" GeneratedBy="TwinCAT XAE Plc"><DataTypes><DataType><Name Namespace="Tc2_SerialCom">ComBuffer</Name><Comment><![CDATA[ This data type will be used as a software character buffer
 
    between serial line I/O and user functions as ReceiveByte
@@ -2133,4 +2132,3 @@ Outputs]]></Comment><BitSize>5632</BitSize><BaseType Namespace="LCLS_Vacuum">FB_
         io: i
 
     </Value></Property><Property><Name>TcVarGlobal</Name></Property></Properties><BitOffs>3072032</BitOffs></Symbol></DataArea></DataAreas><Deployment /><EventClasses><EventClass><Type GUID="{11F7FC20-DBF4-4DAF-96C7-1FD6B6156B31}">TcSystemEventClass</Type></EventClass><EventClass><Type GUID="{98BCB284-F932-4EA4-B58B-68A1F1C34192}">TcGeneralAdsEventClass</Type></EventClass><EventClass><Type GUID="{E3D84344-4CB3-44DB-8D94-12F9CE0E2F90}">TcRouterEventClass</Type></EventClass><EventClass><Type GUID="{B63588AE-B30A-4DCE-A44F-F929FB114944}">TcRTimeEventClass</Type></EventClass><EventClass><Type GUID="{1D0C4BAC-ECF3-4F33-8F20-A12E77AB6387}">Win32EventClass</Type></EventClass><EventClass><Type GUID="{97CF8247-B59C-4E2C-B4B0-7350D0471457}">LCLSGeneralEventClass</Type></EventClass></EventClasses><Properties><Property><Name>ApplicationName</Name><Value>Port_851</Value></Property><Property><Name>ChangeDate</Name><Value>2020-10-08T17:37:03</Value></Property><Property><Name>GeneratedCodeSize</Name><Value>622592</Value></Property><Property><Name>GlobalDataSize</Name><Value>3268608</Value></Property></Properties></Module></Modules></TcModuleClass>
-
