@@ -1,0 +1,2063 @@
+
+
+DUTs
+----
+
+
+GVLs
+----
+
+
+GVL_COM
+^^^^^^^
+
+::
+
+    //{attribute 'qualified_only'}
+    VAR_GLOBAL
+    // Define COM Ports/Buffers incl. library Tc2_SerialCom
+    	SerialRXBuffer_LAMP_C2_PTM_01 : ComBuffer;
+    	SerialTXBuffer_LAMP_C2_PTM_01 : ComBuffer;	
+    	SerialRXBuffer_LAMP_C2_PTM_02 : ComBuffer;
+    	SerialTXBuffer_LAMP_C2_PTM_02 : ComBuffer;	
+    	SerialRXBuffer_LAMP_C2_PTM_03 : ComBuffer;
+    	SerialTXBuffer_LAMP_C2_PTM_03 : ComBuffer;	
+    	SerialRXBuffer_LAMP_C2_PTM_04 : ComBuffer;
+    	SerialTXBuffer_LAMP_C2_PTM_04 : ComBuffer;	
+    	SerialRXBuffer_LAMP_GJ1_PTM_01 : ComBuffer;
+    	SerialTXBuffer_LAMP_GJ1_PTM_01 : ComBuffer;	
+    	SerialRXBuffer_LAMP_GJ1_PTM_02 : ComBuffer;
+    	SerialTXBuffer_LAMP_GJ1_PTM_02 : ComBuffer;	
+    	SerialRXBuffer_LAMP_GJ1_PTM_03 : ComBuffer;
+    	SerialTXBuffer_LAMP_GJ1_PTM_03 : ComBuffer;	
+    	SerialRXBuffer_LAMP_GJ1_PTM_04 : ComBuffer;
+    	SerialTXBuffer_LAMP_GJ1_PTM_04 : ComBuffer;	
+    	SerialRXBuffer_LAMP_ROUGH_PTM_01 : ComBuffer;
+    	SerialTXBuffer_LAMP_ROUGH_PTM_01 : ComBuffer;	
+    	SerialRXBuffer_LAMP_C1_PTM_01 : ComBuffer;
+    	SerialTXBuffer_LAMP_C1_PTM_01 : ComBuffer;	
+    	SerialRXBuffer_LAMP_CATCH_PTM_01 : ComBuffer;
+    	SerialTXBuffer_LAMP_CATCH_PTM_01 : ComBuffer;	
+    	SerialRXBuffer_LAMP_CATCH_PTM_02 : ComBuffer;
+    	SerialTXBuffer_LAMP_CATCH_PTM_02 : ComBuffer;	
+    	SerialRXBuffer_KTOF_PTM_01 : ComBuffer;
+    	SerialTXBuffer_KTOF_PTM_01 : ComBuffer;
+    	SerialRXBuffer_LAMP_GJ2_PTM_01 : ComBuffer;
+    	SerialTXBuffer_LAMP_GJ2_PTM_01 : ComBuffer;	
+    	SerialRXBuffer_LAMP_GJ2_PTM_02 : ComBuffer;
+    	SerialTXBuffer_LAMP_GJ2_PTM_02 : ComBuffer;	
+    	SerialRXBuffer_LAMP_GJ2_PTM_03 : ComBuffer;
+    	SerialTXBuffer_LAMP_GJ2_PTM_03 : ComBuffer;	
+    	SerialRXBuffer_LAMP_GJ2_PTM_04 : ComBuffer;
+    	SerialTXBuffer_LAMP_GJ2_PTM_04 : ComBuffer;	
+
+    	
+    	
+    	
+    	// Serial Terminal
+    	fbSerialLineControl_LAMP_C2_PTM_01: SerialLineControl;
+    	fbSerialLineControl_LAMP_C2_PTM_02: SerialLineControl;
+    	fbSerialLineControl_LAMP_C2_PTM_03: SerialLineControl;
+    	fbSerialLineControl_LAMP_C2_PTM_04: SerialLineControl;
+    	fbSerialLineControl_LAMP_GJ1_PTM_01: SerialLineControl;
+    	fbSerialLineControl_LAMP_GJ1_PTM_02: SerialLineControl;
+    	fbSerialLineControl_LAMP_GJ1_PTM_03: SerialLineControl;
+    	fbSerialLineControl_LAMP_GJ1_PTM_04: SerialLineControl;
+    	fbSerialLineControl_LAMP_ROUGH_PTM_01: SerialLineControl;
+    	fbSerialLineControl_LAMP_C1_PTM_01: SerialLineControl;
+    	fbSerialLineControl_LAMP_CATCH_PTM_01: SerialLineControl;
+    	fbSerialLineControl_LAMP_CATCH_PTM_02: SerialLineControl;
+    	fbSerialLineControl_KTOF_PTM_01: SerialLineControl;
+    	fbSerialLineControl_LAMP_GJ2_PTM_01: SerialLineControl;
+    	fbSerialLineControl_LAMP_GJ2_PTM_02: SerialLineControl;
+    	fbSerialLineControl_LAMP_GJ2_PTM_03: SerialLineControl;
+    	fbSerialLineControl_LAMP_GJ2_PTM_04: SerialLineControl;
+
+
+    	
+    	//SERIAL IO
+    	{attribute	'TcLinkTo'	:=	'.Status:=TIIB[LAMP_PNL1_EP03_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Status;
+    								 .D[0]:=TIIB[LAMP_PNL1_EP03_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 0;
+    								 .D[1]:=TIIB[LAMP_PNL1_EP03_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 1;
+    								 .D[2]:=TIIB[LAMP_PNL1_EP03_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 2;
+    								 .D[3]:=TIIB[LAMP_PNL1_EP03_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 3;
+    								 .D[4]:=TIIB[LAMP_PNL1_EP03_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 4;
+    								 .D[5]:=TIIB[LAMP_PNL1_EP03_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 5;
+    								 .D[6]:=TIIB[LAMP_PNL1_EP03_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 6;
+    								 .D[7]:=TIIB[LAMP_PNL1_EP03_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 7;
+    								 .D[8]:=TIIB[LAMP_PNL1_EP03_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 8;
+    								 .D[9]:=TIIB[LAMP_PNL1_EP03_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 9;
+    								 .D[10]:=TIIB[LAMP_PNL1_EP03_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 10;
+    								 .D[11]:=TIIB[LAMP_PNL1_EP03_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 11;
+    								 .D[12]:=TIIB[LAMP_PNL1_EP03_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 12;
+    								 .D[13]:=TIIB[LAMP_PNL1_EP03_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 13;
+    								 .D[14]:=TIIB[LAMP_PNL1_EP03_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 14;
+    								 .D[15]:=TIIB[LAMP_PNL1_EP03_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 15;
+    								 .D[16]:=TIIB[LAMP_PNL1_EP03_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 16;
+    								 .D[17]:=TIIB[LAMP_PNL1_EP03_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 17;
+    								 .D[18]:=TIIB[LAMP_PNL1_EP03_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 18;
+    								 .D[19]:=TIIB[LAMP_PNL1_EP03_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 19;
+    								 .D[20]:=TIIB[LAMP_PNL1_EP03_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 20;
+    								 .D[21]:=TIIB[LAMP_PNL1_EP03_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 21;
+    	'}
+    	stComIn_LAMP_C2_PTM_01		AT %I*	:	EL6inData22B;
+    	
+    	{attribute	'TcLinkTo'	:=	'.Ctrl:=TIIB[LAMP_PNL1_EP03_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Ctrl;
+    								 .D[0]:=TIIB[LAMP_PNL1_EP03_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 0;
+    								 .D[1]:=TIIB[LAMP_PNL1_EP03_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 1;
+    								 .D[2]:=TIIB[LAMP_PNL1_EP03_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 2;
+    								 .D[3]:=TIIB[LAMP_PNL1_EP03_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 3;
+    								 .D[4]:=TIIB[LAMP_PNL1_EP03_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 4;
+    								 .D[5]:=TIIB[LAMP_PNL1_EP03_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 5;
+    								 .D[6]:=TIIB[LAMP_PNL1_EP03_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 6;
+    								 .D[7]:=TIIB[LAMP_PNL1_EP03_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 7;
+    								 .D[8]:=TIIB[LAMP_PNL1_EP03_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 8;
+    								 .D[9]:=TIIB[LAMP_PNL1_EP03_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 9;
+    								 .D[10]:=TIIB[LAMP_PNL1_EP03_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 10;
+    								 .D[11]:=TIIB[LAMP_PNL1_EP03_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 11;
+    								 .D[12]:=TIIB[LAMP_PNL1_EP03_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 12;
+    								 .D[13]:=TIIB[LAMP_PNL1_EP03_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 13;
+    								 .D[14]:=TIIB[LAMP_PNL1_EP03_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 14;
+    								 .D[15]:=TIIB[LAMP_PNL1_EP03_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 15;
+    								 .D[16]:=TIIB[LAMP_PNL1_EP03_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 16;
+    								 .D[17]:=TIIB[LAMP_PNL1_EP03_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 17;
+    								 .D[18]:=TIIB[LAMP_PNL1_EP03_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 18;
+    								 .D[19]:=TIIB[LAMP_PNL1_EP03_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 19;
+    								 .D[20]:=TIIB[LAMP_PNL1_EP03_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 20;
+    								 .D[21]:=TIIB[LAMP_PNL1_EP03_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 21;
+    	'}
+    	stComOut_LAMP_C2_PTM_01		AT %Q*	:	EL6outData22B;
+    	
+    	{attribute	'TcLinkTo'	:=	'.Status:=TIIB[LAMP_PNL1_EP03_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Status;
+    								 .D[0]:=TIIB[LAMP_PNL1_EP03_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 0;
+    								 .D[1]:=TIIB[LAMP_PNL1_EP03_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 1;
+    								 .D[2]:=TIIB[LAMP_PNL1_EP03_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 2;
+    								 .D[3]:=TIIB[LAMP_PNL1_EP03_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 3;
+    								 .D[4]:=TIIB[LAMP_PNL1_EP03_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 4;
+    								 .D[5]:=TIIB[LAMP_PNL1_EP03_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 5;
+    								 .D[6]:=TIIB[LAMP_PNL1_EP03_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 6;
+    								 .D[7]:=TIIB[LAMP_PNL1_EP03_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 7;
+    								 .D[8]:=TIIB[LAMP_PNL1_EP03_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 8;
+    								 .D[9]:=TIIB[LAMP_PNL1_EP03_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 9;
+    								 .D[10]:=TIIB[LAMP_PNL1_EP03_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 10;
+    								 .D[11]:=TIIB[LAMP_PNL1_EP03_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 11;
+    								 .D[12]:=TIIB[LAMP_PNL1_EP03_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 12;
+    								 .D[13]:=TIIB[LAMP_PNL1_EP03_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 13;
+    								 .D[14]:=TIIB[LAMP_PNL1_EP03_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 14;
+    								 .D[15]:=TIIB[LAMP_PNL1_EP03_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 15;
+    								 .D[16]:=TIIB[LAMP_PNL1_EP03_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 16;
+    								 .D[17]:=TIIB[LAMP_PNL1_EP03_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 17;
+    								 .D[18]:=TIIB[LAMP_PNL1_EP03_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 18;
+    								 .D[19]:=TIIB[LAMP_PNL1_EP03_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 19;
+    								 .D[20]:=TIIB[LAMP_PNL1_EP03_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 20;
+    								 .D[21]:=TIIB[LAMP_PNL1_EP03_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 21;
+    	'}
+    	stComIn_LAMP_C2_PTM_02		AT %I*	:	EL6inData22B;
+    	
+    	{attribute	'TcLinkTo'	:=	'.Ctrl:=TIIB[LAMP_PNL1_EP03_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Ctrl;
+    								 .D[0]:=TIIB[LAMP_PNL1_EP03_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 0;
+    								 .D[1]:=TIIB[LAMP_PNL1_EP03_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 1;
+    								 .D[2]:=TIIB[LAMP_PNL1_EP03_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 2;
+    								 .D[3]:=TIIB[LAMP_PNL1_EP03_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 3;
+    								 .D[4]:=TIIB[LAMP_PNL1_EP03_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 4;
+    								 .D[5]:=TIIB[LAMP_PNL1_EP03_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 5;
+    								 .D[6]:=TIIB[LAMP_PNL1_EP03_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 6;
+    								 .D[7]:=TIIB[LAMP_PNL1_EP03_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 7;
+    								 .D[8]:=TIIB[LAMP_PNL1_EP03_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 8;
+    								 .D[9]:=TIIB[LAMP_PNL1_EP03_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 9;
+    								 .D[10]:=TIIB[LAMP_PNL1_EP03_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 10;
+    								 .D[11]:=TIIB[LAMP_PNL1_EP03_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 11;
+    								 .D[12]:=TIIB[LAMP_PNL1_EP03_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 12;
+    								 .D[13]:=TIIB[LAMP_PNL1_EP03_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 13;
+    								 .D[14]:=TIIB[LAMP_PNL1_EP03_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 14;
+    								 .D[15]:=TIIB[LAMP_PNL1_EP03_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 15;
+    								 .D[16]:=TIIB[LAMP_PNL1_EP03_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 16;
+    								 .D[17]:=TIIB[LAMP_PNL1_EP03_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 17;
+    								 .D[18]:=TIIB[LAMP_PNL1_EP03_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 18;
+    								 .D[19]:=TIIB[LAMP_PNL1_EP03_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 19;
+    								 .D[20]:=TIIB[LAMP_PNL1_EP03_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 20;
+    								 .D[21]:=TIIB[LAMP_PNL1_EP03_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 21;
+    	'}
+    	stComOut_LAMP_C2_PTM_02		AT %Q*	:	EL6outData22B;
+    	
+    	{attribute	'TcLinkTo'	:=	'.Status:=TIIB[LAMP_PNL1_EP06_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Status;
+    								 .D[0]:=TIIB[LAMP_PNL1_EP06_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 0;
+    								 .D[1]:=TIIB[LAMP_PNL1_EP06_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 1;
+    								 .D[2]:=TIIB[LAMP_PNL1_EP06_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 2;
+    								 .D[3]:=TIIB[LAMP_PNL1_EP06_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 3;
+    								 .D[4]:=TIIB[LAMP_PNL1_EP06_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 4;
+    								 .D[5]:=TIIB[LAMP_PNL1_EP06_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 5;
+    								 .D[6]:=TIIB[LAMP_PNL1_EP06_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 6;
+    								 .D[7]:=TIIB[LAMP_PNL1_EP06_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 7;
+    								 .D[8]:=TIIB[LAMP_PNL1_EP06_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 8;
+    								 .D[9]:=TIIB[LAMP_PNL1_EP06_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 9;
+    								 .D[10]:=TIIB[LAMP_PNL1_EP06_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 10;
+    								 .D[11]:=TIIB[LAMP_PNL1_EP06_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 11;
+    								 .D[12]:=TIIB[LAMP_PNL1_EP06_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 12;
+    								 .D[13]:=TIIB[LAMP_PNL1_EP06_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 13;
+    								 .D[14]:=TIIB[LAMP_PNL1_EP06_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 14;
+    								 .D[15]:=TIIB[LAMP_PNL1_EP06_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 15;
+    								 .D[16]:=TIIB[LAMP_PNL1_EP06_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 16;
+    								 .D[17]:=TIIB[LAMP_PNL1_EP06_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 17;
+    								 .D[18]:=TIIB[LAMP_PNL1_EP06_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 18;
+    								 .D[19]:=TIIB[LAMP_PNL1_EP06_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 19;
+    								 .D[20]:=TIIB[LAMP_PNL1_EP06_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 20;
+    								 .D[21]:=TIIB[LAMP_PNL1_EP06_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 21;
+    	'}
+    	stComIn_LAMP_C2_PTM_03		AT %I*	:	EL6inData22B;
+    	
+    	{attribute	'TcLinkTo'	:=	'.Ctrl:=TIIB[LAMP_PNL1_EP06_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Ctrl;
+    								 .D[0]:=TIIB[LAMP_PNL1_EP06_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 0;
+    								 .D[1]:=TIIB[LAMP_PNL1_EP06_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 1;
+    								 .D[2]:=TIIB[LAMP_PNL1_EP06_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 2;
+    								 .D[3]:=TIIB[LAMP_PNL1_EP06_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 3;
+    								 .D[4]:=TIIB[LAMP_PNL1_EP06_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 4;
+    								 .D[5]:=TIIB[LAMP_PNL1_EP06_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 5;
+    								 .D[6]:=TIIB[LAMP_PNL1_EP06_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 6;
+    								 .D[7]:=TIIB[LAMP_PNL1_EP06_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 7;
+    								 .D[8]:=TIIB[LAMP_PNL1_EP06_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 8;
+    								 .D[9]:=TIIB[LAMP_PNL1_EP06_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 9;
+    								 .D[10]:=TIIB[LAMP_PNL1_EP06_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 10;
+    								 .D[11]:=TIIB[LAMP_PNL1_EP06_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 11;
+    								 .D[12]:=TIIB[LAMP_PNL1_EP06_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 12;
+    								 .D[13]:=TIIB[LAMP_PNL1_EP06_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 13;
+    								 .D[14]:=TIIB[LAMP_PNL1_EP06_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 14;
+    								 .D[15]:=TIIB[LAMP_PNL1_EP06_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 15;
+    								 .D[16]:=TIIB[LAMP_PNL1_EP06_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 16;
+    								 .D[17]:=TIIB[LAMP_PNL1_EP06_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 17;
+    								 .D[18]:=TIIB[LAMP_PNL1_EP06_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 18;
+    								 .D[19]:=TIIB[LAMP_PNL1_EP06_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 19;
+    								 .D[20]:=TIIB[LAMP_PNL1_EP06_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 20;
+    								 .D[21]:=TIIB[LAMP_PNL1_EP06_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 21;
+    	'}
+    	stComOut_LAMP_C2_PTM_03		AT %Q*	:	EL6outData22B;
+    	
+    	{attribute	'TcLinkTo'	:=	'.Status:=TIIB[LAMP_PNL1_EP06_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Status;
+    								 .D[0]:=TIIB[LAMP_PNL1_EP06_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 0;
+    								 .D[1]:=TIIB[LAMP_PNL1_EP06_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 1;
+    								 .D[2]:=TIIB[LAMP_PNL1_EP06_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 2;
+    								 .D[3]:=TIIB[LAMP_PNL1_EP06_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 3;
+    								 .D[4]:=TIIB[LAMP_PNL1_EP06_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 4;
+    								 .D[5]:=TIIB[LAMP_PNL1_EP06_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 5;
+    								 .D[6]:=TIIB[LAMP_PNL1_EP06_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 6;
+    								 .D[7]:=TIIB[LAMP_PNL1_EP06_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 7;
+    								 .D[8]:=TIIB[LAMP_PNL1_EP06_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 8;
+    								 .D[9]:=TIIB[LAMP_PNL1_EP06_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 9;
+    								 .D[10]:=TIIB[LAMP_PNL1_EP06_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 10;
+    								 .D[11]:=TIIB[LAMP_PNL1_EP06_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 11;
+    								 .D[12]:=TIIB[LAMP_PNL1_EP06_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 12;
+    								 .D[13]:=TIIB[LAMP_PNL1_EP06_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 13;
+    								 .D[14]:=TIIB[LAMP_PNL1_EP06_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 14;
+    								 .D[15]:=TIIB[LAMP_PNL1_EP06_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 15;
+    								 .D[16]:=TIIB[LAMP_PNL1_EP06_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 16;
+    								 .D[17]:=TIIB[LAMP_PNL1_EP06_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 17;
+    								 .D[18]:=TIIB[LAMP_PNL1_EP06_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 18;
+    								 .D[19]:=TIIB[LAMP_PNL1_EP06_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 19;
+    								 .D[20]:=TIIB[LAMP_PNL1_EP06_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 20;
+    								 .D[21]:=TIIB[LAMP_PNL1_EP06_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 21;
+    	'}
+    	stComIn_LAMP_C2_PTM_04		AT %I*	:	EL6inData22B;
+    	
+    	{attribute	'TcLinkTo'	:=	'.Ctrl:=TIIB[LAMP_PNL1_EP06_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Ctrl;
+    								 .D[0]:=TIIB[LAMP_PNL1_EP06_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 0;
+    								 .D[1]:=TIIB[LAMP_PNL1_EP06_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 1;
+    								 .D[2]:=TIIB[LAMP_PNL1_EP06_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 2;
+    								 .D[3]:=TIIB[LAMP_PNL1_EP06_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 3;
+    								 .D[4]:=TIIB[LAMP_PNL1_EP06_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 4;
+    								 .D[5]:=TIIB[LAMP_PNL1_EP06_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 5;
+    								 .D[6]:=TIIB[LAMP_PNL1_EP06_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 6;
+    								 .D[7]:=TIIB[LAMP_PNL1_EP06_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 7;
+    								 .D[8]:=TIIB[LAMP_PNL1_EP06_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 8;
+    								 .D[9]:=TIIB[LAMP_PNL1_EP06_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 9;
+    								 .D[10]:=TIIB[LAMP_PNL1_EP06_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 10;
+    								 .D[11]:=TIIB[LAMP_PNL1_EP06_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 11;
+    								 .D[12]:=TIIB[LAMP_PNL1_EP06_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 12;
+    								 .D[13]:=TIIB[LAMP_PNL1_EP06_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 13;
+    								 .D[14]:=TIIB[LAMP_PNL1_EP06_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 14;
+    								 .D[15]:=TIIB[LAMP_PNL1_EP06_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 15;
+    								 .D[16]:=TIIB[LAMP_PNL1_EP06_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 16;
+    								 .D[17]:=TIIB[LAMP_PNL1_EP06_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 17;
+    								 .D[18]:=TIIB[LAMP_PNL1_EP06_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 18;
+    								 .D[19]:=TIIB[LAMP_PNL1_EP06_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 19;
+    								 .D[20]:=TIIB[LAMP_PNL1_EP06_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 20;
+    								 .D[21]:=TIIB[LAMP_PNL1_EP06_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 21;
+    	'}
+    	stComOut_LAMP_C2_PTM_04		AT %Q*	:	EL6outData22B;
+    	
+    	{attribute	'TcLinkTo'	:=	'.Status:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Status;
+    								 .D[0]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 0;
+    								 .D[1]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 1;
+    								 .D[2]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 2;
+    								 .D[3]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 3;
+    								 .D[4]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 4;
+    								 .D[5]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 5;
+    								 .D[6]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 6;
+    								 .D[7]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 7;
+    								 .D[8]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 8;
+    								 .D[9]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 9;
+    								 .D[10]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 10;
+    								 .D[11]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 11;
+    								 .D[12]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 12;
+    								 .D[13]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 13;
+    								 .D[14]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 14;
+    								 .D[15]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 15;
+    								 .D[16]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 16;
+    								 .D[17]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 17;
+    								 .D[18]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 18;
+    								 .D[19]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 19;
+    								 .D[20]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 20;
+    								 .D[21]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 21;
+    	'}
+    	stComIn_LAMP_GJ1_PTM_01		AT %I*	:	EL6inData22B;
+    	
+    	{attribute	'TcLinkTo'	:=	'.Ctrl:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Ctrl;
+    								 .D[0]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 0;
+    								 .D[1]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 1;
+    								 .D[2]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 2;
+    								 .D[3]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 3;
+    								 .D[4]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 4;
+    								 .D[5]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 5;
+    								 .D[6]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 6;
+    								 .D[7]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 7;
+    								 .D[8]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 8;
+    								 .D[9]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 9;
+    								 .D[10]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 10;
+    								 .D[11]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 11;
+    								 .D[12]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 12;
+    								 .D[13]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 13;
+    								 .D[14]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 14;
+    								 .D[15]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 15;
+    								 .D[16]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 16;
+    								 .D[17]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 17;
+    								 .D[18]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 18;
+    								 .D[19]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 19;
+    								 .D[20]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 20;
+    								 .D[21]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 21;
+    	'}
+    	stComOut_LAMP_GJ1_PTM_01		AT %Q*	:	EL6outData22B;
+    	
+    	{attribute	'TcLinkTo'	:=	'.Status:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Status;
+    								 .D[0]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 0;
+    								 .D[1]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 1;
+    								 .D[2]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 2;
+    								 .D[3]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 3;
+    								 .D[4]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 4;
+    								 .D[5]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 5;
+    								 .D[6]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 6;
+    								 .D[7]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 7;
+    								 .D[8]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 8;
+    								 .D[9]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 9;
+    								 .D[10]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 10;
+    								 .D[11]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 11;
+    								 .D[12]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 12;
+    								 .D[13]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 13;
+    								 .D[14]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 14;
+    								 .D[15]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 15;
+    								 .D[16]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 16;
+    								 .D[17]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 17;
+    								 .D[18]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 18;
+    								 .D[19]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 19;
+    								 .D[20]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 20;
+    								 .D[21]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 21;
+    	'}
+    	stComIn_LAMP_GJ1_PTM_02		AT %I*	:	EL6inData22B;
+    	
+    	{attribute	'TcLinkTo'	:=	'.Ctrl:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Ctrl;
+    								 .D[0]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 0;
+    								 .D[1]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 1;
+    								 .D[2]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 2;
+    								 .D[3]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 3;
+    								 .D[4]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 4;
+    								 .D[5]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 5;
+    								 .D[6]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 6;
+    								 .D[7]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 7;
+    								 .D[8]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 8;
+    								 .D[9]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 9;
+    								 .D[10]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 10;
+    								 .D[11]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 11;
+    								 .D[12]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 12;
+    								 .D[13]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 13;
+    								 .D[14]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 14;
+    								 .D[15]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 15;
+    								 .D[16]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 16;
+    								 .D[17]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 17;
+    								 .D[18]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 18;
+    								 .D[19]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 19;
+    								 .D[20]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 20;
+    								 .D[21]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 21;
+    	'}
+    	stComOut_LAMP_GJ1_PTM_02		AT %Q*	:	EL6outData22B;
+    	
+    	{attribute	'TcLinkTo'	:=	'.Status:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Status;
+    								 .D[0]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 0;
+    								 .D[1]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 1;
+    								 .D[2]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 2;
+    								 .D[3]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 3;
+    								 .D[4]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 4;
+    								 .D[5]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 5;
+    								 .D[6]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 6;
+    								 .D[7]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 7;
+    								 .D[8]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 8;
+    								 .D[9]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 9;
+    								 .D[10]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 10;
+    								 .D[11]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 11;
+    								 .D[12]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 12;
+    								 .D[13]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 13;
+    								 .D[14]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 14;
+    								 .D[15]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 15;
+    								 .D[16]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 16;
+    								 .D[17]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 17;
+    								 .D[18]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 18;
+    								 .D[19]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 19;
+    								 .D[20]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 20;
+    								 .D[21]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 21;
+    	'}
+    	stComIn_LAMP_GJ1_PTM_03		AT %I*	:	EL6inData22B;
+    	
+    	{attribute	'TcLinkTo'	:=	'.Ctrl:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Ctrl;
+    								 .D[0]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 0;
+    								 .D[1]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 1;
+    								 .D[2]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 2;
+    								 .D[3]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 3;
+    								 .D[4]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 4;
+    								 .D[5]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 5;
+    								 .D[6]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 6;
+    								 .D[7]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 7;
+    								 .D[8]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 8;
+    								 .D[9]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 9;
+    								 .D[10]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 10;
+    								 .D[11]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 11;
+    								 .D[12]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 12;
+    								 .D[13]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 13;
+    								 .D[14]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 14;
+    								 .D[15]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 15;
+    								 .D[16]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 16;
+    								 .D[17]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 17;
+    								 .D[18]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 18;
+    								 .D[19]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 19;
+    								 .D[20]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 20;
+    								 .D[21]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 21;
+    	'}
+    	stComOut_LAMP_GJ1_PTM_03		AT %Q*	:	EL6outData22B;
+    	
+    	{attribute	'TcLinkTo'	:=	'.Status:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Status;
+    								 .D[0]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 0;
+    								 .D[1]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 1;
+    								 .D[2]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 2;
+    								 .D[3]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 3;
+    								 .D[4]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 4;
+    								 .D[5]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 5;
+    								 .D[6]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 6;
+    								 .D[7]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 7;
+    								 .D[8]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 8;
+    								 .D[9]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 9;
+    								 .D[10]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 10;
+    								 .D[11]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 11;
+    								 .D[12]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 12;
+    								 .D[13]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 13;
+    								 .D[14]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 14;
+    								 .D[15]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 15;
+    								 .D[16]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 16;
+    								 .D[17]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 17;
+    								 .D[18]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 18;
+    								 .D[19]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 19;
+    								 .D[20]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 20;
+    								 .D[21]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 21;
+    	'}
+    	stComIn_LAMP_GJ1_PTM_04		AT %I*	:	EL6inData22B;
+    	
+    	{attribute	'TcLinkTo'	:=	'.Ctrl:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Ctrl;
+    								 .D[0]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 0;
+    								 .D[1]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 1;
+    								 .D[2]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 2;
+    								 .D[3]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 3;
+    								 .D[4]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 4;
+    								 .D[5]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 5;
+    								 .D[6]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 6;
+    								 .D[7]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 7;
+    								 .D[8]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 8;
+    								 .D[9]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 9;
+    								 .D[10]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 10;
+    								 .D[11]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 11;
+    								 .D[12]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 12;
+    								 .D[13]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 13;
+    								 .D[14]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 14;
+    								 .D[15]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 15;
+    								 .D[16]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 16;
+    								 .D[17]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 17;
+    								 .D[18]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 18;
+    								 .D[19]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 19;
+    								 .D[20]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 20;
+    								 .D[21]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 21;
+    	'}
+    	stComOut_LAMP_GJ1_PTM_04		AT %Q*	:	EL6outData22B;
+    	
+    	{attribute	'TcLinkTo'	:=	'.Status:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Status;
+    								 .D[0]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 0;
+    								 .D[1]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 1;
+    								 .D[2]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 2;
+    								 .D[3]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 3;
+    								 .D[4]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 4;
+    								 .D[5]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 5;
+    								 .D[6]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 6;
+    								 .D[7]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 7;
+    								 .D[8]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 8;
+    								 .D[9]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 9;
+    								 .D[10]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 10;
+    								 .D[11]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 11;
+    								 .D[12]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 12;
+    								 .D[13]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 13;
+    								 .D[14]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 14;
+    								 .D[15]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 15;
+    								 .D[16]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 16;
+    								 .D[17]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 17;
+    								 .D[18]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 18;
+    								 .D[19]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 19;
+    								 .D[20]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 20;
+    								 .D[21]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 21;
+    	'}
+    	stComIn_LAMP_ROUGH_PTM_01		AT %I*	:	EL6inData22B;
+    	
+    	{attribute	'TcLinkTo'	:=	'.Ctrl:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Ctrl;
+    								 .D[0]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 0;
+    								 .D[1]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 1;
+    								 .D[2]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 2;
+    								 .D[3]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 3;
+    								 .D[4]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 4;
+    								 .D[5]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 5;
+    								 .D[6]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 6;
+    								 .D[7]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 7;
+    								 .D[8]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 8;
+    								 .D[9]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 9;
+    								 .D[10]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 10;
+    								 .D[11]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 11;
+    								 .D[12]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 12;
+    								 .D[13]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 13;
+    								 .D[14]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 14;
+    								 .D[15]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 15;
+    								 .D[16]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 16;
+    								 .D[17]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 17;
+    								 .D[18]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 18;
+    								 .D[19]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 19;
+    								 .D[20]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 20;
+    								 .D[21]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 21;
+    	'}
+    	stComOut_LAMP_ROUGH_PTM_01		AT %Q*	:	EL6outData22B;
+    	
+    	{attribute	'TcLinkTo'	:=	'.Status:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Status;
+    								 .D[0]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 0;
+    								 .D[1]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 1;
+    								 .D[2]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 2;
+    								 .D[3]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 3;
+    								 .D[4]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 4;
+    								 .D[5]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 5;
+    								 .D[6]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 6;
+    								 .D[7]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 7;
+    								 .D[8]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 8;
+    								 .D[9]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 9;
+    								 .D[10]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 10;
+    								 .D[11]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 11;
+    								 .D[12]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 12;
+    								 .D[13]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 13;
+    								 .D[14]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 14;
+    								 .D[15]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 15;
+    								 .D[16]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 16;
+    								 .D[17]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 17;
+    								 .D[18]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 18;
+    								 .D[19]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 19;
+    								 .D[20]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 20;
+    								 .D[21]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 21;
+    	'}
+    	stComIn_LAMP_C1_PTM_01		AT %I*	:	EL6inData22B;
+    	
+    	{attribute	'TcLinkTo'	:=	'.Ctrl:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Ctrl;
+    								 .D[0]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 0;
+    								 .D[1]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 1;
+    								 .D[2]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 2;
+    								 .D[3]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 3;
+    								 .D[4]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 4;
+    								 .D[5]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 5;
+    								 .D[6]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 6;
+    								 .D[7]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 7;
+    								 .D[8]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 8;
+    								 .D[9]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 9;
+    								 .D[10]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 10;
+    								 .D[11]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 11;
+    								 .D[12]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 12;
+    								 .D[13]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 13;
+    								 .D[14]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 14;
+    								 .D[15]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 15;
+    								 .D[16]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 16;
+    								 .D[17]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 17;
+    								 .D[18]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 18;
+    								 .D[19]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 19;
+    								 .D[20]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 20;
+    								 .D[21]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 21;
+    	'}
+    	stComOut_LAMP_C1_PTM_01		AT %Q*	:	EL6outData22B;
+    	
+    	{attribute	'TcLinkTo'	:=	'.Status:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Status;
+    								 .D[0]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 0;
+    								 .D[1]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 1;
+    								 .D[2]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 2;
+    								 .D[3]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 3;
+    								 .D[4]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 4;
+    								 .D[5]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 5;
+    								 .D[6]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 6;
+    								 .D[7]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 7;
+    								 .D[8]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 8;
+    								 .D[9]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 9;
+    								 .D[10]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 10;
+    								 .D[11]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 11;
+    								 .D[12]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 12;
+    								 .D[13]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 13;
+    								 .D[14]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 14;
+    								 .D[15]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 15;
+    								 .D[16]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 16;
+    								 .D[17]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 17;
+    								 .D[18]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 18;
+    								 .D[19]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 19;
+    								 .D[20]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 20;
+    								 .D[21]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 21;
+    	'}
+    	stComIn_LAMP_CATCH_PTM_01		AT %I*	:	EL6inData22B;
+    	
+    	{attribute	'TcLinkTo'	:=	'.Ctrl:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Ctrl;
+    								 .D[0]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 0;
+    								 .D[1]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 1;
+    								 .D[2]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 2;
+    								 .D[3]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 3;
+    								 .D[4]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 4;
+    								 .D[5]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 5;
+    								 .D[6]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 6;
+    								 .D[7]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 7;
+    								 .D[8]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 8;
+    								 .D[9]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 9;
+    								 .D[10]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 10;
+    								 .D[11]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 11;
+    								 .D[12]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 12;
+    								 .D[13]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 13;
+    								 .D[14]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 14;
+    								 .D[15]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 15;
+    								 .D[16]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 16;
+    								 .D[17]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 17;
+    								 .D[18]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 18;
+    								 .D[19]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 19;
+    								 .D[20]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 20;
+    								 .D[21]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 21;
+    	'}
+    	stComOut_LAMP_CATCH_PTM_01		AT %Q*	:	EL6outData22B;
+    	
+    	{attribute	'TcLinkTo'	:=	'.Status:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Status;
+    								 .D[0]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 0;
+    								 .D[1]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 1;
+    								 .D[2]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 2;
+    								 .D[3]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 3;
+    								 .D[4]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 4;
+    								 .D[5]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 5;
+    								 .D[6]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 6;
+    								 .D[7]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 7;
+    								 .D[8]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 8;
+    								 .D[9]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 9;
+    								 .D[10]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 10;
+    								 .D[11]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 11;
+    								 .D[12]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 12;
+    								 .D[13]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 13;
+    								 .D[14]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 14;
+    								 .D[15]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 15;
+    								 .D[16]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 16;
+    								 .D[17]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 17;
+    								 .D[18]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 18;
+    								 .D[19]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 19;
+    								 .D[20]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 20;
+    								 .D[21]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 21;
+    	'}
+    	stComIn_LAMP_CATCH_PTM_02		AT %I*	:	EL6inData22B;
+    	
+    	{attribute	'TcLinkTo'	:=	'.Ctrl:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Ctrl;
+    								 .D[0]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 0;
+    								 .D[1]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 1;
+    								 .D[2]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 2;
+    								 .D[3]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 3;
+    								 .D[4]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 4;
+    								 .D[5]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 5;
+    								 .D[6]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 6;
+    								 .D[7]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 7;
+    								 .D[8]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 8;
+    								 .D[9]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 9;
+    								 .D[10]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 10;
+    								 .D[11]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 11;
+    								 .D[12]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 12;
+    								 .D[13]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 13;
+    								 .D[14]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 14;
+    								 .D[15]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 15;
+    								 .D[16]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 16;
+    								 .D[17]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 17;
+    								 .D[18]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 18;
+    								 .D[19]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 19;
+    								 .D[20]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 20;
+    								 .D[21]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 21;
+    	'}
+    	stComOut_LAMP_CATCH_PTM_02		AT %Q*	:	EL6outData22B;
+    	
+    	{attribute	'TcLinkTo'	:=	'.Status:=TIIB[KTOF_PNL1_EP03_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Status;
+    								 .D[0]:=TIIB[KTOF_PNL1_EP03_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 0;
+    								 .D[1]:=TIIB[KTOF_PNL1_EP03_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 1;
+    								 .D[2]:=TIIB[KTOF_PNL1_EP03_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 2;
+    								 .D[3]:=TIIB[KTOF_PNL1_EP03_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 3;
+    								 .D[4]:=TIIB[KTOF_PNL1_EP03_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 4;
+    								 .D[5]:=TIIB[KTOF_PNL1_EP03_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 5;
+    								 .D[6]:=TIIB[KTOF_PNL1_EP03_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 6;
+    								 .D[7]:=TIIB[KTOF_PNL1_EP03_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 7;
+    								 .D[8]:=TIIB[KTOF_PNL1_EP03_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 8;
+    								 .D[9]:=TIIB[KTOF_PNL1_EP03_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 9;
+    								 .D[10]:=TIIB[KTOF_PNL1_EP03_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 10;
+    								 .D[11]:=TIIB[KTOF_PNL1_EP03_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 11;
+    								 .D[12]:=TIIB[KTOF_PNL1_EP03_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 12;
+    								 .D[13]:=TIIB[KTOF_PNL1_EP03_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 13;
+    								 .D[14]:=TIIB[KTOF_PNL1_EP03_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 14;
+    								 .D[15]:=TIIB[KTOF_PNL1_EP03_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 15;
+    								 .D[16]:=TIIB[KTOF_PNL1_EP03_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 16;
+    								 .D[17]:=TIIB[KTOF_PNL1_EP03_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 17;
+    								 .D[18]:=TIIB[KTOF_PNL1_EP03_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 18;
+    								 .D[19]:=TIIB[KTOF_PNL1_EP03_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 19;
+    								 .D[20]:=TIIB[KTOF_PNL1_EP03_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 20;
+    								 .D[21]:=TIIB[KTOF_PNL1_EP03_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 21;
+    	'}
+    	stComIn_KTOF_PTM_01		AT %I*	:	EL6inData22B;
+    	
+    	{attribute	'TcLinkTo'	:=	'.Ctrl:=TIIB[KTOF_PNL1_EP03_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Ctrl;
+    								 .D[0]:=TIIB[KTOF_PNL1_EP03_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 0;
+    								 .D[1]:=TIIB[KTOF_PNL1_EP03_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 1;
+    								 .D[2]:=TIIB[KTOF_PNL1_EP03_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 2;
+    								 .D[3]:=TIIB[KTOF_PNL1_EP03_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 3;
+    								 .D[4]:=TIIB[KTOF_PNL1_EP03_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 4;
+    								 .D[5]:=TIIB[KTOF_PNL1_EP03_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 5;
+    								 .D[6]:=TIIB[KTOF_PNL1_EP03_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 6;
+    								 .D[7]:=TIIB[KTOF_PNL1_EP03_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 7;
+    								 .D[8]:=TIIB[KTOF_PNL1_EP03_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 8;
+    								 .D[9]:=TIIB[KTOF_PNL1_EP03_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 9;
+    								 .D[10]:=TIIB[KTOF_PNL1_EP03_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 10;
+    								 .D[11]:=TIIB[KTOF_PNL1_EP03_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 11;
+    								 .D[12]:=TIIB[KTOF_PNL1_EP03_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 12;
+    								 .D[13]:=TIIB[KTOF_PNL1_EP03_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 13;
+    								 .D[14]:=TIIB[KTOF_PNL1_EP03_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 14;
+    								 .D[15]:=TIIB[KTOF_PNL1_EP03_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 15;
+    								 .D[16]:=TIIB[KTOF_PNL1_EP03_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 16;
+    								 .D[17]:=TIIB[KTOF_PNL1_EP03_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 17;
+    								 .D[18]:=TIIB[KTOF_PNL1_EP03_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 18;
+    								 .D[19]:=TIIB[KTOF_PNL1_EP03_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 19;
+    								 .D[20]:=TIIB[KTOF_PNL1_EP03_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 20;
+    								 .D[21]:=TIIB[KTOF_PNL1_EP03_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 21;
+    	'}
+    	stComOut_KTOF_PTM_01		AT %Q*	:	EL6outData22B;
+    	
+    	//Leybolds
+    	{attribute	'TcLinkTo'	:=	'.Status:=TIIB[LAMP_PLC_E11_EL6002]^COM TxPDO-Map Inputs Channel 1^Status;
+    								 .D[0]:=TIIB[LAMP_PLC_E11_EL6002]^COM TxPDO-Map Inputs Channel 1^Data In 0;
+    								 .D[1]:=TIIB[LAMP_PLC_E11_EL6002]^COM TxPDO-Map Inputs Channel 1^Data In 1;
+    								 .D[2]:=TIIB[LAMP_PLC_E11_EL6002]^COM TxPDO-Map Inputs Channel 1^Data In 2;
+    								 .D[3]:=TIIB[LAMP_PLC_E11_EL6002]^COM TxPDO-Map Inputs Channel 1^Data In 3;
+    								 .D[4]:=TIIB[LAMP_PLC_E11_EL6002]^COM TxPDO-Map Inputs Channel 1^Data In 4;
+    								 .D[5]:=TIIB[LAMP_PLC_E11_EL6002]^COM TxPDO-Map Inputs Channel 1^Data In 5;
+    								 .D[6]:=TIIB[LAMP_PLC_E11_EL6002]^COM TxPDO-Map Inputs Channel 1^Data In 6;
+    								 .D[7]:=TIIB[LAMP_PLC_E11_EL6002]^COM TxPDO-Map Inputs Channel 1^Data In 7;
+    								 .D[8]:=TIIB[LAMP_PLC_E11_EL6002]^COM TxPDO-Map Inputs Channel 1^Data In 8;
+    								 .D[9]:=TIIB[LAMP_PLC_E11_EL6002]^COM TxPDO-Map Inputs Channel 1^Data In 9;
+    								 .D[10]:=TIIB[LAMP_PLC_E11_EL6002]^COM TxPDO-Map Inputs Channel 1^Data In 10;
+    								 .D[11]:=TIIB[LAMP_PLC_E11_EL6002]^COM TxPDO-Map Inputs Channel 1^Data In 11;
+    								 .D[12]:=TIIB[LAMP_PLC_E11_EL6002]^COM TxPDO-Map Inputs Channel 1^Data In 12;
+    								 .D[13]:=TIIB[LAMP_PLC_E11_EL6002]^COM TxPDO-Map Inputs Channel 1^Data In 13;
+    								 .D[14]:=TIIB[LAMP_PLC_E11_EL6002]^COM TxPDO-Map Inputs Channel 1^Data In 14;
+    								 .D[15]:=TIIB[LAMP_PLC_E11_EL6002]^COM TxPDO-Map Inputs Channel 1^Data In 15;
+    								 .D[16]:=TIIB[LAMP_PLC_E11_EL6002]^COM TxPDO-Map Inputs Channel 1^Data In 16;
+    								 .D[17]:=TIIB[LAMP_PLC_E11_EL6002]^COM TxPDO-Map Inputs Channel 1^Data In 17;
+    								 .D[18]:=TIIB[LAMP_PLC_E11_EL6002]^COM TxPDO-Map Inputs Channel 1^Data In 18;
+    								 .D[19]:=TIIB[LAMP_PLC_E11_EL6002]^COM TxPDO-Map Inputs Channel 1^Data In 19;
+    								 .D[20]:=TIIB[LAMP_PLC_E11_EL6002]^COM TxPDO-Map Inputs Channel 1^Data In 20;
+    								 .D[21]:=TIIB[LAMP_PLC_E11_EL6002]^COM TxPDO-Map Inputs Channel 1^Data In 21;
+    	'}
+    	stComIn_LAMP_GJ2_PTM_01		AT %I*	:	EL6inData22B;
+    	
+    	{attribute	'TcLinkTo'	:=	'.Ctrl:=TIIB[LAMP_PLC_E11_EL6002]^COM RxPDO-Map Outputs Channel 1^Ctrl;
+    								 .D[0]:=TIIB[LAMP_PLC_E11_EL6002]^COM RxPDO-Map Outputs Channel 1^Data Out 0;
+    								 .D[1]:=TIIB[LAMP_PLC_E11_EL6002]^COM RxPDO-Map Outputs Channel 1^Data Out 1;
+    								 .D[2]:=TIIB[LAMP_PLC_E11_EL6002]^COM RxPDO-Map Outputs Channel 1^Data Out 2;
+    								 .D[3]:=TIIB[LAMP_PLC_E11_EL6002]^COM RxPDO-Map Outputs Channel 1^Data Out 3;
+    								 .D[4]:=TIIB[LAMP_PLC_E11_EL6002]^COM RxPDO-Map Outputs Channel 1^Data Out 4;
+    								 .D[5]:=TIIB[LAMP_PLC_E11_EL6002]^COM RxPDO-Map Outputs Channel 1^Data Out 5;
+    								 .D[6]:=TIIB[LAMP_PLC_E11_EL6002]^COM RxPDO-Map Outputs Channel 1^Data Out 6;
+    								 .D[7]:=TIIB[LAMP_PLC_E11_EL6002]^COM RxPDO-Map Outputs Channel 1^Data Out 7;
+    								 .D[8]:=TIIB[LAMP_PLC_E11_EL6002]^COM RxPDO-Map Outputs Channel 1^Data Out 8;
+    								 .D[9]:=TIIB[LAMP_PLC_E11_EL6002]^COM RxPDO-Map Outputs Channel 1^Data Out 9;
+    								 .D[10]:=TIIB[LAMP_PLC_E11_EL6002]^COM RxPDO-Map Outputs Channel 1^Data Out 10;
+    								 .D[11]:=TIIB[LAMP_PLC_E11_EL6002]^COM RxPDO-Map Outputs Channel 1^Data Out 11;
+    								 .D[12]:=TIIB[LAMP_PLC_E11_EL6002]^COM RxPDO-Map Outputs Channel 1^Data Out 12;
+    								 .D[13]:=TIIB[LAMP_PLC_E11_EL6002]^COM RxPDO-Map Outputs Channel 1^Data Out 13;
+    								 .D[14]:=TIIB[LAMP_PLC_E11_EL6002]^COM RxPDO-Map Outputs Channel 1^Data Out 14;
+    								 .D[15]:=TIIB[LAMP_PLC_E11_EL6002]^COM RxPDO-Map Outputs Channel 1^Data Out 15;
+    								 .D[16]:=TIIB[LAMP_PLC_E11_EL6002]^COM RxPDO-Map Outputs Channel 1^Data Out 16;
+    								 .D[17]:=TIIB[LAMP_PLC_E11_EL6002]^COM RxPDO-Map Outputs Channel 1^Data Out 17;
+    								 .D[18]:=TIIB[LAMP_PLC_E11_EL6002]^COM RxPDO-Map Outputs Channel 1^Data Out 18;
+    								 .D[19]:=TIIB[LAMP_PLC_E11_EL6002]^COM RxPDO-Map Outputs Channel 1^Data Out 19;
+    								 .D[20]:=TIIB[LAMP_PLC_E11_EL6002]^COM RxPDO-Map Outputs Channel 1^Data Out 20;
+    								 .D[21]:=TIIB[LAMP_PLC_E11_EL6002]^COM RxPDO-Map Outputs Channel 1^Data Out 21;
+    	'}
+    	stComOut_LAMP_GJ2_PTM_01		AT %Q*	:	EL6outData22B;
+    	
+    	{attribute	'TcLinkTo'	:=	'.Status:=TIIB[LAMP_PLC_E11_EL6002]^COM TxPDO-Map Inputs Channel 2^Status;
+    								 .D[0]:=TIIB[LAMP_PLC_E11_EL6002]^COM TxPDO-Map Inputs Channel 2^Data In 0;
+    								 .D[1]:=TIIB[LAMP_PLC_E11_EL6002]^COM TxPDO-Map Inputs Channel 2^Data In 1;
+    								 .D[2]:=TIIB[LAMP_PLC_E11_EL6002]^COM TxPDO-Map Inputs Channel 2^Data In 2;
+    								 .D[3]:=TIIB[LAMP_PLC_E11_EL6002]^COM TxPDO-Map Inputs Channel 2^Data In 3;
+    								 .D[4]:=TIIB[LAMP_PLC_E11_EL6002]^COM TxPDO-Map Inputs Channel 2^Data In 4;
+    								 .D[5]:=TIIB[LAMP_PLC_E11_EL6002]^COM TxPDO-Map Inputs Channel 2^Data In 5;
+    								 .D[6]:=TIIB[LAMP_PLC_E11_EL6002]^COM TxPDO-Map Inputs Channel 2^Data In 6;
+    								 .D[7]:=TIIB[LAMP_PLC_E11_EL6002]^COM TxPDO-Map Inputs Channel 2^Data In 7;
+    								 .D[8]:=TIIB[LAMP_PLC_E11_EL6002]^COM TxPDO-Map Inputs Channel 2^Data In 8;
+    								 .D[9]:=TIIB[LAMP_PLC_E11_EL6002]^COM TxPDO-Map Inputs Channel 2^Data In 9;
+    								 .D[10]:=TIIB[LAMP_PLC_E11_EL6002]^COM TxPDO-Map Inputs Channel 2^Data In 10;
+    								 .D[11]:=TIIB[LAMP_PLC_E11_EL6002]^COM TxPDO-Map Inputs Channel 2^Data In 11;
+    								 .D[12]:=TIIB[LAMP_PLC_E11_EL6002]^COM TxPDO-Map Inputs Channel 2^Data In 12;
+    								 .D[13]:=TIIB[LAMP_PLC_E11_EL6002]^COM TxPDO-Map Inputs Channel 2^Data In 13;
+    								 .D[14]:=TIIB[LAMP_PLC_E11_EL6002]^COM TxPDO-Map Inputs Channel 2^Data In 14;
+    								 .D[15]:=TIIB[LAMP_PLC_E11_EL6002]^COM TxPDO-Map Inputs Channel 2^Data In 15;
+    								 .D[16]:=TIIB[LAMP_PLC_E11_EL6002]^COM TxPDO-Map Inputs Channel 2^Data In 16;
+    								 .D[17]:=TIIB[LAMP_PLC_E11_EL6002]^COM TxPDO-Map Inputs Channel 2^Data In 17;
+    								 .D[18]:=TIIB[LAMP_PLC_E11_EL6002]^COM TxPDO-Map Inputs Channel 2^Data In 18;
+    								 .D[19]:=TIIB[LAMP_PLC_E11_EL6002]^COM TxPDO-Map Inputs Channel 2^Data In 19;
+    								 .D[20]:=TIIB[LAMP_PLC_E11_EL6002]^COM TxPDO-Map Inputs Channel 2^Data In 20;
+    								 .D[21]:=TIIB[LAMP_PLC_E11_EL6002]^COM TxPDO-Map Inputs Channel 2^Data In 21;
+    	'}
+    	stComIn_LAMP_GJ2_PTM_02		AT %I*	:	EL6inData22B;
+    	
+    	{attribute	'TcLinkTo'	:=	'.Ctrl:=TIIB[LAMP_PLC_E11_EL6002]^COM RxPDO-Map Outputs Channel 2^Ctrl;
+    								 .D[0]:=TIIB[LAMP_PLC_E11_EL6002]^COM RxPDO-Map Outputs Channel 2^Data Out 0;
+    								 .D[1]:=TIIB[LAMP_PLC_E11_EL6002]^COM RxPDO-Map Outputs Channel 2^Data Out 1;
+    								 .D[2]:=TIIB[LAMP_PLC_E11_EL6002]^COM RxPDO-Map Outputs Channel 2^Data Out 2;
+    								 .D[3]:=TIIB[LAMP_PLC_E11_EL6002]^COM RxPDO-Map Outputs Channel 2^Data Out 3;
+    								 .D[4]:=TIIB[LAMP_PLC_E11_EL6002]^COM RxPDO-Map Outputs Channel 2^Data Out 4;
+    								 .D[5]:=TIIB[LAMP_PLC_E11_EL6002]^COM RxPDO-Map Outputs Channel 2^Data Out 5;
+    								 .D[6]:=TIIB[LAMP_PLC_E11_EL6002]^COM RxPDO-Map Outputs Channel 2^Data Out 6;
+    								 .D[7]:=TIIB[LAMP_PLC_E11_EL6002]^COM RxPDO-Map Outputs Channel 2^Data Out 7;
+    								 .D[8]:=TIIB[LAMP_PLC_E11_EL6002]^COM RxPDO-Map Outputs Channel 2^Data Out 8;
+    								 .D[9]:=TIIB[LAMP_PLC_E11_EL6002]^COM RxPDO-Map Outputs Channel 2^Data Out 9;
+    								 .D[10]:=TIIB[LAMP_PLC_E11_EL6002]^COM RxPDO-Map Outputs Channel 2^Data Out 10;
+    								 .D[11]:=TIIB[LAMP_PLC_E11_EL6002]^COM RxPDO-Map Outputs Channel 2^Data Out 11;
+    								 .D[12]:=TIIB[LAMP_PLC_E11_EL6002]^COM RxPDO-Map Outputs Channel 2^Data Out 12;
+    								 .D[13]:=TIIB[LAMP_PLC_E11_EL6002]^COM RxPDO-Map Outputs Channel 2^Data Out 13;
+    								 .D[14]:=TIIB[LAMP_PLC_E11_EL6002]^COM RxPDO-Map Outputs Channel 2^Data Out 14;
+    								 .D[15]:=TIIB[LAMP_PLC_E11_EL6002]^COM RxPDO-Map Outputs Channel 2^Data Out 15;
+    								 .D[16]:=TIIB[LAMP_PLC_E11_EL6002]^COM RxPDO-Map Outputs Channel 2^Data Out 16;
+    								 .D[17]:=TIIB[LAMP_PLC_E11_EL6002]^COM RxPDO-Map Outputs Channel 2^Data Out 17;
+    								 .D[18]:=TIIB[LAMP_PLC_E11_EL6002]^COM RxPDO-Map Outputs Channel 2^Data Out 18;
+    								 .D[19]:=TIIB[LAMP_PLC_E11_EL6002]^COM RxPDO-Map Outputs Channel 2^Data Out 19;
+    								 .D[20]:=TIIB[LAMP_PLC_E11_EL6002]^COM RxPDO-Map Outputs Channel 2^Data Out 20;
+    								 .D[21]:=TIIB[LAMP_PLC_E11_EL6002]^COM RxPDO-Map Outputs Channel 2^Data Out 21;
+    	'}
+    	stComOut_LAMP_GJ2_PTM_02		AT %Q*	:	EL6outData22B;
+
+    	{attribute	'TcLinkTo'	:=	'.Status:=TIIB[LAMP_PLC_E12_EL6002]^COM TxPDO-Map Inputs Channel 1^Status;
+    								 .D[0]:=TIIB[LAMP_PLC_E12_EL6002]^COM TxPDO-Map Inputs Channel 1^Data In 0;
+    								 .D[1]:=TIIB[LAMP_PLC_E12_EL6002]^COM TxPDO-Map Inputs Channel 1^Data In 1;
+    								 .D[2]:=TIIB[LAMP_PLC_E12_EL6002]^COM TxPDO-Map Inputs Channel 1^Data In 2;
+    								 .D[3]:=TIIB[LAMP_PLC_E12_EL6002]^COM TxPDO-Map Inputs Channel 1^Data In 3;
+    								 .D[4]:=TIIB[LAMP_PLC_E12_EL6002]^COM TxPDO-Map Inputs Channel 1^Data In 4;
+    								 .D[5]:=TIIB[LAMP_PLC_E12_EL6002]^COM TxPDO-Map Inputs Channel 1^Data In 5;
+    								 .D[6]:=TIIB[LAMP_PLC_E12_EL6002]^COM TxPDO-Map Inputs Channel 1^Data In 6;
+    								 .D[7]:=TIIB[LAMP_PLC_E12_EL6002]^COM TxPDO-Map Inputs Channel 1^Data In 7;
+    								 .D[8]:=TIIB[LAMP_PLC_E12_EL6002]^COM TxPDO-Map Inputs Channel 1^Data In 8;
+    								 .D[9]:=TIIB[LAMP_PLC_E12_EL6002]^COM TxPDO-Map Inputs Channel 1^Data In 9;
+    								 .D[10]:=TIIB[LAMP_PLC_E12_EL6002]^COM TxPDO-Map Inputs Channel 1^Data In 10;
+    								 .D[11]:=TIIB[LAMP_PLC_E12_EL6002]^COM TxPDO-Map Inputs Channel 1^Data In 11;
+    								 .D[12]:=TIIB[LAMP_PLC_E12_EL6002]^COM TxPDO-Map Inputs Channel 1^Data In 12;
+    								 .D[13]:=TIIB[LAMP_PLC_E12_EL6002]^COM TxPDO-Map Inputs Channel 1^Data In 13;
+    								 .D[14]:=TIIB[LAMP_PLC_E12_EL6002]^COM TxPDO-Map Inputs Channel 1^Data In 14;
+    								 .D[15]:=TIIB[LAMP_PLC_E12_EL6002]^COM TxPDO-Map Inputs Channel 1^Data In 15;
+    								 .D[16]:=TIIB[LAMP_PLC_E12_EL6002]^COM TxPDO-Map Inputs Channel 1^Data In 16;
+    								 .D[17]:=TIIB[LAMP_PLC_E12_EL6002]^COM TxPDO-Map Inputs Channel 1^Data In 17;
+    								 .D[18]:=TIIB[LAMP_PLC_E12_EL6002]^COM TxPDO-Map Inputs Channel 1^Data In 18;
+    								 .D[19]:=TIIB[LAMP_PLC_E12_EL6002]^COM TxPDO-Map Inputs Channel 1^Data In 19;
+    								 .D[20]:=TIIB[LAMP_PLC_E12_EL6002]^COM TxPDO-Map Inputs Channel 1^Data In 20;
+    								 .D[21]:=TIIB[LAMP_PLC_E12_EL6002]^COM TxPDO-Map Inputs Channel 1^Data In 21;
+    	'}
+    	stComIn_LAMP_GJ2_PTM_03		AT %I*	:	EL6inData22B;
+    	
+    	{attribute	'TcLinkTo'	:=	'.Ctrl:=TIIB[LAMP_PLC_E12_EL6002]^COM RxPDO-Map Outputs Channel 1^Ctrl;
+    								 .D[0]:=TIIB[LAMP_PLC_E12_EL6002]^COM RxPDO-Map Outputs Channel 1^Data Out 0;
+    								 .D[1]:=TIIB[LAMP_PLC_E12_EL6002]^COM RxPDO-Map Outputs Channel 1^Data Out 1;
+    								 .D[2]:=TIIB[LAMP_PLC_E12_EL6002]^COM RxPDO-Map Outputs Channel 1^Data Out 2;
+    								 .D[3]:=TIIB[LAMP_PLC_E12_EL6002]^COM RxPDO-Map Outputs Channel 1^Data Out 3;
+    								 .D[4]:=TIIB[LAMP_PLC_E12_EL6002]^COM RxPDO-Map Outputs Channel 1^Data Out 4;
+    								 .D[5]:=TIIB[LAMP_PLC_E12_EL6002]^COM RxPDO-Map Outputs Channel 1^Data Out 5;
+    								 .D[6]:=TIIB[LAMP_PLC_E12_EL6002]^COM RxPDO-Map Outputs Channel 1^Data Out 6;
+    								 .D[7]:=TIIB[LAMP_PLC_E12_EL6002]^COM RxPDO-Map Outputs Channel 1^Data Out 7;
+    								 .D[8]:=TIIB[LAMP_PLC_E12_EL6002]^COM RxPDO-Map Outputs Channel 1^Data Out 8;
+    								 .D[9]:=TIIB[LAMP_PLC_E12_EL6002]^COM RxPDO-Map Outputs Channel 1^Data Out 9;
+    								 .D[10]:=TIIB[LAMP_PLC_E12_EL6002]^COM RxPDO-Map Outputs Channel 1^Data Out 10;
+    								 .D[11]:=TIIB[LAMP_PLC_E12_EL6002]^COM RxPDO-Map Outputs Channel 1^Data Out 11;
+    								 .D[12]:=TIIB[LAMP_PLC_E12_EL6002]^COM RxPDO-Map Outputs Channel 1^Data Out 12;
+    								 .D[13]:=TIIB[LAMP_PLC_E12_EL6002]^COM RxPDO-Map Outputs Channel 1^Data Out 13;
+    								 .D[14]:=TIIB[LAMP_PLC_E12_EL6002]^COM RxPDO-Map Outputs Channel 1^Data Out 14;
+    								 .D[15]:=TIIB[LAMP_PLC_E12_EL6002]^COM RxPDO-Map Outputs Channel 1^Data Out 15;
+    								 .D[16]:=TIIB[LAMP_PLC_E12_EL6002]^COM RxPDO-Map Outputs Channel 1^Data Out 16;
+    								 .D[17]:=TIIB[LAMP_PLC_E12_EL6002]^COM RxPDO-Map Outputs Channel 1^Data Out 17;
+    								 .D[18]:=TIIB[LAMP_PLC_E12_EL6002]^COM RxPDO-Map Outputs Channel 1^Data Out 18;
+    								 .D[19]:=TIIB[LAMP_PLC_E12_EL6002]^COM RxPDO-Map Outputs Channel 1^Data Out 19;
+    								 .D[20]:=TIIB[LAMP_PLC_E12_EL6002]^COM RxPDO-Map Outputs Channel 1^Data Out 20;
+    								 .D[21]:=TIIB[LAMP_PLC_E12_EL6002]^COM RxPDO-Map Outputs Channel 1^Data Out 21;
+    	'}
+    	stComOut_LAMP_GJ2_PTM_03		AT %Q*	:	EL6outData22B;
+    	
+    	{attribute	'TcLinkTo'	:=	'.Status:=TIIB[LAMP_PLC_E12_EL6002]^COM TxPDO-Map Inputs Channel 2^Status;
+    								 .D[0]:=TIIB[LAMP_PLC_E12_EL6002]^COM TxPDO-Map Inputs Channel 2^Data In 0;
+    								 .D[1]:=TIIB[LAMP_PLC_E12_EL6002]^COM TxPDO-Map Inputs Channel 2^Data In 1;
+    								 .D[2]:=TIIB[LAMP_PLC_E12_EL6002]^COM TxPDO-Map Inputs Channel 2^Data In 2;
+    								 .D[3]:=TIIB[LAMP_PLC_E12_EL6002]^COM TxPDO-Map Inputs Channel 2^Data In 3;
+    								 .D[4]:=TIIB[LAMP_PLC_E12_EL6002]^COM TxPDO-Map Inputs Channel 2^Data In 4;
+    								 .D[5]:=TIIB[LAMP_PLC_E12_EL6002]^COM TxPDO-Map Inputs Channel 2^Data In 5;
+    								 .D[6]:=TIIB[LAMP_PLC_E12_EL6002]^COM TxPDO-Map Inputs Channel 2^Data In 6;
+    								 .D[7]:=TIIB[LAMP_PLC_E12_EL6002]^COM TxPDO-Map Inputs Channel 2^Data In 7;
+    								 .D[8]:=TIIB[LAMP_PLC_E12_EL6002]^COM TxPDO-Map Inputs Channel 2^Data In 8;
+    								 .D[9]:=TIIB[LAMP_PLC_E12_EL6002]^COM TxPDO-Map Inputs Channel 2^Data In 9;
+    								 .D[10]:=TIIB[LAMP_PLC_E12_EL6002]^COM TxPDO-Map Inputs Channel 2^Data In 10;
+    								 .D[11]:=TIIB[LAMP_PLC_E12_EL6002]^COM TxPDO-Map Inputs Channel 2^Data In 11;
+    								 .D[12]:=TIIB[LAMP_PLC_E12_EL6002]^COM TxPDO-Map Inputs Channel 2^Data In 12;
+    								 .D[13]:=TIIB[LAMP_PLC_E12_EL6002]^COM TxPDO-Map Inputs Channel 2^Data In 13;
+    								 .D[14]:=TIIB[LAMP_PLC_E12_EL6002]^COM TxPDO-Map Inputs Channel 2^Data In 14;
+    								 .D[15]:=TIIB[LAMP_PLC_E12_EL6002]^COM TxPDO-Map Inputs Channel 2^Data In 15;
+    								 .D[16]:=TIIB[LAMP_PLC_E12_EL6002]^COM TxPDO-Map Inputs Channel 2^Data In 16;
+    								 .D[17]:=TIIB[LAMP_PLC_E12_EL6002]^COM TxPDO-Map Inputs Channel 2^Data In 17;
+    								 .D[18]:=TIIB[LAMP_PLC_E12_EL6002]^COM TxPDO-Map Inputs Channel 2^Data In 18;
+    								 .D[19]:=TIIB[LAMP_PLC_E12_EL6002]^COM TxPDO-Map Inputs Channel 2^Data In 19;
+    								 .D[20]:=TIIB[LAMP_PLC_E12_EL6002]^COM TxPDO-Map Inputs Channel 2^Data In 20;
+    								 .D[21]:=TIIB[LAMP_PLC_E12_EL6002]^COM TxPDO-Map Inputs Channel 2^Data In 21;
+    	'}
+    	stComIn_LAMP_GJ2_PTM_04		AT %I*	:	EL6inData22B;
+    	
+    	{attribute	'TcLinkTo'	:=	'.Ctrl:=TIIB[LAMP_PLC_E12_EL6002]^COM RxPDO-Map Outputs Channel 2^Ctrl;
+    								 .D[0]:=TIIB[LAMP_PLC_E12_EL6002]^COM RxPDO-Map Outputs Channel 2^Data Out 0;
+    								 .D[1]:=TIIB[LAMP_PLC_E12_EL6002]^COM RxPDO-Map Outputs Channel 2^Data Out 1;
+    								 .D[2]:=TIIB[LAMP_PLC_E12_EL6002]^COM RxPDO-Map Outputs Channel 2^Data Out 2;
+    								 .D[3]:=TIIB[LAMP_PLC_E12_EL6002]^COM RxPDO-Map Outputs Channel 2^Data Out 3;
+    								 .D[4]:=TIIB[LAMP_PLC_E12_EL6002]^COM RxPDO-Map Outputs Channel 2^Data Out 4;
+    								 .D[5]:=TIIB[LAMP_PLC_E12_EL6002]^COM RxPDO-Map Outputs Channel 2^Data Out 5;
+    								 .D[6]:=TIIB[LAMP_PLC_E12_EL6002]^COM RxPDO-Map Outputs Channel 2^Data Out 6;
+    								 .D[7]:=TIIB[LAMP_PLC_E12_EL6002]^COM RxPDO-Map Outputs Channel 2^Data Out 7;
+    								 .D[8]:=TIIB[LAMP_PLC_E12_EL6002]^COM RxPDO-Map Outputs Channel 2^Data Out 8;
+    								 .D[9]:=TIIB[LAMP_PLC_E12_EL6002]^COM RxPDO-Map Outputs Channel 2^Data Out 9;
+    								 .D[10]:=TIIB[LAMP_PLC_E12_EL6002]^COM RxPDO-Map Outputs Channel 2^Data Out 10;
+    								 .D[11]:=TIIB[LAMP_PLC_E12_EL6002]^COM RxPDO-Map Outputs Channel 2^Data Out 11;
+    								 .D[12]:=TIIB[LAMP_PLC_E12_EL6002]^COM RxPDO-Map Outputs Channel 2^Data Out 12;
+    								 .D[13]:=TIIB[LAMP_PLC_E12_EL6002]^COM RxPDO-Map Outputs Channel 2^Data Out 13;
+    								 .D[14]:=TIIB[LAMP_PLC_E12_EL6002]^COM RxPDO-Map Outputs Channel 2^Data Out 14;
+    								 .D[15]:=TIIB[LAMP_PLC_E12_EL6002]^COM RxPDO-Map Outputs Channel 2^Data Out 15;
+    								 .D[16]:=TIIB[LAMP_PLC_E12_EL6002]^COM RxPDO-Map Outputs Channel 2^Data Out 16;
+    								 .D[17]:=TIIB[LAMP_PLC_E12_EL6002]^COM RxPDO-Map Outputs Channel 2^Data Out 17;
+    								 .D[18]:=TIIB[LAMP_PLC_E12_EL6002]^COM RxPDO-Map Outputs Channel 2^Data Out 18;
+    								 .D[19]:=TIIB[LAMP_PLC_E12_EL6002]^COM RxPDO-Map Outputs Channel 2^Data Out 19;
+    								 .D[20]:=TIIB[LAMP_PLC_E12_EL6002]^COM RxPDO-Map Outputs Channel 2^Data Out 20;
+    								 .D[21]:=TIIB[LAMP_PLC_E12_EL6002]^COM RxPDO-Map Outputs Channel 2^Data Out 21;
+    	'}
+    	stComOut_LAMP_GJ2_PTM_04		AT %Q*	:	EL6outData22B;
+
+    END_VAR
+
+
+GVL_Devices
+^^^^^^^^^^^
+
+::
+
+    //{attribute 'qualified_only'}
+    VAR_GLOBAL
+    	
+    (*Rack Mounted Turbo Pumps*)
+    	{attribute 'TcLinkTo' := 	'.i_xAtSpd			:=	TIIB[LAMP_PLC_E6_EL1004]^Channel 2^Input;
+    								 .i_xFaultNC		:=	TIIB[LAMP_PLC_E6_EL1004]^Channel 1^Input;
+    								 .q_RunDO			:=	TIIB[LAMP_PLC_E7_EL2794]^Channel 1^Output			 
+    	'}
+    	{attribute 'pytmc' := '
+    		pv: LAMP:GJ2:PTM:01
+    		io: io
+    	'}
+    	LAMP_GJ2_PTM_01 : FB_PTM_TurboDrive;
+    	
+    	{attribute 'TcLinkTo' := 	'.i_xAtSpd			:=	TIIB[LAMP_PLC_E6_EL1004]^Channel 4^Input;
+    								 .i_xFaultNC		:=	TIIB[LAMP_PLC_E6_EL1004]^Channel 3^Input;
+    								 .q_RunDO			:=	TIIB[LAMP_PLC_E7_EL2794]^Channel 3^Output			 
+    	'}
+    	{attribute 'pytmc' := '
+    		pv: LAMP:GJ2:PTM:02
+    		io: io
+    	'}
+    	LAMP_GJ2_PTM_02 : FB_PTM_TurboDrive;
+    	
+    	{attribute 'TcLinkTo' := 	'.i_xAtSpd			:=	TIIB[LAMP_PLC_E8_EL1004]^Channel 2^Input;
+    								 .i_xFaultNC		:=	TIIB[LAMP_PLC_E8_EL1004]^Channel 1^Input;
+    								 .q_RunDO			:=	TIIB[LAMP_PLC_E7_EL2794]^Channel 2^Output			 
+    	'}
+    	{attribute 'pytmc' := '
+    		pv: LAMP:GJ2:PTM:03
+    		io: io
+    	'}
+    	LAMP_GJ2_PTM_03 : FB_PTM_TurboDrive;
+    	
+    	{attribute 'TcLinkTo' := 	'.i_xAtSpd			:=	TIIB[LAMP_PLC_E8_EL1004]^Channel 4^Input;
+    								 .i_xFaultNC		:=	TIIB[LAMP_PLC_E8_EL1004]^Channel 3^Input;
+    								 .q_RunDO			:=	TIIB[LAMP_PLC_E7_EL2794]^Channel 4^Output			 
+    	'}
+    	{attribute 'pytmc' := '
+    		pv: LAMP:GJ2:PTM:04
+    		io: io
+    	'}
+    	LAMP_GJ2_PTM_04 : FB_PTM_TurboDrive;
+
+    (*Onboard Turbo Pumps*)
+    	{attribute 'TcLinkTo' := 	'.i_xAtSpd			:=	TIIB[LAMP_PNL1_EP01_EP2338-0002]^Channel 1^Input;
+    								 .i_xFaultNC		:=	TIIB[LAMP_PNL1_EP01_EP2338-0002]^Channel 2^Input;
+    								 .i_xRemote			:=	TIIB[LAMP_PNL1_EP01_EP2338-0002]^Channel 3^Input;
+    								 .q_RunDO			:=	TIIB[LAMP_PNL1_EP02_EP2624-0002]^Channel 1^Output;
+    								 .q_xReset 			:=	TIIB[LAMP_PNL1_EP02_EP2624-0002]^Channel 2^Output				 
+    	'}
+    	{attribute 'pytmc' := '
+    		pv: LAMP:C2:PTM:01
+    		io: io
+    	'}
+    	LAMP_C2_PTM_01 : FB_PTM_Pfeiffer;
+    	
+    	{attribute 'TcLinkTo' := 	'.i_xAtSpd			:=	TIIB[LAMP_PNL1_EP01_EP2338-0002]^Channel 5^Input;
+    								 .i_xFaultNC		:=	TIIB[LAMP_PNL1_EP01_EP2338-0002]^Channel 6^Input;
+    								 .i_xRemote			:=	TIIB[LAMP_PNL1_EP01_EP2338-0002]^Channel 7^Input;
+    								 .q_RunDO			:=	TIIB[LAMP_PNL1_EP02_EP2624-0002]^Channel 3^Output;
+    								 .q_xReset 			:=	TIIB[LAMP_PNL1_EP02_EP2624-0002]^Channel 4^Output				 
+    	'}
+    	{attribute 'pytmc' := '
+    		pv: LAMP:C2:PTM:02
+    		io: io
+    	'}
+    	LAMP_C2_PTM_02 : FB_PTM_Pfeiffer;
+    	
+    	{attribute 'TcLinkTo' := 	'.i_xAtSpd			:=	TIIB[LAMP_PNL1_EP04_EP2338-0002]^Channel 1^Input;
+    								 .i_xFaultNC		:=	TIIB[LAMP_PNL1_EP04_EP2338-0002]^Channel 2^Input;
+    								 .i_xRemote			:=	TIIB[LAMP_PNL1_EP04_EP2338-0002]^Channel 3^Input;
+    								 .q_RunDO			:=	TIIB[LAMP_PNL1_EP05_EP2624-0002]^Channel 1^Output;
+    								 .q_xReset 			:=	TIIB[LAMP_PNL1_EP05_EP2624-0002]^Channel 2^Output				 
+    	'}
+    	{attribute 'pytmc' := '
+    		pv: LAMP:C2:PTM:03
+    		io: io
+    	'}
+    	LAMP_C2_PTM_03 : FB_PTM_Pfeiffer;
+    	
+    	{attribute 'TcLinkTo' := 	'.i_xAtSpd			:=	TIIB[LAMP_PNL1_EP04_EP2338-0002]^Channel 5^Input;
+    								 .i_xFaultNC		:=	TIIB[LAMP_PNL1_EP04_EP2338-0002]^Channel 6^Input;
+    								 .i_xRemote			:=	TIIB[LAMP_PNL1_EP04_EP2338-0002]^Channel 7^Input;
+    								 .q_RunDO			:=	TIIB[LAMP_PNL1_EP05_EP2624-0002]^Channel 3^Output;
+    								 .q_xReset 			:=	TIIB[LAMP_PNL1_EP05_EP2624-0002]^Channel 4^Output				 
+    	'}
+    	{attribute 'pytmc' := '
+    		pv: LAMP:C2:PTM:04
+    		io: io
+    	'}
+    	LAMP_C2_PTM_04 : FB_PTM_Pfeiffer;
+    	
+    	{attribute 'TcLinkTo' := 	'.i_xAtSpd			:=	TIIB[LAMP_PNL1_EP07_EP2338-0002]^Channel 1^Input;
+    								 .i_xFaultNC		:=	TIIB[LAMP_PNL1_EP07_EP2338-0002]^Channel 2^Input;
+    								 .i_xRemote			:=	TIIB[LAMP_PNL1_EP07_EP2338-0002]^Channel 3^Input;
+    								 .q_RunDO			:=	TIIB[LAMP_PNL1_EP08_EP2624-0002]^Channel 1^Output;
+    								 .q_xReset 			:=	TIIB[LAMP_PNL1_EP08_EP2624-0002]^Channel 2^Output				 
+    	'}
+    	{attribute 'pytmc' := '
+    		pv: LAMP:GJ1:PTM:01
+    		io: io
+    	'}
+    	LAMP_GJ1_PTM_01 : FB_PTM_Pfeiffer;
+    	
+    	{attribute 'TcLinkTo' := 	'.i_xAtSpd			:=	TIIB[LAMP_PNL1_EP07_EP2338-0002]^Channel 5^Input;
+    								 .i_xFaultNC		:=	TIIB[LAMP_PNL1_EP07_EP2338-0002]^Channel 6^Input;
+    								 .i_xRemote			:=	TIIB[LAMP_PNL1_EP07_EP2338-0002]^Channel 7^Input;
+    								 .q_RunDO			:=	TIIB[LAMP_PNL1_EP08_EP2624-0002]^Channel 3^Output;
+    								 .q_xReset 			:=	TIIB[LAMP_PNL1_EP08_EP2624-0002]^Channel 4^Output				 
+    	'}
+    	{attribute 'pytmc' := '
+    		pv: LAMP:GJ1:PTM:02
+    		io: io
+    	'}
+    	LAMP_GJ1_PTM_02 : FB_PTM_Pfeiffer;
+    	
+    	{attribute 'TcLinkTo' := 	'.i_xAtSpd			:=	TIIB[LAMP_PNL1_EP10_EP2338-0002]^Channel 1^Input;
+    								 .i_xFaultNC		:=	TIIB[LAMP_PNL1_EP10_EP2338-0002]^Channel 2^Input;
+    								 .i_xRemote			:=	TIIB[LAMP_PNL1_EP10_EP2338-0002]^Channel 3^Input;
+    								 .q_RunDO			:=	TIIB[LAMP_PNL1_EP11_EP2624-0002]^Channel 1^Output;
+    								 .q_xReset 			:=	TIIB[LAMP_PNL1_EP11_EP2624-0002]^Channel 2^Output				 
+    	'}
+    	{attribute 'pytmc' := '
+    		pv: LAMP:GJ1:PTM:03
+    		io: io
+    	'}
+    	LAMP_GJ1_PTM_03 : FB_PTM_Pfeiffer;
+    	
+    	{attribute 'TcLinkTo' := 	'.i_xAtSpd			:=	TIIB[LAMP_PNL1_EP10_EP2338-0002]^Channel 5^Input;
+    								 .i_xFaultNC		:=	TIIB[LAMP_PNL1_EP10_EP2338-0002]^Channel 6^Input;
+    								 .i_xRemote			:=	TIIB[LAMP_PNL1_EP10_EP2338-0002]^Channel 7^Input;
+    								 .q_RunDO			:=	TIIB[LAMP_PNL1_EP11_EP2624-0002]^Channel 3^Output;
+    								 .q_xReset 			:=	TIIB[LAMP_PNL1_EP11_EP2624-0002]^Channel 4^Output				 
+    	'}
+    	{attribute 'pytmc' := '
+    		pv: LAMP:GJ1:PTM:04
+    		io: io
+    	'}
+    	LAMP_GJ1_PTM_04 : FB_PTM_Pfeiffer;
+    	
+    	{attribute 'TcLinkTo' := 	'.i_xAtSpd			:=	TIIB[LAMP_PNL2_EP16_EP2338-0002]^Channel 1^Input;
+    								 .i_xFaultNC		:=	TIIB[LAMP_PNL2_EP16_EP2338-0002]^Channel 2^Input;
+    								 .q_RunDO			:=	TIIB[LAMP_PNL2_EP17_EP2624-0002]^Channel 1^Output;
+    								 .q_xReset 			:=	TIIB[LAMP_PNL2_EP17_EP2624-0002]^Channel 2^Output				 
+    	'}
+    	{attribute 'pytmc' := '
+    		pv: LAMP:CATCH:PTM:01
+    		io: io
+    	'}
+    	LAMP_CATCH_PTM_01 : FB_PTM_Pfeiffer;
+    	
+    	{attribute 'TcLinkTo' := 	'.i_xAtSpd			:=	TIIB[LAMP_PNL2_EP16_EP2338-0002]^Channel 5^Input;
+    								 .i_xFaultNC		:=	TIIB[LAMP_PNL2_EP16_EP2338-0002]^Channel 6^Input;
+    								 .q_RunDO			:=	TIIB[LAMP_PNL2_EP17_EP2624-0002]^Channel 3^Output;
+    								 .q_xReset 			:=	TIIB[LAMP_PNL2_EP17_EP2624-0002]^Channel 4^Output				 
+    	'}
+    	{attribute 'pytmc' := '
+    		pv: LAMP:CATCH:PTM:02
+    		io: io
+    	'}
+    	LAMP_CATCH_PTM_02 : FB_PTM_Pfeiffer;
+    	
+    	{attribute 'TcLinkTo' := 	'.i_xAtSpd			:=	TIIB[LAMP_PNL2_EP13_EP2338-0002]^Channel 1^Input;
+    								 .i_xFaultNC		:=	TIIB[LAMP_PNL2_EP13_EP2338-0002]^Channel 2^Input;
+    								 .i_xRemote			:=	TIIB[LAMP_PNL2_EP13_EP2338-0002]^Channel 3^Input;
+    								 .q_RunDO			:=	TIIB[LAMP_PNL2_EP14_EP2624-0002]^Channel 1^Output;
+    								 .q_xReset 			:=	TIIB[LAMP_PNL2_EP14_EP2624-0002]^Channel 2^Output				 
+    	'}
+    	{attribute 'pytmc' := '
+    		pv: LAMP:ROUGH:PTM:01
+    		io: io
+    	'}
+    	LAMP_ROUGH_PTM_01 : FB_PTM_Pfeiffer;
+    	
+    	{attribute 'TcLinkTo' := 	'.i_xAtSpd			:=	TIIB[LAMP_PNL2_EP13_EP2338-0002]^Channel 5^Input;
+    								 .i_xFaultNC		:=	TIIB[LAMP_PNL2_EP13_EP2338-0002]^Channel 6^Input;
+    								 .i_xRemote			:=	TIIB[LAMP_PNL2_EP13_EP2338-0002]^Channel 7^Input;
+    								 .q_RunDO			:=	TIIB[LAMP_PNL2_EP14_EP2624-0002]^Channel 3^Output;
+    								 .q_xReset 			:=	TIIB[LAMP_PNL2_EP14_EP2624-0002]^Channel 4^Output				 
+    	'}
+    	{attribute 'pytmc' := '
+    		pv: LAMP:C1:PTM:01
+    		io: io
+    	'}
+    	LAMP_C1_PTM_01 : FB_PTM_Pfeiffer;
+    	
+    	
+
+    (*KTOF Turbo Pump*)
+
+    	{attribute 'TcLinkTo' := 	'.i_xAtSpd			:=	TIIB[KTOF_PNL1_EP01_EP2338-0002]^Channel 1^Input;
+    								 .i_xFaultNC		:=	TIIB[KTOF_PNL1_EP01_EP2338-0002]^Channel 2^Input;
+    								 .i_xRemote			:=	TIIB[KTOF_PNL1_EP01_EP2338-0002]^Channel 3^Input;
+    								 .q_RunDO			:=	TIIB[KTOF_PNL1_EP02_EP2624-0002]^Channel 1^Output;
+    								 .q_xReset 			:=	TIIB[KTOF_PNL1_EP02_EP2624-0002]^Channel 2^Output				 
+    	'}
+    	{attribute 'pytmc' := '
+    		pv: KTOF:PTM:01
+    		io: io
+    	'}
+    	KTOF_PTM_01 : FB_PTM_Pfeiffer;
+
+    (*Pirani MKS 275 Gauges*)
+    	{attribute 'TcLinkTo' := 	'.i_iPRESS_R	:=	TIIB[LAMP_PNL2_EP19_EP3174-0002]^AI Standard Channel 1^Value
+    	'}
+    	{attribute 'pytmc' := '
+    		pv: LAMP:C2:GPI:01
+    		io: io
+    	'}
+    	LAMP_C2_GPI_01 : FB_MKS275;
+    	
+    (*	{attribute 'TcLinkTo' := 	'.i_iPRESS_R	:=	TIIB[LAMP_PNL2_EP19_EP3174-0002]^AI Standard Channel 2^Value
+    	'}
+    	{attribute 'pytmc' := '
+    		pv: LAMP:CATCH:GPI:01
+    		io: io
+    	'}
+    	LAMP_CATCH_GPI_01 : FB_MKS275; //NO GAUGE INSTALLED
+    *)	
+    	
+    	{attribute 'TcLinkTo' := 	'.i_iPRESS_R	:=	TIIB[LAMP_PNL2_EP19_EP3174-0002]^AI Standard Channel 3^Value
+    	'}
+    	{attribute 'pytmc' := '
+    		pv: LAMP:GJ1:GPI:01
+    		io: io
+    	'}
+    	LAMP_GJ1_GPI_01 : FB_MKS275;
+    	
+    	{attribute 'TcLinkTo' := 	'.i_iPRESS_R	:=	TIIB[LAMP_PNL2_EP19_EP3174-0002]^AI Standard Channel 4^Value
+    	'}
+    	{attribute 'pytmc' := '
+    		pv: LAMP:GJ2:GPI:01
+    		io: io
+    	'}
+    	LAMP_GJ2_GPI_01 : FB_MKS275;
+
+    (*MicroPirani MKS 925 Gauges*)
+    	{attribute 'TcLinkTo' := 	'.i_iPRESS_R	:=	TIIB[LAMP_PNL2_EP20_EP3174-0002]^AI Standard Channel 1^Value
+    	'}
+    	{attribute 'pytmc' := '
+    		pv: LAMP:ROUGH:GPI:01
+    		io: io
+    	'}
+    	LAMP_ROUGH_GPI_01 : FB_9XX;
+    	
+    	{attribute 'TcLinkTo' := 	'.i_iPRESS_R	:=	TIIB[LAMP_PNL2_EP20_EP3174-0002]^AI Standard Channel 2^Value
+    	'}
+    	{attribute 'pytmc' := '
+    		pv: LAMP:ROUGH:GPI:02
+    		io: io
+    	'}
+    	LAMP_ROUGH_GPI_02 : FB_9XX;
+    	
+    	{attribute 'TcLinkTo' := 	'.i_iPRESS_R	:=	TIIB[LAMP_PNL2_EP20_EP3174-0002]^AI Standard Channel 3^Value
+    	'}
+    	{attribute 'pytmc' := '
+    		pv: LAMP:ROUGH:GPI:03
+    		io: io
+    	'}
+    	LAMP_ROUGH_GPI_03 : FB_9XX;
+    	
+    	{attribute 'TcLinkTo' := 	'.i_iPRESS_R	:=	TIIB[LAMP_PNL2_EP20_EP3174-0002]^AI Standard Channel 4^Value
+    	'}
+    	{attribute 'pytmc' := '
+    		pv: LAMP:ROUGH:GPI:04
+    		io: io
+    	'}
+    	LAMP_ROUGH_GPI_04 : FB_9XX;
+
+    (*Cold Cathode MKS 500 Gauges*)
+    	{attribute 'TcLinkTo' := 	'.i_iPRESS_R	:=	TIIB[LAMP_PNL2_EP21_EP3174-0002]^AI Standard Channel 1^Value;
+    								 .q_xHV_DIS		:= 	TIIB[LAMP_PNL2_EP22_EP2624-0002]^Channel 1^Output
+    	'}	
+    	{attribute 'pytmc' := '
+    		pv: LAMP:C2:GCC:01
+    		io: io
+    	'}
+    	LAMP_C2_GCC_01 : FB_MKS500;
+    	
+    	{attribute 'TcLinkTo' := 	'.i_iPRESS_R	:=	TIIB[LAMP_PNL2_EP21_EP3174-0002]^AI Standard Channel 2^Value;
+    								 .q_xHV_DIS		:= 	TIIB[LAMP_PNL2_EP22_EP2624-0002]^Channel 2^Output
+    	'}	
+    	{attribute 'pytmc' := '
+    		pv: LAMP:CATCH:GCC:01
+    		io: io
+    	'}
+    	LAMP_CATCH_GCC_01 : FB_MKS500;
+    	
+    	{attribute 'TcLinkTo' := 	'.i_iPRESS_R	:=	TIIB[LAMP_PNL2_EP21_EP3174-0002]^AI Standard Channel 3^Value;
+    								 .q_xHV_DIS		:= 	TIIB[LAMP_PNL2_EP22_EP2624-0002]^Channel 3^Output
+    	'}	
+    	{attribute 'pytmc' := '
+    		pv: LAMP:CATCH:GCC:02
+    		io: io
+    	'}
+    	LAMP_CATCH_GCC_02 : FB_MKS500;
+    	
+    	{attribute 'TcLinkTo' := 	'.i_iPRESS_R	:=	TIIB[LAMP_PNL2_EP21_EP3174-0002]^AI Standard Channel 4^Value;
+    								 .q_xHV_DIS		:= 	TIIB[LAMP_PNL2_EP22_EP2624-0002]^Channel 4^Output
+    	'}	
+    	{attribute 'pytmc' := '
+    		pv: LAMP:GJ1:GCC:01
+    		io: io
+    	'}
+    	LAMP_GJ1_GCC_01 : FB_MKS500;
+    	
+    	{attribute 'TcLinkTo' := 	'.i_iPRESS_R	:=	TIIB[LAMP_PNL2_EP23_EP3174-0002]^AI Standard Channel 1^Value;
+    								 .q_xHV_DIS		:= 	TIIB[LAMP_PNL2_EP24_EP2624-0002]^Channel 1^Output
+    	'}	
+    	{attribute 'pytmc' := '
+    		pv: LAMP:GJ2:GCC:01
+    		io: io
+    	'}
+    	LAMP_GJ2_GCC_01 : FB_MKS500;
+
+    (*Hot Cathode MKS 909 Gauges*)
+    	{attribute 'TcLinkTo' := 	'.i_iPRESS_R	:=	TIIB[LAMP_PNL2_EP23_EP3174-0002]^AI Standard Channel 2^Value;
+    								 .q_xHV_DIS		:= 	TIIB[LAMP_PNL2_EP24_EP2624-0002]^Channel 2^Output
+    	'}	
+    	{attribute 'pytmc' := '
+    		pv: LAMP:C1:GHC:01
+    		io: io
+    	'}
+    	LAMP_C1_GHC_01 : FB_MKS909;
+
+    (*Normally Closed Valve with Readback*)
+    	{attribute 'TcLinkTo' := 	'.i_xOpnLS	:=	TIIB[LAMP_PNL2_EP25_EP2338-0002]^Channel 1^Input;
+    								 .i_xClsLS	:=	TIIB[LAMP_PNL2_EP25_EP2338-0002]^Channel 2^Input;
+    								 .q_xOPN_DO	:=	TIIB[LAMP_PNL2_EP25_EP2338-0002]^Channel 11^Output
+    	'}
+    	{attribute 'pytmc' := '
+    		pv: LAMP:ROUGH:VRC:01
+    		io: io
+    	'}
+    	LAMP_ROUGH_VRC_01 : FB_VRC;
+    	
+    	{attribute 'TcLinkTo' := 	'.i_xOpnLS	:=	TIIB[LAMP_PNL2_EP26_EP2338-0002]^Channel 1^Input;
+    								 .i_xClsLS	:=	TIIB[LAMP_PNL2_EP26_EP2338-0002]^Channel 2^Input;
+    								 .q_xOPN_DO	:=	TIIB[LAMP_PNL2_EP26_EP2338-0002]^Channel 11^Output
+    	'}
+    	{attribute 'pytmc' := '
+    		pv: LAMP:ROUGH:VRC:03
+    		io: io
+    	'}
+    	LAMP_ROUGH_VRC_03 : FB_VRC;
+
+    (*Normally Open Valve with Readback*)
+    	{attribute 'TcLinkTo' := 	'.i_xOpnLS	:=	TIIB[LAMP_PNL2_EP25_EP2338-0002]^Channel 5^Input;
+    								 .i_xClsLS	:=	TIIB[LAMP_PNL2_EP25_EP2338-0002]^Channel 6^Input;
+    								 .q_xCLS_DO	:=	TIIB[LAMP_PNL2_EP25_EP2338-0002]^Channel 15^Output
+    	'}
+    	{attribute 'pytmc' := '
+    		pv: LAMP:ROUGH:VRC:02
+    		io: io
+    	'}
+    	LAMP_ROUGH_VRC_02 : FB_VRC_NO;
+    	
+    (*Pfeiffer*)
+    	// They share the same serial port
+    	st_Pfeiffer_CTRL_LAMP_C2_PTM_01 		: ARRAY[1..20] OF ST_PfeifferControl;
+    	st_Pfeiffer_RBK_LAMP_C2_PTM_01 			: ARRAY[1..20] OF ST_PfeifferStatus;
+    	fb_PfeifferCom_LAMP_C2_PTM_01 			: FB_PFEIFFER_COM;
+    	
+    	st_Pfeiffer_CTRL_LAMP_C2_PTM_02 		: ARRAY[1..20] OF ST_PfeifferControl;
+    	st_Pfeiffer_RBK_LAMP_C2_PTM_02 			: ARRAY[1..20] OF ST_PfeifferStatus;
+    	fb_PfeifferCom_LAMP_C2_PTM_02 			: FB_PFEIFFER_COM;
+    	
+    	st_Pfeiffer_CTRL_LAMP_C2_PTM_03 		: ARRAY[1..20] OF ST_PfeifferControl;
+    	st_Pfeiffer_RBK_LAMP_C2_PTM_03 			: ARRAY[1..20] OF ST_PfeifferStatus;
+    	fb_PfeifferCom_LAMP_C2_PTM_03 			: FB_PFEIFFER_COM;
+    	
+    	st_Pfeiffer_CTRL_LAMP_C2_PTM_04			: ARRAY[1..20] OF ST_PfeifferControl;
+    	st_Pfeiffer_RBK_LAMP_C2_PTM_04 			: ARRAY[1..20] OF ST_PfeifferStatus;
+    	fb_PfeifferCom_LAMP_C2_PTM_04 			: FB_PFEIFFER_COM;
+    	
+    	st_Pfeiffer_CTRL_LAMP_GJ1_PTM_01 		: ARRAY[1..20] OF ST_PfeifferControl;
+    	st_Pfeiffer_RBK_LAMP_GJ1_PTM_01 		: ARRAY[1..20] OF ST_PfeifferStatus;
+    	fb_PfeifferCom_LAMP_GJ1_PTM_01 			: FB_PFEIFFER_COM;
+    	
+    	st_Pfeiffer_CTRL_LAMP_GJ1_PTM_02 		: ARRAY[1..20] OF ST_PfeifferControl;
+    	st_Pfeiffer_RBK_LAMP_GJ1_PTM_02 		: ARRAY[1..20] OF ST_PfeifferStatus;
+    	fb_PfeifferCom_LAMP_GJ1_PTM_02 			: FB_PFEIFFER_COM;
+    	
+    	st_Pfeiffer_CTRL_LAMP_GJ1_PTM_03 		: ARRAY[1..20] OF ST_PfeifferControl;
+    	st_Pfeiffer_RBK_LAMP_GJ1_PTM_03 		: ARRAY[1..20] OF ST_PfeifferStatus;
+    	fb_PfeifferCom_LAMP_GJ1_PTM_03 			: FB_PFEIFFER_COM;
+    	
+    	st_Pfeiffer_CTRL_LAMP_GJ1_PTM_04 		: ARRAY[1..20] OF ST_PfeifferControl;
+    	st_Pfeiffer_RBK_LAMP_GJ1_PTM_04 		: ARRAY[1..20] OF ST_PfeifferStatus;
+    	fb_PfeifferCom_LAMP_GJ1_PTM_04 			: FB_PFEIFFER_COM;
+    	
+    	st_Pfeiffer_CTRL_LAMP_ROUGH_PTM_01 		: ARRAY[1..20] OF ST_PfeifferControl;
+    	st_Pfeiffer_RBK_LAMP_ROUGH_PTM_01 		: ARRAY[1..20] OF ST_PfeifferStatus;
+    	fb_PfeifferCom_LAMP_ROUGH_PTM_01 		: FB_PFEIFFER_COM;
+    	
+    	st_Pfeiffer_CTRL_LAMP_C1_PTM_01 		: ARRAY[1..20] OF ST_PfeifferControl;
+    	st_Pfeiffer_RBK_LAMP_C1_PTM_01 			: ARRAY[1..20] OF ST_PfeifferStatus;
+    	fb_PfeifferCom_LAMP_C1_PTM_01 			: FB_PFEIFFER_COM;
+    	
+    	st_Pfeiffer_CTRL_LAMP_CATCH_PTM_01 		: ARRAY[1..20] OF ST_PfeifferControl;
+    	st_Pfeiffer_RBK_LAMP_CATCH_PTM_01 		: ARRAY[1..20] OF ST_PfeifferStatus;
+    	fb_PfeifferCom_LAMP_CATCH_PTM_01 		: FB_PFEIFFER_COM;
+    	
+    	st_Pfeiffer_CTRL_LAMP_CATCH_PTM_02 		: ARRAY[1..20] OF ST_PfeifferControl;
+    	st_Pfeiffer_RBK_LAMP_CATCH_PTM_02 		: ARRAY[1..20] OF ST_PfeifferStatus;
+    	fb_PfeifferCom_LAMP_CATCH_PTM_02 		: FB_PFEIFFER_COM;
+    	
+    	st_Pfeiffer_CTRL_KTOF_PTM_01 			: ARRAY[1..20] OF ST_PfeifferControl;
+    	st_Pfeiffer_RBK_KTOF_PTM_01 			: ARRAY[1..20] OF ST_PfeifferStatus;
+    	fb_PfeifferCom_KTOF_PTM_01 				: FB_PFEIFFER_COM;
+    	
+    	//Leybold status
+    	st_TD20_RBK_LAMP_GJ2_PTM_01 		: ST_TD20Status;
+    	fb_TD20Com_LAMP_GJ2_PTM_01 			: FB_OERLIKON_TD20_COM;
+    	
+    	st_TD20_RBK_LAMP_GJ2_PTM_02 		: ST_TD20Status;
+    	fb_TD20Com_LAMP_GJ2_PTM_02 			: FB_OERLIKON_TD20_COM;
+    	
+    	st_TD20_RBK_LAMP_GJ2_PTM_03 		: ST_TD20Status;
+    	fb_TD20Com_LAMP_GJ2_PTM_03 			: FB_OERLIKON_TD20_COM;
+    	
+    	st_TD20_RBK_LAMP_GJ2_PTM_04 		: ST_TD20Status;
+    	fb_TD20Com_LAMP_GJ2_PTM_04 			: FB_OERLIKON_TD20_COM;
+
+    END_VAR
+
+
+GVL_PLC_Interfaces
+^^^^^^^^^^^^^^^^^^
+
+::
+
+    //{attribute 'qualified_only'}
+    VAR_GLOBAL
+    	(*TMO Beamline Vacuum*)
+    	//Outputs
+    	fb_ADS_WATCHDOG_VAC_LAMP_TMO:FB_ADS_WATCHDOG;
+    	
+    END_VAR
+
+
+GVL_Variables
+^^^^^^^^^^^^^
+
+::
+
+    //{attribute 'qualified_only'}
+    VAR_GLOBAL
+    	{attribute 'pytmc' := '
+    		pv: PLC:LAMP:VAC:OVRDON
+    		io: io
+    	'}
+    	xSystemOverrideMode_LAMP	: BOOL := FALSE; (* Global system override for the HXR Vacuum System EBD*)
+    END_VAR
+
+
+POUs
+----
+
+
+DIAGNOSTICS
+^^^^^^^^^^^
+
+::
+
+    PROGRAM DIAGNOSTICS
+    VAR
+    	//Change the PLC String Name to the actual PLC NAME
+    	sPLCName :STRING := 'PLC-LAMP-VAC';
+    	//Link the sAMSNetID to the Etherat Master netID
+    	i_sAMSNetID AT %I*: AMSNETID;
+    	// DO NOT CHANGE
+    	sAMSNetID : STRING; //used for EPICS PV
+    	sLibVersion_LCLS_General : STRING;(* := stLibVersion_LCLS_General.sVersion*) ;
+    	fbEcatDiag:FB_EcatDiag;
+    	bAllSlaveStateGood : BOOL;
+    	bMasterStateGood :BOOL;
+    	iMasterState: WORD;
+    	sMasterState:STRING;
+    	nSlaveNumber : UINT;
+    	aiSlaveStates: ARRAY[1..256] OF BYTE;
+    	aEcSlaveInfo :  ARRAY[1..256] OF ST_EcDevice;
+    END_VAR
+    // Instaniating a call to the fbEcatDiag
+    fbEcatDiag(
+    	I_AMSNetId:=i_sAMSNetID , 
+    	i_xFirstPass:= _TaskInfo[1].FirstCycle, 
+    	q_xAllSlaveStatesGood=> bAllSlaveStateGood , 
+    	q_anTermStates=> aiSlaveStates, 
+    	q_xMasterStateGood=>bMasterStateGood , 
+    	q_nMasterState=> iMasterState, 
+    	q_sMasterState=> sMasterState , 
+    	q_astEcConfSlaveInfo=> aEcSlaveInfo , 
+    	q_nSlaves=> nSlaveNumber);
+
+    END_PROGRAM
+
+
+MAIN
+^^^^
+
+::
+
+    PROGRAM MAIN
+    VAR
+    	
+    	fbLogHandler : FB_LogHandler;
+    	
+    //TMO Interface
+    ITF_TMO_ROUGH1_VRC_01: FB_TVGC_2S_ADS; //FB for accessing "TMO_ROUGH1_VRC_01" VGC_2S data from PLC-TMO-VAC
+    ITF_TMO_ROUGH2_VRC_01: FB_TVGC_2S_ADS; //FB for accessing "TMO_ROUGH2_VRC_01" VGC_2S data from PLC-TMO-VAC
+    i_iWatchdog	:	UDINT; // PLC-TMO-VAC will write to this Watchdog variable
+
+    b_TurboPumpRunningFlag : BOOL;
+    TurboPumpTOF : TOF;
+    TurboPumpDelayTime : TIME := T#30s;
+    b_PumpRunning : BOOL;
+    	
+    END_VAR
+    //fb_to_LAMP_Arbiter(Arbiter := g_fbArbiter1, fbFFHWO := g_FastFaultOutput1);
+    fbLogHandler();
+    (*PLC-TMO-VAC ADS interface*)
+    //Writes watchdog bit to remote vac_TMO reading the vacuum components
+    fb_ADS_WATCHDOG_VAC_LAMP_TMO(
+    	sNetId:= '172.21.132.22.1.1', 
+    	nPort:= 851, 
+    	sVarName:= 'PRG_ADS_Interfaces.i_iWatchdog', 
+    	bError=> );
+    	
+    ITF_TMO_ROUGH1_VRC_01(
+    	sNetId:= '172.21.132.22.1.1', 
+    	nPort:= 851, 
+    	sVarName:= 'GVL_Hutch_Valves.TMO_ROUGH1_VRC_01', 
+    	iWatchdog:= i_iWatchdog, 
+    	VGC=> , 
+    	bError=> );
+    	
+    ITF_TMO_ROUGH2_VRC_01(
+    	sNetId:= '172.21.132.22.1.1', 
+    	nPort:= 851, 
+    	sVarName:= 'GVL_Hutch_Valves.TMO_ROUGH2_VRC_01', 
+    	iWatchdog:= i_iWatchdog, 
+    	VGC=> , 
+    	bError=> );
+    	
+    //Apply TMO Interface Logic
+    IF(ITF_TMO_ROUGH1_VRC_01.VGC.eState <> E_ValvePositionState.OPEN) OR (ITF_TMO_ROUGH2_VRC_01.VGC.eState <> E_ValvePositionState.OPEN)
+    THEN
+    	//turn off all turbo pumps and close the two normally closed valves
+    	LAMP_GJ2_PTM_01.M_Run(FALSE);
+    	LAMP_GJ2_PTM_02.M_Run(FALSE);
+    	LAMP_GJ2_PTM_03.M_Run(FALSE);
+    	LAMP_GJ2_PTM_04.M_Run(FALSE);
+    	LAMP_C1_PTM_01.M_Run(FALSE);
+    	LAMP_C2_PTM_01.M_Run(FALSE);
+    	LAMP_C2_PTM_02.M_Run(FALSE);
+    	LAMP_C2_PTM_03.M_Run(FALSE);
+    	LAMP_C2_PTM_04.M_Run(FALSE);
+    	LAMP_CATCH_PTM_01.M_Run(FALSE);
+    	LAMP_CATCH_PTM_02.M_Run(FALSE);
+    	LAMP_GJ1_PTM_01.M_Run(FALSE);
+    	LAMP_GJ1_PTM_02.M_Run(FALSE);
+    	LAMP_GJ1_PTM_03.M_Run(FALSE);
+    	LAMP_GJ1_PTM_04.M_Run(FALSE);
+    	LAMP_ROUGH_PTM_01.M_Run(FALSE);
+    	KTOF_PTM_01.M_Run(FALSE);
+    	LAMP_ROUGH_VRC_01.M_Set_OPN_SW(FALSE);
+    	LAMP_ROUGH_VRC_03.M_Set_OPN_SW(FALSE);
+    END_IF
+
+    	
+    // Run the Diagnostics PRG
+    DIAGNOSTICS();
+
+    //TurboPump running Flag with 30 second Turn Off delay.
+    b_TurboPumpRunningFlag := (LAMP_GJ2_PTM_01.iq_stPtm.eState = E_PumpState.pumpRUNNING)  AND 
+    	(LAMP_GJ2_PTM_02.iq_stPtm.eState = E_PumpState.pumpRUNNING) AND
+    	(LAMP_GJ2_PTM_03.iq_stPtm.eState = E_PumpState.pumpRUNNING) AND
+    	(LAMP_GJ2_PTM_04.iq_stPtm.eState = E_PumpState.pumpRUNNING) AND
+    	(LAMP_C1_PTM_01.iq_stPtm.eState = E_PumpState.pumpRUNNING) AND
+    //	(LAMP_C2_PTM_01.iq_stPtm.eState = E_PumpState.pumpRUNNING) AND //currently does not exist on LAMP
+    	(LAMP_C2_PTM_02.iq_stPtm.eState = E_PumpState.pumpRUNNING) AND
+    	(LAMP_C2_PTM_03.iq_stPtm.eState = E_PumpState.pumpRUNNING) AND
+    	(LAMP_C2_PTM_04.iq_stPtm.eState = E_PumpState.pumpRUNNING) AND
+    	(LAMP_CATCH_PTM_01.iq_stPtm.eState = E_PumpState.pumpRUNNING) AND
+    	(LAMP_CATCH_PTM_02.iq_stPtm.eState = E_PumpState.pumpRUNNING) AND
+    	(LAMP_GJ1_PTM_01.iq_stPtm.eState = E_PumpState.pumpRUNNING) AND
+    	(LAMP_GJ1_PTM_02.iq_stPtm.eState = E_PumpState.pumpRUNNING) AND
+    	(LAMP_GJ1_PTM_03.iq_stPtm.eState = E_PumpState.pumpRUNNING) AND
+    	(LAMP_GJ1_PTM_04.iq_stPtm.eState = E_PumpState.pumpRUNNING) AND
+    	(LAMP_ROUGH_PTM_01.iq_stPtm.eState = E_PumpState.pumpRUNNING) AND
+    	(KTOF_PTM_01.iq_stPtm.eState = E_PumpState.pumpRUNNING);	
+    TurboPumpTOF(IN:= b_TurboPumpRunningFlag, PT := TurboPumpDelayTime);
+    b_PumpRunning:= TurboPumpTOF.Q;
+
+
+    (*PIRANI Gauges*)
+    	LAMP_C2_GPI_01(PG=>);
+    	//LAMP_CATCH_GPI_01(PG=>);
+    	LAMP_GJ2_GPI_01(PG=>);
+    	LAMP_GJ1_GPI_01(PG=>);
+
+    (*uPIRANI Gauges*)
+    	LAMP_ROUGH_GPI_01(PG=>);
+    	LAMP_ROUGH_GPI_01.M_SetBits(32767);
+    	LAMP_ROUGH_GPI_02(PG=>);
+    	LAMP_ROUGH_GPI_02.M_SetBits(32767);
+    	LAMP_ROUGH_GPI_03(PG=>);
+    	LAMP_ROUGH_GPI_03.M_SetBits(32767);
+    	LAMP_ROUGH_GPI_04(PG=>);
+    	LAMP_ROUGH_GPI_04.M_SetBits(32767);	
+
+    (*Cold Cathode Gauges*)
+    	LAMP_C2_GCC_01(PG:=LAMP_C2_GPI_01.PG,IG=>,bEP:=TRUE);
+    	LAMP_CATCH_GCC_01(PG:=LAMP_C2_GPI_01.PG,IG=>,bEP:=TRUE);
+    	LAMP_CATCH_GCC_02(PG:=LAMP_C2_GPI_01.PG,IG=>,bEP:=TRUE);
+    	LAMP_GJ1_GCC_01(PG:=LAMP_GJ1_GPI_01.PG,IG=>,bEP:=TRUE);
+    	LAMP_GJ2_GCC_01(PG:=LAMP_GJ2_GPI_01.PG,IG=>,bEP:=TRUE);
+    	
+    (*Hot Cathode Gauges*)
+    	LAMP_C1_GHC_01(PG:=LAMP_C2_GPI_01.PG,IG=>);
+    	
+    (*TURBO Pumps*)
+    	LAMP_GJ2_PTM_01(
+    	i_xExtILKOk:= (LAMP_ROUGH_GPI_04.PG.rPRESS < 0.1) 
+    	AND LAMP_ROUGH_GPI_04.PG.xPRESS_OK
+    	AND (LAMP_GJ2_GPI_01.PG.rPRESS < 0.1)
+    	AND LAMP_GJ2_GPI_01.PG.xPRESS_OK
+    	AND (LAMP_ROUGH_VRC_03.iq_stValve.i_xOpnLS = TRUE), 
+    	iq_stPtm=> );
+    	
+    	LAMP_GJ2_PTM_02(
+    	i_xExtILKOk:= (LAMP_ROUGH_GPI_04.PG.rPRESS < 0.1) 
+    	AND LAMP_ROUGH_GPI_04.PG.xPRESS_OK
+    	AND (LAMP_GJ2_GPI_01.PG.rPRESS < 0.1)
+    	AND LAMP_ROUGH_GPI_04.PG.xPRESS_OK
+    	AND (LAMP_ROUGH_VRC_03.iq_stValve.i_xOpnLS = TRUE), 
+    	iq_stPtm=> );
+    	
+    	LAMP_GJ2_PTM_03(
+    	i_xExtILKOk:= (LAMP_ROUGH_GPI_04.PG.rPRESS < 0.1) 
+    	AND LAMP_ROUGH_GPI_04.PG.xPRESS_OK
+    	AND (LAMP_GJ2_GPI_01.PG.rPRESS < 0.1)
+    	AND LAMP_GJ2_GPI_01.PG.xPRESS_OK
+    	AND (LAMP_ROUGH_VRC_03.iq_stValve.i_xOpnLS = TRUE), 
+    	iq_stPtm=> );
+    	
+    	LAMP_GJ2_PTM_04(
+    	i_xExtILKOk:= (LAMP_ROUGH_GPI_04.PG.rPRESS < 0.1) 
+    	AND LAMP_ROUGH_GPI_04.PG.xPRESS_OK
+    	AND (LAMP_GJ2_GPI_01.PG.rPRESS < 0.1)
+    	AND LAMP_GJ2_GPI_01.PG.xPRESS_OK
+    	AND (LAMP_ROUGH_VRC_03.iq_stValve.i_xOpnLS = TRUE), 
+    	iq_stPtm=> );
+    	
+    	LAMP_C1_PTM_01(
+    	i_xExtIlkOK:= (LAMP_ROUGH_GPI_02.PG.rPRESS < 0.1) 
+    	AND LAMP_ROUGH_GPI_02.PG.xPRESS_OK
+    	AND (LAMP_C2_GPI_01.PG.rPRESS < 0.1)
+    	AND LAMP_C2_GPI_01.PG.xPRESS_OK
+    	AND (LAMP_ROUGH_VRC_01.iq_stValve.i_xOpnLS = TRUE), 
+    	iq_stPTM=> );
+    	
+    	LAMP_C2_PTM_01(
+    	i_xExtIlkOK:= (LAMP_ROUGH_GPI_02.PG.rPRESS < 0.1)
+    	AND LAMP_ROUGH_GPI_02.PG.xPRESS_OK
+    	AND (LAMP_C2_GPI_01.PG.rPRESS < 0.1)
+    	AND LAMP_C2_GPI_01.PG.xPRESS_OK
+    	AND (LAMP_ROUGH_VRC_01.iq_stValve.i_xOpnLS = TRUE), 
+    	iq_stPTM=> );
+    	
+    	LAMP_C2_PTM_02(
+    	i_xExtIlkOK:= (LAMP_ROUGH_GPI_02.PG.rPRESS < 0.1) 
+    	AND LAMP_ROUGH_GPI_02.PG.xPRESS_OK
+    	AND (LAMP_C2_GPI_01.PG.rPRESS < 0.1)
+    	AND LAMP_C2_GPI_01.PG.xPRESS_OK
+    	AND (LAMP_ROUGH_VRC_01.iq_stValve.i_xOpnLS = TRUE), 
+    	iq_stPTM=> );
+    	
+    	LAMP_C2_PTM_03(
+    	i_xExtIlkOK:= (LAMP_ROUGH_GPI_02.PG.rPRESS < 0.1) 
+    	AND LAMP_ROUGH_GPI_02.PG.xPRESS_OK
+    	AND (LAMP_C2_GPI_01.PG.rPRESS < 0.1)
+    	AND LAMP_C2_GPI_01.PG.xPRESS_OK
+    	AND (LAMP_ROUGH_VRC_01.iq_stValve.i_xOpnLS = TRUE), 
+    	iq_stPTM=> );
+    	
+    	LAMP_C2_PTM_04(
+    	i_xExtIlkOK:= (LAMP_ROUGH_GPI_02.PG.rPRESS < 0.1) 
+    	AND LAMP_ROUGH_GPI_02.PG.xPRESS_OK
+    	AND (LAMP_C2_GPI_01.PG.rPRESS < 0.1)
+    	AND LAMP_C2_GPI_01.PG.xPRESS_OK
+    	AND (LAMP_ROUGH_VRC_01.iq_stValve.i_xOpnLS = TRUE), 
+    	iq_stPTM=> );
+    	
+    	LAMP_CATCH_PTM_01(
+    	i_xExtIlkOK:= (LAMP_ROUGH_GPI_02.PG.rPRESS < 0.1) 
+    	AND LAMP_ROUGH_GPI_02.PG.xPRESS_OK
+    	AND (LAMP_C2_GPI_01.PG.rPRESS < 0.1)
+    	AND LAMP_C2_GPI_01.PG.xPRESS_OK
+    	AND (LAMP_ROUGH_VRC_01.iq_stValve.i_xOpnLS = TRUE), 
+    	iq_stPTM=> );
+    	
+    	LAMP_CATCH_PTM_02(
+    	i_xExtIlkOK:= (LAMP_ROUGH_GPI_02.PG.rPRESS < 0.1) 
+    	AND LAMP_ROUGH_GPI_02.PG.xPRESS_OK
+    	AND (LAMP_C2_GPI_01.PG.rPRESS < 0.1)
+    	AND LAMP_C2_GPI_01.PG.xPRESS_OK
+    	AND (LAMP_ROUGH_VRC_01.iq_stValve.i_xOpnLS = TRUE), 
+    	iq_stPTM=> );
+    	
+    	LAMP_GJ1_PTM_01(
+    	i_xExtIlkOK:= (LAMP_ROUGH_GPI_04.PG.rPRESS < 0.1) 
+    	AND LAMP_ROUGH_GPI_04.PG.xPRESS_OK
+    	AND (LAMP_GJ1_GPI_01.PG.rPRESS < 0.1)
+    	AND LAMP_GJ1_GPI_01.PG.xPRESS_OK
+    	AND (LAMP_ROUGH_VRC_03.iq_stValve.i_xOpnLS = TRUE), 
+    	iq_stPTM=> );
+    	
+    	LAMP_GJ1_PTM_02(
+    	i_xExtIlkOK:= (LAMP_ROUGH_GPI_04.PG.rPRESS < 0.1) 
+    	AND LAMP_ROUGH_GPI_04.PG.xPRESS_OK
+    	AND (LAMP_GJ1_GPI_01.PG.rPRESS < 0.1)
+    	AND LAMP_GJ1_GPI_01.PG.xPRESS_OK
+    	AND (LAMP_ROUGH_VRC_03.iq_stValve.i_xOpnLS = TRUE), 
+    	iq_stPTM=> );
+    	
+    	LAMP_GJ1_PTM_03(
+    	i_xExtIlkOK:= (LAMP_ROUGH_GPI_04.PG.rPRESS < 0.1) 
+    	AND LAMP_ROUGH_GPI_04.PG.xPRESS_OK
+    	AND (LAMP_GJ1_GPI_01.PG.rPRESS < 0.1)
+    	AND LAMP_GJ1_GPI_01.PG.xPRESS_OK
+    	AND (LAMP_ROUGH_VRC_03.iq_stValve.i_xOpnLS = TRUE), 
+    	iq_stPTM=> );
+    	
+    	LAMP_GJ1_PTM_04(
+    	i_xExtIlkOK:= (LAMP_ROUGH_GPI_04.PG.rPRESS < 0.1) 
+    	AND LAMP_ROUGH_GPI_04.PG.xPRESS_OK
+    	AND (LAMP_GJ1_GPI_01.PG.rPRESS < 0.1)
+    	AND LAMP_GJ1_GPI_01.PG.xPRESS_OK
+    	AND (LAMP_ROUGH_VRC_03.iq_stValve.i_xOpnLS = TRUE), 
+    	iq_stPTM=> );
+    	
+    	LAMP_ROUGH_PTM_01(
+    	i_xExtIlkOK:= (LAMP_ROUGH_GPI_02.PG.rPRESS < 0.1) 
+    	AND LAMP_ROUGH_GPI_02.PG.xPRESS_OK
+    	AND (LAMP_C2_GPI_01.PG.rPRESS < 0.1)
+    	AND LAMP_C2_GPI_01.PG.xPRESS_OK
+    	AND (LAMP_ROUGH_VRC_01.iq_stValve.i_xOpnLS = TRUE), 
+    	iq_stPTM=> );
+    	
+    	KTOF_PTM_01(
+    	i_xExtIlkOK:= (LAMP_ROUGH_GPI_02.PG.rPRESS < 0.1) 
+    	AND LAMP_ROUGH_GPI_02.PG.xPRESS_OK
+    	AND (LAMP_C2_GPI_01.PG.rPRESS < 0.1)
+    	AND LAMP_C2_GPI_01.PG.xPRESS_OK
+    	AND (LAMP_ROUGH_VRC_01.iq_stValve.i_xOpnLS = TRUE), 
+    	iq_stPTM=> );
+    	
+    (*Serial Communication*)
+    (*Assign adresses to the pfeiffer controllers connected to this serial terminal*)
+    st_Pfeiffer_CTRL_LAMP_C2_PTM_01[1].iSerialAddress :=1;
+    st_Pfeiffer_CTRL_LAMP_C2_PTM_01[1].xEnableComm := TRUE;
+    (* Instanitate the Function block for serial communication with Pfeiffer*)	
+    fb_PfeifferCom_LAMP_C2_PTM_01(astPfeifferControl := st_Pfeiffer_CTRL_LAMP_C2_PTM_01,
+    			   				  astPfeifferStatus:= st_Pfeiffer_RBK_LAMP_C2_PTM_01,
+    							  SerialRXBuffer:= SerialRXBuffer_LAMP_C2_PTM_01,
+    							  SerialTXBuffer:= SerialTXBuffer_LAMP_C2_PTM_01);
+    (* Copy Status Pv's into the PTM structure*)
+    LAMP_C2_PTM_01.M_Serial_IO(st_Pfeiffer_RBK:= st_Pfeiffer_RBK_LAMP_C2_PTM_01[1], st_Pfeiffer_CTRL:= st_Pfeiffer_CTRL_LAMP_C2_PTM_01[1]);
+
+    st_Pfeiffer_CTRL_LAMP_C2_PTM_02[1].iSerialAddress :=1;
+    st_Pfeiffer_CTRL_LAMP_C2_PTM_02[1].xEnableComm := TRUE;
+    fb_PfeifferCom_LAMP_C2_PTM_02(astPfeifferControl := st_Pfeiffer_CTRL_LAMP_C2_PTM_02,
+    			   				  astPfeifferStatus:= st_Pfeiffer_RBK_LAMP_C2_PTM_02,
+    							  SerialRXBuffer:= SerialRXBuffer_LAMP_C2_PTM_02,
+    							  SerialTXBuffer:= SerialTXBuffer_LAMP_C2_PTM_02);
+    LAMP_C2_PTM_02.M_Serial_IO(st_Pfeiffer_RBK:= st_Pfeiffer_RBK_LAMP_C2_PTM_02[1], st_Pfeiffer_CTRL:= st_Pfeiffer_CTRL_LAMP_C2_PTM_02[1]);
+
+    st_Pfeiffer_CTRL_LAMP_C2_PTM_03[1].iSerialAddress :=1;
+    st_Pfeiffer_CTRL_LAMP_C2_PTM_03[1].xEnableComm := TRUE;
+    fb_PfeifferCom_LAMP_C2_PTM_03(astPfeifferControl := st_Pfeiffer_CTRL_LAMP_C2_PTM_03,
+    			   				  astPfeifferStatus:= st_Pfeiffer_RBK_LAMP_C2_PTM_03,
+    							  SerialRXBuffer:= SerialRXBuffer_LAMP_C2_PTM_03,
+    							  SerialTXBuffer:= SerialTXBuffer_LAMP_C2_PTM_03);
+    LAMP_C2_PTM_03.M_Serial_IO(st_Pfeiffer_RBK:= st_Pfeiffer_RBK_LAMP_C2_PTM_03[1], st_Pfeiffer_CTRL:= st_Pfeiffer_CTRL_LAMP_C2_PTM_03[1]);
+
+    st_Pfeiffer_CTRL_LAMP_C2_PTM_04[1].iSerialAddress :=1;
+    st_Pfeiffer_CTRL_LAMP_C2_PTM_04[1].xEnableComm := TRUE;
+    fb_PfeifferCom_LAMP_C2_PTM_04(astPfeifferControl := st_Pfeiffer_CTRL_LAMP_C2_PTM_04,
+    			   				  astPfeifferStatus:= st_Pfeiffer_RBK_LAMP_C2_PTM_04,
+    							  SerialRXBuffer:= SerialRXBuffer_LAMP_C2_PTM_04,
+    							  SerialTXBuffer:= SerialTXBuffer_LAMP_C2_PTM_04);
+    LAMP_C2_PTM_04.M_Serial_IO(st_Pfeiffer_RBK:= st_Pfeiffer_RBK_LAMP_C2_PTM_04[1], st_Pfeiffer_CTRL:= st_Pfeiffer_CTRL_LAMP_C2_PTM_04[1]);
+
+    st_Pfeiffer_CTRL_LAMP_GJ1_PTM_01[1].iSerialAddress :=1;
+    st_Pfeiffer_CTRL_LAMP_GJ1_PTM_01[1].xEnableComm := TRUE;
+    fb_PfeifferCom_LAMP_GJ1_PTM_01(astPfeifferControl := st_Pfeiffer_CTRL_LAMP_GJ1_PTM_01,
+    			   				  astPfeifferStatus:= st_Pfeiffer_RBK_LAMP_GJ1_PTM_01,
+    							  SerialRXBuffer:= SerialRXBuffer_LAMP_GJ1_PTM_01,
+    							  SerialTXBuffer:= SerialTXBuffer_LAMP_GJ1_PTM_01);
+    LAMP_GJ1_PTM_01.M_Serial_IO(st_Pfeiffer_RBK:= st_Pfeiffer_RBK_LAMP_GJ1_PTM_01[1], st_Pfeiffer_CTRL:= st_Pfeiffer_CTRL_LAMP_GJ1_PTM_01[1]);
+
+    st_Pfeiffer_CTRL_LAMP_GJ1_PTM_02[1].iSerialAddress :=1;
+    st_Pfeiffer_CTRL_LAMP_GJ1_PTM_02[1].xEnableComm := TRUE;
+    fb_PfeifferCom_LAMP_GJ1_PTM_02(astPfeifferControl := st_Pfeiffer_CTRL_LAMP_GJ1_PTM_02,
+    			   				  astPfeifferStatus:= st_Pfeiffer_RBK_LAMP_GJ1_PTM_02,
+    							  SerialRXBuffer:= SerialRXBuffer_LAMP_GJ1_PTM_02,
+    							  SerialTXBuffer:= SerialTXBuffer_LAMP_GJ1_PTM_02);
+    LAMP_GJ1_PTM_02.M_Serial_IO(st_Pfeiffer_RBK:= st_Pfeiffer_RBK_LAMP_GJ1_PTM_02[1], st_Pfeiffer_CTRL:= st_Pfeiffer_CTRL_LAMP_GJ1_PTM_02[1]);
+
+    st_Pfeiffer_CTRL_LAMP_GJ1_PTM_03[1].iSerialAddress :=1;
+    st_Pfeiffer_CTRL_LAMP_GJ1_PTM_03[1].xEnableComm := TRUE;
+    fb_PfeifferCom_LAMP_GJ1_PTM_03(astPfeifferControl := st_Pfeiffer_CTRL_LAMP_GJ1_PTM_03,
+    			   				  astPfeifferStatus:= st_Pfeiffer_RBK_LAMP_GJ1_PTM_03,
+    							  SerialRXBuffer:= SerialRXBuffer_LAMP_GJ1_PTM_03,
+    							  SerialTXBuffer:= SerialTXBuffer_LAMP_GJ1_PTM_03);
+    LAMP_GJ1_PTM_03.M_Serial_IO(st_Pfeiffer_RBK:= st_Pfeiffer_RBK_LAMP_GJ1_PTM_03[1], st_Pfeiffer_CTRL:= st_Pfeiffer_CTRL_LAMP_GJ1_PTM_03[1]);
+
+    st_Pfeiffer_CTRL_LAMP_GJ1_PTM_04[1].iSerialAddress :=1;
+    st_Pfeiffer_CTRL_LAMP_GJ1_PTM_04[1].xEnableComm := TRUE;
+    fb_PfeifferCom_LAMP_GJ1_PTM_04(astPfeifferControl := st_Pfeiffer_CTRL_LAMP_GJ1_PTM_04,
+    			   				  astPfeifferStatus:= st_Pfeiffer_RBK_LAMP_GJ1_PTM_04,
+    							  SerialRXBuffer:= SerialRXBuffer_LAMP_GJ1_PTM_04,
+    							  SerialTXBuffer:= SerialTXBuffer_LAMP_GJ1_PTM_04);
+    LAMP_GJ1_PTM_04.M_Serial_IO(st_Pfeiffer_RBK:= st_Pfeiffer_RBK_LAMP_GJ1_PTM_04[1], st_Pfeiffer_CTRL:= st_Pfeiffer_CTRL_LAMP_GJ1_PTM_04[1]);
+
+    st_Pfeiffer_CTRL_LAMP_ROUGH_PTM_01[1].iSerialAddress :=1;
+    st_Pfeiffer_CTRL_LAMP_ROUGH_PTM_01[1].xEnableComm := TRUE;
+    fb_PfeifferCom_LAMP_ROUGH_PTM_01(astPfeifferControl := st_Pfeiffer_CTRL_LAMP_ROUGH_PTM_01,
+    			   				  astPfeifferStatus:= st_Pfeiffer_RBK_LAMP_ROUGH_PTM_01,
+    							  SerialRXBuffer:= SerialRXBuffer_LAMP_ROUGH_PTM_01,
+    							  SerialTXBuffer:= SerialTXBuffer_LAMP_ROUGH_PTM_01);
+    LAMP_ROUGH_PTM_01.M_Serial_IO(st_Pfeiffer_RBK:= st_Pfeiffer_RBK_LAMP_ROUGH_PTM_01[1], st_Pfeiffer_CTRL:= st_Pfeiffer_CTRL_LAMP_ROUGH_PTM_01[1]);
+
+    st_Pfeiffer_CTRL_LAMP_C1_PTM_01[1].iSerialAddress :=1;
+    st_Pfeiffer_CTRL_LAMP_C1_PTM_01[1].xEnableComm := TRUE;
+    fb_PfeifferCom_LAMP_C1_PTM_01(astPfeifferControl := st_Pfeiffer_CTRL_LAMP_C1_PTM_01,
+    			   				  astPfeifferStatus:= st_Pfeiffer_RBK_LAMP_C1_PTM_01,
+    							  SerialRXBuffer:= SerialRXBuffer_LAMP_C1_PTM_01,
+    							  SerialTXBuffer:= SerialTXBuffer_LAMP_C1_PTM_01);
+    LAMP_C1_PTM_01.M_Serial_IO(st_Pfeiffer_RBK:= st_Pfeiffer_RBK_LAMP_C1_PTM_01[1], st_Pfeiffer_CTRL:= st_Pfeiffer_CTRL_LAMP_C1_PTM_01[1]);
+
+    st_Pfeiffer_CTRL_LAMP_CATCH_PTM_01[1].iSerialAddress :=1;
+    st_Pfeiffer_CTRL_LAMP_CATCH_PTM_01[1].xEnableComm := TRUE;
+    fb_PfeifferCom_LAMP_CATCH_PTM_01(astPfeifferControl := st_Pfeiffer_CTRL_LAMP_CATCH_PTM_01,
+    			   				  astPfeifferStatus:= st_Pfeiffer_RBK_LAMP_CATCH_PTM_01,
+    							  SerialRXBuffer:= SerialRXBuffer_LAMP_CATCH_PTM_01,
+    							  SerialTXBuffer:= SerialTXBuffer_LAMP_CATCH_PTM_01);
+    LAMP_CATCH_PTM_01.M_Serial_IO(st_Pfeiffer_RBK:= st_Pfeiffer_RBK_LAMP_CATCH_PTM_01[1], st_Pfeiffer_CTRL:= st_Pfeiffer_CTRL_LAMP_CATCH_PTM_01[1]);
+
+    st_Pfeiffer_CTRL_LAMP_CATCH_PTM_02[1].iSerialAddress :=1;
+    st_Pfeiffer_CTRL_LAMP_CATCH_PTM_02[1].xEnableComm := TRUE;
+    fb_PfeifferCom_LAMP_CATCH_PTM_02(astPfeifferControl := st_Pfeiffer_CTRL_LAMP_CATCH_PTM_02,
+    			   				  astPfeifferStatus:= st_Pfeiffer_RBK_LAMP_CATCH_PTM_02,
+    							  SerialRXBuffer:= SerialRXBuffer_LAMP_CATCH_PTM_02,
+    							  SerialTXBuffer:= SerialTXBuffer_LAMP_CATCH_PTM_02);
+    LAMP_CATCH_PTM_02.M_Serial_IO(st_Pfeiffer_RBK:= st_Pfeiffer_RBK_LAMP_CATCH_PTM_02[1], st_Pfeiffer_CTRL:= st_Pfeiffer_CTRL_LAMP_CATCH_PTM_02[1]);
+
+    st_Pfeiffer_CTRL_KTOF_PTM_01[1].iSerialAddress :=1;
+    st_Pfeiffer_CTRL_KTOF_PTM_01[1].xEnableComm := TRUE;
+    fb_PfeifferCom_KTOF_PTM_01(astPfeifferControl := st_Pfeiffer_CTRL_KTOF_PTM_01,
+    			   				  astPfeifferStatus:= st_Pfeiffer_RBK_KTOF_PTM_01,
+    							  SerialRXBuffer:= SerialRXBuffer_KTOF_PTM_01,
+    							  SerialTXBuffer:= SerialTXBuffer_KTOF_PTM_01);
+    //KTOF_PTM_01.M_Serial_IO(st_Pfeiffer_CTRL_KTOF_PTM_01[1],st_Pfeiffer_RBK_KTOF_PTM_01[1]);
+    KTOF_PTM_01.M_Serial_IO(st_Pfeiffer_RBK:= st_Pfeiffer_RBK_KTOF_PTM_01[1], st_Pfeiffer_CTRL:= st_Pfeiffer_CTRL_KTOF_PTM_01[1]);
+
+    //Leybolds
+    fb_TD20Com_LAMP_GJ2_PTM_01(SerialRXBuffer:= SerialRXBuffer_LAMP_GJ2_PTM_01, 
+    						   SerialTXBuffer:= SerialTXBuffer_LAMP_GJ2_PTM_01, 
+    						   astTD20Status=> st_TD20_RBK_LAMP_GJ2_PTM_01);
+    LAMP_GJ2_PTM_01.M_Serial_IO(i_st_TD20_RBK:= st_TD20_RBK_LAMP_GJ2_PTM_01);
+
+
+    fb_TD20Com_LAMP_GJ2_PTM_02(SerialRXBuffer:= SerialRXBuffer_LAMP_GJ2_PTM_02, 
+    						   SerialTXBuffer:= SerialTXBuffer_LAMP_GJ2_PTM_02, 
+    						   astTD20Status=> st_TD20_RBK_LAMP_GJ2_PTM_02);
+    LAMP_GJ2_PTM_02.M_Serial_IO(i_st_TD20_RBK:= st_TD20_RBK_LAMP_GJ2_PTM_02);
+
+    fb_TD20Com_LAMP_GJ2_PTM_03(SerialRXBuffer:= SerialRXBuffer_LAMP_GJ2_PTM_03, 
+    						   SerialTXBuffer:= SerialTXBuffer_LAMP_GJ2_PTM_03, 
+    						   astTD20Status=> st_TD20_RBK_LAMP_GJ2_PTM_03);
+    LAMP_GJ2_PTM_03.M_Serial_IO(i_st_TD20_RBK:= st_TD20_RBK_LAMP_GJ2_PTM_03);
+
+    fb_TD20Com_LAMP_GJ2_PTM_04(SerialRXBuffer:= SerialRXBuffer_LAMP_GJ2_PTM_04, 
+    						   SerialTXBuffer:= SerialTXBuffer_LAMP_GJ2_PTM_04, 
+    						   astTD20Status=> st_TD20_RBK_LAMP_GJ2_PTM_04);
+    LAMP_GJ2_PTM_04.M_Serial_IO(i_st_TD20_RBK:= st_TD20_RBK_LAMP_GJ2_PTM_04);
+
+
+    (*Vacuum Gate Valve*)
+    	LAMP_ROUGH_VRC_01(
+    	i_xExtILK_OK:= ABS(LAMP_ROUGH_GPI_01.PG.rPRESS - LAMP_ROUGH_GPI_02.PG.rPRESS)<10.0, 
+    	i_xOverrideMode:= xSystemOverrideMode_LAMP, 
+    	iq_stValve=> );
+    	
+    	LAMP_ROUGH_VRC_02(
+    	i_xExtILK_OK:= NOT((LAMP_GJ1_GPI_01.PG.rPRESS >10.0) OR (LAMP_GJ2_GPI_01.PG.rPRESS > 10.0) OR (LAMP_C2_GPI_01.PG.rPRESS > 10.0)) , 
+    	i_xOverrideMode:= xSystemOverrideMode_LAMP, 
+    	iq_stValve=> );
+    	
+    	LAMP_ROUGH_VRC_03(
+    	i_xExtILK_OK:= ABS(LAMP_ROUGH_GPI_03.PG.rPRESS - LAMP_ROUGH_GPI_04.PG.rPRESS)<10.0, 
+    	i_xOverrideMode:= xSystemOverrideMode_LAMP, 
+    	iq_stValve=> );
+
+    END_PROGRAM
+
+
+PRG_COM
+^^^^^^^
+
+::
+
+    PROGRAM PRG_COM
+    VAR
+    END_VAR
+    (*Instanitate Serial port com function *) 
+    fbSerialLineControl_LAMP_C2_PTM_01(
+    	Mode:= SERIALLINEMODE_EL6_22B,
+    	pComIn:= ADR(stComIn_LAMP_C2_PTM_01),
+    	pComOut:=ADR(stComOut_LAMP_C2_PTM_01),
+    	SizeComIn:= SIZEOF(stComIn_LAMP_C2_PTM_01),
+    	TxBuffer:= SerialTXBuffer_LAMP_C2_PTM_01,
+    	RxBuffer:= SerialRXBuffer_LAMP_C2_PTM_01,
+    	Error=> ,
+    	ErrorID=> );
+    	
+    fbSerialLineControl_LAMP_C2_PTM_02(
+    	Mode:= SERIALLINEMODE_EL6_22B,
+    	pComIn:= ADR(stComIn_LAMP_C2_PTM_02),
+    	pComOut:=ADR(stComOut_LAMP_C2_PTM_02),
+    	SizeComIn:= SIZEOF(stComIn_LAMP_C2_PTM_02),
+    	TxBuffer:= SerialTXBuffer_LAMP_C2_PTM_02,
+    	RxBuffer:= SerialRXBuffer_LAMP_C2_PTM_02,
+    	Error=> ,
+    	ErrorID=> );
+    	
+    fbSerialLineControl_LAMP_C2_PTM_03(
+    	Mode:= SERIALLINEMODE_EL6_22B,
+    	pComIn:= ADR(stComIn_LAMP_C2_PTM_03),
+    	pComOut:=ADR(stComOut_LAMP_C2_PTM_03),
+    	SizeComIn:= SIZEOF(stComIn_LAMP_C2_PTM_03),
+    	TxBuffer:= SerialTXBuffer_LAMP_C2_PTM_03,
+    	RxBuffer:= SerialRXBuffer_LAMP_C2_PTM_03,
+    	Error=> ,
+    	ErrorID=> );
+    	
+    fbSerialLineControl_LAMP_C2_PTM_04(
+    	Mode:= SERIALLINEMODE_EL6_22B,
+    	pComIn:= ADR(stComIn_LAMP_C2_PTM_04),
+    	pComOut:=ADR(stComOut_LAMP_C2_PTM_04),
+    	SizeComIn:= SIZEOF(stComIn_LAMP_C2_PTM_04),
+    	TxBuffer:= SerialTXBuffer_LAMP_C2_PTM_04,
+    	RxBuffer:= SerialRXBuffer_LAMP_C2_PTM_04,
+    	Error=> ,
+    	ErrorID=> );
+    	
+    fbSerialLineControl_LAMP_GJ1_PTM_01(
+    	Mode:= SERIALLINEMODE_EL6_22B,
+    	pComIn:= ADR(stComIn_LAMP_GJ1_PTM_01),
+    	pComOut:=ADR(stComOut_LAMP_GJ1_PTM_01),
+    	SizeComIn:= SIZEOF(stComIn_LAMP_GJ1_PTM_01),
+    	TxBuffer:= SerialTXBuffer_LAMP_GJ1_PTM_01,
+    	RxBuffer:= SerialRXBuffer_LAMP_GJ1_PTM_01,
+    	Error=> ,
+    	ErrorID=> );
+    	
+    fbSerialLineControl_LAMP_GJ1_PTM_02(
+    	Mode:= SERIALLINEMODE_EL6_22B,
+    	pComIn:= ADR(stComIn_LAMP_GJ1_PTM_02),
+    	pComOut:=ADR(stComOut_LAMP_GJ1_PTM_02),
+    	SizeComIn:= SIZEOF(stComIn_LAMP_GJ1_PTM_02),
+    	TxBuffer:= SerialTXBuffer_LAMP_GJ1_PTM_02,
+    	RxBuffer:= SerialRXBuffer_LAMP_GJ1_PTM_02,
+    	Error=> ,
+    	ErrorID=> );
+    	
+    fbSerialLineControl_LAMP_GJ1_PTM_03(
+    	Mode:= SERIALLINEMODE_EL6_22B,
+    	pComIn:= ADR(stComIn_LAMP_GJ1_PTM_03),
+    	pComOut:=ADR(stComOut_LAMP_GJ1_PTM_03),
+    	SizeComIn:= SIZEOF(stComIn_LAMP_GJ1_PTM_03),
+    	TxBuffer:= SerialTXBuffer_LAMP_GJ1_PTM_03,
+    	RxBuffer:= SerialRXBuffer_LAMP_GJ1_PTM_03,
+    	Error=> ,
+    	ErrorID=> );
+    	
+    fbSerialLineControl_LAMP_GJ1_PTM_04(
+    	Mode:= SERIALLINEMODE_EL6_22B,
+    	pComIn:= ADR(stComIn_LAMP_GJ1_PTM_04),
+    	pComOut:=ADR(stComOut_LAMP_GJ1_PTM_04),
+    	SizeComIn:= SIZEOF(stComIn_LAMP_GJ1_PTM_04),
+    	TxBuffer:= SerialTXBuffer_LAMP_GJ1_PTM_04,
+    	RxBuffer:= SerialRXBuffer_LAMP_GJ1_PTM_04,
+    	Error=> ,
+    	ErrorID=> );
+    	
+    fbSerialLineControl_LAMP_ROUGH_PTM_01(
+    	Mode:= SERIALLINEMODE_EL6_22B,
+    	pComIn:= ADR(stComIn_LAMP_ROUGH_PTM_01),
+    	pComOut:=ADR(stComOut_LAMP_ROUGH_PTM_01),
+    	SizeComIn:= SIZEOF(stComIn_LAMP_ROUGH_PTM_01),
+    	TxBuffer:= SerialTXBuffer_LAMP_ROUGH_PTM_01,
+    	RxBuffer:= SerialRXBuffer_LAMP_ROUGH_PTM_01,
+    	Error=> ,
+    	ErrorID=> );
+    	
+    fbSerialLineControl_LAMP_C1_PTM_01(
+    	Mode:= SERIALLINEMODE_EL6_22B,
+    	pComIn:= ADR(stComIn_LAMP_C1_PTM_01),
+    	pComOut:=ADR(stComOut_LAMP_C1_PTM_01),
+    	SizeComIn:= SIZEOF(stComIn_LAMP_C1_PTM_01),
+    	TxBuffer:= SerialTXBuffer_LAMP_C1_PTM_01,
+    	RxBuffer:= SerialRXBuffer_LAMP_C1_PTM_01,
+    	Error=> ,
+    	ErrorID=> );
+    	
+    fbSerialLineControl_LAMP_CATCH_PTM_01(
+    	Mode:= SERIALLINEMODE_EL6_22B,
+    	pComIn:= ADR(stComIn_LAMP_CATCH_PTM_01),
+    	pComOut:=ADR(stComOut_LAMP_CATCH_PTM_01),
+    	SizeComIn:= SIZEOF(stComIn_LAMP_CATCH_PTM_01),
+    	TxBuffer:= SerialTXBuffer_LAMP_CATCH_PTM_01,
+    	RxBuffer:= SerialRXBuffer_LAMP_CATCH_PTM_01,
+    	Error=> ,
+    	ErrorID=> );
+    	
+    fbSerialLineControl_LAMP_CATCH_PTM_02(
+    	Mode:= SERIALLINEMODE_EL6_22B,
+    	pComIn:= ADR(stComIn_LAMP_CATCH_PTM_02),
+    	pComOut:=ADR(stComOut_LAMP_CATCH_PTM_02),
+    	SizeComIn:= SIZEOF(stComIn_LAMP_CATCH_PTM_02),
+    	TxBuffer:= SerialTXBuffer_LAMP_CATCH_PTM_02,
+    	RxBuffer:= SerialRXBuffer_LAMP_CATCH_PTM_02,
+    	Error=> ,
+    	ErrorID=> );
+    	
+    fbSerialLineControl_KTOF_PTM_01(
+    	Mode:= SERIALLINEMODE_EL6_22B,
+    	pComIn:= ADR(stComIn_KTOF_PTM_01),
+    	pComOut:=ADR(stComOut_KTOF_PTM_01),
+    	SizeComIn:= SIZEOF(stComIn_KTOF_PTM_01),
+    	TxBuffer:= SerialTXBuffer_KTOF_PTM_01,
+    	RxBuffer:= SerialRXBuffer_KTOF_PTM_01,
+    	Error=> ,
+    	ErrorID=> );
+    	
+    fbSerialLineControl_LAMP_GJ2_PTM_01(
+    	Mode:= SERIALLINEMODE_EL6_22B, 
+    	pComIn:= ADR(stComIn_LAMP_GJ2_PTM_01), 
+    	pComOut:= ADR(stComOut_LAMP_GJ2_PTM_01),
+    	SizeComIn:= SIZEOF(stComIn_LAMP_GJ2_PTM_01),
+    	Error=> , 
+    	ErrorID=> , 
+    	TxBuffer:= SerialTXBuffer_LAMP_GJ2_PTM_01, 
+    	RxBuffer:= SerialRXBuffer_LAMP_GJ2_PTM_01);
+    	
+    fbSerialLineControl_LAMP_GJ2_PTM_02(
+    	Mode:= SERIALLINEMODE_EL6_22B, 
+    	pComIn:= ADR(stComIn_LAMP_GJ2_PTM_02), 
+    	pComOut:= ADR(stComOut_LAMP_GJ2_PTM_02),
+    	SizeComIn:= SIZEOF(stComIn_LAMP_GJ2_PTM_02),
+    	Error=> , 
+    	ErrorID=> , 
+    	TxBuffer:= SerialTXBuffer_LAMP_GJ2_PTM_02, 
+    	RxBuffer:= SerialRXBuffer_LAMP_GJ2_PTM_02);
+
+    fbSerialLineControl_LAMP_GJ2_PTM_03(
+    	Mode:= SERIALLINEMODE_EL6_22B, 
+    	pComIn:= ADR(stComIn_LAMP_GJ2_PTM_03), 
+    	pComOut:= ADR(stComOut_LAMP_GJ2_PTM_03),
+    	SizeComIn:= SIZEOF(stComIn_LAMP_GJ2_PTM_03),
+    	Error=> , 
+    	ErrorID=> , 
+    	TxBuffer:= SerialTXBuffer_LAMP_GJ2_PTM_03, 
+    	RxBuffer:= SerialRXBuffer_LAMP_GJ2_PTM_03);
+    	
+    fbSerialLineControl_LAMP_GJ2_PTM_04(
+    	Mode:= SERIALLINEMODE_EL6_22B, 
+    	pComIn:= ADR(stComIn_LAMP_GJ2_PTM_04), 
+    	pComOut:= ADR(stComOut_LAMP_GJ2_PTM_04),
+    	SizeComIn:= SIZEOF(stComIn_LAMP_GJ2_PTM_04),
+    	Error=> , 
+    	ErrorID=> , 
+    	TxBuffer:= SerialTXBuffer_LAMP_GJ2_PTM_04, 
+    	RxBuffer:= SerialRXBuffer_LAMP_GJ2_PTM_04);
+
+    END_PROGRAM
+
