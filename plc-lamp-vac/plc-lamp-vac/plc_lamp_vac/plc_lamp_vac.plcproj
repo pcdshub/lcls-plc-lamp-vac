@@ -45,6 +45,9 @@
     <Compile Include="POUs\DIAGNOSTICS.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\F_Turbo_NC_NO_Valve_Logic.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\MAIN.TcPOU">
       <SubType>Code</SubType>
     </Compile>
