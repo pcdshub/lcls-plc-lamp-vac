@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <POU Name="F_Turbo_NC_NO_Valve_Logic" Id="{61006141-1ec2-4e8d-8cf4-25aa4effd79d}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION F_Turbo_NC_NO_Valve_Logic : BOOL
+VAR_INPUT
+	i_stTurbo : ST_PTM; // Turbo Pump
+	i_stISG : ST_VG; //Gauge measuring inlet Pressure e.g Pirani
+	i_stBSG : ST_VG; //Gauge measureing backing pressure
+	iq_stValve_NO : ST_VRC; //Normally Open Valve directly sharing turbo pump vaccum volume.
+	iq_stValve_NC : ST_VRC; //Normally Closed Valve directly sharing turbo pump vaccum volume.
+	iq_stValve_NC_second :	ST_VRC; //Normally Open Valve on the other side of NO valve that also connects to roughing line.
+END_VAR
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[F_Turbo_NC_NO_Valve_Logic := (i_stISG.xPRESS_OK AND i_stISG.rPRESS < i_stTurbo.rInletPressureSP) AND 
+						   (i_stBSG.xPRESS_OK AND i_stBSG.rPRESS < i_stTurbo.rBackingPressureSP) AND 
+							(iq_stValve_NC.i_xOpnLS OR(iq_stValve_NO.i_xOpnLS AND iq_stValve_NC_second.i_xOpnLS));	]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>
