@@ -891,3 +891,4 @@ Links
         TIPC^plc_lamp_vac^plc_lamp_vac Instance, PlcTask Outputs^GVL_Devices.LAMP_ROUGH_VRC_01.q_xOPN_DO, TIID^Device 1 (EtherCAT)^LAMP_PNL1_EP00_EP9128-0021^LAMP_PNL2_EP25_EP2338-0002, Channel 11^Output
         TIPC^plc_lamp_vac^plc_lamp_vac Instance, PlcTask Outputs^GVL_Devices.LAMP_ROUGH_VRC_02.q_xCLS_DO, TIID^Device 1 (EtherCAT)^LAMP_PNL1_EP00_EP9128-0021^LAMP_PNL2_EP25_EP2338-0002, Channel 15^Output
         TIPC^plc_lamp_vac^plc_lamp_vac Instance, PlcTask Outputs^GVL_Devices.LAMP_ROUGH_VRC_03.q_xOPN_DO, TIID^Device 1 (EtherCAT)^LAMP_PNL1_EP00_EP9128-0021^LAMP_PNL2_EP26_EP2338-0002, Channel 11^Output
+        TIPC^plc_lamp_vac^plc_lamp_vac Instance, PlcTask Outputs^GVL_PLC_Interfaces.xHighVoltageSafteyLoopEnable, TIID^Device 1 (EtherCAT)^LAMP_PLC_E0_EK1200^LAMP_PLC_E10_EL2794, Channel 1^Output

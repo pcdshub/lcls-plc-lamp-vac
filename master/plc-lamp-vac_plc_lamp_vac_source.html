@@ -107,6 +107,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="#pous">POUs</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#diagnostics">DIAGNOSTICS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#f-turbo-nc-no-valve-logic">F_Turbo_NC_NO_Valve_Logic</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#main">MAIN</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#prg-com">PRG_COM</a></li>
 </ul>
@@ -1574,6 +1575,11 @@
     <span class="o">//</span><span class="n">Outputs</span>
     <span class="n">fb_ADS_WATCHDOG_VAC_LAMP_TMO</span><span class="p">:</span><span class="n">FB_ADS_WATCHDOG</span><span class="p">;</span>
 
+    <span class="p">(</span><span class="o">*</span><span class="n">ISEG</span> <span class="n">HV</span> <span class="n">Crate</span> <span class="n">Safety</span> <span class="n">Loop</span><span class="o">*</span><span class="p">)</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span>        <span class="s1">&#39;TIIB[LAMP_PLC_E10_EL2794]^Channel 1^Output</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">xHighVoltageSafteyLoopEnable</span> <span class="n">AT</span> <span class="o">%</span><span class="n">Q</span><span class="o">*</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span> <span class="p">(</span><span class="o">*</span><span class="n">When</span> <span class="n">Enables</span> <span class="n">the</span> <span class="n">High</span> <span class="n">voltage</span> <span class="n">Saftey</span> <span class="n">loop</span> <span class="ow">is</span> <span class="n">closed</span> <span class="ow">and</span> <span class="n">HV</span> <span class="n">can</span> <span class="n">start</span><span class="o">.*</span><span class="p">)</span>
+
 <span class="n">END_VAR</span>
 </pre></div>
 </div>
@@ -1587,6 +1593,9 @@
             <span class="n">io</span><span class="p">:</span> <span class="n">io</span>
     <span class="s1">&#39;}</span>
     <span class="n">xSystemOverrideMode_LAMP</span>        <span class="p">:</span> <span class="n">BOOL</span> <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span> <span class="p">(</span><span class="o">*</span> <span class="n">Global</span> <span class="n">system</span> <span class="n">override</span> <span class="k">for</span> <span class="n">the</span> <span class="n">HXR</span> <span class="n">Vacuum</span> <span class="n">System</span> <span class="n">EBD</span><span class="o">*</span><span class="p">)</span>
+
+    <span class="n">rHighVoltageMinPressure</span> <span class="p">:</span> <span class="n">REAL</span> <span class="o">:=</span> <span class="mf">1e-05</span><span class="p">;</span> <span class="p">(</span><span class="o">*</span><span class="n">Hard</span> <span class="n">coded</span> <span class="n">High</span> <span class="n">voltage</span> <span class="n">Minimum</span> <span class="n">Enable</span> <span class="n">Pressure</span><span class="o">*</span><span class="p">)</span>
+
 <span class="n">END_VAR</span>
 </pre></div>
 </div>
@@ -1630,6 +1639,27 @@
 </pre></div>
 </div>
 </div>
+<div class="section" id="f-turbo-nc-no-valve-logic">
+<h2>F_Turbo_NC_NO_Valve_Logic<a class="headerlink" href="#f-turbo-nc-no-valve-logic" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">FUNCTION</span> <span class="n">F_Turbo_NC_NO_Valve_Logic</span> <span class="p">:</span> <span class="n">BOOL</span>
+<span class="n">VAR_INPUT</span>
+    <span class="n">i_stTurbo</span> <span class="p">:</span> <span class="n">ST_PTM</span><span class="p">;</span> <span class="o">//</span> <span class="n">Turbo</span> <span class="n">Pump</span>
+    <span class="n">i_stISG</span> <span class="p">:</span> <span class="n">ST_VG</span><span class="p">;</span> <span class="o">//</span><span class="n">Gauge</span> <span class="n">measuring</span> <span class="n">inlet</span> <span class="n">Pressure</span> <span class="n">e</span><span class="o">.</span><span class="n">g</span> <span class="n">Pirani</span>
+    <span class="n">i_stBSG</span> <span class="p">:</span> <span class="n">ST_VG</span><span class="p">;</span> <span class="o">//</span><span class="n">Gauge</span> <span class="n">measureing</span> <span class="n">backing</span> <span class="n">pressure</span>
+    <span class="n">iq_stValve_NO</span> <span class="p">:</span> <span class="n">ST_VRC</span><span class="p">;</span> <span class="o">//</span><span class="n">Normally</span> <span class="n">Open</span> <span class="n">Valve</span> <span class="n">directly</span> <span class="n">sharing</span> <span class="n">turbo</span> <span class="n">pump</span> <span class="n">vaccum</span> <span class="n">volume</span><span class="o">.</span>
+    <span class="n">iq_stValve_NC</span> <span class="p">:</span> <span class="n">ST_VRC</span><span class="p">;</span> <span class="o">//</span><span class="n">Normally</span> <span class="n">Closed</span> <span class="n">Valve</span> <span class="n">directly</span> <span class="n">sharing</span> <span class="n">turbo</span> <span class="n">pump</span> <span class="n">vaccum</span> <span class="n">volume</span><span class="o">.</span>
+    <span class="n">iq_stValve_NC_second</span> <span class="p">:</span>  <span class="n">ST_VRC</span><span class="p">;</span> <span class="o">//</span><span class="n">Normally</span> <span class="n">Open</span> <span class="n">Valve</span> <span class="n">on</span> <span class="n">the</span> <span class="n">other</span> <span class="n">side</span> <span class="n">of</span> <span class="n">NO</span> <span class="n">valve</span> <span class="n">that</span> <span class="n">also</span> <span class="n">connects</span> <span class="n">to</span> <span class="n">roughing</span> <span class="n">line</span><span class="o">.</span>
+<span class="n">END_VAR</span>
+<span class="n">VAR</span>
+<span class="n">END_VAR</span>
+<span class="n">F_Turbo_NC_NO_Valve_Logic</span> <span class="o">:=</span> <span class="p">(</span><span class="n">i_stISG</span><span class="o">.</span><span class="n">xPRESS_OK</span> <span class="n">AND</span> <span class="n">i_stISG</span><span class="o">.</span><span class="n">rPRESS</span> <span class="o">&lt;</span> <span class="n">i_stTurbo</span><span class="o">.</span><span class="n">rInletPressureSP</span><span class="p">)</span> <span class="n">AND</span>
+                                               <span class="p">(</span><span class="n">i_stBSG</span><span class="o">.</span><span class="n">xPRESS_OK</span> <span class="n">AND</span> <span class="n">i_stBSG</span><span class="o">.</span><span class="n">rPRESS</span> <span class="o">&lt;</span> <span class="n">i_stTurbo</span><span class="o">.</span><span class="n">rBackingPressureSP</span><span class="p">)</span> <span class="n">AND</span>
+                                                    <span class="p">(</span><span class="n">iq_stValve_NC</span><span class="o">.</span><span class="n">i_xOpnLS</span> <span class="n">OR</span><span class="p">(</span><span class="n">iq_stValve_NO</span><span class="o">.</span><span class="n">i_xOpnLS</span> <span class="n">AND</span> <span class="n">iq_stValve_NC_second</span><span class="o">.</span><span class="n">i_xOpnLS</span><span class="p">));</span>
+
+<span class="n">END_FUNCTION</span>
+</pre></div>
+</div>
+</div>
 <div class="section" id="main">
 <h2>MAIN<a class="headerlink" href="#main" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PROGRAM</span> <span class="n">MAIN</span>
@@ -1648,8 +1678,11 @@
 <span class="n">b_PumpRunning</span> <span class="p">:</span> <span class="n">BOOL</span><span class="p">;</span>
 
 <span class="n">END_VAR</span>
-<span class="o">//</span><span class="n">fb_to_LAMP_Arbiter</span><span class="p">(</span><span class="n">Arbiter</span> <span class="o">:=</span> <span class="n">g_fbArbiter1</span><span class="p">,</span> <span class="n">fbFFHWO</span> <span class="o">:=</span> <span class="n">g_FastFaultOutput1</span><span class="p">);</span>
 <span class="n">fbLogHandler</span><span class="p">();</span>
+
+<span class="o">//</span> <span class="n">Run</span> <span class="n">the</span> <span class="n">Diagnostics</span> <span class="n">PRG</span>
+<span class="n">DIAGNOSTICS</span><span class="p">();</span>
+
 <span class="p">(</span><span class="o">*</span><span class="n">PLC</span><span class="o">-</span><span class="n">TMO</span><span class="o">-</span><span class="n">VAC</span> <span class="n">ADS</span> <span class="n">interface</span><span class="o">*</span><span class="p">)</span>
 <span class="o">//</span><span class="n">Writes</span> <span class="n">watchdog</span> <span class="n">bit</span> <span class="n">to</span> <span class="n">remote</span> <span class="n">vac_TMO</span> <span class="n">reading</span> <span class="n">the</span> <span class="n">vacuum</span> <span class="n">components</span>
 <span class="n">fb_ADS_WATCHDOG_VAC_LAMP_TMO</span><span class="p">(</span>
@@ -1674,7 +1707,7 @@
     <span class="n">VGC</span><span class="o">=&gt;</span> <span class="p">,</span>
     <span class="n">bError</span><span class="o">=&gt;</span> <span class="p">);</span>
 
-<span class="o">//</span><span class="n">Apply</span> <span class="n">TMO</span> <span class="n">Interface</span> <span class="n">Logic</span>
+<span class="p">(</span><span class="o">*</span><span class="n">Apply</span> <span class="n">TMO</span> <span class="n">Interface</span> <span class="n">Logic</span><span class="o">*</span><span class="p">)</span>
 <span class="n">IF</span><span class="p">(</span><span class="n">ITF_TMO_ROUGH1_VRC_01</span><span class="o">.</span><span class="n">VGC</span><span class="o">.</span><span class="n">eState</span> <span class="o">&lt;&gt;</span> <span class="n">E_ValvePositionState</span><span class="o">.</span><span class="n">OPEN</span><span class="p">)</span> <span class="n">OR</span> <span class="p">(</span><span class="n">ITF_TMO_ROUGH2_VRC_01</span><span class="o">.</span><span class="n">VGC</span><span class="o">.</span><span class="n">eState</span> <span class="o">&lt;&gt;</span> <span class="n">E_ValvePositionState</span><span class="o">.</span><span class="n">OPEN</span><span class="p">)</span>
 <span class="n">THEN</span>
     <span class="o">//</span><span class="n">turn</span> <span class="n">off</span> <span class="nb">all</span> <span class="n">turbo</span> <span class="n">pumps</span> <span class="ow">and</span> <span class="n">close</span> <span class="n">the</span> <span class="n">two</span> <span class="n">normally</span> <span class="n">closed</span> <span class="n">valves</span>
@@ -1699,11 +1732,7 @@
     <span class="n">LAMP_ROUGH_VRC_03</span><span class="o">.</span><span class="n">M_Set_OPN_SW</span><span class="p">(</span><span class="n">FALSE</span><span class="p">);</span>
 <span class="n">END_IF</span>
 
-
-<span class="o">//</span> <span class="n">Run</span> <span class="n">the</span> <span class="n">Diagnostics</span> <span class="n">PRG</span>
-<span class="n">DIAGNOSTICS</span><span class="p">();</span>
-
-<span class="o">//</span><span class="n">TurboPump</span> <span class="n">running</span> <span class="n">Flag</span> <span class="k">with</span> <span class="mi">30</span> <span class="n">second</span> <span class="n">Turn</span> <span class="n">Off</span> <span class="n">delay</span><span class="o">.</span>
+<span class="p">(</span><span class="o">*</span><span class="n">TurboPump</span> <span class="n">running</span> <span class="n">Flag</span> <span class="k">with</span> <span class="mi">30</span> <span class="n">second</span> <span class="n">Turn</span> <span class="n">Off</span> <span class="n">delay</span><span class="o">.*</span><span class="p">)</span>
 <span class="n">b_TurboPumpRunningFlag</span> <span class="o">:=</span> <span class="p">(</span><span class="n">LAMP_GJ2_PTM_01</span><span class="o">.</span><span class="n">iq_stPtm</span><span class="o">.</span><span class="n">eState</span> <span class="o">=</span> <span class="n">E_PumpState</span><span class="o">.</span><span class="n">pumpRUNNING</span><span class="p">)</span>  <span class="n">AND</span>
     <span class="p">(</span><span class="n">LAMP_GJ2_PTM_02</span><span class="o">.</span><span class="n">iq_stPtm</span><span class="o">.</span><span class="n">eState</span> <span class="o">=</span> <span class="n">E_PumpState</span><span class="o">.</span><span class="n">pumpRUNNING</span><span class="p">)</span> <span class="n">AND</span>
     <span class="p">(</span><span class="n">LAMP_GJ2_PTM_03</span><span class="o">.</span><span class="n">iq_stPtm</span><span class="o">.</span><span class="n">eState</span> <span class="o">=</span> <span class="n">E_PumpState</span><span class="o">.</span><span class="n">pumpRUNNING</span><span class="p">)</span> <span class="n">AND</span>
@@ -1713,7 +1742,7 @@
     <span class="p">(</span><span class="n">LAMP_C2_PTM_02</span><span class="o">.</span><span class="n">iq_stPtm</span><span class="o">.</span><span class="n">eState</span> <span class="o">=</span> <span class="n">E_PumpState</span><span class="o">.</span><span class="n">pumpRUNNING</span><span class="p">)</span> <span class="n">AND</span>
     <span class="p">(</span><span class="n">LAMP_C2_PTM_03</span><span class="o">.</span><span class="n">iq_stPtm</span><span class="o">.</span><span class="n">eState</span> <span class="o">=</span> <span class="n">E_PumpState</span><span class="o">.</span><span class="n">pumpRUNNING</span><span class="p">)</span> <span class="n">AND</span>
     <span class="p">(</span><span class="n">LAMP_C2_PTM_04</span><span class="o">.</span><span class="n">iq_stPtm</span><span class="o">.</span><span class="n">eState</span> <span class="o">=</span> <span class="n">E_PumpState</span><span class="o">.</span><span class="n">pumpRUNNING</span><span class="p">)</span> <span class="n">AND</span>
-    <span class="p">(</span><span class="n">LAMP_CATCH_PTM_01</span><span class="o">.</span><span class="n">iq_stPtm</span><span class="o">.</span><span class="n">eState</span> <span class="o">=</span> <span class="n">E_PumpState</span><span class="o">.</span><span class="n">pumpRUNNING</span><span class="p">)</span> <span class="n">AND</span>
+<span class="o">//</span>  <span class="p">(</span><span class="n">LAMP_CATCH_PTM_01</span><span class="o">.</span><span class="n">iq_stPtm</span><span class="o">.</span><span class="n">eState</span> <span class="o">=</span> <span class="n">E_PumpState</span><span class="o">.</span><span class="n">pumpRUNNING</span><span class="p">)</span> <span class="n">AND</span> <span class="o">//</span><span class="n">current</span> <span class="ow">not</span> <span class="n">connected</span> <span class="ow">and</span> <span class="n">used</span> <span class="n">Rack</span> <span class="n">mounted</span> <span class="n">option</span>
     <span class="p">(</span><span class="n">LAMP_CATCH_PTM_02</span><span class="o">.</span><span class="n">iq_stPtm</span><span class="o">.</span><span class="n">eState</span> <span class="o">=</span> <span class="n">E_PumpState</span><span class="o">.</span><span class="n">pumpRUNNING</span><span class="p">)</span> <span class="n">AND</span>
     <span class="p">(</span><span class="n">LAMP_GJ1_PTM_01</span><span class="o">.</span><span class="n">iq_stPtm</span><span class="o">.</span><span class="n">eState</span> <span class="o">=</span> <span class="n">E_PumpState</span><span class="o">.</span><span class="n">pumpRUNNING</span><span class="p">)</span> <span class="n">AND</span>
     <span class="p">(</span><span class="n">LAMP_GJ1_PTM_02</span><span class="o">.</span><span class="n">iq_stPtm</span><span class="o">.</span><span class="n">eState</span> <span class="o">=</span> <span class="n">E_PumpState</span><span class="o">.</span><span class="n">pumpRUNNING</span><span class="p">)</span> <span class="n">AND</span>
@@ -1724,6 +1753,8 @@
 <span class="n">TurboPumpTOF</span><span class="p">(</span><span class="n">IN</span><span class="o">:=</span> <span class="n">b_TurboPumpRunningFlag</span><span class="p">,</span> <span class="n">PT</span> <span class="o">:=</span> <span class="n">TurboPumpDelayTime</span><span class="p">);</span>
 <span class="n">b_PumpRunning</span><span class="o">:=</span> <span class="n">TurboPumpTOF</span><span class="o">.</span><span class="n">Q</span><span class="p">;</span>
 
+<span class="p">(</span><span class="o">*</span><span class="n">High</span> <span class="n">Voltage</span> <span class="n">Saftey</span> <span class="n">Loop</span><span class="o">*</span><span class="p">)</span>
+<span class="n">xHighVoltageSafteyLoopEnable</span><span class="o">:=</span> <span class="p">(</span><span class="n">LAMP_C2_GCC_01</span><span class="o">.</span><span class="n">IG</span><span class="o">.</span><span class="n">rPRESS</span> <span class="o">&lt;=</span> <span class="n">rHighVoltageMinPressure</span><span class="p">)</span> <span class="n">AND</span> <span class="p">(</span><span class="n">LAMP_C2_GCC_01</span><span class="o">.</span><span class="n">IG</span><span class="o">.</span><span class="n">xPRESS_OK</span> <span class="o">=</span> <span class="n">TRUE</span><span class="p">);</span>
 
 <span class="p">(</span><span class="o">*</span><span class="n">PIRANI</span> <span class="n">Gauges</span><span class="o">*</span><span class="p">)</span>
     <span class="n">LAMP_C2_GPI_01</span><span class="p">(</span><span class="n">PG</span><span class="o">=&gt;</span><span class="p">);</span>
@@ -1753,140 +1784,174 @@
 
 <span class="p">(</span><span class="o">*</span><span class="n">TURBO</span> <span class="n">Pumps</span><span class="o">*</span><span class="p">)</span>
     <span class="n">LAMP_GJ2_PTM_01</span><span class="p">(</span>
-    <span class="n">i_xExtILKOk</span><span class="o">:=</span> <span class="p">(</span><span class="n">LAMP_ROUGH_GPI_04</span><span class="o">.</span><span class="n">PG</span><span class="o">.</span><span class="n">rPRESS</span> <span class="o">&lt;</span> <span class="mf">0.1</span><span class="p">)</span>
-    <span class="n">AND</span> <span class="n">LAMP_ROUGH_GPI_04</span><span class="o">.</span><span class="n">PG</span><span class="o">.</span><span class="n">xPRESS_OK</span>
-    <span class="n">AND</span> <span class="p">(</span><span class="n">LAMP_GJ2_GPI_01</span><span class="o">.</span><span class="n">PG</span><span class="o">.</span><span class="n">rPRESS</span> <span class="o">&lt;</span> <span class="mf">0.1</span><span class="p">)</span>
-    <span class="n">AND</span> <span class="n">LAMP_GJ2_GPI_01</span><span class="o">.</span><span class="n">PG</span><span class="o">.</span><span class="n">xPRESS_OK</span>
-    <span class="n">AND</span> <span class="p">(</span><span class="n">LAMP_ROUGH_VRC_03</span><span class="o">.</span><span class="n">iq_stValve</span><span class="o">.</span><span class="n">i_xOpnLS</span> <span class="o">=</span> <span class="n">TRUE</span><span class="p">),</span>
+    <span class="n">i_xExtILKOk</span><span class="o">:=</span> <span class="n">F_Turbo_NC_NO_Valve_Logic</span><span class="p">(</span>
+                                    <span class="n">i_stTurbo</span><span class="o">:=</span> <span class="n">LAMP_GJ2_PTM_01</span><span class="o">.</span><span class="n">iq_stPtm</span><span class="p">,</span>
+                                    <span class="n">i_stISG</span><span class="o">:=</span> <span class="n">LAMP_GJ2_GPI_01</span><span class="o">.</span><span class="n">PG</span><span class="p">,</span>
+                                    <span class="n">i_stBSG</span><span class="o">:=</span> <span class="n">LAMP_ROUGH_GPI_04</span><span class="o">.</span><span class="n">PG</span><span class="p">,</span>
+                                    <span class="n">iq_stValve_NO</span><span class="o">:=</span> <span class="n">LAMP_ROUGH_VRC_02</span><span class="o">.</span><span class="n">iq_stValve</span><span class="p">,</span>
+                                    <span class="n">iq_stValve_NC</span><span class="o">:=</span> <span class="n">LAMP_ROUGH_VRC_03</span><span class="o">.</span><span class="n">iq_stValve</span><span class="p">,</span>
+                                    <span class="n">iq_stValve_NC_second</span><span class="o">:=</span> <span class="n">LAMP_ROUGH_VRC_01</span><span class="o">.</span><span class="n">iq_stValve</span><span class="p">),</span>
     <span class="n">iq_stPtm</span><span class="o">=&gt;</span> <span class="p">);</span>
 
     <span class="n">LAMP_GJ2_PTM_02</span><span class="p">(</span>
-    <span class="n">i_xExtILKOk</span><span class="o">:=</span> <span class="p">(</span><span class="n">LAMP_ROUGH_GPI_04</span><span class="o">.</span><span class="n">PG</span><span class="o">.</span><span class="n">rPRESS</span> <span class="o">&lt;</span> <span class="mf">0.1</span><span class="p">)</span>
-    <span class="n">AND</span> <span class="n">LAMP_ROUGH_GPI_04</span><span class="o">.</span><span class="n">PG</span><span class="o">.</span><span class="n">xPRESS_OK</span>
-    <span class="n">AND</span> <span class="p">(</span><span class="n">LAMP_GJ2_GPI_01</span><span class="o">.</span><span class="n">PG</span><span class="o">.</span><span class="n">rPRESS</span> <span class="o">&lt;</span> <span class="mf">0.1</span><span class="p">)</span>
-    <span class="n">AND</span> <span class="n">LAMP_ROUGH_GPI_04</span><span class="o">.</span><span class="n">PG</span><span class="o">.</span><span class="n">xPRESS_OK</span>
-    <span class="n">AND</span> <span class="p">(</span><span class="n">LAMP_ROUGH_VRC_03</span><span class="o">.</span><span class="n">iq_stValve</span><span class="o">.</span><span class="n">i_xOpnLS</span> <span class="o">=</span> <span class="n">TRUE</span><span class="p">),</span>
+    <span class="n">i_xExtILKOk</span><span class="o">:=</span> <span class="n">F_Turbo_NC_NO_Valve_Logic</span><span class="p">(</span>
+                                    <span class="n">i_stTurbo</span><span class="o">:=</span> <span class="n">LAMP_GJ2_PTM_02</span><span class="o">.</span><span class="n">iq_stPtm</span><span class="p">,</span>
+                                    <span class="n">i_stISG</span><span class="o">:=</span> <span class="n">LAMP_GJ2_GPI_01</span><span class="o">.</span><span class="n">PG</span><span class="p">,</span>
+                                    <span class="n">i_stBSG</span><span class="o">:=</span> <span class="n">LAMP_ROUGH_GPI_04</span><span class="o">.</span><span class="n">PG</span><span class="p">,</span>
+                                    <span class="n">iq_stValve_NO</span><span class="o">:=</span> <span class="n">LAMP_ROUGH_VRC_02</span><span class="o">.</span><span class="n">iq_stValve</span><span class="p">,</span>
+                                    <span class="n">iq_stValve_NC</span><span class="o">:=</span> <span class="n">LAMP_ROUGH_VRC_03</span><span class="o">.</span><span class="n">iq_stValve</span><span class="p">,</span>
+                                    <span class="n">iq_stValve_NC_second</span><span class="o">:=</span> <span class="n">LAMP_ROUGH_VRC_01</span><span class="o">.</span><span class="n">iq_stValve</span><span class="p">),</span>
     <span class="n">iq_stPtm</span><span class="o">=&gt;</span> <span class="p">);</span>
 
     <span class="n">LAMP_GJ2_PTM_03</span><span class="p">(</span>
-    <span class="n">i_xExtILKOk</span><span class="o">:=</span> <span class="p">(</span><span class="n">LAMP_ROUGH_GPI_04</span><span class="o">.</span><span class="n">PG</span><span class="o">.</span><span class="n">rPRESS</span> <span class="o">&lt;</span> <span class="mf">0.1</span><span class="p">)</span>
-    <span class="n">AND</span> <span class="n">LAMP_ROUGH_GPI_04</span><span class="o">.</span><span class="n">PG</span><span class="o">.</span><span class="n">xPRESS_OK</span>
-    <span class="n">AND</span> <span class="p">(</span><span class="n">LAMP_GJ2_GPI_01</span><span class="o">.</span><span class="n">PG</span><span class="o">.</span><span class="n">rPRESS</span> <span class="o">&lt;</span> <span class="mf">0.1</span><span class="p">)</span>
-    <span class="n">AND</span> <span class="n">LAMP_GJ2_GPI_01</span><span class="o">.</span><span class="n">PG</span><span class="o">.</span><span class="n">xPRESS_OK</span>
-    <span class="n">AND</span> <span class="p">(</span><span class="n">LAMP_ROUGH_VRC_03</span><span class="o">.</span><span class="n">iq_stValve</span><span class="o">.</span><span class="n">i_xOpnLS</span> <span class="o">=</span> <span class="n">TRUE</span><span class="p">),</span>
+    <span class="n">i_xExtILKOk</span><span class="o">:=</span> <span class="n">F_Turbo_NC_NO_Valve_Logic</span><span class="p">(</span>
+                                    <span class="n">i_stTurbo</span><span class="o">:=</span> <span class="n">LAMP_GJ2_PTM_03</span><span class="o">.</span><span class="n">iq_stPtm</span><span class="p">,</span>
+                                    <span class="n">i_stISG</span><span class="o">:=</span> <span class="n">LAMP_GJ2_GPI_01</span><span class="o">.</span><span class="n">PG</span><span class="p">,</span>
+                                    <span class="n">i_stBSG</span><span class="o">:=</span> <span class="n">LAMP_ROUGH_GPI_04</span><span class="o">.</span><span class="n">PG</span><span class="p">,</span>
+                                    <span class="n">iq_stValve_NO</span><span class="o">:=</span> <span class="n">LAMP_ROUGH_VRC_02</span><span class="o">.</span><span class="n">iq_stValve</span><span class="p">,</span>
+                                    <span class="n">iq_stValve_NC</span><span class="o">:=</span> <span class="n">LAMP_ROUGH_VRC_03</span><span class="o">.</span><span class="n">iq_stValve</span><span class="p">,</span>
+                                    <span class="n">iq_stValve_NC_second</span><span class="o">:=</span> <span class="n">LAMP_ROUGH_VRC_01</span><span class="o">.</span><span class="n">iq_stValve</span><span class="p">),</span>
     <span class="n">iq_stPtm</span><span class="o">=&gt;</span> <span class="p">);</span>
 
     <span class="n">LAMP_GJ2_PTM_04</span><span class="p">(</span>
-    <span class="n">i_xExtILKOk</span><span class="o">:=</span> <span class="p">(</span><span class="n">LAMP_ROUGH_GPI_04</span><span class="o">.</span><span class="n">PG</span><span class="o">.</span><span class="n">rPRESS</span> <span class="o">&lt;</span> <span class="mf">0.1</span><span class="p">)</span>
-    <span class="n">AND</span> <span class="n">LAMP_ROUGH_GPI_04</span><span class="o">.</span><span class="n">PG</span><span class="o">.</span><span class="n">xPRESS_OK</span>
-    <span class="n">AND</span> <span class="p">(</span><span class="n">LAMP_GJ2_GPI_01</span><span class="o">.</span><span class="n">PG</span><span class="o">.</span><span class="n">rPRESS</span> <span class="o">&lt;</span> <span class="mf">0.1</span><span class="p">)</span>
-    <span class="n">AND</span> <span class="n">LAMP_GJ2_GPI_01</span><span class="o">.</span><span class="n">PG</span><span class="o">.</span><span class="n">xPRESS_OK</span>
-    <span class="n">AND</span> <span class="p">(</span><span class="n">LAMP_ROUGH_VRC_03</span><span class="o">.</span><span class="n">iq_stValve</span><span class="o">.</span><span class="n">i_xOpnLS</span> <span class="o">=</span> <span class="n">TRUE</span><span class="p">),</span>
+    <span class="n">i_xExtILKOk</span><span class="o">:=</span> <span class="n">F_Turbo_NC_NO_Valve_Logic</span><span class="p">(</span>
+                                    <span class="n">i_stTurbo</span><span class="o">:=</span> <span class="n">LAMP_GJ2_PTM_04</span><span class="o">.</span><span class="n">iq_stPtm</span><span class="p">,</span>
+                                    <span class="n">i_stISG</span><span class="o">:=</span> <span class="n">LAMP_GJ2_GPI_01</span><span class="o">.</span><span class="n">PG</span><span class="p">,</span>
+                                    <span class="n">i_stBSG</span><span class="o">:=</span> <span class="n">LAMP_ROUGH_GPI_04</span><span class="o">.</span><span class="n">PG</span><span class="p">,</span>
+                                    <span class="n">iq_stValve_NO</span><span class="o">:=</span> <span class="n">LAMP_ROUGH_VRC_02</span><span class="o">.</span><span class="n">iq_stValve</span><span class="p">,</span>
+                                    <span class="n">iq_stValve_NC</span><span class="o">:=</span> <span class="n">LAMP_ROUGH_VRC_03</span><span class="o">.</span><span class="n">iq_stValve</span><span class="p">,</span>
+                                    <span class="n">iq_stValve_NC_second</span><span class="o">:=</span> <span class="n">LAMP_ROUGH_VRC_01</span><span class="o">.</span><span class="n">iq_stValve</span><span class="p">),</span>
     <span class="n">iq_stPtm</span><span class="o">=&gt;</span> <span class="p">);</span>
 
     <span class="n">LAMP_C1_PTM_01</span><span class="p">(</span>
-    <span class="n">i_xExtIlkOK</span><span class="o">:=</span> <span class="p">(</span><span class="n">LAMP_ROUGH_GPI_02</span><span class="o">.</span><span class="n">PG</span><span class="o">.</span><span class="n">rPRESS</span> <span class="o">&lt;</span> <span class="mf">0.1</span><span class="p">)</span>
-    <span class="n">AND</span> <span class="n">LAMP_ROUGH_GPI_02</span><span class="o">.</span><span class="n">PG</span><span class="o">.</span><span class="n">xPRESS_OK</span>
-    <span class="n">AND</span> <span class="p">(</span><span class="n">LAMP_C2_GPI_01</span><span class="o">.</span><span class="n">PG</span><span class="o">.</span><span class="n">rPRESS</span> <span class="o">&lt;</span> <span class="mf">0.1</span><span class="p">)</span>
-    <span class="n">AND</span> <span class="n">LAMP_C2_GPI_01</span><span class="o">.</span><span class="n">PG</span><span class="o">.</span><span class="n">xPRESS_OK</span>
-    <span class="n">AND</span> <span class="p">(</span><span class="n">LAMP_ROUGH_VRC_01</span><span class="o">.</span><span class="n">iq_stValve</span><span class="o">.</span><span class="n">i_xOpnLS</span> <span class="o">=</span> <span class="n">TRUE</span><span class="p">),</span>
-    <span class="n">iq_stPTM</span><span class="o">=&gt;</span> <span class="p">);</span>
+    <span class="n">i_xExtILKOk</span><span class="o">:=</span> <span class="n">F_Turbo_NC_NO_Valve_Logic</span><span class="p">(</span>
+                                    <span class="n">i_stTurbo</span><span class="o">:=</span> <span class="n">LAMP_C1_PTM_01</span><span class="o">.</span><span class="n">iq_stPtm</span><span class="p">,</span>
+                                    <span class="n">i_stISG</span><span class="o">:=</span> <span class="n">LAMP_C2_GPI_01</span><span class="o">.</span><span class="n">PG</span><span class="p">,</span>
+                                    <span class="n">i_stBSG</span><span class="o">:=</span> <span class="n">LAMP_ROUGH_GPI_02</span><span class="o">.</span><span class="n">PG</span><span class="p">,</span>
+                                    <span class="n">iq_stValve_NO</span><span class="o">:=</span> <span class="n">LAMP_ROUGH_VRC_02</span><span class="o">.</span><span class="n">iq_stValve</span><span class="p">,</span>
+                                    <span class="n">iq_stValve_NC</span><span class="o">:=</span> <span class="n">LAMP_ROUGH_VRC_01</span><span class="o">.</span><span class="n">iq_stValve</span><span class="p">,</span>
+                                    <span class="n">iq_stValve_NC_second</span><span class="o">:=</span> <span class="n">LAMP_ROUGH_VRC_03</span><span class="o">.</span><span class="n">iq_stValve</span><span class="p">),</span>
+    <span class="n">iq_stPtm</span><span class="o">=&gt;</span> <span class="p">);</span>
 
     <span class="n">LAMP_C2_PTM_01</span><span class="p">(</span>
-    <span class="n">i_xExtIlkOK</span><span class="o">:=</span> <span class="p">(</span><span class="n">LAMP_ROUGH_GPI_02</span><span class="o">.</span><span class="n">PG</span><span class="o">.</span><span class="n">rPRESS</span> <span class="o">&lt;</span> <span class="mf">0.1</span><span class="p">)</span>
-    <span class="n">AND</span> <span class="n">LAMP_ROUGH_GPI_02</span><span class="o">.</span><span class="n">PG</span><span class="o">.</span><span class="n">xPRESS_OK</span>
-    <span class="n">AND</span> <span class="p">(</span><span class="n">LAMP_C2_GPI_01</span><span class="o">.</span><span class="n">PG</span><span class="o">.</span><span class="n">rPRESS</span> <span class="o">&lt;</span> <span class="mf">0.1</span><span class="p">)</span>
-    <span class="n">AND</span> <span class="n">LAMP_C2_GPI_01</span><span class="o">.</span><span class="n">PG</span><span class="o">.</span><span class="n">xPRESS_OK</span>
-    <span class="n">AND</span> <span class="p">(</span><span class="n">LAMP_ROUGH_VRC_01</span><span class="o">.</span><span class="n">iq_stValve</span><span class="o">.</span><span class="n">i_xOpnLS</span> <span class="o">=</span> <span class="n">TRUE</span><span class="p">),</span>
-    <span class="n">iq_stPTM</span><span class="o">=&gt;</span> <span class="p">);</span>
+    <span class="n">i_xExtILKOk</span><span class="o">:=</span> <span class="n">F_Turbo_NC_NO_Valve_Logic</span><span class="p">(</span>
+                                    <span class="n">i_stTurbo</span><span class="o">:=</span> <span class="n">LAMP_C2_PTM_01</span><span class="o">.</span><span class="n">iq_stPtm</span><span class="p">,</span>
+                                    <span class="n">i_stISG</span><span class="o">:=</span> <span class="n">LAMP_C2_GPI_01</span><span class="o">.</span><span class="n">PG</span><span class="p">,</span>
+                                    <span class="n">i_stBSG</span><span class="o">:=</span> <span class="n">LAMP_ROUGH_GPI_02</span><span class="o">.</span><span class="n">PG</span><span class="p">,</span>
+                                    <span class="n">iq_stValve_NO</span><span class="o">:=</span> <span class="n">LAMP_ROUGH_VRC_02</span><span class="o">.</span><span class="n">iq_stValve</span><span class="p">,</span>
+                                    <span class="n">iq_stValve_NC</span><span class="o">:=</span> <span class="n">LAMP_ROUGH_VRC_01</span><span class="o">.</span><span class="n">iq_stValve</span><span class="p">,</span>
+                                    <span class="n">iq_stValve_NC_second</span><span class="o">:=</span> <span class="n">LAMP_ROUGH_VRC_03</span><span class="o">.</span><span class="n">iq_stValve</span><span class="p">),</span>
+    <span class="n">iq_stPtm</span><span class="o">=&gt;</span> <span class="p">);</span>
 
     <span class="n">LAMP_C2_PTM_02</span><span class="p">(</span>
-    <span class="n">i_xExtIlkOK</span><span class="o">:=</span> <span class="p">(</span><span class="n">LAMP_ROUGH_GPI_02</span><span class="o">.</span><span class="n">PG</span><span class="o">.</span><span class="n">rPRESS</span> <span class="o">&lt;</span> <span class="mf">0.1</span><span class="p">)</span>
-    <span class="n">AND</span> <span class="n">LAMP_ROUGH_GPI_02</span><span class="o">.</span><span class="n">PG</span><span class="o">.</span><span class="n">xPRESS_OK</span>
-    <span class="n">AND</span> <span class="p">(</span><span class="n">LAMP_C2_GPI_01</span><span class="o">.</span><span class="n">PG</span><span class="o">.</span><span class="n">rPRESS</span> <span class="o">&lt;</span> <span class="mf">0.1</span><span class="p">)</span>
-    <span class="n">AND</span> <span class="n">LAMP_C2_GPI_01</span><span class="o">.</span><span class="n">PG</span><span class="o">.</span><span class="n">xPRESS_OK</span>
-    <span class="n">AND</span> <span class="p">(</span><span class="n">LAMP_ROUGH_VRC_01</span><span class="o">.</span><span class="n">iq_stValve</span><span class="o">.</span><span class="n">i_xOpnLS</span> <span class="o">=</span> <span class="n">TRUE</span><span class="p">),</span>
-    <span class="n">iq_stPTM</span><span class="o">=&gt;</span> <span class="p">);</span>
+    <span class="n">i_xExtILKOk</span><span class="o">:=</span> <span class="n">F_Turbo_NC_NO_Valve_Logic</span><span class="p">(</span>
+                                    <span class="n">i_stTurbo</span><span class="o">:=</span> <span class="n">LAMP_C2_PTM_02</span><span class="o">.</span><span class="n">iq_stPtm</span><span class="p">,</span>
+                                    <span class="n">i_stISG</span><span class="o">:=</span> <span class="n">LAMP_C2_GPI_01</span><span class="o">.</span><span class="n">PG</span><span class="p">,</span>
+                                    <span class="n">i_stBSG</span><span class="o">:=</span> <span class="n">LAMP_ROUGH_GPI_02</span><span class="o">.</span><span class="n">PG</span><span class="p">,</span>
+                                    <span class="n">iq_stValve_NO</span><span class="o">:=</span> <span class="n">LAMP_ROUGH_VRC_02</span><span class="o">.</span><span class="n">iq_stValve</span><span class="p">,</span>
+                                    <span class="n">iq_stValve_NC</span><span class="o">:=</span> <span class="n">LAMP_ROUGH_VRC_01</span><span class="o">.</span><span class="n">iq_stValve</span><span class="p">,</span>
+                                    <span class="n">iq_stValve_NC_second</span><span class="o">:=</span> <span class="n">LAMP_ROUGH_VRC_03</span><span class="o">.</span><span class="n">iq_stValve</span><span class="p">),</span>
+    <span class="n">iq_stPtm</span><span class="o">=&gt;</span> <span class="p">);</span>
 
     <span class="n">LAMP_C2_PTM_03</span><span class="p">(</span>
-    <span class="n">i_xExtIlkOK</span><span class="o">:=</span> <span class="p">(</span><span class="n">LAMP_ROUGH_GPI_02</span><span class="o">.</span><span class="n">PG</span><span class="o">.</span><span class="n">rPRESS</span> <span class="o">&lt;</span> <span class="mf">0.1</span><span class="p">)</span>
-    <span class="n">AND</span> <span class="n">LAMP_ROUGH_GPI_02</span><span class="o">.</span><span class="n">PG</span><span class="o">.</span><span class="n">xPRESS_OK</span>
-    <span class="n">AND</span> <span class="p">(</span><span class="n">LAMP_C2_GPI_01</span><span class="o">.</span><span class="n">PG</span><span class="o">.</span><span class="n">rPRESS</span> <span class="o">&lt;</span> <span class="mf">0.1</span><span class="p">)</span>
-    <span class="n">AND</span> <span class="n">LAMP_C2_GPI_01</span><span class="o">.</span><span class="n">PG</span><span class="o">.</span><span class="n">xPRESS_OK</span>
-    <span class="n">AND</span> <span class="p">(</span><span class="n">LAMP_ROUGH_VRC_01</span><span class="o">.</span><span class="n">iq_stValve</span><span class="o">.</span><span class="n">i_xOpnLS</span> <span class="o">=</span> <span class="n">TRUE</span><span class="p">),</span>
-    <span class="n">iq_stPTM</span><span class="o">=&gt;</span> <span class="p">);</span>
+    <span class="n">i_xExtILKOk</span><span class="o">:=</span> <span class="n">F_Turbo_NC_NO_Valve_Logic</span><span class="p">(</span>
+                                    <span class="n">i_stTurbo</span><span class="o">:=</span> <span class="n">LAMP_C2_PTM_03</span><span class="o">.</span><span class="n">iq_stPtm</span><span class="p">,</span>
+                                    <span class="n">i_stISG</span><span class="o">:=</span> <span class="n">LAMP_C2_GPI_01</span><span class="o">.</span><span class="n">PG</span><span class="p">,</span>
+                                    <span class="n">i_stBSG</span><span class="o">:=</span> <span class="n">LAMP_ROUGH_GPI_02</span><span class="o">.</span><span class="n">PG</span><span class="p">,</span>
+                                    <span class="n">iq_stValve_NO</span><span class="o">:=</span> <span class="n">LAMP_ROUGH_VRC_02</span><span class="o">.</span><span class="n">iq_stValve</span><span class="p">,</span>
+                                    <span class="n">iq_stValve_NC</span><span class="o">:=</span> <span class="n">LAMP_ROUGH_VRC_01</span><span class="o">.</span><span class="n">iq_stValve</span><span class="p">,</span>
+                                    <span class="n">iq_stValve_NC_second</span><span class="o">:=</span> <span class="n">LAMP_ROUGH_VRC_03</span><span class="o">.</span><span class="n">iq_stValve</span><span class="p">),</span>
+    <span class="n">iq_stPtm</span><span class="o">=&gt;</span> <span class="p">);</span>
 
     <span class="n">LAMP_C2_PTM_04</span><span class="p">(</span>
-    <span class="n">i_xExtIlkOK</span><span class="o">:=</span> <span class="p">(</span><span class="n">LAMP_ROUGH_GPI_02</span><span class="o">.</span><span class="n">PG</span><span class="o">.</span><span class="n">rPRESS</span> <span class="o">&lt;</span> <span class="mf">0.1</span><span class="p">)</span>
-    <span class="n">AND</span> <span class="n">LAMP_ROUGH_GPI_02</span><span class="o">.</span><span class="n">PG</span><span class="o">.</span><span class="n">xPRESS_OK</span>
-    <span class="n">AND</span> <span class="p">(</span><span class="n">LAMP_C2_GPI_01</span><span class="o">.</span><span class="n">PG</span><span class="o">.</span><span class="n">rPRESS</span> <span class="o">&lt;</span> <span class="mf">0.1</span><span class="p">)</span>
-    <span class="n">AND</span> <span class="n">LAMP_C2_GPI_01</span><span class="o">.</span><span class="n">PG</span><span class="o">.</span><span class="n">xPRESS_OK</span>
-    <span class="n">AND</span> <span class="p">(</span><span class="n">LAMP_ROUGH_VRC_01</span><span class="o">.</span><span class="n">iq_stValve</span><span class="o">.</span><span class="n">i_xOpnLS</span> <span class="o">=</span> <span class="n">TRUE</span><span class="p">),</span>
-    <span class="n">iq_stPTM</span><span class="o">=&gt;</span> <span class="p">);</span>
+    <span class="n">i_xExtILKOk</span><span class="o">:=</span> <span class="n">F_Turbo_NC_NO_Valve_Logic</span><span class="p">(</span>
+                                    <span class="n">i_stTurbo</span><span class="o">:=</span> <span class="n">LAMP_C2_PTM_04</span><span class="o">.</span><span class="n">iq_stPtm</span><span class="p">,</span>
+                                    <span class="n">i_stISG</span><span class="o">:=</span> <span class="n">LAMP_C2_GPI_01</span><span class="o">.</span><span class="n">PG</span><span class="p">,</span>
+                                    <span class="n">i_stBSG</span><span class="o">:=</span> <span class="n">LAMP_ROUGH_GPI_02</span><span class="o">.</span><span class="n">PG</span><span class="p">,</span>
+                                    <span class="n">iq_stValve_NO</span><span class="o">:=</span> <span class="n">LAMP_ROUGH_VRC_02</span><span class="o">.</span><span class="n">iq_stValve</span><span class="p">,</span>
+                                    <span class="n">iq_stValve_NC</span><span class="o">:=</span> <span class="n">LAMP_ROUGH_VRC_01</span><span class="o">.</span><span class="n">iq_stValve</span><span class="p">,</span>
+                                    <span class="n">iq_stValve_NC_second</span><span class="o">:=</span> <span class="n">LAMP_ROUGH_VRC_03</span><span class="o">.</span><span class="n">iq_stValve</span><span class="p">),</span>
+    <span class="n">iq_stPtm</span><span class="o">=&gt;</span> <span class="p">);</span>
 
     <span class="n">LAMP_CATCH_PTM_01</span><span class="p">(</span>
-    <span class="n">i_xExtIlkOK</span><span class="o">:=</span> <span class="p">(</span><span class="n">LAMP_ROUGH_GPI_02</span><span class="o">.</span><span class="n">PG</span><span class="o">.</span><span class="n">rPRESS</span> <span class="o">&lt;</span> <span class="mf">0.1</span><span class="p">)</span>
-    <span class="n">AND</span> <span class="n">LAMP_ROUGH_GPI_02</span><span class="o">.</span><span class="n">PG</span><span class="o">.</span><span class="n">xPRESS_OK</span>
-    <span class="n">AND</span> <span class="p">(</span><span class="n">LAMP_C2_GPI_01</span><span class="o">.</span><span class="n">PG</span><span class="o">.</span><span class="n">rPRESS</span> <span class="o">&lt;</span> <span class="mf">0.1</span><span class="p">)</span>
-    <span class="n">AND</span> <span class="n">LAMP_C2_GPI_01</span><span class="o">.</span><span class="n">PG</span><span class="o">.</span><span class="n">xPRESS_OK</span>
-    <span class="n">AND</span> <span class="p">(</span><span class="n">LAMP_ROUGH_VRC_01</span><span class="o">.</span><span class="n">iq_stValve</span><span class="o">.</span><span class="n">i_xOpnLS</span> <span class="o">=</span> <span class="n">TRUE</span><span class="p">),</span>
-    <span class="n">iq_stPTM</span><span class="o">=&gt;</span> <span class="p">);</span>
+    <span class="n">i_xExtILKOk</span><span class="o">:=</span> <span class="n">F_Turbo_NC_NO_Valve_Logic</span><span class="p">(</span>
+                                    <span class="n">i_stTurbo</span><span class="o">:=</span> <span class="n">LAMP_CATCH_PTM_01</span><span class="o">.</span><span class="n">iq_stPtm</span><span class="p">,</span>
+                                    <span class="n">i_stISG</span><span class="o">:=</span> <span class="n">LAMP_C2_GPI_01</span><span class="o">.</span><span class="n">PG</span><span class="p">,</span>
+                                    <span class="n">i_stBSG</span><span class="o">:=</span> <span class="n">LAMP_ROUGH_GPI_02</span><span class="o">.</span><span class="n">PG</span><span class="p">,</span>
+                                    <span class="n">iq_stValve_NO</span><span class="o">:=</span> <span class="n">LAMP_ROUGH_VRC_02</span><span class="o">.</span><span class="n">iq_stValve</span><span class="p">,</span>
+                                    <span class="n">iq_stValve_NC</span><span class="o">:=</span> <span class="n">LAMP_ROUGH_VRC_01</span><span class="o">.</span><span class="n">iq_stValve</span><span class="p">,</span>
+                                    <span class="n">iq_stValve_NC_second</span><span class="o">:=</span> <span class="n">LAMP_ROUGH_VRC_03</span><span class="o">.</span><span class="n">iq_stValve</span><span class="p">),</span>
+    <span class="n">iq_stPtm</span><span class="o">=&gt;</span> <span class="p">);</span>
 
     <span class="n">LAMP_CATCH_PTM_02</span><span class="p">(</span>
-    <span class="n">i_xExtIlkOK</span><span class="o">:=</span> <span class="p">(</span><span class="n">LAMP_ROUGH_GPI_02</span><span class="o">.</span><span class="n">PG</span><span class="o">.</span><span class="n">rPRESS</span> <span class="o">&lt;</span> <span class="mf">0.1</span><span class="p">)</span>
-    <span class="n">AND</span> <span class="n">LAMP_ROUGH_GPI_02</span><span class="o">.</span><span class="n">PG</span><span class="o">.</span><span class="n">xPRESS_OK</span>
-    <span class="n">AND</span> <span class="p">(</span><span class="n">LAMP_C2_GPI_01</span><span class="o">.</span><span class="n">PG</span><span class="o">.</span><span class="n">rPRESS</span> <span class="o">&lt;</span> <span class="mf">0.1</span><span class="p">)</span>
-    <span class="n">AND</span> <span class="n">LAMP_C2_GPI_01</span><span class="o">.</span><span class="n">PG</span><span class="o">.</span><span class="n">xPRESS_OK</span>
-    <span class="n">AND</span> <span class="p">(</span><span class="n">LAMP_ROUGH_VRC_01</span><span class="o">.</span><span class="n">iq_stValve</span><span class="o">.</span><span class="n">i_xOpnLS</span> <span class="o">=</span> <span class="n">TRUE</span><span class="p">),</span>
-    <span class="n">iq_stPTM</span><span class="o">=&gt;</span> <span class="p">);</span>
+    <span class="n">i_xExtILKOk</span><span class="o">:=</span> <span class="n">F_Turbo_NC_NO_Valve_Logic</span><span class="p">(</span>
+                                    <span class="n">i_stTurbo</span><span class="o">:=</span> <span class="n">LAMP_CATCH_PTM_02</span><span class="o">.</span><span class="n">iq_stPtm</span><span class="p">,</span>
+                                    <span class="n">i_stISG</span><span class="o">:=</span> <span class="n">LAMP_C2_GPI_01</span><span class="o">.</span><span class="n">PG</span><span class="p">,</span>
+                                    <span class="n">i_stBSG</span><span class="o">:=</span> <span class="n">LAMP_ROUGH_GPI_02</span><span class="o">.</span><span class="n">PG</span><span class="p">,</span>
+                                    <span class="n">iq_stValve_NO</span><span class="o">:=</span> <span class="n">LAMP_ROUGH_VRC_02</span><span class="o">.</span><span class="n">iq_stValve</span><span class="p">,</span>
+                                    <span class="n">iq_stValve_NC</span><span class="o">:=</span> <span class="n">LAMP_ROUGH_VRC_01</span><span class="o">.</span><span class="n">iq_stValve</span><span class="p">,</span>
+                                    <span class="n">iq_stValve_NC_second</span><span class="o">:=</span> <span class="n">LAMP_ROUGH_VRC_03</span><span class="o">.</span><span class="n">iq_stValve</span><span class="p">),</span>
+    <span class="n">iq_stPtm</span><span class="o">=&gt;</span> <span class="p">);</span>
 
     <span class="n">LAMP_GJ1_PTM_01</span><span class="p">(</span>
-    <span class="n">i_xExtIlkOK</span><span class="o">:=</span> <span class="p">(</span><span class="n">LAMP_ROUGH_GPI_04</span><span class="o">.</span><span class="n">PG</span><span class="o">.</span><span class="n">rPRESS</span> <span class="o">&lt;</span> <span class="mf">0.1</span><span class="p">)</span>
-    <span class="n">AND</span> <span class="n">LAMP_ROUGH_GPI_04</span><span class="o">.</span><span class="n">PG</span><span class="o">.</span><span class="n">xPRESS_OK</span>
-    <span class="n">AND</span> <span class="p">(</span><span class="n">LAMP_GJ1_GPI_01</span><span class="o">.</span><span class="n">PG</span><span class="o">.</span><span class="n">rPRESS</span> <span class="o">&lt;</span> <span class="mf">0.1</span><span class="p">)</span>
-    <span class="n">AND</span> <span class="n">LAMP_GJ1_GPI_01</span><span class="o">.</span><span class="n">PG</span><span class="o">.</span><span class="n">xPRESS_OK</span>
-    <span class="n">AND</span> <span class="p">(</span><span class="n">LAMP_ROUGH_VRC_03</span><span class="o">.</span><span class="n">iq_stValve</span><span class="o">.</span><span class="n">i_xOpnLS</span> <span class="o">=</span> <span class="n">TRUE</span><span class="p">),</span>
-    <span class="n">iq_stPTM</span><span class="o">=&gt;</span> <span class="p">);</span>
+    <span class="n">i_xExtILKOk</span><span class="o">:=</span> <span class="n">F_Turbo_NC_NO_Valve_Logic</span><span class="p">(</span>
+                                    <span class="n">i_stTurbo</span><span class="o">:=</span> <span class="n">LAMP_GJ1_PTM_01</span><span class="o">.</span><span class="n">iq_stPtm</span><span class="p">,</span>
+                                    <span class="n">i_stISG</span><span class="o">:=</span> <span class="n">LAMP_GJ1_GPI_01</span><span class="o">.</span><span class="n">PG</span><span class="p">,</span>
+                                    <span class="n">i_stBSG</span><span class="o">:=</span> <span class="n">LAMP_ROUGH_GPI_04</span><span class="o">.</span><span class="n">PG</span><span class="p">,</span>
+                                    <span class="n">iq_stValve_NO</span><span class="o">:=</span> <span class="n">LAMP_ROUGH_VRC_02</span><span class="o">.</span><span class="n">iq_stValve</span><span class="p">,</span>
+                                    <span class="n">iq_stValve_NC</span><span class="o">:=</span> <span class="n">LAMP_ROUGH_VRC_03</span><span class="o">.</span><span class="n">iq_stValve</span><span class="p">,</span>
+                                    <span class="n">iq_stValve_NC_second</span><span class="o">:=</span> <span class="n">LAMP_ROUGH_VRC_01</span><span class="o">.</span><span class="n">iq_stValve</span><span class="p">),</span>
+    <span class="n">iq_stPtm</span><span class="o">=&gt;</span> <span class="p">);</span>
 
     <span class="n">LAMP_GJ1_PTM_02</span><span class="p">(</span>
-    <span class="n">i_xExtIlkOK</span><span class="o">:=</span> <span class="p">(</span><span class="n">LAMP_ROUGH_GPI_04</span><span class="o">.</span><span class="n">PG</span><span class="o">.</span><span class="n">rPRESS</span> <span class="o">&lt;</span> <span class="mf">0.1</span><span class="p">)</span>
-    <span class="n">AND</span> <span class="n">LAMP_ROUGH_GPI_04</span><span class="o">.</span><span class="n">PG</span><span class="o">.</span><span class="n">xPRESS_OK</span>
-    <span class="n">AND</span> <span class="p">(</span><span class="n">LAMP_GJ1_GPI_01</span><span class="o">.</span><span class="n">PG</span><span class="o">.</span><span class="n">rPRESS</span> <span class="o">&lt;</span> <span class="mf">0.1</span><span class="p">)</span>
-    <span class="n">AND</span> <span class="n">LAMP_GJ1_GPI_01</span><span class="o">.</span><span class="n">PG</span><span class="o">.</span><span class="n">xPRESS_OK</span>
-    <span class="n">AND</span> <span class="p">(</span><span class="n">LAMP_ROUGH_VRC_03</span><span class="o">.</span><span class="n">iq_stValve</span><span class="o">.</span><span class="n">i_xOpnLS</span> <span class="o">=</span> <span class="n">TRUE</span><span class="p">),</span>
-    <span class="n">iq_stPTM</span><span class="o">=&gt;</span> <span class="p">);</span>
+    <span class="n">i_xExtILKOk</span><span class="o">:=</span> <span class="n">F_Turbo_NC_NO_Valve_Logic</span><span class="p">(</span>
+                                    <span class="n">i_stTurbo</span><span class="o">:=</span> <span class="n">LAMP_GJ1_PTM_02</span><span class="o">.</span><span class="n">iq_stPtm</span><span class="p">,</span>
+                                    <span class="n">i_stISG</span><span class="o">:=</span> <span class="n">LAMP_GJ1_GPI_01</span><span class="o">.</span><span class="n">PG</span><span class="p">,</span>
+                                    <span class="n">i_stBSG</span><span class="o">:=</span> <span class="n">LAMP_ROUGH_GPI_04</span><span class="o">.</span><span class="n">PG</span><span class="p">,</span>
+                                    <span class="n">iq_stValve_NO</span><span class="o">:=</span> <span class="n">LAMP_ROUGH_VRC_02</span><span class="o">.</span><span class="n">iq_stValve</span><span class="p">,</span>
+                                    <span class="n">iq_stValve_NC</span><span class="o">:=</span> <span class="n">LAMP_ROUGH_VRC_03</span><span class="o">.</span><span class="n">iq_stValve</span><span class="p">,</span>
+                                    <span class="n">iq_stValve_NC_second</span><span class="o">:=</span> <span class="n">LAMP_ROUGH_VRC_01</span><span class="o">.</span><span class="n">iq_stValve</span><span class="p">),</span>
+    <span class="n">iq_stPtm</span><span class="o">=&gt;</span> <span class="p">);</span>
 
     <span class="n">LAMP_GJ1_PTM_03</span><span class="p">(</span>
-    <span class="n">i_xExtIlkOK</span><span class="o">:=</span> <span class="p">(</span><span class="n">LAMP_ROUGH_GPI_04</span><span class="o">.</span><span class="n">PG</span><span class="o">.</span><span class="n">rPRESS</span> <span class="o">&lt;</span> <span class="mf">0.1</span><span class="p">)</span>
-    <span class="n">AND</span> <span class="n">LAMP_ROUGH_GPI_04</span><span class="o">.</span><span class="n">PG</span><span class="o">.</span><span class="n">xPRESS_OK</span>
-    <span class="n">AND</span> <span class="p">(</span><span class="n">LAMP_GJ1_GPI_01</span><span class="o">.</span><span class="n">PG</span><span class="o">.</span><span class="n">rPRESS</span> <span class="o">&lt;</span> <span class="mf">0.1</span><span class="p">)</span>
-    <span class="n">AND</span> <span class="n">LAMP_GJ1_GPI_01</span><span class="o">.</span><span class="n">PG</span><span class="o">.</span><span class="n">xPRESS_OK</span>
-    <span class="n">AND</span> <span class="p">(</span><span class="n">LAMP_ROUGH_VRC_03</span><span class="o">.</span><span class="n">iq_stValve</span><span class="o">.</span><span class="n">i_xOpnLS</span> <span class="o">=</span> <span class="n">TRUE</span><span class="p">),</span>
-    <span class="n">iq_stPTM</span><span class="o">=&gt;</span> <span class="p">);</span>
+    <span class="n">i_xExtILKOk</span><span class="o">:=</span> <span class="n">F_Turbo_NC_NO_Valve_Logic</span><span class="p">(</span>
+                                    <span class="n">i_stTurbo</span><span class="o">:=</span> <span class="n">LAMP_GJ1_PTM_03</span><span class="o">.</span><span class="n">iq_stPtm</span><span class="p">,</span>
+                                    <span class="n">i_stISG</span><span class="o">:=</span> <span class="n">LAMP_GJ1_GPI_01</span><span class="o">.</span><span class="n">PG</span><span class="p">,</span>
+                                    <span class="n">i_stBSG</span><span class="o">:=</span> <span class="n">LAMP_ROUGH_GPI_04</span><span class="o">.</span><span class="n">PG</span><span class="p">,</span>
+                                    <span class="n">iq_stValve_NO</span><span class="o">:=</span> <span class="n">LAMP_ROUGH_VRC_02</span><span class="o">.</span><span class="n">iq_stValve</span><span class="p">,</span>
+                                    <span class="n">iq_stValve_NC</span><span class="o">:=</span> <span class="n">LAMP_ROUGH_VRC_03</span><span class="o">.</span><span class="n">iq_stValve</span><span class="p">,</span>
+                                    <span class="n">iq_stValve_NC_second</span><span class="o">:=</span> <span class="n">LAMP_ROUGH_VRC_01</span><span class="o">.</span><span class="n">iq_stValve</span><span class="p">),</span>
+    <span class="n">iq_stPtm</span><span class="o">=&gt;</span> <span class="p">);</span>
 
     <span class="n">LAMP_GJ1_PTM_04</span><span class="p">(</span>
-    <span class="n">i_xExtIlkOK</span><span class="o">:=</span> <span class="p">(</span><span class="n">LAMP_ROUGH_GPI_04</span><span class="o">.</span><span class="n">PG</span><span class="o">.</span><span class="n">rPRESS</span> <span class="o">&lt;</span> <span class="mf">0.1</span><span class="p">)</span>
-    <span class="n">AND</span> <span class="n">LAMP_ROUGH_GPI_04</span><span class="o">.</span><span class="n">PG</span><span class="o">.</span><span class="n">xPRESS_OK</span>
-    <span class="n">AND</span> <span class="p">(</span><span class="n">LAMP_GJ1_GPI_01</span><span class="o">.</span><span class="n">PG</span><span class="o">.</span><span class="n">rPRESS</span> <span class="o">&lt;</span> <span class="mf">0.1</span><span class="p">)</span>
-    <span class="n">AND</span> <span class="n">LAMP_GJ1_GPI_01</span><span class="o">.</span><span class="n">PG</span><span class="o">.</span><span class="n">xPRESS_OK</span>
-    <span class="n">AND</span> <span class="p">(</span><span class="n">LAMP_ROUGH_VRC_03</span><span class="o">.</span><span class="n">iq_stValve</span><span class="o">.</span><span class="n">i_xOpnLS</span> <span class="o">=</span> <span class="n">TRUE</span><span class="p">),</span>
-    <span class="n">iq_stPTM</span><span class="o">=&gt;</span> <span class="p">);</span>
+    <span class="n">i_xExtILKOk</span><span class="o">:=</span> <span class="n">F_Turbo_NC_NO_Valve_Logic</span><span class="p">(</span>
+                                    <span class="n">i_stTurbo</span><span class="o">:=</span> <span class="n">LAMP_GJ1_PTM_04</span><span class="o">.</span><span class="n">iq_stPtm</span><span class="p">,</span>
+                                    <span class="n">i_stISG</span><span class="o">:=</span> <span class="n">LAMP_GJ1_GPI_01</span><span class="o">.</span><span class="n">PG</span><span class="p">,</span>
+                                    <span class="n">i_stBSG</span><span class="o">:=</span> <span class="n">LAMP_ROUGH_GPI_04</span><span class="o">.</span><span class="n">PG</span><span class="p">,</span>
+                                    <span class="n">iq_stValve_NO</span><span class="o">:=</span> <span class="n">LAMP_ROUGH_VRC_02</span><span class="o">.</span><span class="n">iq_stValve</span><span class="p">,</span>
+                                    <span class="n">iq_stValve_NC</span><span class="o">:=</span> <span class="n">LAMP_ROUGH_VRC_03</span><span class="o">.</span><span class="n">iq_stValve</span><span class="p">,</span>
+                                    <span class="n">iq_stValve_NC_second</span><span class="o">:=</span> <span class="n">LAMP_ROUGH_VRC_01</span><span class="o">.</span><span class="n">iq_stValve</span><span class="p">),</span>
+    <span class="n">iq_stPtm</span><span class="o">=&gt;</span> <span class="p">);</span>
 
     <span class="n">LAMP_ROUGH_PTM_01</span><span class="p">(</span>
-    <span class="n">i_xExtIlkOK</span><span class="o">:=</span> <span class="p">(</span><span class="n">LAMP_ROUGH_GPI_02</span><span class="o">.</span><span class="n">PG</span><span class="o">.</span><span class="n">rPRESS</span> <span class="o">&lt;</span> <span class="mf">0.1</span><span class="p">)</span>
-    <span class="n">AND</span> <span class="n">LAMP_ROUGH_GPI_02</span><span class="o">.</span><span class="n">PG</span><span class="o">.</span><span class="n">xPRESS_OK</span>
-    <span class="n">AND</span> <span class="p">(</span><span class="n">LAMP_C2_GPI_01</span><span class="o">.</span><span class="n">PG</span><span class="o">.</span><span class="n">rPRESS</span> <span class="o">&lt;</span> <span class="mf">0.1</span><span class="p">)</span>
-    <span class="n">AND</span> <span class="n">LAMP_C2_GPI_01</span><span class="o">.</span><span class="n">PG</span><span class="o">.</span><span class="n">xPRESS_OK</span>
-    <span class="n">AND</span> <span class="p">(</span><span class="n">LAMP_ROUGH_VRC_01</span><span class="o">.</span><span class="n">iq_stValve</span><span class="o">.</span><span class="n">i_xOpnLS</span> <span class="o">=</span> <span class="n">TRUE</span><span class="p">),</span>
-    <span class="n">iq_stPTM</span><span class="o">=&gt;</span> <span class="p">);</span>
+    <span class="n">i_xExtILKOk</span><span class="o">:=</span> <span class="n">F_Turbo_NC_NO_Valve_Logic</span><span class="p">(</span>
+                                    <span class="n">i_stTurbo</span><span class="o">:=</span> <span class="n">LAMP_ROUGH_PTM_01</span><span class="o">.</span><span class="n">iq_stPtm</span><span class="p">,</span>
+                                    <span class="n">i_stISG</span><span class="o">:=</span> <span class="n">LAMP_C2_GPI_01</span><span class="o">.</span><span class="n">PG</span><span class="p">,</span>
+                                    <span class="n">i_stBSG</span><span class="o">:=</span> <span class="n">LAMP_ROUGH_GPI_02</span><span class="o">.</span><span class="n">PG</span><span class="p">,</span>
+                                    <span class="n">iq_stValve_NO</span><span class="o">:=</span> <span class="n">LAMP_ROUGH_VRC_02</span><span class="o">.</span><span class="n">iq_stValve</span><span class="p">,</span>
+                                    <span class="n">iq_stValve_NC</span><span class="o">:=</span> <span class="n">LAMP_ROUGH_VRC_01</span><span class="o">.</span><span class="n">iq_stValve</span><span class="p">,</span>
+                                    <span class="n">iq_stValve_NC_second</span><span class="o">:=</span> <span class="n">LAMP_ROUGH_VRC_03</span><span class="o">.</span><span class="n">iq_stValve</span><span class="p">),</span>
+    <span class="n">iq_stPtm</span><span class="o">=&gt;</span> <span class="p">);</span>
 
     <span class="n">KTOF_PTM_01</span><span class="p">(</span>
-    <span class="n">i_xExtIlkOK</span><span class="o">:=</span> <span class="p">(</span><span class="n">LAMP_ROUGH_GPI_02</span><span class="o">.</span><span class="n">PG</span><span class="o">.</span><span class="n">rPRESS</span> <span class="o">&lt;</span> <span class="mf">0.1</span><span class="p">)</span>
-    <span class="n">AND</span> <span class="n">LAMP_ROUGH_GPI_02</span><span class="o">.</span><span class="n">PG</span><span class="o">.</span><span class="n">xPRESS_OK</span>
-    <span class="n">AND</span> <span class="p">(</span><span class="n">LAMP_C2_GPI_01</span><span class="o">.</span><span class="n">PG</span><span class="o">.</span><span class="n">rPRESS</span> <span class="o">&lt;</span> <span class="mf">0.1</span><span class="p">)</span>
-    <span class="n">AND</span> <span class="n">LAMP_C2_GPI_01</span><span class="o">.</span><span class="n">PG</span><span class="o">.</span><span class="n">xPRESS_OK</span>
-    <span class="n">AND</span> <span class="p">(</span><span class="n">LAMP_ROUGH_VRC_01</span><span class="o">.</span><span class="n">iq_stValve</span><span class="o">.</span><span class="n">i_xOpnLS</span> <span class="o">=</span> <span class="n">TRUE</span><span class="p">),</span>
-    <span class="n">iq_stPTM</span><span class="o">=&gt;</span> <span class="p">);</span>
+    <span class="n">i_xExtILKOk</span><span class="o">:=</span> <span class="n">F_Turbo_NC_NO_Valve_Logic</span><span class="p">(</span>
+                                    <span class="n">i_stTurbo</span><span class="o">:=</span> <span class="n">KTOF_PTM_01</span><span class="o">.</span><span class="n">iq_stPtm</span><span class="p">,</span>
+                                    <span class="n">i_stISG</span><span class="o">:=</span> <span class="n">LAMP_C2_GPI_01</span><span class="o">.</span><span class="n">PG</span><span class="p">,</span>
+                                    <span class="n">i_stBSG</span><span class="o">:=</span> <span class="n">LAMP_ROUGH_GPI_02</span><span class="o">.</span><span class="n">PG</span><span class="p">,</span>
+                                    <span class="n">iq_stValve_NO</span><span class="o">:=</span> <span class="n">LAMP_ROUGH_VRC_02</span><span class="o">.</span><span class="n">iq_stValve</span><span class="p">,</span>
+                                    <span class="n">iq_stValve_NC</span><span class="o">:=</span> <span class="n">LAMP_ROUGH_VRC_01</span><span class="o">.</span><span class="n">iq_stValve</span><span class="p">,</span>
+                                    <span class="n">iq_stValve_NC_second</span><span class="o">:=</span> <span class="n">LAMP_ROUGH_VRC_03</span><span class="o">.</span><span class="n">iq_stValve</span><span class="p">),</span>
+    <span class="n">iq_stPtm</span><span class="o">=&gt;</span> <span class="p">);</span>
 
 <span class="p">(</span><span class="o">*</span><span class="n">Serial</span> <span class="n">Communication</span><span class="o">*</span><span class="p">)</span>
 <span class="p">(</span><span class="o">*</span><span class="n">Assign</span> <span class="n">adresses</span> <span class="n">to</span> <span class="n">the</span> <span class="n">pfeiffer</span> <span class="n">controllers</span> <span class="n">connected</span> <span class="n">to</span> <span class="n">this</span> <span class="n">serial</span> <span class="n">terminal</span><span class="o">*</span><span class="p">)</span>
