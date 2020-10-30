@@ -117,8 +117,6 @@ record(waveform, "$(PREFIX)RequestedBP:ST_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.stRequestedBeamParameters.aStoppers?")
   field(FTVL, "CHAR")
   field(NELM, "16")
-  field(MPST, "On Change")
-  field(APST, "On Change")
   info(archive, "monitor 1: VAL")
 }
 
@@ -202,8 +200,6 @@ record(waveform, "$(PREFIX)CurrentBP:ST_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.stCurrentBeamParameters.aStoppers?")
   field(FTVL, "CHAR")
   field(NELM, "16")
-  field(MPST, "On Change")
-  field(APST, "On Change")
   info(archive, "monitor 1: VAL")
 }
 
@@ -239,8 +235,6 @@ record(waveform, "$(PREFIX)eVRangeCnst_RBV") {
   field(FTVL, "FLOAT")
   field(EGU, "eV")
   field(NELM, "16")
-  field(MPST, "On Change")
-  field(APST, "On Change")
   info(archive, "monitor 1: VAL")
 }
 
@@ -299,8 +293,6 @@ record(waveform, "$(PREFIX)FullBeamCnst:ST_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.cstFullBeam.aStoppers?")
   field(FTVL, "CHAR")
   field(NELM, "16")
-  field(MPST, "On Change")
-  field(APST, "On Change")
   info(archive, "monitor 1: VAL")
 }
 
@@ -381,8 +373,6 @@ record(waveform, "$(PREFIX)0RateBeamCnst:ST_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.cst0RateBeam.aStoppers?")
   field(FTVL, "CHAR")
   field(NELM, "16")
-  field(MPST, "On Change")
-  field(APST, "On Change")
   info(archive, "monitor 1: VAL")
 }
 
@@ -463,8 +453,6 @@ record(waveform, "$(PREFIX)SafeBeamCnst:ST_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.cstSafeBeam.aStoppers?")
   field(FTVL, "CHAR")
   field(NELM, "16")
-  field(MPST, "On Change")
-  field(APST, "On Change")
   info(archive, "monitor 1: VAL")
 }
 
@@ -513,8 +501,6 @@ record(waveform, "$(PREFIX)L:eVRangeCnst_RBV") {
   field(FTVL, "FLOAT")
   field(EGU, "eV")
   field(NELM, "16")
-  field(MPST, "On Change")
-  field(APST, "On Change")
   info(archive, "monitor 1: VAL")
 }
 
@@ -528,8 +514,6 @@ record(waveform, "$(PREFIX)K:eVRangeCnst_RBV") {
   field(FTVL, "FLOAT")
   field(EGU, "eV")
   field(NELM, "16")
-  field(MPST, "On Change")
-  field(APST, "On Change")
   info(archive, "monitor 1: VAL")
 }
 
