@@ -83,7 +83,7 @@ b_TurboPumpRunningFlag := (LAMP_GJ2_PTM_01.iq_stPtm.eState = E_PumpState.pumpRUN
 	(LAMP_C2_PTM_02.iq_stPtm.eState = E_PumpState.pumpRUNNING) AND
 	(LAMP_C2_PTM_03.iq_stPtm.eState = E_PumpState.pumpRUNNING) AND
 	(LAMP_C2_PTM_04.iq_stPtm.eState = E_PumpState.pumpRUNNING) AND
-//	(LAMP_CATCH_PTM_01.iq_stPtm.eState = E_PumpState.pumpRUNNING) AND //current not connected and used Rack mounted option
+	(LAMP_CATCH_PTM_01.iq_stPtm.eState = E_PumpState.pumpRUNNING) AND 
 	(LAMP_CATCH_PTM_02.iq_stPtm.eState = E_PumpState.pumpRUNNING) AND
 	(LAMP_GJ1_PTM_01.iq_stPtm.eState = E_PumpState.pumpRUNNING) AND
 	(LAMP_GJ1_PTM_02.iq_stPtm.eState = E_PumpState.pumpRUNNING) AND
