@@ -32,7 +32,7 @@ fb_ADS_WATCHDOG_VAC_LAMP_TMO(
 	sVarName:= 'PRG_ADS_Interfaces.i_iWatchdog', 
 	bError=> );
 	
-ITF_TMO_ROUGH1_VRC_01(
+ITF_TMO_ROUGH1_VRC_01(//Roughing valve Readback from IP1 Roughing Line
 	sNetId:= '172.21.132.22.1.1', 
 	nPort:= 851, 
 	sVarName:= 'GVL_Hutch_Valves.TMO_ROUGH1_VRC_01', 
@@ -40,38 +40,13 @@ ITF_TMO_ROUGH1_VRC_01(
 	VGC=> , 
 	bError=> );
 	
-ITF_TMO_ROUGH2_VRC_01(
+ITF_TMO_ROUGH2_VRC_01(//Roughing valve Readback from the Gas Jet Roughing Line
 	sNetId:= '172.21.132.22.1.1', 
 	nPort:= 851, 
 	sVarName:= 'GVL_Hutch_Valves.TMO_ROUGH2_VRC_01', 
 	iWatchdog:= i_iWatchdog, 
 	VGC=> , 
 	bError=> );
-	
-(*Apply TMO Interface Logic*)
-IF(ITF_TMO_ROUGH1_VRC_01.VGC.eState <> E_ValvePositionState.OPEN) OR (ITF_TMO_ROUGH2_VRC_01.VGC.eState <> E_ValvePositionState.OPEN)
-THEN
-	//turn off all turbo pumps and close the two normally closed valves
-	LAMP_GJ2_PTM_01.M_Run(FALSE);
-	LAMP_GJ2_PTM_02.M_Run(FALSE);
-	LAMP_GJ2_PTM_03.M_Run(FALSE);
-	LAMP_GJ2_PTM_04.M_Run(FALSE);
-	LAMP_C1_PTM_01.M_Run(FALSE);
-	LAMP_C2_PTM_01.M_Run(FALSE);
-	LAMP_C2_PTM_02.M_Run(FALSE);
-	LAMP_C2_PTM_03.M_Run(FALSE);
-	LAMP_C2_PTM_04.M_Run(FALSE);
-	LAMP_CATCH_PTM_01.M_Run(FALSE);
-	LAMP_CATCH_PTM_02.M_Run(FALSE);
-	LAMP_GJ1_PTM_01.M_Run(FALSE);
-	LAMP_GJ1_PTM_02.M_Run(FALSE);
-	LAMP_GJ1_PTM_03.M_Run(FALSE);
-	LAMP_GJ1_PTM_04.M_Run(FALSE);
-	LAMP_ROUGH_PTM_01.M_Run(FALSE);
-	KTOF_PTM_01.M_Run(FALSE);
-	LAMP_ROUGH_VRC_01.M_Set_OPN_SW(FALSE);
-	LAMP_ROUGH_VRC_03.M_Set_OPN_SW(FALSE);
-END_IF
 
 (*TurboPump running Flag with 30 second Turn Off delay.*)
 b_TurboPumpRunningFlag := (LAMP_GJ2_PTM_01.iq_stPtm.eState = E_PumpState.pumpRUNNING)  AND 
@@ -83,7 +58,7 @@ b_TurboPumpRunningFlag := (LAMP_GJ2_PTM_01.iq_stPtm.eState = E_PumpState.pumpRUN
 	(LAMP_C2_PTM_02.iq_stPtm.eState = E_PumpState.pumpRUNNING) AND
 	(LAMP_C2_PTM_03.iq_stPtm.eState = E_PumpState.pumpRUNNING) AND
 	(LAMP_C2_PTM_04.iq_stPtm.eState = E_PumpState.pumpRUNNING) AND
-//	(LAMP_CATCH_PTM_01.iq_stPtm.eState = E_PumpState.pumpRUNNING) AND //current not connected and used Rack mounted option
+	(LAMP_CATCH_PTM_01.iq_stPtm.eState = E_PumpState.pumpRUNNING) AND 
 	(LAMP_CATCH_PTM_02.iq_stPtm.eState = E_PumpState.pumpRUNNING) AND
 	(LAMP_GJ1_PTM_01.iq_stPtm.eState = E_PumpState.pumpRUNNING) AND
 	(LAMP_GJ1_PTM_02.iq_stPtm.eState = E_PumpState.pumpRUNNING) AND
@@ -94,12 +69,12 @@ b_TurboPumpRunningFlag := (LAMP_GJ2_PTM_01.iq_stPtm.eState = E_PumpState.pumpRUN
 TurboPumpTOF(IN:= b_TurboPumpRunningFlag, PT := TurboPumpDelayTime);
 b_PumpRunning:= TurboPumpTOF.Q;
 
-(*High Voltage Saftey Loop*)
+(*High Voltage Saftey Loop*)// rHighVoltageMinPressure = 1e-05; (*Hard coded High voltage Minimum Enable Pressure*)
 xHighVoltageSafteyLoopEnable:= (LAMP_C2_GCC_01.IG.rPRESS <= rHighVoltageMinPressure) AND (LAMP_C2_GCC_01.IG.xPRESS_OK = TRUE);
 
 (*PIRANI Gauges*)
 	LAMP_C2_GPI_01(PG=>);
-	//LAMP_CATCH_GPI_01(PG=>);
+	//LAMP_CATCH_GPI_01(PG=>); which is not installed
 	LAMP_GJ2_GPI_01(PG=>);
 	LAMP_GJ1_GPI_01(PG=>);
 
@@ -123,7 +98,10 @@ xHighVoltageSafteyLoopEnable:= (LAMP_C2_GCC_01.IG.rPRESS <= rHighVoltageMinPress
 (*Hot Cathode Gauges*)
 	LAMP_C1_GHC_01(PG:=LAMP_C2_GPI_01.PG,IG=>);
 	
-(*TURBO Pumps*)
+(*TURBO Pumps
+*In general, if turbo pump setpoints are above the pirani guage readings or there is no downstream open path to a roughing pump, the turbo pump will close.
+*
+*)
 	LAMP_GJ2_PTM_01(
 	i_xExtILKOk:= F_Turbo_NC_NO_Valve_Logic(
 					i_stTurbo:= LAMP_GJ2_PTM_01.iq_stPtm, 
@@ -427,20 +405,24 @@ LAMP_GJ2_PTM_04.M_Serial_IO(i_st_TD20_RBK:= st_TD20_RBK_LAMP_GJ2_PTM_04);
 
 
 (*Vacuum Gate Valve*)
-	LAMP_ROUGH_VRC_01(
-	i_xExtILK_OK:= ABS(LAMP_ROUGH_GPI_01.PG.rPRESS - LAMP_ROUGH_GPI_02.PG.rPRESS)<10.0, 
+	LAMP_ROUGH_VRC_01(//LAMP:ROUGH:VRC:01 can open when the pressure across the valve is below 10 torr and the downstream roughing valve is open
+	i_xExtILK_OK:= (ABS(LAMP_ROUGH_GPI_01.PG.rPRESS - LAMP_ROUGH_GPI_02.PG.rPRESS)<10.0) AND (ITF_TMO_ROUGH1_VRC_01.VGC.eState = E_ValvePositionState.OPEN), 
 	i_xOverrideMode:= xSystemOverrideMode_LAMP, 
 	iq_stValve=> );
 	
-	LAMP_ROUGH_VRC_02(
+	LAMP_ROUGH_VRC_02(//LAMP:ROUGH:VRC:02 close when the pressure in the the C2, GJ1, and GJ2 chambers are all below 10 torr.
 	i_xExtILK_OK:= NOT((LAMP_GJ1_GPI_01.PG.rPRESS >10.0) OR (LAMP_GJ2_GPI_01.PG.rPRESS > 10.0) OR (LAMP_C2_GPI_01.PG.rPRESS > 10.0)) , 
 	i_xOverrideMode:= xSystemOverrideMode_LAMP, 
 	iq_stValve=> );
 	
-	LAMP_ROUGH_VRC_03(
-	i_xExtILK_OK:= ABS(LAMP_ROUGH_GPI_03.PG.rPRESS - LAMP_ROUGH_GPI_04.PG.rPRESS)<10.0, 
+	LAMP_ROUGH_VRC_03(//LAMP:ROUGH:VRC:03 can open when the pressure across the valve is below 10 torr and the downstream roughing valve is open
+	i_xExtILK_OK:= (ABS(LAMP_ROUGH_GPI_03.PG.rPRESS - LAMP_ROUGH_GPI_04.PG.rPRESS)<10.0) AND (ITF_TMO_ROUGH2_VRC_01.VGC.eState = E_ValvePositionState.OPEN), 
 	i_xOverrideMode:= xSystemOverrideMode_LAMP, 
 	iq_stValve=> );
+	
+	
+
+
 ]]></ST>
     </Implementation>
   </POU>
