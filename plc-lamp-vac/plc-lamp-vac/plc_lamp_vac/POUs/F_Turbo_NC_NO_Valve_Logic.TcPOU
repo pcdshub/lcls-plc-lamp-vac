@@ -6,7 +6,7 @@ VAR_INPUT
 	i_stTurbo : ST_PTM; // Turbo Pump
 	i_stISG : ST_VG; //Gauge measuring inlet Pressure e.g Pirani
 	i_stBSG : ST_VG; //Gauge measureing backing pressure
-	iq_stValve_NO : ST_VRC; //Normally Open Valve directly sharing turbo pump vaccum volume.
+	iq_stValve_NO : ST_VRC_NO; //Normally Open Valve directly sharing turbo pump vaccum volume.
 	iq_stValve_NC : ST_VRC; //Normally Closed Valve directly sharing turbo pump vaccum volume.
 	iq_stValve_NC_second :	ST_VRC; //Normally Open Valve on the other side of NO valve that also connects to roughing line.
 END_VAR

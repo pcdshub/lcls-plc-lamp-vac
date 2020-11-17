@@ -2319,6 +2319,30 @@ record(longout, "LAMP:C2:PTM:01:SET_SPEED") {
   info(archive, "VAL")
 }
 
+record(bi, "LAMP:C2:PTM:01:SET_SPEED_MODE_RBV") {
+  # GVL_Devices.LAMP_C2_PTM_01.iq_stPTM.q_bSetSpd
+  field(DESC, "GVL_Devices.LAMP_C2_...q_stPTM.q_bSetSpd")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.LAMP_C2_PTM_01.iq_stPTM.q_bSetSpd?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bo, "LAMP:C2:PTM:01:SET_SPEED_MODE") {
+  # GVL_Devices.LAMP_C2_PTM_01.iq_stPTM.q_bSetSpd
+  field(DESC, "GVL_Devices.LAMP_C2_...q_stPTM.q_bSetSpd")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.LAMP_C2_PTM_01.iq_stPTM.q_bSetSpd=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
 record(bi, "LAMP:C2:PTM:02:RUN_SW_RBV") {
   # GVL_Devices.LAMP_C2_PTM_02.iq_stPTM.xRunSW
   field(DESC, "GVL_Devices.LAMP_C2_...2.iq_stPTM.xRunSW")
@@ -2727,6 +2751,30 @@ record(longout, "LAMP:C2:PTM:02:SET_SPEED") {
   field(DTYP, "asynInt32")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.LAMP_C2_PTM_02.iq_stPTM.i_dSetSpd=")
   field(EGU, "Hz")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "LAMP:C2:PTM:02:SET_SPEED_MODE_RBV") {
+  # GVL_Devices.LAMP_C2_PTM_02.iq_stPTM.q_bSetSpd
+  field(DESC, "GVL_Devices.LAMP_C2_...q_stPTM.q_bSetSpd")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.LAMP_C2_PTM_02.iq_stPTM.q_bSetSpd?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bo, "LAMP:C2:PTM:02:SET_SPEED_MODE") {
+  # GVL_Devices.LAMP_C2_PTM_02.iq_stPTM.q_bSetSpd
+  field(DESC, "GVL_Devices.LAMP_C2_...q_stPTM.q_bSetSpd")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.LAMP_C2_PTM_02.iq_stPTM.q_bSetSpd=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(autosaveFields_pass0, "VAL")
   info(archive, "VAL")
 }
@@ -3143,6 +3191,30 @@ record(longout, "LAMP:C2:PTM:03:SET_SPEED") {
   info(archive, "VAL")
 }
 
+record(bi, "LAMP:C2:PTM:03:SET_SPEED_MODE_RBV") {
+  # GVL_Devices.LAMP_C2_PTM_03.iq_stPTM.q_bSetSpd
+  field(DESC, "GVL_Devices.LAMP_C2_...q_stPTM.q_bSetSpd")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.LAMP_C2_PTM_03.iq_stPTM.q_bSetSpd?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bo, "LAMP:C2:PTM:03:SET_SPEED_MODE") {
+  # GVL_Devices.LAMP_C2_PTM_03.iq_stPTM.q_bSetSpd
+  field(DESC, "GVL_Devices.LAMP_C2_...q_stPTM.q_bSetSpd")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.LAMP_C2_PTM_03.iq_stPTM.q_bSetSpd=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
 record(bi, "LAMP:C2:PTM:04:RUN_SW_RBV") {
   # GVL_Devices.LAMP_C2_PTM_04.iq_stPTM.xRunSW
   field(DESC, "GVL_Devices.LAMP_C2_...4.iq_stPTM.xRunSW")
@@ -3551,6 +3623,30 @@ record(longout, "LAMP:C2:PTM:04:SET_SPEED") {
   field(DTYP, "asynInt32")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.LAMP_C2_PTM_04.iq_stPTM.i_dSetSpd=")
   field(EGU, "Hz")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "LAMP:C2:PTM:04:SET_SPEED_MODE_RBV") {
+  # GVL_Devices.LAMP_C2_PTM_04.iq_stPTM.q_bSetSpd
+  field(DESC, "GVL_Devices.LAMP_C2_...q_stPTM.q_bSetSpd")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.LAMP_C2_PTM_04.iq_stPTM.q_bSetSpd?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bo, "LAMP:C2:PTM:04:SET_SPEED_MODE") {
+  # GVL_Devices.LAMP_C2_PTM_04.iq_stPTM.q_bSetSpd
+  field(DESC, "GVL_Devices.LAMP_C2_...q_stPTM.q_bSetSpd")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.LAMP_C2_PTM_04.iq_stPTM.q_bSetSpd=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(autosaveFields_pass0, "VAL")
   info(archive, "VAL")
 }
@@ -3968,6 +4064,30 @@ record(longout, "LAMP:GJ1:PTM:01:SET_SPEED") {
   info(archive, "VAL")
 }
 
+record(bi, "LAMP:GJ1:PTM:01:SET_SPEED_MODE_RBV") {
+  # GVL_Devices.LAMP_GJ1_PTM_01.iq_stPTM.q_bSetSpd
+  field(DESC, "GVL_Devices.LAMP_GJ1...q_stPTM.q_bSetSpd")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.LAMP_GJ1_PTM_01.iq_stPTM.q_bSetSpd?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bo, "LAMP:GJ1:PTM:01:SET_SPEED_MODE") {
+  # GVL_Devices.LAMP_GJ1_PTM_01.iq_stPTM.q_bSetSpd
+  field(DESC, "GVL_Devices.LAMP_GJ1...q_stPTM.q_bSetSpd")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.LAMP_GJ1_PTM_01.iq_stPTM.q_bSetSpd=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
 record(bi, "LAMP:GJ1:PTM:02:RUN_SW_RBV") {
   # GVL_Devices.LAMP_GJ1_PTM_02.iq_stPTM.xRunSW
   field(DESC, "GVL_Devices.LAMP_GJ1...2.iq_stPTM.xRunSW")
@@ -4377,6 +4497,30 @@ record(longout, "LAMP:GJ1:PTM:02:SET_SPEED") {
   field(DTYP, "asynInt32")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.LAMP_GJ1_PTM_02.iq_stPTM.i_dSetSpd=")
   field(EGU, "Hz")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "LAMP:GJ1:PTM:02:SET_SPEED_MODE_RBV") {
+  # GVL_Devices.LAMP_GJ1_PTM_02.iq_stPTM.q_bSetSpd
+  field(DESC, "GVL_Devices.LAMP_GJ1...q_stPTM.q_bSetSpd")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.LAMP_GJ1_PTM_02.iq_stPTM.q_bSetSpd?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bo, "LAMP:GJ1:PTM:02:SET_SPEED_MODE") {
+  # GVL_Devices.LAMP_GJ1_PTM_02.iq_stPTM.q_bSetSpd
+  field(DESC, "GVL_Devices.LAMP_GJ1...q_stPTM.q_bSetSpd")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.LAMP_GJ1_PTM_02.iq_stPTM.q_bSetSpd=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(autosaveFields_pass0, "VAL")
   info(archive, "VAL")
 }
@@ -4794,6 +4938,30 @@ record(longout, "LAMP:GJ1:PTM:03:SET_SPEED") {
   info(archive, "VAL")
 }
 
+record(bi, "LAMP:GJ1:PTM:03:SET_SPEED_MODE_RBV") {
+  # GVL_Devices.LAMP_GJ1_PTM_03.iq_stPTM.q_bSetSpd
+  field(DESC, "GVL_Devices.LAMP_GJ1...q_stPTM.q_bSetSpd")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.LAMP_GJ1_PTM_03.iq_stPTM.q_bSetSpd?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bo, "LAMP:GJ1:PTM:03:SET_SPEED_MODE") {
+  # GVL_Devices.LAMP_GJ1_PTM_03.iq_stPTM.q_bSetSpd
+  field(DESC, "GVL_Devices.LAMP_GJ1...q_stPTM.q_bSetSpd")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.LAMP_GJ1_PTM_03.iq_stPTM.q_bSetSpd=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
 record(bi, "LAMP:GJ1:PTM:04:RUN_SW_RBV") {
   # GVL_Devices.LAMP_GJ1_PTM_04.iq_stPTM.xRunSW
   field(DESC, "GVL_Devices.LAMP_GJ1...4.iq_stPTM.xRunSW")
@@ -5203,6 +5371,30 @@ record(longout, "LAMP:GJ1:PTM:04:SET_SPEED") {
   field(DTYP, "asynInt32")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.LAMP_GJ1_PTM_04.iq_stPTM.i_dSetSpd=")
   field(EGU, "Hz")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "LAMP:GJ1:PTM:04:SET_SPEED_MODE_RBV") {
+  # GVL_Devices.LAMP_GJ1_PTM_04.iq_stPTM.q_bSetSpd
+  field(DESC, "GVL_Devices.LAMP_GJ1...q_stPTM.q_bSetSpd")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.LAMP_GJ1_PTM_04.iq_stPTM.q_bSetSpd?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bo, "LAMP:GJ1:PTM:04:SET_SPEED_MODE") {
+  # GVL_Devices.LAMP_GJ1_PTM_04.iq_stPTM.q_bSetSpd
+  field(DESC, "GVL_Devices.LAMP_GJ1...q_stPTM.q_bSetSpd")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.LAMP_GJ1_PTM_04.iq_stPTM.q_bSetSpd=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(autosaveFields_pass0, "VAL")
   info(archive, "VAL")
 }
@@ -5620,6 +5812,30 @@ record(longout, "LAMP:CATCH:PTM:01:SET_SPEED") {
   info(archive, "VAL")
 }
 
+record(bi, "LAMP:CATCH:PTM:01:SET_SPEED_MODE_RBV") {
+  # GVL_Devices.LAMP_CATCH_PTM_01.iq_stPTM.q_bSetSpd
+  field(DESC, "GVL_Devices.LAMP_CAT...q_stPTM.q_bSetSpd")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.LAMP_CATCH_PTM_01.iq_stPTM.q_bSetSpd?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bo, "LAMP:CATCH:PTM:01:SET_SPEED_MODE") {
+  # GVL_Devices.LAMP_CATCH_PTM_01.iq_stPTM.q_bSetSpd
+  field(DESC, "GVL_Devices.LAMP_CAT...q_stPTM.q_bSetSpd")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.LAMP_CATCH_PTM_01.iq_stPTM.q_bSetSpd=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
 record(bi, "LAMP:CATCH:PTM:02:RUN_SW_RBV") {
   # GVL_Devices.LAMP_CATCH_PTM_02.iq_stPTM.xRunSW
   field(DESC, "GVL_Devices.LAMP_CAT...2.iq_stPTM.xRunSW")
@@ -6029,6 +6245,30 @@ record(longout, "LAMP:CATCH:PTM:02:SET_SPEED") {
   field(DTYP, "asynInt32")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.LAMP_CATCH_PTM_02.iq_stPTM.i_dSetSpd=")
   field(EGU, "Hz")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "LAMP:CATCH:PTM:02:SET_SPEED_MODE_RBV") {
+  # GVL_Devices.LAMP_CATCH_PTM_02.iq_stPTM.q_bSetSpd
+  field(DESC, "GVL_Devices.LAMP_CAT...q_stPTM.q_bSetSpd")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.LAMP_CATCH_PTM_02.iq_stPTM.q_bSetSpd?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bo, "LAMP:CATCH:PTM:02:SET_SPEED_MODE") {
+  # GVL_Devices.LAMP_CATCH_PTM_02.iq_stPTM.q_bSetSpd
+  field(DESC, "GVL_Devices.LAMP_CAT...q_stPTM.q_bSetSpd")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.LAMP_CATCH_PTM_02.iq_stPTM.q_bSetSpd=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(autosaveFields_pass0, "VAL")
   info(archive, "VAL")
 }
@@ -6446,6 +6686,30 @@ record(longout, "LAMP:ROUGH:PTM:01:SET_SPEED") {
   info(archive, "VAL")
 }
 
+record(bi, "LAMP:ROUGH:PTM:01:SET_SPEED_MODE_RBV") {
+  # GVL_Devices.LAMP_ROUGH_PTM_01.iq_stPTM.q_bSetSpd
+  field(DESC, "GVL_Devices.LAMP_ROU...q_stPTM.q_bSetSpd")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.LAMP_ROUGH_PTM_01.iq_stPTM.q_bSetSpd?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bo, "LAMP:ROUGH:PTM:01:SET_SPEED_MODE") {
+  # GVL_Devices.LAMP_ROUGH_PTM_01.iq_stPTM.q_bSetSpd
+  field(DESC, "GVL_Devices.LAMP_ROU...q_stPTM.q_bSetSpd")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.LAMP_ROUGH_PTM_01.iq_stPTM.q_bSetSpd=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
 record(bi, "LAMP:C1:PTM:01:RUN_SW_RBV") {
   # GVL_Devices.LAMP_C1_PTM_01.iq_stPTM.xRunSW
   field(DESC, "GVL_Devices.LAMP_C1_...1.iq_stPTM.xRunSW")
@@ -6858,6 +7122,30 @@ record(longout, "LAMP:C1:PTM:01:SET_SPEED") {
   info(archive, "VAL")
 }
 
+record(bi, "LAMP:C1:PTM:01:SET_SPEED_MODE_RBV") {
+  # GVL_Devices.LAMP_C1_PTM_01.iq_stPTM.q_bSetSpd
+  field(DESC, "GVL_Devices.LAMP_C1_...q_stPTM.q_bSetSpd")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.LAMP_C1_PTM_01.iq_stPTM.q_bSetSpd?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bo, "LAMP:C1:PTM:01:SET_SPEED_MODE") {
+  # GVL_Devices.LAMP_C1_PTM_01.iq_stPTM.q_bSetSpd
+  field(DESC, "GVL_Devices.LAMP_C1_...q_stPTM.q_bSetSpd")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.LAMP_C1_PTM_01.iq_stPTM.q_bSetSpd=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
 record(bi, "KTOF:PTM:01:RUN_SW_RBV") {
   field(DESC, "GVL_Devices.KTOF_PTM_01.iq_stPTM.xRunSW")
   field(SCAN, "I/O Intr")
@@ -7260,6 +7548,30 @@ record(longout, "KTOF:PTM:01:SET_SPEED") {
   field(DTYP, "asynInt32")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.KTOF_PTM_01.iq_stPTM.i_dSetSpd=")
   field(EGU, "Hz")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "KTOF:PTM:01:SET_SPEED_MODE_RBV") {
+  # GVL_Devices.KTOF_PTM_01.iq_stPTM.q_bSetSpd
+  field(DESC, "GVL_Devices.KTOF_PTM...q_stPTM.q_bSetSpd")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.KTOF_PTM_01.iq_stPTM.q_bSetSpd?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bo, "KTOF:PTM:01:SET_SPEED_MODE") {
+  # GVL_Devices.KTOF_PTM_01.iq_stPTM.q_bSetSpd
+  field(DESC, "GVL_Devices.KTOF_PTM...q_stPTM.q_bSetSpd")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.KTOF_PTM_01.iq_stPTM.q_bSetSpd=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(autosaveFields_pass0, "VAL")
   info(archive, "VAL")
 }
@@ -11535,27 +11847,29 @@ record(bi, "LAMP:ROUGH:VRC:02:CLS_OK_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.LAMP_ROUGH_VRC_02.iq_stValve.xCLS_OK?")
-  field(ZNAM, "FALSE")
-  field(ONAM, "TRUE")
+  field(ZNAM, "OPEN")
+  field(ONAM, "CLOSE")
   info(archive, "VAL")
 }
 
 record(bi, "LAMP:ROUGH:VRC:02:CLS_SW_RBV") {
-  field(DESC, "GVL_Devices.LAMP_ROUGH_VRC_02.pv_xCLS_SW")
+  # GVL_Devices.LAMP_ROUGH_VRC_02.iq_stValve.pv_xCLS_SW
+  field(DESC, "GVL_Devices.LAMP_ROU...tValve.pv_xCLS_SW")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.LAMP_ROUGH_VRC_02.pv_xCLS_SW?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.LAMP_ROUGH_VRC_02.iq_stValve.pv_xCLS_SW?")
   field(ZNAM, "OPEN")
   field(ONAM, "CLOSE")
   info(archive, "VAL")
 }
 
 record(bo, "LAMP:ROUGH:VRC:02:CLS_SW") {
-  field(DESC, "GVL_Devices.LAMP_ROUGH_VRC_02.pv_xCLS_SW")
+  # GVL_Devices.LAMP_ROUGH_VRC_02.iq_stValve.pv_xCLS_SW
+  field(DESC, "GVL_Devices.LAMP_ROU...tValve.pv_xCLS_SW")
   field(DTYP, "asynInt32")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.LAMP_ROUGH_VRC_02.pv_xCLS_SW=")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.LAMP_ROUGH_VRC_02.iq_stValve.pv_xCLS_SW=")
   field(ZNAM, "OPEN")
   field(ONAM, "CLOSE")
   info(autosaveFields_pass0, "VAL")
@@ -11563,25 +11877,25 @@ record(bo, "LAMP:ROUGH:VRC:02:CLS_SW") {
 }
 
 record(bi, "LAMP:ROUGH:VRC:02:FORCE_CLS_RBV") {
-  # GVL_Devices.LAMP_ROUGH_VRC_02.pv_xOvrdCls
-  field(DESC, "GVL_Devices.LAMP_ROU...RC_02.pv_xOvrdCls")
+  # GVL_Devices.LAMP_ROUGH_VRC_02.iq_stValve.pv_xOvrdCls
+  field(DESC, "GVL_Devices.LAMP_ROU...Valve.pv_xOvrdCls")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.LAMP_ROUGH_VRC_02.pv_xOvrdCls?")
-  field(ZNAM, "FALSE")
-  field(ONAM, "TRUE")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.LAMP_ROUGH_VRC_02.iq_stValve.pv_xOvrdCls?")
+  field(ZNAM, "OPEN")
+  field(ONAM, "CLOSE")
   info(archive, "VAL")
 }
 
 record(bo, "LAMP:ROUGH:VRC:02:FORCE_CLS") {
-  # GVL_Devices.LAMP_ROUGH_VRC_02.pv_xOvrdCls
-  field(DESC, "GVL_Devices.LAMP_ROU...RC_02.pv_xOvrdCls")
+  # GVL_Devices.LAMP_ROUGH_VRC_02.iq_stValve.pv_xOvrdCls
+  field(DESC, "GVL_Devices.LAMP_ROU...Valve.pv_xOvrdCls")
   field(DTYP, "asynInt32")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.LAMP_ROUGH_VRC_02.pv_xOvrdCls=")
-  field(ZNAM, "FALSE")
-  field(ONAM, "TRUE")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.LAMP_ROUGH_VRC_02.iq_stValve.pv_xOvrdCls=")
+  field(ZNAM, "OPEN")
+  field(ONAM, "CLOSE")
   info(autosaveFields_pass0, "VAL")
   info(archive, "VAL")
 }
