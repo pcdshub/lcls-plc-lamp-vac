@@ -9,14 +9,26 @@ VAR_INPUT
 	iq_stValve_NO : ST_VRC_NO; //Normally Open Valve directly sharing turbo pump vaccum volume.
 	iq_stValve_NC : ST_VRC; //Normally Closed Valve directly sharing turbo pump vaccum volume.
 	iq_stValve_NC_second :	ST_VRC; //Normally Open Valve on the other side of NO valve that also connects to roughing line.
+	iq_stRoughRoughValve_NC: ST_VGC_2S; //Normally Closed Valve Downstream of iq_stValve_NC in Beamline Roughing Line.
+	iq_stRoughRoughValve_NC_second: ST_VGC_2S; //Normally Closed Valve Downstream of iq_stValve_NC_second in Beamline Roughing Line.
+	x_onBeamline :	BOOL; //Whether the  Turbopump/Endstation is mounted on the beamline or not.
 END_VAR
 VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[F_Turbo_NC_NO_Valve_Logic := (i_stISG.xPRESS_OK AND i_stISG.rPRESS < i_stTurbo.rInletPressureSP) AND 
+      <ST><![CDATA[IF (x_onBeamline) THEN
+	F_Turbo_NC_NO_Valve_Logic := (i_stISG.xPRESS_OK AND i_stISG.rPRESS < i_stTurbo.rInletPressureSP) AND 
+						   		 (i_stBSG.xPRESS_OK AND i_stBSG.rPRESS < i_stTurbo.rBackingPressureSP) AND 
+								 ((iq_stValve_NC.i_xOpnLS AND iq_stRoughRoughValve_NC.eState = E_ValvePositionState.OPEN) OR
+								 (iq_stValve_NO.i_xOpnLS AND (iq_stValve_NC_second.i_xOpnLS AND 
+								 iq_stRoughRoughValve_NC_second.eState = E_ValvePositionState.OPEN)));
+ELSE
+	F_Turbo_NC_NO_Valve_Logic := (i_stISG.xPRESS_OK AND i_stISG.rPRESS < i_stTurbo.rInletPressureSP) AND 
 						   (i_stBSG.xPRESS_OK AND i_stBSG.rPRESS < i_stTurbo.rBackingPressureSP) AND 
-							(iq_stValve_NC.i_xOpnLS OR(iq_stValve_NO.i_xOpnLS AND iq_stValve_NC_second.i_xOpnLS));	]]></ST>
+							(iq_stValve_NC.i_xOpnLS OR(iq_stValve_NO.i_xOpnLS AND iq_stValve_NC_second.i_xOpnLS));
+END_IF
+]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>

@@ -9,6 +9,12 @@ VAR_GLOBAL
 	'}
 	xSystemOverrideMode_LAMP	: BOOL := FALSE; (* Global system override for the HXR Vacuum System EBD*)
 	
+	{attribute 'pytmc' := '
+		pc: PLC:LAMP:ON:BEAMLINE
+		io:io
+	'}
+	xOnBeamline	:	BOOL := TRUE; (*Always assume On Beamline for safety checks*)
+	
 	rHighVoltageMinPressure	: REAL := 1e-05; (*Hard coded High voltage Minimum Enable Pressure*)
 	
 END_VAR]]></Declaration>
