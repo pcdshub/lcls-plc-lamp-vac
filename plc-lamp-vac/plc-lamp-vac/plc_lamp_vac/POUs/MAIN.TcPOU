@@ -110,8 +110,8 @@ xHighVoltageSafteyLoopEnable:= (LAMP_C2_GCC_01.IG.rPRESS <= rHighVoltageMinPress
 					iq_stValve_NO:= LAMP_ROUGH_VRC_02.iq_stValve, 
 					iq_stValve_NC:= LAMP_ROUGH_VRC_03.iq_stValve, 
 					iq_stValve_NC_second:= LAMP_ROUGH_VRC_01.iq_stValve,
-					iq_stRoughRoughValve_NC:= ITF_TMO_ROUGH2_VRC_01,
-					iq_stRoughRoughValve_NC_second:=ITF_TMO_ROUGH1_VRC_01,
+					iq_stRoughRoughValve_NC:= ITF_TMO_ROUGH2_VRC_01.VGC,
+					iq_stRoughRoughValve_NC_second:=ITF_TMO_ROUGH1_VRC_01.VGC,
 					x_onBeamline:= xOnBeamline),
 	iq_stPtm=> );
 	
@@ -123,8 +123,8 @@ xHighVoltageSafteyLoopEnable:= (LAMP_C2_GCC_01.IG.rPRESS <= rHighVoltageMinPress
 					iq_stValve_NO:= LAMP_ROUGH_VRC_02.iq_stValve, 
 					iq_stValve_NC:= LAMP_ROUGH_VRC_03.iq_stValve, 
 					iq_stValve_NC_second:= LAMP_ROUGH_VRC_01.iq_stValve,
-					iq_stRoughRoughValve_NC:= ITF_TMO_ROUGH2_VRC_01,
-					iq_stRoughRoughValve_NC_second:=ITF_TMO_ROUGH1_VRC_01,
+					iq_stRoughRoughValve_NC:= ITF_TMO_ROUGH2_VRC_01.VGC,
+					iq_stRoughRoughValve_NC_second:=ITF_TMO_ROUGH1_VRC_01.VGC,
 					x_onBeamline:= xOnBeamline), 
 	iq_stPtm=> );
 	
@@ -136,8 +136,8 @@ xHighVoltageSafteyLoopEnable:= (LAMP_C2_GCC_01.IG.rPRESS <= rHighVoltageMinPress
 					iq_stValve_NO:= LAMP_ROUGH_VRC_02.iq_stValve, 
 					iq_stValve_NC:= LAMP_ROUGH_VRC_03.iq_stValve, 
 					iq_stValve_NC_second:= LAMP_ROUGH_VRC_01.iq_stValve,
-					iq_stRoughRoughValve_NC:= ITF_TMO_ROUGH2_VRC_01,
-					iq_stRoughRoughValve_NC_second:=ITF_TMO_ROUGH1_VRC_01,
+					iq_stRoughRoughValve_NC:= ITF_TMO_ROUGH2_VRC_01.VGC,
+					iq_stRoughRoughValve_NC_second:=ITF_TMO_ROUGH1_VRC_01.VGC,
 					x_onBeamline:= xOnBeamline), 
 	iq_stPtm=> );
 	
@@ -149,8 +149,8 @@ xHighVoltageSafteyLoopEnable:= (LAMP_C2_GCC_01.IG.rPRESS <= rHighVoltageMinPress
 					iq_stValve_NO:= LAMP_ROUGH_VRC_02.iq_stValve, 
 					iq_stValve_NC:= LAMP_ROUGH_VRC_03.iq_stValve, 
 					iq_stValve_NC_second:= LAMP_ROUGH_VRC_01.iq_stValve,
-					iq_stRoughRoughValve_NC:= ITF_TMO_ROUGH2_VRC_01,
-					iq_stRoughRoughValve_NC_second:=ITF_TMO_ROUGH1_VRC_01,
+					iq_stRoughRoughValve_NC:= ITF_TMO_ROUGH2_VRC_01.VGC,
+					iq_stRoughRoughValve_NC_second:=ITF_TMO_ROUGH1_VRC_01.VGC,
 					x_onBeamline:= xOnBeamline), 
 	iq_stPtm=> );
 	
@@ -162,8 +162,8 @@ xHighVoltageSafteyLoopEnable:= (LAMP_C2_GCC_01.IG.rPRESS <= rHighVoltageMinPress
 					iq_stValve_NO:= LAMP_ROUGH_VRC_02.iq_stValve, 
 					iq_stValve_NC:= LAMP_ROUGH_VRC_01.iq_stValve, 
 					iq_stValve_NC_second:= LAMP_ROUGH_VRC_03.iq_stValve,
-					iq_stRoughRoughValve_NC:= ITF_TMO_ROUGH1_VRC_01,
-					iq_stRoughRoughValve_NC_second:=ITF_TMO_ROUGH2_VRC_01,
+					iq_stRoughRoughValve_NC:= ITF_TMO_ROUGH1_VRC_01.VGC,
+					iq_stRoughRoughValve_NC_second:=ITF_TMO_ROUGH2_VRC_01.VGC,
 					x_onBeamline:= xOnBeamline), 
 	iq_stPtm=> );
 	
@@ -175,8 +175,8 @@ xHighVoltageSafteyLoopEnable:= (LAMP_C2_GCC_01.IG.rPRESS <= rHighVoltageMinPress
 					iq_stValve_NO:= LAMP_ROUGH_VRC_02.iq_stValve, 
 					iq_stValve_NC:= LAMP_ROUGH_VRC_01.iq_stValve, 
 					iq_stValve_NC_second:= LAMP_ROUGH_VRC_03.iq_stValve,
-					iq_stRoughRoughValve_NC:= ITF_TMO_ROUGH1_VRC_01,
-					iq_stRoughRoughValve_NC_second:=ITF_TMO_ROUGH2_VRC_01,
+					iq_stRoughRoughValve_NC:= ITF_TMO_ROUGH1_VRC_01.VGC,
+					iq_stRoughRoughValve_NC_second:=ITF_TMO_ROUGH2_VRC_01.VGC,
 					x_onBeamline:= xOnBeamline), 
 	iq_stPtm=> );
 	
@@ -188,8 +188,8 @@ xHighVoltageSafteyLoopEnable:= (LAMP_C2_GCC_01.IG.rPRESS <= rHighVoltageMinPress
 					iq_stValve_NO:= LAMP_ROUGH_VRC_02.iq_stValve, 
 					iq_stValve_NC:= LAMP_ROUGH_VRC_01.iq_stValve, 
 					iq_stValve_NC_second:= LAMP_ROUGH_VRC_03.iq_stValve,
-					iq_stRoughRoughValve_NC:= ITF_TMO_ROUGH1_VRC_01,
-					iq_stRoughRoughValve_NC_second:=ITF_TMO_ROUGH2_VRC_01,
+					iq_stRoughRoughValve_NC:= ITF_TMO_ROUGH1_VRC_01.VGC,
+					iq_stRoughRoughValve_NC_second:=ITF_TMO_ROUGH2_VRC_01.VGC,
 					x_onBeamline:= xOnBeamline), 
 	iq_stPtm=> );
 	
@@ -201,8 +201,8 @@ xHighVoltageSafteyLoopEnable:= (LAMP_C2_GCC_01.IG.rPRESS <= rHighVoltageMinPress
 					iq_stValve_NO:= LAMP_ROUGH_VRC_02.iq_stValve, 
 					iq_stValve_NC:= LAMP_ROUGH_VRC_01.iq_stValve, 
 					iq_stValve_NC_second:= LAMP_ROUGH_VRC_03.iq_stValve,
-					iq_stRoughRoughValve_NC:= ITF_TMO_ROUGH1_VRC_01,
-					iq_stRoughRoughValve_NC_second:=ITF_TMO_ROUGH2_VRC_01,
+					iq_stRoughRoughValve_NC:= ITF_TMO_ROUGH1_VRC_01.VGC,
+					iq_stRoughRoughValve_NC_second:=ITF_TMO_ROUGH2_VRC_01.VGC,
 					x_onBeamline:= xOnBeamline), 
 	iq_stPtm=> );
 	
@@ -214,8 +214,8 @@ xHighVoltageSafteyLoopEnable:= (LAMP_C2_GCC_01.IG.rPRESS <= rHighVoltageMinPress
 					iq_stValve_NO:= LAMP_ROUGH_VRC_02.iq_stValve, 
 					iq_stValve_NC:= LAMP_ROUGH_VRC_01.iq_stValve, 
 					iq_stValve_NC_second:= LAMP_ROUGH_VRC_03.iq_stValve,
-					iq_stRoughRoughValve_NC:= ITF_TMO_ROUGH1_VRC_01,
-					iq_stRoughRoughValve_NC_second:=ITF_TMO_ROUGH2_VRC_01,
+					iq_stRoughRoughValve_NC:= ITF_TMO_ROUGH1_VRC_01.VGC,
+					iq_stRoughRoughValve_NC_second:=ITF_TMO_ROUGH2_VRC_01.VGC,
 					x_onBeamline:= xOnBeamline), 
 	iq_stPtm=> );
 	
@@ -227,8 +227,8 @@ xHighVoltageSafteyLoopEnable:= (LAMP_C2_GCC_01.IG.rPRESS <= rHighVoltageMinPress
 					iq_stValve_NO:= LAMP_ROUGH_VRC_02.iq_stValve, 
 					iq_stValve_NC:= LAMP_ROUGH_VRC_01.iq_stValve, 
 					iq_stValve_NC_second:= LAMP_ROUGH_VRC_03.iq_stValve,
-					iq_stRoughRoughValve_NC:= ITF_TMO_ROUGH1_VRC_01,
-					iq_stRoughRoughValve_NC_second:=ITF_TMO_ROUGH2_VRC_01,
+					iq_stRoughRoughValve_NC:= ITF_TMO_ROUGH1_VRC_01.VGC,
+					iq_stRoughRoughValve_NC_second:=ITF_TMO_ROUGH2_VRC_01.VGC,
 					x_onBeamline:= xOnBeamline), 
 	iq_stPtm=> );
 	
@@ -240,8 +240,8 @@ xHighVoltageSafteyLoopEnable:= (LAMP_C2_GCC_01.IG.rPRESS <= rHighVoltageMinPress
 					iq_stValve_NO:= LAMP_ROUGH_VRC_02.iq_stValve, 
 					iq_stValve_NC:= LAMP_ROUGH_VRC_01.iq_stValve, 
 					iq_stValve_NC_second:= LAMP_ROUGH_VRC_03.iq_stValve,
-					iq_stRoughRoughValve_NC:= ITF_TMO_ROUGH1_VRC_01,
-					iq_stRoughRoughValve_NC_second:=ITF_TMO_ROUGH2_VRC_01,
+					iq_stRoughRoughValve_NC:= ITF_TMO_ROUGH1_VRC_01.VGC,
+					iq_stRoughRoughValve_NC_second:=ITF_TMO_ROUGH2_VRC_01.VGC,
 					x_onBeamline:= xOnBeamline), 
 	iq_stPtm=> );
 	
@@ -253,8 +253,8 @@ xHighVoltageSafteyLoopEnable:= (LAMP_C2_GCC_01.IG.rPRESS <= rHighVoltageMinPress
 					iq_stValve_NO:= LAMP_ROUGH_VRC_02.iq_stValve, 
 					iq_stValve_NC:= LAMP_ROUGH_VRC_03.iq_stValve, 
 					iq_stValve_NC_second:= LAMP_ROUGH_VRC_01.iq_stValve,
-					iq_stRoughRoughValve_NC:= ITF_TMO_ROUGH2_VRC_01,
-					iq_stRoughRoughValve_NC_second:=ITF_TMO_ROUGH1_VRC_01,
+					iq_stRoughRoughValve_NC:= ITF_TMO_ROUGH2_VRC_01.VGC,
+					iq_stRoughRoughValve_NC_second:=ITF_TMO_ROUGH1_VRC_01.VGC,
 					x_onBeamline:= xOnBeamline), 
 	iq_stPtm=> );
 	
@@ -266,8 +266,8 @@ xHighVoltageSafteyLoopEnable:= (LAMP_C2_GCC_01.IG.rPRESS <= rHighVoltageMinPress
 					iq_stValve_NO:= LAMP_ROUGH_VRC_02.iq_stValve, 
 					iq_stValve_NC:= LAMP_ROUGH_VRC_03.iq_stValve, 
 					iq_stValve_NC_second:= LAMP_ROUGH_VRC_01.iq_stValve,
-					iq_stRoughRoughValve_NC:= ITF_TMO_ROUGH2_VRC_01,
-					iq_stRoughRoughValve_NC_second:=ITF_TMO_ROUGH1_VRC_01,
+					iq_stRoughRoughValve_NC:= ITF_TMO_ROUGH2_VRC_01.VGC,
+					iq_stRoughRoughValve_NC_second:=ITF_TMO_ROUGH1_VRC_01.VGC,
 					x_onBeamline:= xOnBeamline), 
 	iq_stPtm=> );
 	
@@ -279,8 +279,8 @@ xHighVoltageSafteyLoopEnable:= (LAMP_C2_GCC_01.IG.rPRESS <= rHighVoltageMinPress
 					iq_stValve_NO:= LAMP_ROUGH_VRC_02.iq_stValve, 
 					iq_stValve_NC:= LAMP_ROUGH_VRC_03.iq_stValve, 
 					iq_stValve_NC_second:= LAMP_ROUGH_VRC_01.iq_stValve,
-					iq_stRoughRoughValve_NC:= ITF_TMO_ROUGH2_VRC_01,
-					iq_stRoughRoughValve_NC_second:=ITF_TMO_ROUGH1_VRC_01,
+					iq_stRoughRoughValve_NC:= ITF_TMO_ROUGH2_VRC_01.VGC,
+					iq_stRoughRoughValve_NC_second:=ITF_TMO_ROUGH1_VRC_01.VGC,
 					x_onBeamline:= xOnBeamline), 
 	iq_stPtm=> );
 	
@@ -292,8 +292,8 @@ xHighVoltageSafteyLoopEnable:= (LAMP_C2_GCC_01.IG.rPRESS <= rHighVoltageMinPress
 					iq_stValve_NO:= LAMP_ROUGH_VRC_02.iq_stValve, 
 					iq_stValve_NC:= LAMP_ROUGH_VRC_03.iq_stValve, 
 					iq_stValve_NC_second:= LAMP_ROUGH_VRC_01.iq_stValve,
-					iq_stRoughRoughValve_NC:= ITF_TMO_ROUGH2_VRC_01,
-					iq_stRoughRoughValve_NC_second:=ITF_TMO_ROUGH1_VRC_01,
+					iq_stRoughRoughValve_NC:= ITF_TMO_ROUGH2_VRC_01.VGC,
+					iq_stRoughRoughValve_NC_second:=ITF_TMO_ROUGH1_VRC_01.VGC,
 					x_onBeamline:= xOnBeamline), 
 	iq_stPtm=> );
 	
@@ -305,8 +305,8 @@ xHighVoltageSafteyLoopEnable:= (LAMP_C2_GCC_01.IG.rPRESS <= rHighVoltageMinPress
 					iq_stValve_NO:= LAMP_ROUGH_VRC_02.iq_stValve, 
 					iq_stValve_NC:= LAMP_ROUGH_VRC_01.iq_stValve, 
 					iq_stValve_NC_second:= LAMP_ROUGH_VRC_03.iq_stValve,
-					iq_stRoughRoughValve_NC:= ITF_TMO_ROUGH1_VRC_01,
-					iq_stRoughRoughValve_NC_second:=ITF_TMO_ROUGH2_VRC_01,
+					iq_stRoughRoughValve_NC:= ITF_TMO_ROUGH1_VRC_01.VGC,
+					iq_stRoughRoughValve_NC_second:=ITF_TMO_ROUGH2_VRC_01.VGC,
 					x_onBeamline:= xOnBeamline), 
 	iq_stPtm=> );
 	
@@ -318,8 +318,8 @@ xHighVoltageSafteyLoopEnable:= (LAMP_C2_GCC_01.IG.rPRESS <= rHighVoltageMinPress
 					iq_stValve_NO:= LAMP_ROUGH_VRC_02.iq_stValve, 
 					iq_stValve_NC:= LAMP_ROUGH_VRC_01.iq_stValve, 
 					iq_stValve_NC_second:= LAMP_ROUGH_VRC_03.iq_stValve,
-					iq_stRoughRoughValve_NC:= ITF_TMO_ROUGH1_VRC_01,
-					iq_stRoughRoughValve_NC_second:=ITF_TMO_ROUGH2_VRC_01,
+					iq_stRoughRoughValve_NC:= ITF_TMO_ROUGH1_VRC_01.VGC,
+					iq_stRoughRoughValve_NC_second:=ITF_TMO_ROUGH2_VRC_01.VGC,
 					x_onBeamline:= xOnBeamline), 
 	iq_stPtm=> );
 	
