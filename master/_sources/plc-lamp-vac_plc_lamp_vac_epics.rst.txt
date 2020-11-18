@@ -1844,6 +1844,22 @@ LCLS_Vacuum.FB_PTM_Pfeiffer
         | io: output
 
 
+    * - $(PREFIX):SET_SPEED_MODE
+      - bo
+      - $(SYMBOL).iq_stPTM.q_bSetSpd
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - $(PREFIX):SET_SPEED_MODE_RBV
+      - bi
+      - $(SYMBOL).iq_stPTM.q_bSetSpd
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
     * - $(PREFIX):SET_SPEED_RBV
       - longin
       - $(SYMBOL).iq_stPTM.i_dSetSpd
@@ -2708,12 +2724,14 @@ LCLS_Vacuum.FB_VRC_NO
     * - $(PREFIX):CLS_OK_RBV
       - bi
       - $(SYMBOL).iq_stValve.xCLS_OK
-      - | io: input
+      - | field: ONAM CLOSE
+        | field: ZNAM OPEN
+        | io: input
 
 
     * - $(PREFIX):CLS_SW
       - bo
-      - $(SYMBOL).pv_xCLS_SW
+      - $(SYMBOL).iq_stValve.pv_xCLS_SW
       - | field: ONAM CLOSE
         | field: ZNAM OPEN
         | io: output
@@ -2721,7 +2739,7 @@ LCLS_Vacuum.FB_VRC_NO
 
     * - $(PREFIX):CLS_SW_RBV
       - bi
-      - $(SYMBOL).pv_xCLS_SW
+      - $(SYMBOL).iq_stValve.pv_xCLS_SW
       - | field: ONAM CLOSE
         | field: ZNAM OPEN
         | io: output
@@ -2765,14 +2783,18 @@ LCLS_Vacuum.FB_VRC_NO
 
     * - $(PREFIX):FORCE_CLS
       - bo
-      - $(SYMBOL).pv_xOvrdCls
-      - | io: output
+      - $(SYMBOL).iq_stValve.pv_xOvrdCls
+      - | field: ONAM CLOSE
+        | field: ZNAM OPEN
+        | io: output
 
 
     * - $(PREFIX):FORCE_CLS_RBV
       - bi
-      - $(SYMBOL).pv_xOvrdCls
-      - | io: output
+      - $(SYMBOL).iq_stValve.pv_xOvrdCls
+      - | field: ONAM CLOSE
+        | field: ZNAM OPEN
+        | io: output
 
 
     * - $(PREFIX):FORCE_OPN
@@ -3293,6 +3315,22 @@ LCLS_Vacuum.ST_PfeifferPTM
       - longout
       - $(SYMBOL).i_dSetSpd
       - | field: EGU "Hz"
+        | io: output
+
+
+    * - $(PREFIX):SET_SPEED_MODE
+      - bo
+      - $(SYMBOL).q_bSetSpd
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - $(PREFIX):SET_SPEED_MODE_RBV
+      - bi
+      - $(SYMBOL).q_bSetSpd
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
         | io: output
 
 
@@ -4751,6 +4789,230 @@ LCLS_Vacuum.ST_VRC
         | io: input
 
 
+ 
+LCLS_Vacuum.ST_VRC_NO
+^^^^^^^^^^^^^^^^^^^^^
+
+.. list-table::
+    :header-rows: 1
+    :align: center
+
+    * - Record
+      - Type
+      - Description
+      - Pragma
+    * - $(PREFIX):ALM_RST
+      - bo
+      - $(SYMBOL).pv_xAlmRst
+      - | io: output
+
+
+    * - $(PREFIX):ALM_RST_RBV
+      - bi
+      - $(SYMBOL).pv_xAlmRst
+      - | io: output
+
+
+    * - $(PREFIX):CLS_DI_RBV
+      - bi
+      - $(SYMBOL).i_xClsLS
+      - | field: ONAM CLOSE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - $(PREFIX):CLS_OK_RBV
+      - bi
+      - $(SYMBOL).xCLS_OK
+      - | field: ONAM CLOSE
+        | field: ZNAM OPEN
+        | io: input
+
+
+    * - $(PREFIX):CLS_SW
+      - bo
+      - $(SYMBOL).pv_xCLS_SW
+      - | field: ONAM CLOSE
+        | field: ZNAM OPEN
+        | io: output
+
+
+    * - $(PREFIX):CLS_SW_RBV
+      - bi
+      - $(SYMBOL).pv_xCLS_SW
+      - | field: ONAM CLOSE
+        | field: ZNAM OPEN
+        | io: output
+
+
+    * - $(PREFIX):ErrMsg
+      - waveform
+      - $(SYMBOL).sErrorMessage
+      - | io: output
+
+
+    * - $(PREFIX):ErrMsg_RBV
+      - waveform
+      - $(SYMBOL).sErrorMessage
+      - | io: output
+
+
+    * - $(PREFIX):ERROR
+      - bo
+      - $(SYMBOL).bErrorPresent
+      - | field: ONAM ERROR PRESENT
+        | field: ZNAM NO ERROR
+        | io: output
+
+
+    * - $(PREFIX):ERROR_RBV
+      - bi
+      - $(SYMBOL).bErrorPresent
+      - | field: ONAM ERROR PRESENT
+        | field: ZNAM NO ERROR
+        | io: output
+
+
+    * - $(PREFIX):EXT_ILK_OK_RBV
+      - bi
+      - $(SYMBOL).xEXT_OK
+      - | field: ONAM OK
+        | field: ZNAM NOT OK
+        | io: input
+
+
+    * - $(PREFIX):FORCE_CLS
+      - bo
+      - $(SYMBOL).pv_xOvrdCls
+      - | field: ONAM CLOSE
+        | field: ZNAM OPEN
+        | io: output
+
+
+    * - $(PREFIX):FORCE_CLS_RBV
+      - bi
+      - $(SYMBOL).pv_xOvrdCls
+      - | field: ONAM CLOSE
+        | field: ZNAM OPEN
+        | io: output
+
+
+    * - $(PREFIX):FORCE_OPN
+      - bo
+      - $(SYMBOL).pv_xOvrdOpn
+      - | field: ONAM FORCE OPEN
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - $(PREFIX):FORCE_OPN_RBV
+      - bi
+      - $(SYMBOL).pv_xOvrdOpn
+      - | field: ONAM FORCE OPEN
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - $(PREFIX):LOGGER
+      - bo
+      - $(SYMBOL).xLog
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - $(PREFIX):LOGGER_RBV
+      - bi
+      - $(SYMBOL).xLog
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - $(PREFIX):OPN_DI_RBV
+      - bi
+      - $(SYMBOL).i_xOpnLS
+      - | field: ONAM OPEN
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - $(PREFIX):OPN_DO_RBV
+      - bi
+      - $(SYMBOL).q_xOPN_DO
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - $(PREFIX):OPN_OK_RBV
+      - bi
+      - $(SYMBOL).xOPN_OK
+      - | field: ONAM OPN ILK OK
+        | field: ZNAM OPN ILK NOT OK
+        | io: input
+
+
+    * - $(PREFIX):OPN_SW
+      - bo
+      - $(SYMBOL).pv_xOPN_SW
+      - | field: ONAM OPEN
+        | field: ZNAM CLOSE
+        | io: output
+
+
+    * - $(PREFIX):OPN_SW_RBV
+      - bi
+      - $(SYMBOL).pv_xOPN_SW
+      - | field: ONAM OPEN
+        | field: ZNAM CLOSE
+        | io: output
+
+
+    * - $(PREFIX):OVRD_ON
+      - bo
+      - $(SYMBOL).xOverrideMode
+      - | field: ONAM Override ON
+        | field: ZNAM Override OFF
+        | io: output
+
+
+    * - $(PREFIX):OVRD_ON_RBV
+      - bi
+      - $(SYMBOL).xOverrideMode
+      - | field: ONAM Override ON
+        | field: ZNAM Override OFF
+        | io: output
+
+
+    * - $(PREFIX):POS_STATE_RBV
+      - mbbi
+      - $(SYMBOL).eState
+      - | field: FRST OPEN_F
+        | field: ONST CLOSED
+        | field: THST INVALID
+        | field: TWST MOVING
+        | field: ZRST OPEN
+        | io: input
+        | type: mbbi
+
+
+    * - $(PREFIX):STATE_RBV
+      - mbbi
+      - $(SYMBOL).eVGC_State
+      - | field: EIST Close Timeout
+        | field: FRST Ext Fault
+        | field: FVST AT Vacuum
+        | field: NIST Open Timeout
+        | field: ONST At Vacuum
+        | field: SVST Vacuum Fault
+        | field: SXST Triggered
+        | field: THST Lost Vacuum
+        | field: TWST Differential Pressure
+        | field: ZRST Vented
+        | io: input
+
+
                                                                       
 LCLS_Vacuum_Serial.ST_PfeifferControl
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -5769,6 +6031,22 @@ Database Records
         | io: output
 
 
+    * - KTOF:PTM:01:SET_SPEED_MODE
+      - bo
+      - GVL_Devices.KTOF_PTM_01.iq_stPTM.q_bSetSpd
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - KTOF:PTM:01:SET_SPEED_MODE_RBV
+      - bi
+      - GVL_Devices.KTOF_PTM_01.iq_stPTM.q_bSetSpd
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
     * - KTOF:PTM:01:SET_SPEED_RBV
       - longin
       - GVL_Devices.KTOF_PTM_01.iq_stPTM.i_dSetSpd
@@ -6190,6 +6468,22 @@ Database Records
       - longout
       - GVL_Devices.LAMP_C1_PTM_01.iq_stPTM.i_dSetSpd
       - | field: EGU "Hz"
+        | io: output
+
+
+    * - LAMP:C1:PTM:01:SET_SPEED_MODE
+      - bo
+      - GVL_Devices.LAMP_C1_PTM_01.iq_stPTM.q_bSetSpd
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - LAMP:C1:PTM:01:SET_SPEED_MODE_RBV
+      - bi
+      - GVL_Devices.LAMP_C1_PTM_01.iq_stPTM.q_bSetSpd
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
         | io: output
 
 
@@ -6791,6 +7085,22 @@ Database Records
         | io: output
 
 
+    * - LAMP:C2:PTM:01:SET_SPEED_MODE
+      - bo
+      - GVL_Devices.LAMP_C2_PTM_01.iq_stPTM.q_bSetSpd
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - LAMP:C2:PTM:01:SET_SPEED_MODE_RBV
+      - bi
+      - GVL_Devices.LAMP_C2_PTM_01.iq_stPTM.q_bSetSpd
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
     * - LAMP:C2:PTM:01:SET_SPEED_RBV
       - longin
       - GVL_Devices.LAMP_C2_PTM_01.iq_stPTM.i_dSetSpd
@@ -7038,6 +7348,22 @@ Database Records
       - longout
       - GVL_Devices.LAMP_C2_PTM_02.iq_stPTM.i_dSetSpd
       - | field: EGU "Hz"
+        | io: output
+
+
+    * - LAMP:C2:PTM:02:SET_SPEED_MODE
+      - bo
+      - GVL_Devices.LAMP_C2_PTM_02.iq_stPTM.q_bSetSpd
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - LAMP:C2:PTM:02:SET_SPEED_MODE_RBV
+      - bi
+      - GVL_Devices.LAMP_C2_PTM_02.iq_stPTM.q_bSetSpd
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
         | io: output
 
 
@@ -7291,6 +7617,22 @@ Database Records
         | io: output
 
 
+    * - LAMP:C2:PTM:03:SET_SPEED_MODE
+      - bo
+      - GVL_Devices.LAMP_C2_PTM_03.iq_stPTM.q_bSetSpd
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - LAMP:C2:PTM:03:SET_SPEED_MODE_RBV
+      - bi
+      - GVL_Devices.LAMP_C2_PTM_03.iq_stPTM.q_bSetSpd
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
     * - LAMP:C2:PTM:03:SET_SPEED_RBV
       - longin
       - GVL_Devices.LAMP_C2_PTM_03.iq_stPTM.i_dSetSpd
@@ -7538,6 +7880,22 @@ Database Records
       - longout
       - GVL_Devices.LAMP_C2_PTM_04.iq_stPTM.i_dSetSpd
       - | field: EGU "Hz"
+        | io: output
+
+
+    * - LAMP:C2:PTM:04:SET_SPEED_MODE
+      - bo
+      - GVL_Devices.LAMP_C2_PTM_04.iq_stPTM.q_bSetSpd
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - LAMP:C2:PTM:04:SET_SPEED_MODE_RBV
+      - bi
+      - GVL_Devices.LAMP_C2_PTM_04.iq_stPTM.q_bSetSpd
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
         | io: output
 
 
@@ -8139,6 +8497,22 @@ Database Records
         | io: output
 
 
+    * - LAMP:CATCH:PTM:01:SET_SPEED_MODE
+      - bo
+      - GVL_Devices.LAMP_CATCH_PTM_01.iq_stPTM.q_bSetSpd
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - LAMP:CATCH:PTM:01:SET_SPEED_MODE_RBV
+      - bi
+      - GVL_Devices.LAMP_CATCH_PTM_01.iq_stPTM.q_bSetSpd
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
     * - LAMP:CATCH:PTM:01:SET_SPEED_RBV
       - longin
       - GVL_Devices.LAMP_CATCH_PTM_01.iq_stPTM.i_dSetSpd
@@ -8386,6 +8760,22 @@ Database Records
       - longout
       - GVL_Devices.LAMP_CATCH_PTM_02.iq_stPTM.i_dSetSpd
       - | field: EGU "Hz"
+        | io: output
+
+
+    * - LAMP:CATCH:PTM:02:SET_SPEED_MODE
+      - bo
+      - GVL_Devices.LAMP_CATCH_PTM_02.iq_stPTM.q_bSetSpd
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - LAMP:CATCH:PTM:02:SET_SPEED_MODE_RBV
+      - bi
+      - GVL_Devices.LAMP_CATCH_PTM_02.iq_stPTM.q_bSetSpd
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
         | io: output
 
 
@@ -8987,6 +9377,22 @@ Database Records
         | io: output
 
 
+    * - LAMP:GJ1:PTM:01:SET_SPEED_MODE
+      - bo
+      - GVL_Devices.LAMP_GJ1_PTM_01.iq_stPTM.q_bSetSpd
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - LAMP:GJ1:PTM:01:SET_SPEED_MODE_RBV
+      - bi
+      - GVL_Devices.LAMP_GJ1_PTM_01.iq_stPTM.q_bSetSpd
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
     * - LAMP:GJ1:PTM:01:SET_SPEED_RBV
       - longin
       - GVL_Devices.LAMP_GJ1_PTM_01.iq_stPTM.i_dSetSpd
@@ -9234,6 +9640,22 @@ Database Records
       - longout
       - GVL_Devices.LAMP_GJ1_PTM_02.iq_stPTM.i_dSetSpd
       - | field: EGU "Hz"
+        | io: output
+
+
+    * - LAMP:GJ1:PTM:02:SET_SPEED_MODE
+      - bo
+      - GVL_Devices.LAMP_GJ1_PTM_02.iq_stPTM.q_bSetSpd
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - LAMP:GJ1:PTM:02:SET_SPEED_MODE_RBV
+      - bi
+      - GVL_Devices.LAMP_GJ1_PTM_02.iq_stPTM.q_bSetSpd
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
         | io: output
 
 
@@ -9487,6 +9909,22 @@ Database Records
         | io: output
 
 
+    * - LAMP:GJ1:PTM:03:SET_SPEED_MODE
+      - bo
+      - GVL_Devices.LAMP_GJ1_PTM_03.iq_stPTM.q_bSetSpd
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - LAMP:GJ1:PTM:03:SET_SPEED_MODE_RBV
+      - bi
+      - GVL_Devices.LAMP_GJ1_PTM_03.iq_stPTM.q_bSetSpd
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
     * - LAMP:GJ1:PTM:03:SET_SPEED_RBV
       - longin
       - GVL_Devices.LAMP_GJ1_PTM_03.iq_stPTM.i_dSetSpd
@@ -9734,6 +10172,22 @@ Database Records
       - longout
       - GVL_Devices.LAMP_GJ1_PTM_04.iq_stPTM.i_dSetSpd
       - | field: EGU "Hz"
+        | io: output
+
+
+    * - LAMP:GJ1:PTM:04:SET_SPEED_MODE
+      - bo
+      - GVL_Devices.LAMP_GJ1_PTM_04.iq_stPTM.q_bSetSpd
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - LAMP:GJ1:PTM:04:SET_SPEED_MODE_RBV
+      - bi
+      - GVL_Devices.LAMP_GJ1_PTM_04.iq_stPTM.q_bSetSpd
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
         | io: output
 
 
@@ -11871,6 +12325,22 @@ Database Records
         | io: output
 
 
+    * - LAMP:ROUGH:PTM:01:SET_SPEED_MODE
+      - bo
+      - GVL_Devices.LAMP_ROUGH_PTM_01.iq_stPTM.q_bSetSpd
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - LAMP:ROUGH:PTM:01:SET_SPEED_MODE_RBV
+      - bi
+      - GVL_Devices.LAMP_ROUGH_PTM_01.iq_stPTM.q_bSetSpd
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
     * - LAMP:ROUGH:PTM:01:SET_SPEED_RBV
       - longin
       - GVL_Devices.LAMP_ROUGH_PTM_01.iq_stPTM.i_dSetSpd
@@ -12151,12 +12621,14 @@ Database Records
     * - LAMP:ROUGH:VRC:02:CLS_OK_RBV
       - bi
       - GVL_Devices.LAMP_ROUGH_VRC_02.iq_stValve.xCLS_OK
-      - | io: input
+      - | field: ONAM CLOSE
+        | field: ZNAM OPEN
+        | io: input
 
 
     * - LAMP:ROUGH:VRC:02:CLS_SW
       - bo
-      - GVL_Devices.LAMP_ROUGH_VRC_02.pv_xCLS_SW
+      - GVL_Devices.LAMP_ROUGH_VRC_02.iq_stValve.pv_xCLS_SW
       - | field: ONAM CLOSE
         | field: ZNAM OPEN
         | io: output
@@ -12164,7 +12636,7 @@ Database Records
 
     * - LAMP:ROUGH:VRC:02:CLS_SW_RBV
       - bi
-      - GVL_Devices.LAMP_ROUGH_VRC_02.pv_xCLS_SW
+      - GVL_Devices.LAMP_ROUGH_VRC_02.iq_stValve.pv_xCLS_SW
       - | field: ONAM CLOSE
         | field: ZNAM OPEN
         | io: output
@@ -12208,14 +12680,18 @@ Database Records
 
     * - LAMP:ROUGH:VRC:02:FORCE_CLS
       - bo
-      - GVL_Devices.LAMP_ROUGH_VRC_02.pv_xOvrdCls
-      - | io: output
+      - GVL_Devices.LAMP_ROUGH_VRC_02.iq_stValve.pv_xOvrdCls
+      - | field: ONAM CLOSE
+        | field: ZNAM OPEN
+        | io: output
 
 
     * - LAMP:ROUGH:VRC:02:FORCE_CLS_RBV
       - bi
-      - GVL_Devices.LAMP_ROUGH_VRC_02.pv_xOvrdCls
-      - | io: output
+      - GVL_Devices.LAMP_ROUGH_VRC_02.iq_stValve.pv_xOvrdCls
+      - | field: ONAM CLOSE
+        | field: ZNAM OPEN
+        | io: output
 
 
     * - LAMP:ROUGH:VRC:02:FORCE_OPN
