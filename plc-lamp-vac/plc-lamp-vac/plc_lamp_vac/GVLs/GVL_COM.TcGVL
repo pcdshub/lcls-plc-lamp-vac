@@ -5,7 +5,7 @@
 (* Commented out are vacuum components unused by Lamp MBES system *)
 VAR_GLOBAL
 // Define COM Ports/Buffers incl. library Tc2_SerialCom
-	SerialRXBuffer_LAMP_C2_PTM_BOOLBOOL01 : ComBuffer;
+	SerialRXBuffer_LAMP_C2_PTM_01 : ComBuffer;
 	SerialTXBuffer_LAMP_C2_PTM_01 : ComBuffer;	
 	SerialRXBuffer_LAMP_C2_PTM_02 : ComBuffer;
 	SerialTXBuffer_LAMP_C2_PTM_02 : ComBuffer;	
