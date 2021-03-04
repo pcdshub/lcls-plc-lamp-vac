@@ -1,8 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.2">
   <GVL Name="GVL_Devices" Id="{3ef1adf5-ba18-48c2-a083-7ec1a9d4dd63}">
     <Declaration><![CDATA[//{attribute 'qualified_only'}
 VAR_GLOBAL
+
+(* Components unnecessary for MBES are commented out *)
 	
 (*Rack Mounted Turbo Pumps*)
 	{attribute 'TcLinkTo' := 	'.i_xAtSpd			:=	TIIB[LAMP_PLC_E6_EL1004]^Channel 2^Input;
@@ -13,8 +15,8 @@ VAR_GLOBAL
 		pv: LAMP:GJ2:PTM:01
 		io: io
 	'}
-	LAMP_GJ2_PTM_01 : FB_PTM_TurboDrive;
-	
+	LAMP_BOTTLE_PTM01 : FB_PTM_TurboDrive;
+(*
 	{attribute 'TcLinkTo' := 	'.i_xAtSpd			:=	TIIB[LAMP_PLC_E6_EL1004]^Channel 4^Input;
 								 .i_xFaultNC		:=	TIIB[LAMP_PLC_E6_EL1004]^Channel 3^Input;
 								 .q_RunDO			:=	TIIB[LAMP_PLC_E7_EL2794]^Channel 3^Output			 
@@ -24,7 +26,8 @@ VAR_GLOBAL
 		io: io
 	'}
 	LAMP_GJ2_PTM_02 : FB_PTM_TurboDrive;
-	
+*)
+(*
 	{attribute 'TcLinkTo' := 	'.i_xAtSpd			:=	TIIB[LAMP_PLC_E8_EL1004]^Channel 2^Input;
 								 .i_xFaultNC		:=	TIIB[LAMP_PLC_E8_EL1004]^Channel 1^Input;
 								 .q_RunDO			:=	TIIB[LAMP_PLC_E7_EL2794]^Channel 2^Output			 
@@ -34,7 +37,8 @@ VAR_GLOBAL
 		io: io
 	'}
 	LAMP_GJ2_PTM_03 : FB_PTM_TurboDrive;
-	
+*)
+(*
 	{attribute 'TcLinkTo' := 	'.i_xAtSpd			:=	TIIB[LAMP_PLC_E8_EL1004]^Channel 4^Input;
 								 .i_xFaultNC		:=	TIIB[LAMP_PLC_E8_EL1004]^Channel 3^Input;
 								 .q_RunDO			:=	TIIB[LAMP_PLC_E7_EL2794]^Channel 4^Output			 
@@ -44,6 +48,7 @@ VAR_GLOBAL
 		io: io
 	'}
 	LAMP_GJ2_PTM_04 : FB_PTM_TurboDrive;
+*)
 
 (*Onboard Turbo Pumps*)
 	{attribute 'TcLinkTo' := 	'.i_xAtSpd			:=	TIIB[LAMP_PNL1_EP01_EP2338-0002]^Channel 1^Input;
@@ -93,7 +98,7 @@ VAR_GLOBAL
 		io: io
 	'}
 	LAMP_C2_PTM_04 : FB_PTM_Pfeiffer;
-	
+(*	
 	{attribute 'TcLinkTo' := 	'.i_xAtSpd			:=	TIIB[LAMP_PNL1_EP07_EP2338-0002]^Channel 1^Input;
 								 .i_xFaultNC		:=	TIIB[LAMP_PNL1_EP07_EP2338-0002]^Channel 2^Input;
 								 .i_xRemote			:=	TIIB[LAMP_PNL1_EP07_EP2338-0002]^Channel 3^Input;
@@ -105,7 +110,8 @@ VAR_GLOBAL
 		io: io
 	'}
 	LAMP_GJ1_PTM_01 : FB_PTM_Pfeiffer;
-	
+*)
+(*	
 	{attribute 'TcLinkTo' := 	'.i_xAtSpd			:=	TIIB[LAMP_PNL1_EP07_EP2338-0002]^Channel 5^Input;
 								 .i_xFaultNC		:=	TIIB[LAMP_PNL1_EP07_EP2338-0002]^Channel 6^Input;
 								 .i_xRemote			:=	TIIB[LAMP_PNL1_EP07_EP2338-0002]^Channel 7^Input;
@@ -117,7 +123,8 @@ VAR_GLOBAL
 		io: io
 	'}
 	LAMP_GJ1_PTM_02 : FB_PTM_Pfeiffer;
-	
+*)
+(*	
 	{attribute 'TcLinkTo' := 	'.i_xAtSpd			:=	TIIB[LAMP_PNL1_EP10_EP2338-0002]^Channel 1^Input;
 								 .i_xFaultNC		:=	TIIB[LAMP_PNL1_EP10_EP2338-0002]^Channel 2^Input;
 								 .i_xRemote			:=	TIIB[LAMP_PNL1_EP10_EP2338-0002]^Channel 3^Input;
@@ -129,7 +136,8 @@ VAR_GLOBAL
 		io: io
 	'}
 	LAMP_GJ1_PTM_03 : FB_PTM_Pfeiffer;
-	
+*)
+(*	
 	{attribute 'TcLinkTo' := 	'.i_xAtSpd			:=	TIIB[LAMP_PNL1_EP10_EP2338-0002]^Channel 5^Input;
 								 .i_xFaultNC		:=	TIIB[LAMP_PNL1_EP10_EP2338-0002]^Channel 6^Input;
 								 .i_xRemote			:=	TIIB[LAMP_PNL1_EP10_EP2338-0002]^Channel 7^Input;
@@ -141,7 +149,8 @@ VAR_GLOBAL
 		io: io
 	'}
 	LAMP_GJ1_PTM_04 : FB_PTM_Pfeiffer;
-	
+*)
+(*	
 	{attribute 'TcLinkTo' := 	'.i_xAtSpd			:=	TIIB[LAMP_PNL2_EP16_EP2338-0002]^Channel 1^Input;
 								 .i_xFaultNC		:=	TIIB[LAMP_PNL2_EP16_EP2338-0002]^Channel 2^Input;
 								 .q_RunDO			:=	TIIB[LAMP_PNL2_EP17_EP2624-0002]^Channel 1^Output;
@@ -152,7 +161,8 @@ VAR_GLOBAL
 		io: io
 	'}
 	LAMP_CATCH_PTM_01 : FB_PTM_Pfeiffer;
-	
+*)
+(*	
 	{attribute 'TcLinkTo' := 	'.i_xAtSpd			:=	TIIB[LAMP_PNL2_EP16_EP2338-0002]^Channel 5^Input;
 								 .i_xFaultNC		:=	TIIB[LAMP_PNL2_EP16_EP2338-0002]^Channel 6^Input;
 								 .q_RunDO			:=	TIIB[LAMP_PNL2_EP17_EP2624-0002]^Channel 3^Output;
@@ -163,7 +173,7 @@ VAR_GLOBAL
 		io: io
 	'}
 	LAMP_CATCH_PTM_02 : FB_PTM_Pfeiffer;
-	
+*)	
 	{attribute 'TcLinkTo' := 	'.i_xAtSpd			:=	TIIB[LAMP_PNL2_EP13_EP2338-0002]^Channel 1^Input;
 								 .i_xFaultNC		:=	TIIB[LAMP_PNL2_EP13_EP2338-0002]^Channel 2^Input;
 								 .i_xRemote			:=	TIIB[LAMP_PNL2_EP13_EP2338-0002]^Channel 3^Input;
@@ -175,7 +185,7 @@ VAR_GLOBAL
 		io: io
 	'}
 	LAMP_ROUGH_PTM_01 : FB_PTM_Pfeiffer;
-	
+(*	
 	{attribute 'TcLinkTo' := 	'.i_xAtSpd			:=	TIIB[LAMP_PNL2_EP13_EP2338-0002]^Channel 5^Input;
 								 .i_xFaultNC		:=	TIIB[LAMP_PNL2_EP13_EP2338-0002]^Channel 6^Input;
 								 .i_xRemote			:=	TIIB[LAMP_PNL2_EP13_EP2338-0002]^Channel 7^Input;
@@ -187,11 +197,11 @@ VAR_GLOBAL
 		io: io
 	'}
 	LAMP_C1_PTM_01 : FB_PTM_Pfeiffer;
-	
+*)	
 	
 
 (*KTOF Turbo Pump*)
-
+(*
 	{attribute 'TcLinkTo' := 	'.i_xAtSpd			:=	TIIB[KTOF_PNL1_EP01_EP2338-0002]^Channel 1^Input;
 								 .i_xFaultNC		:=	TIIB[KTOF_PNL1_EP01_EP2338-0002]^Channel 2^Input;
 								 .i_xRemote			:=	TIIB[KTOF_PNL1_EP01_EP2338-0002]^Channel 3^Input;
@@ -203,7 +213,7 @@ VAR_GLOBAL
 		io: io
 	'}
 	KTOF_PTM_01 : FB_PTM_Pfeiffer;
-
+*)
 (*Pirani MKS 275 Gauges*)
 	{attribute 'TcLinkTo' := 	'.i_iPRESS_R	:=	TIIB[LAMP_PNL2_EP19_EP3174-0002]^AI Standard Channel 1^Value
 	'}
@@ -213,7 +223,8 @@ VAR_GLOBAL
 	'}
 	LAMP_C2_GPI_01 : FB_MKS275;
 	
-(*	{attribute 'TcLinkTo' := 	'.i_iPRESS_R	:=	TIIB[LAMP_PNL2_EP19_EP3174-0002]^AI Standard Channel 2^Value
+(*	
+    {attribute 'TcLinkTo' := 	'.i_iPRESS_R	:=	TIIB[LAMP_PNL2_EP19_EP3174-0002]^AI Standard Channel 2^Value
 	'}
 	{attribute 'pytmc' := '
 		pv: LAMP:CATCH:GPI:01
@@ -221,7 +232,7 @@ VAR_GLOBAL
 	'}
 	LAMP_CATCH_GPI_01 : FB_MKS275; //NO GAUGE INSTALLED
 *)	
-	
+(*	
 	{attribute 'TcLinkTo' := 	'.i_iPRESS_R	:=	TIIB[LAMP_PNL2_EP19_EP3174-0002]^AI Standard Channel 3^Value
 	'}
 	{attribute 'pytmc' := '
@@ -229,7 +240,8 @@ VAR_GLOBAL
 		io: io
 	'}
 	LAMP_GJ1_GPI_01 : FB_MKS275;
-	
+*)
+(*	
 	{attribute 'TcLinkTo' := 	'.i_iPRESS_R	:=	TIIB[LAMP_PNL2_EP19_EP3174-0002]^AI Standard Channel 4^Value
 	'}
 	{attribute 'pytmc' := '
@@ -237,7 +249,7 @@ VAR_GLOBAL
 		io: io
 	'}
 	LAMP_GJ2_GPI_01 : FB_MKS275;
-
+*)
 (*MicroPirani MKS 925 Gauges*)
 	{attribute 'TcLinkTo' := 	'.i_iPRESS_R	:=	TIIB[LAMP_PNL2_EP20_EP3174-0002]^AI Standard Channel 1^Value
 	'}
@@ -280,7 +292,7 @@ VAR_GLOBAL
 		io: io
 	'}
 	LAMP_C2_GCC_01 : FB_MKS500;
-	
+(*	
 	{attribute 'TcLinkTo' := 	'.i_iPRESS_R	:=	TIIB[LAMP_PNL2_EP21_EP3174-0002]^AI Standard Channel 2^Value;
 								 .q_xHV_DIS		:= 	TIIB[LAMP_PNL2_EP22_EP2624-0002]^Channel 2^Output
 	'}	
@@ -289,7 +301,8 @@ VAR_GLOBAL
 		io: io
 	'}
 	LAMP_CATCH_GCC_01 : FB_MKS500;
-	
+*)
+(*	
 	{attribute 'TcLinkTo' := 	'.i_iPRESS_R	:=	TIIB[LAMP_PNL2_EP21_EP3174-0002]^AI Standard Channel 3^Value;
 								 .q_xHV_DIS		:= 	TIIB[LAMP_PNL2_EP22_EP2624-0002]^Channel 3^Output
 	'}	
@@ -298,7 +311,8 @@ VAR_GLOBAL
 		io: io
 	'}
 	LAMP_CATCH_GCC_02 : FB_MKS500;
-	
+*)
+(*	
 	{attribute 'TcLinkTo' := 	'.i_iPRESS_R	:=	TIIB[LAMP_PNL2_EP21_EP3174-0002]^AI Standard Channel 4^Value;
 								 .q_xHV_DIS		:= 	TIIB[LAMP_PNL2_EP22_EP2624-0002]^Channel 4^Output
 	'}	
@@ -307,7 +321,8 @@ VAR_GLOBAL
 		io: io
 	'}
 	LAMP_GJ1_GCC_01 : FB_MKS500;
-	
+*)
+(*	
 	{attribute 'TcLinkTo' := 	'.i_iPRESS_R	:=	TIIB[LAMP_PNL2_EP23_EP3174-0002]^AI Standard Channel 1^Value;
 								 .q_xHV_DIS		:= 	TIIB[LAMP_PNL2_EP24_EP2624-0002]^Channel 1^Output
 	'}	
@@ -316,6 +331,7 @@ VAR_GLOBAL
 		io: io
 	'}
 	LAMP_GJ2_GCC_01 : FB_MKS500;
+*)
 
 (*Hot Cathode MKS 909 Gauges*)
 	{attribute 'TcLinkTo' := 	'.i_iPRESS_R	:=	TIIB[LAMP_PNL2_EP23_EP3174-0002]^AI Standard Channel 2^Value;
@@ -376,7 +392,7 @@ VAR_GLOBAL
 	st_Pfeiffer_CTRL_LAMP_C2_PTM_04			: ARRAY[1..20] OF ST_PfeifferControl;
 	st_Pfeiffer_RBK_LAMP_C2_PTM_04 			: ARRAY[1..20] OF ST_PfeifferStatus;
 	fb_PfeifferCom_LAMP_C2_PTM_04 			: FB_PFEIFFER_COM;
-	
+(*	
 	st_Pfeiffer_CTRL_LAMP_GJ1_PTM_01 		: ARRAY[1..20] OF ST_PfeifferControl;
 	st_Pfeiffer_RBK_LAMP_GJ1_PTM_01 		: ARRAY[1..20] OF ST_PfeifferStatus;
 	fb_PfeifferCom_LAMP_GJ1_PTM_01 			: FB_PFEIFFER_COM;
@@ -392,11 +408,11 @@ VAR_GLOBAL
 	st_Pfeiffer_CTRL_LAMP_GJ1_PTM_04 		: ARRAY[1..20] OF ST_PfeifferControl;
 	st_Pfeiffer_RBK_LAMP_GJ1_PTM_04 		: ARRAY[1..20] OF ST_PfeifferStatus;
 	fb_PfeifferCom_LAMP_GJ1_PTM_04 			: FB_PFEIFFER_COM;
-	
+*)	
 	st_Pfeiffer_CTRL_LAMP_ROUGH_PTM_01 		: ARRAY[1..20] OF ST_PfeifferControl;
 	st_Pfeiffer_RBK_LAMP_ROUGH_PTM_01 		: ARRAY[1..20] OF ST_PfeifferStatus;
 	fb_PfeifferCom_LAMP_ROUGH_PTM_01 		: FB_PFEIFFER_COM;
-	
+(*	
 	st_Pfeiffer_CTRL_LAMP_C1_PTM_01 		: ARRAY[1..20] OF ST_PfeifferControl;
 	st_Pfeiffer_RBK_LAMP_C1_PTM_01 			: ARRAY[1..20] OF ST_PfeifferStatus;
 	fb_PfeifferCom_LAMP_C1_PTM_01 			: FB_PFEIFFER_COM;
@@ -412,11 +428,11 @@ VAR_GLOBAL
 	st_Pfeiffer_CTRL_KTOF_PTM_01 			: ARRAY[1..20] OF ST_PfeifferControl;
 	st_Pfeiffer_RBK_KTOF_PTM_01 			: ARRAY[1..20] OF ST_PfeifferStatus;
 	fb_PfeifferCom_KTOF_PTM_01 				: FB_PFEIFFER_COM;
-	
+*)	
 	//Leybold status
-	st_TD20_RBK_LAMP_GJ2_PTM_01 		: ST_TD20Status;
-	fb_TD20Com_LAMP_GJ2_PTM_01 			: FB_OERLIKON_TD20_COM;
-	
+	st_TD20_RBK_LAMP_BOTTLE_PTMO1 		: ST_TD20Status;
+	fb_TD20Com_LAMP_BOTTLE_PTM01 			: FB_OERLIKON_TD20_COM;
+(*	
 	st_TD20_RBK_LAMP_GJ2_PTM_02 		: ST_TD20Status;
 	fb_TD20Com_LAMP_GJ2_PTM_02 			: FB_OERLIKON_TD20_COM;
 	
@@ -425,7 +441,7 @@ VAR_GLOBAL
 	
 	st_TD20_RBK_LAMP_GJ2_PTM_04 		: ST_TD20Status;
 	fb_TD20Com_LAMP_GJ2_PTM_04 			: FB_OERLIKON_TD20_COM;
-
+*)
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>
