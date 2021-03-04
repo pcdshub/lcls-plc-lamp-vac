@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.2">
   <POU Name="MAIN" Id="{10e78606-31f0-4232-96b0-d270d72b55f0}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM MAIN
 VAR
@@ -16,6 +16,8 @@ TurboPumpTOF : TOF;
 TurboPumpDelayTime : TIME := T#30s;
 b_PumpRunning : BOOL;
 	
+	LAMP_GJ2_GPI_01: INT;
+	st_TD20_RBK_LAMP_BOTTLE_PTM01: LCLS_Vacuum_Serial.ST_TD20Status;
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -49,7 +51,7 @@ ITF_TMO_ROUGH2_VRC_01(//Roughing valve Readback from the Gas Jet Roughing Line
 	bError=> );
 
 (*TurboPump running Flag with 30 second Turn Off delay.*)
-b_TurboPumpRunningFlag := (LAMP_GJ2_PTM_01.iq_stPtm.eState = E_PumpState.pumpRUNNING)  AND 
+b_TurboPumpRunningFlag := (LAMP_BOTTLE_PTM01.iq_stPtm.eState = E_PumpState.pumpRUNNING)  AND 
 	(LAMP_GJ2_PTM_02.iq_stPtm.eState = E_PumpState.pumpRUNNING) AND
 	(LAMP_GJ2_PTM_03.iq_stPtm.eState = E_PumpState.pumpRUNNING) AND
 	(LAMP_GJ2_PTM_04.iq_stPtm.eState = E_PumpState.pumpRUNNING) AND
@@ -102,10 +104,10 @@ xHighVoltageSafteyLoopEnable:= (LAMP_C2_GCC_01.IG.rPRESS <= rHighVoltageMinPress
 *In general, if turbo pump setpoints are above the pirani guage readings or there is no downstream open path to a roughing pump, the turbo pump will close.
 *
 *)
-	LAMP_GJ2_PTM_01(
+	LAMP_BOTTLE_PTM01(
 	i_xExtILKOk:= F_Turbo_NC_NO_Valve_Logic(
-					i_stTurbo:= LAMP_GJ2_PTM_01.iq_stPtm, 
-					i_stISG:= LAMP_GJ2_GPI_01.PG, 
+					i_stTurbo:= LAMP_BOTTLE_PTM01.iq_stPtm, 
+					i_stISG:= LAMP_BOTTLE_PTM01.PG, 
 					i_stBSG:= LAMP_ROUGH_GPI_04.PG, 
 					iq_stValve_NO:= LAMP_ROUGH_VRC_02.iq_stValve, 
 					iq_stValve_NC:= LAMP_ROUGH_VRC_03.iq_stValve, 
@@ -450,10 +452,10 @@ fb_PfeifferCom_KTOF_PTM_01(astPfeifferControl := st_Pfeiffer_CTRL_KTOF_PTM_01,
 KTOF_PTM_01.M_Serial_IO(st_Pfeiffer_RBK:= st_Pfeiffer_RBK_KTOF_PTM_01[1], st_Pfeiffer_CTRL:= st_Pfeiffer_CTRL_KTOF_PTM_01[1]);
 
 //Leybolds
-fb_TD20Com_LAMP_GJ2_PTM_01(SerialRXBuffer:= SerialRXBuffer_LAMP_GJ2_PTM_01, 
-						   SerialTXBuffer:= SerialTXBuffer_LAMP_GJ2_PTM_01, 
-						   astTD20Status=> st_TD20_RBK_LAMP_GJ2_PTM_01);
-LAMP_GJ2_PTM_01.M_Serial_IO(i_st_TD20_RBK:= st_TD20_RBK_LAMP_GJ2_PTM_01);
+fb_TD20Com_LAMP_BOTTLE_PTM01(SerialRXBuffer:= SerialRXBuffer_LAMP_BOTTLE_PTM01, 
+						   SerialTXBuffer:= SerialTXBuffer_LAMP_BOTTLE_PTM01, 
+						   astTD20Status=> st_TD20_RBK_LAMP_BOTTLE_PTM01);
+LAMP_BOTTLE_PTM01.M_Serial_IO(i_st_TD20_RBK:= st_TD20_RBK_LAMP_BOTTLE_PTM01);
 
 
 fb_TD20Com_LAMP_GJ2_PTM_02(SerialRXBuffer:= SerialRXBuffer_LAMP_GJ2_PTM_02, 
