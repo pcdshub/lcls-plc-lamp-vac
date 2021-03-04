@@ -31,8 +31,8 @@ VAR_GLOBAL
 	SerialTXBuffer_LAMP_CATCH_PTM_02 : ComBuffer;	
 	SerialRXBuffer_KTOF_PTM_01 : ComBuffer;
 	SerialTXBuffer_KTOF_PTM_01 : ComBuffer; *)
-	SerialRXBuffer_LAMP_GJ2_PTM_01 : ComBuffer;
-	SerialTXBuffer_LAMP_GJ2_PTM_01 : ComBuffer;		
+	SerialRXBuffer_LAMP_BOTTLE_PTM01 : ComBuffer;
+	SerialTXBuffer_LAMP_BOTTLE_PTM01 : ComBuffer;		
 (*	SerialRXBuffer_LAMP_GJ2_PTM_02 : ComBuffer;
 	SerialTXBuffer_LAMP_GJ2_PTM_02 : ComBuffer;	
 	SerialRXBuffer_LAMP_GJ2_PTM_03 : ComBuffer;
@@ -57,7 +57,7 @@ VAR_GLOBAL
 	fbSerialLineControl_LAMP_CATCH_PTM_01: SerialLineControl;
 	fbSerialLineControl_LAMP_CATCH_PTM_02: SerialLineControl; 
 	fbSerialLineControl_KTOF_PTM_01: SerialLineControl; *)
-	fbSerialLineControl_LAMP_GJ2_PTM_01: SerialLineControl;
+	fbSerialLineControl_LAMP_BOTTLE_PTM01: SerialLineControl;
 (*	fbSerialLineControl_LAMP_GJ2_PTM_02: SerialLineControl;
 	fbSerialLineControl_LAMP_GJ2_PTM_03: SerialLineControl;
 	fbSerialLineControl_LAMP_GJ2_PTM_04: SerialLineControl; *)
@@ -781,7 +781,7 @@ VAR_GLOBAL
 								 .D[20]:=TIIB[LAMP_PLC_E11_EL6002]^COM TxPDO-Map Inputs Channel 1^Data In 20;
 								 .D[21]:=TIIB[LAMP_PLC_E11_EL6002]^COM TxPDO-Map Inputs Channel 1^Data In 21;
 	'}
-	stComIn_LAMP_GJ2_PTM_01		AT %I*	:	EL6inData22B;
+	stComIn_LAMP_BOTTLE_PTM01		AT %I*	:	EL6inData22B;
 	
 	{attribute	'TcLinkTo'	:=	'.Ctrl:=TIIB[LAMP_PLC_E11_EL6002]^COM RxPDO-Map Outputs Channel 1^Ctrl;
 								 .D[0]:=TIIB[LAMP_PLC_E11_EL6002]^COM RxPDO-Map Outputs Channel 1^Data Out 0;
@@ -807,7 +807,7 @@ VAR_GLOBAL
 								 .D[20]:=TIIB[LAMP_PLC_E11_EL6002]^COM RxPDO-Map Outputs Channel 1^Data Out 20;
 								 .D[21]:=TIIB[LAMP_PLC_E11_EL6002]^COM RxPDO-Map Outputs Channel 1^Data Out 21;
 	'}
-	stComOut_LAMP_GJ2_PTM_01		AT %Q*	:	EL6outData22B;
+	stComOut_LAMP_BOTTLE_PTM01		AT %Q*	:	EL6outData22B;
 (*	
 	{attribute	'TcLinkTo'	:=	'.Status:=TIIB[LAMP_PLC_E11_EL6002]^COM TxPDO-Map Inputs Channel 2^Status;
 								 .D[0]:=TIIB[LAMP_PLC_E11_EL6002]^COM TxPDO-Map Inputs Channel 2^Data In 0;
