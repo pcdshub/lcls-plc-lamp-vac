@@ -14,7 +14,7 @@ VAR_GLOBAL
 		pv: LAMP:GJ2:PTM:01
 		io: io
 	'}
-	LAMP_BOTTLE_PTM01 : FB_PTM_TurboDrive;
+	LAMP_GJ2_PTM_01 : FB_PTM_TurboDrive;
 (*
 	{attribute 'TcLinkTo' := 	'.i_xAtSpd			:=	TIIB[LAMP_PLC_E6_EL1004]^Channel 4^Input;
 								 .i_xFaultNC		:=	TIIB[LAMP_PLC_E6_EL1004]^Channel 3^Input;
@@ -429,8 +429,8 @@ VAR_GLOBAL
 	fb_PfeifferCom_KTOF_PTM_01 				: FB_PFEIFFER_COM;
 *)	
 	//Leybold status
-	st_TD20_RBK_LAMP_BOTTLE_PTM01 		: ST_TD20Status;
-	fb_TD20Com_LAMP_BOTTLE_PTM01 			: FB_OERLIKON_TD20_COM;
+	st_TD20_RBK_LAMP_GJ2_PTM_01 		: ST_TD20Status;
+	fb_TD20Com_LAMP_GJ2_PTM_01 			: FB_OERLIKON_TD20_COM;
 (*	
 	st_TD20_RBK_LAMP_GJ2_PTM_02 		: ST_TD20Status;
 	fb_TD20Com_LAMP_GJ2_PTM_02 			: FB_OERLIKON_TD20_COM;

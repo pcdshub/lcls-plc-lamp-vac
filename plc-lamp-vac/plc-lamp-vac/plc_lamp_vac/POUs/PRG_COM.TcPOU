@@ -144,15 +144,15 @@ fbSerialLineControl_KTOF_PTM_01(
 	ErrorID=> );
 *)	
 	
-fbSerialLineControl_LAMP_BOTTLE_PTM01(
+fbSerialLineControl_LAMP_GJ2_PTM_01(
 	Mode:= SERIALLINEMODE_EL6_22B, 
-	pComIn:= ADR(stComIn_LAMP_BOTTLE_PTM01), 
-	pComOut:= ADR(stComOut_LAMP_BOTTLE_PTM01),
-	SizeComIn:= SIZEOF(stComIn_LAMP_BOTTLE_PTM01),
+	pComIn:= ADR(stComIn_LAMP_GJ2_PTM_01), 
+	pComOut:= ADR(stComOut_LAMP_GJ2_PTM_01),
+	SizeComIn:= SIZEOF(stComIn_LAMP_GJ2_PTM_01),
 	Error=> , 
 	ErrorID=> , 
-	TxBuffer:= SerialTXBuffer_LAMP_BOTTLE_PTM01, 
-	RxBuffer:= SerialRXBuffer_LAMP_BOTTLE_PTM01);
+	TxBuffer:= SerialTXBuffer_LAMP_GJ2_PTM_01, 
+	RxBuffer:= SerialRXBuffer_LAMP_GJ2_PTM_01);
 
 (*	
 fbSerialLineControl_LAMP_GJ2_PTM_02(
@@ -186,5 +186,9 @@ fbSerialLineControl_LAMP_GJ2_PTM_04(
 	RxBuffer:= SerialRXBuffer_LAMP_GJ2_PTM_04);	
 *)]]></ST>
     </Implementation>
+    <LineIds Name="PRG_COM">
+      <LineId Id="3" Count="177" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
   </POU>
 </TcPlcObject>
