@@ -3,10 +3,10 @@
   <POU Name="MAIN" Id="{10e78606-31f0-4232-96b0-d270d72b55f0}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM MAIN
 VAR
-	
 	fbLogHandler : FB_LogHandler;
 	
 //TMO Interface
+xEcatBridge_COM_ERROR : BOOL;
 ITF_TMO_ROUGH1_VRC_01: FB_TVGC_2S_ADS; //FB for accessing "TMO_ROUGH1_VRC_01" VGC_2S data from PLC-TMO-VAC
 ITF_TMO_ROUGH2_VRC_01: FB_TVGC_2S_ADS; //FB for accessing "TMO_ROUGH2_VRC_01" VGC_2S data from PLC-TMO-VAC
 i_iWatchdog	:	UDINT; // PLC-TMO-VAC will write to this Watchdog variable
@@ -20,8 +20,11 @@ b_PumpRunning : BOOL;
 	LAMP_GJ2_GPI_01: INT;   // Not used for MBES
 *)
 	st_TD20_RBK_LAMP_GJ2_PTM_01: LCLS_Vacuum_Serial.ST_TD20Status;
-END_VAR
-]]></Declaration>
+	PG: INT;
+	LAMP_GJ2_PTM_03: INT;
+	iq_stPtm: INT;
+	LAMP_GJ2_GPI_01: INT;
+END_VAR]]></Declaration>
     <Implementation>
       <ST><![CDATA[fbLogHandler();
 
@@ -54,6 +57,12 @@ ITF_TMO_ROUGH2_VRC_01(//Roughing valve Readback from the Gas Jet Roughing Line
 	VGC=> , 
 	bError=> );
 
+(*EtherCAT Bridge Status*)
+//xEcatBridge_COM_ERROR := True means that there is an EtherCAT Bridge Communication Error.
+xEcatBridge_COM_ERROR := (xEcatBridge_TxPDO_state OR xEcatBridge_External_device_not_connected OR xEcatBridge_WcState);
+
+xOnBeamline := (xEcatBridge_COM_ERROR = FALSE) AND (sHUTCH_PLC_NAME = 'TMO')
+	
 (*TurboPump running Flag with 30 second Turn Off delay.*)
 b_TurboPumpRunningFlag := (LAMP_GJ2_PTM_01.iq_stPtm.eState = E_PumpState.pumpRUNNING)  AND 
 (*	
@@ -123,7 +132,8 @@ xHighVoltageSafteyLoopEnable:= (LAMP_C2_GCC_01.IG.rPRESS <= rHighVoltageMinPress
 					iq_stValve_NO:= LAMP_ROUGH_VRC_02.iq_stValve, 
 					iq_stValve_NC:= LAMP_ROUGH_VRC_03.iq_stValve, 
 					iq_stValve_NC_second:= LAMP_ROUGH_VRC_01.iq_stValve,
-					ads_Error_Present:= (ITF_TMO_ROUGH1_VRC_01.bError OR ITF_TMO_ROUGH2_VRC_01.bError),
+					EcatBridge_Error_Present:= xEcatBridge_COM_ERROR,
+//					ads_Error_Present:= (ITF_TMO_ROUGH1_VRC_01.bError OR ITF_TMO_ROUGH2_VRC_01.bError),
 					iq_stRoughRoughValve_NC:= ITF_TMO_ROUGH2_VRC_01.VGC,
 					iq_stRoughRoughValve_NC_second:=ITF_TMO_ROUGH1_VRC_01.VGC,
 					x_onBeamline:= xOnBeamline),
@@ -138,7 +148,8 @@ xHighVoltageSafteyLoopEnable:= (LAMP_C2_GCC_01.IG.rPRESS <= rHighVoltageMinPress
 					iq_stValve_NO:= LAMP_ROUGH_VRC_02.iq_stValve, 
 					iq_stValve_NC:= LAMP_ROUGH_VRC_03.iq_stValve, 
 					iq_stValve_NC_second:= LAMP_ROUGH_VRC_01.iq_stValve,
-					ads_Error_Present:= (ITF_TMO_ROUGH1_VRC_01.bError OR ITF_TMO_ROUGH2_VRC_01.bError),
+					EcatBridge_Error_Present:= xEcatBridge_COM_ERROR,
+//					ads_Error_Present:= (ITF_TMO_ROUGH1_VRC_01.bError OR ITF_TMO_ROUGH2_VRC_01.bError),
 					iq_stRoughRoughValve_NC:= ITF_TMO_ROUGH2_VRC_01.VGC,
 					iq_stRoughRoughValve_NC_second:=ITF_TMO_ROUGH1_VRC_01.VGC,
 					x_onBeamline:= xOnBeamline), 
@@ -152,7 +163,8 @@ xHighVoltageSafteyLoopEnable:= (LAMP_C2_GCC_01.IG.rPRESS <= rHighVoltageMinPress
 					iq_stValve_NO:= LAMP_ROUGH_VRC_02.iq_stValve, 
 					iq_stValve_NC:= LAMP_ROUGH_VRC_03.iq_stValve, 
 					iq_stValve_NC_second:= LAMP_ROUGH_VRC_01.iq_stValve,
-					ads_Error_Present:= (ITF_TMO_ROUGH1_VRC_01.bError OR ITF_TMO_ROUGH2_VRC_01.bError),
+					EcatBridge_Error_Present:= xEcatBridge_COM_ERROR,
+//					ads_Error_Present:= (ITF_TMO_ROUGH1_VRC_01.bError OR ITF_TMO_ROUGH2_VRC_01.bError),
 					iq_stRoughRoughValve_NC:= ITF_TMO_ROUGH2_VRC_01.VGC,
 					iq_stRoughRoughValve_NC_second:=ITF_TMO_ROUGH1_VRC_01.VGC,
 					x_onBeamline:= xOnBeamline), 
@@ -166,7 +178,8 @@ xHighVoltageSafteyLoopEnable:= (LAMP_C2_GCC_01.IG.rPRESS <= rHighVoltageMinPress
 					iq_stValve_NO:= LAMP_ROUGH_VRC_02.iq_stValve, 
 					iq_stValve_NC:= LAMP_ROUGH_VRC_03.iq_stValve, 
 					iq_stValve_NC_second:= LAMP_ROUGH_VRC_01.iq_stValve,
-					ads_Error_Present:= (ITF_TMO_ROUGH1_VRC_01.bError OR ITF_TMO_ROUGH2_VRC_01.bError),
+					EcatBridge_Error_Present:= xEcatBridge_COM_ERROR,
+//					ads_Error_Present:= (ITF_TMO_ROUGH1_VRC_01.bError OR ITF_TMO_ROUGH2_VRC_01.bError),
 					iq_stRoughRoughValve_NC:= ITF_TMO_ROUGH2_VRC_01.VGC,
 					iq_stRoughRoughValve_NC_second:=ITF_TMO_ROUGH1_VRC_01.VGC,
 					x_onBeamline:= xOnBeamline), 
@@ -180,7 +193,8 @@ xHighVoltageSafteyLoopEnable:= (LAMP_C2_GCC_01.IG.rPRESS <= rHighVoltageMinPress
 					iq_stValve_NO:= LAMP_ROUGH_VRC_02.iq_stValve, 
 					iq_stValve_NC:= LAMP_ROUGH_VRC_01.iq_stValve, 
 					iq_stValve_NC_second:= LAMP_ROUGH_VRC_03.iq_stValve,
-					ads_Error_Present:= (ITF_TMO_ROUGH1_VRC_01.bError OR ITF_TMO_ROUGH2_VRC_01.bError),
+					EcatBridge_Error_Present:= xEcatBridge_COM_ERROR,
+//					ads_Error_Present:= (ITF_TMO_ROUGH1_VRC_01.bError OR ITF_TMO_ROUGH2_VRC_01.bError),
 					iq_stRoughRoughValve_NC:= ITF_TMO_ROUGH1_VRC_01.VGC,
 					iq_stRoughRoughValve_NC_second:=ITF_TMO_ROUGH2_VRC_01.VGC,
 					x_onBeamline:= xOnBeamline), 
@@ -194,7 +208,8 @@ xHighVoltageSafteyLoopEnable:= (LAMP_C2_GCC_01.IG.rPRESS <= rHighVoltageMinPress
 					iq_stValve_NO:= LAMP_ROUGH_VRC_02.iq_stValve, 
 					iq_stValve_NC:= LAMP_ROUGH_VRC_01.iq_stValve, 
 					iq_stValve_NC_second:= LAMP_ROUGH_VRC_03.iq_stValve,
-					ads_Error_Present:= (ITF_TMO_ROUGH1_VRC_01.bError OR ITF_TMO_ROUGH2_VRC_01.bError),
+					EcatBridge_Error_Present:= xEcatBridge_COM_ERROR,
+//					ads_Error_Present:= (ITF_TMO_ROUGH1_VRC_01.bError OR ITF_TMO_ROUGH2_VRC_01.bError),
 					iq_stRoughRoughValve_NC:= ITF_TMO_ROUGH1_VRC_01.VGC,
 					iq_stRoughRoughValve_NC_second:=ITF_TMO_ROUGH2_VRC_01.VGC,
 					x_onBeamline:= xOnBeamline), 
@@ -208,7 +223,8 @@ xHighVoltageSafteyLoopEnable:= (LAMP_C2_GCC_01.IG.rPRESS <= rHighVoltageMinPress
 					iq_stValve_NO:= LAMP_ROUGH_VRC_02.iq_stValve, 
 					iq_stValve_NC:= LAMP_ROUGH_VRC_01.iq_stValve, 
 					iq_stValve_NC_second:= LAMP_ROUGH_VRC_03.iq_stValve,
-					ads_Error_Present:= (ITF_TMO_ROUGH1_VRC_01.bError OR ITF_TMO_ROUGH2_VRC_01.bError),
+					EcatBridge_Error_Present:= xEcatBridge_COM_ERROR,
+//					ads_Error_Present:= (ITF_TMO_ROUGH1_VRC_01.bError OR ITF_TMO_ROUGH2_VRC_01.bError),
 					iq_stRoughRoughValve_NC:= ITF_TMO_ROUGH1_VRC_01.VGC,
 					iq_stRoughRoughValve_NC_second:=ITF_TMO_ROUGH2_VRC_01.VGC,
 					x_onBeamline:= xOnBeamline), 
@@ -222,7 +238,8 @@ xHighVoltageSafteyLoopEnable:= (LAMP_C2_GCC_01.IG.rPRESS <= rHighVoltageMinPress
 					iq_stValve_NO:= LAMP_ROUGH_VRC_02.iq_stValve, 
 					iq_stValve_NC:= LAMP_ROUGH_VRC_01.iq_stValve, 
 					iq_stValve_NC_second:= LAMP_ROUGH_VRC_03.iq_stValve,
-					ads_Error_Present:= (ITF_TMO_ROUGH1_VRC_01.bError OR ITF_TMO_ROUGH2_VRC_01.bError),
+					EcatBridge_Error_Present:= xEcatBridge_COM_ERROR,
+//					ads_Error_Present:= (ITF_TMO_ROUGH1_VRC_01.bError OR ITF_TMO_ROUGH2_VRC_01.bError),
 					iq_stRoughRoughValve_NC:= ITF_TMO_ROUGH1_VRC_01.VGC,
 					iq_stRoughRoughValve_NC_second:=ITF_TMO_ROUGH2_VRC_01.VGC,
 					x_onBeamline:= xOnBeamline), 
@@ -236,7 +253,8 @@ xHighVoltageSafteyLoopEnable:= (LAMP_C2_GCC_01.IG.rPRESS <= rHighVoltageMinPress
 					iq_stValve_NO:= LAMP_ROUGH_VRC_02.iq_stValve, 
 					iq_stValve_NC:= LAMP_ROUGH_VRC_01.iq_stValve, 
 					iq_stValve_NC_second:= LAMP_ROUGH_VRC_03.iq_stValve,
-					ads_Error_Present:= (ITF_TMO_ROUGH1_VRC_01.bError OR ITF_TMO_ROUGH2_VRC_01.bError),
+					EcatBridge_Error_Present:= xEcatBridge_COM_ERROR,
+//					ads_Error_Present:= (ITF_TMO_ROUGH1_VRC_01.bError OR ITF_TMO_ROUGH2_VRC_01.bError),
 					iq_stRoughRoughValve_NC:= ITF_TMO_ROUGH1_VRC_01.VGC,
 					iq_stRoughRoughValve_NC_second:=ITF_TMO_ROUGH2_VRC_01.VGC,
 					x_onBeamline:= xOnBeamline), 
@@ -250,7 +268,8 @@ xHighVoltageSafteyLoopEnable:= (LAMP_C2_GCC_01.IG.rPRESS <= rHighVoltageMinPress
 					iq_stValve_NO:= LAMP_ROUGH_VRC_02.iq_stValve, 
 					iq_stValve_NC:= LAMP_ROUGH_VRC_01.iq_stValve, 
 					iq_stValve_NC_second:= LAMP_ROUGH_VRC_03.iq_stValve,
-					ads_Error_Present:= (ITF_TMO_ROUGH1_VRC_01.bError OR ITF_TMO_ROUGH2_VRC_01.bError),
+					EcatBridge_Error_Present:= xEcatBridge_COM_Error,
+//					ads_Error_Present:= (ITF_TMO_ROUGH1_VRC_01.bError OR ITF_TMO_ROUGH2_VRC_01.bError),
 					iq_stRoughRoughValve_NC:= ITF_TMO_ROUGH1_VRC_01.VGC,
 					iq_stRoughRoughValve_NC_second:=ITF_TMO_ROUGH2_VRC_01.VGC,
 					x_onBeamline:= xOnBeamline), 
@@ -264,7 +283,8 @@ xHighVoltageSafteyLoopEnable:= (LAMP_C2_GCC_01.IG.rPRESS <= rHighVoltageMinPress
 					iq_stValve_NO:= LAMP_ROUGH_VRC_02.iq_stValve, 
 					iq_stValve_NC:= LAMP_ROUGH_VRC_01.iq_stValve, 
 					iq_stValve_NC_second:= LAMP_ROUGH_VRC_03.iq_stValve,
-					ads_Error_Present:= (ITF_TMO_ROUGH1_VRC_01.bError OR ITF_TMO_ROUGH2_VRC_01.bError),
+					EcatBridge_Error_Present:= xEcatBridge_COM_Error,
+//					ads_Error_Present:= (ITF_TMO_ROUGH1_VRC_01.bError OR ITF_TMO_ROUGH2_VRC_01.bError),
 					iq_stRoughRoughValve_NC:= ITF_TMO_ROUGH1_VRC_01.VGC,
 					iq_stRoughRoughValve_NC_second:=ITF_TMO_ROUGH2_VRC_01.VGC,
 					x_onBeamline:= xOnBeamline), 
@@ -278,7 +298,8 @@ xHighVoltageSafteyLoopEnable:= (LAMP_C2_GCC_01.IG.rPRESS <= rHighVoltageMinPress
 					iq_stValve_NO:= LAMP_ROUGH_VRC_02.iq_stValve, 
 					iq_stValve_NC:= LAMP_ROUGH_VRC_03.iq_stValve, 
 					iq_stValve_NC_second:= LAMP_ROUGH_VRC_01.iq_stValve,
-					ads_Error_Present:= (ITF_TMO_ROUGH1_VRC_01.bError OR ITF_TMO_ROUGH2_VRC_01.bError),
+					EcatBridge_Error_Present:= xEcatBridge_COM_ERROR,
+//					ads_Error_Present:= (ITF_TMO_ROUGH1_VRC_01.bError OR ITF_TMO_ROUGH2_VRC_01.bError),
 					iq_stRoughRoughValve_NC:= ITF_TMO_ROUGH2_VRC_01.VGC,
 					iq_stRoughRoughValve_NC_second:=ITF_TMO_ROUGH1_VRC_01.VGC,
 					x_onBeamline:= xOnBeamline), 
@@ -292,7 +313,8 @@ xHighVoltageSafteyLoopEnable:= (LAMP_C2_GCC_01.IG.rPRESS <= rHighVoltageMinPress
 					iq_stValve_NO:= LAMP_ROUGH_VRC_02.iq_stValve, 
 					iq_stValve_NC:= LAMP_ROUGH_VRC_03.iq_stValve, 
 					iq_stValve_NC_second:= LAMP_ROUGH_VRC_01.iq_stValve,
-					ads_Error_Present:= (ITF_TMO_ROUGH1_VRC_01.bError OR ITF_TMO_ROUGH2_VRC_01.bError),
+					EcatBridge_Error_Present:= xEcatBridge_COM_ERROR,
+//					ads_Error_Present:= (ITF_TMO_ROUGH1_VRC_01.bError OR ITF_TMO_ROUGH2_VRC_01.bError),
 					iq_stRoughRoughValve_NC:= ITF_TMO_ROUGH2_VRC_01.VGC,
 					iq_stRoughRoughValve_NC_second:=ITF_TMO_ROUGH1_VRC_01.VGC,
 					x_onBeamline:= xOnBeamline), 
@@ -306,7 +328,8 @@ xHighVoltageSafteyLoopEnable:= (LAMP_C2_GCC_01.IG.rPRESS <= rHighVoltageMinPress
 					iq_stValve_NO:= LAMP_ROUGH_VRC_02.iq_stValve, 
 					iq_stValve_NC:= LAMP_ROUGH_VRC_03.iq_stValve, 
 					iq_stValve_NC_second:= LAMP_ROUGH_VRC_01.iq_stValve,
-					ads_Error_Present:= (ITF_TMO_ROUGH1_VRC_01.bError OR ITF_TMO_ROUGH2_VRC_01.bError),
+					EcatBridge_Error_Present:= xEcatBridge_COM_ERROR,
+//					ads_Error_Present:= (ITF_TMO_ROUGH1_VRC_01.bError OR ITF_TMO_ROUGH2_VRC_01.bError),
 					iq_stRoughRoughValve_NC:= ITF_TMO_ROUGH2_VRC_01.VGC,
 					iq_stRoughRoughValve_NC_second:=ITF_TMO_ROUGH1_VRC_01.VGC,
 					x_onBeamline:= xOnBeamline), 
@@ -320,7 +343,8 @@ xHighVoltageSafteyLoopEnable:= (LAMP_C2_GCC_01.IG.rPRESS <= rHighVoltageMinPress
 					iq_stValve_NO:= LAMP_ROUGH_VRC_02.iq_stValve, 
 					iq_stValve_NC:= LAMP_ROUGH_VRC_03.iq_stValve, 
 					iq_stValve_NC_second:= LAMP_ROUGH_VRC_01.iq_stValve,
-					ads_Error_Present:= (ITF_TMO_ROUGH1_VRC_01.bError OR ITF_TMO_ROUGH2_VRC_01.bError),
+					EcatBridge_Error_Present:= xEcatBridge_COM_ERROR,
+//					ads_Error_Present:= (ITF_TMO_ROUGH1_VRC_01.bError OR ITF_TMO_ROUGH2_VRC_01.bError),
 					iq_stRoughRoughValve_NC:= ITF_TMO_ROUGH2_VRC_01.VGC,
 					iq_stRoughRoughValve_NC_second:=ITF_TMO_ROUGH1_VRC_01.VGC,
 					x_onBeamline:= xOnBeamline), 
@@ -334,7 +358,8 @@ xHighVoltageSafteyLoopEnable:= (LAMP_C2_GCC_01.IG.rPRESS <= rHighVoltageMinPress
 					iq_stValve_NO:= LAMP_ROUGH_VRC_02.iq_stValve, 
 					iq_stValve_NC:= LAMP_ROUGH_VRC_01.iq_stValve, 
 					iq_stValve_NC_second:= LAMP_ROUGH_VRC_03.iq_stValve,
-					ads_Error_Present:= (ITF_TMO_ROUGH1_VRC_01.bError OR ITF_TMO_ROUGH2_VRC_01.bError),
+					EcatBridge_Error_Present:= xEcatBridge_COM_ERROR,
+//					ads_Error_Present:= (ITF_TMO_ROUGH1_VRC_01.bError OR ITF_TMO_ROUGH2_VRC_01.bError),
 					iq_stRoughRoughValve_NC:= ITF_TMO_ROUGH1_VRC_01.VGC,
 					iq_stRoughRoughValve_NC_second:=ITF_TMO_ROUGH2_VRC_01.VGC,
 					x_onBeamline:= xOnBeamline), 
@@ -348,7 +373,8 @@ xHighVoltageSafteyLoopEnable:= (LAMP_C2_GCC_01.IG.rPRESS <= rHighVoltageMinPress
 					iq_stValve_NO:= LAMP_ROUGH_VRC_02.iq_stValve, 
 					iq_stValve_NC:= LAMP_ROUGH_VRC_01.iq_stValve, 
 					iq_stValve_NC_second:= LAMP_ROUGH_VRC_03.iq_stValve,
-					ads_Error_Present:= (ITF_TMO_ROUGH1_VRC_01.bError OR ITF_TMO_ROUGH2_VRC_01.bError),
+					EcatBridge_Error_Present:= xEcatBridge_COM_ERROR,
+//					ads_Error_Present:= (ITF_TMO_ROUGH1_VRC_01.bError OR ITF_TMO_ROUGH2_VRC_01.bError),
 					iq_stRoughRoughValve_NC:= ITF_TMO_ROUGH1_VRC_01.VGC,
 					iq_stRoughRoughValve_NC_second:=ITF_TMO_ROUGH2_VRC_01.VGC,
 					x_onBeamline:= xOnBeamline), 
@@ -508,7 +534,46 @@ LAMP_GJ2_PTM_04.M_Serial_IO(i_st_TD20_RBK:= st_TD20_RBK_LAMP_GJ2_PTM_04);
 ]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
-      <LineId Id="3" Count="481" />
+      <LineId Id="3" Count="29" />
+      <LineId Id="551" Count="0" />
+      <LineId Id="33" Count="0" />
+      <LineId Id="553" Count="3" />
+      <LineId Id="552" Count="0" />
+      <LineId Id="34" Count="68" />
+      <LineId Id="505" Count="0" />
+      <LineId Id="103" Count="14" />
+      <LineId Id="507" Count="0" />
+      <LineId Id="118" Count="13" />
+      <LineId Id="508" Count="0" />
+      <LineId Id="132" Count="13" />
+      <LineId Id="512" Count="0" />
+      <LineId Id="146" Count="13" />
+      <LineId Id="513" Count="0" />
+      <LineId Id="160" Count="13" />
+      <LineId Id="514" Count="0" />
+      <LineId Id="174" Count="13" />
+      <LineId Id="515" Count="0" />
+      <LineId Id="188" Count="13" />
+      <LineId Id="516" Count="0" />
+      <LineId Id="202" Count="13" />
+      <LineId Id="517" Count="0" />
+      <LineId Id="216" Count="13" />
+      <LineId Id="518" Count="0" />
+      <LineId Id="230" Count="13" />
+      <LineId Id="519" Count="0" />
+      <LineId Id="244" Count="13" />
+      <LineId Id="520" Count="0" />
+      <LineId Id="258" Count="13" />
+      <LineId Id="521" Count="0" />
+      <LineId Id="272" Count="13" />
+      <LineId Id="522" Count="0" />
+      <LineId Id="286" Count="13" />
+      <LineId Id="523" Count="0" />
+      <LineId Id="300" Count="13" />
+      <LineId Id="524" Count="0" />
+      <LineId Id="314" Count="13" />
+      <LineId Id="525" Count="0" />
+      <LineId Id="328" Count="156" />
       <LineId Id="2" Count="0" />
     </LineIds>
   </POU>
