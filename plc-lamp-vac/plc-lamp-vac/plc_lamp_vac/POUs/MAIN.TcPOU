@@ -70,7 +70,7 @@ b_TurboPumpRunningFlag := (LAMP_GJ2_PTM_01.iq_stPtm.eState = E_PumpState.pumpRUN
 	(LAMP_GJ2_PTM_03.iq_stPtm.eState = E_PumpState.pumpRUNNING) AND
 	(LAMP_GJ2_PTM_04.iq_stPtm.eState = E_PumpState.pumpRUNNING) AND    
 *)
-	(LAMP_C1_PTM_01.iq_stPtm.eState = E_PumpState.pumpRUNNING) AND
+(*	(LAMP_C1_PTM_01.iq_stPtm.eState = E_PumpState.pumpRUNNING) AND  *)
 //	(LAMP_C2_PTM_01.iq_stPtm.eState = E_PumpState.pumpRUNNING) AND //currently does not exist on LAMP
 	(LAMP_C2_PTM_02.iq_stPtm.eState = E_PumpState.pumpRUNNING) AND
 	(LAMP_C2_PTM_03.iq_stPtm.eState = E_PumpState.pumpRUNNING) AND
@@ -421,6 +421,7 @@ fb_PfeifferCom_LAMP_C2_PTM_04(astPfeifferControl := st_Pfeiffer_CTRL_LAMP_C2_PTM
 							  SerialTXBuffer:= SerialTXBuffer_LAMP_C2_PTM_04);
 LAMP_C2_PTM_04.M_Serial_IO(st_Pfeiffer_RBK:= st_Pfeiffer_RBK_LAMP_C2_PTM_04[1], st_Pfeiffer_CTRL:= st_Pfeiffer_CTRL_LAMP_C2_PTM_04[1]);
 
+(*
 st_Pfeiffer_CTRL_LAMP_GJ1_PTM_01[1].iSerialAddress :=1;
 st_Pfeiffer_CTRL_LAMP_GJ1_PTM_01[1].xEnableComm := TRUE;
 fb_PfeifferCom_LAMP_GJ1_PTM_01(astPfeifferControl := st_Pfeiffer_CTRL_LAMP_GJ1_PTM_01,
@@ -452,6 +453,7 @@ fb_PfeifferCom_LAMP_GJ1_PTM_04(astPfeifferControl := st_Pfeiffer_CTRL_LAMP_GJ1_P
 							  SerialRXBuffer:= SerialRXBuffer_LAMP_GJ1_PTM_04,
 							  SerialTXBuffer:= SerialTXBuffer_LAMP_GJ1_PTM_04);
 LAMP_GJ1_PTM_04.M_Serial_IO(st_Pfeiffer_RBK:= st_Pfeiffer_RBK_LAMP_GJ1_PTM_04[1], st_Pfeiffer_CTRL:= st_Pfeiffer_CTRL_LAMP_GJ1_PTM_04[1]);
+*)
 
 st_Pfeiffer_CTRL_LAMP_ROUGH_PTM_01[1].iSerialAddress :=1;
 st_Pfeiffer_CTRL_LAMP_ROUGH_PTM_01[1].xEnableComm := TRUE;
@@ -461,6 +463,7 @@ fb_PfeifferCom_LAMP_ROUGH_PTM_01(astPfeifferControl := st_Pfeiffer_CTRL_LAMP_ROU
 							  SerialTXBuffer:= SerialTXBuffer_LAMP_ROUGH_PTM_01);
 LAMP_ROUGH_PTM_01.M_Serial_IO(st_Pfeiffer_RBK:= st_Pfeiffer_RBK_LAMP_ROUGH_PTM_01[1], st_Pfeiffer_CTRL:= st_Pfeiffer_CTRL_LAMP_ROUGH_PTM_01[1]);
 
+(*
 st_Pfeiffer_CTRL_LAMP_C1_PTM_01[1].iSerialAddress :=1;
 st_Pfeiffer_CTRL_LAMP_C1_PTM_01[1].xEnableComm := TRUE;
 fb_PfeifferCom_LAMP_C1_PTM_01(astPfeifferControl := st_Pfeiffer_CTRL_LAMP_C1_PTM_01,
@@ -493,6 +496,7 @@ fb_PfeifferCom_KTOF_PTM_01(astPfeifferControl := st_Pfeiffer_CTRL_KTOF_PTM_01,
 							  SerialTXBuffer:= SerialTXBuffer_KTOF_PTM_01);
 //KTOF_PTM_01.M_Serial_IO(st_Pfeiffer_CTRL_KTOF_PTM_01[1],st_Pfeiffer_RBK_KTOF_PTM_01[1]);
 KTOF_PTM_01.M_Serial_IO(st_Pfeiffer_RBK:= st_Pfeiffer_RBK_KTOF_PTM_01[1], st_Pfeiffer_CTRL:= st_Pfeiffer_CTRL_KTOF_PTM_01[1]);
+*)
 
 //Leybolds
 fb_TD20Com_LAMP_GJ2_PTM_01(SerialRXBuffer:= SerialRXBuffer_LAMP_GJ2_PTM_01, 
@@ -500,7 +504,7 @@ fb_TD20Com_LAMP_GJ2_PTM_01(SerialRXBuffer:= SerialRXBuffer_LAMP_GJ2_PTM_01,
 						   astTD20Status=> st_TD20_RBK_LAMP_GJ2_PTM_01);
 LAMP_GJ2_PTM_01.M_Serial_IO(i_st_TD20_RBK:= st_TD20_RBK_LAMP_GJ2_PTM_01);
 
-
+(*
 fb_TD20Com_LAMP_GJ2_PTM_02(SerialRXBuffer:= SerialRXBuffer_LAMP_GJ2_PTM_02, 
 						   SerialTXBuffer:= SerialTXBuffer_LAMP_GJ2_PTM_02, 
 						   astTD20Status=> st_TD20_RBK_LAMP_GJ2_PTM_02);
@@ -510,7 +514,7 @@ fb_TD20Com_LAMP_GJ2_PTM_03(SerialRXBuffer:= SerialRXBuffer_LAMP_GJ2_PTM_03,
 						   SerialTXBuffer:= SerialTXBuffer_LAMP_GJ2_PTM_03, 
 						   astTD20Status=> st_TD20_RBK_LAMP_GJ2_PTM_03);
 LAMP_GJ2_PTM_03.M_Serial_IO(i_st_TD20_RBK:= st_TD20_RBK_LAMP_GJ2_PTM_03);
-(*
+
 fb_TD20Com_LAMP_GJ2_PTM_04(SerialRXBuffer:= SerialRXBuffer_LAMP_GJ2_PTM_04, 
 						   SerialTXBuffer:= SerialTXBuffer_LAMP_GJ2_PTM_04, 
 						   astTD20Status=> st_TD20_RBK_LAMP_GJ2_PTM_04);
@@ -544,7 +548,9 @@ LAMP_GJ2_PTM_04.M_Serial_IO(i_st_TD20_RBK:= st_TD20_RBK_LAMP_GJ2_PTM_04);
       <LineId Id="33" Count="0" />
       <LineId Id="553" Count="3" />
       <LineId Id="552" Count="0" />
-      <LineId Id="34" Count="68" />
+      <LineId Id="34" Count="6" />
+      <LineId Id="586" Count="0" />
+      <LineId Id="42" Count="60" />
       <LineId Id="505" Count="0" />
       <LineId Id="103" Count="14" />
       <LineId Id="507" Count="0" />
@@ -588,7 +594,15 @@ LAMP_GJ2_PTM_04.M_Serial_IO(i_st_TD20_RBK:= st_TD20_RBK_LAMP_GJ2_PTM_04);
       <LineId Id="525" Count="0" />
       <LineId Id="328" Count="4" />
       <LineId Id="562" Count="0" />
-      <LineId Id="333" Count="151" />
+      <LineId Id="333" Count="35" />
+      <LineId Id="587" Count="0" />
+      <LineId Id="369" Count="32" />
+      <LineId Id="590" Count="0" />
+      <LineId Id="402" Count="6" />
+      <LineId Id="591" Count="0" />
+      <LineId Id="409" Count="32" />
+      <LineId Id="592" Count="0" />
+      <LineId Id="442" Count="42" />
       <LineId Id="2" Count="0" />
     </LineIds>
   </POU>
