@@ -5,7 +5,7 @@
 VAR_GLOBAL
 	(*TMO Beamline Vacuum*)
 	//Outputs
-	fb_ADS_WATCHDOG_VAC_LAMP_TMO:FB_ADS_WATCHDOG;
+//	fb_ADS_WATCHDOG_VAC_LAMP_TMO:FB_ADS_WATCHDOG;
 	
 	(*ETHERCAT BRRIDGE COM STATUS*)
 	//0: Other side is in OP state, >0: Error
