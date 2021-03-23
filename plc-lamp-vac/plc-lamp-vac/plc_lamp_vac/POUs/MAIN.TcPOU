@@ -546,17 +546,15 @@ LAMP_GJ2_PTM_04.M_Serial_IO(i_st_TD20_RBK:= st_TD20_RBK_LAMP_GJ2_PTM_04);
 		i_xExtILK_OK:= TRUE,
 		i_xOverrideMode:= xSystemOverrideMode_LAMP,
 		iq_stValve=> );
+	
+	ELSE
+		LAMP_ROUGH_VRC_03(//LAMP:ROUGH:VRC:03 can open when the pressure across the valve is below 10 torr
+		i_xExtILK_OK:= (ABS(LAMP_ROUGH_GPI_03.PG.rPRESS - LAMP_ROUGH_GPI_04.PG.rPRESS)<10.0),
+		i_xOverrideMode:= xSystemOverrideMode_LAMP, 
+		iq_stValve=> );
 	END_IF
 	
-	LAMP_ROUGH_VRC_03(//LAMP:ROUGH:VRC:03 can open when the pressure across the valve is below 10 torr
-	i_xExtILK_OK:= (ABS(LAMP_ROUGH_GPI_03.PG.rPRESS - LAMP_ROUGH_GPI_04.PG.rPRESS)<10.0),
-	i_xOverrideMode:= xSystemOverrideMode_LAMP, 
-	iq_stValve=> );
-	
-	
-
-
-]]></ST>
+	]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
       <LineId Id="3" Count="8" />
@@ -635,8 +633,9 @@ LAMP_GJ2_PTM_04.M_Serial_IO(i_st_TD20_RBK:= st_TD20_RBK_LAMP_GJ2_PTM_04);
       <LineId Id="646" Count="0" />
       <LineId Id="648" Count="3" />
       <LineId Id="647" Count="0" />
-      <LineId Id="476" Count="8" />
-      <LineId Id="2" Count="0" />
+      <LineId Id="476" Count="4" />
+      <LineId Id="671" Count="0" />
+      <LineId Id="481" Count="1" />
     </LineIds>
   </POU>
 </TcPlcObject>
