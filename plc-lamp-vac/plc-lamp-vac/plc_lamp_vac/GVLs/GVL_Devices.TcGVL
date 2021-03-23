@@ -6,9 +6,9 @@ VAR_GLOBAL
 (* Components unnecessary for MBES are commented out *)
 	
 (*Rack Mounted Turbo Pumps*)
-	{attribute 'TcLinkTo' := 	'.i_xAtSpd			:=	TIIB[LAMP_PLC_E6_EL1004]^Channel 2^Input;
-								 .i_xFaultNC		:=	TIIB[LAMP_PLC_E6_EL1004]^Channel 1^Input;
-								 .q_RunDO			:=	TIIB[LAMP_PLC_E7_EL2794]^Channel 1^Output			 
+	{attribute 'TcLinkTo' := 	'.i_xAtSpd			:=	TIIB[LAMP_PLC_E06_EL1004]^Channel 2^Input;
+								 .i_xFaultNC		:=	TIIB[LAMP_PLC_E06_EL1004]^Channel 1^Input;
+								 .q_RunDO			:=	TIIB[LAMP_PLC_E07_EL2794]^Channel 1^Output			 
 	'}
 	{attribute 'pytmc' := '
 		pv: LAMP:GJ2:PTM:01

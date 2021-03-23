@@ -28,11 +28,11 @@ VAR_GLOBAL
 	'}
 	sHUTCH_PLC_NAME AT %I* : STRING(8);
 	
-	{attribute 'TcLinkTo' :=  'TIIB[LAMP_PLC_E04_EL6692]^IO Inputs^TMO_ROUGH1_VRC01_OPEN_LS 
+	{attribute 'TcLinkTo' :=  'TIIB[LAMP_PLC_E04_EL6692]^IO Inputs^TMO_ROUGH1_VRC_01_OPEN_LS 
 	'}
 	xTMO_ROUGH1_VRC_01_OPEN_LS AT %I* : BOOL;
 	
-	{attribute 'TcLinkTo' := TIIB[LAMP_PLC_E04_EL6692]^IO Inputs^TMO_ROUGH2_VRC01_OPEN_LS
+	{attribute 'TcLinkTo' := 'TIIB[LAMP_PLC_E04_EL6692]^IO Inputs^TMO_ROUGH2_VRC_01_OPEN_LS
 	'}
 	xTMO_ROUGH2_VRC_01_OPEN_LS AT %I* : BOOL;
 	
@@ -79,7 +79,7 @@ VAR_GLOBAL
 	xIP1_HV_SAFETY_ENABLE AT %Q* : BOOL;
 	
 	(*ISEG HV Crate Safety Loop*)
-	{attribute 'TcLinkTo' := 	'TIIB[LAMP_PLC_E10_EL2794]^Channel 1^Output			 
+	{attribute 'TcLinkTo' := 	'TIIB[LAMP_PLC_E09_EL2794]^Channel 1^Output			 
 	'}
 	xHighVoltageSafteyLoopEnable AT %Q* : BOOL := FALSE; (*When Enables the High voltage Saftey loop is closed and HV can start.*)
 	
