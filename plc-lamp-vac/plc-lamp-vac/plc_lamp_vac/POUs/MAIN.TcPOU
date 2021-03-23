@@ -517,10 +517,18 @@ LAMP_GJ2_PTM_04.M_Serial_IO(i_st_TD20_RBK:= st_TD20_RBK_LAMP_GJ2_PTM_04);
 *)
 
 (*Vacuum Gate Valve*)
-	LAMP_ROUGH_VRC_01(//LAMP:ROUGH:VRC:01 can open when the pressure across the valve is below 10 torr
-	i_xExtILK_OK:= (ABS(LAMP_ROUGH_GPI_01.PG.rPRESS - LAMP_ROUGH_GPI_02.PG.rPRESS)<10.0),
-	i_xOverrideMode:= xSystemOverrideMode_LAMP, 
-	iq_stValve=> );
+	IF(xOnBeamline) THEN //If OnBeamline then stay open.
+		LAMP_ROUGH_VRC_01.M_Set_OPN_SW(TRUE);
+		LAMP_ROUGH_VRC_01(
+		i_xExtILK_OK:= TRUE,
+		i_xOverrideMode:= xSystemOverrideMode_LAMP,
+		iq_stValve=> );
+	ELSE
+		LAMP_ROUGH_VRC_01(//LAMP:ROUGH:VRC:01 can open when the pressure across the valve is below 10 torr
+		i_xExtILK_OK:= (ABS(LAMP_ROUGH_GPI_01.PG.rPRESS - LAMP_ROUGH_GPI_02.PG.rPRESS)<10.0),
+		i_xOverrideMode:= xSystemOverrideMode_LAMP, 
+		iq_stValve=> );
+	END_IF
 (*	
 	LAMP_ROUGH_VRC_02(//LAMP:ROUGH:VRC:02 closes when the pressure in the the C2, GJ1, and GJ2 chambers are all below 10 torr.
 	i_xExtILK_OK:= NOT((LAMP_GJ1_GPI_01.PG.rPRESS >10.0) OR (LAMP_GJ2_GPI_01.PG.rPRESS > 10.0) OR (LAMP_C2_GPI_01.PG.rPRESS > 10.0)) , 
@@ -532,7 +540,13 @@ LAMP_GJ2_PTM_04.M_Serial_IO(i_st_TD20_RBK:= st_TD20_RBK_LAMP_GJ2_PTM_04);
 	i_xOverrideMode:= xSystemOverrideMode_LAMP,
  	iq_stValve=> );
 
-		
+	IF(xOnBeamline) THEN //If OnBeamline then stay open.
+		LAMP_ROUGH_VRC_03.M_Set_OPN_SW(TRUE);
+		LAMP_ROUGH_VRC_03(
+		i_xExtILK_OK:= TRUE,
+		i_xOverrideMode:= xSystemOverrideMode_LAMP,
+		iq_stValve=> );
+	END_IF
 	
 	LAMP_ROUGH_VRC_03(//LAMP:ROUGH:VRC:03 can open when the pressure across the valve is below 10 torr
 	i_xExtILK_OK:= (ABS(LAMP_ROUGH_GPI_03.PG.rPRESS - LAMP_ROUGH_GPI_04.PG.rPRESS)<10.0),
@@ -608,10 +622,19 @@ LAMP_GJ2_PTM_04.M_Serial_IO(i_st_TD20_RBK:= st_TD20_RBK_LAMP_GJ2_PTM_04);
       <LineId Id="591" Count="0" />
       <LineId Id="409" Count="32" />
       <LineId Id="592" Count="0" />
-      <LineId Id="442" Count="33" />
+      <LineId Id="442" Count="24" />
+      <LineId Id="638" Count="1" />
+      <LineId Id="641" Count="3" />
+      <LineId Id="640" Count="0" />
+      <LineId Id="467" Count="3" />
+      <LineId Id="645" Count="0" />
+      <LineId Id="471" Count="4" />
       <LineId Id="597" Count="1" />
       <LineId Id="600" Count="3" />
       <LineId Id="599" Count="0" />
+      <LineId Id="646" Count="0" />
+      <LineId Id="648" Count="3" />
+      <LineId Id="647" Count="0" />
       <LineId Id="476" Count="8" />
       <LineId Id="2" Count="0" />
     </LineIds>
