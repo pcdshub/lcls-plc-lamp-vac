@@ -81,7 +81,7 @@ b_TurboPumpRunningFlag := (LAMP_GJ2_PTM_01.iq_stPtm.eState = E_PumpState.pumpRUN
 	(LAMP_ROUGH_PTM_01.iq_stPtm.eState = E_PumpState.pumpRUNNING);
 //	(KTOF_PTM_01.iq_stPtm.eState = E_PumpState.pumpRUNNING);	
 TurboPumpTOF(IN:= b_TurboPumpRunningFlag, PT := TurboPumpDelayTime);
-b_PumpRunning:= TurboPumpTOF.Q;
+xIP1_TURBOS_ALL_AtSpd:= TurboPumpTOF.Q;
 
 (*High Voltage Saftey Loop*)// rHighVoltageMinPressure = 1e-05; (*Hard coded High voltage Minimum Enable Pressure*)
 xHighVoltageSafteyLoopEnable:= (LAMP_C2_GCC_01.IG.rPRESS <= rHighVoltageMinPressure) AND (LAMP_C2_GCC_01.IG.xPRESS_OK = TRUE);
@@ -553,8 +553,16 @@ LAMP_GJ2_PTM_04.M_Serial_IO(i_st_TD20_RBK:= st_TD20_RBK_LAMP_GJ2_PTM_04);
 		i_xOverrideMode:= xSystemOverrideMode_LAMP, 
 		iq_stValve=> );
 	END_IF
-	
-	]]></ST>
+    
+(*Update EtherCAT Bridge Outputs*)
+xIP1_ROUGH_VRC_01_OPEN_LS := LAMP_ROUGH_VRC_01.M_IsOpen();
+xIP1_ROUGH_VRC_02_OPEN_LS := LAMP_ROUGH_VRC_02.M_IsClosed();
+xIP1_ROUGH_VRC_03_OPEN_LS := LAMP_ROUGH_VRC_03.M_IsClosed();
+//xIP1_TURBO_FAULT AT %Q* : BOOL; already updated at turbo logic
+xIP1_MAIN_xAT_VAC         := LAMP_C2_GCC_01.IG.xAT_VAC;
+xIP1_MAIN_xPRESS_OK       := LAMP_C2_GCC_01.IG.xPRESS_OK;
+rIP1_MAIN_rPRESS          := LAMP_C2_GCC_01.IG.rPRESS;
+xIP1_HV_SAFETY_ENABLE     := xHighVoltageSafteyLoopEnable;]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
       <LineId Id="3" Count="8" />
@@ -635,7 +643,12 @@ LAMP_GJ2_PTM_04.M_Serial_IO(i_st_TD20_RBK:= st_TD20_RBK_LAMP_GJ2_PTM_04);
       <LineId Id="647" Count="0" />
       <LineId Id="476" Count="4" />
       <LineId Id="671" Count="0" />
-      <LineId Id="481" Count="1" />
+      <LineId Id="693" Count="0" />
+      <LineId Id="481" Count="0" />
+      <LineId Id="690" Count="2" />
+      <LineId Id="694" Count="0" />
+      <LineId Id="697" Count="2" />
+      <LineId Id="695" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>
