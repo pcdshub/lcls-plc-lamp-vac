@@ -112,6 +112,11 @@
       <Resolution>PMPS, 0.15.1 (SLAC - LCLS)</Resolution>
     </PlaceholderResolution>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="plc_lamp_vac.tmc">
+      <SubType>Content</SubType>
+    </None>
+  </ItemGroup>
   <ProjectExtensions>
     <PlcProjectOptions>
       <XmlArchive>
