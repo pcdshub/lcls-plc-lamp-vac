@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.2">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
   <POU Name="MAIN" Id="{10e78606-31f0-4232-96b0-d270d72b55f0}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM MAIN
 VAR
@@ -27,31 +27,6 @@ END_VAR]]></Declaration>
 // Run the Diagnostics PRG
 DIAGNOSTICS();
 
-(*PLC-TMO-VAC ADS interface*)
-//Writes watchdog bit to remote vac_TMO reading the vacuum components
-(*
-fb_ADS_WATCHDOG_VAC_LAMP_TMO(
-	sNetId:= '172.21.132.22.1.1', 
-	nPort:= 851, 
-	sVarName:= 'PRG_ADS_Interfaces.i_iWatchdog', 
-	bError=> );
-	
-ITF_TMO_ROUGH1_VRC_01(//Roughing valve Readback from IP1 Roughing Line
-	sNetId:= '172.21.132.22.1.1', 
-	nPort:= 851, 
-	sVarName:= 'GVL_Hutch_Valves.TMO_ROUGH1_VRC_01', 
-	iWatchdog:= i_iWatchdog, 
-	VGC=> , 
-	bError=> );
-	
-ITF_TMO_ROUGH2_VRC_01(//Roughing valve Readback from the Gas Jet Roughing Line
-	sNetId:= '172.21.132.22.1.1', 
-	nPort:= 851, 
-	sVarName:= 'GVL_Hutch_Valves.TMO_ROUGH2_VRC_01', 
-	iWatchdog:= i_iWatchdog, 
-	VGC=> , 
-	bError=> );
-*)
 (*EtherCAT Bridge Status*)
 //xEcatBridge_COM_ERROR := True means that there is an EtherCAT Bridge Communication Error.
 xEcatBridge_COM_ERROR := (xEcatBridge_TxPDO_state OR xEcatBridge_External_device_not_connected OR xEcatBridge_WcState);
@@ -565,9 +540,7 @@ rIP1_MAIN_rPRESS          := LAMP_C2_GCC_01.IG.rPRESS;
 xIP1_HV_SAFETY_ENABLE     := xHighVoltageSafteyLoopEnable;]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
-      <LineId Id="3" Count="8" />
-      <LineId Id="619" Count="0" />
-      <LineId Id="12" Count="20" />
+      <LineId Id="3" Count="5" />
       <LineId Id="551" Count="0" />
       <LineId Id="33" Count="0" />
       <LineId Id="553" Count="3" />
