@@ -1,31 +1,35 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.2">
   <POU Name="MAIN" Id="{10e78606-31f0-4232-96b0-d270d72b55f0}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM MAIN
 VAR
-	
 	fbLogHandler : FB_LogHandler;
 	
 //TMO Interface
-ITF_TMO_ROUGH1_VRC_01: FB_TVGC_2S_ADS; //FB for accessing "TMO_ROUGH1_VRC_01" VGC_2S data from PLC-TMO-VAC
+xEcatBridge_COM_ERROR : BOOL;
+(*
+/ITF_TMO_ROUGH1_VRC_01: FB_TVGC_2S_ADS; //FB for accessing "TMO_ROUGH1_VRC_01" VGC_2S data from PLC-TMO-VAC
 ITF_TMO_ROUGH2_VRC_01: FB_TVGC_2S_ADS; //FB for accessing "TMO_ROUGH2_VRC_01" VGC_2S data from PLC-TMO-VAC
 i_iWatchdog	:	UDINT; // PLC-TMO-VAC will write to this Watchdog variable
+*)
 
 b_TurboPumpRunningFlag : BOOL;
 TurboPumpTOF : TOF;
 TurboPumpDelayTime : TIME := T#30s;
 b_PumpRunning : BOOL;
 	
-END_VAR
-]]></Declaration>
+END_VAR]]></Declaration>
     <Implementation>
       <ST><![CDATA[fbLogHandler();
+
+(* Components unused by MBES are commented out *)
 
 // Run the Diagnostics PRG
 DIAGNOSTICS();
 
 (*PLC-TMO-VAC ADS interface*)
 //Writes watchdog bit to remote vac_TMO reading the vacuum components
+(*
 fb_ADS_WATCHDOG_VAC_LAMP_TMO(
 	sNetId:= '172.21.132.22.1.1', 
 	nPort:= 851, 
@@ -47,27 +51,37 @@ ITF_TMO_ROUGH2_VRC_01(//Roughing valve Readback from the Gas Jet Roughing Line
 	iWatchdog:= i_iWatchdog, 
 	VGC=> , 
 	bError=> );
+*)
+(*EtherCAT Bridge Status*)
+//xEcatBridge_COM_ERROR := True means that there is an EtherCAT Bridge Communication Error.
+xEcatBridge_COM_ERROR := (xEcatBridge_TxPDO_state OR xEcatBridge_External_device_not_connected OR xEcatBridge_WcState);
 
+xOnBeamline := (xEcatBridge_COM_ERROR = FALSE) AND (sHUTCH_PLC_NAME = 'TMO');
+	
 (*TurboPump running Flag with 30 second Turn Off delay.*)
 b_TurboPumpRunningFlag := (LAMP_GJ2_PTM_01.iq_stPtm.eState = E_PumpState.pumpRUNNING)  AND 
-	(LAMP_GJ2_PTM_02.iq_stPtm.eState = E_PumpState.pumpRUNNING) AND
+(*	
+    (LAMP_GJ2_PTM_02.iq_stPtm.eState = E_PumpState.pumpRUNNING) AND
 	(LAMP_GJ2_PTM_03.iq_stPtm.eState = E_PumpState.pumpRUNNING) AND
-	(LAMP_GJ2_PTM_04.iq_stPtm.eState = E_PumpState.pumpRUNNING) AND
-	(LAMP_C1_PTM_01.iq_stPtm.eState = E_PumpState.pumpRUNNING) AND
+	(LAMP_GJ2_PTM_04.iq_stPtm.eState = E_PumpState.pumpRUNNING) AND    
+*)
+(*	(LAMP_C1_PTM_01.iq_stPtm.eState = E_PumpState.pumpRUNNING) AND  *)
 //	(LAMP_C2_PTM_01.iq_stPtm.eState = E_PumpState.pumpRUNNING) AND //currently does not exist on LAMP
 	(LAMP_C2_PTM_02.iq_stPtm.eState = E_PumpState.pumpRUNNING) AND
 	(LAMP_C2_PTM_03.iq_stPtm.eState = E_PumpState.pumpRUNNING) AND
 	(LAMP_C2_PTM_04.iq_stPtm.eState = E_PumpState.pumpRUNNING) AND
+(*	
 	(LAMP_CATCH_PTM_01.iq_stPtm.eState = E_PumpState.pumpRUNNING) AND 
 	(LAMP_CATCH_PTM_02.iq_stPtm.eState = E_PumpState.pumpRUNNING) AND
 	(LAMP_GJ1_PTM_01.iq_stPtm.eState = E_PumpState.pumpRUNNING) AND
 	(LAMP_GJ1_PTM_02.iq_stPtm.eState = E_PumpState.pumpRUNNING) AND
 	(LAMP_GJ1_PTM_03.iq_stPtm.eState = E_PumpState.pumpRUNNING) AND
-	(LAMP_GJ1_PTM_04.iq_stPtm.eState = E_PumpState.pumpRUNNING) AND
-	(LAMP_ROUGH_PTM_01.iq_stPtm.eState = E_PumpState.pumpRUNNING) AND
-	(KTOF_PTM_01.iq_stPtm.eState = E_PumpState.pumpRUNNING);	
+	(LAMP_GJ1_PTM_04.iq_stPtm.eState = E_PumpState.pumpRUNNING) AND   
+*)
+	(LAMP_ROUGH_PTM_01.iq_stPtm.eState = E_PumpState.pumpRUNNING);
+//	(KTOF_PTM_01.iq_stPtm.eState = E_PumpState.pumpRUNNING);	
 TurboPumpTOF(IN:= b_TurboPumpRunningFlag, PT := TurboPumpDelayTime);
-b_PumpRunning:= TurboPumpTOF.Q;
+xIP1_TURBOS_ALL_AtSpd:= TurboPumpTOF.Q;
 
 (*High Voltage Saftey Loop*)// rHighVoltageMinPressure = 1e-05; (*Hard coded High voltage Minimum Enable Pressure*)
 xHighVoltageSafteyLoopEnable:= (LAMP_C2_GCC_01.IG.rPRESS <= rHighVoltageMinPressure) AND (LAMP_C2_GCC_01.IG.xPRESS_OK = TRUE);
@@ -75,8 +89,10 @@ xHighVoltageSafteyLoopEnable:= (LAMP_C2_GCC_01.IG.rPRESS <= rHighVoltageMinPress
 (*PIRANI Gauges*)
 	LAMP_C2_GPI_01(PG=>);
 	//LAMP_CATCH_GPI_01(PG=>); which is not installed
+(*	
 	LAMP_GJ2_GPI_01(PG=>);
-	LAMP_GJ1_GPI_01(PG=>);
+	LAMP_GJ1_GPI_01(PG=>);  
+*)
 
 (*uPIRANI Gauges*)
 	LAMP_ROUGH_GPI_01(PG=>);
@@ -90,28 +106,35 @@ xHighVoltageSafteyLoopEnable:= (LAMP_C2_GCC_01.IG.rPRESS <= rHighVoltageMinPress
 
 (*Cold Cathode Gauges*)
 	LAMP_C2_GCC_01(PG:=LAMP_C2_GPI_01.PG,IG=>,bEP:=TRUE);
+(*	
 	LAMP_CATCH_GCC_01(PG:=LAMP_C2_GPI_01.PG,IG=>,bEP:=TRUE);
-	LAMP_CATCH_GCC_02(PG:=LAMP_C2_GPI_01.PG,IG=>,bEP:=TRUE);
+	LAMP_CATCH_GCC_02(PG:=LAMP_C2_GPI_01.PG,IG=>,bEP:=TRUE);  
 	LAMP_GJ1_GCC_01(PG:=LAMP_GJ1_GPI_01.PG,IG=>,bEP:=TRUE);
-	LAMP_GJ2_GCC_01(PG:=LAMP_GJ2_GPI_01.PG,IG=>,bEP:=TRUE);
+	LAMP_GJ2_GCC_01(PG:=LAMP_GJ2_GPI_01.PG,IG=>,bEP:=TRUE);    
+*)
 	
 (*Hot Cathode Gauges*)
 	LAMP_C1_GHC_01(PG:=LAMP_C2_GPI_01.PG,IG=>);
 	
 (*TURBO Pumps
 *In general, if turbo pump setpoints are above the pirani guage readings or there is no downstream open path to a roughing pump, the turbo pump will close.
-*
 *)
 	LAMP_GJ2_PTM_01(
 	i_xExtILKOk:= F_Turbo_NC_NO_Valve_Logic(
 					i_stTurbo:= LAMP_GJ2_PTM_01.iq_stPtm, 
-					i_stISG:= LAMP_GJ2_GPI_01.PG, 
-					i_stBSG:= LAMP_ROUGH_GPI_04.PG, 
+					i_stISG:= LAMP_C2_GPI_01.PG, 
+					i_stBSG:= LAMP_ROUGH_GPI_02.PG, 
 					iq_stValve_NO:= LAMP_ROUGH_VRC_02.iq_stValve, 
-					iq_stValve_NC:= LAMP_ROUGH_VRC_03.iq_stValve, 
-					iq_stValve_NC_second:= LAMP_ROUGH_VRC_01.iq_stValve), 
+					iq_stValve_NC:= LAMP_ROUGH_VRC_01.iq_stValve, 
+					iq_stValve_NC_second:= LAMP_ROUGH_VRC_03.iq_stValve,
+					EcatBridge_Error_Present:= xEcatBridge_COM_ERROR,
+//					ads_Error_Present:= (ITF_TMO_ROUGH1_VRC_01.bError OR ITF_TMO_ROUGH2_VRC_01.bError),
+					iq_stRoughRoughValve_NC_xOpnLS:= xTMO_ROUGH1_VRC_01_OPEN_LS,
+					iq_stRoughRoughValve_NC_second_xOpenLS:= xTMO_ROUGH2_VRC_01_OPEN_LS,
+					x_onBeamline:= xOnBeamline),
 	iq_stPtm=> );
-	
+
+(*	
 	LAMP_GJ2_PTM_02(
 	i_xExtILKOk:= F_Turbo_NC_NO_Valve_Logic(
 					i_stTurbo:= LAMP_GJ2_PTM_02.iq_stPtm, 
@@ -119,7 +142,12 @@ xHighVoltageSafteyLoopEnable:= (LAMP_C2_GCC_01.IG.rPRESS <= rHighVoltageMinPress
 					i_stBSG:= LAMP_ROUGH_GPI_04.PG, 
 					iq_stValve_NO:= LAMP_ROUGH_VRC_02.iq_stValve, 
 					iq_stValve_NC:= LAMP_ROUGH_VRC_03.iq_stValve, 
-					iq_stValve_NC_second:= LAMP_ROUGH_VRC_01.iq_stValve), 
+					iq_stValve_NC_second:= LAMP_ROUGH_VRC_01.iq_stValve,
+					EcatBridge_Error_Present:= xEcatBridge_COM_ERROR,
+//					ads_Error_Present:= (ITF_TMO_ROUGH1_VRC_01.bError OR ITF_TMO_ROUGH2_VRC_01.bError),
+					iq_stRoughRoughValve_NC_xOpnLS:= xTMO_ROUGH2_VRC_01_OPEN_LS,
+					iq_stRoughRoughValve_NC_second_xOpenLS:=xTMO_ROUGH1_VRC_01_OPEN_LS,
+					x_onBeamline:= xOnBeamline), 
 	iq_stPtm=> );
 	
 	LAMP_GJ2_PTM_03(
@@ -129,7 +157,12 @@ xHighVoltageSafteyLoopEnable:= (LAMP_C2_GCC_01.IG.rPRESS <= rHighVoltageMinPress
 					i_stBSG:= LAMP_ROUGH_GPI_04.PG, 
 					iq_stValve_NO:= LAMP_ROUGH_VRC_02.iq_stValve, 
 					iq_stValve_NC:= LAMP_ROUGH_VRC_03.iq_stValve, 
-					iq_stValve_NC_second:= LAMP_ROUGH_VRC_01.iq_stValve), 
+					iq_stValve_NC_second:= LAMP_ROUGH_VRC_01.iq_stValve,
+					EcatBridge_Error_Present:= xEcatBridge_COM_ERROR,
+//					ads_Error_Present:= (ITF_TMO_ROUGH1_VRC_01.bError OR ITF_TMO_ROUGH2_VRC_01.bError),
+					iq_stRoughRoughValve_NC_xOpnLS:= xTMO_ROUGH2_VRC_01_OPEN_LS,
+					iq_stRoughRoughValve_NC_second_xOpenLS:=xTMO_ROUGH1_VRC_01_OPEN_LS,
+					x_onBeamline:= xOnBeamline), 
 	iq_stPtm=> );
 	
 	LAMP_GJ2_PTM_04(
@@ -139,7 +172,12 @@ xHighVoltageSafteyLoopEnable:= (LAMP_C2_GCC_01.IG.rPRESS <= rHighVoltageMinPress
 					i_stBSG:= LAMP_ROUGH_GPI_04.PG, 
 					iq_stValve_NO:= LAMP_ROUGH_VRC_02.iq_stValve, 
 					iq_stValve_NC:= LAMP_ROUGH_VRC_03.iq_stValve, 
-					iq_stValve_NC_second:= LAMP_ROUGH_VRC_01.iq_stValve), 
+					iq_stValve_NC_second:= LAMP_ROUGH_VRC_01.iq_stValve,
+					EcatBridge_Error_Present:= xEcatBridge_COM_ERROR,
+//					ads_Error_Present:= (ITF_TMO_ROUGH1_VRC_01.bError OR ITF_TMO_ROUGH2_VRC_01.bError),
+					iq_stRoughRoughValve_NC_xOpnLS:= xTMO_ROUGH2_VRC_01_OPEN_LS,
+					iq_stRoughRoughValve_NC_second_xOpenLS:=xTMO_ROUGH1_VRC_01_OPEN_LS,
+					x_onBeamline:= xOnBeamline), 
 	iq_stPtm=> );
 	
 	LAMP_C1_PTM_01(
@@ -149,8 +187,14 @@ xHighVoltageSafteyLoopEnable:= (LAMP_C2_GCC_01.IG.rPRESS <= rHighVoltageMinPress
 					i_stBSG:= LAMP_ROUGH_GPI_02.PG, 
 					iq_stValve_NO:= LAMP_ROUGH_VRC_02.iq_stValve, 
 					iq_stValve_NC:= LAMP_ROUGH_VRC_01.iq_stValve, 
-					iq_stValve_NC_second:= LAMP_ROUGH_VRC_03.iq_stValve), 
+					iq_stValve_NC_second:= LAMP_ROUGH_VRC_03.iq_stValve,
+					EcatBridge_Error_Present:= xEcatBridge_COM_ERROR,
+//					ads_Error_Present:= (ITF_TMO_ROUGH1_VRC_01.bError OR ITF_TMO_ROUGH2_VRC_01.bError),
+					iq_stRoughRoughValve_NC_xOpnLS:= xTMO_ROUGH1_VRC_01_OPEN_LS,
+					iq_stRoughRoughValve_NC_second_xOpenLS:=xTMO_ROUGH2_VRC_01_OPEN_LS,
+					x_onBeamline:= xOnBeamline), 
 	iq_stPtm=> );
+*)
 	
 	LAMP_C2_PTM_01(
 	i_xExtILKOk:= F_Turbo_NC_NO_Valve_Logic(
@@ -159,7 +203,12 @@ xHighVoltageSafteyLoopEnable:= (LAMP_C2_GCC_01.IG.rPRESS <= rHighVoltageMinPress
 					i_stBSG:= LAMP_ROUGH_GPI_02.PG, 
 					iq_stValve_NO:= LAMP_ROUGH_VRC_02.iq_stValve, 
 					iq_stValve_NC:= LAMP_ROUGH_VRC_01.iq_stValve, 
-					iq_stValve_NC_second:= LAMP_ROUGH_VRC_03.iq_stValve), 
+					iq_stValve_NC_second:= LAMP_ROUGH_VRC_03.iq_stValve,
+					EcatBridge_Error_Present:= xEcatBridge_COM_ERROR,
+//					ads_Error_Present:= (ITF_TMO_ROUGH1_VRC_01.bError OR ITF_TMO_ROUGH2_VRC_01.bError),
+					iq_stRoughRoughValve_NC_xOpnLS:= xTMO_ROUGH1_VRC_01_OPEN_LS,
+					iq_stRoughRoughValve_NC_second_xOpenLS:= xTMO_ROUGH2_VRC_01_OPEN_LS,
+					x_onBeamline:= xOnBeamline), 
 	iq_stPtm=> );
 	
 	LAMP_C2_PTM_02(
@@ -169,7 +218,12 @@ xHighVoltageSafteyLoopEnable:= (LAMP_C2_GCC_01.IG.rPRESS <= rHighVoltageMinPress
 					i_stBSG:= LAMP_ROUGH_GPI_02.PG, 
 					iq_stValve_NO:= LAMP_ROUGH_VRC_02.iq_stValve, 
 					iq_stValve_NC:= LAMP_ROUGH_VRC_01.iq_stValve, 
-					iq_stValve_NC_second:= LAMP_ROUGH_VRC_03.iq_stValve), 
+					iq_stValve_NC_second:= LAMP_ROUGH_VRC_03.iq_stValve,
+					EcatBridge_Error_Present:= xEcatBridge_COM_ERROR,
+//					ads_Error_Present:= (ITF_TMO_ROUGH1_VRC_01.bError OR ITF_TMO_ROUGH2_VRC_01.bError),
+					iq_stRoughRoughValve_NC_xOpnLS:= xTMO_ROUGH1_VRC_01_OPEN_LS,
+					iq_stRoughRoughValve_NC_second_xOpenLS:=xTMO_ROUGH2_VRC_01_OPEN_LS,
+					x_onBeamline:= xOnBeamline), 
 	iq_stPtm=> );
 	
 	LAMP_C2_PTM_03(
@@ -179,7 +233,12 @@ xHighVoltageSafteyLoopEnable:= (LAMP_C2_GCC_01.IG.rPRESS <= rHighVoltageMinPress
 					i_stBSG:= LAMP_ROUGH_GPI_02.PG, 
 					iq_stValve_NO:= LAMP_ROUGH_VRC_02.iq_stValve, 
 					iq_stValve_NC:= LAMP_ROUGH_VRC_01.iq_stValve, 
-					iq_stValve_NC_second:= LAMP_ROUGH_VRC_03.iq_stValve), 
+					iq_stValve_NC_second:= LAMP_ROUGH_VRC_03.iq_stValve,
+					EcatBridge_Error_Present:= xEcatBridge_COM_ERROR,
+//					ads_Error_Present:= (ITF_TMO_ROUGH1_VRC_01.bError OR ITF_TMO_ROUGH2_VRC_01.bError),
+					iq_stRoughRoughValve_NC_xOpnLS:= xTMO_ROUGH1_VRC_01_OPEN_LS,
+					iq_stRoughRoughValve_NC_second_xOpenLS:=xTMO_ROUGH2_VRC_01_OPEN_LS,
+					x_onBeamline:= xOnBeamline), 
 	iq_stPtm=> );
 	
 	LAMP_C2_PTM_04(
@@ -189,9 +248,15 @@ xHighVoltageSafteyLoopEnable:= (LAMP_C2_GCC_01.IG.rPRESS <= rHighVoltageMinPress
 					i_stBSG:= LAMP_ROUGH_GPI_02.PG, 
 					iq_stValve_NO:= LAMP_ROUGH_VRC_02.iq_stValve, 
 					iq_stValve_NC:= LAMP_ROUGH_VRC_01.iq_stValve, 
-					iq_stValve_NC_second:= LAMP_ROUGH_VRC_03.iq_stValve), 
+					iq_stValve_NC_second:= LAMP_ROUGH_VRC_03.iq_stValve,
+					EcatBridge_Error_Present:= xEcatBridge_COM_ERROR,
+//					ads_Error_Present:= (ITF_TMO_ROUGH1_VRC_01.bError OR ITF_TMO_ROUGH2_VRC_01.bError),
+					iq_stRoughRoughValve_NC_xOpnLS:= xTMO_ROUGH1_VRC_01_OPEN_LS,
+					iq_stRoughRoughValve_NC_second_xOpenLS:=xTMO_ROUGH2_VRC_01_OPEN_LS,
+					x_onBeamline:= xOnBeamline), 
 	iq_stPtm=> );
-	
+
+(*	
 	LAMP_CATCH_PTM_01(
 	i_xExtILKOk:= F_Turbo_NC_NO_Valve_Logic(
 					i_stTurbo:= LAMP_CATCH_PTM_01.iq_stPtm, 
@@ -199,7 +264,12 @@ xHighVoltageSafteyLoopEnable:= (LAMP_C2_GCC_01.IG.rPRESS <= rHighVoltageMinPress
 					i_stBSG:= LAMP_ROUGH_GPI_02.PG, 
 					iq_stValve_NO:= LAMP_ROUGH_VRC_02.iq_stValve, 
 					iq_stValve_NC:= LAMP_ROUGH_VRC_01.iq_stValve, 
-					iq_stValve_NC_second:= LAMP_ROUGH_VRC_03.iq_stValve), 
+					iq_stValve_NC_second:= LAMP_ROUGH_VRC_03.iq_stValve,
+					EcatBridge_Error_Present:= xEcatBridge_COM_Error,
+//					ads_Error_Present:= (ITF_TMO_ROUGH1_VRC_01.bError OR ITF_TMO_ROUGH2_VRC_01.bError),
+					iq_stRoughRoughValve_NC_xOpnLS:= xTMO_ROUGH1_VRC_01_OPEN_LS,
+					iq_stRoughRoughValve_NC_second_xOpenLS:=xTMO_ROUGH2_VRC_01_OPEN_LS,
+					x_onBeamline:= xOnBeamline), 
 	iq_stPtm=> );
 	
 	LAMP_CATCH_PTM_02(
@@ -209,7 +279,12 @@ xHighVoltageSafteyLoopEnable:= (LAMP_C2_GCC_01.IG.rPRESS <= rHighVoltageMinPress
 					i_stBSG:= LAMP_ROUGH_GPI_02.PG, 
 					iq_stValve_NO:= LAMP_ROUGH_VRC_02.iq_stValve, 
 					iq_stValve_NC:= LAMP_ROUGH_VRC_01.iq_stValve, 
-					iq_stValve_NC_second:= LAMP_ROUGH_VRC_03.iq_stValve), 
+					iq_stValve_NC_second:= LAMP_ROUGH_VRC_03.iq_stValve,
+					EcatBridge_Error_Present:= xEcatBridge_COM_Error,
+//					ads_Error_Present:= (ITF_TMO_ROUGH1_VRC_01.bError OR ITF_TMO_ROUGH2_VRC_01.bError),
+					iq_stRoughRoughValve_NC_xOpnLS:= xTMO_ROUGH1_VRC_01_OPEN_LS,
+					iq_stRoughRoughValve_NC_second_xOpenLS:=xTMO_ROUGH2_VRC_01_OPEN_LS,
+					x_onBeamline:= xOnBeamline), 
 	iq_stPtm=> );
 	
 	LAMP_GJ1_PTM_01(
@@ -219,7 +294,12 @@ xHighVoltageSafteyLoopEnable:= (LAMP_C2_GCC_01.IG.rPRESS <= rHighVoltageMinPress
 					i_stBSG:= LAMP_ROUGH_GPI_04.PG, 
 					iq_stValve_NO:= LAMP_ROUGH_VRC_02.iq_stValve, 
 					iq_stValve_NC:= LAMP_ROUGH_VRC_03.iq_stValve, 
-					iq_stValve_NC_second:= LAMP_ROUGH_VRC_01.iq_stValve), 
+					iq_stValve_NC_second:= LAMP_ROUGH_VRC_01.iq_stValve,
+					EcatBridge_Error_Present:= xEcatBridge_COM_ERROR,
+//					ads_Error_Present:= (ITF_TMO_ROUGH1_VRC_01.bError OR ITF_TMO_ROUGH2_VRC_01.bError),
+					iq_stRoughRoughValve_NC_xOpnLS:= xTMO_ROUGH2_VRC_01_OPEN_LS,
+					iq_stRoughRoughValve_NC_second_xOpenLS:=xTMO_ROUGH1_VRC_01_OPEN_LS,
+					x_onBeamline:= xOnBeamline), 
 	iq_stPtm=> );
 	
 	LAMP_GJ1_PTM_02(
@@ -229,7 +309,12 @@ xHighVoltageSafteyLoopEnable:= (LAMP_C2_GCC_01.IG.rPRESS <= rHighVoltageMinPress
 					i_stBSG:= LAMP_ROUGH_GPI_04.PG, 
 					iq_stValve_NO:= LAMP_ROUGH_VRC_02.iq_stValve, 
 					iq_stValve_NC:= LAMP_ROUGH_VRC_03.iq_stValve, 
-					iq_stValve_NC_second:= LAMP_ROUGH_VRC_01.iq_stValve), 
+					iq_stValve_NC_second:= LAMP_ROUGH_VRC_01.iq_stValve,
+					EcatBridge_Error_Present:= xEcatBridge_COM_ERROR,
+//					ads_Error_Present:= (ITF_TMO_ROUGH1_VRC_01.bError OR ITF_TMO_ROUGH2_VRC_01.bError),
+					iq_stRoughRoughValve_NC_xOpnLS:= xTMO_ROUGH2_VRC_01_OPEN_LS,
+					iq_stRoughRoughValve_NC_second_xOpenLS:=xTMO_ROUGH1_VRC_01_OPEN_LS,
+					x_onBeamline:= xOnBeamline), 
 	iq_stPtm=> );
 	
 	LAMP_GJ1_PTM_03(
@@ -239,7 +324,12 @@ xHighVoltageSafteyLoopEnable:= (LAMP_C2_GCC_01.IG.rPRESS <= rHighVoltageMinPress
 					i_stBSG:= LAMP_ROUGH_GPI_04.PG, 
 					iq_stValve_NO:= LAMP_ROUGH_VRC_02.iq_stValve, 
 					iq_stValve_NC:= LAMP_ROUGH_VRC_03.iq_stValve, 
-					iq_stValve_NC_second:= LAMP_ROUGH_VRC_01.iq_stValve), 
+					iq_stValve_NC_second:= LAMP_ROUGH_VRC_01.iq_stValve,
+					EcatBridge_Error_Present:= xEcatBridge_COM_ERROR,
+//					ads_Error_Present:= (ITF_TMO_ROUGH1_VRC_01.bError OR ITF_TMO_ROUGH2_VRC_01.bError),
+					iq_stRoughRoughValve_NC_xOpnLS:= xTMO_ROUGH2_VRC_01_OPEN_LS,
+					iq_stRoughRoughValve_NC_second_xOpenLS:=xTMO_ROUGH1_VRC_01_OPEN_LS,
+					x_onBeamline:= xOnBeamline), 
 	iq_stPtm=> );
 	
 	LAMP_GJ1_PTM_04(
@@ -249,8 +339,14 @@ xHighVoltageSafteyLoopEnable:= (LAMP_C2_GCC_01.IG.rPRESS <= rHighVoltageMinPress
 					i_stBSG:= LAMP_ROUGH_GPI_04.PG, 
 					iq_stValve_NO:= LAMP_ROUGH_VRC_02.iq_stValve, 
 					iq_stValve_NC:= LAMP_ROUGH_VRC_03.iq_stValve, 
-					iq_stValve_NC_second:= LAMP_ROUGH_VRC_01.iq_stValve), 
+					iq_stValve_NC_second:= LAMP_ROUGH_VRC_01.iq_stValve,
+					EcatBridge_Error_Present:= xEcatBridge_COM_ERROR,
+//					ads_Error_Present:= (ITF_TMO_ROUGH1_VRC_01.bError OR ITF_TMO_ROUGH2_VRC_01.bError),
+					iq_stRoughRoughValve_NC_xOpnLS:= xTMO_ROUGH2_VRC_01_OPEN_LS,
+					iq_stRoughRoughValve_NC_second_xOpenLS:=xTMO_ROUGH1_VRC_01_OPEN_LS,
+					x_onBeamline:= xOnBeamline), 
 	iq_stPtm=> );
+*)
 	
 	LAMP_ROUGH_PTM_01(
 	i_xExtILKOk:= F_Turbo_NC_NO_Valve_Logic(
@@ -259,9 +355,15 @@ xHighVoltageSafteyLoopEnable:= (LAMP_C2_GCC_01.IG.rPRESS <= rHighVoltageMinPress
 					i_stBSG:= LAMP_ROUGH_GPI_02.PG, 
 					iq_stValve_NO:= LAMP_ROUGH_VRC_02.iq_stValve, 
 					iq_stValve_NC:= LAMP_ROUGH_VRC_01.iq_stValve, 
-					iq_stValve_NC_second:= LAMP_ROUGH_VRC_03.iq_stValve), 
+					iq_stValve_NC_second:= LAMP_ROUGH_VRC_03.iq_stValve,
+					EcatBridge_Error_Present:= xEcatBridge_COM_ERROR,
+//					ads_Error_Present:= (ITF_TMO_ROUGH1_VRC_01.bError OR ITF_TMO_ROUGH2_VRC_01.bError),
+					iq_stRoughRoughValve_NC_xOpnLS:= xTMO_ROUGH1_VRC_01_OPEN_LS,
+					iq_stRoughRoughValve_NC_second_xOpenLS:=xTMO_ROUGH2_VRC_01_OPEN_LS,
+					x_onBeamline:= xOnBeamline), 
 	iq_stPtm=> );
-	
+
+(*	
 	KTOF_PTM_01(
 	i_xExtILKOk:= F_Turbo_NC_NO_Valve_Logic(
 					i_stTurbo:= KTOF_PTM_01.iq_stPtm, 
@@ -269,8 +371,14 @@ xHighVoltageSafteyLoopEnable:= (LAMP_C2_GCC_01.IG.rPRESS <= rHighVoltageMinPress
 					i_stBSG:= LAMP_ROUGH_GPI_02.PG, 
 					iq_stValve_NO:= LAMP_ROUGH_VRC_02.iq_stValve, 
 					iq_stValve_NC:= LAMP_ROUGH_VRC_01.iq_stValve, 
-					iq_stValve_NC_second:= LAMP_ROUGH_VRC_03.iq_stValve), 
+					iq_stValve_NC_second:= LAMP_ROUGH_VRC_03.iq_stValve,
+					EcatBridge_Error_Present:= xEcatBridge_COM_ERROR,
+//					ads_Error_Present:= (ITF_TMO_ROUGH1_VRC_01.bError OR ITF_TMO_ROUGH2_VRC_01.bError),
+					iq_stRoughRoughValve_NC_xOpnLS:= xTMO_ROUGH1_VRC_01_OPEN_LS,
+					iq_stRoughRoughValve_NC_second_xOpenLS:=xTMO_ROUGH2_VRC_01_OPEN_LS,
+					x_onBeamline:= xOnBeamline), 
 	iq_stPtm=> );
+*)
 	
 (*Serial Communication*)
 (*Assign adresses to the pfeiffer controllers connected to this serial terminal*)
@@ -308,6 +416,7 @@ fb_PfeifferCom_LAMP_C2_PTM_04(astPfeifferControl := st_Pfeiffer_CTRL_LAMP_C2_PTM
 							  SerialTXBuffer:= SerialTXBuffer_LAMP_C2_PTM_04);
 LAMP_C2_PTM_04.M_Serial_IO(st_Pfeiffer_RBK:= st_Pfeiffer_RBK_LAMP_C2_PTM_04[1], st_Pfeiffer_CTRL:= st_Pfeiffer_CTRL_LAMP_C2_PTM_04[1]);
 
+(*
 st_Pfeiffer_CTRL_LAMP_GJ1_PTM_01[1].iSerialAddress :=1;
 st_Pfeiffer_CTRL_LAMP_GJ1_PTM_01[1].xEnableComm := TRUE;
 fb_PfeifferCom_LAMP_GJ1_PTM_01(astPfeifferControl := st_Pfeiffer_CTRL_LAMP_GJ1_PTM_01,
@@ -339,6 +448,7 @@ fb_PfeifferCom_LAMP_GJ1_PTM_04(astPfeifferControl := st_Pfeiffer_CTRL_LAMP_GJ1_P
 							  SerialRXBuffer:= SerialRXBuffer_LAMP_GJ1_PTM_04,
 							  SerialTXBuffer:= SerialTXBuffer_LAMP_GJ1_PTM_04);
 LAMP_GJ1_PTM_04.M_Serial_IO(st_Pfeiffer_RBK:= st_Pfeiffer_RBK_LAMP_GJ1_PTM_04[1], st_Pfeiffer_CTRL:= st_Pfeiffer_CTRL_LAMP_GJ1_PTM_04[1]);
+*)
 
 st_Pfeiffer_CTRL_LAMP_ROUGH_PTM_01[1].iSerialAddress :=1;
 st_Pfeiffer_CTRL_LAMP_ROUGH_PTM_01[1].xEnableComm := TRUE;
@@ -348,6 +458,7 @@ fb_PfeifferCom_LAMP_ROUGH_PTM_01(astPfeifferControl := st_Pfeiffer_CTRL_LAMP_ROU
 							  SerialTXBuffer:= SerialTXBuffer_LAMP_ROUGH_PTM_01);
 LAMP_ROUGH_PTM_01.M_Serial_IO(st_Pfeiffer_RBK:= st_Pfeiffer_RBK_LAMP_ROUGH_PTM_01[1], st_Pfeiffer_CTRL:= st_Pfeiffer_CTRL_LAMP_ROUGH_PTM_01[1]);
 
+(*
 st_Pfeiffer_CTRL_LAMP_C1_PTM_01[1].iSerialAddress :=1;
 st_Pfeiffer_CTRL_LAMP_C1_PTM_01[1].xEnableComm := TRUE;
 fb_PfeifferCom_LAMP_C1_PTM_01(astPfeifferControl := st_Pfeiffer_CTRL_LAMP_C1_PTM_01,
@@ -380,6 +491,7 @@ fb_PfeifferCom_KTOF_PTM_01(astPfeifferControl := st_Pfeiffer_CTRL_KTOF_PTM_01,
 							  SerialTXBuffer:= SerialTXBuffer_KTOF_PTM_01);
 //KTOF_PTM_01.M_Serial_IO(st_Pfeiffer_CTRL_KTOF_PTM_01[1],st_Pfeiffer_RBK_KTOF_PTM_01[1]);
 KTOF_PTM_01.M_Serial_IO(st_Pfeiffer_RBK:= st_Pfeiffer_RBK_KTOF_PTM_01[1], st_Pfeiffer_CTRL:= st_Pfeiffer_CTRL_KTOF_PTM_01[1]);
+*)
 
 //Leybolds
 fb_TD20Com_LAMP_GJ2_PTM_01(SerialRXBuffer:= SerialRXBuffer_LAMP_GJ2_PTM_01, 
@@ -387,7 +499,7 @@ fb_TD20Com_LAMP_GJ2_PTM_01(SerialRXBuffer:= SerialRXBuffer_LAMP_GJ2_PTM_01,
 						   astTD20Status=> st_TD20_RBK_LAMP_GJ2_PTM_01);
 LAMP_GJ2_PTM_01.M_Serial_IO(i_st_TD20_RBK:= st_TD20_RBK_LAMP_GJ2_PTM_01);
 
-
+(*
 fb_TD20Com_LAMP_GJ2_PTM_02(SerialRXBuffer:= SerialRXBuffer_LAMP_GJ2_PTM_02, 
 						   SerialTXBuffer:= SerialTXBuffer_LAMP_GJ2_PTM_02, 
 						   astTD20Status=> st_TD20_RBK_LAMP_GJ2_PTM_02);
@@ -402,28 +514,141 @@ fb_TD20Com_LAMP_GJ2_PTM_04(SerialRXBuffer:= SerialRXBuffer_LAMP_GJ2_PTM_04,
 						   SerialTXBuffer:= SerialTXBuffer_LAMP_GJ2_PTM_04, 
 						   astTD20Status=> st_TD20_RBK_LAMP_GJ2_PTM_04);
 LAMP_GJ2_PTM_04.M_Serial_IO(i_st_TD20_RBK:= st_TD20_RBK_LAMP_GJ2_PTM_04);
-
+*)
 
 (*Vacuum Gate Valve*)
-	LAMP_ROUGH_VRC_01(//LAMP:ROUGH:VRC:01 can open when the pressure across the valve is below 10 torr and the downstream roughing valve is open
-	i_xExtILK_OK:= (ABS(LAMP_ROUGH_GPI_01.PG.rPRESS - LAMP_ROUGH_GPI_02.PG.rPRESS)<10.0) AND (ITF_TMO_ROUGH1_VRC_01.VGC.eState = E_ValvePositionState.OPEN), 
-	i_xOverrideMode:= xSystemOverrideMode_LAMP, 
-	iq_stValve=> );
-	
-	LAMP_ROUGH_VRC_02(//LAMP:ROUGH:VRC:02 close when the pressure in the the C2, GJ1, and GJ2 chambers are all below 10 torr.
+	IF(xOnBeamline) THEN //If OnBeamline then stay open.
+		LAMP_ROUGH_VRC_01.M_Set_OPN_SW(TRUE);
+		LAMP_ROUGH_VRC_01(
+		i_xExtILK_OK:= TRUE,
+		i_xOverrideMode:= xSystemOverrideMode_LAMP,
+		iq_stValve=> );
+	ELSE
+		LAMP_ROUGH_VRC_01(//LAMP:ROUGH:VRC:01 can open when the pressure across the valve is below 10 torr
+		i_xExtILK_OK:= (ABS(LAMP_ROUGH_GPI_01.PG.rPRESS - LAMP_ROUGH_GPI_02.PG.rPRESS)<10.0),
+		i_xOverrideMode:= xSystemOverrideMode_LAMP, 
+		iq_stValve=> );
+	END_IF
+(*	
+	LAMP_ROUGH_VRC_02(//LAMP:ROUGH:VRC:02 closes when the pressure in the the C2, GJ1, and GJ2 chambers are all below 10 torr.
 	i_xExtILK_OK:= NOT((LAMP_GJ1_GPI_01.PG.rPRESS >10.0) OR (LAMP_GJ2_GPI_01.PG.rPRESS > 10.0) OR (LAMP_C2_GPI_01.PG.rPRESS > 10.0)) , 
 	i_xOverrideMode:= xSystemOverrideMode_LAMP, 
 	iq_stValve=> );
-	
-	LAMP_ROUGH_VRC_03(//LAMP:ROUGH:VRC:03 can open when the pressure across the valve is below 10 torr and the downstream roughing valve is open
-	i_xExtILK_OK:= (ABS(LAMP_ROUGH_GPI_03.PG.rPRESS - LAMP_ROUGH_GPI_04.PG.rPRESS)<10.0) AND (ITF_TMO_ROUGH2_VRC_01.VGC.eState = E_ValvePositionState.OPEN), 
-	i_xOverrideMode:= xSystemOverrideMode_LAMP, 
-	iq_stValve=> );
-	
-	
+*)	
+    LAMP_ROUGH_VRC_02(//LAMP:ROUGH:VRC:02 close when the pressure in the C2, GJ1, GJ2 chambers are all below 10 torr.)
+	i_xExtILK_OK:= NOT((LAMP_ROUGH_GPI_01.PG.rPRESS > 10.0 ) OR (LAMP_ROUGH_GPI_02.PG.rPRESS > 10.0) ), 
+	i_xOverrideMode:= xSystemOverrideMode_LAMP,
+ 	iq_stValve=> );
 
-
-]]></ST>
+	IF(xOnBeamline) THEN //If OnBeamline then stay open.
+		LAMP_ROUGH_VRC_03.M_Set_OPN_SW(TRUE);
+		LAMP_ROUGH_VRC_03(
+		i_xExtILK_OK:= TRUE,
+		i_xOverrideMode:= xSystemOverrideMode_LAMP,
+		iq_stValve=> );
+	
+	ELSE
+		LAMP_ROUGH_VRC_03(//LAMP:ROUGH:VRC:03 can open when the pressure across the valve is below 10 torr
+		i_xExtILK_OK:= (ABS(LAMP_ROUGH_GPI_03.PG.rPRESS - LAMP_ROUGH_GPI_04.PG.rPRESS)<10.0),
+		i_xOverrideMode:= xSystemOverrideMode_LAMP, 
+		iq_stValve=> );
+	END_IF
+    
+(*Update EtherCAT Bridge Outputs*)
+xIP1_ROUGH_VRC_01_OPEN_LS := LAMP_ROUGH_VRC_01.M_IsOpen();
+xIP1_ROUGH_VRC_02_OPEN_LS := LAMP_ROUGH_VRC_02.M_IsOpen();
+xIP1_ROUGH_VRC_03_OPEN_LS := LAMP_ROUGH_VRC_03.M_IsOpen();
+//xIP1_TURBO_FAULT AT %Q* : BOOL; already updated at turbo logic
+xIP1_MAIN_xAT_VAC         := LAMP_C2_GCC_01.IG.xAT_VAC;
+xIP1_MAIN_xPRESS_OK       := LAMP_C2_GCC_01.IG.xPRESS_OK;
+rIP1_MAIN_rPRESS          := LAMP_C2_GCC_01.IG.rPRESS;
+xIP1_HV_SAFETY_ENABLE     := xHighVoltageSafteyLoopEnable;]]></ST>
     </Implementation>
+    <LineIds Name="MAIN">
+      <LineId Id="3" Count="8" />
+      <LineId Id="619" Count="0" />
+      <LineId Id="12" Count="20" />
+      <LineId Id="551" Count="0" />
+      <LineId Id="33" Count="0" />
+      <LineId Id="553" Count="3" />
+      <LineId Id="552" Count="0" />
+      <LineId Id="34" Count="0" />
+      <LineId Id="594" Count="0" />
+      <LineId Id="36" Count="4" />
+      <LineId Id="586" Count="0" />
+      <LineId Id="42" Count="60" />
+      <LineId Id="505" Count="0" />
+      <LineId Id="103" Count="14" />
+      <LineId Id="507" Count="0" />
+      <LineId Id="118" Count="13" />
+      <LineId Id="508" Count="0" />
+      <LineId Id="132" Count="13" />
+      <LineId Id="512" Count="0" />
+      <LineId Id="146" Count="13" />
+      <LineId Id="513" Count="0" />
+      <LineId Id="160" Count="4" />
+      <LineId Id="557" Count="0" />
+      <LineId Id="165" Count="8" />
+      <LineId Id="514" Count="0" />
+      <LineId Id="174" Count="13" />
+      <LineId Id="515" Count="0" />
+      <LineId Id="188" Count="13" />
+      <LineId Id="516" Count="0" />
+      <LineId Id="202" Count="13" />
+      <LineId Id="517" Count="0" />
+      <LineId Id="216" Count="4" />
+      <LineId Id="558" Count="0" />
+      <LineId Id="221" Count="8" />
+      <LineId Id="518" Count="0" />
+      <LineId Id="230" Count="13" />
+      <LineId Id="519" Count="0" />
+      <LineId Id="244" Count="13" />
+      <LineId Id="520" Count="0" />
+      <LineId Id="258" Count="13" />
+      <LineId Id="521" Count="0" />
+      <LineId Id="272" Count="13" />
+      <LineId Id="522" Count="0" />
+      <LineId Id="286" Count="13" />
+      <LineId Id="523" Count="0" />
+      <LineId Id="300" Count="4" />
+      <LineId Id="559" Count="0" />
+      <LineId Id="305" Count="8" />
+      <LineId Id="524" Count="0" />
+      <LineId Id="314" Count="4" />
+      <LineId Id="561" Count="0" />
+      <LineId Id="319" Count="8" />
+      <LineId Id="525" Count="0" />
+      <LineId Id="328" Count="4" />
+      <LineId Id="562" Count="0" />
+      <LineId Id="333" Count="35" />
+      <LineId Id="587" Count="0" />
+      <LineId Id="369" Count="32" />
+      <LineId Id="590" Count="0" />
+      <LineId Id="402" Count="6" />
+      <LineId Id="591" Count="0" />
+      <LineId Id="409" Count="32" />
+      <LineId Id="592" Count="0" />
+      <LineId Id="442" Count="24" />
+      <LineId Id="638" Count="1" />
+      <LineId Id="641" Count="3" />
+      <LineId Id="640" Count="0" />
+      <LineId Id="467" Count="3" />
+      <LineId Id="645" Count="0" />
+      <LineId Id="471" Count="4" />
+      <LineId Id="597" Count="1" />
+      <LineId Id="600" Count="3" />
+      <LineId Id="599" Count="0" />
+      <LineId Id="646" Count="0" />
+      <LineId Id="648" Count="3" />
+      <LineId Id="647" Count="0" />
+      <LineId Id="476" Count="4" />
+      <LineId Id="671" Count="0" />
+      <LineId Id="693" Count="0" />
+      <LineId Id="481" Count="0" />
+      <LineId Id="690" Count="2" />
+      <LineId Id="694" Count="0" />
+      <LineId Id="697" Count="2" />
+      <LineId Id="695" Count="0" />
+    </LineIds>
   </POU>
 </TcPlcObject>

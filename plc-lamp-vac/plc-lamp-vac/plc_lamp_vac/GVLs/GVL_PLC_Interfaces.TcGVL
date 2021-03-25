@@ -1,17 +1,89 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.2">
   <GVL Name="GVL_PLC_Interfaces" Id="{1d11fe91-059a-4926-a549-d60eb53c47d4}">
     <Declaration><![CDATA[//{attribute 'qualified_only'}
 VAR_GLOBAL
 	(*TMO Beamline Vacuum*)
 	//Outputs
-	fb_ADS_WATCHDOG_VAC_LAMP_TMO:FB_ADS_WATCHDOG;
+//	fb_ADS_WATCHDOG_VAC_LAMP_TMO:FB_ADS_WATCHDOG;
+	
+	(*ETHERCAT BRRIDGE COM STATUS*)
+	//0: Other side is in OP state, >0: Error
+	{attribute 'TcLinkTo' := 'TIIB[LAMP_PLC_E04_EL6692]^SYNC Inputs^TxPDO state
+	'}
+	xEcatBridge_TxPDO_state AT %I* :BOOL;
+	
+	//0: External device connectd, 1: External device not connected
+	{attribute := 'TIIB[LAMP_PLC_E04_EL6692]^SYNC Inputs^External device not connected
+	'}
+	xEcatBridge_External_device_not_connected AT %I* : BOOL;
+	
+	//0 = Data valid, 1 = Data invalid
+	{attribute 'TcLinkTo' := 'TIIB[LAMP_PLC_E04_EL6692]^WcState^WcState
+	'}
+	xEcatBridge_WcState AT %I* : BOOL;
+	
+	(* I/O Inputs from TMO Beamline*)
+	{attribute 'TcLinkTo' := ' TIIB[LAMP_PLC_E04_EL6692]^IO Inputs^HUTCH_PLC_NAME
+	'}
+	sHUTCH_PLC_NAME AT %I* : STRING(8);
+	
+	{attribute 'TcLinkTo' :=  'TIIB[LAMP_PLC_E04_EL6692]^IO Inputs^TMO_ROUGH1_VRC_01_OPEN_LS 
+	'}
+	xTMO_ROUGH1_VRC_01_OPEN_LS AT %I* : BOOL;
+	
+	{attribute 'TcLinkTo' := 'TIIB[LAMP_PLC_E04_EL6692]^IO Inputs^TMO_ROUGH2_VRC_01_OPEN_LS
+	'}
+	xTMO_ROUGH2_VRC_01_OPEN_LS AT %I* : BOOL;
+	
+	
+	(*I/O Outputs to TMO Beamline*)
+	{attribute 'TcLinkTo' :=   'TIIB[LAMP_PLC_E04_EL6692]^IO Outputs^ENDSTATION_PLC_NAME
+	'}
+	sENDSTATION_PLC_NAME AT %Q* : STRING(8):= 'LAMP';
+	
+	{attribute 'TcLinkTo' :=  'TIIB[LAMP_PLC_E04_EL6692]^IO Outputs^IP1_ROUGH_VRC_01_OPEN_LS
+	'}
+	xIP1_ROUGH_VRC_01_OPEN_LS AT %Q* : BOOL;
+	
+	{attribute 'TcLinkTo' :=  'TIIB[LAMP_PLC_E04_EL6692]^IO Outputs^IP1_ROUGH_VRC_02_OPEN_LS 
+	'}
+	xIP1_ROUGH_VRC_02_OPEN_LS AT %Q* : BOOL;
+	
+	{attribute 'TcLinkTo' :=  'TIIB[LAMP_PLC_E04_EL6692]^IO Outputs^IP1_ROUGH_VRC_03_OPEN_LS
+	'}
+	xIP1_ROUGH_VRC_03_OPEN_LS AT %Q* : BOOL;
+	
+	{attribute 'TcLInkTo' :=  'TIIB[LAMP_PLC_E04_EL6692]^IO Outputs^IP1_TURBOS_ALL_AtSpd
+	'}
+	{attribute 'pytmc' := '
+			pv: PLC:CVMI:VAC:IP1_TURBOS_ALL_ATSPD
+			io:i
+	'}
+	xIP1_TURBOS_ALL_AtSpd AT %Q* : BOOL;
+	
+	{attribute 'TcLinkTo' :=  'TIIB[LAMP_PLC_E04_EL6692]^IO Outputs^IP1_MAIN_xAT_VAC
+	'}
+	xIP1_MAIN_xAT_VAC AT %Q* : BOOL;
+	
+	{attribute 'TcLInkTo' :=  'TIIB[LAMP_PLC_E04_EL6692]^IO Outputs^IP1_MAIN_xPRESS_OK
+	'}
+	xIP1_MAIN_xPRESS_OK AT %Q* : BOOL;
+	
+	{attribute 'TcLINKTo' :=  'TIIB[LAMP_PLC_E04_EL6692]^IO Outputs^IP1_MAIN_rPRESS
+	'}
+	rIP1_MAIN_rPRESS AT %Q* : REAL;
+	
+	{attribute 'TcLinkTo' :=  'TIIB[LAMP_PLC_E04_EL6692]^IO Outputs^IP1_HV_SAFETY_ENABLE
+	'}
+	xIP1_HV_SAFETY_ENABLE AT %Q* : BOOL;
 	
 	(*ISEG HV Crate Safety Loop*)
-	{attribute 'TcLinkTo' := 	'TIIB[LAMP_PLC_E10_EL2794]^Channel 1^Output			 
+	{attribute 'TcLinkTo' := 	'TIIB[LAMP_PLC_E09_EL2794]^Channel 1^Output			 
 	'}
 	xHighVoltageSafteyLoopEnable AT %Q* : BOOL := FALSE; (*When Enables the High voltage Saftey loop is closed and HV can start.*)
 	
-END_VAR]]></Declaration>
+END_VAR
+//comment]]></Declaration>
   </GVL>
 </TcPlcObject>
