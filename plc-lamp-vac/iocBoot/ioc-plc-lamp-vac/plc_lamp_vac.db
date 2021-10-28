@@ -1,3 +1,28 @@
+record(bi, "PLC:LAMP:VAC:IP1_TURBOS_ALL_ATSPD_RBV") {
+  field(DESC, "GVL_PLC_Interfaces.xIP1_TURBOS_ALL_AtSpd")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PLC_Interfaces.xIP1_TURBOS_ALL_AtSpd?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bi, "TMO:PLC:LAMP:VAC:HV_SAFETY_ENABLE_RBV") {
+  # GVL_PLC_Interfaces.xHighVoltageSafteyLoopEnable
+  field(DESC, "GVL_PLC_Interfaces.x...eSafteyLoopEnable")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PLC_Interfaces.xHighVoltageSafteyLoopEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
 record(bi, "$(PREFIX)LCLSGeneral:GlobalLogTrickleTrip_RBV") {
   field(DESC, "Tripped by overall log count")
   field(SCAN, "I/O Intr")
@@ -37,6 +62,8 @@ record(waveform, "$(PREFIX)LCLSGeneral:LogHost_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Logger.cLogHost?")
   field(FTVL, "CHAR")
   field(NELM, "15")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -46,6 +73,8 @@ record(waveform, "$(PREFIX)LCLSGeneral:LogHost") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Logger.cLogHost=")
   field(FTVL, "CHAR")
   field(NELM, "15")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(autosaveFields_pass0, "VAL")
   info(archive, "VAL")
 }
@@ -531,28 +560,6 @@ record(waveform, "$(PREFIX)K:eVRangeCnst_RBV") {
   field(MPST, "On Change")
   field(APST, "On Change")
   info(archive, "monitor 1: VAL")
-}
-
-record(bi, "PLC:LAMP:VAC:OVRDON_RBV") {
-  field(DESC, "GVL_Variables.xSystemOverrideMode_LAMP")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Variables.xSystemOverrideMode_LAMP?")
-  field(ZNAM, "FALSE")
-  field(ONAM, "TRUE")
-  info(archive, "VAL")
-}
-
-record(bo, "PLC:LAMP:VAC:OVRDON") {
-  field(DESC, "GVL_Variables.xSystemOverrideMode_LAMP")
-  field(DTYP, "asynInt32")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Variables.xSystemOverrideMode_LAMP=")
-  field(ZNAM, "FALSE")
-  field(ONAM, "TRUE")
-  info(autosaveFields_pass0, "VAL")
-  info(archive, "VAL")
 }
 
 record(bi, "LAMP:GJ2:PTM:01:RUN_SW_RBV") {
@@ -7146,436 +7153,6 @@ record(bo, "LAMP:C1:PTM:01:SET_SPEED_MODE") {
   info(archive, "VAL")
 }
 
-record(bi, "KTOF:PTM:01:RUN_SW_RBV") {
-  field(DESC, "GVL_Devices.KTOF_PTM_01.iq_stPTM.xRunSW")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.KTOF_PTM_01.iq_stPTM.xRunSW?")
-  field(ZNAM, "STOP")
-  field(ONAM, "RUN")
-  info(archive, "VAL")
-}
-
-record(bo, "KTOF:PTM:01:RUN_SW") {
-  field(DESC, "GVL_Devices.KTOF_PTM_01.iq_stPTM.xRunSW")
-  field(DTYP, "asynInt32")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.KTOF_PTM_01.iq_stPTM.xRunSW=")
-  field(ZNAM, "STOP")
-  field(ONAM, "RUN")
-  info(autosaveFields_pass0, "VAL")
-  info(archive, "VAL")
-}
-
-record(bi, "KTOF:PTM:01:RST_SW_RBV") {
-  # GVL_Devices.KTOF_PTM_01.iq_stPTM.xResetSW
-  field(DESC, "GVL_Devices.KTOF_PTM...iq_stPTM.xResetSW")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.KTOF_PTM_01.iq_stPTM.xResetSW?")
-  field(ZNAM, "FALSE")
-  field(ONAM, "TRUE")
-  info(archive, "VAL")
-}
-
-record(bo, "KTOF:PTM:01:RST_SW") {
-  # GVL_Devices.KTOF_PTM_01.iq_stPTM.xResetSW
-  field(DESC, "GVL_Devices.KTOF_PTM...iq_stPTM.xResetSW")
-  field(DTYP, "asynInt32")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.KTOF_PTM_01.iq_stPTM.xResetSW=")
-  field(ZNAM, "FALSE")
-  field(ONAM, "TRUE")
-  info(autosaveFields_pass0, "VAL")
-  info(archive, "VAL")
-}
-
-record(bi, "KTOF:PTM:01:RUN_DO_RBV") {
-  field(DESC, "GVL_Devices.KTOF_PTM_01.iq_stPTM.q_RunDO")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.KTOF_PTM_01.iq_stPTM.q_RunDO?")
-  field(ZNAM, "FALSE")
-  field(ONAM, "TRUE")
-  info(archive, "VAL")
-}
-
-record(bi, "KTOF:PTM:01:ILK_OK_RBV") {
-  # GVL_Devices.KTOF_PTM_01.iq_stPTM.xExtRunOk
-  field(DESC, "GVL_Devices.KTOF_PTM...q_stPTM.xExtRunOk")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.KTOF_PTM_01.iq_stPTM.xExtRunOk?")
-  field(ZNAM, "ILK ACTIVE")
-  field(ONAM, "ILK OK")
-  info(archive, "VAL")
-}
-
-record(bi, "KTOF:PTM:01:ACCEL_RBV") {
-  # GVL_Devices.KTOF_PTM_01.iq_stPTM.i_xAccel
-  field(DESC, "GVL_Devices.KTOF_PTM...iq_stPTM.i_xAccel")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.KTOF_PTM_01.iq_stPTM.i_xAccel?")
-  field(ZNAM, "FALSE")
-  field(ONAM, "TRUE")
-  info(archive, "VAL")
-}
-
-record(bi, "KTOF:PTM:01:AT_SPD_RBV") {
-  # GVL_Devices.KTOF_PTM_01.iq_stPTM.i_xAtSpd
-  field(DESC, "GVL_Devices.KTOF_PTM...iq_stPTM.i_xAtSpd")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.KTOF_PTM_01.iq_stPTM.i_xAtSpd?")
-  field(ZNAM, "FALSE")
-  field(ONAM, "AT SPEED")
-  info(archive, "VAL")
-}
-
-record(longin, "KTOF:PTM:01:SPEED_RBV") {
-  # GVL_Devices.KTOF_PTM_01.iq_stPTM.i_diCurSpd
-  field(DESC, "GVL_Devices.KTOF_PTM..._stPTM.i_diCurSpd")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.KTOF_PTM_01.iq_stPTM.i_diCurSpd?")
-  field(EGU, "Hz")
-  info(archive, "VAL")
-}
-
-record(bi, "KTOF:PTM:01:FAULT_RBV") {
-  # GVL_Devices.KTOF_PTM_01.iq_stPTM.i_xFault
-  field(DESC, "GVL_Devices.KTOF_PTM...iq_stPTM.i_xFault")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.KTOF_PTM_01.iq_stPTM.i_xFault?")
-  field(ZNAM, "FALSE")
-  field(ONAM, "TRUE")
-  info(archive, "VAL")
-}
-
-record(bi, "KTOF:PTM:01:WARN_RBV") {
-  field(DESC, "GVL_Devices.KTOF_PTM_01.iq_stPTM.i_xWarn")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.KTOF_PTM_01.iq_stPTM.i_xWarn?")
-  field(ZNAM, "FALSE")
-  field(ONAM, "TRUE")
-  info(archive, "VAL")
-}
-
-record(bi, "KTOF:PTM:01:ALARM_RBV") {
-  # GVL_Devices.KTOF_PTM_01.iq_stPTM.i_xALARM
-  field(DESC, "GVL_Devices.KTOF_PTM...iq_stPTM.i_xALARM")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.KTOF_PTM_01.iq_stPTM.i_xALARM?")
-  field(ZNAM, "FALSE")
-  field(ONAM, "TRUE")
-  info(archive, "VAL")
-}
-
-record(ai, "KTOF:PTM:01:BP_SP_RBV") {
-  # GVL_Devices.KTOF_PTM_01.iq_stPTM.rBackingPressureSP
-  field(DESC, "GVL_Devices.KTOF_PTM...BackingPressureSP")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.KTOF_PTM_01.iq_stPTM.rBackingPressureSP?")
-  field(PREC, "2")
-  field(EGU, "TORR")
-  field(HOPR, "1000")
-  field(LOPR, "0")
-  info(autosaveFields, "DESC VAL")
-  info(autosaveFields_pass0, "PREC")
-  info(archive, "VAL")
-}
-
-record(ao, "KTOF:PTM:01:BP_SP") {
-  # GVL_Devices.KTOF_PTM_01.iq_stPTM.rBackingPressureSP
-  field(DESC, "GVL_Devices.KTOF_PTM...BackingPressureSP")
-  field(PINI, "1")
-  field(DTYP, "asynFloat64")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.KTOF_PTM_01.iq_stPTM.rBackingPressureSP=")
-  field(PREC, "2")
-  field(EGU, "TORR")
-  field(HOPR, "1000")
-  field(LOPR, "0")
-  info(autosaveFields, "DESC VAL")
-  info(autosaveFields_pass0, "PREC VAL")
-  info(archive, "VAL")
-}
-
-record(ai, "KTOF:PTM:01:IP_SP_RBV") {
-  # GVL_Devices.KTOF_PTM_01.iq_stPTM.rInletPressureSP
-  field(DESC, "GVL_Devices.KTOF_PTM....rInletPressureSP")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.KTOF_PTM_01.iq_stPTM.rInletPressureSP?")
-  field(PREC, "2")
-  field(EGU, "TORR")
-  field(HOPR, "1000")
-  field(LOPR, "0")
-  info(autosaveFields, "DESC VAL")
-  info(autosaveFields_pass0, "PREC")
-  info(archive, "VAL")
-}
-
-record(ao, "KTOF:PTM:01:IP_SP") {
-  # GVL_Devices.KTOF_PTM_01.iq_stPTM.rInletPressureSP
-  field(DESC, "GVL_Devices.KTOF_PTM....rInletPressureSP")
-  field(PINI, "1")
-  field(DTYP, "asynFloat64")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.KTOF_PTM_01.iq_stPTM.rInletPressureSP=")
-  field(PREC, "2")
-  field(EGU, "TORR")
-  field(HOPR, "1000")
-  field(LOPR, "0")
-  info(autosaveFields, "DESC VAL")
-  info(autosaveFields_pass0, "PREC VAL")
-  info(archive, "VAL")
-}
-
-record(mbbi, "KTOF:PTM:01:STATE_RBV") {
-  field(DESC, "GVL_Devices.KTOF_PTM_01.iq_stPTM.eState")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.KTOF_PTM_01.iq_stPTM.eState?")
-  field(ZRVL, "0")
-  field(ONVL, "1")
-  field(TWVL, "2")
-  field(THVL, "3")
-  field(FRVL, "4")
-  field(ZRST, "STOPPED")
-  field(ONST, "STARTING")
-  field(TWST, "RUNNING")
-  field(THST, "FAULT")
-  field(FRST, "STOPPING")
-  info(archive, "VAL")
-}
-
-record(ai, "KTOF:PTM:01:CURR_MON_RBV") {
-  # GVL_Devices.KTOF_PTM_01.iq_stPTM.i_rCurrentMon
-  field(DESC, "GVL_Devices.KTOF_PTM...PTM.i_rCurrentMon")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.KTOF_PTM_01.iq_stPTM.i_rCurrentMon?")
-  field(PREC, "2")
-  field(EGU, "A")
-  info(autosaveFields_pass0, "PREC")
-  info(archive, "VAL")
-}
-
-record(ai, "KTOF:PTM:01:TEMP_MON_RBV") {
-  # GVL_Devices.KTOF_PTM_01.iq_stPTM.i_rTempMon
-  field(DESC, "GVL_Devices.KTOF_PTM..._stPTM.i_rTempMon")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.KTOF_PTM_01.iq_stPTM.i_rTempMon?")
-  field(PREC, "2")
-  field(EGU, "C")
-  info(autosaveFields_pass0, "PREC")
-  info(archive, "VAL")
-}
-
-record(bi, "KTOF:PTM:01:LOGGER_RBV") {
-  field(DESC, "GVL_Devices.KTOF_PTM_01.iq_stPTM.xLog")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.KTOF_PTM_01.iq_stPTM.xLog?")
-  field(ZNAM, "OFF")
-  field(ONAM, "ON")
-  info(archive, "VAL")
-}
-
-record(bi, "KTOF:PTM:01:RESET_RBV") {
-  # GVL_Devices.KTOF_PTM_01.iq_stPTM.q_xReset
-  field(DESC, "GVL_Devices.KTOF_PTM...iq_stPTM.q_xReset")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.KTOF_PTM_01.iq_stPTM.q_xReset?")
-  field(ZNAM, "FALSE")
-  field(ONAM, "TRUE")
-  info(archive, "VAL")
-}
-
-record(longin, "KTOF:PTM:01:PWR_RBV") {
-  field(DESC, "GVL_Devices.KTOF_PTM_01.iq_stPTM.i_diPwr")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.KTOF_PTM_01.iq_stPTM.i_diPwr?")
-  info(archive, "VAL")
-}
-
-record(longin, "KTOF:PTM:01:TempElec_RBV") {
-  # GVL_Devices.KTOF_PTM_01.iq_stPTM.i_diElecTemp
-  field(DESC, "GVL_Devices.KTOF_PTM...tPTM.i_diElecTemp")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.KTOF_PTM_01.iq_stPTM.i_diElecTemp?")
-  info(archive, "VAL")
-}
-
-record(longin, "KTOF:PTM:01:TempPump_RBV") {
-  # GVL_Devices.KTOF_PTM_01.iq_stPTM.i_diBtmTemp
-  field(DESC, "GVL_Devices.KTOF_PTM...stPTM.i_diBtmTemp")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.KTOF_PTM_01.iq_stPTM.i_diBtmTemp?")
-  info(archive, "VAL")
-}
-
-record(longin, "KTOF:PTM:01:TempBearing_RBV") {
-  # GVL_Devices.KTOF_PTM_01.iq_stPTM.i_diBrngTemp
-  field(DESC, "GVL_Devices.KTOF_PTM...tPTM.i_diBrngTemp")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.KTOF_PTM_01.iq_stPTM.i_diBrngTemp?")
-  info(archive, "VAL")
-}
-
-record(longin, "KTOF:PTM:01:TempMotor_RBV") {
-  # GVL_Devices.KTOF_PTM_01.iq_stPTM.i_diMtrTemp
-  field(DESC, "GVL_Devices.KTOF_PTM...stPTM.i_diMtrTemp")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.KTOF_PTM_01.iq_stPTM.i_diMtrTemp?")
-  info(archive, "VAL")
-}
-
-record(longin, "KTOF:PTM:01:ErrorCode_RBV") {
-  # GVL_Devices.KTOF_PTM_01.iq_stPTM.i_iErrorCode
-  field(DESC, "GVL_Devices.KTOF_PTM...tPTM.i_iErrorCode")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.KTOF_PTM_01.iq_stPTM.i_iErrorCode?")
-  info(archive, "VAL")
-}
-
-record(longin, "KTOF:PTM:01:WarningCode_RBV") {
-  # GVL_Devices.KTOF_PTM_01.iq_stPTM.i_iWarningCode
-  field(DESC, "GVL_Devices.KTOF_PTM...TM.i_iWarningCode")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.KTOF_PTM_01.iq_stPTM.i_iWarningCode?")
-  info(archive, "VAL")
-}
-
-record(bi, "KTOF:PTM:01:TempFault_RBV") {
-  # GVL_Devices.KTOF_PTM_01.iq_stPTM.i_xTempFault
-  field(DESC, "GVL_Devices.KTOF_PTM...tPTM.i_xTempFault")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.KTOF_PTM_01.iq_stPTM.i_xTempFault?")
-  field(ZNAM, "FALSE")
-  field(ONAM, "TRUE")
-  info(archive, "VAL")
-}
-
-record(longin, "KTOF:PTM:01:Power_RBV") {
-  # GVL_Devices.KTOF_PTM_01.iq_stPTM.i_uiPowerPctRbk
-  field(DESC, "GVL_Devices.KTOF_PTM...M.i_uiPowerPctRbk")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.KTOF_PTM_01.iq_stPTM.i_uiPowerPctRbk?")
-  info(archive, "VAL")
-}
-
-record(longin, "KTOF:PTM:01:SET_SPEED_RBV") {
-  # GVL_Devices.KTOF_PTM_01.iq_stPTM.i_dSetSpd
-  field(DESC, "GVL_Devices.KTOF_PTM...q_stPTM.i_dSetSpd")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.KTOF_PTM_01.iq_stPTM.i_dSetSpd?")
-  field(EGU, "Hz")
-  info(archive, "VAL")
-}
-
-record(longout, "KTOF:PTM:01:SET_SPEED") {
-  # GVL_Devices.KTOF_PTM_01.iq_stPTM.i_dSetSpd
-  field(DESC, "GVL_Devices.KTOF_PTM...q_stPTM.i_dSetSpd")
-  field(DTYP, "asynInt32")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.KTOF_PTM_01.iq_stPTM.i_dSetSpd=")
-  field(EGU, "Hz")
-  info(autosaveFields_pass0, "VAL")
-  info(archive, "VAL")
-}
-
-record(bi, "KTOF:PTM:01:SET_SPEED_MODE_RBV") {
-  # GVL_Devices.KTOF_PTM_01.iq_stPTM.q_bSetSpd
-  field(DESC, "GVL_Devices.KTOF_PTM...q_stPTM.q_bSetSpd")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.KTOF_PTM_01.iq_stPTM.q_bSetSpd?")
-  field(ZNAM, "FALSE")
-  field(ONAM, "TRUE")
-  info(archive, "VAL")
-}
-
-record(bo, "KTOF:PTM:01:SET_SPEED_MODE") {
-  # GVL_Devices.KTOF_PTM_01.iq_stPTM.q_bSetSpd
-  field(DESC, "GVL_Devices.KTOF_PTM...q_stPTM.q_bSetSpd")
-  field(DTYP, "asynInt32")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.KTOF_PTM_01.iq_stPTM.q_bSetSpd=")
-  field(ZNAM, "FALSE")
-  field(ONAM, "TRUE")
-  info(autosaveFields_pass0, "VAL")
-  info(archive, "VAL")
-}
-
 record(ai, "LAMP:C2:GPI:01:PRESS_RBV") {
   field(DESC, "GVL_Devices.LAMP_C2_GPI_01.PG.rPRESS")
   field(SCAN, "I/O Intr")
@@ -11205,6 +10782,8 @@ record(waveform, "LAMP:ROUGH:VRC:01:ErrMsg_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.LAMP_ROUGH_VRC_01.iq_stValve.sErrorMessage?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -11215,6 +10794,8 @@ record(waveform, "LAMP:ROUGH:VRC:01:ErrMsg") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.LAMP_ROUGH_VRC_01.iq_stValve.sErrorMessage=")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(autosaveFields_pass0, "VAL")
   info(archive, "VAL")
 }
@@ -11503,6 +11084,8 @@ record(waveform, "LAMP:ROUGH:VRC:03:ErrMsg_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.LAMP_ROUGH_VRC_03.iq_stValve.sErrorMessage?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -11513,6 +11096,8 @@ record(waveform, "LAMP:ROUGH:VRC:03:ErrMsg") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.LAMP_ROUGH_VRC_03.iq_stValve.sErrorMessage=")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(autosaveFields_pass0, "VAL")
   info(archive, "VAL")
 }
@@ -11801,6 +11386,8 @@ record(waveform, "LAMP:ROUGH:VRC:02:ErrMsg_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.LAMP_ROUGH_VRC_02.iq_stValve.sErrorMessage?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -11811,6 +11398,8 @@ record(waveform, "LAMP:ROUGH:VRC:02:ErrMsg") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.LAMP_ROUGH_VRC_02.iq_stValve.sErrorMessage=")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(autosaveFields_pass0, "VAL")
   info(archive, "VAL")
 }
@@ -11896,6 +11485,28 @@ record(bo, "LAMP:ROUGH:VRC:02:FORCE_CLS") {
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.LAMP_ROUGH_VRC_02.iq_stValve.pv_xOvrdCls=")
   field(ZNAM, "OPEN")
   field(ONAM, "CLOSE")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "PLC:LAMP:VAC:OVRDON_RBV") {
+  field(DESC, "GVL_Variables.xSystemOverrideMode_LAMP")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Variables.xSystemOverrideMode_LAMP?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bo, "PLC:LAMP:VAC:OVRDON") {
+  field(DESC, "GVL_Variables.xSystemOverrideMode_LAMP")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Variables.xSystemOverrideMode_LAMP=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(autosaveFields_pass0, "VAL")
   info(archive, "VAL")
 }

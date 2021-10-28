@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.2">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
   <POU Name="F_Turbo_NC_NO_Valve_Logic" Id="{61006141-1ec2-4e8d-8cf4-25aa4effd79d}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION F_Turbo_NC_NO_Valve_Logic : BOOL
 VAR_INPUT
@@ -8,9 +8,11 @@ VAR_INPUT
 	i_stBSG : ST_VG; //Gauge measureing backing pressure
 	iq_stValve_NO : ST_VRC_NO; //Normally Open Valve directly sharing turbo pump vaccum volume.
 	iq_stValve_NC : ST_VRC; //Normally Closed Valve directly sharing turbo pump vaccum volume.
-	iq_stValve_NC_second :	ST_VRC; //Normally Closed Valve on the other side of NO valve that also connects to roughing line.
-	EcatBridge_Error_Present	:	BOOL; // Ecat Bridge Communication: Watchdog and Ecat Bridge Read Error Bit 
-//	ads_Error_Present     :      BOOL;  // ADS Communication: Watchdog and ADS Read Error Bit
+	iq_stValve_NC_second :	ST_VRC; //Normally Open Valve on the other side of NO valve that also connects to roughing line.
+//	ads_Error_Present	:	BOOL; // ADS Communication: Watchdog and ADS Read Error Bit 
+    EcatBridge_Error_Present	:	BOOL; // Ecat Bridge Communication: Watchdog and Ecat Bridge Read Error Bit 
+//	iq_stRoughRoughValve_NC: ST_VGC_2S; //Normally Closed Valve Downstream of iq_stValve_NC in Beamline Roughing Line.
+//	iq_stRoughRoughValve_NC_second: ST_VGC_2S; //Normally Closed Valve Downstream of iq_stValve_NC_second in Beamline Roughing Line.
 	iq_stRoughRoughValve_NC_xOpnLS: BOOL; //Normally Closed Valve Downstream of iq_stValve_NC in Beamline Roughing Line.
 	iq_stRoughRoughValve_NC_second_xOpenLS: BOOL; //Normally Closed Valve Downstream of iq_stValve_NC_second in Beamline Roughing Line.
 	x_onBeamline :	BOOL; //Whether the  Turbopump/Endstation is mounted on the beamline or not.
@@ -20,6 +22,12 @@ END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[IF (x_onBeamline) THEN
+(*	F_Turbo_NC_NO_Valve_Logic := (i_stISG.xPRESS_OK AND i_stISG.rPRESS < i_stTurbo.rInletPressureSP) AND 
+						   		 (i_stBSG.xPRESS_OK AND i_stBSG.rPRESS < i_stTurbo.rBackingPressureSP) AND 
+								 ((iq_stValve_NC.i_xOpnLS AND iq_stRoughRoughValve_NC.eState = E_ValvePositionState.OPEN) OR
+								 (iq_stValve_NO.i_xOpnLS AND (iq_stValve_NC_second.i_xOpnLS AND 
+								 iq_stRoughRoughValve_NC_second.eState = E_ValvePositionState.OPEN)))AND (NOT EcatBridge_Error_Present);
+*)
 	F_Turbo_NC_NO_Valve_Logic := (i_stISG.xPRESS_OK AND i_stISG.rPRESS < i_stTurbo.rInletPressureSP) AND 
 						   		 (i_stBSG.xPRESS_OK AND i_stBSG.rPRESS < i_stTurbo.rBackingPressureSP) AND 
 								 ((iq_stValve_NC.i_xOpnLS AND iq_stRoughRoughValve_NC_xOpnLS) OR
@@ -32,9 +40,5 @@ ELSE
 END_IF
 ]]></ST>
     </Implementation>
-    <LineIds Name="F_Turbo_NC_NO_Valve_Logic">
-      <LineId Id="3" Count="10" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>

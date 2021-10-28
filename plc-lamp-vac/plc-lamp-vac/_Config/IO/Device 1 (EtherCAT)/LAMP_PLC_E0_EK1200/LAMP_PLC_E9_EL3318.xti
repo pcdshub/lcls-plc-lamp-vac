@@ -1,8 +1,8 @@
-<?xml version="1.0"?>
-<TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4024.4" ClassName="CFlbTermDef" SubType="9099">
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmItem" TcSmVersion="1.0" TcVersion="3.1.4022.30" ClassName="CFlbTermDef" SubType="9099">
 	<DataTypes>
 		<DataType>
-			<Name GUID="{18071995-0000-0000-0000-002000000004}" IecBaseType="true" BitType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..3] OF BIT</Name>
+			<Name GUID="{18071995-0000-0000-0000-002000000004}" IecBaseType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..3] OF BIT</Name>
 			<BitSize>4</BitSize>
 			<BaseType GUID="{18071995-0000-0000-0000-000000000010}">BIT</BaseType>
 			<ArrayInfo>
@@ -57,7 +57,7 @@
 				<Entry Name="Status__TxPDO Toggle" Index="#x1800" Sub="#x09">
 					<Type>BIT</Type>
 				</Entry>
-				<Entry Name="Value" Index="#x6000" Sub="#x11">
+				<Entry Name="Value" Index="#x6000" Sub="#x11" Flags="#x00050000">
 					<Type>INT</Type>
 				</Entry>
 			</Pdo>
@@ -83,7 +83,7 @@
 				<Entry Name="Status__TxPDO Toggle" Index="#x1801" Sub="#x09">
 					<Type>BIT</Type>
 				</Entry>
-				<Entry Name="Value" Index="#x6010" Sub="#x11">
+				<Entry Name="Value" Index="#x6010" Sub="#x11" Flags="#x00050000">
 					<Type>INT</Type>
 				</Entry>
 			</Pdo>
@@ -109,7 +109,7 @@
 				<Entry Name="Status__TxPDO Toggle" Index="#x1802" Sub="#x09">
 					<Type>BIT</Type>
 				</Entry>
-				<Entry Name="Value" Index="#x6020" Sub="#x11">
+				<Entry Name="Value" Index="#x6020" Sub="#x11" Flags="#x00050000">
 					<Type>INT</Type>
 				</Entry>
 			</Pdo>
@@ -135,7 +135,7 @@
 				<Entry Name="Status__TxPDO Toggle" Index="#x1803" Sub="#x09">
 					<Type>BIT</Type>
 				</Entry>
-				<Entry Name="Value" Index="#x6030" Sub="#x11">
+				<Entry Name="Value" Index="#x6030" Sub="#x11" Flags="#x00050000">
 					<Type>INT</Type>
 				</Entry>
 			</Pdo>
@@ -161,7 +161,7 @@
 				<Entry Name="Status__TxPDO Toggle" Index="#x1804" Sub="#x09">
 					<Type>BIT</Type>
 				</Entry>
-				<Entry Name="Value" Index="#x6040" Sub="#x11">
+				<Entry Name="Value" Index="#x6040" Sub="#x11" Flags="#x00050000">
 					<Type>INT</Type>
 				</Entry>
 			</Pdo>
@@ -187,7 +187,7 @@
 				<Entry Name="Status__TxPDO Toggle" Index="#x1805" Sub="#x09">
 					<Type>BIT</Type>
 				</Entry>
-				<Entry Name="Value" Index="#x6050" Sub="#x11">
+				<Entry Name="Value" Index="#x6050" Sub="#x11" Flags="#x00050000">
 					<Type>INT</Type>
 				</Entry>
 			</Pdo>
@@ -213,7 +213,7 @@
 				<Entry Name="Status__TxPDO Toggle" Index="#x1806" Sub="#x09">
 					<Type>BIT</Type>
 				</Entry>
-				<Entry Name="Value" Index="#x6060" Sub="#x11">
+				<Entry Name="Value" Index="#x6060" Sub="#x11" Flags="#x00050000">
 					<Type>INT</Type>
 				</Entry>
 			</Pdo>
@@ -239,47 +239,47 @@
 				<Entry Name="Status__TxPDO Toggle" Index="#x1807" Sub="#x09">
 					<Type>BIT</Type>
 				</Entry>
-				<Entry Name="Value" Index="#x6070" Sub="#x11">
+				<Entry Name="Value" Index="#x6070" Sub="#x11" Flags="#x00050000">
 					<Type>INT</Type>
 				</Entry>
 			</Pdo>
 			<Pdo Name="TC Outputs Channel 1" Index="#x1600" InOut="1" Flags="#x0010">
-				<Entry Name="CJCompensation" Index="#x7000" Sub="#x11">
+				<Entry Name="CJCompensation" Index="#x7000" Sub="#x11" Flags="#x00050000">
 					<Type>INT</Type>
 				</Entry>
 			</Pdo>
 			<Pdo Name="TC Outputs Channel 2" Index="#x1601" InOut="1" Flags="#x0010">
-				<Entry Name="CJCompensation" Index="#x7010" Sub="#x11">
+				<Entry Name="CJCompensation" Index="#x7010" Sub="#x11" Flags="#x00050000">
 					<Type>INT</Type>
 				</Entry>
 			</Pdo>
 			<Pdo Name="TC Outputs Channel 3" Index="#x1602" InOut="1" Flags="#x0010">
-				<Entry Name="CJCompensation" Index="#x7020" Sub="#x11">
+				<Entry Name="CJCompensation" Index="#x7020" Sub="#x11" Flags="#x00050000">
 					<Type>INT</Type>
 				</Entry>
 			</Pdo>
 			<Pdo Name="TC Outputs Channel 4" Index="#x1603" InOut="1" Flags="#x0010">
-				<Entry Name="CJCompensation" Index="#x7030" Sub="#x11">
+				<Entry Name="CJCompensation" Index="#x7030" Sub="#x11" Flags="#x00050000">
 					<Type>INT</Type>
 				</Entry>
 			</Pdo>
 			<Pdo Name="TC Outputs Channel 5" Index="#x1604" InOut="1" Flags="#x0010">
-				<Entry Name="CJCompensation" Index="#x7040" Sub="#x11">
+				<Entry Name="CJCompensation" Index="#x7040" Sub="#x11" Flags="#x00050000">
 					<Type>INT</Type>
 				</Entry>
 			</Pdo>
 			<Pdo Name="TC Outputs Channel 6" Index="#x1605" InOut="1" Flags="#x0010">
-				<Entry Name="CJCompensation" Index="#x7050" Sub="#x11">
+				<Entry Name="CJCompensation" Index="#x7050" Sub="#x11" Flags="#x00050000">
 					<Type>INT</Type>
 				</Entry>
 			</Pdo>
 			<Pdo Name="TC Outputs Channel 7" Index="#x1606" InOut="1" Flags="#x0010">
-				<Entry Name="CJCompensation" Index="#x7060" Sub="#x11">
+				<Entry Name="CJCompensation" Index="#x7060" Sub="#x11" Flags="#x00050000">
 					<Type>INT</Type>
 				</Entry>
 			</Pdo>
 			<Pdo Name="TC Outputs Channel 8" Index="#x1607" InOut="1" Flags="#x0010">
-				<Entry Name="CJCompensation" Index="#x7070" Sub="#x11">
+				<Entry Name="CJCompensation" Index="#x7070" Sub="#x11" Flags="#x00050000">
 					<Type>INT</Type>
 				</Entry>
 			</Pdo>
