@@ -570,13 +570,13 @@ LAMP_GJ2_PTM_04.M_Serial_IO(i_st_TD20_RBK:= st_TD20_RBK_LAMP_GJ2_PTM_04);
 		iq_stValve=> );
 	ELSE
 		LAMP_ROUGH_VRC_01(//LAMP:ROUGH:VRC:01 can open when the pressure across the valve is below 10 torr
-		i_xExtILK_OK:= (ABS(LAMP_ROUGH_GPI_01.PG.rPRESS - LAMP_ROUGH_GPI_02.PG.rPRESS)<10.0),
+		i_xExtILK_OK:= (ABS(LAMP_ROUGH_GPI_01.PG.rPRESS - LAMP_ROUGH_GPI_02.PG.rPRESS)<10.0),   
 		i_xOverrideMode:= xSystemOverrideMode_LAMP, 
 		iq_stValve=> );
 	END_IF
 
     LAMP_ROUGH_VRC_02(//LAMP:ROUGH:VRC:02 close when the pressure in the C2, GJ1, GJ2 chambers are all below 10 torr.)
-	i_xExtILK_OK:= NOT((LAMP_ROUGH_GPI_01.PG.rPRESS > 10.0 ) OR (LAMP_ROUGH_GPI_02.PG.rPRESS > 10.0) OR (LAMP_C2_GPI_01.PG.rPRESS > 10) ), 
+	i_xExtILK_OK:= NOT ((LAMP_ROUGH_GPI_01.PG.rPRESS > 10.0 ) OR (LAMP_ROUGH_GPI_02.PG.rPRESS > 10.0) OR (LAMP_C2_GPI_01.PG.rPRESS > 10) ), 
 	i_xOverrideMode:= xSystemOverrideMode_LAMP,
  	iq_stValve=> );
 	IF(xOnBeamline) THEN //If OnBeamline then stay open.
@@ -587,7 +587,7 @@ LAMP_GJ2_PTM_04.M_Serial_IO(i_st_TD20_RBK:= st_TD20_RBK_LAMP_GJ2_PTM_04);
 		iq_stValve=> );
     ELSE
 		LAMP_ROUGH_VRC_03(//LAMP:ROUGH:VRC:03 can open when the pressure across the valve is below 10 torr
-		i_xExtILK_OK:= (ABS(LAMP_ROUGH_GPI_03.PG.rPRESS - LAMP_ROUGH_GPI_04.PG.rPRESS)<10.0),
+		i_xExtILK_OK:= (ABS(LAMP_ROUGH_GPI_03.PG.rPRESS - LAMP_ROUGH_GPI_04.PG.rPRESS)<10.0), 
 		i_xOverrideMode:= xSystemOverrideMode_LAMP, 
 		iq_stValve=> );
 	END_IF	

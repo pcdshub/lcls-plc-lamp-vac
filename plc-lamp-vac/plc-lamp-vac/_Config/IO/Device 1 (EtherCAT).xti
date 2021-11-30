@@ -33,11 +33,8 @@
 		<Image Id="3" AddrType="10" ImageType="3">
 			<Name>Image-2</Name>
 		</Image>
-		<Box File="LAMP_PLC_E0_EK1200.xti" Id="39">
+		<Box File="LAMP_PLC_E0_EK1200.xti" Id="1">
 			<EtherCAT PortABoxInfo="#x00ffffff"/>
-		</Box>
-		<Box File="LAMP_PNL_EP00_EP9128-0021.xti" Id="54">
-			<EtherCAT PortABoxInfo="#x01000035"/>
 		</Box>
 		<EtherCAT EnableVirtualSwitch="true" MaxSwitchPorts="2" MaxSwitchFrames="120"/>
 	</Device>
