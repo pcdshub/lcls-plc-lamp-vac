@@ -81,6 +81,10 @@ VAR_GLOBAL
 	(*ISEG HV Crate Safety Loop*)
 	{attribute 'TcLinkTo' := 	'TIIB[LAMP_PLC_E09_EL2794]^Channel 1^Output			 
 	'}
+	{attribute 'pytmc' := '
+        pv: TMO:PLC:LAMP:VAC:HV_SAFETY_ENABLE
+        io:i
+    '}
 	xHighVoltageSafteyLoopEnable AT %Q* : BOOL := FALSE; (*When Enables the High voltage Saftey loop is closed and HV can start.*)
 	
 END_VAR
