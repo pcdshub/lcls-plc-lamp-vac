@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.2">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
   <GVL Name="GVL_PLC_Interfaces" Id="{1d11fe91-059a-4926-a549-d60eb53c47d4}">
     <Declaration><![CDATA[//{attribute 'qualified_only'}
 VAR_GLOBAL
@@ -57,7 +57,7 @@ VAR_GLOBAL
 	{attribute 'TcLInkTo' :=  'TIIB[LAMP_PLC_E04_EL6692]^IO Outputs^IP1_TURBOS_ALL_AtSpd
 	'}
 	{attribute 'pytmc' := '
-			pv: PLC:CVMI:VAC:IP1_TURBOS_ALL_ATSPD
+			pv: PLC:LAMP:VAC:IP1_TURBOS_ALL_ATSPD
 			io:i
 	'}
 	xIP1_TURBOS_ALL_AtSpd AT %Q* : BOOL;
