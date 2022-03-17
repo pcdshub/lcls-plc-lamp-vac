@@ -43,8 +43,14 @@
 		<Box File="LAMP_PLC_E12_EL6002.xti" Id="10">
 			<EtherCAT PortABoxInfo="#x01000009"/>
 		</Box>
-		<Box File="LAMP_PLC_13_EK1122.xti" Id="53">
+		<Box File="LAMP_PLC_E13_EK1122.xti" Id="53">
 			<EtherCAT PortABoxInfo="#x0100000a"/>
+		</Box>
+		<Box File="LAMP_PLC_E14_EK1122.xti" Id="92">
+			<EtherCAT PortABoxInfo="#x02000035"/>
+		</Box>
+		<Box File="LAMP_PLC_E15_EL9011.xti" Id="93">
+			<EtherCAT PortABoxInfo="#x0200005c"/>
 		</Box>
 	</Box>
 </TcSmItem>
