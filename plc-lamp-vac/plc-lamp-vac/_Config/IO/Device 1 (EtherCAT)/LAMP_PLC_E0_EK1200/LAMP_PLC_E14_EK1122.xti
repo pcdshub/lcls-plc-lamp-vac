@@ -10,5 +10,8 @@
 		<Box File="Variable_Leak_Valve_EK1100.xti" Id="95">
 			<EtherCAT PortABoxInfo="#x0300005c"/>
 		</Box>
+		<Box File="VCN_1_VAT590.xti" Id="109">
+			<EtherCAT PortABoxInfo="#x01000065"/>
+		</Box>
 	</Box>
 </TcSmItem>

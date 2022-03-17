@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmItem" TcSmVersion="1.0" TcVersion="3.1.4022.30" ClassName="CFlbTermDef" SubType="9099">
+	<ImageDatas>
+		<ImageData Id="1000">424dd6020000000000003600000028000000100000000e0000000100180000000000a0020000232e0000232e00000000000000000001000000000000000000000000000000000000000000000000ffffffffffffffffffffffffffffffffffffffffffffffff00000000ff0000ff0000ff0000ff0000ff0000ff00000000ffffffffffffffffffffffffffffffffffffffffffffffffffffff00000000ff0000ff0000ff0000ff00000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff00000000ff0000ff0000ff0000ff00000000ffffff000000ffffffffffffffffffffffffffffffffffffffffffffffffffffff00000000ff0000ff00000000ffffffffffff000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff000000000000ffffffffffffffffff000000000000000000000000000000000000000000ffffffffffffffffffffffff0000000000000000ff0000ff0000ff000000000000000000000000000000000000000000ffffffffffffffffffffffff0000000000000000ff0000ff0000ff000000000000000000000000000000000000000000ffffffffffffffffffffffff000000000000ffffffffffffffffff000000000000000000000000000000000000000000ffffffffffffffffff00000000ff0000ff00000000ffffffffffff000000ffffffffffff000000ffffffffffffffffffffffffffffff00000000ff0000ff0000ff0000ff00000000ffffff000000ffffffffffff000000000000000000000000ffffffffffff00000000ff0000ff0000ff0000ff00000000ffffffffffffffffffffffffffffffffffffffffffffffffffffff00000000ff0000ff0000ff0000ff0000ff0000ff00000000ffffffffffffffffffffffffffffffffffffffffffffffff000000000000000000000000000000000000000000000000ffffffffffffffffffffffffffffffffffffffffffffffff</ImageData>
+	</ImageDatas>
+	<Box Id="109" BoxType="9099" BoxFlags="#x00000020">
+		<Name>__FILENAME__</Name>
+		<ImageId>1000</ImageId>
+		<EtherCAT SlaveType="2" PdiType="#x0208" MboxDataLinkLayer="true" CycleMBoxPolling="true" CoeType="35" VendorId="#x00000549" ProductCode="#x0000170c" RevisionNo="#x00010000" InfoDataAddr="true" TimeoutMailbox2="6000" PortPhys="17" IdentificationAdo="308" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="590 - All-metal variable leak valve" Desc="590">
+			<SyncMan>001c14012600010001000000140114011401001c26010000</SyncMan>
+			<SyncMan>001e14012200010002000000140114011401001e22010000</SyncMan>
+			<SyncMan>001027006400010003000000000000000000001064010000</SyncMan>
+			<SyncMan>00162f002000010004000000000000000000001620010000</SyncMan>
+			<Fmmu>0000000000000000001000020100000001000000000000000000000000000000</Fmmu>
+			<Fmmu>0000000000000000001600010100000002000000000000000000000000000000</Fmmu>
+			<Pdo Name="DI TxPDO-Map" Index="#x1a00" Flags="#x0010" SyncMan="3">
+				<Entry Name="Pressure" Index="#x2001">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Pressure sensor 1" Index="#x2002">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Pressure sensor 2" Index="#x2003">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Position" Index="#x2004">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Target position" Index="#x2005">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Control mode" Index="#x2006">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Fatal error" Index="#x2007">
+					<Type>UINT</Type>
+				</Entry>
+				<Entry Name="Reserved - not used" Index="#x2008">
+					<Type>UINT</Type>
+				</Entry>
+				<Entry Name="Reserved - not used" Index="#x2009">
+					<Type>UINT</Type>
+				</Entry>
+				<Entry Name="Reserved - not used" Index="#x200a">
+					<Type>UINT</Type>
+				</Entry>
+				<Entry Name="Reserved - not used" Index="#x200b">
+					<Type>UINT</Type>
+				</Entry>
+				<Entry Name="General status" Index="#x200c">
+					<Type>UINT</Type>
+				</Entry>
+				<Entry Name="General warnings" Index="#x200d">
+					<Type>UINT</Type>
+				</Entry>
+				<Entry Name="Extended warnings" Index="#x200e">
+					<Type>UINT</Type>
+				</Entry>
+				<Entry Name="Cluster valve monitoring address" Index="#x200f">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Cluster valve position" Index="#x2010">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Cluster valve control mode" Index="#x2011">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Cluster valve status" Index="#x2012">
+					<Type>UINT</Type>
+				</Entry>
+				<Entry Name="Cluster valve warnings" Index="#x2013">
+					<Type>UINT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="DO RxPDO-Map" Index="#x1600" InOut="1" Flags="#x0010" SyncMan="2">
+				<Entry Name="Pressure setpoint" Index="#x2014">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Position setpoint" Index="#x2015">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Reserved - not used" Index="#x2016">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="External digital pressure sensor 1" Index="#x2017">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="External digital pressure sensor 2" Index="#x2018">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Control mode setpoint" Index="#x2019">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="General control setpoint" Index="#x201a">
+					<Type>UINT</Type>
+				</Entry>
+				<Entry Name="Reserved - not used" Index="#x201b">
+					<Type>UINT</Type>
+				</Entry>
+				<Entry Name="Reserved - not used" Index="#x201c">
+					<Type>UINT</Type>
+				</Entry>
+				<Entry Name="Reserved - not used" Index="#x201d">
+					<Type>UINT</Type>
+				</Entry>
+				<Entry Name="Reserved - not used" Index="#x201e">
+					<Type>UINT</Type>
+				</Entry>
+				<Entry Name="Cluster valve freeze position setpoint" Index="#x201f">
+					<Type>DINT</Type>
+				</Entry>
+				<Entry Name="Cluster valve freeze address setpoint" Index="#x2020">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Cluster valve freeze control setpoint" Index="#x2021">
+					<Type>UINT</Type>
+				</Entry>
+				<Entry Name="Cluster valve monitoring address setpoint" Index="#x2022">
+					<Type>USINT</Type>
+				</Entry>
+			</Pdo>
+		</EtherCAT>
+	</Box>
+</TcSmItem>
