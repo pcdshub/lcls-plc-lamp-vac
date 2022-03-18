@@ -995,21 +995,7 @@ SERIAL IO]]>
 			<Vars VarGrpType="1">
 				<Name>PlcTask Inputs</Name>
 				<Var>
-					<Name>LCLS_Vacuum.Global_Variables.g_stSystem.I_EcatMaster1</Name>
-					<Comment>
-						<![CDATA[ AMS Net ID used for FB_EcatDiag, among others ]]>
-					</Comment>
-					<Type GUID="{18071995-0000-0000-0000-000000000041}">AMSNETID</Type>
-				</Var>
-				<Var>
 					<Name>LCLS_General.DefaultGlobals.stSys.I_EcatMaster1</Name>
-					<Comment>
-						<![CDATA[ AMS Net ID used for FB_EcatDiag, among others ]]>
-					</Comment>
-					<Type GUID="{18071995-0000-0000-0000-000000000041}">AMSNETID</Type>
-				</Var>
-				<Var>
-					<Name>LCLS_Vacuum.LCLS_Vacuum_Serial.LCLS_Vacuum.Global_Variables.g_stSystem.I_EcatMaster1</Name>
 					<Comment>
 						<![CDATA[ AMS Net ID used for FB_EcatDiag, among others ]]>
 					</Comment>
@@ -1243,6 +1229,60 @@ ETHERCAT BRRIDGE COM STATUS
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
+					<Name>GVL_Devices.LAMP_C1_GHC_01.i_iPRESS_R</Name>
+					<Comment>
+						<![CDATA[ input Pressure // Link to analog Input]]>
+					</Comment>
+					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.LAMP_ROUGH_VRC_01.i_xOpnLS</Name>
+					<Comment>
+						<![CDATA[IO]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.LAMP_ROUGH_VRC_01.i_xClsLS</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.LAMP_ROUGH_VRC_03.i_xOpnLS</Name>
+					<Comment>
+						<![CDATA[IO]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.LAMP_ROUGH_VRC_03.i_xClsLS</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.LAMP_ROUGH_VRC_02.i_xOpnLS</Name>
+					<Comment>
+						<![CDATA[IO]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.LAMP_ROUGH_VRC_02.i_xClsLS</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_PLC_Interfaces.sHUTCH_PLC_NAME</Name>
+					<Comment>
+						<![CDATA[ I/O Inputs from TMO Beamline]]>
+					</Comment>
+					<Type>STRING(8)</Type>
+				</Var>
+				<Var>
+					<Name>LCLS_Vacuum.Global_Variables.g_stSystem.I_EcatMaster1</Name>
+					<Comment>
+						<![CDATA[ AMS Net ID used for FB_EcatDiag, among others ]]>
+					</Comment>
+					<Type GUID="{18071995-0000-0000-0000-000000000041}">AMSNETID</Type>
+				</Var>
+				<Var>
 					<Name>GVL_Devices.LAMP_VCN_01.i_nRawPosition</Name>
 					<Comment>
 						<![CDATA[ Position readback from the valve]]>
@@ -1290,53 +1330,6 @@ ETHERCAT BRRIDGE COM STATUS
 						<![CDATA[ Valve Extended Warnings readback]]>
 					</Comment>
 					<Type GUID="{38C3A143-BF3A-438A-BEDE-860827924F96}" Namespace="LCLS_Vacuum">ST_ExtendedWarnings</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.LAMP_C1_GHC_01.i_iPRESS_R</Name>
-					<Comment>
-						<![CDATA[ input Pressure // Link to analog Input]]>
-					</Comment>
-					<Type>INT</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.LAMP_ROUGH_VRC_01.i_xOpnLS</Name>
-					<Comment>
-						<![CDATA[IO]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.LAMP_ROUGH_VRC_01.i_xClsLS</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.LAMP_ROUGH_VRC_03.i_xOpnLS</Name>
-					<Comment>
-						<![CDATA[IO]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.LAMP_ROUGH_VRC_03.i_xClsLS</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.LAMP_ROUGH_VRC_02.i_xOpnLS</Name>
-					<Comment>
-						<![CDATA[IO]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.LAMP_ROUGH_VRC_02.i_xClsLS</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_PLC_Interfaces.sHUTCH_PLC_NAME</Name>
-					<Comment>
-						<![CDATA[ I/O Inputs from TMO Beamline]]>
-					</Comment>
-					<Type>STRING(8)</Type>
 				</Var>
 			</Vars>
 			<Vars VarGrpType="2">
@@ -1474,34 +1467,6 @@ ETHERCAT BRRIDGE COM STATUS
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>GVL_Devices.LAMP_VCN_01.o_nRawPositionSP</Name>
-					<Comment>
-						<![CDATA[ Position setpoint]]>
-					</Comment>
-					<Type>DINT</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.LAMP_VCN_01.o_nRawPressureSP</Name>
-					<Comment>
-						<![CDATA[ Pressure setpoint]]>
-					</Comment>
-					<Type>DINT</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.LAMP_VCN_01.o_eCtrlModeSP</Name>
-					<Comment>
-						<![CDATA[ Valve control mode setpoint]]>
-					</Comment>
-					<Type GUID="{D3FFDB0E-A5A1-4E92-B746-0692F027C3E9}" Namespace="LCLS_Vacuum">E_ControlModeSP</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.LAMP_VCN_01.o_stGenCtrlSP</Name>
-					<Comment>
-						<![CDATA[ General Control setpoint]]>
-					</Comment>
-					<Type GUID="{6ACFA21E-2537-4C18-BE44-E27C19F4016F}" Namespace="LCLS_Vacuum">ST_GeneralControlSP</Type>
-				</Var>
-				<Var>
 					<Name>GVL_Devices.LAMP_C1_GHC_01.q_xHV_DIS</Name>
 					<Comment>
 						<![CDATA[ Active Low ]]>
@@ -1557,6 +1522,34 @@ ETHERCAT BRRIDGE COM STATUS
 						<![CDATA[When Enables the High voltage Saftey loop is closed and HV can start.]]>
 					</Comment>
 					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.LAMP_VCN_01.o_nRawPositionSP</Name>
+					<Comment>
+						<![CDATA[ Position setpoint]]>
+					</Comment>
+					<Type>DINT</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.LAMP_VCN_01.o_nRawPressureSP</Name>
+					<Comment>
+						<![CDATA[ Pressure setpoint]]>
+					</Comment>
+					<Type>DINT</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.LAMP_VCN_01.o_eCtrlModeSP</Name>
+					<Comment>
+						<![CDATA[ Valve control mode setpoint]]>
+					</Comment>
+					<Type GUID="{D3FFDB0E-A5A1-4E92-B746-0692F027C3E9}" Namespace="LCLS_Vacuum">E_ControlModeSP</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.LAMP_VCN_01.o_stGenCtrlSP</Name>
+					<Comment>
+						<![CDATA[ General Control setpoint]]>
+					</Comment>
+					<Type GUID="{6ACFA21E-2537-4C18-BE44-E27C19F4016F}" Namespace="LCLS_Vacuum">ST_GeneralControlSP</Type>
 				</Var>
 			</Vars>
 			<Vars VarGrpType="8">
