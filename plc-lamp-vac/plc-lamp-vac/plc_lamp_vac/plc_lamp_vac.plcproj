@@ -88,7 +88,7 @@
     </PlaceholderReference>
   </ItemGroup>
   <ItemGroup>
-    <LibraryReference Include="LCLS Vacuum,1.5.0,SLAC - LCLS">
+    <LibraryReference Include="LCLS Vacuum,0.0.0,SLAC - LCLS">
       <Namespace>LCLS_Vacuum</Namespace>
     </LibraryReference>
     <LibraryReference Include="LCLSVacuumSerialDriverLib,1.2.2,SLAC - LCLS">
@@ -100,7 +100,7 @@
       <Resolution>LCLS General, 2.4.2 (SLAC)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="LCLS Vacuum">
-      <Resolution>LCLS Vacuum, 1.5.0 (SLAC - LCLS)</Resolution>
+      <Resolution>LCLS Vacuum, 2.0.1 (SLAC - LCLS)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="LCLSVacuumSerialDriverLib">
       <Resolution>LCLSVacuumSerialDriverLib, 1.2.2 (SLAC - LCLS)</Resolution>
@@ -109,7 +109,7 @@
       <Resolution>LCLSVacuumSerialDriverLib, 0.0.0 (SLAC - LCLS)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="PMPS">
-      <Resolution>PMPS, 0.15.1 (SLAC - LCLS)</Resolution>
+      <Resolution>PMPS, 2.2.1 (SLAC - LCLS)</Resolution>
     </PlaceholderResolution>
   </ItemGroup>
   <ItemGroup>

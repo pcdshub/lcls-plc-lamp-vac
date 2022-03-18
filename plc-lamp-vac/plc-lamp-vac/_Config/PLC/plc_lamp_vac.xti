@@ -73,6 +73,583 @@
 				<Parameter>[5]</Parameter>
 			</Format>
 		</DataType>
+		<DataType>
+			<Name GUID="{0075A3AF-A7D0-4CF2-AADD-70B3FAF80CCF}" Namespace="LCLS_Vacuum" AutoDeleteType="true">E_ControlMode</Name>
+			<BitSize>8</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000002}">USINT</BaseType>
+			<EnumInfo>
+				<Text>
+					<![CDATA[Init]]>
+				</Text>
+				<Enum>0</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text>
+					<![CDATA[Synch]]>
+				</Text>
+				<Enum>1</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text>
+					<![CDATA[ManualControl]]>
+				</Text>
+				<Enum>2</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text>
+					<![CDATA[CloseValve]]>
+				</Text>
+				<Enum>3</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text>
+					<![CDATA[OpenValve]]>
+				</Text>
+				<Enum>4</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text>
+					<![CDATA[PressureControl]]>
+				</Text>
+				<Enum>5</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text>
+					<![CDATA[HoldValve]]>
+				</Text>
+				<Enum>6</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text>
+					<![CDATA[LearnProcedure]]>
+				</Text>
+				<Enum>7</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text>
+					<![CDATA[InterlockOpen]]>
+				</Text>
+				<Enum>8</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text>
+					<![CDATA[InterlockClose]]>
+				</Text>
+				<Enum>9</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text>
+					<![CDATA[MaintenanceOpen]]>
+				</Text>
+				<Enum>10</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text>
+					<![CDATA[MaintenanceClose]]>
+				</Text>
+				<Enum>11</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text>
+					<![CDATA[PowerFailure]]>
+				</Text>
+				<Enum>12</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text>
+					<![CDATA[Safety]]>
+				</Text>
+				<Enum>13</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text>
+					<![CDATA[FatalError]]>
+				</Text>
+				<Enum>14</Enum>
+			</EnumInfo>
+		</DataType>
+		<DataType>
+			<Name GUID="{256F9AAD-CF5A-469D-BB54-387E0E417DC1}" Namespace="LCLS_Vacuum" AutoDeleteType="true">E_FatalErrors</Name>
+			<BitSize>16</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000005}">UINT</BaseType>
+			<EnumInfo>
+				<Text>
+					<![CDATA[NO_FATAL_ERROR]]>
+				</Text>
+				<Enum>0</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text>
+					<![CDATA[NoStopDetectedSynch]]>
+				</Text>
+				<Enum>20</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text>
+					<![CDATA[ValveBlockedSynch]]>
+				</Text>
+				<Enum>21</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text>
+					<![CDATA[ValveBlocked]]>
+				</Text>
+				<Enum>22</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text>
+					<![CDATA[StepLossSynch]]>
+				</Text>
+				<Enum>25</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text>
+					<![CDATA[MotorDriverFault]]>
+				</Text>
+				<Enum>40</Enum>
+			</EnumInfo>
+		</DataType>
+		<DataType>
+			<Name GUID="{EE6EC3D3-0BB3-4A2D-BDCA-A7EAC8A56187}" Namespace="LCLS_Vacuum" AutoDeleteType="true">ST_GeneralStatus</Name>
+			<BitSize>16</BitSize>
+			<SubItem>
+				<Name>Bit0FieldBusDatavalid</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit1ZeroExecuted</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>1</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit2PingPongRxBit</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>2</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit3PressureSimulation</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>3</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit4PressureSPReached</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>4</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit5Reserved</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>5</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit6Reserved</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>6</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit7AccessModeBit0</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>7</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit8AccessModeBit1</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>8</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit9WarningsActive</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>9</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit10Reserved</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>10</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit11Reserved</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>11</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit12Reserved</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>12</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit13Reserved</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>13</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit14Reserved</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>14</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit15Reserved</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>15</BitOffs>
+			</SubItem>
+		</DataType>
+		<DataType>
+			<Name GUID="{2D6900CE-1C84-4BFD-9895-18A3E8FB2681}" Namespace="LCLS_Vacuum" AutoDeleteType="true">ST_GeneralWarnings</Name>
+			<BitSize>16</BitSize>
+			<SubItem>
+				<Name>Bit0ServiceRequest</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit1Reserved</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>1</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit2Reserved</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>2</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit3PowerFailureBattery</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>3</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit4Reserved</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>4</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit5Reserved</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>5</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit6Reserved</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>6</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit7Reserved</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>7</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit8Reserved</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>8</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit9Reserved</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>9</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit10SensMeasUnitFault</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>10</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit11Reserved</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>11</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit12Reserved</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>12</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit13Reserved</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>13</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit14Reserved</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>14</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit15Reserved</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>15</BitOffs>
+			</SubItem>
+		</DataType>
+		<DataType>
+			<Name GUID="{38C3A143-BF3A-438A-BEDE-860827924F96}" Namespace="LCLS_Vacuum" AutoDeleteType="true">ST_ExtendedWarnings</Name>
+			<BitSize>16</BitSize>
+			<SubItem>
+				<Name>Bit0RemoteControlNotPossible</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit1ControlModeSPNotAllowed</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>1</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit2ZeroDisabled</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>2</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit3PFODeactivated</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>3</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit4Reserved</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>4</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit5PressureSPOutOfRange</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>5</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit6PositionSPOutOfRange</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>6</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit7Reserved</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>7</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit8Reserved</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>8</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit9Reserved</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>9</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit10CtrlSPOutOfRange</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>10</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit11GeneralCtrlSPOutOfRange</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>11</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit12ProcDataSettingsNotvalid</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>12</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit13Reserved5</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>13</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit14Reserved6</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>14</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit15Reserved7</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>15</BitOffs>
+			</SubItem>
+		</DataType>
+		<DataType>
+			<Name GUID="{D3FFDB0E-A5A1-4E92-B746-0692F027C3E9}" Namespace="LCLS_Vacuum" AutoDeleteType="true">E_ControlModeSP</Name>
+			<BitSize>8</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000002}">USINT</BaseType>
+			<EnumInfo>
+				<Text>
+					<![CDATA[ManualControl]]>
+				</Text>
+				<Enum>2</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text>
+					<![CDATA[CloseValve]]>
+				</Text>
+				<Enum>3</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text>
+					<![CDATA[OpenValve]]>
+				</Text>
+				<Enum>4</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text>
+					<![CDATA[PressureControl]]>
+				</Text>
+				<Enum>5</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text>
+					<![CDATA[HoldValve]]>
+				</Text>
+				<Enum>6</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text>
+					<![CDATA[LearnProcedure]]>
+				</Text>
+				<Enum>7</Enum>
+			</EnumInfo>
+		</DataType>
+		<DataType>
+			<Name GUID="{6ACFA21E-2537-4C18-BE44-E27C19F4016F}" Namespace="LCLS_Vacuum" AutoDeleteType="true">ST_GeneralControlSP</Name>
+			<BitSize>16</BitSize>
+			<SubItem>
+				<Name>Bit0ExecuteZero</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit1Reserved</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>1</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit2PingPongTxBit</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>2</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit3Reserved</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>3</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit4AccessMode</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>4</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit5Reserved</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>5</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit6Reserved</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>6</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit7Reserved</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>7</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit8Reserved</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>8</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit9Reserved</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>9</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit10Reserved</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>10</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit11Reserved</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>11</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit12Reserved</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>12</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit13Reserved</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>13</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit14Reserved</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>14</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit15Reserved</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>15</BitOffs>
+			</SubItem>
+		</DataType>
 	</DataTypes>
 	<Project GUID="{18EFBA15-9C93-4A93-B3B8-48ADA6D90958}" Name="plc_lamp_vac" PrjFilePath="..\..\plc_lamp_vac\plc_lamp_vac.plcproj" TmcFilePath="..\..\plc_lamp_vac\plc_lamp_vac.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
 		<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="1" TmcPath="plc_lamp_vac\plc_lamp_vac.tmc">
@@ -432,9 +1009,9 @@ SERIAL IO]]>
 					<Type GUID="{18071995-0000-0000-0000-000000000041}">AMSNETID</Type>
 				</Var>
 				<Var>
-					<Name>DIAGNOSTICS.i_sAMSNetID</Name>
+					<Name>LCLS_Vacuum.LCLS_Vacuum_Serial.LCLS_Vacuum.Global_Variables.g_stSystem.I_EcatMaster1</Name>
 					<Comment>
-						<![CDATA[Link the sAMSNetID to the Etherat Master netID]]>
+						<![CDATA[ AMS Net ID used for FB_EcatDiag, among others ]]>
 					</Comment>
 					<Type GUID="{18071995-0000-0000-0000-000000000041}">AMSNETID</Type>
 				</Var>
@@ -450,9 +1027,9 @@ ETHERCAT BRRIDGE COM STATUS
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>DIAGNOSTICS.fbEcatDiag.I_AMSNetId</Name>
+					<Name>DIAGNOSTICS.i_sAMSNetID</Name>
 					<Comment>
-						<![CDATA[Link to the AMSNETID name in the ethercat master info.]]>
+						<![CDATA[Link the sAMSNetID to the Etherat Master netID]]>
 					</Comment>
 					<Type GUID="{18071995-0000-0000-0000-000000000041}">AMSNETID</Type>
 				</Var>
@@ -462,6 +1039,13 @@ ETHERCAT BRRIDGE COM STATUS
 						<![CDATA[0: External device connectd, 1: External device not connected]]>
 					</Comment>
 					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>DIAGNOSTICS.fbEcatDiag.I_AMSNetId</Name>
+					<Comment>
+						<![CDATA[Link to the AMSNETID name in the ethercat master info.]]>
+					</Comment>
+					<Type GUID="{18071995-0000-0000-0000-000000000041}">AMSNETID</Type>
 				</Var>
 				<Var>
 					<Name>GVL_PLC_Interfaces.xEcatBridge_WcState</Name>
@@ -659,6 +1243,55 @@ ETHERCAT BRRIDGE COM STATUS
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
+					<Name>GVL_Devices.LAMP_VCN_01.i_nRawPosition</Name>
+					<Comment>
+						<![CDATA[ Position readback from the valve]]>
+					</Comment>
+					<Type>DINT</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.LAMP_VCN_01.i_nRawPressure</Name>
+					<Comment>
+						<![CDATA[ Pressure readback from the valve]]>
+					</Comment>
+					<Type>DINT</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.LAMP_VCN_01.i_eControlMode</Name>
+					<Comment>
+						<![CDATA[ Valve control mode readback]]>
+					</Comment>
+					<Type GUID="{0075A3AF-A7D0-4CF2-AADD-70B3FAF80CCF}" Namespace="LCLS_Vacuum">E_ControlMode</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.LAMP_VCN_01.i_eFatalError</Name>
+					<Comment>
+						<![CDATA[ Valve Fatal Errors readback]]>
+					</Comment>
+					<Type GUID="{256F9AAD-CF5A-469D-BB54-387E0E417DC1}" Namespace="LCLS_Vacuum">E_FatalErrors</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.LAMP_VCN_01.i_stGenStatus</Name>
+					<Comment>
+						<![CDATA[ Valve General Status readback]]>
+					</Comment>
+					<Type GUID="{EE6EC3D3-0BB3-4A2D-BDCA-A7EAC8A56187}" Namespace="LCLS_Vacuum">ST_GeneralStatus</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.LAMP_VCN_01.i_stGenWarnings</Name>
+					<Comment>
+						<![CDATA[ Valve General Warnings readback]]>
+					</Comment>
+					<Type GUID="{2D6900CE-1C84-4BFD-9895-18A3E8FB2681}" Namespace="LCLS_Vacuum">ST_GeneralWarnings</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.LAMP_VCN_01.i_stExtnWarnings</Name>
+					<Comment>
+						<![CDATA[ Valve Extended Warnings readback]]>
+					</Comment>
+					<Type GUID="{38C3A143-BF3A-438A-BEDE-860827924F96}" Namespace="LCLS_Vacuum">ST_ExtendedWarnings</Type>
+				</Var>
+				<Var>
 					<Name>GVL_Devices.LAMP_C1_GHC_01.i_iPRESS_R</Name>
 					<Comment>
 						<![CDATA[ input Pressure // Link to analog Input]]>
@@ -714,10 +1347,6 @@ ETHERCAT BRRIDGE COM STATUS
 				</Var>
 				<Var>
 					<Name>GVL_PLC_Interfaces.xIP1_ROUGH_VRC_02_OPEN_LS</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_PLC_Interfaces.xIP1_ROUGH_VRC_03_OPEN_LS</Name>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
@@ -845,6 +1474,34 @@ ETHERCAT BRRIDGE COM STATUS
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
+					<Name>GVL_Devices.LAMP_VCN_01.o_nRawPositionSP</Name>
+					<Comment>
+						<![CDATA[ Position setpoint]]>
+					</Comment>
+					<Type>DINT</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.LAMP_VCN_01.o_nRawPressureSP</Name>
+					<Comment>
+						<![CDATA[ Pressure setpoint]]>
+					</Comment>
+					<Type>DINT</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.LAMP_VCN_01.o_eCtrlModeSP</Name>
+					<Comment>
+						<![CDATA[ Valve control mode setpoint]]>
+					</Comment>
+					<Type GUID="{D3FFDB0E-A5A1-4E92-B746-0692F027C3E9}" Namespace="LCLS_Vacuum">E_ControlModeSP</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.LAMP_VCN_01.o_stGenCtrlSP</Name>
+					<Comment>
+						<![CDATA[ General Control setpoint]]>
+					</Comment>
+					<Type GUID="{6ACFA21E-2537-4C18-BE44-E27C19F4016F}" Namespace="LCLS_Vacuum">ST_GeneralControlSP</Type>
+				</Var>
+				<Var>
 					<Name>GVL_Devices.LAMP_C1_GHC_01.q_xHV_DIS</Name>
 					<Comment>
 						<![CDATA[ Active Low ]]>
@@ -864,11 +1521,11 @@ ETHERCAT BRRIDGE COM STATUS
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>GVL_PLC_Interfaces.xIP1_TURBOS_ALL_AtSpd</Name>
+					<Name>GVL_PLC_Interfaces.xIP1_ROUGH_VRC_03_OPEN_LS</Name>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>GVL_PLC_Interfaces.xIP1_MAIN_xAT_VAC</Name>
+					<Name>GVL_PLC_Interfaces.xIP1_TURBOS_ALL_AtSpd</Name>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
@@ -879,16 +1536,20 @@ ETHERCAT BRRIDGE COM STATUS
 					<Type>STRING(8)</Type>
 				</Var>
 				<Var>
-					<Name>GVL_PLC_Interfaces.xIP1_MAIN_xPRESS_OK</Name>
+					<Name>GVL_PLC_Interfaces.xIP1_MAIN_xAT_VAC</Name>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>GVL_PLC_Interfaces.xIP1_HV_SAFETY_ENABLE</Name>
+					<Name>GVL_PLC_Interfaces.xIP1_MAIN_xPRESS_OK</Name>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>GVL_PLC_Interfaces.rIP1_MAIN_rPRESS</Name>
 					<Type>REAL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_PLC_Interfaces.xIP1_HV_SAFETY_ENABLE</Name>
+					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>GVL_PLC_Interfaces.xHighVoltageSafteyLoopEnable</Name>
@@ -1914,12 +2575,6 @@ ETHERCAT BRRIDGE COM STATUS
 				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_ROUGH_GPI_03.i_iPRESS_R" VarB="AI Standard Channel 3^Value" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_ROUGH_GPI_04.i_iPRESS_R" VarB="AI Standard Channel 4^Value" AutoLink="true"/>
 			</OwnerB>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^LAMP_PLC_E0_EK1200^LAMP_PLC_E13_EK1122^LAMP_PNL1_EP00_EP9128-0021^LAMP_PNL2_EP21_EP3174-0002">
-				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_C2_GCC_01.i_iPRESS_R" VarB="AI Standard Channel 1^Value" AutoLink="true"/>
-			</OwnerB>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^LAMP_PLC_E0_EK1200^LAMP_PLC_E13_EK1122^LAMP_PNL1_EP00_EP9128-0021^LAMP_PNL2_EP22_EP2624-0002">
-				<Link VarA="PlcTask Outputs^GVL_Devices.LAMP_C2_GCC_01.q_xHV_DIS" VarB="Channel 1^Output" AutoLink="true"/>
-			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^LAMP_PLC_E0_EK1200^LAMP_PLC_E13_EK1122^LAMP_PNL1_EP00_EP9128-0021^LAMP_PNL2_EP23_EP3174-0002">
 				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_C1_GHC_01.i_iPRESS_R" VarB="AI Standard Channel 2^Value" AutoLink="true"/>
 			</OwnerB>
@@ -1938,6 +2593,29 @@ ETHERCAT BRRIDGE COM STATUS
 				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_ROUGH_VRC_03.i_xClsLS" VarB="Channel 2^Input" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_ROUGH_VRC_03.i_xOpnLS" VarB="Channel 1^Input" AutoLink="true"/>
 				<Link VarA="PlcTask Outputs^GVL_Devices.LAMP_ROUGH_VRC_03.q_xOPN_DO" VarB="Channel 11^Output" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^LAMP_PLC_E0_EK1200^LAMP_PLC_E14_EK1122^VCN_1_VAT590">
+				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_VCN_01.i_eControlMode" VarB="DI TxPDO-Map^Control mode"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_VCN_01.i_eFatalError" VarB="DI TxPDO-Map^Fatal error"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_VCN_01.i_nRawPosition" VarB="DI TxPDO-Map^Position"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_VCN_01.i_nRawPressure" VarB="DI TxPDO-Map^Pressure"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_VCN_01.i_stExtnWarnings" VarB="DI TxPDO-Map^Extended warnings"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_VCN_01.i_stGenStatus" VarB="DI TxPDO-Map^General status"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_VCN_01.i_stGenWarnings" VarB="DI TxPDO-Map^General warnings"/>
+				<Link VarA="PlcTask Outputs^GVL_Devices.LAMP_VCN_01.o_eCtrlModeSP" VarB="DO RxPDO-Map^Control mode setpoint"/>
+				<Link VarA="PlcTask Outputs^GVL_Devices.LAMP_VCN_01.o_nRawPositionSP" VarB="DO RxPDO-Map^Position setpoint"/>
+				<Link VarA="PlcTask Outputs^GVL_Devices.LAMP_VCN_01.o_nRawPressureSP" VarB="DO RxPDO-Map^Pressure setpoint"/>
+				<Link VarA="PlcTask Outputs^GVL_Devices.LAMP_VCN_01.o_stGenCtrlSP" VarB="DO RxPDO-Map^General control setpoint"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^LAMP_PLC_E0_EK1200^LAMP_PLC_E14_EK1122^Variable_Leak_Valve_EK1100^Variable_Leak_Valve_EL1124">
+				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_C2_GCC_01.i_xDisc_Active" VarB="Channel 2^Input"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_C2_GCC_01.i_xHV_ON" VarB="Channel 1^Input"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^LAMP_PLC_E0_EK1200^LAMP_PLC_E14_EK1122^Variable_Leak_Valve_EK1100^Variable_Leak_Valve_EL3174-0002">
+				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_C2_GCC_01.i_iPRESS_R" VarB="AI Standard Channel 1^Value"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^LAMP_PLC_E0_EK1200^LAMP_PLC_E14_EK1122^Variable_Leak_Valve_EK1100^Variable_Leave_Valve_EL2624">
+				<Link VarA="PlcTask Outputs^GVL_Devices.LAMP_C2_GCC_01.q_xHV_DIS" VarB="Channel 1^Output"/>
 			</OwnerB>
 		</OwnerA>
 	</Mappings>

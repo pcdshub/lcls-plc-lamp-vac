@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.2">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
   <GVL Name="GVL_Devices" Id="{3ef1adf5-ba18-48c2-a083-7ec1a9d4dd63}">
     <Declaration><![CDATA[//{attribute 'qualified_only'}
 VAR_GLOBAL
@@ -283,6 +283,8 @@ VAR_GLOBAL
 	LAMP_ROUGH_GPI_04 : FB_9XX;
 
 (*Cold Cathode MKS 500 Gauges*)
+(* temporary change to try to link to EL terminals
+
 	{attribute 'TcLinkTo' := 	'.i_iPRESS_R	:=	TIIB[LAMP_PNL2_EP21_EP3174-0002]^AI Standard Channel 1^Value;
 								 .q_xHV_DIS		:= 	TIIB[LAMP_PNL2_EP22_EP2624-0002]^Channel 1^Output
 	'}	
@@ -291,6 +293,18 @@ VAR_GLOBAL
 		io: io
 	'}
 	LAMP_C2_GCC_01 : FB_MKS500;
+*)
+	
+(*Cold Cathode MKS 500 Gauges*)
+
+{attribute 'pytmc' :=' pv: LAMP:C2:GCC:01 '}
+LAMP_C2_GCC_01 : FB_MKS500;
+
+{attribute 'pytmc' := '
+pv: LAMP:VCN:01
+'}
+LAMP_VCN_01 : FB_VCN_VAT590;
+
 (*	
 	{attribute 'TcLinkTo' := 	'.i_iPRESS_R	:=	TIIB[LAMP_PNL2_EP21_EP3174-0002]^AI Standard Channel 2^Value;
 								 .q_xHV_DIS		:= 	TIIB[LAMP_PNL2_EP22_EP2624-0002]^Channel 2^Output
