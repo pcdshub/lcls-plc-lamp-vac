@@ -80,18 +80,16 @@ xHighVoltageSafteyLoopEnable:= (LAMP_C2_GCC_01.IG.rPRESS <= rHighVoltageMinPress
 	LAMP_ROUGH_GPI_04.M_SetBits(32767);	
 
 (*Cold Cathode Gauges*)
-//changed bEP to False for VAT variable leak valve integration
-    LAMP_C2_GCC_01.M_SetBits(30518);
-	LAMP_C2_GCC_01(PG:=LAMP_C2_GPI_01.PG,IG=>,bEP:=False);
-	
-	
-	LAMP_VCN_01(bExtIlkOK:= TRUE, IG := LAMP_C2_GCC_01.IG);
+	LAMP_C2_GCC_01(PG:=LAMP_C2_GPI_01.PG,IG=>,bEP:=TRUE);
 (*	
 	LAMP_CATCH_GCC_01(PG:=LAMP_C2_GPI_01.PG,IG=>,bEP:=TRUE);
 	LAMP_CATCH_GCC_02(PG:=LAMP_C2_GPI_01.PG,IG=>,bEP:=TRUE);  
 	LAMP_GJ1_GCC_01(PG:=LAMP_GJ1_GPI_01.PG,IG=>,bEP:=TRUE);
 	LAMP_GJ2_GCC_01(PG:=LAMP_GJ2_GPI_01.PG,IG=>,bEP:=TRUE);    
 *)
+	
+(*Variable Leak Valve*)
+    LAMP_VCN_01(bExtIlkOK:= TRUE, IG := LAMP_C2_GCC_01.IG);
 	
 (*Hot Cathode Gauges*)
 	LAMP_C1_GHC_01(PG:=LAMP_C2_GPI_01.PG,IG=>);

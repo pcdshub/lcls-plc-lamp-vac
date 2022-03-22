@@ -283,8 +283,6 @@ VAR_GLOBAL
 	LAMP_ROUGH_GPI_04 : FB_9XX;
 
 (*Cold Cathode MKS 500 Gauges*)
-(* temporary change to try to link to EL terminals
-
 	{attribute 'TcLinkTo' := 	'.i_iPRESS_R	:=	TIIB[LAMP_PNL2_EP21_EP3174-0002]^AI Standard Channel 1^Value;
 								 .q_xHV_DIS		:= 	TIIB[LAMP_PNL2_EP22_EP2624-0002]^Channel 1^Output
 	'}	
@@ -293,12 +291,12 @@ VAR_GLOBAL
 		io: io
 	'}
 	LAMP_C2_GCC_01 : FB_MKS500;
-*)
-	
-(*Cold Cathode MKS 500 Gauges*)
 
+(*
 {attribute 'pytmc' :=' pv: LAMP:C2:GCC:01 '}
 LAMP_C2_GCC_01 : FB_MKS500;
+*)
+
 
 {attribute 'pytmc' := '
 pv: LAMP:VCN:01
