@@ -34,17 +34,17 @@ xEcatBridge_COM_ERROR := (xEcatBridge_TxPDO_state OR xEcatBridge_External_device
 xOnBeamline := (xEcatBridge_COM_ERROR = FALSE) AND (sHUTCH_PLC_NAME = 'TMO');
 	
 (*TurboPump running Flag with 30 second Turn Off delay.*)
-b_TurboPumpRunningFlag := (LAMP_GJ2_PTM_01.iq_stPtm.eState = E_PumpState.pumpRUNNING)  AND 
+b_TurboPumpRunningFlag := (LAMP_GJ2_PTM_01.iq_stPtm.i_xAtSpd)  AND 
 (*	
     (LAMP_GJ2_PTM_02.iq_stPtm.eState = E_PumpState.pumpRUNNING) AND
 	(LAMP_GJ2_PTM_03.iq_stPtm.eState = E_PumpState.pumpRUNNING) AND
 	(LAMP_GJ2_PTM_04.iq_stPtm.eState = E_PumpState.pumpRUNNING) AND    
 *)
 (*	(LAMP_C1_PTM_01.iq_stPtm.eState = E_PumpState.pumpRUNNING) AND  *)
-//	(LAMP_C2_PTM_01.iq_stPtm.eState = E_PumpState.pumpRUNNING) AND //currently does not exist on LAMP
-	(LAMP_C2_PTM_02.iq_stPtm.eState = E_PumpState.pumpRUNNING) AND
-	(LAMP_C2_PTM_03.iq_stPtm.eState = E_PumpState.pumpRUNNING) AND
-	(LAMP_C2_PTM_04.iq_stPtm.eState = E_PumpState.pumpRUNNING) AND
+	(LAMP_C2_PTM_01.iq_stPtm.i_xAtSpd) AND 
+	(LAMP_C2_PTM_02.iq_stPtm.i_xAtSpd) AND
+	(LAMP_C2_PTM_03.iq_stPtm.i_xAtSpd) AND
+	(LAMP_C2_PTM_04.iq_stPtm.i_xAtSpd) AND
 (*	
 	(LAMP_CATCH_PTM_01.iq_stPtm.eState = E_PumpState.pumpRUNNING) AND 
 	(LAMP_CATCH_PTM_02.iq_stPtm.eState = E_PumpState.pumpRUNNING) AND
@@ -53,7 +53,7 @@ b_TurboPumpRunningFlag := (LAMP_GJ2_PTM_01.iq_stPtm.eState = E_PumpState.pumpRUN
 	(LAMP_GJ1_PTM_03.iq_stPtm.eState = E_PumpState.pumpRUNNING) AND
 	(LAMP_GJ1_PTM_04.iq_stPtm.eState = E_PumpState.pumpRUNNING) AND   
 *)
-	(LAMP_ROUGH_PTM_01.iq_stPtm.eState = E_PumpState.pumpRUNNING);
+	(LAMP_ROUGH_PTM_01.iq_stPtm.i_xAtSpd);
 //	(KTOF_PTM_01.iq_stPtm.eState = E_PumpState.pumpRUNNING);	
 TurboPumpTOF(IN:= b_TurboPumpRunningFlag, PT := TurboPumpDelayTime);
 xIP1_TURBOS_ALL_AtSpd:= TurboPumpTOF.Q;
