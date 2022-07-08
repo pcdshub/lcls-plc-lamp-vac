@@ -985,6 +985,8 @@ GVL_COM
     END_VAR
 
 
+
+
 GVL_Devices
 ^^^^^^^^^^^
 
@@ -1280,6 +1282,18 @@ GVL_Devices
     		io: io
     	'}
     	LAMP_C2_GCC_01 : FB_MKS500;
+
+    (*
+    {attribute 'pytmc' :=' pv: LAMP:C2:GCC:01 '}
+    LAMP_C2_GCC_01 : FB_MKS500;
+    *)
+
+
+    {attribute 'pytmc' := '
+    pv: LAMP:VCN:01
+    '}
+    LAMP_VCN_01 : FB_VCN_VAT590;
+
     (*	
     	{attribute 'TcLinkTo' := 	'.i_iPRESS_R	:=	TIIB[LAMP_PNL2_EP21_EP3174-0002]^AI Standard Channel 2^Value;
     								 .q_xHV_DIS		:= 	TIIB[LAMP_PNL2_EP22_EP2624-0002]^Channel 2^Output
@@ -1433,6 +1447,8 @@ GVL_Devices
     END_VAR
 
 
+
+
 GVL_PLC_Interfaces
 ^^^^^^^^^^^^^^^^^^
 
@@ -1494,7 +1510,7 @@ GVL_PLC_Interfaces
     	{attribute 'TcLInkTo' :=  'TIIB[LAMP_PLC_E04_EL6692]^IO Outputs^IP1_TURBOS_ALL_AtSpd
     	'}
     	{attribute 'pytmc' := '
-    			pv: PLC:CVMI:VAC:IP1_TURBOS_ALL_ATSPD
+    			pv: PLC:LAMP:VAC:IP1_TURBOS_ALL_ATSPD
     			io:i
     	'}
     	xIP1_TURBOS_ALL_AtSpd AT %Q* : BOOL;
@@ -1518,10 +1534,16 @@ GVL_PLC_Interfaces
     	(*ISEG HV Crate Safety Loop*)
     	{attribute 'TcLinkTo' := 	'TIIB[LAMP_PLC_E09_EL2794]^Channel 1^Output			 
     	'}
+    	{attribute 'pytmc' := '
+            pv: TMO:PLC:LAMP:VAC:HV_SAFETY_ENABLE
+            io:i
+        '}
     	xHighVoltageSafteyLoopEnable AT %Q* : BOOL := FALSE; (*When Enables the High voltage Saftey loop is closed and HV can start.*)
     	
     END_VAR
     //comment
+
+
 
 
 GVL_Variables
@@ -1546,6 +1568,8 @@ GVL_Variables
     	rHighVoltageMinPressure	: REAL := 1e-05; (*Hard coded High voltage Minimum Enable Pressure*)
     	
     END_VAR
+
+
 
 
 POUs
@@ -1590,6 +1614,8 @@ DIAGNOSTICS
     END_PROGRAM
 
 
+
+
 F_Turbo_NC_NO_Valve_Logic
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -1624,6 +1650,8 @@ F_Turbo_NC_NO_Valve_Logic
     END_IF
 
     END_FUNCTION
+
+
 
 
 MAIN
@@ -1663,17 +1691,17 @@ MAIN
     xOnBeamline := (xEcatBridge_COM_ERROR = FALSE) AND (sHUTCH_PLC_NAME = 'TMO');
     	
     (*TurboPump running Flag with 30 second Turn Off delay.*)
-    b_TurboPumpRunningFlag := (LAMP_GJ2_PTM_01.iq_stPtm.eState = E_PumpState.pumpRUNNING)  AND 
+    b_TurboPumpRunningFlag := (LAMP_GJ2_PTM_01.iq_stPtm.i_xAtSpd)  AND 
     (*	
         (LAMP_GJ2_PTM_02.iq_stPtm.eState = E_PumpState.pumpRUNNING) AND
     	(LAMP_GJ2_PTM_03.iq_stPtm.eState = E_PumpState.pumpRUNNING) AND
     	(LAMP_GJ2_PTM_04.iq_stPtm.eState = E_PumpState.pumpRUNNING) AND    
     *)
     (*	(LAMP_C1_PTM_01.iq_stPtm.eState = E_PumpState.pumpRUNNING) AND  *)
-    //	(LAMP_C2_PTM_01.iq_stPtm.eState = E_PumpState.pumpRUNNING) AND //currently does not exist on LAMP
-    	(LAMP_C2_PTM_02.iq_stPtm.eState = E_PumpState.pumpRUNNING) AND
-    	(LAMP_C2_PTM_03.iq_stPtm.eState = E_PumpState.pumpRUNNING) AND
-    	(LAMP_C2_PTM_04.iq_stPtm.eState = E_PumpState.pumpRUNNING) AND
+    	(LAMP_C2_PTM_01.iq_stPtm.i_xAtSpd) AND 
+    	(LAMP_C2_PTM_02.iq_stPtm.i_xAtSpd) AND
+    	(LAMP_C2_PTM_03.iq_stPtm.i_xAtSpd) AND
+    	(LAMP_C2_PTM_04.iq_stPtm.i_xAtSpd) AND
     (*	
     	(LAMP_CATCH_PTM_01.iq_stPtm.eState = E_PumpState.pumpRUNNING) AND 
     	(LAMP_CATCH_PTM_02.iq_stPtm.eState = E_PumpState.pumpRUNNING) AND
@@ -1682,7 +1710,7 @@ MAIN
     	(LAMP_GJ1_PTM_03.iq_stPtm.eState = E_PumpState.pumpRUNNING) AND
     	(LAMP_GJ1_PTM_04.iq_stPtm.eState = E_PumpState.pumpRUNNING) AND   
     *)
-    	(LAMP_ROUGH_PTM_01.iq_stPtm.eState = E_PumpState.pumpRUNNING);
+    	(LAMP_ROUGH_PTM_01.iq_stPtm.i_xAtSpd);
     //	(KTOF_PTM_01.iq_stPtm.eState = E_PumpState.pumpRUNNING);	
     TurboPumpTOF(IN:= b_TurboPumpRunningFlag, PT := TurboPumpDelayTime);
     xIP1_TURBOS_ALL_AtSpd:= TurboPumpTOF.Q;
@@ -1716,6 +1744,9 @@ MAIN
     	LAMP_GJ1_GCC_01(PG:=LAMP_GJ1_GPI_01.PG,IG=>,bEP:=TRUE);
     	LAMP_GJ2_GCC_01(PG:=LAMP_GJ2_GPI_01.PG,IG=>,bEP:=TRUE);    
     *)
+    	
+    (*Variable Leak Valve*)
+        LAMP_VCN_01(bExtIlkOK:= TRUE, IG := LAMP_C2_GCC_01.IG);
     	
     (*Hot Cathode Gauges*)
     	LAMP_C1_GHC_01(PG:=LAMP_C2_GPI_01.PG,IG=>);
@@ -2171,6 +2202,11 @@ MAIN
     END_PROGRAM
 
 
+Related:
+    * `DIAGNOSTICS`_
+    * `F_Turbo_NC_NO_Valve_Logic`_
+
+
 PRG_COM
 ^^^^^^^
 
@@ -2360,4 +2396,6 @@ PRG_COM
     *)
 
     END_PROGRAM
+
+
 

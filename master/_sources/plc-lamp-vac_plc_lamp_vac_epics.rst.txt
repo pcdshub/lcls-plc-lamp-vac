@@ -917,7 +917,7 @@ LCLS_General.ST_PendingEvent
       - | io: input
 
 
-  
+                                                                       
 LCLS_Vacuum.FB_9XX
 ^^^^^^^^^^^^^^^^^^
 
@@ -935,6 +935,28 @@ LCLS_Vacuum.FB_9XX
       - | field: ONAM TRUE
         | field: ZNAM FALSE
         | io: input
+
+
+    * - $(PREFIX):Auto_On
+      - bo
+      - $(SYMBOL).PG.xAutoOn
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - $(PREFIX):Auto_On_RBV
+      - bi
+      - $(SYMBOL).PG.xAutoOn
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - $(PREFIX):AutoOn_timer_RBV
+      - longin
+      - $(SYMBOL).PG.iAutoOnTimer
+      - | io: input
 
 
     * - $(PREFIX):DISC_ACTIVE_RBV
@@ -1075,9 +1097,9 @@ LCLS_Vacuum.FB_9XX
         | field: ONST GaugeDisconnected
         | field: SVST ValidLo
         | field: SXST ValidHi
-        | field: THST Off
+        | field: THST PressInvalid
         | field: TWST OoR
-        | field: ZRST PressInvalid
+        | field: ZRST Off
         | io: input
 
 
@@ -1123,6 +1145,28 @@ LCLS_Vacuum.FB_MKS275
         | io: input
 
 
+    * - $(PREFIX):Auto_On
+      - bo
+      - $(SYMBOL).PG.xAutoOn
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - $(PREFIX):Auto_On_RBV
+      - bi
+      - $(SYMBOL).PG.xAutoOn
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - $(PREFIX):AutoOn_timer_RBV
+      - longin
+      - $(SYMBOL).PG.iAutoOnTimer
+      - | io: input
+
+
     * - $(PREFIX):DISC_ACTIVE_RBV
       - bi
       - $(SYMBOL).PG.i_xDisc_Active
@@ -1261,9 +1305,9 @@ LCLS_Vacuum.FB_MKS275
         | field: ONST GaugeDisconnected
         | field: SVST ValidLo
         | field: SXST ValidHi
-        | field: THST Off
+        | field: THST PressInvalid
         | field: TWST OoR
-        | field: ZRST PressInvalid
+        | field: ZRST Off
         | io: input
 
 
@@ -1309,6 +1353,28 @@ LCLS_Vacuum.FB_MKS500
         | io: input
 
 
+    * - $(PREFIX):Auto_On
+      - bo
+      - $(SYMBOL).IG.xAutoOn
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - $(PREFIX):Auto_On_RBV
+      - bi
+      - $(SYMBOL).IG.xAutoOn
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - $(PREFIX):AutoOn_timer_RBV
+      - longin
+      - $(SYMBOL).IG.iAutoOnTimer
+      - | io: input
+
+
     * - $(PREFIX):DISC_ACTIVE_RBV
       - bi
       - $(SYMBOL).IG.i_xDisc_Active
@@ -1447,9 +1513,9 @@ LCLS_Vacuum.FB_MKS500
         | field: ONST GaugeDisconnected
         | field: SVST ValidLo
         | field: SXST ValidHi
-        | field: THST Off
+        | field: THST PressInvalid
         | field: TWST OoR
-        | field: ZRST PressInvalid
+        | field: ZRST Off
         | io: input
 
 
@@ -1495,6 +1561,28 @@ LCLS_Vacuum.FB_MKS909
         | io: input
 
 
+    * - $(PREFIX):Auto_On
+      - bo
+      - $(SYMBOL).IG.xAutoOn
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - $(PREFIX):Auto_On_RBV
+      - bi
+      - $(SYMBOL).IG.xAutoOn
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - $(PREFIX):AutoOn_timer_RBV
+      - longin
+      - $(SYMBOL).IG.iAutoOnTimer
+      - | io: input
+
+
     * - $(PREFIX):DISC_ACTIVE_RBV
       - bi
       - $(SYMBOL).IG.i_xDisc_Active
@@ -1633,9 +1721,9 @@ LCLS_Vacuum.FB_MKS909
         | field: ONST GaugeDisconnected
         | field: SVST ValidLo
         | field: SXST ValidHi
-        | field: THST Off
+        | field: THST PressInvalid
         | field: TWST OoR
-        | field: ZRST PressInvalid
+        | field: ZRST Off
         | io: input
 
 
@@ -2162,6 +2250,381 @@ LCLS_Vacuum.FB_PTM_TurboDrive
 
 
    
+LCLS_Vacuum.FB_VCN_VAT590
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. list-table::
+    :header-rows: 1
+    :align: center
+
+    * - Record
+      - Type
+      - Description
+      - Pragma
+    * - $(PREFIX):CTRL_MODE_RBV
+      - mbbi
+      - $(SYMBOL).stVcnVat590.stValveStatus.eControlMode
+      - | io: input
+
+
+    * - $(PREFIX):EXT_WARN:CTRL_SP_NOT_ALLOWED_RBV
+      - bi
+      - $(SYMBOL).stVcnVat590.stValveStatus.bControlModeSPNotAllowed
+      - | field: ONAM NOT_OK
+        | field: OSV MINOR
+        | field: ZNAM OK
+        | field: ZSV NO_ALARM
+        | io: input
+
+
+    * - $(PREFIX):EXT_WARN:CTRL_SP_OOR_RBV
+      - bi
+      - $(SYMBOL).stVcnVat590.stValveStatus.bCtrlSPOutOfRange
+      - | field: ONAM NOT_OK
+        | field: OSV MAJOR
+        | field: ZNAM OK
+        | field: ZSV NO_ALARM
+        | io: input
+
+
+    * - $(PREFIX):EXT_WARN:GENCTRL_SP_OOR_RBV
+      - bi
+      - $(SYMBOL).stVcnVat590.stValveStatus.bGeneralCtrlSPOutOfRange
+      - | field: ONAM NOT_OK
+        | field: OSV MAJOR
+        | field: ZNAM OK
+        | field: ZSV NO_ALARM
+        | io: input
+
+
+    * - $(PREFIX):EXT_WARN:PFO_STATUS_RBV
+      - bi
+      - $(SYMBOL).stVcnVat590.stValveStatus.bPFODeactivated
+      - | field: ONAM DISABLED
+        | field: OSV MINOR
+        | field: ZNAM ENABLED
+        | field: ZSV NO_ALARM
+        | io: input
+
+
+    * - $(PREFIX):EXT_WARN:POS_SP_OOR_RBV
+      - bi
+      - $(SYMBOL).stVcnVat590.stValveStatus.bPositionSPOutOfRange
+      - | field: ONAM NOT_OK
+        | field: OSV MAJOR
+        | field: ZNAM OK
+        | field: ZSV NO_ALARM
+        | io: input
+
+
+    * - $(PREFIX):EXT_WARN:PRES_SP_OOR_RBV
+      - bi
+      - $(SYMBOL).stVcnVat590.stValveStatus.bPressureSPOutOfRange
+      - | field: ONAM NOT_OK
+        | field: OSV MAJOR
+        | field: ZNAM OK
+        | field: ZSV NO_ALARM
+        | io: input
+
+
+    * - $(PREFIX):EXT_WARN:PROC_DATA_NOT_VALID_RBV
+      - bi
+      - $(SYMBOL).stVcnVat590.stValveStatus.bProcDataSettingsNotvalid
+      - | field: ONAM NOT_OK
+        | field: OSV MAJOR
+        | field: ZNAM OK
+        | field: ZSV NO_ALARM
+        | io: input
+
+
+    * - $(PREFIX):EXT_WARN:REM_NOT_POSSIBLE_RBV
+      - bi
+      - $(SYMBOL).stVcnVat590.stValveStatus.bRemoteControlNotPossible
+      - | field: ONAM NOT_OK
+        | field: OSV MINOR
+        | field: ZNAM OK
+        | field: ZSV NO_ALARM
+        | io: input
+
+
+    * - $(PREFIX):EXT_WARN:ZERO_STATUS_RBV
+      - bi
+      - $(SYMBOL).stVcnVat590.stValveStatus.bZeroDisabled
+      - | field: ONAM DISABLED
+        | field: OSV MINOR
+        | field: ZNAM ENABLED
+        | field: ZSV NO_ALARM
+        | io: input
+
+
+    * - $(PREFIX):FATAL_ERR_RBV
+      - mbbi
+      - $(SYMBOL).stVcnVat590.stValveStatus.eFatalErrors
+      - | io: input
+
+
+    * - $(PREFIX):GEN_STATUS:ECAT_DATA_VALID_RBV
+      - bi
+      - $(SYMBOL).stVcnVat590.stValveStatus.bFieldBusDatavalid
+      - | field: ONAM OK
+        | field: OSV NO_ALARM
+        | field: ZNAM NOT_OK
+        | field: ZSV MAJOR
+        | io: input
+
+
+    * - $(PREFIX):GEN_STATUS:ECAT_RxBIT_RBV
+      - bi
+      - $(SYMBOL).stVcnVat590.stValveStatus.bPingPongRxBit
+      - | field: ONAM NOT_INVERTED
+        | field: OSV NO_ALARM
+        | field: ZNAM INVERTED
+        | field: ZSV NO_ALARM
+        | io: input
+
+
+    * - $(PREFIX):GEN_STATUS:PRES_SIM_RBV
+      - bi
+      - $(SYMBOL).stVcnVat590.stValveStatus.bPressureSimulation
+      - | field: ONAM ON
+        | field: OSV NO_ALARM
+        | field: ZNAM OFF
+        | field: ZSV NO_ALARM
+        | io: input
+
+
+    * - $(PREFIX):GEN_STATUS:PRES_SP_REACHED_RBV
+      - bi
+      - $(SYMBOL).stVcnVat590.stValveStatus.bPressureSPReached
+      - | field: ONAM OK
+        | field: OSV NO_ALARM
+        | field: ZNAM NOT_OK
+        | field: ZSV NO_ALARM
+        | io: input
+
+
+    * - $(PREFIX):GEN_STATUS:REM_CTRL_RBV
+      - mbbi
+      - $(SYMBOL).stVcnVat590.stValveStatus.eRemoteStatus
+      - | io: input
+
+
+    * - $(PREFIX):GEN_STATUS:WARN_STATUS_RBV
+      - bi
+      - $(SYMBOL).stVcnVat590.stValveStatus.bWarningsActive
+      - | field: ONAM NOT_OK
+        | field: OSV MAJOR
+        | field: ZNAM OK
+        | field: ZSV NO_ALARM
+        | io: input
+
+
+    * - $(PREFIX):GEN_STATUS:ZERO_EXECUTED_RBV
+      - bi
+      - $(SYMBOL).stVcnVat590.stValveStatus.bZeroExecuted
+      - | field: ONAM EXECUTED
+        | field: OSV NO_ALARM
+        | field: ZNAM NOT_EXECUTED
+        | field: ZSV NO_ALARM
+        | io: input
+
+
+    * - $(PREFIX):GEN_WARN:ADC_UNIT_STATUS_RBV
+      - bi
+      - $(SYMBOL).stVcnVat590.stValveStatus.bSensMeasUnitFault
+      - | field: ONAM FAULTED
+        | field: OSV MAJOR
+        | field: ZNAM OK
+        | field: ZSV NO_ALARM
+        | io: input
+
+
+    * - $(PREFIX):GEN_WARN:POWER_FAIL_BATT_RBV
+      - bi
+      - $(SYMBOL).stVcnVat590.stValveStatus.bPowerFailureBattery
+      - | field: ONAM NOT_READY
+        | field: OSV MINOR
+        | field: ZNAM READY
+        | field: ZSV NO_ALARM
+        | io: input
+
+
+    * - $(PREFIX):GEN_WARN:SERVICE_REQ_RBV
+      - bi
+      - $(SYMBOL).stVcnVat590.stValveStatus.bServiceRequest
+      - | field: ONAM NOT_OK
+        | field: OSV MAJOR
+        | field: ZNAM OK
+        | field: ZSV NO_ALARM
+        | io: input
+
+
+    * - $(PREFIX):ILK_OK_RBV
+      - bi
+      - $(SYMBOL).stVcnVat590.bIlkOK
+      - | field: ONAM OK
+        | field: OSV NO_ALARM
+        | field: ZNAM NOT OK
+        | field: ZSV MAJOR
+        | io: input
+
+
+    * - $(PREFIX):POS_LIMIT
+      - ao
+      - $(SYMBOL).stVcnVat590.fPosSetLimit
+      - | autosave_pass1: VAL DESC
+        | io: output
+
+
+    * - $(PREFIX):POS_LIMIT_RBV
+      - ai
+      - $(SYMBOL).stVcnVat590.fPosSetLimit
+      - | autosave_pass1: VAL DESC
+        | io: output
+
+
+    * - $(PREFIX):POS_RAW_RBV
+      - longin
+      - $(SYMBOL).stVcnVat590.nRawPosition
+      - | io: input
+
+
+    * - $(PREFIX):POS_REQ
+      - ao
+      - $(SYMBOL).stVcnVat590.fReqPosition
+      - | field: DRVH 100.0
+        | field: DRVL 0.0
+        | io: output
+
+
+    * - $(PREFIX):POS_REQ_RBV
+      - ai
+      - $(SYMBOL).stVcnVat590.fReqPosition
+      - | field: DRVH 100.0
+        | field: DRVL 0.0
+        | io: output
+
+
+    * - $(PREFIX):POS_SP_RBV
+      - longin
+      - $(SYMBOL).stVcnVat590.nPositionSP
+      - | io: input
+
+
+    * - $(PREFIX):PRES_RAW_RBV
+      - longin
+      - $(SYMBOL).stVcnVat590.nRawPressure
+      - | io: input
+
+
+    * - $(PREFIX):PRES_RDBK_LIMIT
+      - ao
+      - $(SYMBOL).stVcnVat590.fPresRdbkLimit
+      - | autosave_pass1: VAL DESC
+        | io: output
+
+
+    * - $(PREFIX):PRES_RDBK_LIMIT_RBV
+      - ai
+      - $(SYMBOL).stVcnVat590.fPresRdbkLimit
+      - | autosave_pass1: VAL DESC
+        | io: output
+
+
+    * - $(PREFIX):PRES_REQ
+      - ao
+      - $(SYMBOL).stVcnVat590.fReqPressure
+      - | field: EGU "TORR"
+        | io: output
+
+
+    * - $(PREFIX):PRES_REQ_RBV
+      - ai
+      - $(SYMBOL).stVcnVat590.fReqPressure
+      - | field: EGU "TORR"
+        | io: output
+
+
+    * - $(PREFIX):PRES_SENS
+      - mbbo
+      - $(SYMBOL).stVcnVat590.ePressureSensor
+      - | io: output
+
+
+    * - $(PREFIX):PRES_SENS_RBV
+      - mbbi
+      - $(SYMBOL).stVcnVat590.ePressureSensor
+      - | io: output
+
+
+    * - $(PREFIX):PRES_SET_LIMIT
+      - ao
+      - $(SYMBOL).stVcnVat590.fPresSetLimit
+      - | autosave_pass1: VAL DESC
+        | io: output
+
+
+    * - $(PREFIX):PRES_SET_LIMIT_RBV
+      - ai
+      - $(SYMBOL).stVcnVat590.fPresSetLimit
+      - | autosave_pass1: VAL DESC
+        | io: output
+
+
+    * - $(PREFIX):PRES_SP_RBV
+      - longin
+      - $(SYMBOL).stVcnVat590.nPressureSP
+      - | io: input
+
+
+    * - $(PREFIX):PRES_TORR_RBV
+      - ai
+      - $(SYMBOL).stVcnVat590.fPressure
+      - | field: EGU "TORR"
+        | io: input
+
+
+    * - $(PREFIX):REM_CTRL
+      - mbbo
+      - $(SYMBOL).stVcnVat590.eRemoteControl
+      - | io: output
+
+
+    * - $(PREFIX):REM_CTRL_RBV
+      - mbbi
+      - $(SYMBOL).stVcnVat590.eRemoteControl
+      - | io: output
+
+
+    * - $(PREFIX):STATE
+      - mbbo
+      - $(SYMBOL).stVcnVat590.eValveControl
+      - | io: output
+
+
+    * - $(PREFIX):STATE_RBV
+      - mbbi
+      - $(SYMBOL).stVcnVat590.eValveControl
+      - | io: output
+
+
+    * - $(PREFIX):ZERO
+      - bo
+      - $(SYMBOL).stVcnVat590.bZero
+      - | field: ONAM ZERO
+        | field: ZNAM NO_OPERATION
+        | io: output
+
+
+    * - $(PREFIX):ZERO_RBV
+      - bi
+      - $(SYMBOL).stVcnVat590.bZero
+      - | field: ONAM ZERO
+        | field: ZNAM NO_OPERATION
+        | io: output
+
+
+ 
 LCLS_Vacuum.FB_VRC
 ^^^^^^^^^^^^^^^^^^
 
@@ -2591,7 +3054,7 @@ LCLS_Vacuum.FB_VRC_NO
         | io: input
 
 
-              
+                  
 LCLS_Vacuum.ST_LeyboldPTM
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -3460,6 +3923,591 @@ LCLS_Vacuum.ST_ValveBase
 
 
  
+LCLS_Vacuum.ST_VAT590_STATUS
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. list-table::
+    :header-rows: 1
+    :align: center
+
+    * - Record
+      - Type
+      - Description
+      - Pragma
+    * - $(PREFIX):CTRL_MODE_RBV
+      - mbbi
+      - $(SYMBOL).eControlMode
+      - | io: input
+
+
+    * - $(PREFIX):EXT_WARN:CTRL_SP_NOT_ALLOWED_RBV
+      - bi
+      - $(SYMBOL).bControlModeSPNotAllowed
+      - | field: ONAM NOT_OK
+        | field: OSV MINOR
+        | field: ZNAM OK
+        | field: ZSV NO_ALARM
+        | io: input
+
+
+    * - $(PREFIX):EXT_WARN:CTRL_SP_OOR_RBV
+      - bi
+      - $(SYMBOL).bCtrlSPOutOfRange
+      - | field: ONAM NOT_OK
+        | field: OSV MAJOR
+        | field: ZNAM OK
+        | field: ZSV NO_ALARM
+        | io: input
+
+
+    * - $(PREFIX):EXT_WARN:GENCTRL_SP_OOR_RBV
+      - bi
+      - $(SYMBOL).bGeneralCtrlSPOutOfRange
+      - | field: ONAM NOT_OK
+        | field: OSV MAJOR
+        | field: ZNAM OK
+        | field: ZSV NO_ALARM
+        | io: input
+
+
+    * - $(PREFIX):EXT_WARN:PFO_STATUS_RBV
+      - bi
+      - $(SYMBOL).bPFODeactivated
+      - | field: ONAM DISABLED
+        | field: OSV MINOR
+        | field: ZNAM ENABLED
+        | field: ZSV NO_ALARM
+        | io: input
+
+
+    * - $(PREFIX):EXT_WARN:POS_SP_OOR_RBV
+      - bi
+      - $(SYMBOL).bPositionSPOutOfRange
+      - | field: ONAM NOT_OK
+        | field: OSV MAJOR
+        | field: ZNAM OK
+        | field: ZSV NO_ALARM
+        | io: input
+
+
+    * - $(PREFIX):EXT_WARN:PRES_SP_OOR_RBV
+      - bi
+      - $(SYMBOL).bPressureSPOutOfRange
+      - | field: ONAM NOT_OK
+        | field: OSV MAJOR
+        | field: ZNAM OK
+        | field: ZSV NO_ALARM
+        | io: input
+
+
+    * - $(PREFIX):EXT_WARN:PROC_DATA_NOT_VALID_RBV
+      - bi
+      - $(SYMBOL).bProcDataSettingsNotvalid
+      - | field: ONAM NOT_OK
+        | field: OSV MAJOR
+        | field: ZNAM OK
+        | field: ZSV NO_ALARM
+        | io: input
+
+
+    * - $(PREFIX):EXT_WARN:REM_NOT_POSSIBLE_RBV
+      - bi
+      - $(SYMBOL).bRemoteControlNotPossible
+      - | field: ONAM NOT_OK
+        | field: OSV MINOR
+        | field: ZNAM OK
+        | field: ZSV NO_ALARM
+        | io: input
+
+
+    * - $(PREFIX):EXT_WARN:ZERO_STATUS_RBV
+      - bi
+      - $(SYMBOL).bZeroDisabled
+      - | field: ONAM DISABLED
+        | field: OSV MINOR
+        | field: ZNAM ENABLED
+        | field: ZSV NO_ALARM
+        | io: input
+
+
+    * - $(PREFIX):FATAL_ERR_RBV
+      - mbbi
+      - $(SYMBOL).eFatalErrors
+      - | io: input
+
+
+    * - $(PREFIX):GEN_STATUS:ECAT_DATA_VALID_RBV
+      - bi
+      - $(SYMBOL).bFieldBusDatavalid
+      - | field: ONAM OK
+        | field: OSV NO_ALARM
+        | field: ZNAM NOT_OK
+        | field: ZSV MAJOR
+        | io: input
+
+
+    * - $(PREFIX):GEN_STATUS:ECAT_RxBIT_RBV
+      - bi
+      - $(SYMBOL).bPingPongRxBit
+      - | field: ONAM NOT_INVERTED
+        | field: OSV NO_ALARM
+        | field: ZNAM INVERTED
+        | field: ZSV NO_ALARM
+        | io: input
+
+
+    * - $(PREFIX):GEN_STATUS:PRES_SIM_RBV
+      - bi
+      - $(SYMBOL).bPressureSimulation
+      - | field: ONAM ON
+        | field: OSV NO_ALARM
+        | field: ZNAM OFF
+        | field: ZSV NO_ALARM
+        | io: input
+
+
+    * - $(PREFIX):GEN_STATUS:PRES_SP_REACHED_RBV
+      - bi
+      - $(SYMBOL).bPressureSPReached
+      - | field: ONAM OK
+        | field: OSV NO_ALARM
+        | field: ZNAM NOT_OK
+        | field: ZSV NO_ALARM
+        | io: input
+
+
+    * - $(PREFIX):GEN_STATUS:REM_CTRL_RBV
+      - mbbi
+      - $(SYMBOL).eRemoteStatus
+      - | io: input
+
+
+    * - $(PREFIX):GEN_STATUS:WARN_STATUS_RBV
+      - bi
+      - $(SYMBOL).bWarningsActive
+      - | field: ONAM NOT_OK
+        | field: OSV MAJOR
+        | field: ZNAM OK
+        | field: ZSV NO_ALARM
+        | io: input
+
+
+    * - $(PREFIX):GEN_STATUS:ZERO_EXECUTED_RBV
+      - bi
+      - $(SYMBOL).bZeroExecuted
+      - | field: ONAM EXECUTED
+        | field: OSV NO_ALARM
+        | field: ZNAM NOT_EXECUTED
+        | field: ZSV NO_ALARM
+        | io: input
+
+
+    * - $(PREFIX):GEN_WARN:ADC_UNIT_STATUS_RBV
+      - bi
+      - $(SYMBOL).bSensMeasUnitFault
+      - | field: ONAM FAULTED
+        | field: OSV MAJOR
+        | field: ZNAM OK
+        | field: ZSV NO_ALARM
+        | io: input
+
+
+    * - $(PREFIX):GEN_WARN:POWER_FAIL_BATT_RBV
+      - bi
+      - $(SYMBOL).bPowerFailureBattery
+      - | field: ONAM NOT_READY
+        | field: OSV MINOR
+        | field: ZNAM READY
+        | field: ZSV NO_ALARM
+        | io: input
+
+
+    * - $(PREFIX):GEN_WARN:SERVICE_REQ_RBV
+      - bi
+      - $(SYMBOL).bServiceRequest
+      - | field: ONAM NOT_OK
+        | field: OSV MAJOR
+        | field: ZNAM OK
+        | field: ZSV NO_ALARM
+        | io: input
+
+
+ 
+LCLS_Vacuum.ST_VCN_VAT590
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. list-table::
+    :header-rows: 1
+    :align: center
+
+    * - Record
+      - Type
+      - Description
+      - Pragma
+    * - $(PREFIX):CTRL_MODE_RBV
+      - mbbi
+      - $(SYMBOL).stValveStatus.eControlMode
+      - | io: input
+
+
+    * - $(PREFIX):EXT_WARN:CTRL_SP_NOT_ALLOWED_RBV
+      - bi
+      - $(SYMBOL).stValveStatus.bControlModeSPNotAllowed
+      - | field: ONAM NOT_OK
+        | field: OSV MINOR
+        | field: ZNAM OK
+        | field: ZSV NO_ALARM
+        | io: input
+
+
+    * - $(PREFIX):EXT_WARN:CTRL_SP_OOR_RBV
+      - bi
+      - $(SYMBOL).stValveStatus.bCtrlSPOutOfRange
+      - | field: ONAM NOT_OK
+        | field: OSV MAJOR
+        | field: ZNAM OK
+        | field: ZSV NO_ALARM
+        | io: input
+
+
+    * - $(PREFIX):EXT_WARN:GENCTRL_SP_OOR_RBV
+      - bi
+      - $(SYMBOL).stValveStatus.bGeneralCtrlSPOutOfRange
+      - | field: ONAM NOT_OK
+        | field: OSV MAJOR
+        | field: ZNAM OK
+        | field: ZSV NO_ALARM
+        | io: input
+
+
+    * - $(PREFIX):EXT_WARN:PFO_STATUS_RBV
+      - bi
+      - $(SYMBOL).stValveStatus.bPFODeactivated
+      - | field: ONAM DISABLED
+        | field: OSV MINOR
+        | field: ZNAM ENABLED
+        | field: ZSV NO_ALARM
+        | io: input
+
+
+    * - $(PREFIX):EXT_WARN:POS_SP_OOR_RBV
+      - bi
+      - $(SYMBOL).stValveStatus.bPositionSPOutOfRange
+      - | field: ONAM NOT_OK
+        | field: OSV MAJOR
+        | field: ZNAM OK
+        | field: ZSV NO_ALARM
+        | io: input
+
+
+    * - $(PREFIX):EXT_WARN:PRES_SP_OOR_RBV
+      - bi
+      - $(SYMBOL).stValveStatus.bPressureSPOutOfRange
+      - | field: ONAM NOT_OK
+        | field: OSV MAJOR
+        | field: ZNAM OK
+        | field: ZSV NO_ALARM
+        | io: input
+
+
+    * - $(PREFIX):EXT_WARN:PROC_DATA_NOT_VALID_RBV
+      - bi
+      - $(SYMBOL).stValveStatus.bProcDataSettingsNotvalid
+      - | field: ONAM NOT_OK
+        | field: OSV MAJOR
+        | field: ZNAM OK
+        | field: ZSV NO_ALARM
+        | io: input
+
+
+    * - $(PREFIX):EXT_WARN:REM_NOT_POSSIBLE_RBV
+      - bi
+      - $(SYMBOL).stValveStatus.bRemoteControlNotPossible
+      - | field: ONAM NOT_OK
+        | field: OSV MINOR
+        | field: ZNAM OK
+        | field: ZSV NO_ALARM
+        | io: input
+
+
+    * - $(PREFIX):EXT_WARN:ZERO_STATUS_RBV
+      - bi
+      - $(SYMBOL).stValveStatus.bZeroDisabled
+      - | field: ONAM DISABLED
+        | field: OSV MINOR
+        | field: ZNAM ENABLED
+        | field: ZSV NO_ALARM
+        | io: input
+
+
+    * - $(PREFIX):FATAL_ERR_RBV
+      - mbbi
+      - $(SYMBOL).stValveStatus.eFatalErrors
+      - | io: input
+
+
+    * - $(PREFIX):GEN_STATUS:ECAT_DATA_VALID_RBV
+      - bi
+      - $(SYMBOL).stValveStatus.bFieldBusDatavalid
+      - | field: ONAM OK
+        | field: OSV NO_ALARM
+        | field: ZNAM NOT_OK
+        | field: ZSV MAJOR
+        | io: input
+
+
+    * - $(PREFIX):GEN_STATUS:ECAT_RxBIT_RBV
+      - bi
+      - $(SYMBOL).stValveStatus.bPingPongRxBit
+      - | field: ONAM NOT_INVERTED
+        | field: OSV NO_ALARM
+        | field: ZNAM INVERTED
+        | field: ZSV NO_ALARM
+        | io: input
+
+
+    * - $(PREFIX):GEN_STATUS:PRES_SIM_RBV
+      - bi
+      - $(SYMBOL).stValveStatus.bPressureSimulation
+      - | field: ONAM ON
+        | field: OSV NO_ALARM
+        | field: ZNAM OFF
+        | field: ZSV NO_ALARM
+        | io: input
+
+
+    * - $(PREFIX):GEN_STATUS:PRES_SP_REACHED_RBV
+      - bi
+      - $(SYMBOL).stValveStatus.bPressureSPReached
+      - | field: ONAM OK
+        | field: OSV NO_ALARM
+        | field: ZNAM NOT_OK
+        | field: ZSV NO_ALARM
+        | io: input
+
+
+    * - $(PREFIX):GEN_STATUS:REM_CTRL_RBV
+      - mbbi
+      - $(SYMBOL).stValveStatus.eRemoteStatus
+      - | io: input
+
+
+    * - $(PREFIX):GEN_STATUS:WARN_STATUS_RBV
+      - bi
+      - $(SYMBOL).stValveStatus.bWarningsActive
+      - | field: ONAM NOT_OK
+        | field: OSV MAJOR
+        | field: ZNAM OK
+        | field: ZSV NO_ALARM
+        | io: input
+
+
+    * - $(PREFIX):GEN_STATUS:ZERO_EXECUTED_RBV
+      - bi
+      - $(SYMBOL).stValveStatus.bZeroExecuted
+      - | field: ONAM EXECUTED
+        | field: OSV NO_ALARM
+        | field: ZNAM NOT_EXECUTED
+        | field: ZSV NO_ALARM
+        | io: input
+
+
+    * - $(PREFIX):GEN_WARN:ADC_UNIT_STATUS_RBV
+      - bi
+      - $(SYMBOL).stValveStatus.bSensMeasUnitFault
+      - | field: ONAM FAULTED
+        | field: OSV MAJOR
+        | field: ZNAM OK
+        | field: ZSV NO_ALARM
+        | io: input
+
+
+    * - $(PREFIX):GEN_WARN:POWER_FAIL_BATT_RBV
+      - bi
+      - $(SYMBOL).stValveStatus.bPowerFailureBattery
+      - | field: ONAM NOT_READY
+        | field: OSV MINOR
+        | field: ZNAM READY
+        | field: ZSV NO_ALARM
+        | io: input
+
+
+    * - $(PREFIX):GEN_WARN:SERVICE_REQ_RBV
+      - bi
+      - $(SYMBOL).stValveStatus.bServiceRequest
+      - | field: ONAM NOT_OK
+        | field: OSV MAJOR
+        | field: ZNAM OK
+        | field: ZSV NO_ALARM
+        | io: input
+
+
+    * - $(PREFIX):ILK_OK_RBV
+      - bi
+      - $(SYMBOL).bIlkOK
+      - | field: ONAM OK
+        | field: OSV NO_ALARM
+        | field: ZNAM NOT OK
+        | field: ZSV MAJOR
+        | io: input
+
+
+    * - $(PREFIX):POS_LIMIT
+      - ao
+      - $(SYMBOL).fPosSetLimit
+      - | autosave_pass1: VAL DESC
+        | io: output
+
+
+    * - $(PREFIX):POS_LIMIT_RBV
+      - ai
+      - $(SYMBOL).fPosSetLimit
+      - | autosave_pass1: VAL DESC
+        | io: output
+
+
+    * - $(PREFIX):POS_RAW_RBV
+      - longin
+      - $(SYMBOL).nRawPosition
+      - | io: input
+
+
+    * - $(PREFIX):POS_REQ
+      - ao
+      - $(SYMBOL).fReqPosition
+      - | field: DRVH 100.0
+        | field: DRVL 0.0
+        | io: output
+
+
+    * - $(PREFIX):POS_REQ_RBV
+      - ai
+      - $(SYMBOL).fReqPosition
+      - | field: DRVH 100.0
+        | field: DRVL 0.0
+        | io: output
+
+
+    * - $(PREFIX):POS_SP_RBV
+      - longin
+      - $(SYMBOL).nPositionSP
+      - | io: input
+
+
+    * - $(PREFIX):PRES_RAW_RBV
+      - longin
+      - $(SYMBOL).nRawPressure
+      - | io: input
+
+
+    * - $(PREFIX):PRES_RDBK_LIMIT
+      - ao
+      - $(SYMBOL).fPresRdbkLimit
+      - | autosave_pass1: VAL DESC
+        | io: output
+
+
+    * - $(PREFIX):PRES_RDBK_LIMIT_RBV
+      - ai
+      - $(SYMBOL).fPresRdbkLimit
+      - | autosave_pass1: VAL DESC
+        | io: output
+
+
+    * - $(PREFIX):PRES_REQ
+      - ao
+      - $(SYMBOL).fReqPressure
+      - | field: EGU "TORR"
+        | io: output
+
+
+    * - $(PREFIX):PRES_REQ_RBV
+      - ai
+      - $(SYMBOL).fReqPressure
+      - | field: EGU "TORR"
+        | io: output
+
+
+    * - $(PREFIX):PRES_SENS
+      - mbbo
+      - $(SYMBOL).ePressureSensor
+      - | io: output
+
+
+    * - $(PREFIX):PRES_SENS_RBV
+      - mbbi
+      - $(SYMBOL).ePressureSensor
+      - | io: output
+
+
+    * - $(PREFIX):PRES_SET_LIMIT
+      - ao
+      - $(SYMBOL).fPresSetLimit
+      - | autosave_pass1: VAL DESC
+        | io: output
+
+
+    * - $(PREFIX):PRES_SET_LIMIT_RBV
+      - ai
+      - $(SYMBOL).fPresSetLimit
+      - | autosave_pass1: VAL DESC
+        | io: output
+
+
+    * - $(PREFIX):PRES_SP_RBV
+      - longin
+      - $(SYMBOL).nPressureSP
+      - | io: input
+
+
+    * - $(PREFIX):PRES_TORR_RBV
+      - ai
+      - $(SYMBOL).fPressure
+      - | field: EGU "TORR"
+        | io: input
+
+
+    * - $(PREFIX):REM_CTRL
+      - mbbo
+      - $(SYMBOL).eRemoteControl
+      - | io: output
+
+
+    * - $(PREFIX):REM_CTRL_RBV
+      - mbbi
+      - $(SYMBOL).eRemoteControl
+      - | io: output
+
+
+    * - $(PREFIX):STATE
+      - mbbo
+      - $(SYMBOL).eValveControl
+      - | io: output
+
+
+    * - $(PREFIX):STATE_RBV
+      - mbbi
+      - $(SYMBOL).eValveControl
+      - | io: output
+
+
+    * - $(PREFIX):ZERO
+      - bo
+      - $(SYMBOL).bZero
+      - | field: ONAM ZERO
+        | field: ZNAM NO_OPERATION
+        | io: output
+
+
+    * - $(PREFIX):ZERO_RBV
+      - bi
+      - $(SYMBOL).bZero
+      - | field: ONAM ZERO
+        | field: ZNAM NO_OPERATION
+        | io: output
+
+
+ 
 LCLS_Vacuum.ST_VG
 ^^^^^^^^^^^^^^^^^
 
@@ -3477,6 +4525,28 @@ LCLS_Vacuum.ST_VG
       - | field: ONAM TRUE
         | field: ZNAM FALSE
         | io: input
+
+
+    * - $(PREFIX):Auto_On
+      - bo
+      - $(SYMBOL).xAutoOn
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - $(PREFIX):Auto_On_RBV
+      - bi
+      - $(SYMBOL).xAutoOn
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - $(PREFIX):AutoOn_timer_RBV
+      - longin
+      - $(SYMBOL).iAutoOnTimer
+      - | io: input
 
 
     * - $(PREFIX):DISC_ACTIVE_RBV
@@ -3617,9 +4687,9 @@ LCLS_Vacuum.ST_VG
         | field: ONST GaugeDisconnected
         | field: SVST ValidLo
         | field: SXST ValidHi
-        | field: THST Off
+        | field: THST PressInvalid
         | field: TWST OoR
-        | field: ZRST PressInvalid
+        | field: ZRST Off
         | io: input
 
 
@@ -4075,7 +5145,7 @@ LCLS_Vacuum.ST_VRC_NO
         | io: input
 
 
-                                                                   
+       
 LCLS_Vacuum_Serial.ST_PfeifferControl
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -4392,13 +5462,6 @@ PMPS.ST_BeamParams
         | io: input
 
 
-    * - $(PREFIX):PulseEnergy_RBV
-      - ai
-      - This beam parameter is non-op for now.
-      - | field: EGU mJ
-        | io: input
-
-
     * - $(PREFIX):Rate_RBV
       - longin
       - $(SYMBOL).nRate
@@ -4406,22 +5469,24 @@ PMPS.ST_BeamParams
         | io: input
 
 
-    * - $(PREFIX):ST_RBV
-      - waveform
-      - $(SYMBOL).aStoppers
-      - | io: input
-
-
     * - $(PREFIX):Transmission_RBV
-      - longin
+      - ai
       - $(SYMBOL).nTran
-      - | field: EGU %
+      - | field: HOPR 1
+        | field: LOPR 0
+        | field: PREC 2
         | io: input
 
 
     * - $(PREFIX):Valid_RBV
       - bi
       - $(SYMBOL).xValid
+      - | io: input
+
+
+    * - $(PREFIX):Veto_RBV
+      - waveform
+      - $(SYMBOL).aVetoDevices
       - | io: input
 
 
@@ -4565,7 +5630,7 @@ ST_PMPS_Aperture_IO
         | io: input
 
 
-                                   
+                                    
 Database Records
 ----------------
 
@@ -4592,14 +5657,6 @@ Database Records
         | io: input
 
 
-    * - $(PREFIX)0RateBeamCnst:PulseEnergy_RBV
-      - ai
-      - This beam parameter is non-op for now.
-      - | archive: 1s monitor
-        | field: EGU mJ
-        | io: input
-
-
     * - $(PREFIX)0RateBeamCnst:Rate_RBV
       - longin
       - 0-rate beam constant
@@ -4608,23 +5665,25 @@ Database Records
         | io: input
 
 
-    * - $(PREFIX)0RateBeamCnst:ST_RBV
-      - waveform
-      - 0-rate beam constant
-      - | archive: 1s monitor
-        | io: input
-
-
     * - $(PREFIX)0RateBeamCnst:Transmission_RBV
-      - longin
+      - ai
       - 0-rate beam constant
       - | archive: 1s monitor
-        | field: EGU %
+        | field: HOPR 1
+        | field: LOPR 0
+        | field: PREC 2
         | io: input
 
 
     * - $(PREFIX)0RateBeamCnst:Valid_RBV
       - bi
+      - 0-rate beam constant
+      - | archive: 1s monitor
+        | io: input
+
+
+    * - $(PREFIX)0RateBeamCnst:Veto_RBV
+      - waveform
       - 0-rate beam constant
       - | archive: 1s monitor
         | io: input
@@ -4651,14 +5710,6 @@ Database Records
         | io: input
 
 
-    * - $(PREFIX)CurrentBP:PulseEnergy_RBV
-      - ai
-      - This beam parameter is non-op for now.
-      - | archive: 1s monitor
-        | field: EGU mJ
-        | io: input
-
-
     * - $(PREFIX)CurrentBP:Rate_RBV
       - longin
       - PMPS_GVL.stCurrentBeamParameters.nRate
@@ -4667,24 +5718,26 @@ Database Records
         | io: input
 
 
-    * - $(PREFIX)CurrentBP:ST_RBV
-      - waveform
-      - PMPS_GVL.stCurrentBeamParameters.aStoppers
-      - | archive: 1s monitor
-        | io: input
-
-
     * - $(PREFIX)CurrentBP:Transmission_RBV
-      - longin
+      - ai
       - PMPS_GVL.stCurrentBeamParameters.nTran
       - | archive: 1s monitor
-        | field: EGU %
+        | field: HOPR 1
+        | field: LOPR 0
+        | field: PREC 2
         | io: input
 
 
     * - $(PREFIX)CurrentBP:Valid_RBV
       - bi
       - PMPS_GVL.stCurrentBeamParameters.xValid
+      - | archive: 1s monitor
+        | io: input
+
+
+    * - $(PREFIX)CurrentBP:Veto_RBV
+      - waveform
+      - PMPS_GVL.stCurrentBeamParameters.aVetoDevices
       - | archive: 1s monitor
         | io: input
 
@@ -4720,14 +5773,6 @@ Database Records
         | io: input
 
 
-    * - $(PREFIX)FullBeamCnst:PulseEnergy_RBV
-      - ai
-      - This beam parameter is non-op for now.
-      - | archive: 1s monitor
-        | field: EGU mJ
-        | io: input
-
-
     * - $(PREFIX)FullBeamCnst:Rate_RBV
       - longin
       - Full beam constant
@@ -4736,23 +5781,25 @@ Database Records
         | io: input
 
 
-    * - $(PREFIX)FullBeamCnst:ST_RBV
-      - waveform
-      - Full beam constant
-      - | archive: 1s monitor
-        | io: input
-
-
     * - $(PREFIX)FullBeamCnst:Transmission_RBV
-      - longin
+      - ai
       - Full beam constant
       - | archive: 1s monitor
-        | field: EGU %
+        | field: HOPR 1
+        | field: LOPR 0
+        | field: PREC 2
         | io: input
 
 
     * - $(PREFIX)FullBeamCnst:Valid_RBV
       - bi
+      - Full beam constant
+      - | archive: 1s monitor
+        | io: input
+
+
+    * - $(PREFIX)FullBeamCnst:Veto_RBV
+      - waveform
       - Full beam constant
       - | archive: 1s monitor
         | io: input
@@ -4825,14 +5872,6 @@ Database Records
         | io: input
 
 
-    * - $(PREFIX)RequestedBP:PulseEnergy_RBV
-      - ai
-      - This beam parameter is non-op for now.
-      - | archive: 1s monitor
-        | field: EGU mJ
-        | io: input
-
-
     * - $(PREFIX)RequestedBP:Rate_RBV
       - longin
       - PMPS_GVL.stRequestedBeamParameters.nRate
@@ -4841,18 +5880,13 @@ Database Records
         | io: input
 
 
-    * - $(PREFIX)RequestedBP:ST_RBV
-      - waveform
-      - PMPS_GVL.stRequestedBeamParameters.aStoppers
-      - | archive: 1s monitor
-        | io: input
-
-
     * - $(PREFIX)RequestedBP:Transmission_RBV
-      - longin
+      - ai
       - PMPS_GVL.stRequestedBeamParameters.nTran
       - | archive: 1s monitor
-        | field: EGU %
+        | field: HOPR 1
+        | field: LOPR 0
+        | field: PREC 2
         | io: input
 
 
@@ -4863,55 +5897,9 @@ Database Records
         | io: input
 
 
-    * - $(PREFIX)SafeBeamCnst:Cohort_RBV
-      - longin
-      - Cohort inc on each arb cycle
-      - | archive: 1s monitor
-        | io: input
-
-
-    * - $(PREFIX)SafeBeamCnst:PhotonEnergyRanges_RBV
-      - longin
-      - Safe beam constant
-      - | archive: 1s monitor
-        | field: EGU eV
-        | io: input
-
-
-    * - $(PREFIX)SafeBeamCnst:PulseEnergy_RBV
-      - ai
-      - This beam parameter is non-op for now.
-      - | archive: 1s monitor
-        | field: EGU mJ
-        | io: input
-
-
-    * - $(PREFIX)SafeBeamCnst:Rate_RBV
-      - longin
-      - Safe beam constant
-      - | archive: 1s monitor
-        | field: EGU Hz
-        | io: input
-
-
-    * - $(PREFIX)SafeBeamCnst:ST_RBV
+    * - $(PREFIX)RequestedBP:Veto_RBV
       - waveform
-      - Safe beam constant
-      - | archive: 1s monitor
-        | io: input
-
-
-    * - $(PREFIX)SafeBeamCnst:Transmission_RBV
-      - longin
-      - Safe beam constant
-      - | archive: 1s monitor
-        | field: EGU %
-        | io: input
-
-
-    * - $(PREFIX)SafeBeamCnst:Valid_RBV
-      - bi
-      - Safe beam constant
+      - PMPS_GVL.stRequestedBeamParameters.aVetoDevices
       - | archive: 1s monitor
         | io: input
 
@@ -4928,6 +5916,28 @@ Database Records
       - | field: ONAM TRUE
         | field: ZNAM FALSE
         | io: input
+
+
+    * - LAMP:C1:GHC:01:Auto_On
+      - bo
+      - GVL_Devices.LAMP_C1_GHC_01.IG.xAutoOn
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - LAMP:C1:GHC:01:Auto_On_RBV
+      - bi
+      - GVL_Devices.LAMP_C1_GHC_01.IG.xAutoOn
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - LAMP:C1:GHC:01:AutoOn_timer_RBV
+      - longin
+      - GVL_Devices.LAMP_C1_GHC_01.IG.iAutoOnTimer
+      - | io: input
 
 
     * - LAMP:C1:GHC:01:DISC_ACTIVE_RBV
@@ -5068,9 +6078,9 @@ Database Records
         | field: ONST GaugeDisconnected
         | field: SVST ValidLo
         | field: SXST ValidHi
-        | field: THST Off
+        | field: THST PressInvalid
         | field: TWST OoR
-        | field: ZRST PressInvalid
+        | field: ZRST Off
         | io: input
 
 
@@ -5102,6 +6112,28 @@ Database Records
       - | field: ONAM TRUE
         | field: ZNAM FALSE
         | io: input
+
+
+    * - LAMP:C2:GCC:01:Auto_On
+      - bo
+      - GVL_Devices.LAMP_C2_GCC_01.IG.xAutoOn
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - LAMP:C2:GCC:01:Auto_On_RBV
+      - bi
+      - GVL_Devices.LAMP_C2_GCC_01.IG.xAutoOn
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - LAMP:C2:GCC:01:AutoOn_timer_RBV
+      - longin
+      - GVL_Devices.LAMP_C2_GCC_01.IG.iAutoOnTimer
+      - | io: input
 
 
     * - LAMP:C2:GCC:01:DISC_ACTIVE_RBV
@@ -5242,9 +6274,9 @@ Database Records
         | field: ONST GaugeDisconnected
         | field: SVST ValidLo
         | field: SXST ValidHi
-        | field: THST Off
+        | field: THST PressInvalid
         | field: TWST OoR
-        | field: ZRST PressInvalid
+        | field: ZRST Off
         | io: input
 
 
@@ -5276,6 +6308,28 @@ Database Records
       - | field: ONAM TRUE
         | field: ZNAM FALSE
         | io: input
+
+
+    * - LAMP:C2:GPI:01:Auto_On
+      - bo
+      - GVL_Devices.LAMP_C2_GPI_01.PG.xAutoOn
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - LAMP:C2:GPI:01:Auto_On_RBV
+      - bi
+      - GVL_Devices.LAMP_C2_GPI_01.PG.xAutoOn
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - LAMP:C2:GPI:01:AutoOn_timer_RBV
+      - longin
+      - GVL_Devices.LAMP_C2_GPI_01.PG.iAutoOnTimer
+      - | io: input
 
 
     * - LAMP:C2:GPI:01:DISC_ACTIVE_RBV
@@ -5416,9 +6470,9 @@ Database Records
         | field: ONST GaugeDisconnected
         | field: SVST ValidLo
         | field: SXST ValidHi
-        | field: THST Off
+        | field: THST PressInvalid
         | field: TWST OoR
-        | field: ZRST PressInvalid
+        | field: ZRST Off
         | io: input
 
 
@@ -6726,6 +7780,28 @@ Database Records
         | io: input
 
 
+    * - LAMP:ROUGH:GPI:01:Auto_On
+      - bo
+      - GVL_Devices.LAMP_ROUGH_GPI_01.PG.xAutoOn
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - LAMP:ROUGH:GPI:01:Auto_On_RBV
+      - bi
+      - GVL_Devices.LAMP_ROUGH_GPI_01.PG.xAutoOn
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - LAMP:ROUGH:GPI:01:AutoOn_timer_RBV
+      - longin
+      - GVL_Devices.LAMP_ROUGH_GPI_01.PG.iAutoOnTimer
+      - | io: input
+
+
     * - LAMP:ROUGH:GPI:01:DISC_ACTIVE_RBV
       - bi
       - GVL_Devices.LAMP_ROUGH_GPI_01.PG.i_xDisc_Active
@@ -6864,9 +7940,9 @@ Database Records
         | field: ONST GaugeDisconnected
         | field: SVST ValidLo
         | field: SXST ValidHi
-        | field: THST Off
+        | field: THST PressInvalid
         | field: TWST OoR
-        | field: ZRST PressInvalid
+        | field: ZRST Off
         | io: input
 
 
@@ -6898,6 +7974,28 @@ Database Records
       - | field: ONAM TRUE
         | field: ZNAM FALSE
         | io: input
+
+
+    * - LAMP:ROUGH:GPI:02:Auto_On
+      - bo
+      - GVL_Devices.LAMP_ROUGH_GPI_02.PG.xAutoOn
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - LAMP:ROUGH:GPI:02:Auto_On_RBV
+      - bi
+      - GVL_Devices.LAMP_ROUGH_GPI_02.PG.xAutoOn
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - LAMP:ROUGH:GPI:02:AutoOn_timer_RBV
+      - longin
+      - GVL_Devices.LAMP_ROUGH_GPI_02.PG.iAutoOnTimer
+      - | io: input
 
 
     * - LAMP:ROUGH:GPI:02:DISC_ACTIVE_RBV
@@ -7038,9 +8136,9 @@ Database Records
         | field: ONST GaugeDisconnected
         | field: SVST ValidLo
         | field: SXST ValidHi
-        | field: THST Off
+        | field: THST PressInvalid
         | field: TWST OoR
-        | field: ZRST PressInvalid
+        | field: ZRST Off
         | io: input
 
 
@@ -7072,6 +8170,28 @@ Database Records
       - | field: ONAM TRUE
         | field: ZNAM FALSE
         | io: input
+
+
+    * - LAMP:ROUGH:GPI:03:Auto_On
+      - bo
+      - GVL_Devices.LAMP_ROUGH_GPI_03.PG.xAutoOn
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - LAMP:ROUGH:GPI:03:Auto_On_RBV
+      - bi
+      - GVL_Devices.LAMP_ROUGH_GPI_03.PG.xAutoOn
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - LAMP:ROUGH:GPI:03:AutoOn_timer_RBV
+      - longin
+      - GVL_Devices.LAMP_ROUGH_GPI_03.PG.iAutoOnTimer
+      - | io: input
 
 
     * - LAMP:ROUGH:GPI:03:DISC_ACTIVE_RBV
@@ -7212,9 +8332,9 @@ Database Records
         | field: ONST GaugeDisconnected
         | field: SVST ValidLo
         | field: SXST ValidHi
-        | field: THST Off
+        | field: THST PressInvalid
         | field: TWST OoR
-        | field: ZRST PressInvalid
+        | field: ZRST Off
         | io: input
 
 
@@ -7246,6 +8366,28 @@ Database Records
       - | field: ONAM TRUE
         | field: ZNAM FALSE
         | io: input
+
+
+    * - LAMP:ROUGH:GPI:04:Auto_On
+      - bo
+      - GVL_Devices.LAMP_ROUGH_GPI_04.PG.xAutoOn
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - LAMP:ROUGH:GPI:04:Auto_On_RBV
+      - bi
+      - GVL_Devices.LAMP_ROUGH_GPI_04.PG.xAutoOn
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - LAMP:ROUGH:GPI:04:AutoOn_timer_RBV
+      - longin
+      - GVL_Devices.LAMP_ROUGH_GPI_04.PG.iAutoOnTimer
+      - | io: input
 
 
     * - LAMP:ROUGH:GPI:04:DISC_ACTIVE_RBV
@@ -7386,9 +8528,9 @@ Database Records
         | field: ONST GaugeDisconnected
         | field: SVST ValidLo
         | field: SXST ValidHi
-        | field: THST Off
+        | field: THST PressInvalid
         | field: TWST OoR
-        | field: ZRST PressInvalid
+        | field: ZRST Off
         | io: input
 
 
@@ -8264,10 +9406,367 @@ Database Records
         | io: input
 
 
-    * - PLC:CVMI:VAC:IP1_TURBOS_ALL_ATSPD_RBV
-      - bi
-      - GVL_PLC_Interfaces.xIP1_TURBOS_ALL_AtSpd
+    * - LAMP:VCN:01:CTRL_MODE_RBV
+      - mbbi
+      - GVL_Devices.LAMP_VCN_01.stVcnVat590.stValveStatus.eControlMode
       - | io: input
+
+
+    * - LAMP:VCN:01:EXT_WARN:CTRL_SP_NOT_ALLOWED_RBV
+      - bi
+      - GVL_Devices.LAMP_VCN_01.stVcnVat590.stValveStatus.bControlModeSPNotAllowed
+      - | field: ONAM NOT_OK
+        | field: OSV MINOR
+        | field: ZNAM OK
+        | field: ZSV NO_ALARM
+        | io: input
+
+
+    * - LAMP:VCN:01:EXT_WARN:CTRL_SP_OOR_RBV
+      - bi
+      - GVL_Devices.LAMP_VCN_01.stVcnVat590.stValveStatus.bCtrlSPOutOfRange
+      - | field: ONAM NOT_OK
+        | field: OSV MAJOR
+        | field: ZNAM OK
+        | field: ZSV NO_ALARM
+        | io: input
+
+
+    * - LAMP:VCN:01:EXT_WARN:GENCTRL_SP_OOR_RBV
+      - bi
+      - GVL_Devices.LAMP_VCN_01.stVcnVat590.stValveStatus.bGeneralCtrlSPOutOfRange
+      - | field: ONAM NOT_OK
+        | field: OSV MAJOR
+        | field: ZNAM OK
+        | field: ZSV NO_ALARM
+        | io: input
+
+
+    * - LAMP:VCN:01:EXT_WARN:PFO_STATUS_RBV
+      - bi
+      - GVL_Devices.LAMP_VCN_01.stVcnVat590.stValveStatus.bPFODeactivated
+      - | field: ONAM DISABLED
+        | field: OSV MINOR
+        | field: ZNAM ENABLED
+        | field: ZSV NO_ALARM
+        | io: input
+
+
+    * - LAMP:VCN:01:EXT_WARN:POS_SP_OOR_RBV
+      - bi
+      - GVL_Devices.LAMP_VCN_01.stVcnVat590.stValveStatus.bPositionSPOutOfRange
+      - | field: ONAM NOT_OK
+        | field: OSV MAJOR
+        | field: ZNAM OK
+        | field: ZSV NO_ALARM
+        | io: input
+
+
+    * - LAMP:VCN:01:EXT_WARN:PRES_SP_OOR_RBV
+      - bi
+      - GVL_Devices.LAMP_VCN_01.stVcnVat590.stValveStatus.bPressureSPOutOfRange
+      - | field: ONAM NOT_OK
+        | field: OSV MAJOR
+        | field: ZNAM OK
+        | field: ZSV NO_ALARM
+        | io: input
+
+
+    * - LAMP:VCN:01:EXT_WARN:PROC_DATA_NOT_VALID_RBV
+      - bi
+      - GVL_Devices.LAMP_VCN_01.stVcnVat590.stValveStatus.bProcDataSettingsNotvalid
+      - | field: ONAM NOT_OK
+        | field: OSV MAJOR
+        | field: ZNAM OK
+        | field: ZSV NO_ALARM
+        | io: input
+
+
+    * - LAMP:VCN:01:EXT_WARN:REM_NOT_POSSIBLE_RBV
+      - bi
+      - GVL_Devices.LAMP_VCN_01.stVcnVat590.stValveStatus.bRemoteControlNotPossible
+      - | field: ONAM NOT_OK
+        | field: OSV MINOR
+        | field: ZNAM OK
+        | field: ZSV NO_ALARM
+        | io: input
+
+
+    * - LAMP:VCN:01:EXT_WARN:ZERO_STATUS_RBV
+      - bi
+      - GVL_Devices.LAMP_VCN_01.stVcnVat590.stValveStatus.bZeroDisabled
+      - | field: ONAM DISABLED
+        | field: OSV MINOR
+        | field: ZNAM ENABLED
+        | field: ZSV NO_ALARM
+        | io: input
+
+
+    * - LAMP:VCN:01:FATAL_ERR_RBV
+      - mbbi
+      - GVL_Devices.LAMP_VCN_01.stVcnVat590.stValveStatus.eFatalErrors
+      - | io: input
+
+
+    * - LAMP:VCN:01:GEN_STATUS:ECAT_DATA_VALID_RBV
+      - bi
+      - GVL_Devices.LAMP_VCN_01.stVcnVat590.stValveStatus.bFieldBusDatavalid
+      - | field: ONAM OK
+        | field: OSV NO_ALARM
+        | field: ZNAM NOT_OK
+        | field: ZSV MAJOR
+        | io: input
+
+
+    * - LAMP:VCN:01:GEN_STATUS:ECAT_RxBIT_RBV
+      - bi
+      - GVL_Devices.LAMP_VCN_01.stVcnVat590.stValveStatus.bPingPongRxBit
+      - | field: ONAM NOT_INVERTED
+        | field: OSV NO_ALARM
+        | field: ZNAM INVERTED
+        | field: ZSV NO_ALARM
+        | io: input
+
+
+    * - LAMP:VCN:01:GEN_STATUS:PRES_SIM_RBV
+      - bi
+      - GVL_Devices.LAMP_VCN_01.stVcnVat590.stValveStatus.bPressureSimulation
+      - | field: ONAM ON
+        | field: OSV NO_ALARM
+        | field: ZNAM OFF
+        | field: ZSV NO_ALARM
+        | io: input
+
+
+    * - LAMP:VCN:01:GEN_STATUS:PRES_SP_REACHED_RBV
+      - bi
+      - GVL_Devices.LAMP_VCN_01.stVcnVat590.stValveStatus.bPressureSPReached
+      - | field: ONAM OK
+        | field: OSV NO_ALARM
+        | field: ZNAM NOT_OK
+        | field: ZSV NO_ALARM
+        | io: input
+
+
+    * - LAMP:VCN:01:GEN_STATUS:REM_CTRL_RBV
+      - mbbi
+      - GVL_Devices.LAMP_VCN_01.stVcnVat590.stValveStatus.eRemoteStatus
+      - | io: input
+
+
+    * - LAMP:VCN:01:GEN_STATUS:WARN_STATUS_RBV
+      - bi
+      - GVL_Devices.LAMP_VCN_01.stVcnVat590.stValveStatus.bWarningsActive
+      - | field: ONAM NOT_OK
+        | field: OSV MAJOR
+        | field: ZNAM OK
+        | field: ZSV NO_ALARM
+        | io: input
+
+
+    * - LAMP:VCN:01:GEN_STATUS:ZERO_EXECUTED_RBV
+      - bi
+      - GVL_Devices.LAMP_VCN_01.stVcnVat590.stValveStatus.bZeroExecuted
+      - | field: ONAM EXECUTED
+        | field: OSV NO_ALARM
+        | field: ZNAM NOT_EXECUTED
+        | field: ZSV NO_ALARM
+        | io: input
+
+
+    * - LAMP:VCN:01:GEN_WARN:ADC_UNIT_STATUS_RBV
+      - bi
+      - GVL_Devices.LAMP_VCN_01.stVcnVat590.stValveStatus.bSensMeasUnitFault
+      - | field: ONAM FAULTED
+        | field: OSV MAJOR
+        | field: ZNAM OK
+        | field: ZSV NO_ALARM
+        | io: input
+
+
+    * - LAMP:VCN:01:GEN_WARN:POWER_FAIL_BATT_RBV
+      - bi
+      - GVL_Devices.LAMP_VCN_01.stVcnVat590.stValveStatus.bPowerFailureBattery
+      - | field: ONAM NOT_READY
+        | field: OSV MINOR
+        | field: ZNAM READY
+        | field: ZSV NO_ALARM
+        | io: input
+
+
+    * - LAMP:VCN:01:GEN_WARN:SERVICE_REQ_RBV
+      - bi
+      - GVL_Devices.LAMP_VCN_01.stVcnVat590.stValveStatus.bServiceRequest
+      - | field: ONAM NOT_OK
+        | field: OSV MAJOR
+        | field: ZNAM OK
+        | field: ZSV NO_ALARM
+        | io: input
+
+
+    * - LAMP:VCN:01:ILK_OK_RBV
+      - bi
+      - GVL_Devices.LAMP_VCN_01.stVcnVat590.bIlkOK
+      - | field: ONAM OK
+        | field: OSV NO_ALARM
+        | field: ZNAM NOT OK
+        | field: ZSV MAJOR
+        | io: input
+
+
+    * - LAMP:VCN:01:POS_LIMIT
+      - ao
+      - GVL_Devices.LAMP_VCN_01.stVcnVat590.fPosSetLimit
+      - | autosave_pass1: VAL DESC
+        | io: output
+
+
+    * - LAMP:VCN:01:POS_LIMIT_RBV
+      - ai
+      - GVL_Devices.LAMP_VCN_01.stVcnVat590.fPosSetLimit
+      - | autosave_pass1: VAL DESC
+        | io: output
+
+
+    * - LAMP:VCN:01:POS_RAW_RBV
+      - longin
+      - GVL_Devices.LAMP_VCN_01.stVcnVat590.nRawPosition
+      - | io: input
+
+
+    * - LAMP:VCN:01:POS_REQ
+      - ao
+      - GVL_Devices.LAMP_VCN_01.stVcnVat590.fReqPosition
+      - | field: DRVH 100.0
+        | field: DRVL 0.0
+        | io: output
+
+
+    * - LAMP:VCN:01:POS_REQ_RBV
+      - ai
+      - GVL_Devices.LAMP_VCN_01.stVcnVat590.fReqPosition
+      - | field: DRVH 100.0
+        | field: DRVL 0.0
+        | io: output
+
+
+    * - LAMP:VCN:01:POS_SP_RBV
+      - longin
+      - GVL_Devices.LAMP_VCN_01.stVcnVat590.nPositionSP
+      - | io: input
+
+
+    * - LAMP:VCN:01:PRES_RAW_RBV
+      - longin
+      - GVL_Devices.LAMP_VCN_01.stVcnVat590.nRawPressure
+      - | io: input
+
+
+    * - LAMP:VCN:01:PRES_RDBK_LIMIT
+      - ao
+      - GVL_Devices.LAMP_VCN_01.stVcnVat590.fPresRdbkLimit
+      - | autosave_pass1: VAL DESC
+        | io: output
+
+
+    * - LAMP:VCN:01:PRES_RDBK_LIMIT_RBV
+      - ai
+      - GVL_Devices.LAMP_VCN_01.stVcnVat590.fPresRdbkLimit
+      - | autosave_pass1: VAL DESC
+        | io: output
+
+
+    * - LAMP:VCN:01:PRES_REQ
+      - ao
+      - GVL_Devices.LAMP_VCN_01.stVcnVat590.fReqPressure
+      - | field: EGU "TORR"
+        | io: output
+
+
+    * - LAMP:VCN:01:PRES_REQ_RBV
+      - ai
+      - GVL_Devices.LAMP_VCN_01.stVcnVat590.fReqPressure
+      - | field: EGU "TORR"
+        | io: output
+
+
+    * - LAMP:VCN:01:PRES_SENS
+      - mbbo
+      - GVL_Devices.LAMP_VCN_01.stVcnVat590.ePressureSensor
+      - | io: output
+
+
+    * - LAMP:VCN:01:PRES_SENS_RBV
+      - mbbi
+      - GVL_Devices.LAMP_VCN_01.stVcnVat590.ePressureSensor
+      - | io: output
+
+
+    * - LAMP:VCN:01:PRES_SET_LIMIT
+      - ao
+      - GVL_Devices.LAMP_VCN_01.stVcnVat590.fPresSetLimit
+      - | autosave_pass1: VAL DESC
+        | io: output
+
+
+    * - LAMP:VCN:01:PRES_SET_LIMIT_RBV
+      - ai
+      - GVL_Devices.LAMP_VCN_01.stVcnVat590.fPresSetLimit
+      - | autosave_pass1: VAL DESC
+        | io: output
+
+
+    * - LAMP:VCN:01:PRES_SP_RBV
+      - longin
+      - GVL_Devices.LAMP_VCN_01.stVcnVat590.nPressureSP
+      - | io: input
+
+
+    * - LAMP:VCN:01:PRES_TORR_RBV
+      - ai
+      - GVL_Devices.LAMP_VCN_01.stVcnVat590.fPressure
+      - | field: EGU "TORR"
+        | io: input
+
+
+    * - LAMP:VCN:01:REM_CTRL
+      - mbbo
+      - GVL_Devices.LAMP_VCN_01.stVcnVat590.eRemoteControl
+      - | io: output
+
+
+    * - LAMP:VCN:01:REM_CTRL_RBV
+      - mbbi
+      - GVL_Devices.LAMP_VCN_01.stVcnVat590.eRemoteControl
+      - | io: output
+
+
+    * - LAMP:VCN:01:STATE
+      - mbbo
+      - GVL_Devices.LAMP_VCN_01.stVcnVat590.eValveControl
+      - | io: output
+
+
+    * - LAMP:VCN:01:STATE_RBV
+      - mbbi
+      - GVL_Devices.LAMP_VCN_01.stVcnVat590.eValveControl
+      - | io: output
+
+
+    * - LAMP:VCN:01:ZERO
+      - bo
+      - GVL_Devices.LAMP_VCN_01.stVcnVat590.bZero
+      - | field: ONAM ZERO
+        | field: ZNAM NO_OPERATION
+        | io: output
+
+
+    * - LAMP:VCN:01:ZERO_RBV
+      - bi
+      - GVL_Devices.LAMP_VCN_01.stVcnVat590.bZero
+      - | field: ONAM ZERO
+        | field: ZNAM NO_OPERATION
+        | io: output
 
 
     * - PLC:LAMP:ON:BEAMLINE
@@ -8282,6 +9781,12 @@ Database Records
       - | io: output
 
 
+    * - PLC:LAMP:VAC:IP1_TURBOS_ALL_ATSPD_RBV
+      - bi
+      - GVL_PLC_Interfaces.xIP1_TURBOS_ALL_AtSpd
+      - | io: input
+
+
     * - PLC:LAMP:VAC:OVRDON
       - bo
       - GVL_Variables.xSystemOverrideMode_LAMP
@@ -8292,6 +9797,12 @@ Database Records
       - bi
       - GVL_Variables.xSystemOverrideMode_LAMP
       - | io: output
+
+
+    * - TMO:PLC:LAMP:VAC:HV_SAFETY_ENABLE_RBV
+      - bi
+      - GVL_PLC_Interfaces.xHighVoltageSafteyLoopEnable
+      - | io: input
 
 
 

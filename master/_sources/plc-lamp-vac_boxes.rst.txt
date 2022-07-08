@@ -1082,28 +1082,6 @@ PDO COM RxPDO-Map Outputs Channel 2 (Index #x1605, Flags #x0010, SyncMan )
    </details>
 
 
-LAMP_PLC_E13_EK1110
-^^^^^^^^^^^^^^^^^^^
-
-
-.. raw:: html
-
-   <details>
-        <summary>EtherCAT</summary>
-
-.. csv-table:: Basic Settings
-    :header: Name, Data
-    :align: center
-
-    Name, LAMP_PLC_E13_EK1110
-    ID, 11
-
-
-.. raw:: html
-
-   </details>
-
-
 LAMP_PNL1_EP00_EP9128-0021
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -5570,6 +5548,28 @@ PDO TC Outputs Channel 8 (Index #x1607, Flags #x0010, SyncMan )
    </details>
 
 
+LAMP_PLC_E13_EK1122
+^^^^^^^^^^^^^^^^^^^
+
+
+.. raw:: html
+
+   <details>
+        <summary>EtherCAT</summary>
+
+.. csv-table:: Basic Settings
+    :header: Name, Data
+    :align: center
+
+    Name, LAMP_PLC_E13_EK1122
+    ID, 53
+
+
+.. raw:: html
+
+   </details>
+
+
 LAMP_PNL2_EP24_EP2624-0002
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -6603,6 +6603,503 @@ PDO COM RxPDO-Map Outputs Channel 2 (Index #x1605, Flags #x0010, SyncMan 2)
         "Data Out 19", "Output data", , "#x7010", "USINT"
         "Data Out 20", "Output data", , "#x7010", "USINT"
         "Data Out 21", "Output data", , "#x7010", "USINT"
+
+
+.. raw:: html
+
+   </details>
+
+
+LAMP_DCT_01_EP9224-0023
+^^^^^^^^^^^^^^^^^^^^^^^
+
+
+.. raw:: html
+
+   <details>
+        <summary>EtherCAT (22 PDOs)</summary>
+
+.. csv-table:: Basic Settings
+    :header: Name, Data
+    :align: center
+
+    Name, LAMP_DCT_01_EP9224-0023
+    ID, 91
+        BootStrapData, 0010f400f410f400
+        SyncMan, 001000012600010001000000500000010001001026010000
+        SyncMan, 001100012200010002000000500000010001001122010000
+        SyncMan, 00120a002400010003000000000000000a00001224010000
+        SyncMan, 001924002000010004000000000000002400001920010000
+        Fmmu, 0000000000000000001200020100000001000000000000000000000000000000
+        Fmmu, 0000000000000000001900010100000002000000000000000000000000000000
+        Fmmu, 00000000000000000d0800010100000003000000000000000000000000000000
+        CoeProfile, 17699721
+        CoeProfile, 17699721
+        CoeProfile, 17699721
+        CoeProfile, 17699721
+        CoeProfile, 58987401
+
+
+
+PDO DPO Inputs Channel 1 (Index #x1a00, Flags #x0010, SyncMan 3)
+
+.. csv-table::
+    :header: Name, Comment, BitLen, Index, Type
+    :align: center
+
+        "Error Us", "", , "#x6000", "BIT"
+        "Error Up", "", , "#x6000", "BIT"
+        "Warning Us", "", , "#x6000", "BIT"
+        "Warning Up", "", , "#x6000", "BIT"
+        "Status Us", "", , "#x6000", "BIT"
+        "Status Up", "", , "#x6000", "BIT"
+        "Channel Error", "", , "#x6000", "BIT"
+        "Error Sum Current", "", , "#x6000", "BIT"
+        "Warning Sum Current", "", , "#x6000", "BIT"
+        "None", "", , "", "ARRAY [0..4] OF BIT"
+        "TxPDO State", "", , "#x6000", "BIT"
+        "TxPDO Toggle", "", , "#x6000", "BIT"
+        "Current Us", "", , "#x6000", "INT"
+        "Current Up", "", , "#x6000", "INT"
+
+
+
+PDO DPO Extended Diag Inputs Channel 1 (Index #x1a01, Flags #x0010, SyncMan )
+
+.. csv-table::
+    :header: Name, Comment, BitLen, Index, Type
+    :align: center
+
+        "Peak Value 1", "", , "#x6000", "INT"
+        "Peak Value 2", "", , "#x6000", "INT"
+        "Timestamp 1", "", , "#x6000", "ULINT"
+        "Timestamp 2", "", , "#x6000", "ULINT"
+
+
+
+PDO DPO Inputs Channel 2 (Index #x1a02, Flags #x0010, SyncMan 3)
+
+.. csv-table::
+    :header: Name, Comment, BitLen, Index, Type
+    :align: center
+
+        "Error Us", "", , "#x6010", "BIT"
+        "Error Up", "", , "#x6010", "BIT"
+        "Warning Us", "", , "#x6010", "BIT"
+        "Warning Up", "", , "#x6010", "BIT"
+        "Status Us", "", , "#x6010", "BIT"
+        "Status Up", "", , "#x6010", "BIT"
+        "Channel Error", "", , "#x6010", "BIT"
+        "Error Sum Current", "", , "#x6010", "BIT"
+        "Warning Sum Current", "", , "#x6010", "BIT"
+        "None", "", , "", "ARRAY [0..4] OF BIT"
+        "TxPDO State", "", , "#x6010", "BIT"
+        "TxPDO Toggle", "", , "#x6010", "BIT"
+        "Current Us", "", , "#x6010", "INT"
+        "Current Up", "", , "#x6010", "INT"
+
+
+
+PDO DPO Extended Diag Inputs Channel 2 (Index #x1a03, Flags #x0010, SyncMan )
+
+.. csv-table::
+    :header: Name, Comment, BitLen, Index, Type
+    :align: center
+
+        "Peak Value 1", "", , "#x6010", "INT"
+        "Peak Value 2", "", , "#x6010", "INT"
+        "Timestamp 1", "", , "#x6010", "ULINT"
+        "Timestamp 2", "", , "#x6010", "ULINT"
+
+
+
+PDO DPO Inputs Channel 3 (Index #x1a04, Flags #x0010, SyncMan 3)
+
+.. csv-table::
+    :header: Name, Comment, BitLen, Index, Type
+    :align: center
+
+        "Error Us", "", , "#x6020", "BIT"
+        "Error Up", "", , "#x6020", "BIT"
+        "Warning Us", "", , "#x6020", "BIT"
+        "Warning Up", "", , "#x6020", "BIT"
+        "Status Us", "", , "#x6020", "BIT"
+        "Status Up", "", , "#x6020", "BIT"
+        "Channel Error", "", , "#x6020", "BIT"
+        "Error Sum Current", "", , "#x6020", "BIT"
+        "Warning Sum Current", "", , "#x6020", "BIT"
+        "None", "", , "", "ARRAY [0..4] OF BIT"
+        "TxPDO State", "", , "#x6020", "BIT"
+        "TxPDO Toggle", "", , "#x6020", "BIT"
+        "Current Us", "", , "#x6020", "INT"
+        "Current Up", "", , "#x6020", "INT"
+
+
+
+PDO DPO Extended Diag Inputs Channel 3 (Index #x1a05, Flags #x0010, SyncMan )
+
+.. csv-table::
+    :header: Name, Comment, BitLen, Index, Type
+    :align: center
+
+        "Peak Value 1", "", , "#x6020", "INT"
+        "Peak Value 2", "", , "#x6020", "INT"
+        "Timestamp 1", "", , "#x6020", "ULINT"
+        "Timestamp 2", "", , "#x6020", "ULINT"
+
+
+
+PDO DPO Inputs Channel 4 (Index #x1a06, Flags #x0010, SyncMan 3)
+
+.. csv-table::
+    :header: Name, Comment, BitLen, Index, Type
+    :align: center
+
+        "Error Us", "", , "#x6030", "BIT"
+        "Error Up", "", , "#x6030", "BIT"
+        "Warning Us", "", , "#x6030", "BIT"
+        "Warning Up", "", , "#x6030", "BIT"
+        "Status Us", "", , "#x6030", "BIT"
+        "Status Up", "", , "#x6030", "BIT"
+        "Channel Error", "", , "#x6030", "BIT"
+        "Error Sum Current", "", , "#x6030", "BIT"
+        "Warning Sum Current", "", , "#x6030", "BIT"
+        "None", "", , "", "ARRAY [0..4] OF BIT"
+        "TxPDO State", "", , "#x6030", "BIT"
+        "TxPDO Toggle", "", , "#x6030", "BIT"
+        "Current Us", "", , "#x6030", "INT"
+        "Current Up", "", , "#x6030", "INT"
+
+
+
+PDO DPO Extended Diag Inputs Channel 4 (Index #x1a07, Flags #x0010, SyncMan )
+
+.. csv-table::
+    :header: Name, Comment, BitLen, Index, Type
+    :align: center
+
+        "Peak Value 1", "", , "#x6030", "INT"
+        "Peak Value 2", "", , "#x6030", "INT"
+        "Timestamp 1", "", , "#x6030", "ULINT"
+        "Timestamp 2", "", , "#x6030", "ULINT"
+
+
+
+PDO DPO Inputs Device (Index #x1a08, Flags #x0010, SyncMan 3)
+
+.. csv-table::
+    :header: Name, Comment, BitLen, Index, Type
+    :align: center
+
+        "Temperature Warning", "", , "#xf607", "BIT"
+        "Temperature Error", "", , "#xf607", "BIT"
+        "Us Warning", "", , "#xf607", "BIT"
+        "Us Error", "", , "#xf607", "BIT"
+        "Up Warning", "", , "#xf607", "BIT"
+        "Up Error", "", , "#xf607", "BIT"
+        "Global Error Bit", "", , "#xf607", "BIT"
+        "Sum Current Warning", "", , "#xf607", "BIT"
+        "Sum Current Error", "", , "#xf607", "BIT"
+        "None", "", , "", "ARRAY [0..1] OF BIT"
+        "Reset Input", "", , "#xf607", "BIT"
+        "None", "", , "", "ARRAY [0..1] OF BIT"
+        "TxPDO State", "", , "#xf607", "BIT"
+        "TxPDO Toggle", "", , "#xf607", "BIT"
+        "Current Us", "", , "#xf607", "INT"
+        "Current Up", "", , "#xf607", "INT"
+        "Voltage Us", "", , "#xf607", "INT"
+        "Voltage Up", "", , "#xf607", "INT"
+        "Temperature", "", , "#xf607", "INT"
+
+
+
+PDO DPO Extended Diag Inputs Device (Index #x1a09, Flags #x0010, SyncMan )
+
+.. csv-table::
+    :header: Name, Comment, BitLen, Index, Type
+    :align: center
+
+        "Peak Value 1", "", , "#xf607", "INT"
+        "Peak Value 2", "", , "#xf607", "INT"
+        "Timestamp 1", "", , "#xf607", "ULINT"
+        "Timestamp 2", "", , "#xf607", "ULINT"
+
+
+
+PDO LOG Status (Index #x1a10, Flags #x0010, SyncMan )
+
+.. csv-table::
+    :header: Name, Comment, BitLen, Index, Type
+    :align: center
+
+        "Status__Logger Running", "", , "#x6040", "BIT"
+        "Status__", "", , "", "ARRAY [0..14] OF BIT"
+        "Elapsed Time", "", , "#x6040", "UDINT"
+        "Trigger Reason", "", , "#x6040", "UINT"
+
+
+
+PDO DPO Outputs Channel 1 (Index #x1600, Flags #x0010, SyncMan 2)
+
+.. csv-table::
+    :header: Name, Comment, BitLen, Index, Type
+    :align: center
+
+        "Output Us", "", , "#x7000", "BIT"
+        "Output Up", "", , "#x7000", "BIT"
+        "None", "", , "", "ARRAY [0..1] OF BIT"
+        "Reset Us", "", , "#x7000", "BIT"
+        "Reset Up", "", , "#x7000", "BIT"
+        "None", "", , "", "ARRAY [0..9] OF BIT"
+
+
+
+PDO DPO Extended Diag Outputs Channel 1 (Index #x1601, Flags #x0010, SyncMan )
+
+.. csv-table::
+    :header: Name, Comment, BitLen, Index, Type
+    :align: center
+
+        "Reset Extended Diag Data", "", , "#x7000", "BIT"
+        "None", "", , "", "ARRAY [0..14] OF BIT"
+
+
+
+PDO DPO Outputs Channel 2 (Index #x1602, Flags #x0010, SyncMan 2)
+
+.. csv-table::
+    :header: Name, Comment, BitLen, Index, Type
+    :align: center
+
+        "Output Us", "", , "#x7010", "BIT"
+        "Output Up", "", , "#x7010", "BIT"
+        "None", "", , "", "ARRAY [0..1] OF BIT"
+        "Reset Us", "", , "#x7010", "BIT"
+        "Reset Up", "", , "#x7010", "BIT"
+        "None", "", , "", "ARRAY [0..9] OF BIT"
+
+
+
+PDO DPO Extended Diag Outputs Channel 2 (Index #x1603, Flags #x0010, SyncMan )
+
+.. csv-table::
+    :header: Name, Comment, BitLen, Index, Type
+    :align: center
+
+        "Reset Extended Diag Data", "", , "#x7010", "BIT"
+        "None", "", , "", "ARRAY [0..14] OF BIT"
+
+
+
+PDO DPO Outputs Channel 3 (Index #x1604, Flags #x0010, SyncMan 2)
+
+.. csv-table::
+    :header: Name, Comment, BitLen, Index, Type
+    :align: center
+
+        "Output Us", "", , "#x7020", "BIT"
+        "Output Up", "", , "#x7020", "BIT"
+        "None", "", , "", "ARRAY [0..1] OF BIT"
+        "Reset Us", "", , "#x7020", "BIT"
+        "Reset Up", "", , "#x7020", "BIT"
+        "None", "", , "", "ARRAY [0..9] OF BIT"
+
+
+
+PDO DPO Extended Diag Outputs Channel 3 (Index #x1605, Flags #x0010, SyncMan )
+
+.. csv-table::
+    :header: Name, Comment, BitLen, Index, Type
+    :align: center
+
+        "Reset Extended Diag Data", "", , "#x7020", "BIT"
+        "None", "", , "", "ARRAY [0..14] OF BIT"
+
+
+
+PDO DPO Outputs Channel 4 (Index #x1606, Flags #x0010, SyncMan 2)
+
+.. csv-table::
+    :header: Name, Comment, BitLen, Index, Type
+    :align: center
+
+        "Output Us", "", , "#x7030", "BIT"
+        "Output Up", "", , "#x7030", "BIT"
+        "None", "", , "", "ARRAY [0..1] OF BIT"
+        "Reset Us", "", , "#x7030", "BIT"
+        "Reset Up", "", , "#x7030", "BIT"
+        "None", "", , "", "ARRAY [0..9] OF BIT"
+
+
+
+PDO DPO Extended Diag Outputs Channel 4 (Index #x1607, Flags #x0010, SyncMan )
+
+.. csv-table::
+    :header: Name, Comment, BitLen, Index, Type
+    :align: center
+
+        "Reset Extended Diag Data", "", , "#x7030", "BIT"
+        "None", "", , "", "ARRAY [0..14] OF BIT"
+
+
+
+PDO DPO Outputs Device (Index #x1608, Flags #x0010, SyncMan 2)
+
+.. csv-table::
+    :header: Name, Comment, BitLen, Index, Type
+    :align: center
+
+        "Enable Control Via Fieldbus", "", , "#xf707", "BIT"
+        "None", "", , "", "ARRAY [0..1] OF BIT"
+        "Global Reset", "", , "#xf707", "BIT"
+        "None", "", , "", "ARRAY [0..11] OF BIT"
+
+
+
+PDO DPO Extended Diag Outputs Device (Index #x1609, Flags #x0010, SyncMan )
+
+.. csv-table::
+    :header: Name, Comment, BitLen, Index, Type
+    :align: center
+
+        "Reset Extended Diag Data", "", , "#xf707", "BIT"
+        "None", "", , "", "ARRAY [0..14] OF BIT"
+
+
+
+PDO LOG Control (Index #x1610, Flags #x0010, SyncMan )
+
+.. csv-table::
+    :header: Name, Comment, BitLen, Index, Type
+    :align: center
+
+        "Control__Start Logger", "", , "#x7040", "BIT"
+        "Control__Stop Logger", "", , "#x7040", "BIT"
+        "Control__", "", , "", "ARRAY [0..13] OF BIT"
+
+
+.. raw:: html
+
+   </details>
+
+
+LAMP_PLC_E14_EK1122
+^^^^^^^^^^^^^^^^^^^
+
+
+.. raw:: html
+
+   <details>
+        <summary>EtherCAT</summary>
+
+.. csv-table:: Basic Settings
+    :header: Name, Data
+    :align: center
+
+    Name, LAMP_PLC_E14_EK1122
+    ID, 92
+
+
+.. raw:: html
+
+   </details>
+
+
+LAMP_PLC_E15_EL9011
+^^^^^^^^^^^^^^^^^^^
+
+
+.. raw:: html
+
+   <details>
+        <summary>EtherCAT</summary>
+
+.. csv-table:: Basic Settings
+    :header: Name, Data
+    :align: center
+
+    Name, LAMP_PLC_E15_EL9011
+    ID, 93
+
+
+.. raw:: html
+
+   </details>
+
+
+VCN_1_VAT590
+^^^^^^^^^^^^
+
+
+.. raw:: html
+
+   <details>
+        <summary>EtherCAT (2 PDOs)</summary>
+
+.. csv-table:: Basic Settings
+    :header: Name, Data
+    :align: center
+
+    Name, VCN_1_VAT590
+    ID, 109
+        SyncMan, 001c14012600010001000000140114011401001c26010000
+        SyncMan, 001e14012200010002000000140114011401001e22010000
+        SyncMan, 001027006400010003000000000000000000001064010000
+        SyncMan, 00162f002000010004000000000000000000001620010000
+        Fmmu, 0000000000000000001000020100000001000000000000000000000000000000
+        Fmmu, 0000000000000000001600010100000002000000000000000000000000000000
+
+
+
+PDO DI TxPDO-Map (Index #x1a00, Flags #x0010, SyncMan 3)
+
+.. csv-table::
+    :header: Name, Comment, BitLen, Index, Type
+    :align: center
+
+        "Pressure", "", , "#x2001", "DINT"
+        "Pressure sensor 1", "", , "#x2002", "DINT"
+        "Pressure sensor 2", "", , "#x2003", "DINT"
+        "Position", "", , "#x2004", "DINT"
+        "Target position", "", , "#x2005", "DINT"
+        "Control mode", "", , "#x2006", "USINT"
+        "Fatal error", "", , "#x2007", "UINT"
+        "Reserved - not used", "", , "#x2008", "UINT"
+        "Reserved - not used", "", , "#x2009", "UINT"
+        "Reserved - not used", "", , "#x200a", "UINT"
+        "Reserved - not used", "", , "#x200b", "UINT"
+        "General status", "", , "#x200c", "UINT"
+        "General warnings", "", , "#x200d", "UINT"
+        "Extended warnings", "", , "#x200e", "UINT"
+        "Cluster valve monitoring address", "", , "#x200f", "USINT"
+        "Cluster valve position", "", , "#x2010", "DINT"
+        "Cluster valve control mode", "", , "#x2011", "USINT"
+        "Cluster valve status", "", , "#x2012", "UINT"
+        "Cluster valve warnings", "", , "#x2013", "UINT"
+
+
+
+PDO DO RxPDO-Map (Index #x1600, Flags #x0010, SyncMan 2)
+
+.. csv-table::
+    :header: Name, Comment, BitLen, Index, Type
+    :align: center
+
+        "Pressure setpoint", "", , "#x2014", "DINT"
+        "Position setpoint", "", , "#x2015", "DINT"
+        "Reserved - not used", "", , "#x2016", "DINT"
+        "External digital pressure sensor 1", "", , "#x2017", "DINT"
+        "External digital pressure sensor 2", "", , "#x2018", "DINT"
+        "Control mode setpoint", "", , "#x2019", "USINT"
+        "General control setpoint", "", , "#x201a", "UINT"
+        "Reserved - not used", "", , "#x201b", "UINT"
+        "Reserved - not used", "", , "#x201c", "UINT"
+        "Reserved - not used", "", , "#x201d", "UINT"
+        "Reserved - not used", "", , "#x201e", "UINT"
+        "Cluster valve freeze position setpoint", "", , "#x201f", "DINT"
+        "Cluster valve freeze address setpoint", "", , "#x2020", "USINT"
+        "Cluster valve freeze control setpoint", "", , "#x2021", "UINT"
+        "Cluster valve monitoring address setpoint", "", , "#x2022", "USINT"
 
 
 .. raw:: html
