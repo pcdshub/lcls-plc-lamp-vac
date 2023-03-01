@@ -1,0 +1,264 @@
+Box Hierarchy
+-------------
+
+
+#. **LAMP_PLC_E0_EK1200 [ID: 1]**
+        EK1200-5000 EtherCAT Power supply (2A E-Bus)
+
+    #. LAMP_PLC_E01_EL2202 [ID: 2]
+            EL2202 2Ch. Dig. Output 24V, 0.5A
+
+
+
+    #. LAMP_PLC_E02_EL6070 [ID: 3]
+            EL6070 1Ch. Licensing-Terminal
+
+
+
+    #. LAMP_PLC_E03_EL9184 [ID: 38]
+            EL9184 Potential Connection, 8 x 24V, 8 x Ground
+
+
+
+    #. LAMP_PLC_E04_EL6692 [ID: 4]
+            EL6692 EtherCAT Bridge terminal (Primary)
+
+
+
+    #. LAMP_PLC_E05_EL9410 [ID: 5]
+            EL9410 E-Bus Power Supplier  (Diagnostics)
+
+
+
+    #. LAMP_PLC_E06_EL1004 [ID: 6]
+            EL1004 4Ch. Dig. Input 24V, 3ms
+
+
+
+    #. LAMP_PLC_E07_EL2794 [ID: 7]
+            EL2794 4Ch. Dig. Output 24V AC/DC, 2A, short-circuit-proof
+
+
+
+    #. LAMP_PLC_E08_EL1004 [ID: 8]
+            EL1004 4Ch. Dig. Input 24V, 3ms
+
+
+
+    #. LAMP_PLC_E09_EL2794 [ID: 47]
+            EL2794 4Ch. Dig. Output 24V AC/DC, 2A, short-circuit-proof
+
+
+
+    #. LAMP_PLC_E10_EL1008 [ID: 48]
+            EL1008 8Ch. Dig. Input 24V, 3ms
+
+
+
+    #. LAMP_PLC_E10A_EL1008 [ID: 50]
+            EL1008 8Ch. Dig. Input 24V, 3ms
+
+
+
+    #. LAMP_PLC_E11_EL6002 [ID: 9]
+            EL6002 Interface 2Ch. (RS232)
+
+
+
+    #. LAMP_PLC_E12_EL6002 [ID: 10]
+            EL6002 Interface 2Ch. (RS232)
+
+
+
+    #. LAMP_PLC_E13_EK1122 [ID: 53]
+            EK1122 2 port EtherCAT junction
+
+        #. **LAMP_PNL1_EP00_EP9128-0021 [ID: 12]**
+                EP9128-0021 8x EtherCAT junction
+
+            #. LAMP_PNL1_EP01_EP2338-0002 [ID: 13]
+                    EP2338-0002 8 Ch. Dig. Input/Output 24V, 0,5A, M12
+
+
+
+            #. LAMP_PNL1_EP02_EP2624-0002 [ID: 14]
+                    EP2624-0002 4Ch. Relay Output, NO (125V AC / 30V DC)
+
+
+
+            #. LAMP_PNL1_EP03_EP6002-0002 [ID: 15]
+                    EP6002-0002 Interface (RS232/422/485)
+
+
+
+            #. LAMP_PNL1_EP04_EP2338-0002 [ID: 16]
+                    EP2338-0002 8 Ch. Dig. Input/Output 24V, 0,5A, M12
+
+
+
+            #. LAMP_PNL1_EP05_EP2624-0002 [ID: 17]
+                    EP2624-0002 4Ch. Relay Output, NO (125V AC / 30V DC)
+
+
+
+            #. LAMP_PNL1_EP06_EP6002-0002 [ID: 18]
+                    EP6002-0002 Interface (RS232/422/485)
+
+
+
+            #. LAMP_PNL1_EP07_EP2338-0002 [ID: 19]
+                    EP2338-0002 8 Ch. Dig. Input/Output 24V, 0,5A, M12
+
+
+
+            #. LAMP_PNL1_EP08_EP2624-0002 [ID: 20]
+                    EP2624-0002 4Ch. Relay Output, NO (125V AC / 30V DC)
+
+
+
+            #. LAMP_PNL1_EP09_EP6002-0002 [ID: 21]
+                    EP6002-0002 Interface (RS232/422/485)
+
+
+
+            #. LAMP_PNL1_EP10_EP2338-0002 [ID: 22]
+                    EP2338-0002 8 Ch. Dig. Input/Output 24V, 0,5A, M12
+
+
+
+            #. LAMP_PNL1_EP11_EP2624-0002 [ID: 23]
+                    EP2624-0002 4Ch. Relay Output, NO (125V AC / 30V DC)
+
+
+
+            #. LAMP_PNL1_EP12_EP6002-0002 [ID: 24]
+                    EP6002-0002 Interface (RS232/422/485)
+
+
+
+            #. LAMP_PNL2_EP13_EP2338-0002 [ID: 25]
+                    EP2338-0002 8 Ch. Dig. Input/Output 24V, 0,5A, M12
+
+
+
+            #. LAMP_PNL2_EP14_EP2624-0002 [ID: 26]
+                    EP2624-0002 4Ch. Relay Output, NO (125V AC / 30V DC)
+
+
+
+            #. LAMP_PNL2_EP15_EP6002-0002 [ID: 27]
+                    EP6002-0002 Interface (RS232/422/485)
+
+
+
+            #. LAMP_PNL2_EP16_EP2338-0002 [ID: 28]
+                    EP2338-0002 8 Ch. Dig. Input/Output 24V, 0,5A, M12
+
+
+
+            #. LAMP_PNL2_EP17_EP2624-0002 [ID: 29]
+                    EP2624-0002 4Ch. Relay Output, NO (125V AC / 30V DC)
+
+
+
+            #. LAMP_PNL2_EP18_EP6002-0002 [ID: 30]
+                    EP6002-0002 Interface (RS232/422/485)
+
+
+
+            #. LAMP_PNL2_EP19_EP3174-0002 [ID: 31]
+                    EP3174-0002 4Ch. Ana. Input +/-10V, 0-10V, 0/4-20mA configurable
+
+
+
+            #. LAMP_PNL2_EP20_EP3174-0002 [ID: 32]
+                    EP3174-0002 4Ch. Ana. Input +/-10V, 0-10V, 0/4-20mA configurable
+
+
+
+            #. LAMP_PNL2_EP21_EP3174-0002 [ID: 33]
+                    EP3174-0002 4Ch. Ana. Input +/-10V, 0-10V, 0/4-20mA configurable
+
+
+
+            #. LAMP_PNL2_EP22_EP2624-0002 [ID: 34]
+                    EP2624-0002 4Ch. Relay Output, NO (125V AC / 30V DC)
+
+
+
+            #. LAMP_PNL2_EP23_EP3174-0002 [ID: 35]
+                    EP3174-0002 4Ch. Ana. Input +/-10V, 0-10V, 0/4-20mA configurable
+
+
+
+            #. LAMP_PNL2_EP24_EP2624-0002 [ID: 74]
+                    EP2624-0002 4Ch. Relay Output, NO (125V AC / 30V DC)
+
+
+
+            #. LAMP_PNL2_EP25_EP2338-0002 [ID: 75]
+                    EP2338-0002 8 Ch. Dig. Input/Output 24V, 0,5A, M12
+
+
+
+            #. LAMP_PNL2_EP26_EP2338-0002 [ID: 76]
+                    EP2338-0002 8 Ch. Dig. Input/Output 24V, 0,5A, M12
+
+
+
+            #. KTOF_PNL1_EP00_EP1111 [ID: 80]
+                      (**Disabled**)    EP1111-0000 ID-Switch
+
+
+
+            #. KTOF_PNL1_EP01_EP2338-0002 [ID: 81]
+                      (**Disabled**)    EP2338-0002 8 Ch. Dig. Input/Output 24V, 0,5A, M12
+
+
+
+            #. KTOF_PNL1_EP02_EP2624-0002 [ID: 82]
+                      (**Disabled**)    EP2624-0002 4Ch. Relay Output, NO (125V AC / 30V DC)
+
+
+
+            #. KTOF_PNL1_EP03_EP6002-0002 [ID: 83]
+                      (**Disabled**)    EP6002-0002 Interface (RS232/422/485)
+
+
+
+            #. Term 36 (EP9128-1021) [ID: 36]
+                    EP9128-1021 8x EtherCAT junction - Dev A
+
+
+
+            #. Term 37 (EP9128-2021) [ID: 37]
+                    EP9128-2021 8x EtherCAT junction - Dev B
+
+
+
+
+
+        #. **LAMP_DCT_01_EP9224-0023 [ID: 91]**
+                EP9224-0023 4Ch/4Ch enhanced Power Distribution for EtherCAT Box Modules
+
+
+
+
+
+    #. LAMP_PLC_E14_EK1122 [ID: 92]
+            EK1122 2 port EtherCAT junction
+
+        #. **VCN_1_VAT590 [ID: 109]**
+                  ( **SyncUnit=VCN** )    590 - All-metal variable leak valve
+
+
+
+
+
+    #. LAMP_PLC_E15_EL9011 [ID: 59]
+            EL9011 End Terminal
+
+
+
+
+

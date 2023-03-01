@@ -5294,253 +5294,207 @@ PDO Channel 4 (Index #x1603, Flags #x0011, SyncMan 0)
    </details>
 
 
-LAMP_PLC_E10_EL3318
+LAMP_PLC_E10_EL1008
 ^^^^^^^^^^^^^^^^^^^
 
 
 .. raw:: html
 
    <details>
-        <summary>EtherCAT (16 PDOs)</summary>
+        <summary>EtherCAT (8 PDOs)</summary>
 
 .. csv-table:: Basic Settings
     :header: Name, Data
     :align: center
 
-    Name, LAMP_PLC_E10_EL3318
+    Name, LAMP_PLC_E10_EL1008
+    ID, 48
+        SyncMan, 001001000000010004000000000000000100001000010000
+        Fmmu, 0000000000000000001000010100000002000000000000000000000000000000
+
+
+
+PDO Channel 1 (Index #x1a00, Flags #x0011, SyncMan 0)
+
+.. csv-table::
+    :header: Name, Comment, BitLen, Index, Type
+    :align: center
+
+        "Input", "", , "#x6000", "BIT"
+
+
+
+PDO Channel 2 (Index #x1a01, Flags #x0011, SyncMan 0)
+
+.. csv-table::
+    :header: Name, Comment, BitLen, Index, Type
+    :align: center
+
+        "Input", "", , "#x6010", "BIT"
+
+
+
+PDO Channel 3 (Index #x1a02, Flags #x0011, SyncMan 0)
+
+.. csv-table::
+    :header: Name, Comment, BitLen, Index, Type
+    :align: center
+
+        "Input", "", , "#x6020", "BIT"
+
+
+
+PDO Channel 4 (Index #x1a03, Flags #x0011, SyncMan 0)
+
+.. csv-table::
+    :header: Name, Comment, BitLen, Index, Type
+    :align: center
+
+        "Input", "", , "#x6030", "BIT"
+
+
+
+PDO Channel 5 (Index #x1a04, Flags #x0011, SyncMan 0)
+
+.. csv-table::
+    :header: Name, Comment, BitLen, Index, Type
+    :align: center
+
+        "Input", "", , "#x6040", "BIT"
+
+
+
+PDO Channel 6 (Index #x1a05, Flags #x0011, SyncMan 0)
+
+.. csv-table::
+    :header: Name, Comment, BitLen, Index, Type
+    :align: center
+
+        "Input", "", , "#x6050", "BIT"
+
+
+
+PDO Channel 7 (Index #x1a06, Flags #x0011, SyncMan 0)
+
+.. csv-table::
+    :header: Name, Comment, BitLen, Index, Type
+    :align: center
+
+        "Input", "", , "#x6060", "BIT"
+
+
+
+PDO Channel 8 (Index #x1a07, Flags #x0011, SyncMan 0)
+
+.. csv-table::
+    :header: Name, Comment, BitLen, Index, Type
+    :align: center
+
+        "Input", "", , "#x6070", "BIT"
+
+
+.. raw:: html
+
+   </details>
+
+
+LAMP_PLC_E10A_EL1008
+^^^^^^^^^^^^^^^^^^^^
+
+
+.. raw:: html
+
+   <details>
+        <summary>EtherCAT (8 PDOs)</summary>
+
+.. csv-table:: Basic Settings
+    :header: Name, Data
+    :align: center
+
+    Name, LAMP_PLC_E10A_EL1008
     ID, 50
-        BootStrapData, 0010f400f410f400
-        SyncMan, 001080002600010001000000800080008000001026010000
-        SyncMan, 801080002200010002000000800080008000801022010000
-        SyncMan, 001100002400000003000000000000000000001124010000
-        SyncMan, 801120002000010004000000000000002000801120010000
-        Fmmu, 0000000000000000000000020000000001000000000000000000000000000000
-        Fmmu, 0000000000000000801100010100000002000000000000000000000000000000
-        Fmmu, 00000000000000000d0800010100000003000000000000000000000000000000
-        CoeProfile, 21631881
-        CoeProfile, 21631881
-        CoeProfile, 21631881
-        CoeProfile, 21631881
-        CoeProfile, 21631881
-        CoeProfile, 21631881
-        CoeProfile, 21631881
-        CoeProfile, 21631881
+        SyncMan, 001001000000010004000000000000000100001000010000
+        Fmmu, 0000000000000000001000010100000002000000000000000000000000000000
 
 
 
-PDO TC Channel 1 (Index #x1a00, Flags #x0011, SyncMan 3)
+PDO Channel 1 (Index #x1a00, Flags #x0011, SyncMan 0)
 
 .. csv-table::
     :header: Name, Comment, BitLen, Index, Type
     :align: center
 
-        "Status__Underrange", "", , "#x6000", "BIT"
-        "Status__Overrange", "", , "#x6000", "BIT"
-        "None", "", , "", "ARRAY [0..3] OF BIT"
-        "Status__Error", "", , "#x6000", "BIT"
-        "None", "", , "", "ARRAY [0..6] OF BIT"
-        "Status__TxPDO State", "", , "#x6000", "BIT"
-        "Status__TxPDO Toggle", "", , "#x1800", "BIT"
-        "Value", "", , "#x6000", "INT"
+        "Input", "", , "#x6000", "BIT"
 
 
 
-PDO TC Channel 2 (Index #x1a01, Flags #x0011, SyncMan 3)
+PDO Channel 2 (Index #x1a01, Flags #x0011, SyncMan 0)
 
 .. csv-table::
     :header: Name, Comment, BitLen, Index, Type
     :align: center
 
-        "Status__Underrange", "", , "#x6010", "BIT"
-        "Status__Overrange", "", , "#x6010", "BIT"
-        "None", "", , "", "ARRAY [0..3] OF BIT"
-        "Status__Error", "", , "#x6010", "BIT"
-        "None", "", , "", "ARRAY [0..6] OF BIT"
-        "Status__TxPDO State", "", , "#x6010", "BIT"
-        "Status__TxPDO Toggle", "", , "#x1801", "BIT"
-        "Value", "", , "#x6010", "INT"
+        "Input", "", , "#x6010", "BIT"
 
 
 
-PDO TC Channel 3 (Index #x1a02, Flags #x0011, SyncMan 3)
+PDO Channel 3 (Index #x1a02, Flags #x0011, SyncMan 0)
 
 .. csv-table::
     :header: Name, Comment, BitLen, Index, Type
     :align: center
 
-        "Status__Underrange", "", , "#x6020", "BIT"
-        "Status__Overrange", "", , "#x6020", "BIT"
-        "None", "", , "", "ARRAY [0..3] OF BIT"
-        "Status__Error", "", , "#x6020", "BIT"
-        "None", "", , "", "ARRAY [0..6] OF BIT"
-        "Status__TxPDO State", "", , "#x6020", "BIT"
-        "Status__TxPDO Toggle", "", , "#x1802", "BIT"
-        "Value", "", , "#x6020", "INT"
+        "Input", "", , "#x6020", "BIT"
 
 
 
-PDO TC Channel 4 (Index #x1a03, Flags #x0011, SyncMan 3)
+PDO Channel 4 (Index #x1a03, Flags #x0011, SyncMan 0)
 
 .. csv-table::
     :header: Name, Comment, BitLen, Index, Type
     :align: center
 
-        "Status__Underrange", "", , "#x6030", "BIT"
-        "Status__Overrange", "", , "#x6030", "BIT"
-        "None", "", , "", "ARRAY [0..3] OF BIT"
-        "Status__Error", "", , "#x6030", "BIT"
-        "None", "", , "", "ARRAY [0..6] OF BIT"
-        "Status__TxPDO State", "", , "#x6030", "BIT"
-        "Status__TxPDO Toggle", "", , "#x1803", "BIT"
-        "Value", "", , "#x6030", "INT"
+        "Input", "", , "#x6030", "BIT"
 
 
 
-PDO TC Channel 5 (Index #x1a04, Flags #x0011, SyncMan 3)
+PDO Channel 5 (Index #x1a04, Flags #x0011, SyncMan 0)
 
 .. csv-table::
     :header: Name, Comment, BitLen, Index, Type
     :align: center
 
-        "Status__Underrange", "", , "#x6040", "BIT"
-        "Status__Overrange", "", , "#x6040", "BIT"
-        "None", "", , "", "ARRAY [0..3] OF BIT"
-        "Status__Error", "", , "#x6040", "BIT"
-        "None", "", , "", "ARRAY [0..6] OF BIT"
-        "Status__TxPDO State", "", , "#x6040", "BIT"
-        "Status__TxPDO Toggle", "", , "#x1804", "BIT"
-        "Value", "", , "#x6040", "INT"
+        "Input", "", , "#x6040", "BIT"
 
 
 
-PDO TC Channel 6 (Index #x1a05, Flags #x0011, SyncMan 3)
+PDO Channel 6 (Index #x1a05, Flags #x0011, SyncMan 0)
 
 .. csv-table::
     :header: Name, Comment, BitLen, Index, Type
     :align: center
 
-        "Status__Underrange", "", , "#x6050", "BIT"
-        "Status__Overrange", "", , "#x6050", "BIT"
-        "None", "", , "", "ARRAY [0..3] OF BIT"
-        "Status__Error", "", , "#x6050", "BIT"
-        "None", "", , "", "ARRAY [0..6] OF BIT"
-        "Status__TxPDO State", "", , "#x6050", "BIT"
-        "Status__TxPDO Toggle", "", , "#x1805", "BIT"
-        "Value", "", , "#x6050", "INT"
+        "Input", "", , "#x6050", "BIT"
 
 
 
-PDO TC Channel 7 (Index #x1a06, Flags #x0011, SyncMan 3)
+PDO Channel 7 (Index #x1a06, Flags #x0011, SyncMan 0)
 
 .. csv-table::
     :header: Name, Comment, BitLen, Index, Type
     :align: center
 
-        "Status__Underrange", "", , "#x6060", "BIT"
-        "Status__Overrange", "", , "#x6060", "BIT"
-        "None", "", , "", "ARRAY [0..3] OF BIT"
-        "Status__Error", "", , "#x6060", "BIT"
-        "None", "", , "", "ARRAY [0..6] OF BIT"
-        "Status__TxPDO State", "", , "#x6060", "BIT"
-        "Status__TxPDO Toggle", "", , "#x1806", "BIT"
-        "Value", "", , "#x6060", "INT"
+        "Input", "", , "#x6060", "BIT"
 
 
 
-PDO TC Channel 8 (Index #x1a07, Flags #x0011, SyncMan 3)
+PDO Channel 8 (Index #x1a07, Flags #x0011, SyncMan 0)
 
 .. csv-table::
     :header: Name, Comment, BitLen, Index, Type
     :align: center
 
-        "Status__Underrange", "", , "#x6070", "BIT"
-        "Status__Overrange", "", , "#x6070", "BIT"
-        "None", "", , "", "ARRAY [0..3] OF BIT"
-        "Status__Error", "", , "#x6070", "BIT"
-        "None", "", , "", "ARRAY [0..6] OF BIT"
-        "Status__TxPDO State", "", , "#x6070", "BIT"
-        "Status__TxPDO Toggle", "", , "#x1807", "BIT"
-        "Value", "", , "#x6070", "INT"
-
-
-
-PDO TC Outputs Channel 1 (Index #x1600, Flags #x0010, SyncMan )
-
-.. csv-table::
-    :header: Name, Comment, BitLen, Index, Type
-    :align: center
-
-        "CJCompensation", "", , "#x7000", "INT"
-
-
-
-PDO TC Outputs Channel 2 (Index #x1601, Flags #x0010, SyncMan )
-
-.. csv-table::
-    :header: Name, Comment, BitLen, Index, Type
-    :align: center
-
-        "CJCompensation", "", , "#x7010", "INT"
-
-
-
-PDO TC Outputs Channel 3 (Index #x1602, Flags #x0010, SyncMan )
-
-.. csv-table::
-    :header: Name, Comment, BitLen, Index, Type
-    :align: center
-
-        "CJCompensation", "", , "#x7020", "INT"
-
-
-
-PDO TC Outputs Channel 4 (Index #x1603, Flags #x0010, SyncMan )
-
-.. csv-table::
-    :header: Name, Comment, BitLen, Index, Type
-    :align: center
-
-        "CJCompensation", "", , "#x7030", "INT"
-
-
-
-PDO TC Outputs Channel 5 (Index #x1604, Flags #x0010, SyncMan )
-
-.. csv-table::
-    :header: Name, Comment, BitLen, Index, Type
-    :align: center
-
-        "CJCompensation", "", , "#x7040", "INT"
-
-
-
-PDO TC Outputs Channel 6 (Index #x1605, Flags #x0010, SyncMan )
-
-.. csv-table::
-    :header: Name, Comment, BitLen, Index, Type
-    :align: center
-
-        "CJCompensation", "", , "#x7050", "INT"
-
-
-
-PDO TC Outputs Channel 7 (Index #x1606, Flags #x0010, SyncMan )
-
-.. csv-table::
-    :header: Name, Comment, BitLen, Index, Type
-    :align: center
-
-        "CJCompensation", "", , "#x7060", "INT"
-
-
-
-PDO TC Outputs Channel 8 (Index #x1607, Flags #x0010, SyncMan )
-
-.. csv-table::
-    :header: Name, Comment, BitLen, Index, Type
-    :align: center
-
-        "CJCompensation", "", , "#x7070", "INT"
+        "Input", "", , "#x6070", "BIT"
 
 
 .. raw:: html
@@ -5563,6 +5517,28 @@ LAMP_PLC_E13_EK1122
 
     Name, LAMP_PLC_E13_EK1122
     ID, 53
+
+
+.. raw:: html
+
+   </details>
+
+
+LAMP_PLC_E15_EL9011
+^^^^^^^^^^^^^^^^^^^
+
+
+.. raw:: html
+
+   <details>
+        <summary>EtherCAT</summary>
+
+.. csv-table:: Basic Settings
+    :header: Name, Data
+    :align: center
+
+    Name, LAMP_PLC_E15_EL9011
+    ID, 59
 
 
 .. raw:: html
@@ -6998,28 +6974,6 @@ LAMP_PLC_E14_EK1122
 
     Name, LAMP_PLC_E14_EK1122
     ID, 92
-
-
-.. raw:: html
-
-   </details>
-
-
-LAMP_PLC_E15_EL9011
-^^^^^^^^^^^^^^^^^^^
-
-
-.. raw:: html
-
-   <details>
-        <summary>EtherCAT</summary>
-
-.. csv-table:: Basic Settings
-    :header: Name, Data
-    :align: center
-
-    Name, LAMP_PLC_E15_EL9011
-    ID, 93
 
 
 .. raw:: html

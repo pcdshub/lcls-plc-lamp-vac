@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DUTs &mdash; pcdshub/lcls-plc-lamp-vac  documentation</title>
@@ -11,12 +11,12 @@
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
         <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/doctools.js"></script>
-        <script src="_static/doctr-versions-menu.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+        <script src="_static/docs-versions-menu.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -28,11 +28,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> pcdshub/lcls-plc-lamp-vac
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            pcdshub/lcls-plc-lamp-vac
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -42,6 +46,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="plc-lamp-vac_pragmas.html">Pragmas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="plc-lamp-vac_nc.html">NC Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plc-lamp-vac_ethercat.html">Box Hierarchy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="plc-lamp-vac_boxes.html">Boxes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="plc-lamp-vac_links.html">Links</a></li>
 </ul>
@@ -83,8 +88,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>DUTs</li>
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">DUTs</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/plc-lamp-vac_plc_lamp_vac_source.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -1127,7 +1132,7 @@
 <span class="p">(</span><span class="o">*</span><span class="n">Onboard</span> <span class="n">Turbo</span> <span class="n">Pumps</span><span class="o">*</span><span class="p">)</span>
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span>        <span class="s1">&#39;.i_xAtSpd                      :=      TIIB[LAMP_PNL1_EP01_EP2338-0002]^Channel 1^Input;</span>
                                                              <span class="o">.</span><span class="n">i_xFaultNC</span>            <span class="o">:=</span>      <span class="n">TIIB</span><span class="p">[</span><span class="n">LAMP_PNL1_EP01_EP2338</span><span class="o">-</span><span class="mi">0002</span><span class="p">]</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Input</span><span class="p">;</span>
-                                                             <span class="o">.</span><span class="n">i_xRemote</span>                     <span class="o">:=</span>      <span class="n">TIIB</span><span class="p">[</span><span class="n">LAMP_PNL1_EP01_EP2338</span><span class="o">-</span><span class="mi">0002</span><span class="p">]</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">3</span><span class="o">^</span><span class="n">Input</span><span class="p">;</span>
+                                                             <span class="o">.</span><span class="n">i_xRemote</span>                     <span class="o">:=</span>      <span class="n">TIIB</span><span class="p">[</span><span class="n">LAMP_PLC_E10_EL1008</span><span class="p">]</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Input</span><span class="p">;</span>
                                                              <span class="o">.</span><span class="n">q_RunDO</span>                       <span class="o">:=</span>      <span class="n">TIIB</span><span class="p">[</span><span class="n">LAMP_PNL1_EP02_EP2624</span><span class="o">-</span><span class="mi">0002</span><span class="p">]</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Output</span><span class="p">;</span>
                                                              <span class="o">.</span><span class="n">q_xReset</span>                      <span class="o">:=</span>      <span class="n">TIIB</span><span class="p">[</span><span class="n">LAMP_PNL1_EP02_EP2624</span><span class="o">-</span><span class="mi">0002</span><span class="p">]</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Output</span>
     <span class="s1">&#39;}</span>
@@ -1139,7 +1144,7 @@
 
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span>        <span class="s1">&#39;.i_xAtSpd                      :=      TIIB[LAMP_PNL1_EP01_EP2338-0002]^Channel 5^Input;</span>
                                                              <span class="o">.</span><span class="n">i_xFaultNC</span>            <span class="o">:=</span>      <span class="n">TIIB</span><span class="p">[</span><span class="n">LAMP_PNL1_EP01_EP2338</span><span class="o">-</span><span class="mi">0002</span><span class="p">]</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">6</span><span class="o">^</span><span class="n">Input</span><span class="p">;</span>
-                                                             <span class="o">.</span><span class="n">i_xRemote</span>                     <span class="o">:=</span>      <span class="n">TIIB</span><span class="p">[</span><span class="n">LAMP_PNL1_EP01_EP2338</span><span class="o">-</span><span class="mi">0002</span><span class="p">]</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">7</span><span class="o">^</span><span class="n">Input</span><span class="p">;</span>
+                                                             <span class="o">.</span><span class="n">i_xRemote</span>                     <span class="o">:=</span>      <span class="n">TIIB</span><span class="p">[</span><span class="n">LAMP_PLC_E10_EL1008</span><span class="p">]</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Input</span><span class="p">;</span>
                                                              <span class="o">.</span><span class="n">q_RunDO</span>                       <span class="o">:=</span>      <span class="n">TIIB</span><span class="p">[</span><span class="n">LAMP_PNL1_EP02_EP2624</span><span class="o">-</span><span class="mi">0002</span><span class="p">]</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">3</span><span class="o">^</span><span class="n">Output</span><span class="p">;</span>
                                                              <span class="o">.</span><span class="n">q_xReset</span>                      <span class="o">:=</span>      <span class="n">TIIB</span><span class="p">[</span><span class="n">LAMP_PNL1_EP02_EP2624</span><span class="o">-</span><span class="mi">0002</span><span class="p">]</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">4</span><span class="o">^</span><span class="n">Output</span>
     <span class="s1">&#39;}</span>
@@ -1151,7 +1156,7 @@
 
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span>        <span class="s1">&#39;.i_xAtSpd                      :=      TIIB[LAMP_PNL1_EP04_EP2338-0002]^Channel 1^Input;</span>
                                                              <span class="o">.</span><span class="n">i_xFaultNC</span>            <span class="o">:=</span>      <span class="n">TIIB</span><span class="p">[</span><span class="n">LAMP_PNL1_EP04_EP2338</span><span class="o">-</span><span class="mi">0002</span><span class="p">]</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Input</span><span class="p">;</span>
-                                                             <span class="o">.</span><span class="n">i_xRemote</span>                     <span class="o">:=</span>      <span class="n">TIIB</span><span class="p">[</span><span class="n">LAMP_PNL1_EP04_EP2338</span><span class="o">-</span><span class="mi">0002</span><span class="p">]</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">3</span><span class="o">^</span><span class="n">Input</span><span class="p">;</span>
+                                                             <span class="o">.</span><span class="n">i_xRemote</span>                     <span class="o">:=</span>      <span class="n">TIIB</span><span class="p">[</span><span class="n">LAMP_PLC_E10_EL1008</span><span class="p">]</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">3</span><span class="o">^</span><span class="n">Input</span><span class="p">;</span>
                                                              <span class="o">.</span><span class="n">q_RunDO</span>                       <span class="o">:=</span>      <span class="n">TIIB</span><span class="p">[</span><span class="n">LAMP_PNL1_EP05_EP2624</span><span class="o">-</span><span class="mi">0002</span><span class="p">]</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Output</span><span class="p">;</span>
                                                              <span class="o">.</span><span class="n">q_xReset</span>                      <span class="o">:=</span>      <span class="n">TIIB</span><span class="p">[</span><span class="n">LAMP_PNL1_EP05_EP2624</span><span class="o">-</span><span class="mi">0002</span><span class="p">]</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Output</span>
     <span class="s1">&#39;}</span>
@@ -1163,7 +1168,7 @@
 
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span>        <span class="s1">&#39;.i_xAtSpd                      :=      TIIB[LAMP_PNL1_EP04_EP2338-0002]^Channel 5^Input;</span>
                                                              <span class="o">.</span><span class="n">i_xFaultNC</span>            <span class="o">:=</span>      <span class="n">TIIB</span><span class="p">[</span><span class="n">LAMP_PNL1_EP04_EP2338</span><span class="o">-</span><span class="mi">0002</span><span class="p">]</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">6</span><span class="o">^</span><span class="n">Input</span><span class="p">;</span>
-                                                             <span class="o">.</span><span class="n">i_xRemote</span>                     <span class="o">:=</span>      <span class="n">TIIB</span><span class="p">[</span><span class="n">LAMP_PNL1_EP04_EP2338</span><span class="o">-</span><span class="mi">0002</span><span class="p">]</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">7</span><span class="o">^</span><span class="n">Input</span><span class="p">;</span>
+                                                             <span class="o">.</span><span class="n">i_xRemote</span>                     <span class="o">:=</span>      <span class="n">TIIB</span><span class="p">[</span><span class="n">LAMP_PLC_E10_EL1008</span><span class="p">]</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">4</span><span class="o">^</span><span class="n">Input</span><span class="p">;</span>
                                                              <span class="o">.</span><span class="n">q_RunDO</span>                       <span class="o">:=</span>      <span class="n">TIIB</span><span class="p">[</span><span class="n">LAMP_PNL1_EP05_EP2624</span><span class="o">-</span><span class="mi">0002</span><span class="p">]</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">3</span><span class="o">^</span><span class="n">Output</span><span class="p">;</span>
                                                              <span class="o">.</span><span class="n">q_xReset</span>                      <span class="o">:=</span>      <span class="n">TIIB</span><span class="p">[</span><span class="n">LAMP_PNL1_EP05_EP2624</span><span class="o">-</span><span class="mi">0002</span><span class="p">]</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">4</span><span class="o">^</span><span class="n">Output</span>
     <span class="s1">&#39;}</span>
@@ -1250,7 +1255,7 @@
 <span class="o">*</span><span class="p">)</span>
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span>        <span class="s1">&#39;.i_xAtSpd                      :=      TIIB[LAMP_PNL2_EP13_EP2338-0002]^Channel 1^Input;</span>
                                                              <span class="o">.</span><span class="n">i_xFaultNC</span>            <span class="o">:=</span>      <span class="n">TIIB</span><span class="p">[</span><span class="n">LAMP_PNL2_EP13_EP2338</span><span class="o">-</span><span class="mi">0002</span><span class="p">]</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Input</span><span class="p">;</span>
-                                                             <span class="o">.</span><span class="n">i_xRemote</span>                     <span class="o">:=</span>      <span class="n">TIIB</span><span class="p">[</span><span class="n">LAMP_PNL2_EP13_EP2338</span><span class="o">-</span><span class="mi">0002</span><span class="p">]</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">3</span><span class="o">^</span><span class="n">Input</span><span class="p">;</span>
+                                                             <span class="o">.</span><span class="n">i_xRemote</span>                     <span class="o">:=</span>      <span class="n">TIIB</span><span class="p">[</span><span class="n">LAMP_PLC_E10_EL1008</span><span class="p">]</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">5</span><span class="o">^</span><span class="n">Input</span><span class="p">;</span>
                                                              <span class="o">.</span><span class="n">q_RunDO</span>                       <span class="o">:=</span>      <span class="n">TIIB</span><span class="p">[</span><span class="n">LAMP_PNL2_EP14_EP2624</span><span class="o">-</span><span class="mi">0002</span><span class="p">]</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Output</span><span class="p">;</span>
                                                              <span class="o">.</span><span class="n">q_xReset</span>                      <span class="o">:=</span>      <span class="n">TIIB</span><span class="p">[</span><span class="n">LAMP_PNL2_EP14_EP2624</span><span class="o">-</span><span class="mi">0002</span><span class="p">]</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Output</span>
     <span class="s1">&#39;}</span>
@@ -1372,11 +1377,25 @@
 <span class="n">LAMP_C2_GCC_01</span> <span class="p">:</span> <span class="n">FB_MKS500</span><span class="p">;</span>
 <span class="o">*</span><span class="p">)</span>
 
-
-<span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
-<span class="n">pv</span><span class="p">:</span> <span class="n">LAMP</span><span class="p">:</span><span class="n">VCN</span><span class="p">:</span><span class="mi">01</span>
-<span class="s1">&#39;}</span>
-<span class="n">LAMP_VCN_01</span> <span class="p">:</span> <span class="n">FB_VCN_VAT590</span><span class="p">;</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span>        <span class="s1">&#39;.i_nRawPosition        :=      TIIB[VCN_1_VAT590]^DI TxPDO-Map^Position;</span>
+                                                             <span class="o">.</span><span class="n">i_nRawPressure</span>        <span class="o">:=</span>      <span class="n">TIIB</span><span class="p">[</span><span class="n">VCN_1_VAT590</span><span class="p">]</span><span class="o">^</span><span class="n">DI</span> <span class="n">TxPDO</span><span class="o">-</span><span class="n">Map</span><span class="o">^</span><span class="n">Pressure</span><span class="p">;</span>
+                                                             <span class="o">.</span><span class="n">i_eControlMode</span>        <span class="o">:=</span>      <span class="n">TIIB</span><span class="p">[</span><span class="n">VCN_1_VAT590</span><span class="p">]</span><span class="o">^</span><span class="n">DI</span> <span class="n">TxPDO</span><span class="o">-</span><span class="n">Map</span><span class="o">^</span><span class="n">Control</span> <span class="n">mode</span><span class="p">;</span>
+                                                             <span class="o">.</span><span class="n">i_eFatalError</span>         <span class="o">:=</span>      <span class="n">TIIB</span><span class="p">[</span><span class="n">VCN_1_VAT590</span><span class="p">]</span><span class="o">^</span><span class="n">DI</span> <span class="n">TxPDO</span><span class="o">-</span><span class="n">Map</span><span class="o">^</span><span class="n">Fatal</span> <span class="n">error</span><span class="p">;</span>
+                                                             <span class="o">.</span><span class="n">i_stGenStatus</span>         <span class="o">:=</span>      <span class="n">TIIB</span><span class="p">[</span><span class="n">VCN_1_VAT590</span><span class="p">]</span><span class="o">^</span><span class="n">DI</span> <span class="n">TxPDO</span><span class="o">-</span><span class="n">Map</span><span class="o">^</span><span class="n">General</span> <span class="n">status</span><span class="p">;</span>
+                                                             <span class="o">.</span><span class="n">i_stGenWarnings</span>       <span class="o">:=</span>      <span class="n">TIIB</span><span class="p">[</span><span class="n">VCN_1_VAT590</span><span class="p">]</span><span class="o">^</span><span class="n">DI</span> <span class="n">TxPDO</span><span class="o">-</span><span class="n">Map</span><span class="o">^</span><span class="n">General</span> <span class="n">warnings</span><span class="p">;</span>
+                                                             <span class="o">.</span><span class="n">i_stExtnWarnings</span>      <span class="o">:=</span>      <span class="n">TIIB</span><span class="p">[</span><span class="n">VCN_1_VAT590</span><span class="p">]</span><span class="o">^</span><span class="n">DI</span> <span class="n">TxPDO</span><span class="o">-</span><span class="n">Map</span><span class="o">^</span><span class="n">Extended</span> <span class="n">warnings</span><span class="p">;</span>
+                                                             <span class="o">.</span><span class="n">o_nRawPositionSP</span>      <span class="o">:=</span>      <span class="n">TIIB</span><span class="p">[</span><span class="n">VCN_1_VAT590</span><span class="p">]</span><span class="o">^</span><span class="n">DO</span> <span class="n">RxPDO</span><span class="o">-</span><span class="n">Map</span><span class="o">^</span><span class="n">Position</span> <span class="n">setpoint</span><span class="p">;</span>
+                                                             <span class="o">.</span><span class="n">o_nRawPressureSP</span>      <span class="o">:=</span>      <span class="n">TIIB</span><span class="p">[</span><span class="n">VCN_1_VAT590</span><span class="p">]</span><span class="o">^</span><span class="n">DO</span> <span class="n">RxPDO</span><span class="o">-</span><span class="n">Map</span><span class="o">^</span><span class="n">Pressure</span> <span class="n">setpoint</span><span class="p">;</span>
+                                                             <span class="o">.</span><span class="n">o_eCtrlModeSP</span>         <span class="o">:=</span>      <span class="n">TIIB</span><span class="p">[</span><span class="n">VCN_1_VAT590</span><span class="p">]</span><span class="o">^</span><span class="n">DO</span> <span class="n">RxPDO</span><span class="o">-</span><span class="n">Map</span><span class="o">^</span><span class="n">Control</span> <span class="n">mode</span> <span class="n">setpoint</span><span class="p">;</span>
+                                                             <span class="o">.</span><span class="n">o_stGenCtrlSP</span>         <span class="o">:=</span>      <span class="n">TIIB</span><span class="p">[</span><span class="n">VCN_1_VAT590</span><span class="p">]</span><span class="o">^</span><span class="n">DO</span> <span class="n">RxPDO</span><span class="o">-</span><span class="n">Map</span><span class="o">^</span><span class="n">General</span> <span class="n">control</span> <span class="n">setpoint</span><span class="p">;</span>
+                                                             <span class="o">.</span><span class="n">i_stVat590PlcDriveRef</span><span class="o">.</span><span class="n">aNetId</span>     <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">VCN_1_VAT590</span><span class="p">]</span><span class="o">^</span><span class="n">InfoData</span><span class="o">^</span><span class="n">AdsAddr</span><span class="o">^</span><span class="n">netId</span><span class="p">;</span>
+                                                             <span class="o">.</span><span class="n">i_stVat590PlcDriveRef</span><span class="o">.</span><span class="n">nSlaveAddr</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">VCN_1_VAT590</span><span class="p">]</span><span class="o">^</span><span class="n">InfoData</span><span class="o">^</span><span class="n">AdsAddr</span><span class="o">^</span><span class="n">port</span><span class="p">;</span>
+                                                             <span class="o">.</span><span class="n">i_bValveEthCatStatus</span>             <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">VCN_1_VAT590</span><span class="p">]</span><span class="o">^</span><span class="n">WcState</span><span class="o">^</span><span class="n">WcState</span>
+    <span class="s1">&#39;}</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+            <span class="n">pv</span><span class="p">:</span> <span class="n">LAMP</span><span class="p">:</span><span class="n">VCN</span><span class="p">:</span><span class="mi">01</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">LAMP_VCN_01</span> <span class="p">:</span> <span class="n">FB_VCN_VAT590</span><span class="p">;</span>
 
 <span class="p">(</span><span class="o">*</span>
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span>        <span class="s1">&#39;.i_iPRESS_R    :=      TIIB[LAMP_PNL2_EP21_EP3174-0002]^AI Standard Channel 2^Value;</span>
@@ -1547,8 +1566,9 @@
     <span class="n">xEcatBridge_TxPDO_state</span> <span class="n">AT</span> <span class="o">%</span><span class="n">I</span><span class="o">*</span> <span class="p">:</span><span class="n">BOOL</span><span class="p">;</span>
 
     <span class="o">//</span><span class="mi">0</span><span class="p">:</span> <span class="n">External</span> <span class="n">device</span> <span class="n">connectd</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span> <span class="n">External</span> <span class="n">device</span> <span class="ow">not</span> <span class="n">connected</span>
-    <span class="p">{</span><span class="n">attribute</span> <span class="o">:=</span> <span class="s1">&#39;TIIB[LAMP_PLC_E04_EL6692]^SYNC Inputs^External device not connected</span>
-    <span class="s1">&#39;}</span>
+
+<span class="o">//</span>  <span class="p">{</span><span class="n">attribute</span> <span class="o">:=</span> <span class="s1">&#39;TIIB[LAMP_PLC_E04_EL6692]^SYNC Inputs^External device not connected</span>
+<span class="o">//</span>  <span class="s1">&#39;}</span>
     <span class="n">xEcatBridge_External_device_not_connected</span> <span class="n">AT</span> <span class="o">%</span><span class="n">I</span><span class="o">*</span> <span class="p">:</span> <span class="n">BOOL</span><span class="p">;</span>
 
     <span class="o">//</span><span class="mi">0</span> <span class="o">=</span> <span class="n">Data</span> <span class="n">valid</span><span class="p">,</span> <span class="mi">1</span> <span class="o">=</span> <span class="n">Data</span> <span class="n">invalid</span>
@@ -1829,7 +1849,8 @@
 <span class="o">//</span>                                  <span class="n">ads_Error_Present</span><span class="o">:=</span> <span class="p">(</span><span class="n">ITF_TMO_ROUGH1_VRC_01</span><span class="o">.</span><span class="n">bError</span> <span class="n">OR</span> <span class="n">ITF_TMO_ROUGH2_VRC_01</span><span class="o">.</span><span class="n">bError</span><span class="p">),</span>
                                     <span class="n">iq_stRoughRoughValve_NC_xOpnLS</span><span class="o">:=</span> <span class="n">xTMO_ROUGH1_VRC_01_OPEN_LS</span><span class="p">,</span>
                                     <span class="n">iq_stRoughRoughValve_NC_second_xOpenLS</span><span class="o">:=</span> <span class="n">xTMO_ROUGH2_VRC_01_OPEN_LS</span><span class="p">,</span>
-                                    <span class="n">x_onBeamline</span><span class="o">:=</span> <span class="n">xOnBeamline</span><span class="p">),</span>
+<span class="o">//</span>                                  <span class="n">x_onBeamline</span><span class="o">:=</span> <span class="n">xOnBeamline</span><span class="p">,</span>
+                    <span class="n">x_onBeamline</span><span class="o">:=</span> <span class="kc">True</span><span class="p">),</span>
     <span class="n">iq_stPtm</span><span class="o">=&gt;</span> <span class="p">);</span>
 
 <span class="p">(</span><span class="o">*</span>
@@ -1906,7 +1927,8 @@
 <span class="o">//</span>                                  <span class="n">ads_Error_Present</span><span class="o">:=</span> <span class="p">(</span><span class="n">ITF_TMO_ROUGH1_VRC_01</span><span class="o">.</span><span class="n">bError</span> <span class="n">OR</span> <span class="n">ITF_TMO_ROUGH2_VRC_01</span><span class="o">.</span><span class="n">bError</span><span class="p">),</span>
                                     <span class="n">iq_stRoughRoughValve_NC_xOpnLS</span><span class="o">:=</span> <span class="n">xTMO_ROUGH1_VRC_01_OPEN_LS</span><span class="p">,</span>
                                     <span class="n">iq_stRoughRoughValve_NC_second_xOpenLS</span><span class="o">:=</span> <span class="n">xTMO_ROUGH2_VRC_01_OPEN_LS</span><span class="p">,</span>
-                                    <span class="n">x_onBeamline</span><span class="o">:=</span> <span class="n">xOnBeamline</span><span class="p">),</span>
+<span class="o">//</span>                                  <span class="n">x_onBeamline</span><span class="o">:=</span> <span class="n">xOnBeamline</span><span class="p">,</span>
+                     <span class="n">x_onBeamline</span><span class="o">:=</span> <span class="kc">True</span><span class="p">),</span>
     <span class="n">iq_stPtm</span><span class="o">=&gt;</span> <span class="p">);</span>
 
     <span class="n">LAMP_C2_PTM_02</span><span class="p">(</span>
@@ -1921,7 +1943,8 @@
 <span class="o">//</span>                                  <span class="n">ads_Error_Present</span><span class="o">:=</span> <span class="p">(</span><span class="n">ITF_TMO_ROUGH1_VRC_01</span><span class="o">.</span><span class="n">bError</span> <span class="n">OR</span> <span class="n">ITF_TMO_ROUGH2_VRC_01</span><span class="o">.</span><span class="n">bError</span><span class="p">),</span>
                                     <span class="n">iq_stRoughRoughValve_NC_xOpnLS</span><span class="o">:=</span> <span class="n">xTMO_ROUGH1_VRC_01_OPEN_LS</span><span class="p">,</span>
                                     <span class="n">iq_stRoughRoughValve_NC_second_xOpenLS</span><span class="o">:=</span><span class="n">xTMO_ROUGH2_VRC_01_OPEN_LS</span><span class="p">,</span>
-                                    <span class="n">x_onBeamline</span><span class="o">:=</span> <span class="n">xOnBeamline</span><span class="p">),</span>
+<span class="o">//</span>                                  <span class="n">x_onBeamline</span><span class="o">:=</span> <span class="n">xOnBeamline</span><span class="p">,</span>
+                    <span class="n">x_onBeamline</span><span class="o">:=</span> <span class="kc">True</span><span class="p">),</span>
     <span class="n">iq_stPtm</span><span class="o">=&gt;</span> <span class="p">);</span>
 
     <span class="n">LAMP_C2_PTM_03</span><span class="p">(</span>
@@ -1936,7 +1959,8 @@
 <span class="o">//</span>                                  <span class="n">ads_Error_Present</span><span class="o">:=</span> <span class="p">(</span><span class="n">ITF_TMO_ROUGH1_VRC_01</span><span class="o">.</span><span class="n">bError</span> <span class="n">OR</span> <span class="n">ITF_TMO_ROUGH2_VRC_01</span><span class="o">.</span><span class="n">bError</span><span class="p">),</span>
                                     <span class="n">iq_stRoughRoughValve_NC_xOpnLS</span><span class="o">:=</span> <span class="n">xTMO_ROUGH1_VRC_01_OPEN_LS</span><span class="p">,</span>
                                     <span class="n">iq_stRoughRoughValve_NC_second_xOpenLS</span><span class="o">:=</span><span class="n">xTMO_ROUGH2_VRC_01_OPEN_LS</span><span class="p">,</span>
-                                    <span class="n">x_onBeamline</span><span class="o">:=</span> <span class="n">xOnBeamline</span><span class="p">),</span>
+<span class="o">//</span>                                  <span class="n">x_onBeamline</span><span class="o">:=</span> <span class="n">xOnBeamline</span><span class="p">,</span>
+                    <span class="n">x_onBeamline</span><span class="o">:=</span> <span class="kc">True</span><span class="p">),</span>
     <span class="n">iq_stPtm</span><span class="o">=&gt;</span> <span class="p">);</span>
 
     <span class="n">LAMP_C2_PTM_04</span><span class="p">(</span>
@@ -1951,7 +1975,8 @@
 <span class="o">//</span>                                  <span class="n">ads_Error_Present</span><span class="o">:=</span> <span class="p">(</span><span class="n">ITF_TMO_ROUGH1_VRC_01</span><span class="o">.</span><span class="n">bError</span> <span class="n">OR</span> <span class="n">ITF_TMO_ROUGH2_VRC_01</span><span class="o">.</span><span class="n">bError</span><span class="p">),</span>
                                     <span class="n">iq_stRoughRoughValve_NC_xOpnLS</span><span class="o">:=</span> <span class="n">xTMO_ROUGH1_VRC_01_OPEN_LS</span><span class="p">,</span>
                                     <span class="n">iq_stRoughRoughValve_NC_second_xOpenLS</span><span class="o">:=</span><span class="n">xTMO_ROUGH2_VRC_01_OPEN_LS</span><span class="p">,</span>
-                                    <span class="n">x_onBeamline</span><span class="o">:=</span> <span class="n">xOnBeamline</span><span class="p">),</span>
+<span class="o">//</span>                                  <span class="n">x_onBeamline</span><span class="o">:=</span> <span class="n">xOnBeamline</span><span class="p">,</span>
+                    <span class="n">x_onBeamline</span><span class="o">:=</span> <span class="kc">True</span><span class="p">),</span>
     <span class="n">iq_stPtm</span><span class="o">=&gt;</span> <span class="p">);</span>
 
 <span class="p">(</span><span class="o">*</span>
@@ -2058,7 +2083,8 @@
 <span class="o">//</span>                                  <span class="n">ads_Error_Present</span><span class="o">:=</span> <span class="p">(</span><span class="n">ITF_TMO_ROUGH1_VRC_01</span><span class="o">.</span><span class="n">bError</span> <span class="n">OR</span> <span class="n">ITF_TMO_ROUGH2_VRC_01</span><span class="o">.</span><span class="n">bError</span><span class="p">),</span>
                                     <span class="n">iq_stRoughRoughValve_NC_xOpnLS</span><span class="o">:=</span> <span class="n">xTMO_ROUGH1_VRC_01_OPEN_LS</span><span class="p">,</span>
                                     <span class="n">iq_stRoughRoughValve_NC_second_xOpenLS</span><span class="o">:=</span><span class="n">xTMO_ROUGH2_VRC_01_OPEN_LS</span><span class="p">,</span>
-                                    <span class="n">x_onBeamline</span><span class="o">:=</span> <span class="n">xOnBeamline</span><span class="p">),</span>
+<span class="o">//</span>                                  <span class="n">x_onBeamline</span><span class="o">:=</span> <span class="n">xOnBeamline</span><span class="p">,</span>
+                    <span class="n">x_onBeamline</span><span class="o">:=</span> <span class="kc">True</span><span class="p">),</span>
     <span class="n">iq_stPtm</span><span class="o">=&gt;</span> <span class="p">);</span>
 
 <span class="p">(</span><span class="o">*</span>
@@ -2474,7 +2500,7 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2022, SLAC National Accelerator Laboratory.</p>
+    <p>&#169; Copyright 2023, SLAC National Accelerator Laboratory.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

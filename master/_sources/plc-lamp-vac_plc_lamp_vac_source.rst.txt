@@ -1043,7 +1043,7 @@ GVL_Devices
     (*Onboard Turbo Pumps*)
     	{attribute 'TcLinkTo' := 	'.i_xAtSpd			:=	TIIB[LAMP_PNL1_EP01_EP2338-0002]^Channel 1^Input;
     								 .i_xFaultNC		:=	TIIB[LAMP_PNL1_EP01_EP2338-0002]^Channel 2^Input;
-    								 .i_xRemote			:=	TIIB[LAMP_PNL1_EP01_EP2338-0002]^Channel 3^Input;
+    								 .i_xRemote			:=	TIIB[LAMP_PLC_E10_EL1008]^Channel 1^Input;
     								 .q_RunDO			:=	TIIB[LAMP_PNL1_EP02_EP2624-0002]^Channel 1^Output;
     								 .q_xReset 			:=	TIIB[LAMP_PNL1_EP02_EP2624-0002]^Channel 2^Output				 
     	'}
@@ -1055,7 +1055,7 @@ GVL_Devices
     	
     	{attribute 'TcLinkTo' := 	'.i_xAtSpd			:=	TIIB[LAMP_PNL1_EP01_EP2338-0002]^Channel 5^Input;
     								 .i_xFaultNC		:=	TIIB[LAMP_PNL1_EP01_EP2338-0002]^Channel 6^Input;
-    								 .i_xRemote			:=	TIIB[LAMP_PNL1_EP01_EP2338-0002]^Channel 7^Input;
+    								 .i_xRemote			:=	TIIB[LAMP_PLC_E10_EL1008]^Channel 2^Input;
     								 .q_RunDO			:=	TIIB[LAMP_PNL1_EP02_EP2624-0002]^Channel 3^Output;
     								 .q_xReset 			:=	TIIB[LAMP_PNL1_EP02_EP2624-0002]^Channel 4^Output				 
     	'}
@@ -1067,7 +1067,7 @@ GVL_Devices
     	
     	{attribute 'TcLinkTo' := 	'.i_xAtSpd			:=	TIIB[LAMP_PNL1_EP04_EP2338-0002]^Channel 1^Input;
     								 .i_xFaultNC		:=	TIIB[LAMP_PNL1_EP04_EP2338-0002]^Channel 2^Input;
-    								 .i_xRemote			:=	TIIB[LAMP_PNL1_EP04_EP2338-0002]^Channel 3^Input;
+    								 .i_xRemote			:=	TIIB[LAMP_PLC_E10_EL1008]^Channel 3^Input;
     								 .q_RunDO			:=	TIIB[LAMP_PNL1_EP05_EP2624-0002]^Channel 1^Output;
     								 .q_xReset 			:=	TIIB[LAMP_PNL1_EP05_EP2624-0002]^Channel 2^Output				 
     	'}
@@ -1079,7 +1079,7 @@ GVL_Devices
     	
     	{attribute 'TcLinkTo' := 	'.i_xAtSpd			:=	TIIB[LAMP_PNL1_EP04_EP2338-0002]^Channel 5^Input;
     								 .i_xFaultNC		:=	TIIB[LAMP_PNL1_EP04_EP2338-0002]^Channel 6^Input;
-    								 .i_xRemote			:=	TIIB[LAMP_PNL1_EP04_EP2338-0002]^Channel 7^Input;
+    								 .i_xRemote			:=	TIIB[LAMP_PLC_E10_EL1008]^Channel 4^Input;
     								 .q_RunDO			:=	TIIB[LAMP_PNL1_EP05_EP2624-0002]^Channel 3^Output;
     								 .q_xReset 			:=	TIIB[LAMP_PNL1_EP05_EP2624-0002]^Channel 4^Output				 
     	'}
@@ -1166,7 +1166,7 @@ GVL_Devices
     *)	
     	{attribute 'TcLinkTo' := 	'.i_xAtSpd			:=	TIIB[LAMP_PNL2_EP13_EP2338-0002]^Channel 1^Input;
     								 .i_xFaultNC		:=	TIIB[LAMP_PNL2_EP13_EP2338-0002]^Channel 2^Input;
-    								 .i_xRemote			:=	TIIB[LAMP_PNL2_EP13_EP2338-0002]^Channel 3^Input;
+    								 .i_xRemote			:=	TIIB[LAMP_PLC_E10_EL1008]^Channel 5^Input;
     								 .q_RunDO			:=	TIIB[LAMP_PNL2_EP14_EP2624-0002]^Channel 1^Output;
     								 .q_xReset 			:=	TIIB[LAMP_PNL2_EP14_EP2624-0002]^Channel 2^Output				 
     	'}
@@ -1288,11 +1288,25 @@ GVL_Devices
     LAMP_C2_GCC_01 : FB_MKS500;
     *)
 
-
-    {attribute 'pytmc' := '
-    pv: LAMP:VCN:01
-    '}
-    LAMP_VCN_01 : FB_VCN_VAT590;
+    	{attribute 'TcLinkTo' := 	'.i_nRawPosition	:=	TIIB[VCN_1_VAT590]^DI TxPDO-Map^Position;
+    								 .i_nRawPressure	:=	TIIB[VCN_1_VAT590]^DI TxPDO-Map^Pressure;
+    								 .i_eControlMode	:=	TIIB[VCN_1_VAT590]^DI TxPDO-Map^Control mode;
+    								 .i_eFatalError		:=	TIIB[VCN_1_VAT590]^DI TxPDO-Map^Fatal error;
+    								 .i_stGenStatus 	:=	TIIB[VCN_1_VAT590]^DI TxPDO-Map^General status;
+    								 .i_stGenWarnings 	:=	TIIB[VCN_1_VAT590]^DI TxPDO-Map^General warnings;
+    								 .i_stExtnWarnings 	:=	TIIB[VCN_1_VAT590]^DI TxPDO-Map^Extended warnings;
+    								 .o_nRawPositionSP 	:=	TIIB[VCN_1_VAT590]^DO RxPDO-Map^Position setpoint;
+    								 .o_nRawPressureSP 	:=	TIIB[VCN_1_VAT590]^DO RxPDO-Map^Pressure setpoint;
+    								 .o_eCtrlModeSP 	:=	TIIB[VCN_1_VAT590]^DO RxPDO-Map^Control mode setpoint;
+    								 .o_stGenCtrlSP 	:=	TIIB[VCN_1_VAT590]^DO RxPDO-Map^General control setpoint;
+    								 .i_stVat590PlcDriveRef.aNetId     := TIIB[VCN_1_VAT590]^InfoData^AdsAddr^netId;
+    								 .i_stVat590PlcDriveRef.nSlaveAddr := TIIB[VCN_1_VAT590]^InfoData^AdsAddr^port;
+    								 .i_bValveEthCatStatus             := TIIB[VCN_1_VAT590]^WcState^WcState
+    	'}
+    	{attribute 'pytmc' := '
+    		pv: LAMP:VCN:01
+    	'}
+    	LAMP_VCN_01 : FB_VCN_VAT590;
 
     (*	
     	{attribute 'TcLinkTo' := 	'.i_iPRESS_R	:=	TIIB[LAMP_PNL2_EP21_EP3174-0002]^AI Standard Channel 2^Value;
@@ -1467,8 +1481,9 @@ GVL_PLC_Interfaces
     	xEcatBridge_TxPDO_state AT %I* :BOOL;
     	
     	//0: External device connectd, 1: External device not connected
-    	{attribute := 'TIIB[LAMP_PLC_E04_EL6692]^SYNC Inputs^External device not connected
-    	'}
+    	
+    //	{attribute := 'TIIB[LAMP_PLC_E04_EL6692]^SYNC Inputs^External device not connected
+    //	'}
     	xEcatBridge_External_device_not_connected AT %I* : BOOL;
     	
     	//0 = Data valid, 1 = Data invalid
@@ -1766,7 +1781,8 @@ MAIN
     //					ads_Error_Present:= (ITF_TMO_ROUGH1_VRC_01.bError OR ITF_TMO_ROUGH2_VRC_01.bError),
     					iq_stRoughRoughValve_NC_xOpnLS:= xTMO_ROUGH1_VRC_01_OPEN_LS,
     					iq_stRoughRoughValve_NC_second_xOpenLS:= xTMO_ROUGH2_VRC_01_OPEN_LS,
-    					x_onBeamline:= xOnBeamline),
+    //					x_onBeamline:= xOnBeamline,
+                        x_onBeamline:= True),
     	iq_stPtm=> );
 
     (*	
@@ -1843,7 +1859,8 @@ MAIN
     //					ads_Error_Present:= (ITF_TMO_ROUGH1_VRC_01.bError OR ITF_TMO_ROUGH2_VRC_01.bError),
     					iq_stRoughRoughValve_NC_xOpnLS:= xTMO_ROUGH1_VRC_01_OPEN_LS,
     					iq_stRoughRoughValve_NC_second_xOpenLS:= xTMO_ROUGH2_VRC_01_OPEN_LS,
-    					x_onBeamline:= xOnBeamline), 
+    //					x_onBeamline:= xOnBeamline,
+                         x_onBeamline:= True), 
     	iq_stPtm=> );
     	
     	LAMP_C2_PTM_02(
@@ -1858,7 +1875,8 @@ MAIN
     //					ads_Error_Present:= (ITF_TMO_ROUGH1_VRC_01.bError OR ITF_TMO_ROUGH2_VRC_01.bError),
     					iq_stRoughRoughValve_NC_xOpnLS:= xTMO_ROUGH1_VRC_01_OPEN_LS,
     					iq_stRoughRoughValve_NC_second_xOpenLS:=xTMO_ROUGH2_VRC_01_OPEN_LS,
-    					x_onBeamline:= xOnBeamline), 
+    //					x_onBeamline:= xOnBeamline,
+                        x_onBeamline:= True), 
     	iq_stPtm=> );
     	
     	LAMP_C2_PTM_03(
@@ -1873,7 +1891,8 @@ MAIN
     //					ads_Error_Present:= (ITF_TMO_ROUGH1_VRC_01.bError OR ITF_TMO_ROUGH2_VRC_01.bError),
     					iq_stRoughRoughValve_NC_xOpnLS:= xTMO_ROUGH1_VRC_01_OPEN_LS,
     					iq_stRoughRoughValve_NC_second_xOpenLS:=xTMO_ROUGH2_VRC_01_OPEN_LS,
-    					x_onBeamline:= xOnBeamline), 
+    //					x_onBeamline:= xOnBeamline,
+                        x_onBeamline:= True), 
     	iq_stPtm=> );
     	
     	LAMP_C2_PTM_04(
@@ -1888,7 +1907,8 @@ MAIN
     //					ads_Error_Present:= (ITF_TMO_ROUGH1_VRC_01.bError OR ITF_TMO_ROUGH2_VRC_01.bError),
     					iq_stRoughRoughValve_NC_xOpnLS:= xTMO_ROUGH1_VRC_01_OPEN_LS,
     					iq_stRoughRoughValve_NC_second_xOpenLS:=xTMO_ROUGH2_VRC_01_OPEN_LS,
-    					x_onBeamline:= xOnBeamline), 
+    //					x_onBeamline:= xOnBeamline,
+                        x_onBeamline:= True), 
     	iq_stPtm=> );
 
     (*	
@@ -1995,7 +2015,8 @@ MAIN
     //					ads_Error_Present:= (ITF_TMO_ROUGH1_VRC_01.bError OR ITF_TMO_ROUGH2_VRC_01.bError),
     					iq_stRoughRoughValve_NC_xOpnLS:= xTMO_ROUGH1_VRC_01_OPEN_LS,
     					iq_stRoughRoughValve_NC_second_xOpenLS:=xTMO_ROUGH2_VRC_01_OPEN_LS,
-    					x_onBeamline:= xOnBeamline), 
+    //					x_onBeamline:= xOnBeamline,
+                        x_onBeamline:= True), 
     	iq_stPtm=> );
 
     (*	
