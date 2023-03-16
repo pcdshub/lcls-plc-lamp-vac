@@ -1,5 +1,656 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4022.30">
+	<DataTypes>
+		<DataType>
+			<Name GUID="{D9DAFD65-FA08-472F-9051-B1368FC550D2}" Namespace="Tc2_SerialCom" AutoDeleteType="true">EL6inData22B</Name>
+			<Comment>
+				<![CDATA[ This data type is corresponding to the
+   EL-6xxx data structure used in the
+   TwinCAT SystemManager
+   (EL-6xxx version using 22 data bytes) 
+]]>
+			</Comment>
+			<BitSize>192</BitSize>
+			<SubItem>
+				<Name>Status</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000004}">WORD</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>D</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000001}">BYTE</Type>
+				<ArrayInfo>
+					<LBound>0</LBound>
+					<Elements>22</Elements>
+				</ArrayInfo>
+				<BitSize>176</BitSize>
+				<BitOffs>16</BitOffs>
+			</SubItem>
+		</DataType>
+		<DataType>
+			<Name GUID="{AA772DB4-D3ED-4677-B98F-79288C47B454}" Namespace="Tc2_SerialCom" AutoDeleteType="true">EL6outData22B</Name>
+			<Comment>
+				<![CDATA[ This data type is corresponding to the
+   EL-6xxx data structure used in the
+   TwinCAT SystemManager
+   (EL-6xxx version using 22 data bytes) 
+]]>
+			</Comment>
+			<BitSize>192</BitSize>
+			<SubItem>
+				<Name>Ctrl</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000004}">WORD</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>D</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000001}">BYTE</Type>
+				<ArrayInfo>
+					<LBound>0</LBound>
+					<Elements>22</Elements>
+				</ArrayInfo>
+				<BitSize>176</BitSize>
+				<BitOffs>16</BitOffs>
+			</SubItem>
+		</DataType>
+		<DataType>
+			<Name GUID="{18071995-0000-0000-0000-000000000041}" TcBaseType="true" HideSubItems="true" CName="AmsNetId">AMSNETID</Name>
+			<BitSize>48</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000001}">BYTE</BaseType>
+			<ArrayInfo>
+				<LBound>0</LBound>
+				<Elements>6</Elements>
+			</ArrayInfo>
+			<Format>
+				<Printf>%d.%d.%d.%d.%d.%d</Printf>
+				<Parameter>[0]</Parameter>
+				<Parameter>[1]</Parameter>
+				<Parameter>[2]</Parameter>
+				<Parameter>[3]</Parameter>
+				<Parameter>[4]</Parameter>
+				<Parameter>[5]</Parameter>
+			</Format>
+		</DataType>
+		<DataType>
+			<Name GUID="{F9641D8E-EFFF-416E-9E48-431FBA5E9BAB}" Namespace="LCLS_Vacuum" AutoDeleteType="true">E_ControlMode</Name>
+			<BitSize>8</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000002}">USINT</BaseType>
+			<EnumInfo>
+				<Text>
+					<![CDATA[Init]]>
+				</Text>
+				<Enum>0</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text>
+					<![CDATA[Synch]]>
+				</Text>
+				<Enum>1</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text>
+					<![CDATA[ManualControl]]>
+				</Text>
+				<Enum>2</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text>
+					<![CDATA[CloseValve]]>
+				</Text>
+				<Enum>3</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text>
+					<![CDATA[OpenValve]]>
+				</Text>
+				<Enum>4</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text>
+					<![CDATA[PressureControl]]>
+				</Text>
+				<Enum>5</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text>
+					<![CDATA[HoldValve]]>
+				</Text>
+				<Enum>6</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text>
+					<![CDATA[LearnProcedure]]>
+				</Text>
+				<Enum>7</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text>
+					<![CDATA[InterlockOpen]]>
+				</Text>
+				<Enum>8</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text>
+					<![CDATA[InterlockClose]]>
+				</Text>
+				<Enum>9</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text>
+					<![CDATA[MaintenanceOpen]]>
+				</Text>
+				<Enum>10</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text>
+					<![CDATA[MaintenanceClose]]>
+				</Text>
+				<Enum>11</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text>
+					<![CDATA[PowerFailure]]>
+				</Text>
+				<Enum>12</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text>
+					<![CDATA[Safety]]>
+				</Text>
+				<Enum>13</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text>
+					<![CDATA[FatalError]]>
+				</Text>
+				<Enum>14</Enum>
+			</EnumInfo>
+		</DataType>
+		<DataType>
+			<Name GUID="{99A9DDDE-7C0F-49C4-AC7F-4FEC97E19420}" Namespace="LCLS_Vacuum" AutoDeleteType="true">E_FatalErrors</Name>
+			<BitSize>16</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000005}">UINT</BaseType>
+			<EnumInfo>
+				<Text>
+					<![CDATA[NO_FATAL_ERROR]]>
+				</Text>
+				<Enum>0</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text>
+					<![CDATA[NoStopDetectedSynch]]>
+				</Text>
+				<Enum>20</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text>
+					<![CDATA[ValveBlockedSynch]]>
+				</Text>
+				<Enum>21</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text>
+					<![CDATA[ValveBlocked]]>
+				</Text>
+				<Enum>22</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text>
+					<![CDATA[StepLossSynch]]>
+				</Text>
+				<Enum>25</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text>
+					<![CDATA[MotorDriverFault]]>
+				</Text>
+				<Enum>40</Enum>
+			</EnumInfo>
+		</DataType>
+		<DataType>
+			<Name GUID="{E7A0E04F-A2EC-4B01-AFB6-F9F4D0BFDE14}" Namespace="LCLS_Vacuum" AutoDeleteType="true">ST_GeneralStatus</Name>
+			<BitSize>16</BitSize>
+			<SubItem>
+				<Name>Bit0FieldBusDatavalid</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit1ZeroExecuted</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>1</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit2PingPongRxBit</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>2</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit3PressureSimulation</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>3</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit4PressureSPReached</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>4</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit5Reserved</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>5</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit6Reserved</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>6</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit7AccessModeBit0</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>7</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit8AccessModeBit1</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>8</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit9WarningsActive</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>9</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit10Reserved</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>10</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit11Reserved</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>11</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit12Reserved</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>12</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit13Reserved</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>13</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit14Reserved</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>14</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit15Reserved</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>15</BitOffs>
+			</SubItem>
+		</DataType>
+		<DataType>
+			<Name GUID="{1F4F3B68-8ADC-40EA-B7BF-D976A038CBCA}" Namespace="LCLS_Vacuum" AutoDeleteType="true">ST_GeneralWarnings</Name>
+			<BitSize>16</BitSize>
+			<SubItem>
+				<Name>Bit0ServiceRequest</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit1Reserved</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>1</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit2Reserved</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>2</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit3PowerFailureBattery</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>3</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit4Reserved</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>4</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit5Reserved</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>5</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit6Reserved</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>6</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit7Reserved</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>7</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit8Reserved</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>8</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit9Reserved</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>9</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit10SensMeasUnitFault</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>10</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit11Reserved</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>11</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit12Reserved</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>12</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit13Reserved</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>13</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit14Reserved</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>14</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit15Reserved</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>15</BitOffs>
+			</SubItem>
+		</DataType>
+		<DataType>
+			<Name GUID="{9D596340-1ED8-4227-9840-4A22A0696393}" Namespace="LCLS_Vacuum" AutoDeleteType="true">ST_ExtendedWarnings</Name>
+			<BitSize>16</BitSize>
+			<SubItem>
+				<Name>Bit0RemoteControlNotPossible</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit1ControlModeSPNotAllowed</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>1</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit2ZeroDisabled</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>2</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit3PFODeactivated</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>3</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit4Reserved</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>4</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit5PressureSPOutOfRange</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>5</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit6PositionSPOutOfRange</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>6</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit7Reserved</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>7</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit8Reserved</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>8</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit9Reserved</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>9</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit10CtrlSPOutOfRange</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>10</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit11GeneralCtrlSPOutOfRange</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>11</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit12ProcDataSettingsNotvalid</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>12</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit13Reserved5</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>13</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit14Reserved6</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>14</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit15Reserved7</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>15</BitOffs>
+			</SubItem>
+		</DataType>
+		<DataType>
+			<Name GUID="{A35BDA7F-D880-46D9-BC7E-1C58B81B070F}" Namespace="LCLS_Vacuum" AutoDeleteType="true">E_ControlModeSP</Name>
+			<BitSize>8</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000002}">USINT</BaseType>
+			<EnumInfo>
+				<Text>
+					<![CDATA[ManualControl]]>
+				</Text>
+				<Enum>2</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text>
+					<![CDATA[CloseValve]]>
+				</Text>
+				<Enum>3</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text>
+					<![CDATA[OpenValve]]>
+				</Text>
+				<Enum>4</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text>
+					<![CDATA[PressureControl]]>
+				</Text>
+				<Enum>5</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text>
+					<![CDATA[HoldValve]]>
+				</Text>
+				<Enum>6</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text>
+					<![CDATA[LearnProcedure]]>
+				</Text>
+				<Enum>7</Enum>
+			</EnumInfo>
+		</DataType>
+		<DataType>
+			<Name GUID="{9CE63C20-7C23-49F3-BBB9-BC9D9680D11C}" Namespace="LCLS_Vacuum" AutoDeleteType="true">ST_GeneralControlSP</Name>
+			<BitSize>16</BitSize>
+			<SubItem>
+				<Name>Bit0ExecuteZero</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit1Reserved</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>1</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit2PingPongTxBit</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>2</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit3Reserved</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>3</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit4AccessMode</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>4</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit5Reserved</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>5</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit6Reserved</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>6</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit7Reserved</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>7</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit8Reserved</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>8</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit9Reserved</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>9</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit10Reserved</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>10</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit11Reserved</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>11</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit12Reserved</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>12</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit13Reserved</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>13</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit14Reserved</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>14</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit15Reserved</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>15</BitOffs>
+			</SubItem>
+		</DataType>
+	</DataTypes>
 	<Project ProjectGUID="{A09982C8-E87D-4F3B-944D-C3EA0DB6717C}" TargetNetId="172.21.132.34.1.1" ShowHideConfigurations="#x306">
 		<System>
 			<Licenses CacheOrCheckLicensesOnStartup="true">
@@ -28,7 +679,932 @@
 			</Tasks>
 		</System>
 		<Plc>
-			<Project File="plc_lamp_vac.xti"/>
+			<Project GUID="{5471AA38-CB1E-4952-90AC-7C2FFA122CF5}" Name="plc_lamp_vac" PrjFilePath="plc_lamp_vac\plc_lamp_vac.plcproj" TmcFilePath="plc_lamp_vac\plc_lamp_vac.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="plc_lamp_vac\plc_lamp_vac.tmc">
+					<Name>plc_lamp_vac Instance</Name>
+					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
+					<Vars VarGrpType="1">
+						<Name>ComTask Inputs</Name>
+						<Var>
+							<Name>GVL_COM.stComIn_LAMP_C2_PTM_01</Name>
+							<Comment>
+								<![CDATA[	fbSerialLineControl_LAMP_GJ2_PTM_02: SerialLineControl;
+	fbSerialLineControl_LAMP_GJ2_PTM_03: SerialLineControl;
+	fbSerialLineControl_LAMP_GJ2_PTM_04: SerialLineControl; 
+SERIAL IO]]>
+							</Comment>
+							<Type GUID="{D9DAFD65-FA08-472F-9051-B1368FC550D2}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
+						</Var>
+						<Var>
+							<Name>GVL_COM.stComIn_LAMP_C2_PTM_02</Name>
+							<Comment>
+								<![CDATA[ "  "]]>
+							</Comment>
+							<Type GUID="{D9DAFD65-FA08-472F-9051-B1368FC550D2}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
+						</Var>
+						<Var>
+							<Name>GVL_COM.stComIn_LAMP_C2_PTM_03</Name>
+							<Type GUID="{D9DAFD65-FA08-472F-9051-B1368FC550D2}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
+						</Var>
+						<Var>
+							<Name>GVL_COM.stComIn_LAMP_C2_PTM_04</Name>
+							<Type GUID="{D9DAFD65-FA08-472F-9051-B1368FC550D2}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
+						</Var>
+						<Var>
+							<Name>GVL_COM.stComIn_LAMP_ROUGH_PTM_01</Name>
+							<Comment>
+								<![CDATA[
+	{attribute	'TcLinkTo'	:=	'.Status:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Status;
+								 .D[0]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 0;
+								 .D[1]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 1;
+								 .D[2]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 2;
+								 .D[3]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 3; 
+								 .D[4]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 4;
+								 .D[5]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 5;
+								 .D[6]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 6;
+								 .D[7]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 7;
+								 .D[8]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 8;
+								 .D[9]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 9;
+								 .D[10]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 10;
+								 .D[11]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 11;
+								 .D[12]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 12;
+								 .D[13]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 13;
+								 .D[14]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 14;
+								 .D[15]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 15;
+								 .D[16]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 16;
+								 .D[17]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 17;
+								 .D[18]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 18;
+								 .D[19]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 19;
+								 .D[20]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 20;
+								 .D[21]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 21; 
+	'}     
+	stComIn_LAMP_GJ1_PTM_01		AT %I*	:	EL6inData22B;  
+
+	
+	{attribute	'TcLinkTo'	:=	'.Ctrl:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Ctrl;
+								 .D[0]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 0;
+								 .D[1]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 1;
+								 .D[2]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 2;
+								 .D[3]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 3;
+								 .D[4]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 4;
+								 .D[5]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 5;
+								 .D[6]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 6;
+								 .D[7]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 7;
+								 .D[8]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 8;
+								 .D[9]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 9;
+								 .D[10]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 10;
+								 .D[11]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 11;
+								 .D[12]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 12;
+								 .D[13]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 13;
+								 .D[14]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 14;
+								 .D[15]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 15;
+								 .D[16]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 16;
+								 .D[17]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 17;
+								 .D[18]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 18;
+								 .D[19]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 19;
+								 .D[20]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 20;
+								 .D[21]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 21;
+	'}
+	stComOut_LAMP_GJ1_PTM_01		AT %Q*	:	EL6outData22B;
+
+	
+	{attribute	'TcLinkTo'	:=	'.Status:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Status;
+								 .D[0]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 0;
+								 .D[1]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 1;
+								 .D[2]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 2;
+								 .D[3]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 3;
+								 .D[4]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 4;
+								 .D[5]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 5;
+								 .D[6]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 6;
+								 .D[7]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 7;
+								 .D[8]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 8;
+								 .D[9]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 9;
+								 .D[10]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 10;
+								 .D[11]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 11;
+								 .D[12]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 12;
+								 .D[13]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 13;
+								 .D[14]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 14;
+								 .D[15]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 15;
+								 .D[16]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 16;
+								 .D[17]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 17;
+								 .D[18]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 18;
+								 .D[19]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 19;
+								 .D[20]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 20;
+								 .D[21]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 21;
+	'}
+	stComIn_LAMP_GJ1_PTM_02		AT %I*	:	EL6inData22B;
+
+
+	{attribute	'TcLinkTo'	:=	'.Ctrl:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Ctrl;
+								 .D[0]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 0;
+								 .D[1]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 1;
+								 .D[2]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 2;
+								 .D[3]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 3;
+								 .D[4]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 4;
+								 .D[5]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 5;
+								 .D[6]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 6;
+								 .D[7]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 7;
+								 .D[8]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 8;
+								 .D[9]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 9;
+								 .D[10]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 10;
+								 .D[11]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 11;
+								 .D[12]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 12;
+								 .D[13]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 13;
+								 .D[14]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 14;
+								 .D[15]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 15;
+								 .D[16]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 16;
+								 .D[17]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 17;
+								 .D[18]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 18;
+								 .D[19]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 19;
+								 .D[20]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 20;
+								 .D[21]:=TIIB[LAMP_PNL1_EP09_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 21;
+	'}
+	stComOut_LAMP_GJ1_PTM_02		AT %Q*	:	EL6outData22B;
+
+	
+	{attribute	'TcLinkTo'	:=	'.Status:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Status;
+								 .D[0]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 0;
+								 .D[1]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 1;
+								 .D[2]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 2;
+								 .D[3]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 3;
+								 .D[4]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 4;
+								 .D[5]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 5;
+								 .D[6]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 6;
+								 .D[7]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 7;
+								 .D[8]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 8;
+								 .D[9]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 9;
+								 .D[10]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 10;
+								 .D[11]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 11;
+								 .D[12]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 12;
+								 .D[13]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 13;
+								 .D[14]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 14;
+								 .D[15]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 15;
+								 .D[16]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 16;
+								 .D[17]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 17;
+								 .D[18]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 18;
+								 .D[19]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 19;
+								 .D[20]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 20;
+								 .D[21]:=TIIB[LAMP_PNL1_EP12_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 21;
+	'}
+	stComIn_LAMP_GJ1_PTM_03		AT %I*	:	EL6inData22B;
+]]>
+							</Comment>
+							<Type GUID="{D9DAFD65-FA08-472F-9051-B1368FC550D2}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
+						</Var>
+						<Var>
+							<Name>GVL_COM.stComIn_LAMP_GJ2_PTM_01</Name>
+							<Comment>
+								<![CDATA[	
+	{attribute	'TcLinkTo'	:=	'.Status:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Status;
+								 .D[0]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 0;
+								 .D[1]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 1;
+								 .D[2]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 2;
+								 .D[3]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 3;
+								 .D[4]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 4;
+								 .D[5]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 5;
+								 .D[6]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 6;
+								 .D[7]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 7;
+								 .D[8]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 8;
+								 .D[9]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 9;
+								 .D[10]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 10;
+								 .D[11]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 11;
+								 .D[12]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 12;
+								 .D[13]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 13;
+								 .D[14]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 14;
+								 .D[15]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 15;
+								 .D[16]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 16;
+								 .D[17]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 17;
+								 .D[18]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 18;
+								 .D[19]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 19;
+								 .D[20]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 20;
+								 .D[21]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 21;
+	'}
+	stComIn_LAMP_C1_PTM_01		AT %I*	:	EL6inData22B;
+
+	
+	{attribute	'TcLinkTo'	:=	'.Ctrl:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Ctrl;
+								 .D[0]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 0;
+								 .D[1]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 1;
+								 .D[2]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 2;
+								 .D[3]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 3;
+								 .D[4]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 4;
+								 .D[5]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 5;
+								 .D[6]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 6;
+								 .D[7]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 7;
+								 .D[8]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 8;
+								 .D[9]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 9;
+								 .D[10]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 10;
+								 .D[11]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 11;
+								 .D[12]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 12;
+								 .D[13]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 13;
+								 .D[14]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 14;
+								 .D[15]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 15;
+								 .D[16]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 16;
+								 .D[17]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 17;
+								 .D[18]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 18;
+								 .D[19]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 19;
+								 .D[20]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 20;
+								 .D[21]:=TIIB[LAMP_PNL2_EP15_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 21;
+	'}
+	stComOut_LAMP_C1_PTM_01		AT %Q*	:	EL6outData22B;
+
+	
+	{attribute	'TcLinkTo'	:=	'.Status:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Status;
+								 .D[0]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 0;
+								 .D[1]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 1;
+								 .D[2]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 2;
+								 .D[3]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 3;
+								 .D[4]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 4;
+								 .D[5]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 5;
+								 .D[6]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 6;
+								 .D[7]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 7;
+								 .D[8]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 8;
+								 .D[9]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 9;
+								 .D[10]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 10;
+								 .D[11]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 11;
+								 .D[12]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 12;
+								 .D[13]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 13;
+								 .D[14]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 14;
+								 .D[15]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 15;
+								 .D[16]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 16;
+								 .D[17]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 17;
+								 .D[18]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 18;
+								 .D[19]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 19;
+								 .D[20]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 20;
+								 .D[21]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Data In 21;
+	'}
+	stComIn_LAMP_CATCH_PTM_01		AT %I*	:	EL6inData22B;
+
+	
+	{attribute	'TcLinkTo'	:=	'.Ctrl:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Ctrl;
+								 .D[0]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 0;
+								 .D[1]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 1;
+								 .D[2]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 2;
+								 .D[3]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 3;
+								 .D[4]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 4;
+								 .D[5]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 5;
+								 .D[6]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 6;
+								 .D[7]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 7;
+								 .D[8]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 8;
+								 .D[9]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 9;
+								 .D[10]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 10;
+								 .D[11]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 11;
+								 .D[12]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 12;
+								 .D[13]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 13;
+								 .D[14]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 14;
+								 .D[15]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 15;
+								 .D[16]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 16;
+								 .D[17]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 17;
+								 .D[18]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 18;
+								 .D[19]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 19;
+								 .D[20]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 20;
+								 .D[21]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Data Out 21;
+	'}
+	stComOut_LAMP_CATCH_PTM_01		AT %Q*	:	EL6outData22B;
+
+	
+	{attribute	'TcLinkTo'	:=	'.Status:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Status;
+								 .D[0]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 0;
+								 .D[1]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 1;
+								 .D[2]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 2;
+								 .D[3]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 3;
+								 .D[4]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 4;
+								 .D[5]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 5;
+								 .D[6]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 6;
+								 .D[7]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 7;
+								 .D[8]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 8;
+								 .D[9]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 9;
+								 .D[10]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 10;
+								 .D[11]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 11;
+								 .D[12]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 12;
+								 .D[13]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 13;
+								 .D[14]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 14;
+								 .D[15]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 15;
+								 .D[16]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 16;
+								 .D[17]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 17;
+								 .D[18]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 18;
+								 .D[19]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 19;
+								 .D[20]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 20;
+								 .D[21]:=TIIB[LAMP_PNL2_EP18_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 21;
+	'}
+	stComIn_LAMP_CATCH_PTM_02		AT %I*	:	EL6inData22B;
+]]>
+							</Comment>
+							<Type GUID="{D9DAFD65-FA08-472F-9051-B1368FC550D2}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
+						</Var>
+					</Vars>
+					<Vars VarGrpType="2">
+						<Name>ComTask Outputs</Name>
+						<Var>
+							<Name>GVL_COM.stComOut_LAMP_C2_PTM_01</Name>
+							<Type GUID="{AA772DB4-D3ED-4677-B98F-79288C47B454}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
+						</Var>
+						<Var>
+							<Name>GVL_COM.stComOut_LAMP_C2_PTM_02</Name>
+							<Type GUID="{AA772DB4-D3ED-4677-B98F-79288C47B454}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
+						</Var>
+						<Var>
+							<Name>GVL_COM.stComOut_LAMP_C2_PTM_03</Name>
+							<Type GUID="{AA772DB4-D3ED-4677-B98F-79288C47B454}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
+						</Var>
+						<Var>
+							<Name>GVL_COM.stComOut_LAMP_C2_PTM_04</Name>
+							<Type GUID="{AA772DB4-D3ED-4677-B98F-79288C47B454}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
+						</Var>
+						<Var>
+							<Name>GVL_COM.stComOut_LAMP_ROUGH_PTM_01</Name>
+							<Type GUID="{AA772DB4-D3ED-4677-B98F-79288C47B454}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
+						</Var>
+						<Var>
+							<Name>GVL_COM.stComOut_LAMP_GJ2_PTM_01</Name>
+							<Type GUID="{AA772DB4-D3ED-4677-B98F-79288C47B454}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
+						</Var>
+					</Vars>
+					<Vars VarGrpType="1">
+						<Name>PlcTask Inputs</Name>
+						<Var>
+							<Name>LCLS_Vacuum.Global_Variables.g_stSystem.I_EcatMaster1</Name>
+							<Comment>
+								<![CDATA[ AMS Net ID used for FB_EcatDiag, among others ]]>
+							</Comment>
+							<Type GUID="{18071995-0000-0000-0000-000000000041}">AMSNETID</Type>
+						</Var>
+						<Var>
+							<Name>LCLS_General.DefaultGlobals.stSys.I_EcatMaster1</Name>
+							<Comment>
+								<![CDATA[ AMS Net ID used for FB_EcatDiag, among others ]]>
+							</Comment>
+							<Type GUID="{18071995-0000-0000-0000-000000000041}">AMSNETID</Type>
+						</Var>
+						<Var>
+							<Name>DIAGNOSTICS.i_sAMSNetID</Name>
+							<Comment>
+								<![CDATA[Link the sAMSNetID to the Etherat Master netID]]>
+							</Comment>
+							<Type GUID="{18071995-0000-0000-0000-000000000041}">AMSNETID</Type>
+						</Var>
+						<Var>
+							<Name>GVL_PLC_Interfaces.xEcatBridge_TxPDO_state</Name>
+							<Comment>
+								<![CDATA[TMO Beamline Vacuum
+Outputs
+	fb_ADS_WATCHDOG_VAC_LAMP_TMO:FB_ADS_WATCHDOG;
+ETHERCAT BRRIDGE COM STATUS
+0: Other side is in OP state, >0: Error]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>DIAGNOSTICS.fbEcatDiag.I_AMSNetId</Name>
+							<Comment>
+								<![CDATA[Link to the AMSNETID name in the ethercat master info.]]>
+							</Comment>
+							<Type GUID="{18071995-0000-0000-0000-000000000041}">AMSNETID</Type>
+						</Var>
+						<Var>
+							<Name>GVL_PLC_Interfaces.xEcatBridge_External_device_not_connected</Name>
+							<Comment>
+								<![CDATA[0: External device connectd, 1: External device not connected]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_GJ2_PTM_01.i_xAtSpd</Name>
+							<Comment>
+								<![CDATA[ Normaml operation when true]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_GJ2_PTM_01.i_xFaultNC</Name>
+							<Comment>
+								<![CDATA[ Error Active when no Error is present]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_C2_PTM_01.i_xAtSpd</Name>
+							<Comment>
+								<![CDATA[ Normaml operation when true]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_C2_PTM_01.i_xFaultNC</Name>
+							<Comment>
+								<![CDATA[ Error]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_C2_PTM_01.i_xWarn</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_C2_PTM_01.i_xRemote</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_C2_PTM_02.i_xAtSpd</Name>
+							<Comment>
+								<![CDATA[ Normaml operation when true]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_C2_PTM_02.i_xFaultNC</Name>
+							<Comment>
+								<![CDATA[ Error]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_C2_PTM_02.i_xWarn</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_C2_PTM_02.i_xRemote</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_C2_PTM_03.i_xAtSpd</Name>
+							<Comment>
+								<![CDATA[ Normaml operation when true]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_C2_PTM_03.i_xFaultNC</Name>
+							<Comment>
+								<![CDATA[ Error]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_C2_PTM_03.i_xWarn</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_C2_PTM_03.i_xRemote</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_C2_PTM_04.i_xAtSpd</Name>
+							<Comment>
+								<![CDATA[ Normaml operation when true]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_C2_PTM_04.i_xFaultNC</Name>
+							<Comment>
+								<![CDATA[ Error]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_C2_PTM_04.i_xWarn</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_C2_PTM_04.i_xRemote</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_ROUGH_PTM_01.i_xAtSpd</Name>
+							<Comment>
+								<![CDATA[ Normaml operation when true]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_ROUGH_PTM_01.i_xFaultNC</Name>
+							<Comment>
+								<![CDATA[ Error]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_ROUGH_PTM_01.i_xWarn</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_ROUGH_PTM_01.i_xRemote</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_C2_GPI_01.i_iPRESS_R</Name>
+							<Comment>
+								<![CDATA[ input Pressure // Link to analog Input]]>
+							</Comment>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_ROUGH_GPI_01.i_iPRESS_R</Name>
+							<Comment>
+								<![CDATA[ input Pressure // Link to analog Input]]>
+							</Comment>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_ROUGH_GPI_02.i_iPRESS_R</Name>
+							<Comment>
+								<![CDATA[ input Pressure // Link to analog Input]]>
+							</Comment>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_ROUGH_GPI_03.i_iPRESS_R</Name>
+							<Comment>
+								<![CDATA[ input Pressure // Link to analog Input]]>
+							</Comment>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_ROUGH_GPI_04.i_iPRESS_R</Name>
+							<Comment>
+								<![CDATA[ input Pressure // Link to analog Input]]>
+							</Comment>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_C2_GCC_01.i_iPRESS_R</Name>
+							<Comment>
+								<![CDATA[ Controls and I/Os]]>
+							</Comment>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_C2_GCC_01.i_xHV_ON</Name>
+							<Comment>
+								<![CDATA[  True when High Voltage is on  // 'TcLinkTo' (EL1124) ^Input]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_C2_GCC_01.i_xDisc_Active</Name>
+							<Comment>
+								<![CDATA[ Discharge Current Active // 'TcLinkTo' (EL1124) ^Input]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_VCN_01.i_nRawPosition</Name>
+							<Comment>
+								<![CDATA[ Position readback from the valve]]>
+							</Comment>
+							<Type>DINT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_VCN_01.i_nRawPressure</Name>
+							<Comment>
+								<![CDATA[ Pressure readback from the valve]]>
+							</Comment>
+							<Type>DINT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_VCN_01.i_eControlMode</Name>
+							<Comment>
+								<![CDATA[ Valve control mode readback]]>
+							</Comment>
+							<Type GUID="{F9641D8E-EFFF-416E-9E48-431FBA5E9BAB}" Namespace="LCLS_Vacuum">E_ControlMode</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_VCN_01.i_eFatalError</Name>
+							<Comment>
+								<![CDATA[ Valve Fatal Errors readback]]>
+							</Comment>
+							<Type GUID="{99A9DDDE-7C0F-49C4-AC7F-4FEC97E19420}" Namespace="LCLS_Vacuum">E_FatalErrors</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_VCN_01.i_stGenStatus</Name>
+							<Comment>
+								<![CDATA[ Valve General Status readback]]>
+							</Comment>
+							<Type GUID="{E7A0E04F-A2EC-4B01-AFB6-F9F4D0BFDE14}" Namespace="LCLS_Vacuum">ST_GeneralStatus</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_VCN_01.i_stGenWarnings</Name>
+							<Comment>
+								<![CDATA[ Valve General Warnings readback]]>
+							</Comment>
+							<Type GUID="{1F4F3B68-8ADC-40EA-B7BF-D976A038CBCA}" Namespace="LCLS_Vacuum">ST_GeneralWarnings</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_VCN_01.i_stExtnWarnings</Name>
+							<Comment>
+								<![CDATA[ Valve Extended Warnings readback]]>
+							</Comment>
+							<Type GUID="{9D596340-1ED8-4227-9840-4A22A0696393}" Namespace="LCLS_Vacuum">ST_ExtendedWarnings</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_C1_GHC_01.i_iPRESS_R</Name>
+							<Comment>
+								<![CDATA[ input Pressure // Link to analog Input]]>
+							</Comment>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_ROUGH_VRC_01.i_xOpnLS</Name>
+							<Comment>
+								<![CDATA[IO]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_ROUGH_VRC_01.i_xClsLS</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_ROUGH_VRC_03.i_xOpnLS</Name>
+							<Comment>
+								<![CDATA[IO]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_ROUGH_VRC_03.i_xClsLS</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_ROUGH_VRC_02.i_xOpnLS</Name>
+							<Comment>
+								<![CDATA[IO]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_ROUGH_VRC_02.i_xClsLS</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_PLC_Interfaces.xEcatBridge_WcState</Name>
+							<Comment>
+								<![CDATA[0 = Data valid, 1 = Data invalid]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_PLC_Interfaces.xTMO_ROUGH1_VRC_01_OPEN_LS</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_PLC_Interfaces.sHUTCH_PLC_NAME</Name>
+							<Comment>
+								<![CDATA[ I/O Inputs from TMO Beamline]]>
+							</Comment>
+							<Type>STRING(8)</Type>
+						</Var>
+						<Var>
+							<Name>GVL_PLC_Interfaces.xTMO_ROUGH2_VRC_01_OPEN_LS</Name>
+							<Type>BOOL</Type>
+						</Var>
+					</Vars>
+					<Vars VarGrpType="2">
+						<Name>PlcTask Outputs</Name>
+						<Var>
+							<Name>GVL_Devices.LAMP_GJ2_PTM_01.q_RunDO</Name>
+							<Comment>
+								<![CDATA[ Start/Stop]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_C2_PTM_01.q_RunDO</Name>
+							<Comment>
+								<![CDATA[ Start/Stop for TC110 link this output to the Pumping station bit]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_C2_PTM_01.q_PumpingStation</Name>
+							<Comment>
+								<![CDATA[ Start/Stop interlock]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_C2_PTM_01.q_xRemote</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_C2_PTM_01.q_xReset</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_C2_PTM_02.q_RunDO</Name>
+							<Comment>
+								<![CDATA[ Start/Stop for TC110 link this output to the Pumping station bit]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_C2_PTM_02.q_PumpingStation</Name>
+							<Comment>
+								<![CDATA[ Start/Stop interlock]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_C2_PTM_02.q_xRemote</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_C2_PTM_02.q_xReset</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_C2_PTM_03.q_RunDO</Name>
+							<Comment>
+								<![CDATA[ Start/Stop for TC110 link this output to the Pumping station bit]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_C2_PTM_03.q_PumpingStation</Name>
+							<Comment>
+								<![CDATA[ Start/Stop interlock]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_C2_PTM_03.q_xRemote</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_C2_PTM_03.q_xReset</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_C2_PTM_04.q_RunDO</Name>
+							<Comment>
+								<![CDATA[ Start/Stop for TC110 link this output to the Pumping station bit]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_C2_PTM_04.q_PumpingStation</Name>
+							<Comment>
+								<![CDATA[ Start/Stop interlock]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_C2_PTM_04.q_xRemote</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_C2_PTM_04.q_xReset</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_ROUGH_PTM_01.q_RunDO</Name>
+							<Comment>
+								<![CDATA[ Start/Stop for TC110 link this output to the Pumping station bit]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_ROUGH_PTM_01.q_PumpingStation</Name>
+							<Comment>
+								<![CDATA[ Start/Stop interlock]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_ROUGH_PTM_01.q_xRemote</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_ROUGH_PTM_01.q_xReset</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_C2_GCC_01.q_xHV_DIS</Name>
+							<Comment>
+								<![CDATA[ Enable High Voltage when True // 'TcLinkTo' (EP2624) ^Output]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_VCN_01.o_nRawPositionSP</Name>
+							<Comment>
+								<![CDATA[ Position setpoint]]>
+							</Comment>
+							<Type>DINT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_VCN_01.o_nRawPressureSP</Name>
+							<Comment>
+								<![CDATA[ Pressure setpoint]]>
+							</Comment>
+							<Type>DINT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_VCN_01.o_eCtrlModeSP</Name>
+							<Comment>
+								<![CDATA[ Valve control mode setpoint]]>
+							</Comment>
+							<Type GUID="{A35BDA7F-D880-46D9-BC7E-1C58B81B070F}" Namespace="LCLS_Vacuum">E_ControlModeSP</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_VCN_01.o_stGenCtrlSP</Name>
+							<Comment>
+								<![CDATA[ General Control setpoint]]>
+							</Comment>
+							<Type GUID="{9CE63C20-7C23-49F3-BBB9-BC9D9680D11C}" Namespace="LCLS_Vacuum">ST_GeneralControlSP</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_C1_GHC_01.q_xHV_DIS</Name>
+							<Comment>
+								<![CDATA[ Active Low ]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_ROUGH_VRC_01.q_xOPN_DO</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_ROUGH_VRC_03.q_xOPN_DO</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_ROUGH_VRC_02.q_xCLS_DO</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_PLC_Interfaces.sENDSTATION_PLC_NAME</Name>
+							<Comment>
+								<![CDATA[I/O Outputs to TMO Beamline]]>
+							</Comment>
+							<Type>STRING(8)</Type>
+						</Var>
+						<Var>
+							<Name>GVL_PLC_Interfaces.xIP1_ROUGH_VRC_01_OPEN_LS</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_PLC_Interfaces.xIP1_ROUGH_VRC_02_OPEN_LS</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_PLC_Interfaces.xIP1_ROUGH_VRC_03_OPEN_LS</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_PLC_Interfaces.xIP1_TURBOS_ALL_AtSpd</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_PLC_Interfaces.xIP1_MAIN_xAT_VAC</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_PLC_Interfaces.xIP1_MAIN_xPRESS_OK</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_PLC_Interfaces.xIP1_HV_SAFETY_ENABLE</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_PLC_Interfaces.xHighVoltageSafteyLoopEnable</Name>
+							<Comment>
+								<![CDATA[When Enables the High voltage Saftey loop is closed and HV can start.]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_PLC_Interfaces.rIP1_MAIN_rPRESS</Name>
+							<Type>REAL</Type>
+						</Var>
+					</Vars>
+					<Vars VarGrpType="8">
+						<Name>PlcTask Retains</Name>
+						<Var>
+							<Name>PMPS_GVL.SuccessfulPreemption</Name>
+							<Comment>
+								<![CDATA[ Any time BPTM applies a new BP request which is confirmed]]>
+							</Comment>
+							<Type>UDINT</Type>
+							<InOut>7</InOut>
+						</Var>
+						<Var>
+							<Name>PMPS_GVL.AccumulatedFF</Name>
+							<Comment>
+								<![CDATA[ Any time a FF occurs]]>
+							</Comment>
+							<Type>UDINT</Type>
+							<InOut>7</InOut>
+						</Var>
+					</Vars>
+					<TaskPouOids>
+						<TaskPouOid Prio="15" OTCID="#x08502001"/>
+						<TaskPouOid Prio="20" OTCID="#x08502002"/>
+					</TaskPouOids>
+				</Instance>
+			</Project>
 		</Plc>
 		<Io>
 			<Device File="Device 1 (EtherCAT).xti" Id="1"/>
@@ -37,5 +1613,401 @@
 	<Mappings>
 		<MappingInfo Identifier="{00000000-2001-0850-0020-500810000403}" Id="#x02030010"/>
 		<MappingInfo Identifier="{00000000-2002-0850-0120-500831000403}" Id="#x02030020"/>
+		<OwnerA Name="TIPC^plc_lamp_vac^plc_lamp_vac Instance">
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^LAMP_PLC_E0_EK1200^LAMP_PLC_E04_EL6692">
+				<Link VarA="PlcTask Inputs^GVL_PLC_Interfaces.sHUTCH_PLC_NAME" VarB="IO Inputs^HUTCH_PLC_NAME" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_PLC_Interfaces.xEcatBridge_TxPDO_state" VarB="SYNC Inputs^TxPDO state" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_PLC_Interfaces.xEcatBridge_WcState" VarB="WcState^WcState" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_PLC_Interfaces.xTMO_ROUGH1_VRC_01_OPEN_LS" VarB="IO Inputs^TMO_ROUGH1_VRC_01_OPEN_LS" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_PLC_Interfaces.xTMO_ROUGH2_VRC_01_OPEN_LS" VarB="IO Inputs^TMO_ROUGH2_VRC_01_OPEN_LS" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_PLC_Interfaces.rIP1_MAIN_rPRESS" VarB="IO Outputs^IP1_MAIN_rPRESS" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_PLC_Interfaces.sENDSTATION_PLC_NAME" VarB="IO Outputs^ENDSTATION_PLC_NAME" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_PLC_Interfaces.xIP1_HV_SAFETY_ENABLE" VarB="IO Outputs^IP1_HV_SAFETY_ENABLE" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_PLC_Interfaces.xIP1_MAIN_xAT_VAC" VarB="IO Outputs^IP1_MAIN_xAT_VAC" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_PLC_Interfaces.xIP1_MAIN_xPRESS_OK" VarB="IO Outputs^IP1_MAIN_xPRESS_OK" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_PLC_Interfaces.xIP1_ROUGH_VRC_01_OPEN_LS" VarB="IO Outputs^IP1_ROUGH_VRC_01_OPEN_LS" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_PLC_Interfaces.xIP1_ROUGH_VRC_02_OPEN_LS" VarB="IO Outputs^IP1_ROUGH_VRC_02_OPEN_LS" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_PLC_Interfaces.xIP1_ROUGH_VRC_03_OPEN_LS" VarB="IO Outputs^IP1_ROUGH_VRC_03_OPEN_LS" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_PLC_Interfaces.xIP1_TURBOS_ALL_AtSpd" VarB="IO Outputs^IP1_TURBOS_ALL_AtSpd" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^LAMP_PLC_E0_EK1200^LAMP_PLC_E06_EL1004">
+				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_GJ2_PTM_01.i_xAtSpd" VarB="Channel 2^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_GJ2_PTM_01.i_xFaultNC" VarB="Channel 1^Input" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^LAMP_PLC_E0_EK1200^LAMP_PLC_E07_EL2794">
+				<Link VarA="PlcTask Outputs^GVL_Devices.LAMP_GJ2_PTM_01.q_RunDO" VarB="Channel 1^Output" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^LAMP_PLC_E0_EK1200^LAMP_PLC_E09_EL2794">
+				<Link VarA="PlcTask Outputs^GVL_PLC_Interfaces.xHighVoltageSafteyLoopEnable" VarB="Channel 1^Output" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^LAMP_PLC_E0_EK1200^LAMP_PLC_E11_EL6002">
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_GJ2_PTM_01^D[0]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 0" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_GJ2_PTM_01^D[10]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 10" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_GJ2_PTM_01^D[11]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 11" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_GJ2_PTM_01^D[12]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 12" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_GJ2_PTM_01^D[13]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 13" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_GJ2_PTM_01^D[14]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 14" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_GJ2_PTM_01^D[15]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 15" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_GJ2_PTM_01^D[16]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 16" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_GJ2_PTM_01^D[17]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 17" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_GJ2_PTM_01^D[18]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 18" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_GJ2_PTM_01^D[19]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 19" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_GJ2_PTM_01^D[1]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 1" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_GJ2_PTM_01^D[20]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 20" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_GJ2_PTM_01^D[21]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 21" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_GJ2_PTM_01^D[2]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 2" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_GJ2_PTM_01^D[3]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 3" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_GJ2_PTM_01^D[4]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 4" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_GJ2_PTM_01^D[5]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 5" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_GJ2_PTM_01^D[6]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 6" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_GJ2_PTM_01^D[7]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 7" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_GJ2_PTM_01^D[8]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 8" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_GJ2_PTM_01^D[9]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 9" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_GJ2_PTM_01^Status" VarB="COM TxPDO-Map Inputs Channel 1^Status" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_GJ2_PTM_01^Ctrl" VarB="COM RxPDO-Map Outputs Channel 1^Ctrl" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_GJ2_PTM_01^D[0]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 0" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_GJ2_PTM_01^D[10]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 10" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_GJ2_PTM_01^D[11]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 11" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_GJ2_PTM_01^D[12]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 12" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_GJ2_PTM_01^D[13]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 13" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_GJ2_PTM_01^D[14]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 14" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_GJ2_PTM_01^D[15]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 15" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_GJ2_PTM_01^D[16]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 16" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_GJ2_PTM_01^D[17]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 17" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_GJ2_PTM_01^D[18]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 18" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_GJ2_PTM_01^D[19]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 19" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_GJ2_PTM_01^D[1]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 1" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_GJ2_PTM_01^D[20]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 20" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_GJ2_PTM_01^D[21]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 21" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_GJ2_PTM_01^D[2]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 2" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_GJ2_PTM_01^D[3]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 3" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_GJ2_PTM_01^D[4]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 4" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_GJ2_PTM_01^D[5]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 5" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_GJ2_PTM_01^D[6]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 6" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_GJ2_PTM_01^D[7]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 7" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_GJ2_PTM_01^D[8]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 8" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_GJ2_PTM_01^D[9]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 9" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^LAMP_PLC_E0_EK1200^LAMP_PLC_E13_EK1122^LAMP_PNL1_EP00_EP9128-0021^LAMP_PNL1_EP01_EP2338-0002">
+				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_C2_PTM_01.i_xAtSpd" VarB="Channel 1^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_C2_PTM_01.i_xFaultNC" VarB="Channel 2^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_C2_PTM_01.i_xRemote" VarB="Channel 3^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_C2_PTM_02.i_xAtSpd" VarB="Channel 5^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_C2_PTM_02.i_xFaultNC" VarB="Channel 6^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_C2_PTM_02.i_xRemote" VarB="Channel 7^Input" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^LAMP_PLC_E0_EK1200^LAMP_PLC_E13_EK1122^LAMP_PNL1_EP00_EP9128-0021^LAMP_PNL1_EP02_EP2624-0002">
+				<Link VarA="PlcTask Outputs^GVL_Devices.LAMP_C2_PTM_01.q_RunDO" VarB="Channel 1^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_Devices.LAMP_C2_PTM_01.q_xReset" VarB="Channel 2^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_Devices.LAMP_C2_PTM_02.q_RunDO" VarB="Channel 3^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_Devices.LAMP_C2_PTM_02.q_xReset" VarB="Channel 4^Output" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^LAMP_PLC_E0_EK1200^LAMP_PLC_E13_EK1122^LAMP_PNL1_EP00_EP9128-0021^LAMP_PNL1_EP03_EP6002-0002">
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_C2_PTM_01^D[0]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 0" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_C2_PTM_01^D[10]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 10" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_C2_PTM_01^D[11]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 11" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_C2_PTM_01^D[12]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 12" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_C2_PTM_01^D[13]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 13" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_C2_PTM_01^D[14]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 14" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_C2_PTM_01^D[15]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 15" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_C2_PTM_01^D[16]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 16" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_C2_PTM_01^D[17]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 17" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_C2_PTM_01^D[18]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 18" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_C2_PTM_01^D[19]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 19" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_C2_PTM_01^D[1]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 1" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_C2_PTM_01^D[20]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 20" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_C2_PTM_01^D[21]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 21" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_C2_PTM_01^D[2]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 2" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_C2_PTM_01^D[3]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 3" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_C2_PTM_01^D[4]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 4" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_C2_PTM_01^D[5]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 5" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_C2_PTM_01^D[6]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 6" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_C2_PTM_01^D[7]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 7" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_C2_PTM_01^D[8]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 8" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_C2_PTM_01^D[9]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 9" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_C2_PTM_01^Status" VarB="COM TxPDO-Map Inputs Channel 1^Status" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_C2_PTM_02^D[0]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 0" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_C2_PTM_02^D[10]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 10" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_C2_PTM_02^D[11]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 11" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_C2_PTM_02^D[12]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 12" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_C2_PTM_02^D[13]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 13" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_C2_PTM_02^D[14]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 14" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_C2_PTM_02^D[15]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 15" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_C2_PTM_02^D[16]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 16" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_C2_PTM_02^D[17]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 17" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_C2_PTM_02^D[18]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 18" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_C2_PTM_02^D[19]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 19" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_C2_PTM_02^D[1]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 1" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_C2_PTM_02^D[20]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 20" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_C2_PTM_02^D[21]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 21" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_C2_PTM_02^D[2]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 2" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_C2_PTM_02^D[3]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 3" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_C2_PTM_02^D[4]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 4" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_C2_PTM_02^D[5]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 5" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_C2_PTM_02^D[6]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 6" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_C2_PTM_02^D[7]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 7" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_C2_PTM_02^D[8]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 8" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_C2_PTM_02^D[9]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 9" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_C2_PTM_02^Status" VarB="COM TxPDO-Map Inputs Channel 2^Status" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_C2_PTM_01^Ctrl" VarB="COM RxPDO-Map Outputs Channel 1^Ctrl" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_C2_PTM_01^D[0]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 0" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_C2_PTM_01^D[10]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 10" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_C2_PTM_01^D[11]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 11" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_C2_PTM_01^D[12]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 12" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_C2_PTM_01^D[13]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 13" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_C2_PTM_01^D[14]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 14" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_C2_PTM_01^D[15]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 15" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_C2_PTM_01^D[16]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 16" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_C2_PTM_01^D[17]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 17" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_C2_PTM_01^D[18]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 18" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_C2_PTM_01^D[19]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 19" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_C2_PTM_01^D[1]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 1" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_C2_PTM_01^D[20]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 20" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_C2_PTM_01^D[21]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 21" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_C2_PTM_01^D[2]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 2" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_C2_PTM_01^D[3]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 3" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_C2_PTM_01^D[4]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 4" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_C2_PTM_01^D[5]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 5" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_C2_PTM_01^D[6]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 6" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_C2_PTM_01^D[7]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 7" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_C2_PTM_01^D[8]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 8" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_C2_PTM_01^D[9]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 9" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_C2_PTM_02^Ctrl" VarB="COM RxPDO-Map Outputs Channel 2^Ctrl" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_C2_PTM_02^D[0]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 0" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_C2_PTM_02^D[10]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 10" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_C2_PTM_02^D[11]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 11" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_C2_PTM_02^D[12]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 12" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_C2_PTM_02^D[13]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 13" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_C2_PTM_02^D[14]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 14" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_C2_PTM_02^D[15]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 15" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_C2_PTM_02^D[16]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 16" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_C2_PTM_02^D[17]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 17" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_C2_PTM_02^D[18]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 18" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_C2_PTM_02^D[19]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 19" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_C2_PTM_02^D[1]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 1" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_C2_PTM_02^D[20]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 20" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_C2_PTM_02^D[21]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 21" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_C2_PTM_02^D[2]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 2" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_C2_PTM_02^D[3]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 3" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_C2_PTM_02^D[4]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 4" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_C2_PTM_02^D[5]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 5" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_C2_PTM_02^D[6]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 6" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_C2_PTM_02^D[7]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 7" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_C2_PTM_02^D[8]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 8" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_C2_PTM_02^D[9]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 9" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^LAMP_PLC_E0_EK1200^LAMP_PLC_E13_EK1122^LAMP_PNL1_EP00_EP9128-0021^LAMP_PNL1_EP04_EP2338-0002">
+				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_C2_PTM_03.i_xAtSpd" VarB="Channel 1^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_C2_PTM_03.i_xFaultNC" VarB="Channel 2^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_C2_PTM_03.i_xRemote" VarB="Channel 3^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_C2_PTM_04.i_xAtSpd" VarB="Channel 5^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_C2_PTM_04.i_xFaultNC" VarB="Channel 6^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_C2_PTM_04.i_xRemote" VarB="Channel 7^Input" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^LAMP_PLC_E0_EK1200^LAMP_PLC_E13_EK1122^LAMP_PNL1_EP00_EP9128-0021^LAMP_PNL1_EP05_EP2624-0002">
+				<Link VarA="PlcTask Outputs^GVL_Devices.LAMP_C2_PTM_03.q_RunDO" VarB="Channel 1^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_Devices.LAMP_C2_PTM_03.q_xReset" VarB="Channel 2^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_Devices.LAMP_C2_PTM_04.q_RunDO" VarB="Channel 3^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_Devices.LAMP_C2_PTM_04.q_xReset" VarB="Channel 4^Output" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^LAMP_PLC_E0_EK1200^LAMP_PLC_E13_EK1122^LAMP_PNL1_EP00_EP9128-0021^LAMP_PNL1_EP06_EP6002-0002">
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_C2_PTM_03^D[0]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 0" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_C2_PTM_03^D[10]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 10" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_C2_PTM_03^D[11]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 11" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_C2_PTM_03^D[12]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 12" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_C2_PTM_03^D[13]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 13" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_C2_PTM_03^D[14]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 14" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_C2_PTM_03^D[15]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 15" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_C2_PTM_03^D[16]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 16" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_C2_PTM_03^D[17]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 17" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_C2_PTM_03^D[18]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 18" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_C2_PTM_03^D[19]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 19" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_C2_PTM_03^D[1]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 1" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_C2_PTM_03^D[20]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 20" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_C2_PTM_03^D[21]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 21" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_C2_PTM_03^D[2]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 2" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_C2_PTM_03^D[3]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 3" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_C2_PTM_03^D[4]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 4" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_C2_PTM_03^D[5]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 5" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_C2_PTM_03^D[6]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 6" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_C2_PTM_03^D[7]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 7" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_C2_PTM_03^D[8]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 8" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_C2_PTM_03^D[9]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 9" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_C2_PTM_03^Status" VarB="COM TxPDO-Map Inputs Channel 1^Status" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_C2_PTM_04^D[0]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 0" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_C2_PTM_04^D[10]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 10" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_C2_PTM_04^D[11]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 11" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_C2_PTM_04^D[12]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 12" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_C2_PTM_04^D[13]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 13" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_C2_PTM_04^D[14]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 14" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_C2_PTM_04^D[15]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 15" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_C2_PTM_04^D[16]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 16" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_C2_PTM_04^D[17]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 17" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_C2_PTM_04^D[18]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 18" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_C2_PTM_04^D[19]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 19" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_C2_PTM_04^D[1]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 1" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_C2_PTM_04^D[20]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 20" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_C2_PTM_04^D[21]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 21" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_C2_PTM_04^D[2]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 2" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_C2_PTM_04^D[3]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 3" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_C2_PTM_04^D[4]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 4" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_C2_PTM_04^D[5]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 5" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_C2_PTM_04^D[6]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 6" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_C2_PTM_04^D[7]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 7" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_C2_PTM_04^D[8]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 8" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_C2_PTM_04^D[9]" VarB="COM TxPDO-Map Inputs Channel 2^Data In 9" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_C2_PTM_04^Status" VarB="COM TxPDO-Map Inputs Channel 2^Status" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_C2_PTM_03^Ctrl" VarB="COM RxPDO-Map Outputs Channel 1^Ctrl" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_C2_PTM_03^D[0]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 0" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_C2_PTM_03^D[10]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 10" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_C2_PTM_03^D[11]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 11" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_C2_PTM_03^D[12]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 12" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_C2_PTM_03^D[13]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 13" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_C2_PTM_03^D[14]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 14" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_C2_PTM_03^D[15]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 15" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_C2_PTM_03^D[16]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 16" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_C2_PTM_03^D[17]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 17" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_C2_PTM_03^D[18]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 18" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_C2_PTM_03^D[19]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 19" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_C2_PTM_03^D[1]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 1" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_C2_PTM_03^D[20]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 20" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_C2_PTM_03^D[21]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 21" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_C2_PTM_03^D[2]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 2" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_C2_PTM_03^D[3]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 3" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_C2_PTM_03^D[4]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 4" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_C2_PTM_03^D[5]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 5" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_C2_PTM_03^D[6]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 6" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_C2_PTM_03^D[7]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 7" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_C2_PTM_03^D[8]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 8" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_C2_PTM_03^D[9]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 9" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_C2_PTM_04^Ctrl" VarB="COM RxPDO-Map Outputs Channel 2^Ctrl" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_C2_PTM_04^D[0]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 0" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_C2_PTM_04^D[10]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 10" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_C2_PTM_04^D[11]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 11" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_C2_PTM_04^D[12]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 12" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_C2_PTM_04^D[13]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 13" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_C2_PTM_04^D[14]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 14" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_C2_PTM_04^D[15]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 15" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_C2_PTM_04^D[16]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 16" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_C2_PTM_04^D[17]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 17" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_C2_PTM_04^D[18]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 18" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_C2_PTM_04^D[19]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 19" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_C2_PTM_04^D[1]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 1" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_C2_PTM_04^D[20]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 20" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_C2_PTM_04^D[21]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 21" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_C2_PTM_04^D[2]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 2" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_C2_PTM_04^D[3]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 3" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_C2_PTM_04^D[4]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 4" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_C2_PTM_04^D[5]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 5" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_C2_PTM_04^D[6]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 6" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_C2_PTM_04^D[7]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 7" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_C2_PTM_04^D[8]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 8" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_C2_PTM_04^D[9]" VarB="COM RxPDO-Map Outputs Channel 2^Data Out 9" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^LAMP_PLC_E0_EK1200^LAMP_PLC_E13_EK1122^LAMP_PNL1_EP00_EP9128-0021^LAMP_PNL2_EP13_EP2338-0002">
+				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_ROUGH_PTM_01.i_xAtSpd" VarB="Channel 1^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_ROUGH_PTM_01.i_xFaultNC" VarB="Channel 2^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_ROUGH_PTM_01.i_xRemote" VarB="Channel 3^Input" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^LAMP_PLC_E0_EK1200^LAMP_PLC_E13_EK1122^LAMP_PNL1_EP00_EP9128-0021^LAMP_PNL2_EP14_EP2624-0002">
+				<Link VarA="PlcTask Outputs^GVL_Devices.LAMP_ROUGH_PTM_01.q_RunDO" VarB="Channel 1^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_Devices.LAMP_ROUGH_PTM_01.q_xReset" VarB="Channel 2^Output" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^LAMP_PLC_E0_EK1200^LAMP_PLC_E13_EK1122^LAMP_PNL1_EP00_EP9128-0021^LAMP_PNL2_EP15_EP6002-0002">
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_ROUGH_PTM_01^D[0]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 0" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_ROUGH_PTM_01^D[10]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 10" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_ROUGH_PTM_01^D[11]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 11" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_ROUGH_PTM_01^D[12]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 12" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_ROUGH_PTM_01^D[13]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 13" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_ROUGH_PTM_01^D[14]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 14" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_ROUGH_PTM_01^D[15]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 15" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_ROUGH_PTM_01^D[16]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 16" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_ROUGH_PTM_01^D[17]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 17" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_ROUGH_PTM_01^D[18]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 18" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_ROUGH_PTM_01^D[19]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 19" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_ROUGH_PTM_01^D[1]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 1" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_ROUGH_PTM_01^D[20]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 20" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_ROUGH_PTM_01^D[21]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 21" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_ROUGH_PTM_01^D[2]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 2" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_ROUGH_PTM_01^D[3]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 3" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_ROUGH_PTM_01^D[4]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 4" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_ROUGH_PTM_01^D[5]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 5" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_ROUGH_PTM_01^D[6]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 6" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_ROUGH_PTM_01^D[7]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 7" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_ROUGH_PTM_01^D[8]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 8" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_ROUGH_PTM_01^D[9]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 9" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_ROUGH_PTM_01^Status" VarB="COM TxPDO-Map Inputs Channel 1^Status" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_ROUGH_PTM_01^Ctrl" VarB="COM RxPDO-Map Outputs Channel 1^Ctrl" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_ROUGH_PTM_01^D[0]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 0" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_ROUGH_PTM_01^D[10]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 10" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_ROUGH_PTM_01^D[11]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 11" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_ROUGH_PTM_01^D[12]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 12" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_ROUGH_PTM_01^D[13]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 13" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_ROUGH_PTM_01^D[14]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 14" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_ROUGH_PTM_01^D[15]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 15" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_ROUGH_PTM_01^D[16]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 16" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_ROUGH_PTM_01^D[17]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 17" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_ROUGH_PTM_01^D[18]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 18" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_ROUGH_PTM_01^D[19]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 19" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_ROUGH_PTM_01^D[1]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 1" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_ROUGH_PTM_01^D[20]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 20" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_ROUGH_PTM_01^D[21]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 21" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_ROUGH_PTM_01^D[2]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 2" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_ROUGH_PTM_01^D[3]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 3" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_ROUGH_PTM_01^D[4]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 4" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_ROUGH_PTM_01^D[5]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 5" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_ROUGH_PTM_01^D[6]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 6" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_ROUGH_PTM_01^D[7]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 7" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_ROUGH_PTM_01^D[8]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 8" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.stComOut_LAMP_ROUGH_PTM_01^D[9]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 9" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^LAMP_PLC_E0_EK1200^LAMP_PLC_E13_EK1122^LAMP_PNL1_EP00_EP9128-0021^LAMP_PNL2_EP19_EP3174-0002">
+				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_C2_GPI_01.i_iPRESS_R" VarB="AI Standard Channel 1^Value" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^LAMP_PLC_E0_EK1200^LAMP_PLC_E13_EK1122^LAMP_PNL1_EP00_EP9128-0021^LAMP_PNL2_EP20_EP3174-0002">
+				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_ROUGH_GPI_01.i_iPRESS_R" VarB="AI Standard Channel 1^Value" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_ROUGH_GPI_02.i_iPRESS_R" VarB="AI Standard Channel 2^Value" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_ROUGH_GPI_03.i_iPRESS_R" VarB="AI Standard Channel 3^Value" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_ROUGH_GPI_04.i_iPRESS_R" VarB="AI Standard Channel 4^Value" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^LAMP_PLC_E0_EK1200^LAMP_PLC_E13_EK1122^LAMP_PNL1_EP00_EP9128-0021^LAMP_PNL2_EP21_EP3174-0002">
+				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_C2_GCC_01.i_iPRESS_R" VarB="AI Standard Channel 1^Value" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^LAMP_PLC_E0_EK1200^LAMP_PLC_E13_EK1122^LAMP_PNL1_EP00_EP9128-0021^LAMP_PNL2_EP22_EP2624-0002">
+				<Link VarA="PlcTask Outputs^GVL_Devices.LAMP_C2_GCC_01.q_xHV_DIS" VarB="Channel 1^Output" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^LAMP_PLC_E0_EK1200^LAMP_PLC_E13_EK1122^LAMP_PNL1_EP00_EP9128-0021^LAMP_PNL2_EP23_EP3174-0002">
+				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_C1_GHC_01.i_iPRESS_R" VarB="AI Standard Channel 2^Value" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^LAMP_PLC_E0_EK1200^LAMP_PLC_E13_EK1122^LAMP_PNL1_EP00_EP9128-0021^LAMP_PNL2_EP24_EP2624-0002">
+				<Link VarA="PlcTask Outputs^GVL_Devices.LAMP_C1_GHC_01.q_xHV_DIS" VarB="Channel 2^Output" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^LAMP_PLC_E0_EK1200^LAMP_PLC_E13_EK1122^LAMP_PNL1_EP00_EP9128-0021^LAMP_PNL2_EP25_EP2338-0002">
+				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_ROUGH_VRC_01.i_xClsLS" VarB="Channel 2^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_ROUGH_VRC_01.i_xOpnLS" VarB="Channel 1^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_ROUGH_VRC_02.i_xClsLS" VarB="Channel 6^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_ROUGH_VRC_02.i_xOpnLS" VarB="Channel 5^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_Devices.LAMP_ROUGH_VRC_01.q_xOPN_DO" VarB="Channel 11^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_Devices.LAMP_ROUGH_VRC_02.q_xCLS_DO" VarB="Channel 15^Output" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^LAMP_PLC_E0_EK1200^LAMP_PLC_E13_EK1122^LAMP_PNL1_EP00_EP9128-0021^LAMP_PNL2_EP26_EP2338-0002">
+				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_ROUGH_VRC_03.i_xClsLS" VarB="Channel 2^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_ROUGH_VRC_03.i_xOpnLS" VarB="Channel 1^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_Devices.LAMP_ROUGH_VRC_03.q_xOPN_DO" VarB="Channel 11^Output" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^LAMP_PLC_E0_EK1200^LAMP_PLC_E14_EK1122^VCN_1_VAT590">
+				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_VCN_01.i_eControlMode" VarB="DI TxPDO-Map^Control mode" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_VCN_01.i_eFatalError" VarB="DI TxPDO-Map^Fatal error" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_VCN_01.i_nRawPosition" VarB="DI TxPDO-Map^Position" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_VCN_01.i_nRawPressure" VarB="DI TxPDO-Map^Pressure" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_VCN_01.i_stExtnWarnings" VarB="DI TxPDO-Map^Extended warnings" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_VCN_01.i_stGenStatus" VarB="DI TxPDO-Map^General status" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_VCN_01.i_stGenWarnings" VarB="DI TxPDO-Map^General warnings" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_Devices.LAMP_VCN_01.o_eCtrlModeSP" VarB="DO RxPDO-Map^Control mode setpoint" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_Devices.LAMP_VCN_01.o_nRawPositionSP" VarB="DO RxPDO-Map^Position setpoint" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_Devices.LAMP_VCN_01.o_nRawPressureSP" VarB="DO RxPDO-Map^Pressure setpoint" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_Devices.LAMP_VCN_01.o_stGenCtrlSP" VarB="DO RxPDO-Map^General control setpoint" AutoLink="true"/>
+			</OwnerB>
+		</OwnerA>
 	</Mappings>
 </TcSmProject>
