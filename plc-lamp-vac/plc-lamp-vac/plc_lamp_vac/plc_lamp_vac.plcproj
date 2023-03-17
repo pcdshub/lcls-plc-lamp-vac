@@ -1,43 +1,33 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <FileVersion>1.0.0.0</FileVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{18efba15-9c93-4a93-b3b8-48ada6d90958}</ProjectGuid>
+    <ProjectGuid>{5471aa38-cb1e-4952-90ac-7c2ffa122cf5}</ProjectGuid>
     <SubObjectsSortedByName>True</SubObjectsSortedByName>
     <Name>plc_lamp_vac</Name>
     <ProgramVersion>3.1.4022.7</ProgramVersion>
-    <Application>{90deb9b0-b1e7-483b-bcf7-610eaf554620}</Application>
-    <TypeSystem>{befb6368-15f8-4191-b0b0-ef63667676cc}</TypeSystem>
-    <Implicit_Task_Info>{72b3492c-6c3d-4ce8-a299-6526ce330384}</Implicit_Task_Info>
-    <Implicit_KindOfTask>{a97c67f1-afc3-4d67-bb9c-3b421f7eed62}</Implicit_KindOfTask>
-    <Implicit_Jitter_Distribution>{2a394602-0deb-4031-b5c6-e8309de4fadd}</Implicit_Jitter_Distribution>
-    <LibraryReferences>{c4b70952-5a81-4cde-ac42-4cc4eaee6f33}</LibraryReferences>
-    <CompilerDefines>VISU_USEPROPERTYINFO</CompilerDefines>
-    <Released>false</Released>
+    <Application>{e49aab02-a122-4ec3-a12f-cf493b428ba8}</Application>
+    <TypeSystem>{279583c6-4672-444f-8f61-d14bbb85144e}</TypeSystem>
+    <Implicit_Task_Info>{4f153f16-995d-4850-b972-bf708e4e99e6}</Implicit_Task_Info>
+    <Implicit_KindOfTask>{1b32520c-00d6-4607-bea8-7319c0ee26e5}</Implicit_KindOfTask>
+    <Implicit_Jitter_Distribution>{63aac7b9-c7f5-41c3-80e6-b188627dc3ec}</Implicit_Jitter_Distribution>
+    <LibraryReferences>{74bdc93c-4f48-4c90-8fe6-37ce29bea86e}</LibraryReferences>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="ComTask.TcTTO">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="GlobalTextList.TcGTLO">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="GVLs\GVL_COM.TcGVL">
       <SubType>Code</SubType>
-      <LinkAlways>true</LinkAlways>
     </Compile>
     <Compile Include="GVLs\GVL_Devices.TcGVL">
       <SubType>Code</SubType>
-      <LinkAlways>true</LinkAlways>
     </Compile>
     <Compile Include="GVLs\GVL_PLC_Interfaces.TcGVL">
       <SubType>Code</SubType>
-      <LinkAlways>true</LinkAlways>
     </Compile>
     <Compile Include="GVLs\GVL_Variables.TcGVL">
       <SubType>Code</SubType>
-      <LinkAlways>true</LinkAlways>
     </Compile>
     <Compile Include="PlcTask.TcTTO">
       <SubType>Code</SubType>
@@ -96,6 +86,11 @@
     </PlaceholderReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="plc_lamp_vac.tmc">
+      <SubType>Content</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
     <PlaceholderResolution Include="LCLS General">
       <Resolution>LCLS General, 2.4.2 (SLAC)</Resolution>
     </PlaceholderResolution>
@@ -103,37 +98,10 @@
       <Resolution>LCLS Vacuum, 2.1.0 (SLAC - LCLS)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="LCLSVacuumSerialDriverLib">
-      <Resolution>LCLSVacuumSerialDriverLib, 1.2.2 (SLAC - LCLS)</Resolution>
-    </PlaceholderResolution>
-    <PlaceholderResolution Include="LCLSVacuumSerialDriverLib">
       <Resolution>LCLSVacuumSerialDriverLib, 0.0.0 (SLAC - LCLS)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="PMPS">
       <Resolution>PMPS, 2.2.1 (SLAC - LCLS)</Resolution>
-    </PlaceholderResolution>
-    <PlaceholderResolution Include="SysDir">
-      <Resolution>SysDir, 3.5.8.0 (System)</Resolution>
-    </PlaceholderResolution>
-    <PlaceholderResolution Include="SysFile">
-      <Resolution>SysFile, 3.5.9.0 (System)</Resolution>
-    </PlaceholderResolution>
-    <PlaceholderResolution Include="Tc2_DataExchange">
-      <Resolution>Tc2_DataExchange, 3.3.5.0 (Beckhoff Automation GmbH)</Resolution>
-    </PlaceholderResolution>
-    <PlaceholderResolution Include="Tc2_EtherCAT">
-      <Resolution>Tc2_EtherCAT, 3.3.15.0 (Beckhoff Automation GmbH)</Resolution>
-    </PlaceholderResolution>
-    <PlaceholderResolution Include="Tc2_IoFunctions">
-      <Resolution>Tc2_IoFunctions, 3.3.13.0 (Beckhoff Automation GmbH)</Resolution>
-    </PlaceholderResolution>
-    <PlaceholderResolution Include="Tc2_Math">
-      <Resolution>Tc2_Math, 3.3.1.0 (Beckhoff Automation GmbH)</Resolution>
-    </PlaceholderResolution>
-    <PlaceholderResolution Include="Tc2_MC2">
-      <Resolution>Tc2_MC2, 3.3.42.0 (Beckhoff Automation GmbH)</Resolution>
-    </PlaceholderResolution>
-    <PlaceholderResolution Include="Tc2_ModbusSrv">
-      <Resolution>Tc2_ModbusSrv, 3.3.2.0 (Beckhoff Automation GmbH)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="Tc2_SerialCom">
       <Resolution>Tc2_SerialCom, 3.3.7.0 (Beckhoff Automation GmbH)</Resolution>
@@ -144,32 +112,9 @@
     <PlaceholderResolution Include="Tc2_System">
       <Resolution>Tc2_System, 3.4.24.0 (Beckhoff Automation GmbH)</Resolution>
     </PlaceholderResolution>
-    <PlaceholderResolution Include="Tc2_TcpIp">
-      <Resolution>Tc2_TcpIp, 3.3.6.0 (Beckhoff Automation GmbH)</Resolution>
-    </PlaceholderResolution>
-    <PlaceholderResolution Include="Tc2_Utilities">
-      <Resolution>Tc2_Utilities, 3.3.41.0 (Beckhoff Automation GmbH)</Resolution>
-    </PlaceholderResolution>
-    <PlaceholderResolution Include="Tc3_EventLogger">
-      <Resolution>Tc3_EventLogger, 3.1.24.0 (Beckhoff Automation GmbH)</Resolution>
-    </PlaceholderResolution>
-    <PlaceholderResolution Include="Tc3_Interfaces">
-      <Resolution>Tc3_Interfaces, 3.4.3.0 (Beckhoff Automation GmbH)</Resolution>
-    </PlaceholderResolution>
-    <PlaceholderResolution Include="Tc3_JsonXml">
-      <Resolution>Tc3_JsonXml, 3.3.14.0 (Beckhoff Automation GmbH)</Resolution>
-    </PlaceholderResolution>
     <PlaceholderResolution Include="Tc3_Module">
       <Resolution>Tc3_Module, 3.3.21.0 (Beckhoff Automation GmbH)</Resolution>
     </PlaceholderResolution>
-    <PlaceholderResolution Include="TcUnit">
-      <Resolution>TcUnit, 1.1.0.0 (www.tcunit.org)</Resolution>
-    </PlaceholderResolution>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="plc_lamp_vac.tmc">
-      <SubType>Content</SubType>
-    </None>
   </ItemGroup>
   <ProjectExtensions>
     <PlcProjectOptions>
@@ -188,47 +133,15 @@
         <o>
           <v n="Name">"{246001F4-279D-43AC-B241-948EB31120E1}"</v>
           <d n="SubKeys" t="Hashtable" />
-          <d n="Values" t="Hashtable" ckt="String">
-            <v>UnicodeStrings</v>
-            <v>false</v>
-            <v>GlobalTextListFilePath</v>
-            <v>""</v>
-            <v>ExtendedSettings</v>
-            <v>false</v>
-            <v>GlobalVisuImageFilePath</v>
-            <v>"%APPLICATIONPATH%\"</v>
-            <v>GeneralPropertySupport</v>
-            <v>true</v>
-          </d>
-        </o>
-        <v>{29BD8D0C-3586-4548-BB48-497B9A01693F}</v>
-        <o>
-          <v n="Name">"{29BD8D0C-3586-4548-BB48-497B9A01693F}"</v>
-          <d n="SubKeys" t="Hashtable" ckt="String" cvt="OptionKey">
-            <v>Rules</v>
-            <o>
-              <v n="Name">"Rules"</v>
-              <d n="SubKeys" t="Hashtable" />
-              <d n="Values" t="Hashtable" />
-            </o>
-          </d>
-          <d n="Values" t="Hashtable" />
-        </o>
-        <v>{8F99A816-E488-41E4-9FA3-846536012284}</v>
-        <o>
-          <v n="Name">"{8F99A816-E488-41E4-9FA3-846536012284}"</v>
-          <d n="SubKeys" t="Hashtable" />
           <d n="Values" t="Hashtable" />
         </o>
         <v>{40450F57-0AA3-4216-96F3-5444ECB29763}</v>
         <o>
           <v n="Name">"{40450F57-0AA3-4216-96F3-5444ECB29763}"</v>
           <d n="SubKeys" t="Hashtable" />
-          <d n="Values" t="Hashtable" ckt="String">
-            <v>ActiveVisuExtensionsLength</v>
-            <v>0</v>
+          <d n="Values" t="Hashtable" ckt="String" cvt="String">
             <v>ActiveVisuProfile</v>
-            <v>"IR0whWr8bwfwBwAAiD2qpQAAAABVAgAA37x72QAAAAABAAAAAAAAAAEaUwB5AHMAdABlAG0ALgBTAHQAcgBpAG4AZwACTHsAZgA5ADUAYgBiADQAMgA2AC0ANQA1ADIANAAtADQAYgA0ADUALQA5ADQAMAAwAC0AZgBiADAAZgAyAGUANwA3AGUANQAxAGIAfQADCE4AYQBtAGUABDBUAHcAaQBuAEMAQQBUACAAMwAuADEAIABCAHUAaQBsAGQAIAA0ADAAMgA0AC4ANwAFFlAAcgBvAGYAaQBsAGUARABhAHQAYQAGTHsAMQA2AGUANQA1AGIANgAwAC0ANwAwADQAMwAtADQAYQA2ADMALQBiADYANQBiAC0ANgAxADQANwAxADMAOAA3ADgAZAA0ADIAfQAHEkwAaQBiAHIAYQByAGkAZQBzAAhMewAzAGIAZgBkADUANAA1ADkALQBiADAANwBmAC0ANABkADYAZQAtAGEAZQAxAGEALQBhADgAMwAzADUANgBhADUANQAxADQAMgB9AAlMewA5AGMAOQA1ADgAOQA2ADgALQAyAGMAOAA1AC0ANAAxAGIAYgAtADgAOAA3ADEALQA4ADkANQBmAGYAMQBmAGUAZABlADEAYQB9AAoOVgBlAHIAcwBpAG8AbgALBmkAbgB0AAwKVQBzAGEAZwBlAA0KVABpAHQAbABlAA4aVgBpAHMAdQBFAGwAZQBtAE0AZQB0AGUAcgAPDkMAbwBtAHAAYQBuAHkAEAxTAHkAcwB0AGUAbQARElYAaQBzAHUARQBsAGUAbQBzABIwVgBpAHMAdQBFAGwAZQBtAHMAUwBwAGUAYwBpAGEAbABDAG8AbgB0AHIAbwBsAHMAEyhWAGkAcwB1AEUAbABlAG0AcwBXAGkAbgBDAG8AbgB0AHIAbwBsAHMAFCRWAGkAcwB1AEUAbABlAG0AVABlAHgAdABFAGQAaQB0AG8AcgAVIlYAaQBzAHUATgBhAHQAaQB2AGUAQwBvAG4AdAByAG8AbAAWFHYAaQBzAHUAaQBuAHAAdQB0AHMAFwxzAHkAcwB0AGUAbQAYGFYAaQBzAHUARQBsAGUAbQBCAGEAcwBlABkmRABlAHYAUABsAGEAYwBlAGgAbwBsAGQAZQByAHMAVQBzAGUAZAAaCGIAbwBvAGwAGyJQAGwAdQBnAGkAbgBDAG8AbgBzAHQAcgBhAGkAbgB0AHMAHEx7ADQAMwBkADUAMgBiAGMAZQAtADkANAAyAGMALQA0ADQAZAA3AC0AOQBlADkANAAtADEAYgBmAGQAZgAzADEAMABlADYAMwBjAH0AHRxBAHQATABlAGEAcwB0AFYAZQByAHMAaQBvAG4AHhRQAGwAdQBnAGkAbgBHAHUAaQBkAB8WUwB5AHMAdABlAG0ALgBHAHUAaQBkACBIYQBmAGMAZAA1ADQANAA2AC0ANAA5ADEANAAtADQAZgBlADcALQBiAGIANwA4AC0AOQBiAGYAZgBlAGIANwAwAGYAZAAxADcAIRRVAHAAZABhAHQAZQBJAG4AZgBvACJMewBiADAAMwAzADYANgBhADgALQBiADUAYwAwAC0ANABiADkAYQAtAGEAMAAwAGUALQBlAGIAOAA2ADAAMQAxADEAMAA0AGMAMwB9ACMOVQBwAGQAYQB0AGUAcwAkTHsAMQA4ADYAOABmAGYAYwA5AC0AZQA0AGYAYwAtADQANQAzADIALQBhAGMAMAA2AC0AMQBlADMAOQBiAGIANQA1ADcAYgA2ADkAfQAlTHsAYQA1AGIAZAA0ADgAYwAzAC0AMABkADEANwAtADQAMQBiADUALQBiADEANgA0AC0ANQBmAGMANgBhAGQAMgBiADkANgBiADcAfQAmFk8AYgBqAGUAYwB0AHMAVAB5AHAAZQAnVFUAcABkAGEAdABlAEwAYQBuAGcAdQBhAGcAZQBNAG8AZABlAGwARgBvAHIAQwBvAG4AdgBlAHIAdABpAGIAbABlAEwAaQBiAHIAYQByAGkAZQBzACgQTABpAGIAVABpAHQAbABlACkUTABpAGIAQwBvAG0AcABhAG4AeQAqHlUAcABkAGEAdABlAFAAcgBvAHYAaQBkAGUAcgBzACs4UwB5AHMAdABlAG0ALgBDAG8AbABsAGUAYwB0AGkAbwBuAHMALgBIAGEAcwBoAHQAYQBiAGwAZQAsEnYAaQBzAHUAZQBsAGUAbQBzAC1INgBjAGIAMQBjAGQAZQAxAC0AZAA1AGQAYwAtADQAYQAzAGIALQA5ADAANQA0AC0AMgAxAGYAYQA3ADUANgBhADMAZgBhADQALihJAG4AdABlAHIAZgBhAGMAZQBWAGUAcgBzAGkAbwBuAEkAbgBmAG8AL0x7AGMANgAxADEAZQA0ADAAMAAtADcAZgBiADkALQA0AGMAMwA1AC0AYgA5AGEAYwAtADQAZQAzADEANABiADUAOQA5ADYANAAzAH0AMBhNAGEAagBvAHIAVgBlAHIAcwBpAG8AbgAxGE0AaQBuAG8AcgBWAGUAcgBzAGkAbwBuADIMTABlAGcAYQBjAHkAMzBMAGEAbgBnAHUAYQBnAGUATQBvAGQAZQBsAFYAZQByAHMAaQBvAG4ASQBuAGYAbwA0MEwAbwBhAGQATABpAGIAcgBhAHIAaQBlAHMASQBuAHQAbwBQAHIAbwBqAGUAYwB0ADUaQwBvAG0AcABhAHQAaQBiAGkAbABpAHQAeQDQAAIaA9ADAS0E0AUGGgfQBwgaAUUHCQjQAAkaBEUKCwQDAAAABQAAAA0AAAAAAAAA0AwLrQIAAADQDQEtDtAPAS0Q0AAJGgRFCgsEAwAAAAUAAAANAAAAKAAAANAMC60BAAAA0A0BLRHQDwEtENAACRoERQoLBAMAAAAFAAAADQAAAAAAAADQDAutAgAAANANAS0S0A8BLRDQAAkaBEUKCwQDAAAABQAAAA0AAAAUAAAA0AwLrQIAAADQDQEtE9APAS0Q0AAJGgRFCgsEAwAAAAUAAAANAAAAAAAAANAMC60CAAAA0A0BLRTQDwEtENAACRoERQoLBAMAAAAFAAAADQAAAAAAAADQDAutAgAAANANAS0V0A8BLRDQAAkaBEUKCwQDAAAABQAAAA0AAAAAAAAA0AwLrQIAAADQDQEtFtAPAS0X0AAJGgRFCgsEAwAAAAUAAAANAAAAKAAAANAMC60EAAAA0A0BLRjQDwEtENAZGq0BRRscAdAAHBoCRR0LBAMAAAAFAAAADQAAAAAAAADQHh8tINAhIhoCRSMkAtAAJRoFRQoLBAMAAAADAAAAAAAAAAoAAADQJgutAAAAANADAS0n0CgBLRHQKQEtENAAJRoFRQoLBAMAAAADAAAAAAAAAAoAAADQJgutAQAAANADAS0n0CgBLRHQKQEtEJoqKwFFAAEC0AABLSzQAAEtF9AAHy0t0C4vGgPQMAutAQAAANAxC60XAAAA0DIarQDQMy8aA9AwC60CAAAA0DELrQMAAADQMhqtANA0Gq0A0DUarQA="</v>
+            <v>IR0whWr8bwfyBwAAHf+pawAAAABVAgAADnffSgAAAAABAAAAAAAAAAEaUwB5AHMAdABlAG0ALgBTAHQAcgBpAG4AZwACTHsAZgA5ADUAYgBiADQAMgA2AC0ANQA1ADIANAAtADQAYgA0ADUALQA5ADQAMAAwAC0AZgBiADAAZgAyAGUANwA3AGUANQAxAGIAfQADCE4AYQBtAGUABDJUAHcAaQBuAEMAQQBUACAAMwAuADEAIABCAHUAaQBsAGQAIAA0ADAAMgAyAC4AMQAwAAUWUAByAG8AZgBpAGwAZQBEAGEAdABhAAZMewAxADYAZQA1ADUAYgA2ADAALQA3ADAANAAzAC0ANABhADYAMwAtAGIANgA1AGIALQA2ADEANAA3ADEAMwA4ADcAOABkADQAMgB9AAcSTABpAGIAcgBhAHIAaQBlAHMACEx7ADMAYgBmAGQANQA0ADUAOQAtAGIAMAA3AGYALQA0AGQANgBlAC0AYQBlADEAYQAtAGEAOAAzADMANQA2AGEANQA1ADEANAAyAH0ACUx7ADkAYwA5ADUAOAA5ADYAOAAtADIAYwA4ADUALQA0ADEAYgBiAC0AOAA4ADcAMQAtADgAOQA1AGYAZgAxAGYAZQBkAGUAMQBhAH0ACg5WAGUAcgBzAGkAbwBuAAsGaQBuAHQADApVAHMAYQBnAGUADQpUAGkAdABsAGUADhpWAGkAcwB1AEUAbABlAG0ATQBlAHQAZQByAA8OQwBvAG0AcABhAG4AeQAQDFMAeQBzAHQAZQBtABESVgBpAHMAdQBFAGwAZQBtAHMAEjBWAGkAcwB1AEUAbABlAG0AcwBTAHAAZQBjAGkAYQBsAEMAbwBuAHQAcgBvAGwAcwATKFYAaQBzAHUARQBsAGUAbQBzAFcAaQBuAEMAbwBuAHQAcgBvAGwAcwAUJFYAaQBzAHUARQBsAGUAbQBUAGUAeAB0AEUAZABpAHQAbwByABUiVgBpAHMAdQBOAGEAdABpAHYAZQBDAG8AbgB0AHIAbwBsABYUdgBpAHMAdQBpAG4AcAB1AHQAcwAXDHMAeQBzAHQAZQBtABgYVgBpAHMAdQBFAGwAZQBtAEIAYQBzAGUAGSZEAGUAdgBQAGwAYQBjAGUAaABvAGwAZABlAHIAcwBVAHMAZQBkABoIYgBvAG8AbAAbIlAAbAB1AGcAaQBuAEMAbwBuAHMAdAByAGEAaQBuAHQAcwAcTHsANAAzAGQANQAyAGIAYwBlAC0AOQA0ADIAYwAtADQANABkADcALQA5AGUAOQA0AC0AMQBiAGYAZABmADMAMQAwAGUANgAzAGMAfQAdHEEAdABMAGUAYQBzAHQAVgBlAHIAcwBpAG8AbgAeFFAAbAB1AGcAaQBuAEcAdQBpAGQAHxZTAHkAcwB0AGUAbQAuAEcAdQBpAGQAIEhhAGYAYwBkADUANAA0ADYALQA0ADkAMQA0AC0ANABmAGUANwAtAGIAYgA3ADgALQA5AGIAZgBmAGUAYgA3ADAAZgBkADEANwAhFFUAcABkAGEAdABlAEkAbgBmAG8AIkx7AGIAMAAzADMANgA2AGEAOAAtAGIANQBjADAALQA0AGIAOQBhAC0AYQAwADAAZQAtAGUAYgA4ADYAMAAxADEAMQAwADQAYwAzAH0AIw5VAHAAZABhAHQAZQBzACRMewAxADgANgA4AGYAZgBjADkALQBlADQAZgBjAC0ANAA1ADMAMgAtAGEAYwAwADYALQAxAGUAMwA5AGIAYgA1ADUANwBiADYAOQB9ACVMewBhADUAYgBkADQAOABjADMALQAwAGQAMQA3AC0ANAAxAGIANQAtAGIAMQA2ADQALQA1AGYAYwA2AGEAZAAyAGIAOQA2AGIANwB9ACYWTwBiAGoAZQBjAHQAcwBUAHkAcABlACdUVQBwAGQAYQB0AGUATABhAG4AZwB1AGEAZwBlAE0AbwBkAGUAbABGAG8AcgBDAG8AbgB2AGUAcgB0AGkAYgBsAGUATABpAGIAcgBhAHIAaQBlAHMAKBBMAGkAYgBUAGkAdABsAGUAKRRMAGkAYgBDAG8AbQBwAGEAbgB5ACoeVQBwAGQAYQB0AGUAUAByAG8AdgBpAGQAZQByAHMAKzhTAHkAcwB0AGUAbQAuAEMAbwBsAGwAZQBjAHQAaQBvAG4AcwAuAEgAYQBzAGgAdABhAGIAbABlACwSdgBpAHMAdQBlAGwAZQBtAHMALUg2AGMAYgAxAGMAZABlADEALQBkADUAZABjAC0ANABhADMAYgAtADkAMAA1ADQALQAyADEAZgBhADcANQA2AGEAMwBmAGEANAAuKEkAbgB0AGUAcgBmAGEAYwBlAFYAZQByAHMAaQBvAG4ASQBuAGYAbwAvTHsAYwA2ADEAMQBlADQAMAAwAC0ANwBmAGIAOQAtADQAYwAzADUALQBiADkAYQBjAC0ANABlADMAMQA0AGIANQA5ADkANgA0ADMAfQAwGE0AYQBqAG8AcgBWAGUAcgBzAGkAbwBuADEYTQBpAG4AbwByAFYAZQByAHMAaQBvAG4AMgxMAGUAZwBhAGMAeQAzMEwAYQBuAGcAdQBhAGcAZQBNAG8AZABlAGwAVgBlAHIAcwBpAG8AbgBJAG4AZgBvADQwTABvAGEAZABMAGkAYgByAGEAcgBpAGUAcwBJAG4AdABvAFAAcgBvAGoAZQBjAHQANRpDAG8AbQBwAGEAdABpAGIAaQBsAGkAdAB5ANAAAhoD0AMBLQTQBQYaB9AHCBoBRQcJCNAACRoERQoLBAMAAAAFAAAACgAAAAAAAADQDAutAgAAANANAS0O0A8BLRDQAAkaBEUKCwQDAAAABQAAAAoAAAAoAAAA0AwLrQEAAADQDQEtEdAPAS0Q0AAJGgRFCgsEAwAAAAUAAAAKAAAAAAAAANAMC60CAAAA0A0BLRLQDwEtENAACRoERQoLBAMAAAAFAAAACgAAACgAAADQDAutAgAAANANAS0T0A8BLRDQAAkaBEUKCwQDAAAABQAAAAoAAAAKAAAA0AwLrQIAAADQDQEtFNAPAS0Q0AAJGgRFCgsEAwAAAAUAAAAKAAAAKAAAANAMC60CAAAA0A0BLRXQDwEtENAACRoERQoLBAMAAAAFAAAACgAAAAAAAADQDAutAgAAANANAS0W0A8BLRfQAAkaBEUKCwQDAAAABQAAAAoAAAAoAAAA0AwLrQQAAADQDQEtGNAPAS0Q0BkarQFFGxwB0AAcGgJFHQsEAwAAAAUAAAAKAAAAAAAAANAeHy0g0CEiGgJFIyQC0AAlGgVFCgsEAwAAAAMAAAAAAAAACgAAANAmC60AAAAA0AMBLSfQKAEtEdApAS0Q0AAlGgVFCgsEAwAAAAMAAAAAAAAACgAAANAmC60BAAAA0AMBLSfQKAEtEdApAS0QmiorAUUAAQLQAAEtLNAAAS0X0AAfLS3QLi8aA9AwC60BAAAA0DELrRMAAADQMhqtANAzLxoD0DALrQIAAADQMQutAwAAANAyGq0A0DQarQDQNRqtAA==</v>
           </d>
         </o>
       </d>
@@ -236,9 +149,7 @@
     </o>
         </Data>
         <TypeList>
-          <Type n="Boolean">System.Boolean</Type>
           <Type n="Hashtable">System.Collections.Hashtable</Type>
-          <Type n="Int32">System.Int32</Type>
           <Type n="OptionKey">{54dd0eac-a6d8-46f2-8c27-2f43c7e49861}</Type>
           <Type n="String">System.String</Type>
         </TypeList>
