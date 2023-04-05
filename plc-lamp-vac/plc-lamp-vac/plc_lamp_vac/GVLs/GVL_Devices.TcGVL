@@ -52,7 +52,7 @@ VAR_GLOBAL
 (*Onboard Turbo Pumps*)
 	{attribute 'TcLinkTo' := 	'.i_xAtSpd			:=	TIIB[LAMP_PNL1_EP01_EP2338-0002]^Channel 1^Input;
 								 .i_xFaultNC		:=	TIIB[LAMP_PNL1_EP01_EP2338-0002]^Channel 2^Input;
-								 .i_xRemote			:=	TIIB[LAMP_PNL1_EP01_EP2338-0002]^Channel 3^Input;
+								 .i_xRemote			:=	TIIB[LAMP_PLC_E10_EL1008]^Channel 1^Input;
 								 .q_RunDO			:=	TIIB[LAMP_PNL1_EP02_EP2624-0002]^Channel 1^Output;
 								 .q_xReset 			:=	TIIB[LAMP_PNL1_EP02_EP2624-0002]^Channel 2^Output				 
 	'}
@@ -64,7 +64,7 @@ VAR_GLOBAL
 	
 	{attribute 'TcLinkTo' := 	'.i_xAtSpd			:=	TIIB[LAMP_PNL1_EP01_EP2338-0002]^Channel 5^Input;
 								 .i_xFaultNC		:=	TIIB[LAMP_PNL1_EP01_EP2338-0002]^Channel 6^Input;
-								 .i_xRemote			:=	TIIB[LAMP_PNL1_EP01_EP2338-0002]^Channel 7^Input;
+								 .i_xRemote			:=	TIIB[LAMP_PLC_E10_EL1008]^Channel 2^Input;
 								 .q_RunDO			:=	TIIB[LAMP_PNL1_EP02_EP2624-0002]^Channel 3^Output;
 								 .q_xReset 			:=	TIIB[LAMP_PNL1_EP02_EP2624-0002]^Channel 4^Output				 
 	'}
@@ -76,7 +76,7 @@ VAR_GLOBAL
 	
 	{attribute 'TcLinkTo' := 	'.i_xAtSpd			:=	TIIB[LAMP_PNL1_EP04_EP2338-0002]^Channel 1^Input;
 								 .i_xFaultNC		:=	TIIB[LAMP_PNL1_EP04_EP2338-0002]^Channel 2^Input;
-								 .i_xRemote			:=	TIIB[LAMP_PNL1_EP04_EP2338-0002]^Channel 3^Input;
+								 .i_xRemote			:=	TIIB[LAMP_PLC_E10_EL1008]^Channel 3^Input;
 								 .q_RunDO			:=	TIIB[LAMP_PNL1_EP05_EP2624-0002]^Channel 1^Output;
 								 .q_xReset 			:=	TIIB[LAMP_PNL1_EP05_EP2624-0002]^Channel 2^Output				 
 	'}
@@ -88,7 +88,7 @@ VAR_GLOBAL
 	
 	{attribute 'TcLinkTo' := 	'.i_xAtSpd			:=	TIIB[LAMP_PNL1_EP04_EP2338-0002]^Channel 5^Input;
 								 .i_xFaultNC		:=	TIIB[LAMP_PNL1_EP04_EP2338-0002]^Channel 6^Input;
-								 .i_xRemote			:=	TIIB[LAMP_PNL1_EP04_EP2338-0002]^Channel 7^Input;
+								 .i_xRemote			:=	TIIB[LAMP_PLC_E10_EL1008]^Channel 4^Input;
 								 .q_RunDO			:=	TIIB[LAMP_PNL1_EP05_EP2624-0002]^Channel 3^Output;
 								 .q_xReset 			:=	TIIB[LAMP_PNL1_EP05_EP2624-0002]^Channel 4^Output				 
 	'}
@@ -175,7 +175,7 @@ VAR_GLOBAL
 *)	
 	{attribute 'TcLinkTo' := 	'.i_xAtSpd			:=	TIIB[LAMP_PNL2_EP13_EP2338-0002]^Channel 1^Input;
 								 .i_xFaultNC		:=	TIIB[LAMP_PNL2_EP13_EP2338-0002]^Channel 2^Input;
-								 .i_xRemote			:=	TIIB[LAMP_PNL2_EP13_EP2338-0002]^Channel 3^Input;
+								 .i_xRemote			:=	TIIB[LAMP_PLC_E10_EL1008]^Channel 5^Input;
 								 .q_RunDO			:=	TIIB[LAMP_PNL2_EP14_EP2624-0002]^Channel 1^Output;
 								 .q_xReset 			:=	TIIB[LAMP_PNL2_EP14_EP2624-0002]^Channel 2^Output				 
 	'}
