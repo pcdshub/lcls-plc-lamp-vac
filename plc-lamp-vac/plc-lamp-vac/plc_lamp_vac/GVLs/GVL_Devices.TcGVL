@@ -307,7 +307,10 @@ LAMP_C2_GCC_01 : FB_MKS500;
 								 .o_nRawPositionSP 	:=	TIIB[VCN_1_VAT590]^DO RxPDO-Map^Position setpoint;
 								 .o_nRawPressureSP 	:=	TIIB[VCN_1_VAT590]^DO RxPDO-Map^Pressure setpoint;
 								 .o_eCtrlModeSP 	:=	TIIB[VCN_1_VAT590]^DO RxPDO-Map^Control mode setpoint;
-								 .o_stGenCtrlSP 	:=	TIIB[VCN_1_VAT590]^DO RxPDO-Map^General control setpoint
+								 .o_stGenCtrlSP 	:=	TIIB[VCN_1_VAT590]^DO RxPDO-Map^General control setpoint;
+								 .i_stVat590PlcDriveRef.aNetId     := TIIB[VCN_1_VAT590]^InfoData^AdsAddr^netId;
+								 .i_stVat590PlcDriveRef.nSlaveAddr := TIIB[VCN_1_VAT590]^InfoData^AdsAddr^port;
+								 .i_bValveEthCatStatus             := TIIB[VCN_1_VAT590]^WcState^WcState
 	'}
 	{attribute 'pytmc' := '
 		pv: LAMP:VCN:01

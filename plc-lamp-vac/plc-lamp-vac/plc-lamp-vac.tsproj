@@ -74,6 +74,54 @@
 			</Format>
 		</DataType>
 		<DataType>
+			<Name GUID="{60DA7EA2-F4DE-4875-80D0-A8DD3963BC99}" Namespace="Tc2_System" AutoDeleteType="true">T_AmsNetIdArr</Name>
+			<Comment>
+				<![CDATA[ TwinCAT AMS netID address bytes. ]]>
+			</Comment>
+			<BitSize>48</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000041}">AMSNETID</BaseType>
+		</DataType>
+		<DataType>
+			<Name GUID="{BE35B6B1-53F2-40D1-BBFD-E86F137AE87A}" Namespace="LCLS_General.Tc2_EtherCAT" AutoDeleteType="true">ST_PlcDriveRef</Name>
+			<BitSize>80</BitSize>
+			<SubItem>
+				<Name>aNetId</Name>
+				<Type GUID="{60DA7EA2-F4DE-4875-80D0-A8DD3963BC99}" Namespace="Tc2_System">T_AmsNetIdArr</Type>
+				<Comment>
+					<![CDATA[ AmsNetId of the EtherCAT master device.]]>
+				</Comment>
+				<BitSize>48</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>nSlaveAddr</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+				<Comment>
+					<![CDATA[ Address of the slave device.]]>
+				</Comment>
+				<BitSize>16</BitSize>
+				<BitOffs>48</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>nDriveNo</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000001}">BYTE</Type>
+				<Comment>
+					<![CDATA[ Drive number]]>
+				</Comment>
+				<BitSize>8</BitSize>
+				<BitOffs>64</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>nDriveType</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000001}">BYTE</Type>
+				<Comment>
+					<![CDATA[ Drive type]]>
+				</Comment>
+				<BitSize>8</BitSize>
+				<BitOffs>72</BitOffs>
+			</SubItem>
+		</DataType>
+		<DataType>
 			<Name GUID="{F9641D8E-EFFF-416E-9E48-431FBA5E9BAB}" Namespace="LCLS_Vacuum" AutoDeleteType="true">E_ControlMode</Name>
 			<BitSize>8</BitSize>
 			<BaseType GUID="{18071995-0000-0000-0000-000000000002}">USINT</BaseType>
@@ -662,8 +710,8 @@
 					<ManualSelect Instances="250">{103F30C9-DF25-439E-837B-9DF80CB9356C}</ManualSelect>
 					<ManualSelect>{E008E3C8-6BD9-491C-B673-DC45CC7AA4F1}</ManualSelect>
 					<TargetSelect TargetId="2">{3EBB9639-5FF3-42B6-8847-35C70DC013C8}</TargetSelect>
-					<TargetSelect TargetId="2">{BCA6EE0A-9CE1-4D3F-98CA-413ABC0D94FD}</TargetSelect>
 					<TargetSelect TargetId="2">{66689887-CCBD-452C-AC9A-039D997C6E66}</TargetSelect>
+					<TargetSelect TargetId="2">{BCA6EE0A-9CE1-4D3F-98CA-413ABC0D94FD}</TargetSelect>
 					<TargetSelect TargetId="2">{103F30C9-DF25-439E-837B-9DF80CB9356C}</TargetSelect>
 					<TargetSelect TargetId="2">{E008E3C8-6BD9-491C-B673-DC45CC7AA4F1}</TargetSelect>
 					<LicenseDevice DongleHardwareId="2" DongleDevice="#x03020003" DongleSystemId="{CFC38D4A-478D-28CA-F8F1-81EBA37BAFA7}"/>
@@ -1069,6 +1117,28 @@ ETHERCAT BRRIDGE COM STATUS
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
+							<Name>GVL_PLC_Interfaces.xEcatBridge_WcState</Name>
+							<Comment>
+								<![CDATA[0 = Data valid, 1 = Data invalid]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_PLC_Interfaces.sHUTCH_PLC_NAME</Name>
+							<Comment>
+								<![CDATA[ I/O Inputs from TMO Beamline]]>
+							</Comment>
+							<Type>STRING(8)</Type>
+						</Var>
+						<Var>
+							<Name>GVL_PLC_Interfaces.xTMO_ROUGH1_VRC_01_OPEN_LS</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_PLC_Interfaces.xTMO_ROUGH2_VRC_01_OPEN_LS</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
 							<Name>GVL_Devices.LAMP_GJ2_PTM_01.i_xAtSpd</Name>
 							<Comment>
 								<![CDATA[ Normaml operation when true]]>
@@ -1249,6 +1319,40 @@ ETHERCAT BRRIDGE COM STATUS
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
+							<Name>GVL_Devices.LAMP_VCN_01.i_stVat590PlcDriveRef</Name>
+							<Comment>
+								<![CDATA[CoE Interface
+Link this to your VAT590 reference variables under InfoData.
+Connect i_stVat590PlcDriveRef.aNetId to the VAT590 Valve InfoData^AdsAddr^netId
+Connect i_stVat590PlcDriveRef.nSlaveAddr to the VAT590 Valve InfoData^AdsAddr^port]]>
+							</Comment>
+							<Type GUID="{BE35B6B1-53F2-40D1-BBFD-E86F137AE87A}" Namespace="LCLS_General.Tc2_EtherCAT">ST_PlcDriveRef</Type>
+							<SubVar>
+								<Name>aNetId</Name>
+								<Comment>
+									<![CDATA[ AmsNetId of the EtherCAT master device.]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>nSlaveAddr</Name>
+								<Comment>
+									<![CDATA[ Address of the slave device.]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>nDriveNo</Name>
+								<Comment>
+									<![CDATA[ Drive number]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>nDriveType</Name>
+								<Comment>
+									<![CDATA[ Drive type]]>
+								</Comment>
+							</SubVar>
+						</Var>
+						<Var>
 							<Name>GVL_Devices.LAMP_VCN_01.i_nRawPosition</Name>
 							<Comment>
 								<![CDATA[ Position readback from the valve]]>
@@ -1298,6 +1402,14 @@ ETHERCAT BRRIDGE COM STATUS
 							<Type GUID="{9D596340-1ED8-4227-9840-4A22A0696393}" Namespace="LCLS_Vacuum">ST_ExtendedWarnings</Type>
 						</Var>
 						<Var>
+							<Name>GVL_Devices.LAMP_VCN_01.i_bValveEthCatStatus</Name>
+							<Comment>
+								<![CDATA[Ethercat Interface Status Check
+Link this to your VAT590 WcState variable under WcState]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
 							<Name>GVL_Devices.LAMP_C1_GHC_01.i_iPRESS_R</Name>
 							<Comment>
 								<![CDATA[ input Pressure // Link to analog Input]]>
@@ -1337,31 +1449,55 @@ ETHERCAT BRRIDGE COM STATUS
 							<Name>GVL_Devices.LAMP_ROUGH_VRC_02.i_xClsLS</Name>
 							<Type>BOOL</Type>
 						</Var>
+					</Vars>
+					<Vars VarGrpType="2">
+						<Name>PlcTask Outputs</Name>
 						<Var>
-							<Name>GVL_PLC_Interfaces.xEcatBridge_WcState</Name>
+							<Name>GVL_PLC_Interfaces.sENDSTATION_PLC_NAME</Name>
 							<Comment>
-								<![CDATA[0 = Data valid, 1 = Data invalid]]>
-							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_PLC_Interfaces.xTMO_ROUGH1_VRC_01_OPEN_LS</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_PLC_Interfaces.sHUTCH_PLC_NAME</Name>
-							<Comment>
-								<![CDATA[ I/O Inputs from TMO Beamline]]>
+								<![CDATA[I/O Outputs to TMO Beamline]]>
 							</Comment>
 							<Type>STRING(8)</Type>
 						</Var>
 						<Var>
-							<Name>GVL_PLC_Interfaces.xTMO_ROUGH2_VRC_01_OPEN_LS</Name>
+							<Name>GVL_PLC_Interfaces.xIP1_ROUGH_VRC_01_OPEN_LS</Name>
 							<Type>BOOL</Type>
 						</Var>
-					</Vars>
-					<Vars VarGrpType="2">
-						<Name>PlcTask Outputs</Name>
+						<Var>
+							<Name>GVL_PLC_Interfaces.xIP1_ROUGH_VRC_02_OPEN_LS</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_PLC_Interfaces.xIP1_ROUGH_VRC_03_OPEN_LS</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_PLC_Interfaces.xIP1_TURBOS_ALL_AtSpd</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_PLC_Interfaces.xIP1_MAIN_xAT_VAC</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_PLC_Interfaces.xIP1_MAIN_xPRESS_OK</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_PLC_Interfaces.xIP1_HV_SAFETY_ENABLE</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_PLC_Interfaces.rIP1_MAIN_rPRESS</Name>
+							<Type>REAL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_PLC_Interfaces.xHighVoltageSafteyLoopEnable</Name>
+							<Comment>
+								<![CDATA[When Enables the High voltage Saftey loop is closed and HV can start.]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
 						<Var>
 							<Name>GVL_Devices.LAMP_GJ2_PTM_01.q_RunDO</Name>
 							<Comment>
@@ -1532,52 +1668,6 @@ ETHERCAT BRRIDGE COM STATUS
 						<Var>
 							<Name>GVL_Devices.LAMP_ROUGH_VRC_02.q_xCLS_DO</Name>
 							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_PLC_Interfaces.sENDSTATION_PLC_NAME</Name>
-							<Comment>
-								<![CDATA[I/O Outputs to TMO Beamline]]>
-							</Comment>
-							<Type>STRING(8)</Type>
-						</Var>
-						<Var>
-							<Name>GVL_PLC_Interfaces.xIP1_ROUGH_VRC_01_OPEN_LS</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_PLC_Interfaces.xIP1_ROUGH_VRC_02_OPEN_LS</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_PLC_Interfaces.xIP1_ROUGH_VRC_03_OPEN_LS</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_PLC_Interfaces.xIP1_TURBOS_ALL_AtSpd</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_PLC_Interfaces.xIP1_MAIN_xAT_VAC</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_PLC_Interfaces.xIP1_MAIN_xPRESS_OK</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_PLC_Interfaces.xIP1_HV_SAFETY_ENABLE</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_PLC_Interfaces.xHighVoltageSafteyLoopEnable</Name>
-							<Comment>
-								<![CDATA[When Enables the High voltage Saftey loop is closed and HV can start.]]>
-							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_PLC_Interfaces.rIP1_MAIN_rPRESS</Name>
-							<Type>REAL</Type>
 						</Var>
 					</Vars>
 					<Vars VarGrpType="8">
@@ -1998,6 +2088,7 @@ ETHERCAT BRRIDGE COM STATUS
 				<Link VarA="PlcTask Outputs^GVL_Devices.LAMP_ROUGH_VRC_03.q_xOPN_DO" VarB="Channel 11^Output" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^LAMP_PLC_E0_EK1200^LAMP_PLC_E14_EK1122^VCN_1_VAT590">
+				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_VCN_01.i_bValveEthCatStatus" VarB="WcState^WcState" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_VCN_01.i_eControlMode" VarB="DI TxPDO-Map^Control mode" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_VCN_01.i_eFatalError" VarB="DI TxPDO-Map^Fatal error" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_VCN_01.i_nRawPosition" VarB="DI TxPDO-Map^Position" AutoLink="true"/>
@@ -2005,6 +2096,8 @@ ETHERCAT BRRIDGE COM STATUS
 				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_VCN_01.i_stExtnWarnings" VarB="DI TxPDO-Map^Extended warnings" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_VCN_01.i_stGenStatus" VarB="DI TxPDO-Map^General status" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_VCN_01.i_stGenWarnings" VarB="DI TxPDO-Map^General warnings" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_VCN_01.i_stVat590PlcDriveRef^aNetId" VarB="InfoData^AdsAddr^netId" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_VCN_01.i_stVat590PlcDriveRef^nSlaveAddr" VarB="InfoData^AdsAddr^port" AutoLink="true"/>
 				<Link VarA="PlcTask Outputs^GVL_Devices.LAMP_VCN_01.o_eCtrlModeSP" VarB="DO RxPDO-Map^Control mode setpoint" AutoLink="true"/>
 				<Link VarA="PlcTask Outputs^GVL_Devices.LAMP_VCN_01.o_nRawPositionSP" VarB="DO RxPDO-Map^Position setpoint" AutoLink="true"/>
 				<Link VarA="PlcTask Outputs^GVL_Devices.LAMP_VCN_01.o_nRawPressureSP" VarB="DO RxPDO-Map^Pressure setpoint" AutoLink="true"/>
