@@ -109,7 +109,8 @@ xHighVoltageSafteyLoopEnable:= (LAMP_C2_GCC_01.IG.rPRESS <= rHighVoltageMinPress
 //					ads_Error_Present:= (ITF_TMO_ROUGH1_VRC_01.bError OR ITF_TMO_ROUGH2_VRC_01.bError),
 					iq_stRoughRoughValve_NC_xOpnLS:= xTMO_ROUGH1_VRC_01_OPEN_LS,
 					iq_stRoughRoughValve_NC_second_xOpenLS:= xTMO_ROUGH2_VRC_01_OPEN_LS,
-					x_onBeamline:= xOnBeamline),
+//					x_onBeamline:= xOnBeamline,
+                    x_onBeamline:= True),
 	iq_stPtm=> );
 
 (*	
@@ -186,7 +187,8 @@ xHighVoltageSafteyLoopEnable:= (LAMP_C2_GCC_01.IG.rPRESS <= rHighVoltageMinPress
 //					ads_Error_Present:= (ITF_TMO_ROUGH1_VRC_01.bError OR ITF_TMO_ROUGH2_VRC_01.bError),
 					iq_stRoughRoughValve_NC_xOpnLS:= xTMO_ROUGH1_VRC_01_OPEN_LS,
 					iq_stRoughRoughValve_NC_second_xOpenLS:= xTMO_ROUGH2_VRC_01_OPEN_LS,
-					x_onBeamline:= xOnBeamline), 
+//					x_onBeamline:= xOnBeamline,
+                     x_onBeamline:= True), 
 	iq_stPtm=> );
 	
 	LAMP_C2_PTM_02(
@@ -201,7 +203,8 @@ xHighVoltageSafteyLoopEnable:= (LAMP_C2_GCC_01.IG.rPRESS <= rHighVoltageMinPress
 //					ads_Error_Present:= (ITF_TMO_ROUGH1_VRC_01.bError OR ITF_TMO_ROUGH2_VRC_01.bError),
 					iq_stRoughRoughValve_NC_xOpnLS:= xTMO_ROUGH1_VRC_01_OPEN_LS,
 					iq_stRoughRoughValve_NC_second_xOpenLS:=xTMO_ROUGH2_VRC_01_OPEN_LS,
-					x_onBeamline:= xOnBeamline), 
+//					x_onBeamline:= xOnBeamline,
+                    x_onBeamline:= True), 
 	iq_stPtm=> );
 	
 	LAMP_C2_PTM_03(
@@ -216,7 +219,8 @@ xHighVoltageSafteyLoopEnable:= (LAMP_C2_GCC_01.IG.rPRESS <= rHighVoltageMinPress
 //					ads_Error_Present:= (ITF_TMO_ROUGH1_VRC_01.bError OR ITF_TMO_ROUGH2_VRC_01.bError),
 					iq_stRoughRoughValve_NC_xOpnLS:= xTMO_ROUGH1_VRC_01_OPEN_LS,
 					iq_stRoughRoughValve_NC_second_xOpenLS:=xTMO_ROUGH2_VRC_01_OPEN_LS,
-					x_onBeamline:= xOnBeamline), 
+//					x_onBeamline:= xOnBeamline,
+                    x_onBeamline:= True), 
 	iq_stPtm=> );
 	
 	LAMP_C2_PTM_04(
@@ -231,7 +235,8 @@ xHighVoltageSafteyLoopEnable:= (LAMP_C2_GCC_01.IG.rPRESS <= rHighVoltageMinPress
 //					ads_Error_Present:= (ITF_TMO_ROUGH1_VRC_01.bError OR ITF_TMO_ROUGH2_VRC_01.bError),
 					iq_stRoughRoughValve_NC_xOpnLS:= xTMO_ROUGH1_VRC_01_OPEN_LS,
 					iq_stRoughRoughValve_NC_second_xOpenLS:=xTMO_ROUGH2_VRC_01_OPEN_LS,
-					x_onBeamline:= xOnBeamline), 
+//					x_onBeamline:= xOnBeamline,
+                    x_onBeamline:= True), 
 	iq_stPtm=> );
 
 (*	
@@ -338,7 +343,8 @@ xHighVoltageSafteyLoopEnable:= (LAMP_C2_GCC_01.IG.rPRESS <= rHighVoltageMinPress
 //					ads_Error_Present:= (ITF_TMO_ROUGH1_VRC_01.bError OR ITF_TMO_ROUGH2_VRC_01.bError),
 					iq_stRoughRoughValve_NC_xOpnLS:= xTMO_ROUGH1_VRC_01_OPEN_LS,
 					iq_stRoughRoughValve_NC_second_xOpenLS:=xTMO_ROUGH2_VRC_01_OPEN_LS,
-					x_onBeamline:= xOnBeamline), 
+//					x_onBeamline:= xOnBeamline,
+                    x_onBeamline:= True), 
 	iq_stPtm=> );
 
 (*	
