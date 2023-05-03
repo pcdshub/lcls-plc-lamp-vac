@@ -14,8 +14,9 @@ VAR_GLOBAL
 	xEcatBridge_TxPDO_state AT %I* :BOOL;
 	
 	//0: External device connectd, 1: External device not connected
-	{attribute := 'TIIB[LAMP_PLC_E04_EL6692]^SYNC Inputs^External device not connected
-	'}
+	
+//	{attribute := 'TIIB[LAMP_PLC_E04_EL6692]^SYNC Inputs^External device not connected
+//	'}
 	xEcatBridge_External_device_not_connected AT %I* : BOOL;
 	
 	//0 = Data valid, 1 = Data invalid

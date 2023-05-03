@@ -1112,7 +1112,9 @@ ETHERCAT BRRIDGE COM STATUS
 						<Var>
 							<Name>GVL_PLC_Interfaces.xEcatBridge_External_device_not_connected</Name>
 							<Comment>
-								<![CDATA[0: External device connectd, 1: External device not connected]]>
+								<![CDATA[0: External device connectd, 1: External device not connected
+	{attribute := 'TIIB[LAMP_PLC_E04_EL6692]^SYNC Inputs^External device not connected
+	'}]]>
 							</Comment>
 							<Type>BOOL</Type>
 						</Var>
@@ -1122,13 +1124,6 @@ ETHERCAT BRRIDGE COM STATUS
 								<![CDATA[0 = Data valid, 1 = Data invalid]]>
 							</Comment>
 							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_PLC_Interfaces.sHUTCH_PLC_NAME</Name>
-							<Comment>
-								<![CDATA[ I/O Inputs from TMO Beamline]]>
-							</Comment>
-							<Type>STRING(8)</Type>
 						</Var>
 						<Var>
 							<Name>GVL_PLC_Interfaces.xTMO_ROUGH1_VRC_01_OPEN_LS</Name>
@@ -1449,53 +1444,18 @@ Link this to your VAT590 WcState variable under WcState]]>
 							<Name>GVL_Devices.LAMP_ROUGH_VRC_02.i_xClsLS</Name>
 							<Type>BOOL</Type>
 						</Var>
+						<Var>
+							<Name>GVL_PLC_Interfaces.sHUTCH_PLC_NAME</Name>
+							<Comment>
+								<![CDATA[ I/O Inputs from TMO Beamline]]>
+							</Comment>
+							<Type>STRING(8)</Type>
+						</Var>
 					</Vars>
 					<Vars VarGrpType="2">
 						<Name>PlcTask Outputs</Name>
 						<Var>
-							<Name>GVL_PLC_Interfaces.sENDSTATION_PLC_NAME</Name>
-							<Comment>
-								<![CDATA[I/O Outputs to TMO Beamline]]>
-							</Comment>
-							<Type>STRING(8)</Type>
-						</Var>
-						<Var>
 							<Name>GVL_PLC_Interfaces.xIP1_ROUGH_VRC_01_OPEN_LS</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_PLC_Interfaces.xIP1_ROUGH_VRC_02_OPEN_LS</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_PLC_Interfaces.xIP1_ROUGH_VRC_03_OPEN_LS</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_PLC_Interfaces.xIP1_TURBOS_ALL_AtSpd</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_PLC_Interfaces.xIP1_MAIN_xAT_VAC</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_PLC_Interfaces.xIP1_MAIN_xPRESS_OK</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_PLC_Interfaces.xIP1_HV_SAFETY_ENABLE</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_PLC_Interfaces.rIP1_MAIN_rPRESS</Name>
-							<Type>REAL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_PLC_Interfaces.xHighVoltageSafteyLoopEnable</Name>
-							<Comment>
-								<![CDATA[When Enables the High voltage Saftey loop is closed and HV can start.]]>
-							</Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
@@ -1669,6 +1629,48 @@ Link this to your VAT590 WcState variable under WcState]]>
 							<Name>GVL_Devices.LAMP_ROUGH_VRC_02.q_xCLS_DO</Name>
 							<Type>BOOL</Type>
 						</Var>
+						<Var>
+							<Name>GVL_PLC_Interfaces.xIP1_ROUGH_VRC_02_OPEN_LS</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_PLC_Interfaces.xIP1_ROUGH_VRC_03_OPEN_LS</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_PLC_Interfaces.sENDSTATION_PLC_NAME</Name>
+							<Comment>
+								<![CDATA[I/O Outputs to TMO Beamline]]>
+							</Comment>
+							<Type>STRING(8)</Type>
+						</Var>
+						<Var>
+							<Name>GVL_PLC_Interfaces.xIP1_TURBOS_ALL_AtSpd</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_PLC_Interfaces.xIP1_MAIN_xAT_VAC</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_PLC_Interfaces.xIP1_MAIN_xPRESS_OK</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_PLC_Interfaces.xIP1_HV_SAFETY_ENABLE</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_PLC_Interfaces.xHighVoltageSafteyLoopEnable</Name>
+							<Comment>
+								<![CDATA[When Enables the High voltage Saftey loop is closed and HV can start.]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_PLC_Interfaces.rIP1_MAIN_rPRESS</Name>
+							<Type>REAL</Type>
+						</Var>
 					</Vars>
 					<Vars VarGrpType="8">
 						<Name>PlcTask Retains</Name>
@@ -1702,10 +1704,12 @@ Link this to your VAT590 WcState variable under WcState]]>
 	</Project>
 	<Mappings>
 		<MappingInfo Identifier="{00000000-2001-0850-0020-500810000403}" Id="#x02030010"/>
+		<MappingInfo Identifier="{00000000-2002-0850-0120-500822000403}" Id="#x02030030"/>
 		<MappingInfo Identifier="{00000000-2002-0850-0120-500831000403}" Id="#x02030020"/>
 		<OwnerA Name="TIPC^plc_lamp_vac^plc_lamp_vac Instance">
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^LAMP_PLC_E0_EK1200^LAMP_PLC_E04_EL6692">
 				<Link VarA="PlcTask Inputs^GVL_PLC_Interfaces.sHUTCH_PLC_NAME" VarB="IO Inputs^HUTCH_PLC_NAME" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_PLC_Interfaces.xEcatBridge_External_device_not_connected" VarB="SYNC Inputs^External device not connected"/>
 				<Link VarA="PlcTask Inputs^GVL_PLC_Interfaces.xEcatBridge_TxPDO_state" VarB="SYNC Inputs^TxPDO state" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^GVL_PLC_Interfaces.xEcatBridge_WcState" VarB="WcState^WcState" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^GVL_PLC_Interfaces.xTMO_ROUGH1_VRC_01_OPEN_LS" VarB="IO Inputs^TMO_ROUGH1_VRC_01_OPEN_LS" AutoLink="true"/>
