@@ -1,0 +1,30 @@
+plc-lamp-vac
+------------
+
+.. toctree::
+    :maxdepth: 2
+    :caption: plc-lamp-vac
+
+    plc-lamp-vac_pragmas
+    plc-lamp-vac_nc
+    plc-lamp-vac_ethercat
+    plc-lamp-vac_boxes
+    plc-lamp-vac_links
+
+
+.. toctree::
+    :maxdepth: 2
+    :caption: plc_lamp_vac
+
+    plc-lamp-vac_plc_lamp_vac_summary
+    plc-lamp-vac_plc_lamp_vac_epics
+    plc-lamp-vac_plc_lamp_vac_source
+
+
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
