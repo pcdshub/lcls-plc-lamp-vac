@@ -710,8 +710,8 @@
 					<ManualSelect Instances="250">{103F30C9-DF25-439E-837B-9DF80CB9356C}</ManualSelect>
 					<ManualSelect>{E008E3C8-6BD9-491C-B673-DC45CC7AA4F1}</ManualSelect>
 					<TargetSelect TargetId="2">{3EBB9639-5FF3-42B6-8847-35C70DC013C8}</TargetSelect>
-					<TargetSelect TargetId="2">{66689887-CCBD-452C-AC9A-039D997C6E66}</TargetSelect>
 					<TargetSelect TargetId="2">{BCA6EE0A-9CE1-4D3F-98CA-413ABC0D94FD}</TargetSelect>
+					<TargetSelect TargetId="2">{66689887-CCBD-452C-AC9A-039D997C6E66}</TargetSelect>
 					<TargetSelect TargetId="2">{103F30C9-DF25-439E-837B-9DF80CB9356C}</TargetSelect>
 					<TargetSelect TargetId="2">{E008E3C8-6BD9-491C-B673-DC45CC7AA4F1}</TargetSelect>
 					<LicenseDevice DongleHardwareId="2" DongleDevice="#x03020003" DongleSystemId="{CFC38D4A-478D-28CA-F8F1-81EBA37BAFA7}"/>
@@ -1314,6 +1314,53 @@ ETHERCAT BRRIDGE COM STATUS
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
+							<Name>GVL_Devices.LAMP_C1_GHC_01.i_iPRESS_R</Name>
+							<Comment>
+								<![CDATA[ input Pressure // Link to analog Input]]>
+							</Comment>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_ROUGH_VRC_01.i_xOpnLS</Name>
+							<Comment>
+								<![CDATA[IO]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_ROUGH_VRC_01.i_xClsLS</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_ROUGH_VRC_03.i_xOpnLS</Name>
+							<Comment>
+								<![CDATA[IO]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_ROUGH_VRC_03.i_xClsLS</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_ROUGH_VRC_02.i_xOpnLS</Name>
+							<Comment>
+								<![CDATA[IO]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_ROUGH_VRC_02.i_xClsLS</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_PLC_Interfaces.sHUTCH_PLC_NAME</Name>
+							<Comment>
+								<![CDATA[ I/O Inputs from TMO Beamline]]>
+							</Comment>
+							<Type>STRING(8)</Type>
+						</Var>
+						<Var>
 							<Name>GVL_Devices.LAMP_VCN_01.i_stVat590PlcDriveRef</Name>
 							<Comment>
 								<![CDATA[CoE Interface
@@ -1403,53 +1450,6 @@ Connect i_stVat590PlcDriveRef.nSlaveAddr to the VAT590 Valve InfoData^AdsAddr^po
 Link this to your VAT590 WcState variable under WcState]]>
 							</Comment>
 							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_Devices.LAMP_C1_GHC_01.i_iPRESS_R</Name>
-							<Comment>
-								<![CDATA[ input Pressure // Link to analog Input]]>
-							</Comment>
-							<Type>INT</Type>
-						</Var>
-						<Var>
-							<Name>GVL_Devices.LAMP_ROUGH_VRC_01.i_xOpnLS</Name>
-							<Comment>
-								<![CDATA[IO]]>
-							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_Devices.LAMP_ROUGH_VRC_01.i_xClsLS</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_Devices.LAMP_ROUGH_VRC_03.i_xOpnLS</Name>
-							<Comment>
-								<![CDATA[IO]]>
-							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_Devices.LAMP_ROUGH_VRC_03.i_xClsLS</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_Devices.LAMP_ROUGH_VRC_02.i_xOpnLS</Name>
-							<Comment>
-								<![CDATA[IO]]>
-							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_Devices.LAMP_ROUGH_VRC_02.i_xClsLS</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_PLC_Interfaces.sHUTCH_PLC_NAME</Name>
-							<Comment>
-								<![CDATA[ I/O Inputs from TMO Beamline]]>
-							</Comment>
-							<Type>STRING(8)</Type>
 						</Var>
 					</Vars>
 					<Vars VarGrpType="2">
@@ -1583,34 +1583,6 @@ Link this to your VAT590 WcState variable under WcState]]>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_Devices.LAMP_VCN_01.o_nRawPositionSP</Name>
-							<Comment>
-								<![CDATA[ Position setpoint]]>
-							</Comment>
-							<Type>DINT</Type>
-						</Var>
-						<Var>
-							<Name>GVL_Devices.LAMP_VCN_01.o_nRawPressureSP</Name>
-							<Comment>
-								<![CDATA[ Pressure setpoint]]>
-							</Comment>
-							<Type>DINT</Type>
-						</Var>
-						<Var>
-							<Name>GVL_Devices.LAMP_VCN_01.o_eCtrlModeSP</Name>
-							<Comment>
-								<![CDATA[ Valve control mode setpoint]]>
-							</Comment>
-							<Type GUID="{A35BDA7F-D880-46D9-BC7E-1C58B81B070F}" Namespace="LCLS_Vacuum">E_ControlModeSP</Type>
-						</Var>
-						<Var>
-							<Name>GVL_Devices.LAMP_VCN_01.o_stGenCtrlSP</Name>
-							<Comment>
-								<![CDATA[ General Control setpoint]]>
-							</Comment>
-							<Type GUID="{9CE63C20-7C23-49F3-BBB9-BC9D9680D11C}" Namespace="LCLS_Vacuum">ST_GeneralControlSP</Type>
-						</Var>
-						<Var>
 							<Name>GVL_Devices.LAMP_C1_GHC_01.q_xHV_DIS</Name>
 							<Comment>
 								<![CDATA[ Active Low ]]>
@@ -1670,6 +1642,34 @@ Link this to your VAT590 WcState variable under WcState]]>
 						<Var>
 							<Name>GVL_PLC_Interfaces.rIP1_MAIN_rPRESS</Name>
 							<Type>REAL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_VCN_01.o_nRawPositionSP</Name>
+							<Comment>
+								<![CDATA[ Position setpoint]]>
+							</Comment>
+							<Type>DINT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_VCN_01.o_nRawPressureSP</Name>
+							<Comment>
+								<![CDATA[ Pressure setpoint]]>
+							</Comment>
+							<Type>DINT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_VCN_01.o_eCtrlModeSP</Name>
+							<Comment>
+								<![CDATA[ Valve control mode setpoint]]>
+							</Comment>
+							<Type GUID="{A35BDA7F-D880-46D9-BC7E-1C58B81B070F}" Namespace="LCLS_Vacuum">E_ControlModeSP</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.LAMP_VCN_01.o_stGenCtrlSP</Name>
+							<Comment>
+								<![CDATA[ General Control setpoint]]>
+							</Comment>
+							<Type GUID="{9CE63C20-7C23-49F3-BBB9-BC9D9680D11C}" Namespace="LCLS_Vacuum">ST_GeneralControlSP</Type>
 						</Var>
 					</Vars>
 					<Vars VarGrpType="8">
