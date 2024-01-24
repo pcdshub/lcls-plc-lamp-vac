@@ -2413,6 +2413,42 @@ LCLS_Vacuum.FB_VCN_VAT590
       - | io: output
 
 
+    * - $(PREFIX):COE_PARAM:POSITION_LIMIT_OPN
+      - ao
+      - $(SYMBOL).stVcnVat590.stCoeParameters.fPositionLimitOpen
+      - | field: DRVH 100.0
+        | field: DRVL 0.0
+        | field: EGU "%"
+        | io: output
+
+
+    * - $(PREFIX):COE_PARAM:POSITION_LIMIT_OPN_CTRL
+      - ao
+      - $(SYMBOL).stVcnVat590.stCoeParameters.fPositionLimitOpenControl
+      - | field: DRVH 100.0
+        | field: DRVL 0.0
+        | field: EGU "%"
+        | io: output
+
+
+    * - $(PREFIX):COE_PARAM:POSITION_LIMIT_OPN_CTRL_RBV
+      - ai
+      - $(SYMBOL).stVcnVat590.stCoeParameters.fPositionLimitOpenControl
+      - | field: DRVH 100.0
+        | field: DRVL 0.0
+        | field: EGU "%"
+        | io: output
+
+
+    * - $(PREFIX):COE_PARAM:POSITION_LIMIT_OPN_RBV
+      - ai
+      - $(SYMBOL).stVcnVat590.stCoeParameters.fPositionLimitOpen
+      - | field: DRVH 100.0
+        | field: DRVL 0.0
+        | field: EGU "%"
+        | io: output
+
+
     * - $(PREFIX):COE_PARAM:RAMP_MODE_AD
       - bo
       - $(SYMBOL).stVcnVat590.stCoeParameters.bRampMode_AD
@@ -2871,18 +2907,6 @@ LCLS_Vacuum.FB_VCN_VAT590
       - $(SYMBOL).stVcnVat590.fReqPressure
       - | field: EGU "TORR"
         | io: output
-
-
-    * - $(PREFIX):PRES_SENS
-      - mbbo
-      - $(SYMBOL).stVcnVat590.ePressureSensor
-      - | io: output
-
-
-    * - $(PREFIX):PRES_SENS_RBV
-      - mbbi
-      - $(SYMBOL).stVcnVat590.ePressureSensor
-      - | io: output
 
 
     * - $(PREFIX):PRES_SET_LIMIT
@@ -4400,6 +4424,42 @@ LCLS_Vacuum.ST_VAT590_COE
       - | io: output
 
 
+    * - $(PREFIX):POSITION_LIMIT_OPN
+      - ao
+      - $(SYMBOL).fPositionLimitOpen
+      - | field: DRVH 100.0
+        | field: DRVL 0.0
+        | field: EGU "%"
+        | io: output
+
+
+    * - $(PREFIX):POSITION_LIMIT_OPN_CTRL
+      - ao
+      - $(SYMBOL).fPositionLimitOpenControl
+      - | field: DRVH 100.0
+        | field: DRVL 0.0
+        | field: EGU "%"
+        | io: output
+
+
+    * - $(PREFIX):POSITION_LIMIT_OPN_CTRL_RBV
+      - ai
+      - $(SYMBOL).fPositionLimitOpenControl
+      - | field: DRVH 100.0
+        | field: DRVL 0.0
+        | field: EGU "%"
+        | io: output
+
+
+    * - $(PREFIX):POSITION_LIMIT_OPN_RBV
+      - ai
+      - $(SYMBOL).fPositionLimitOpen
+      - | field: DRVH 100.0
+        | field: DRVL 0.0
+        | field: EGU "%"
+        | io: output
+
+
     * - $(PREFIX):RAMP_MODE_AD
       - bo
       - $(SYMBOL).bRampMode_AD
@@ -4928,6 +4988,42 @@ LCLS_Vacuum.ST_VCN_VAT590
       - | io: output
 
 
+    * - $(PREFIX):COE_PARAM:POSITION_LIMIT_OPN
+      - ao
+      - $(SYMBOL).stCoeParameters.fPositionLimitOpen
+      - | field: DRVH 100.0
+        | field: DRVL 0.0
+        | field: EGU "%"
+        | io: output
+
+
+    * - $(PREFIX):COE_PARAM:POSITION_LIMIT_OPN_CTRL
+      - ao
+      - $(SYMBOL).stCoeParameters.fPositionLimitOpenControl
+      - | field: DRVH 100.0
+        | field: DRVL 0.0
+        | field: EGU "%"
+        | io: output
+
+
+    * - $(PREFIX):COE_PARAM:POSITION_LIMIT_OPN_CTRL_RBV
+      - ai
+      - $(SYMBOL).stCoeParameters.fPositionLimitOpenControl
+      - | field: DRVH 100.0
+        | field: DRVL 0.0
+        | field: EGU "%"
+        | io: output
+
+
+    * - $(PREFIX):COE_PARAM:POSITION_LIMIT_OPN_RBV
+      - ai
+      - $(SYMBOL).stCoeParameters.fPositionLimitOpen
+      - | field: DRVH 100.0
+        | field: DRVL 0.0
+        | field: EGU "%"
+        | io: output
+
+
     * - $(PREFIX):COE_PARAM:RAMP_MODE_AD
       - bo
       - $(SYMBOL).stCoeParameters.bRampMode_AD
@@ -5386,18 +5482,6 @@ LCLS_Vacuum.ST_VCN_VAT590
       - $(SYMBOL).fReqPressure
       - | field: EGU "TORR"
         | io: output
-
-
-    * - $(PREFIX):PRES_SENS
-      - mbbo
-      - $(SYMBOL).ePressureSensor
-      - | io: output
-
-
-    * - $(PREFIX):PRES_SENS_RBV
-      - mbbi
-      - $(SYMBOL).ePressureSensor
-      - | io: output
 
 
     * - $(PREFIX):PRES_SET_LIMIT
@@ -10148,18 +10232,6 @@ Database Records
       - | io: output
 
 
-    * - LAMP:VCN:01:PRES_SENS_RBV
-      - mbbi
-      - GVL_Devices.LAMP_VCN_01.stVcnVat590.ePressureSensor
-      - | io: output
-
-
-    * - LAMP:VCN:01:PRES_SENS
-      - mbbo
-      - GVL_Devices.LAMP_VCN_01.stVcnVat590.ePressureSensor
-      - | io: output
-
-
     * - LAMP:VCN:01:REM_CTRL_RBV
       - mbbi
       - GVL_Devices.LAMP_VCN_01.stVcnVat590.eRemoteControl
@@ -10490,6 +10562,42 @@ Database Records
       - GVL_Devices.LAMP_VCN_01.stVcnVat590.stCoeParameters.fPGain_SP
       - | field: DRVH 100.0
         | field: DRVL 0.001
+        | io: output
+
+
+    * - LAMP:VCN:01:COE_PARAM:POSITION_LIMIT_OPN_RBV
+      - ai
+      - GVL_Devices.LAMP_VCN_01.stVcnVat590.stCoeParameters.fPositionLimitOpen
+      - | field: DRVH 100.0
+        | field: DRVL 0.0
+        | field: EGU "%"
+        | io: output
+
+
+    * - LAMP:VCN:01:COE_PARAM:POSITION_LIMIT_OPN
+      - ao
+      - GVL_Devices.LAMP_VCN_01.stVcnVat590.stCoeParameters.fPositionLimitOpen
+      - | field: DRVH 100.0
+        | field: DRVL 0.0
+        | field: EGU "%"
+        | io: output
+
+
+    * - LAMP:VCN:01:COE_PARAM:POSITION_LIMIT_OPN_CTRL_RBV
+      - ai
+      - GVL_Devices.LAMP_VCN_01.stVcnVat590.stCoeParameters.fPositionLimitOpenControl
+      - | field: DRVH 100.0
+        | field: DRVL 0.0
+        | field: EGU "%"
+        | io: output
+
+
+    * - LAMP:VCN:01:COE_PARAM:POSITION_LIMIT_OPN_CTRL
+      - ao
+      - GVL_Devices.LAMP_VCN_01.stVcnVat590.stCoeParameters.fPositionLimitOpenControl
+      - | field: DRVH 100.0
+        | field: DRVL 0.0
+        | field: EGU "%"
         | io: output
 
 

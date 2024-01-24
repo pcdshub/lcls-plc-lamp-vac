@@ -37,7 +37,7 @@ Libraries
     :align: center
 
         LCLS General, SLAC, Unset, 2.4.2
-        LCLS Vacuum, SLAC - LCLS, Unset, 0.0.0
+        LCLS Vacuum, SLAC - LCLS, Unset, 2.3.4
         LCLSVacuumSerialDriverLib, SLAC - LCLS, Unset, 0.0.0
         PMPS, SLAC - LCLS, Unset, 2.2.1
         Tc2_SerialCom, Beckhoff Automation GmbH, Unset, 3.3.7.0
@@ -663,7 +663,7 @@ GVL_Devices
 .. raw:: html
 
    <details>
-       <summary>110 Symbols</summary>
+       <summary>111 Symbols</summary>
 
 .. csv-table::
     :header: Symbol, Type, Offset/Size
@@ -754,20 +754,21 @@ GVL_Devices
         GVL_Devices.LAMP_ROUGH_VRC_03.i_xClsLS, BOOL, 643122920 (8)
         GVL_Devices.LAMP_ROUGH_VRC_03.i_xOpnLS, BOOL, 643122912 (8)
         GVL_Devices.LAMP_ROUGH_VRC_03.q_xOPN_DO, BOOL, 643122928 (8)
-        GVL_Devices.LAMP_VCN_01, FB_VCN_VAT590, 642772992 (92224)
-        GVL_Devices.LAMP_VCN_01.i_bValveEthCatStatus, BOOL, 642865112 (8)
-        GVL_Devices.LAMP_VCN_01.i_eControlMode, E_ControlMode, 642864928 (8)
-        GVL_Devices.LAMP_VCN_01.i_eFatalError, E_FatalErrors, 642864944 (16)
-        GVL_Devices.LAMP_VCN_01.i_nRawPosition, DINT, 642864864 (32)
-        GVL_Devices.LAMP_VCN_01.i_nRawPressure, DINT, 642864896 (32)
-        GVL_Devices.LAMP_VCN_01.i_stExtnWarnings, ST_ExtendedWarnings, 642864992 (16)
-        GVL_Devices.LAMP_VCN_01.i_stGenStatus, ST_GeneralStatus, 642864960 (16)
-        GVL_Devices.LAMP_VCN_01.i_stGenWarnings, ST_GeneralWarnings, 642864976 (16)
-        GVL_Devices.LAMP_VCN_01.i_stVat590PlcDriveRef, ST_PlcDriveRef, 642858992 (80)
-        GVL_Devices.LAMP_VCN_01.o_eCtrlModeSP, E_ControlModeSP, 642865088 (8)
-        GVL_Devices.LAMP_VCN_01.o_nRawPositionSP, DINT, 642865024 (32)
-        GVL_Devices.LAMP_VCN_01.o_nRawPressureSP, DINT, 642865056 (32)
-        GVL_Devices.LAMP_VCN_01.o_stGenCtrlSP, ST_GeneralControlSP, 642865096 (16)
+        GVL_Devices.LAMP_VCN_01, FB_VCN_VAT590, 651992768 (92544)
+        GVL_Devices.LAMP_VCN_01.i_bValveEthCatStatus, BOOL, 652085176 (8)
+        GVL_Devices.LAMP_VCN_01.i_eControlMode, E_ControlMode, 652084960 (8)
+        GVL_Devices.LAMP_VCN_01.i_eFatalError, E_FatalErrors, 652084976 (16)
+        GVL_Devices.LAMP_VCN_01.i_nRawPosition, DINT, 652084896 (32)
+        GVL_Devices.LAMP_VCN_01.i_nRawPressure, DINT, 652084928 (32)
+        GVL_Devices.LAMP_VCN_01.i_stExtnWarnings, ST_ExtendedWarnings, 652085024 (16)
+        GVL_Devices.LAMP_VCN_01.i_stGenStatus, ST_GeneralStatus, 652084992 (16)
+        GVL_Devices.LAMP_VCN_01.i_stGenWarnings, ST_GeneralWarnings, 652085008 (16)
+        GVL_Devices.LAMP_VCN_01.i_stVat590PlcDriveRef, ST_PlcDriveRef, 652078960 (80)
+        GVL_Devices.LAMP_VCN_01.o_eCtrlModeSP, E_ControlModeSP, 652085152 (8)
+        GVL_Devices.LAMP_VCN_01.o_nRawPositionSP, DINT, 652085056 (32)
+        GVL_Devices.LAMP_VCN_01.o_nRawPressure, DINT, 652085120 (32)
+        GVL_Devices.LAMP_VCN_01.o_nRawPressureSP, DINT, 652085088 (32)
+        GVL_Devices.LAMP_VCN_01.o_stGenCtrlSP, ST_GeneralControlSP, 652085160 (16)
         GVL_Devices.st_Pfeiffer_CTRL_LAMP_C2_PTM_01, ST_PfeifferControl, 643207872 (3200)
         GVL_Devices.st_Pfeiffer_CTRL_LAMP_C2_PTM_02, ST_PfeifferControl, 644031808 (3200)
         GVL_Devices.st_Pfeiffer_CTRL_LAMP_C2_PTM_03, ST_PfeifferControl, 644855744 (3200)
@@ -1039,12 +1040,12 @@ TC_EVENT_CLASSES
     :header: Symbol, Type, Offset/Size
     :align: center
 
-        TC_EVENT_CLASSES.LCLSGeneralEventClass, GUID, 647368768 (128)
-        TC_EVENT_CLASSES.TcGeneralAdsEventClass, GUID, 647368256 (128)
-        TC_EVENT_CLASSES.TcRouterEventClass, GUID, 647368384 (128)
-        TC_EVENT_CLASSES.TcRTimeEventClass, GUID, 647368512 (128)
-        TC_EVENT_CLASSES.TcSystemEventClass, GUID, 647368128 (128)
-        TC_EVENT_CLASSES.Win32EventClass, GUID, 647368640 (128)
+        TC_EVENT_CLASSES.LCLSGeneralEventClass, GUID, 647393280 (128)
+        TC_EVENT_CLASSES.TcGeneralAdsEventClass, GUID, 647392768 (128)
+        TC_EVENT_CLASSES.TcRouterEventClass, GUID, 647392896 (128)
+        TC_EVENT_CLASSES.TcRTimeEventClass, GUID, 647393024 (128)
+        TC_EVENT_CLASSES.TcSystemEventClass, GUID, 647392640 (128)
+        TC_EVENT_CLASSES.Win32EventClass, GUID, 647393152 (128)
 
 
 TC_EVENTS
@@ -1054,7 +1055,7 @@ TC_EVENTS
     :header: Symbol, Type, Offset/Size
     :align: center
 
-        TC_EVENTS.LCLSGeneralEventClass, LCLSGeneralEventClass, 647399104 (960)
+        TC_EVENTS.LCLSGeneralEventClass, LCLSGeneralEventClass, 647383616 (960)
 
 
 TwinCAT_LicenseInfoVarList

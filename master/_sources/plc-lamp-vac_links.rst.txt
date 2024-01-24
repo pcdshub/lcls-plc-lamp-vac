@@ -346,6 +346,7 @@ Links
         TIPC^plc_lamp_vac^plc_lamp_vac Instance, PlcTask Outputs^GVL_Devices.LAMP_ROUGH_VRC_03.q_xOPN_DO, TIID^Device 1 (EtherCAT)^LAMP_PLC_E0_EK1200^LAMP_PLC_E13_EK1122^LAMP_PNL1_EP00_EP9128-0021^LAMP_PNL2_EP26_EP2338-0002, Channel 11^Output
         TIPC^plc_lamp_vac^plc_lamp_vac Instance, PlcTask Outputs^GVL_Devices.LAMP_VCN_01.o_eCtrlModeSP, TIID^Device 1 (EtherCAT)^LAMP_PLC_E0_EK1200^LAMP_PLC_E14_EK1122^VCN_1_VAT590, DO RxPDO-Map^Control mode setpoint
         TIPC^plc_lamp_vac^plc_lamp_vac Instance, PlcTask Outputs^GVL_Devices.LAMP_VCN_01.o_nRawPositionSP, TIID^Device 1 (EtherCAT)^LAMP_PLC_E0_EK1200^LAMP_PLC_E14_EK1122^VCN_1_VAT590, DO RxPDO-Map^Position setpoint
+        TIPC^plc_lamp_vac^plc_lamp_vac Instance, PlcTask Outputs^GVL_Devices.LAMP_VCN_01.o_nRawPressure, TIID^Device 1 (EtherCAT)^LAMP_PLC_E0_EK1200^LAMP_PLC_E14_EK1122^VCN_1_VAT590, DO RxPDO-Map^External digital pressure sensor 1
         TIPC^plc_lamp_vac^plc_lamp_vac Instance, PlcTask Outputs^GVL_Devices.LAMP_VCN_01.o_nRawPressureSP, TIID^Device 1 (EtherCAT)^LAMP_PLC_E0_EK1200^LAMP_PLC_E14_EK1122^VCN_1_VAT590, DO RxPDO-Map^Pressure setpoint
         TIPC^plc_lamp_vac^plc_lamp_vac Instance, PlcTask Outputs^GVL_Devices.LAMP_VCN_01.o_stGenCtrlSP, TIID^Device 1 (EtherCAT)^LAMP_PLC_E0_EK1200^LAMP_PLC_E14_EK1122^VCN_1_VAT590, DO RxPDO-Map^General control setpoint
         TIPC^plc_lamp_vac^plc_lamp_vac Instance, PlcTask Outputs^GVL_PLC_Interfaces.rIP1_MAIN_rPRESS, TIID^Device 1 (EtherCAT)^LAMP_PLC_E0_EK1200^LAMP_PLC_E04_EL6692, IO Outputs^IP1_MAIN_rPRESS
