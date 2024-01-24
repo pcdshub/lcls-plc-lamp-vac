@@ -1,27 +1,29 @@
+
+
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="./">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Boxes &mdash; pcdshub/lcls-plc-lamp-vac  documentation</title>
-      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/tree.css?v=837a00b9" />
+      <link rel="stylesheet" type="text/css" href="_static/width.css?v=ab210c7a" />
+
   
-        <script src="_static/jquery.js"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/sphinx_highlight.js"></script>
-        <script src="_static/docs-versions-menu.js"></script>
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/docs-versions-menu.js?v=3d6a1aea"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Links" href="plc-lamp-vac_links.html" />
-    <link rel="prev" title="Box Hierarchy" href="plc-lamp-vac_ethercat.html" /> 
+    <link rel="prev" title="EtherCAT Terminals" href="plc-lamp-vac_ethercat.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -47,12 +49,11 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="plc-lamp-vac_pragmas.html">Pragmas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="plc-lamp-vac_nc.html">NC Settings</a></li>
-<li class="toctree-l1"><a class="reference internal" href="plc-lamp-vac_ethercat.html">Box Hierarchy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plc-lamp-vac_ethercat.html">EtherCAT Terminals</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Boxes</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#lamp-plc-e0-ek1200">LAMP_PLC_E0_EK1200</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#lamp-plc-e01-el2202">LAMP_PLC_E01_EL2202</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#lamp-plc-e02-el6070">LAMP_PLC_E02_EL6070</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#lamp-plc-e04-el6692">LAMP_PLC_E04_EL6692</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#lamp-plc-e05-el9410">LAMP_PLC_E05_EL9410</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#lamp-plc-e06-el1004">LAMP_PLC_E06_EL1004</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#lamp-plc-e07-el2794">LAMP_PLC_E07_EL2794</a></li>
@@ -85,12 +86,11 @@
 <li class="toctree-l2"><a class="reference internal" href="#lamp-pnl2-ep23-ep3174-0002">LAMP_PNL2_EP23_EP3174-0002</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#term-36-ep9128-1021">Term 36 (EP9128-1021)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#term-37-ep9128-2021">Term 37 (EP9128-2021)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#lamp-plc-e03-el9184">LAMP_PLC_E03_EL9184</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#lamp-plc-e04-el6695">LAMP_PLC_E04_EL6695</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#lamp-plc-e09-el2794">LAMP_PLC_E09_EL2794</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#lamp-plc-e10-el1008">LAMP_PLC_E10_EL1008</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#lamp-plc-e10a-el1008">LAMP_PLC_E10A_EL1008</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#lamp-plc-motion-el6695-0002">LAMP_PLC_MOTION_EL6695-0002</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#lamp-plc-e10-ek1122">LAMP_PLC_E10_EK1122</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#lamp-plc-e13-ek1122">LAMP_PLC_E13_EK1122</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#lamp-plc-e15-el9011">LAMP_PLC_E15_EL9011</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#lamp-pnl2-ep24-ep2624-0002">LAMP_PNL2_EP24_EP2624-0002</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#lamp-pnl2-ep25-ep2338-0002">LAMP_PNL2_EP25_EP2338-0002</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#lamp-pnl2-ep26-ep2338-0002">LAMP_PNL2_EP26_EP2338-0002</a></li>
@@ -101,6 +101,16 @@
 <li class="toctree-l2"><a class="reference internal" href="#lamp-dct-01-ep9224-0023">LAMP_DCT_01_EP9224-0023</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#lamp-plc-e14-ek1122">LAMP_PLC_E14_EK1122</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#vcn-1-vat590">VCN_1_VAT590</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#lamp-gj-ek1100">LAMP_GJ_EK1100</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#lamp-gj-e01-el1004">LAMP_GJ_E01_EL1004</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#lamp-gj-e02-el2004">LAMP_GJ_E02_EL2004</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#lamp-gj-e03-el1004">LAMP_GJ_E03_EL1004</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#lamp-gj-e03a-el2004">LAMP_GJ_E03A_EL2004</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#lamp-gj-e04-el6021">LAMP_GJ_E04_EL6021</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#lamp-gj-e05-el1004">LAMP_GJ_E05_EL1004</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#lamp-gj-e06-el2794">LAMP_GJ_E06_EL2794</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#lamp-gj-e09-el3174-0002">LAMP_GJ_E09_EL3174-0002</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#lamp-gj-el9011">LAMP_GJ_EL9011</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="plc-lamp-vac_links.html">Links</a></li>
@@ -143,12 +153,12 @@
            <div itemprop="articleBody">
              
   <section id="boxes">
-<h1>Boxes<a class="headerlink" href="#boxes" title="Permalink to this heading"></a></h1>
+<h1>Boxes<a class="headerlink" href="#boxes" title="Link to this heading"></a></h1>
 <section id="lamp-plc-e0-ek1200">
-<h2>LAMP_PLC_E0_EK1200<a class="headerlink" href="#lamp-plc-e0-ek1200" title="Permalink to this heading"></a></h2>
+<h2>LAMP_PLC_E0_EK1200<a class="headerlink" href="#lamp-plc-e0-ek1200" title="Link to this heading"></a></h2>
 <details>
      <summary>EtherCAT</summary><table class="docutils align-center" id="id1">
-<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id1" title="Permalink to this table"></a></caption>
+<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id1" title="Link to this table"></a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Name</p></th>
 <th class="head"><p>Data</p></th>
@@ -165,10 +175,10 @@
 </table>
 </details></section>
 <section id="lamp-plc-e01-el2202">
-<h2>LAMP_PLC_E01_EL2202<a class="headerlink" href="#lamp-plc-e01-el2202" title="Permalink to this heading"></a></h2>
+<h2>LAMP_PLC_E01_EL2202<a class="headerlink" href="#lamp-plc-e01-el2202" title="Link to this heading"></a></h2>
 <details>
      <summary>EtherCAT (2 PDOs)</summary><table class="docutils align-center" id="id2">
-<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id2" title="Permalink to this table"></a></caption>
+<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id2" title="Link to this table"></a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Name</p></th>
 <th class="head"><p>Data</p></th>
@@ -241,10 +251,10 @@
 </table>
 </details></section>
 <section id="lamp-plc-e02-el6070">
-<h2>LAMP_PLC_E02_EL6070<a class="headerlink" href="#lamp-plc-e02-el6070" title="Permalink to this heading"></a></h2>
+<h2>LAMP_PLC_E02_EL6070<a class="headerlink" href="#lamp-plc-e02-el6070" title="Link to this heading"></a></h2>
 <details>
      <summary>EtherCAT</summary><table class="docutils align-center" id="id3">
-<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id3" title="Permalink to this table"></a></caption>
+<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id3" title="Link to this table"></a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Name</p></th>
 <th class="head"><p>Data</p></th>
@@ -272,393 +282,11 @@
 </tbody>
 </table>
 </details></section>
-<section id="lamp-plc-e04-el6692">
-<h2>LAMP_PLC_E04_EL6692<a class="headerlink" href="#lamp-plc-e04-el6692" title="Permalink to this heading"></a></h2>
-<details>
-     <summary>EtherCAT (5 PDOs)</summary><table class="docutils align-center" id="id4">
-<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id4" title="Permalink to this table"></a></caption>
-<thead>
-<tr class="row-odd"><th class="head"><p>Name</p></th>
-<th class="head"><p>Data</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Name</p></td>
-<td><p>LAMP_PLC_E04_EL6692</p></td>
-</tr>
-<tr class="row-odd"><td><p>ID</p></td>
-<td><p>4</p></td>
-</tr>
-<tr class="row-even"><td><p>BootStrapData</p></td>
-<td><p>0010f400f410f400</p></td>
-</tr>
-<tr class="row-odd"><td><p>SyncMan</p></td>
-<td><p>001000012600010001000000800000040001001026010000</p></td>
-</tr>
-<tr class="row-even"><td><p>SyncMan</p></td>
-<td><p>001400012200010002000000800000040001001422010000</p></td>
-</tr>
-<tr class="row-odd"><td><p>SyncMan</p></td>
-<td><p>001816002400010003000000000000000000001824010000</p></td>
-</tr>
-<tr class="row-even"><td><p>SyncMan</p></td>
-<td><p>001e0e002000010004000000000000000200001e20010000</p></td>
-</tr>
-<tr class="row-odd"><td><p>Fmmu</p></td>
-<td><p>0000000000000000001800020100000001000000000000000000000000000000</p></td>
-</tr>
-<tr class="row-even"><td><p>Fmmu</p></td>
-<td><p>0000000000000000001e00010100000002000000000000000000000000000000</p></td>
-</tr>
-<tr class="row-odd"><td><p>Fmmu</p></td>
-<td><p>00000000000000000d0800010100000003000000000000000000000000000000</p></td>
-</tr>
-<tr class="row-even"><td><p>CoeProfile</p></td>
-<td><p>5001</p></td>
-</tr>
-</tbody>
-</table>
-<p>PDO SYNC Inputs (Index #x1a01, Flags #x0010, SyncMan 3)</p>
-<table class="docutils align-center">
-<thead>
-<tr class="row-odd"><th class="head"><p>Name</p></th>
-<th class="head"><p>Comment</p></th>
-<th class="head"><p>BitLen</p></th>
-<th class="head"><p>Index</p></th>
-<th class="head"><p>Type</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Sync Mode</p></td>
-<td><p>0: no Syncronisation 1: Secondary side is Sync Master 2: Primary side is Sync Master</p></td>
-<td><p>2</p></td>
-<td><p>#x10f4</p></td>
-<td><p>BIT2</p></td>
-</tr>
-<tr class="row-odd"><td><p>None</p></td>
-<td></td>
-<td><p>6</p></td>
-<td></td>
-<td><p>ARRAY [0..5] OF BIT</p></td>
-</tr>
-<tr class="row-even"><td><p>None</p></td>
-<td></td>
-<td><p>3</p></td>
-<td></td>
-<td><p>ARRAY [0..2] OF BIT</p></td>
-</tr>
-<tr class="row-odd"><td><p>TxPDO toggle</p></td>
-<td><p>Bit toggles when new data from other side received</p></td>
-<td><p>1</p></td>
-<td><p>#x1800</p></td>
-<td><p>BIT</p></td>
-</tr>
-<tr class="row-even"><td><p>TxPDO state</p></td>
-<td><p>0: Other side is in OP state &gt;0: Error</p></td>
-<td><p>1</p></td>
-<td><p>#x1800</p></td>
-<td><p>BIT</p></td>
-</tr>
-<tr class="row-odd"><td><p>Control value update toggle</p></td>
-<td><p>Bit toggles when new DC control data available</p></td>
-<td><p>1</p></td>
-<td><p>#x10f4</p></td>
-<td><p>BIT</p></td>
-</tr>
-<tr class="row-even"><td><p>Timestamp update toggle</p></td>
-<td><p>Bit toggles when new timestamp data available</p></td>
-<td><p>1</p></td>
-<td><p>#x10f4</p></td>
-<td><p>BIT</p></td>
-</tr>
-<tr class="row-odd"><td><p>External device not connected</p></td>
-<td><p>0: External device connected 1: External device not connected</p></td>
-<td><p>1</p></td>
-<td><p>#x10f4</p></td>
-<td><p>BIT</p></td>
-</tr>
-</tbody>
-</table>
-<p>PDO SYNC Inputs (Index #x1a02, Flags #x0010, SyncMan )</p>
-<table class="docutils align-center">
-<thead>
-<tr class="row-odd"><th class="head"><p>Name</p></th>
-<th class="head"><p>Comment</p></th>
-<th class="head"><p>BitLen</p></th>
-<th class="head"><p>Index</p></th>
-<th class="head"><p>Type</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Sync Mode</p></td>
-<td><p>0: no Syncronisation 1: Secondary side is Sync Master 2: Primary side is Sync Master</p></td>
-<td><p>2</p></td>
-<td><p>#x10f4</p></td>
-<td><p>BIT2</p></td>
-</tr>
-<tr class="row-odd"><td><p>None</p></td>
-<td></td>
-<td><p>6</p></td>
-<td></td>
-<td><p>ARRAY [0..5] OF BIT</p></td>
-</tr>
-<tr class="row-even"><td><p>None</p></td>
-<td></td>
-<td><p>3</p></td>
-<td></td>
-<td><p>ARRAY [0..2] OF BIT</p></td>
-</tr>
-<tr class="row-odd"><td><p>TxPDO toggle</p></td>
-<td><p>Bit toggles when new data from other side received</p></td>
-<td><p>1</p></td>
-<td><p>#x1800</p></td>
-<td><p>BIT</p></td>
-</tr>
-<tr class="row-even"><td><p>TxPDO state</p></td>
-<td><p>0: Other side is in OP state &gt;0: Error</p></td>
-<td><p>1</p></td>
-<td><p>#x1800</p></td>
-<td><p>BIT</p></td>
-</tr>
-<tr class="row-odd"><td><p>Control value update toggle</p></td>
-<td><p>Bit toggles when new DC control data available</p></td>
-<td><p>1</p></td>
-<td><p>#x10f4</p></td>
-<td><p>BIT</p></td>
-</tr>
-<tr class="row-even"><td><p>Timestamp update toggle</p></td>
-<td><p>Bit toggles when new timestamp data available</p></td>
-<td><p>1</p></td>
-<td><p>#x10f4</p></td>
-<td><p>BIT</p></td>
-</tr>
-<tr class="row-odd"><td><p>External device not connected</p></td>
-<td><p>0: External device connected 1: External device not connected</p></td>
-<td><p>1</p></td>
-<td><p>#x10f4</p></td>
-<td><p>BIT</p></td>
-</tr>
-<tr class="row-even"><td><p>Internal time stamp</p></td>
-<td></td>
-<td><p>64</p></td>
-<td><p>#x10f4</p></td>
-<td><p>ULINT</p></td>
-</tr>
-<tr class="row-odd"><td><p>External time stamp</p></td>
-<td></td>
-<td><p>64</p></td>
-<td><p>#x10f4</p></td>
-<td><p>ULINT</p></td>
-</tr>
-<tr class="row-even"><td><p>Control Value for DC Master Clock</p></td>
-<td></td>
-<td><p>32</p></td>
-<td><p>#x10f4</p></td>
-<td><p>UDINT</p></td>
-</tr>
-</tbody>
-</table>
-<p>PDO SYNC Inputs (Index #x1a03, Flags #x0010, SyncMan )</p>
-<table class="docutils align-center">
-<thead>
-<tr class="row-odd"><th class="head"><p>Name</p></th>
-<th class="head"><p>Comment</p></th>
-<th class="head"><p>BitLen</p></th>
-<th class="head"><p>Index</p></th>
-<th class="head"><p>Type</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Sync Mode</p></td>
-<td><p>0: no Syncronisation 1: Secondary side is Sync Master 2: Primary side is Sync Master</p></td>
-<td><p>2</p></td>
-<td><p>#x10f4</p></td>
-<td><p>BIT2</p></td>
-</tr>
-<tr class="row-odd"><td><p>None</p></td>
-<td></td>
-<td><p>6</p></td>
-<td></td>
-<td><p>ARRAY [0..5] OF BIT</p></td>
-</tr>
-<tr class="row-even"><td><p>None</p></td>
-<td></td>
-<td><p>3</p></td>
-<td></td>
-<td><p>ARRAY [0..2] OF BIT</p></td>
-</tr>
-<tr class="row-odd"><td><p>TxPDO toggle</p></td>
-<td><p>Bit toggles when new data from other side received</p></td>
-<td><p>1</p></td>
-<td><p>#x1800</p></td>
-<td><p>BIT</p></td>
-</tr>
-<tr class="row-even"><td><p>TxPDO state</p></td>
-<td><p>0: Other side is in OP state &gt;0: Error</p></td>
-<td><p>1</p></td>
-<td><p>#x1800</p></td>
-<td><p>BIT</p></td>
-</tr>
-<tr class="row-odd"><td><p>Control value update toggle</p></td>
-<td><p>Bit toggles when new DC control data available</p></td>
-<td><p>1</p></td>
-<td><p>#x10f4</p></td>
-<td><p>BIT</p></td>
-</tr>
-<tr class="row-even"><td><p>Timestamp update toggle</p></td>
-<td><p>Bit toggles when new timestamp data available</p></td>
-<td><p>1</p></td>
-<td><p>#x10f4</p></td>
-<td><p>BIT</p></td>
-</tr>
-<tr class="row-odd"><td><p>External device not connected</p></td>
-<td><p>0: External device connected 1: External device not connected</p></td>
-<td><p>1</p></td>
-<td><p>#x10f4</p></td>
-<td><p>BIT</p></td>
-</tr>
-<tr class="row-even"><td><p>Internal time stamp</p></td>
-<td></td>
-<td><p>32</p></td>
-<td><p>#x10f4</p></td>
-<td><p>UDINT</p></td>
-</tr>
-<tr class="row-odd"><td><p>External time stamp</p></td>
-<td></td>
-<td><p>32</p></td>
-<td><p>#x10f4</p></td>
-<td><p>UDINT</p></td>
-</tr>
-<tr class="row-even"><td><p>Control Value for DC Master Clock</p></td>
-<td></td>
-<td><p>32</p></td>
-<td><p>#x10f4</p></td>
-<td><p>UDINT</p></td>
-</tr>
-</tbody>
-</table>
-<p>PDO IO Inputs (Index #x1a00, Flags #x0021, SyncMan 3)</p>
-<table class="docutils align-center">
-<thead>
-<tr class="row-odd"><th class="head"><p>Name</p></th>
-<th class="head"><p>Comment</p></th>
-<th class="head"><p>BitLen</p></th>
-<th class="head"><p>Index</p></th>
-<th class="head"><p>Type</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>HUTCH_PLC_NAME</p></td>
-<td></td>
-<td><p>72</p></td>
-<td><p>#x6000</p></td>
-<td><p>STRING(8)</p></td>
-</tr>
-<tr class="row-odd"><td><p>TMO_ROUGH1_VRC_01_OPEN_LS</p></td>
-<td></td>
-<td><p>8</p></td>
-<td><p>#x6000</p></td>
-<td><p>BOOL</p></td>
-</tr>
-<tr class="row-even"><td><p>TMO_ROUGH2_VRC_01_OPEN_LS</p></td>
-<td></td>
-<td><p>8</p></td>
-<td><p>#x6000</p></td>
-<td><p>BOOL</p></td>
-</tr>
-<tr class="row-odd"><td><p>None</p></td>
-<td></td>
-<td><p>8</p></td>
-<td></td>
-<td><p>ARRAY [0..0] OF BYTE</p></td>
-</tr>
-</tbody>
-</table>
-<p>PDO IO Outputs (Index #x1600, Flags #x0021, SyncMan 2)</p>
-<table class="docutils align-center">
-<thead>
-<tr class="row-odd"><th class="head"><p>Name</p></th>
-<th class="head"><p>Comment</p></th>
-<th class="head"><p>BitLen</p></th>
-<th class="head"><p>Index</p></th>
-<th class="head"><p>Type</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>ENDSTATION_PLC_NAME</p></td>
-<td></td>
-<td><p>72</p></td>
-<td><p>#x7000</p></td>
-<td><p>STRING(8)</p></td>
-</tr>
-<tr class="row-odd"><td><p>IP1_ROUGH_VRC_01_OPEN_LS</p></td>
-<td></td>
-<td><p>8</p></td>
-<td><p>#x7000</p></td>
-<td><p>BOOL</p></td>
-</tr>
-<tr class="row-even"><td><p>IP1_ROUGH_VRC_02_OPEN_LS</p></td>
-<td></td>
-<td><p>8</p></td>
-<td><p>#x7000</p></td>
-<td><p>BOOL</p></td>
-</tr>
-<tr class="row-odd"><td><p>IP1_ROUGH_VRC_03_OPEN_LS</p></td>
-<td></td>
-<td><p>8</p></td>
-<td><p>#x7000</p></td>
-<td><p>BOOL</p></td>
-</tr>
-<tr class="row-even"><td><p>IP1_TURBOS_ALL_AtSpd</p></td>
-<td></td>
-<td><p>8</p></td>
-<td><p>#x7000</p></td>
-<td><p>BOOL</p></td>
-</tr>
-<tr class="row-odd"><td><p>IP1_MAIN_xAT_VAC</p></td>
-<td></td>
-<td><p>8</p></td>
-<td><p>#x7000</p></td>
-<td><p>BOOL</p></td>
-</tr>
-<tr class="row-even"><td><p>IP1_MAIN_xPRESS_OK</p></td>
-<td></td>
-<td><p>8</p></td>
-<td><p>#x7000</p></td>
-<td><p>BOOL</p></td>
-</tr>
-<tr class="row-odd"><td><p>None</p></td>
-<td></td>
-<td><p>8</p></td>
-<td></td>
-<td><p>ARRAY [0..0] OF BYTE</p></td>
-</tr>
-<tr class="row-even"><td><p>IP1_MAIN_rPRESS</p></td>
-<td></td>
-<td><p>32</p></td>
-<td><p>#x7000</p></td>
-<td><p>REAL</p></td>
-</tr>
-<tr class="row-odd"><td><p>IP1_HV_SAFETY_ENABLE</p></td>
-<td></td>
-<td><p>8</p></td>
-<td><p>#x7000</p></td>
-<td><p>BOOL</p></td>
-</tr>
-<tr class="row-even"><td><p>None</p></td>
-<td></td>
-<td><p>8</p></td>
-<td></td>
-<td><p>ARRAY [0..0] OF BYTE</p></td>
-</tr>
-</tbody>
-</table>
-</details></section>
 <section id="lamp-plc-e05-el9410">
-<h2>LAMP_PLC_E05_EL9410<a class="headerlink" href="#lamp-plc-e05-el9410" title="Permalink to this heading"></a></h2>
+<h2>LAMP_PLC_E05_EL9410<a class="headerlink" href="#lamp-plc-e05-el9410" title="Link to this heading"></a></h2>
 <details>
-     <summary>EtherCAT (2 PDOs)</summary><table class="docutils align-center" id="id5">
-<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id5" title="Permalink to this table"></a></caption>
+     <summary>EtherCAT (2 PDOs)</summary><table class="docutils align-center" id="id4">
+<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id4" title="Link to this table"></a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Name</p></th>
 <th class="head"><p>Data</p></th>
@@ -719,10 +347,10 @@
 </table>
 </details></section>
 <section id="lamp-plc-e06-el1004">
-<h2>LAMP_PLC_E06_EL1004<a class="headerlink" href="#lamp-plc-e06-el1004" title="Permalink to this heading"></a></h2>
+<h2>LAMP_PLC_E06_EL1004<a class="headerlink" href="#lamp-plc-e06-el1004" title="Link to this heading"></a></h2>
 <details>
-     <summary>EtherCAT (4 PDOs)</summary><table class="docutils align-center" id="id6">
-<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id6" title="Permalink to this table"></a></caption>
+     <summary>EtherCAT (4 PDOs)</summary><table class="docutils align-center" id="id5">
+<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id5" title="Link to this table"></a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Name</p></th>
 <th class="head"><p>Data</p></th>
@@ -821,10 +449,10 @@
 </table>
 </details></section>
 <section id="lamp-plc-e07-el2794">
-<h2>LAMP_PLC_E07_EL2794<a class="headerlink" href="#lamp-plc-e07-el2794" title="Permalink to this heading"></a></h2>
+<h2>LAMP_PLC_E07_EL2794<a class="headerlink" href="#lamp-plc-e07-el2794" title="Link to this heading"></a></h2>
 <details>
-     <summary>EtherCAT (4 PDOs)</summary><table class="docutils align-center" id="id7">
-<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id7" title="Permalink to this table"></a></caption>
+     <summary>EtherCAT (4 PDOs)</summary><table class="docutils align-center" id="id6">
+<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id6" title="Link to this table"></a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Name</p></th>
 <th class="head"><p>Data</p></th>
@@ -923,10 +551,10 @@
 </table>
 </details></section>
 <section id="lamp-plc-e08-el1004">
-<h2>LAMP_PLC_E08_EL1004<a class="headerlink" href="#lamp-plc-e08-el1004" title="Permalink to this heading"></a></h2>
+<h2>LAMP_PLC_E08_EL1004<a class="headerlink" href="#lamp-plc-e08-el1004" title="Link to this heading"></a></h2>
 <details>
-     <summary>EtherCAT (4 PDOs)</summary><table class="docutils align-center" id="id8">
-<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id8" title="Permalink to this table"></a></caption>
+     <summary>EtherCAT (4 PDOs)</summary><table class="docutils align-center" id="id7">
+<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id7" title="Link to this table"></a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Name</p></th>
 <th class="head"><p>Data</p></th>
@@ -1025,10 +653,10 @@
 </table>
 </details></section>
 <section id="lamp-plc-e11-el6002">
-<h2>LAMP_PLC_E11_EL6002<a class="headerlink" href="#lamp-plc-e11-el6002" title="Permalink to this heading"></a></h2>
+<h2>LAMP_PLC_E11_EL6002<a class="headerlink" href="#lamp-plc-e11-el6002" title="Link to this heading"></a></h2>
 <details>
-     <summary>EtherCAT (8 PDOs)</summary><table class="docutils align-center" id="id9">
-<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id9" title="Permalink to this table"></a></caption>
+     <summary>EtherCAT (8 PDOs)</summary><table class="docutils align-center" id="id8">
+<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id8" title="Link to this table"></a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Name</p></th>
 <th class="head"><p>Data</p></th>
@@ -1126,7 +754,7 @@
 <td><p>#x6000</p></td>
 <td><p>BIT</p></td>
 </tr>
-<tr class="row-odd"><td><p><a href="#id53"><span class="problematic" id="id54">Status__</span></a></p></td>
+<tr class="row-odd"><td><p><a href="#id61"><span class="problematic" id="id62">Status__</span></a></p></td>
 <td></td>
 <td></td>
 <td></td>
@@ -1325,7 +953,7 @@
 <td><p>#x6010</p></td>
 <td><p>BIT</p></td>
 </tr>
-<tr class="row-odd"><td><p><a href="#id53"><span class="problematic" id="id55">Status__</span></a></p></td>
+<tr class="row-odd"><td><p><a href="#id61"><span class="problematic" id="id63">Status__</span></a></p></td>
 <td></td>
 <td></td>
 <td></td>
@@ -1808,7 +1436,7 @@
 <td><p>#x7000</p></td>
 <td><p>BIT</p></td>
 </tr>
-<tr class="row-even"><td><p><a href="#id53"><span class="problematic" id="id56">Ctrl__</span></a></p></td>
+<tr class="row-even"><td><p><a href="#id61"><span class="problematic" id="id64">Ctrl__</span></a></p></td>
 <td></td>
 <td></td>
 <td></td>
@@ -1989,7 +1617,7 @@
 <td><p>#x7010</p></td>
 <td><p>BIT</p></td>
 </tr>
-<tr class="row-even"><td><p><a href="#id53"><span class="problematic" id="id57">Ctrl__</span></a></p></td>
+<tr class="row-even"><td><p><a href="#id61"><span class="problematic" id="id65">Ctrl__</span></a></p></td>
 <td></td>
 <td></td>
 <td></td>
@@ -2439,10 +2067,10 @@
 </table>
 </details></section>
 <section id="lamp-plc-e12-el6002">
-<h2>LAMP_PLC_E12_EL6002<a class="headerlink" href="#lamp-plc-e12-el6002" title="Permalink to this heading"></a></h2>
+<h2>LAMP_PLC_E12_EL6002<a class="headerlink" href="#lamp-plc-e12-el6002" title="Link to this heading"></a></h2>
 <details>
-     <summary>EtherCAT (8 PDOs)</summary><table class="docutils align-center" id="id10">
-<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id10" title="Permalink to this table"></a></caption>
+     <summary>EtherCAT (8 PDOs)</summary><table class="docutils align-center" id="id9">
+<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id9" title="Link to this table"></a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Name</p></th>
 <th class="head"><p>Data</p></th>
@@ -2540,7 +2168,7 @@
 <td><p>#x6000</p></td>
 <td><p>BIT</p></td>
 </tr>
-<tr class="row-odd"><td><p><a href="#id53"><span class="problematic" id="id58">Status__</span></a></p></td>
+<tr class="row-odd"><td><p><a href="#id61"><span class="problematic" id="id66">Status__</span></a></p></td>
 <td></td>
 <td></td>
 <td></td>
@@ -2739,7 +2367,7 @@
 <td><p>#x6010</p></td>
 <td><p>BIT</p></td>
 </tr>
-<tr class="row-odd"><td><p><a href="#id53"><span class="problematic" id="id59">Status__</span></a></p></td>
+<tr class="row-odd"><td><p><a href="#id61"><span class="problematic" id="id67">Status__</span></a></p></td>
 <td></td>
 <td></td>
 <td></td>
@@ -3222,7 +2850,7 @@
 <td><p>#x7000</p></td>
 <td><p>BIT</p></td>
 </tr>
-<tr class="row-even"><td><p><a href="#id53"><span class="problematic" id="id60">Ctrl__</span></a></p></td>
+<tr class="row-even"><td><p><a href="#id61"><span class="problematic" id="id68">Ctrl__</span></a></p></td>
 <td></td>
 <td></td>
 <td></td>
@@ -3403,7 +3031,7 @@
 <td><p>#x7010</p></td>
 <td><p>BIT</p></td>
 </tr>
-<tr class="row-even"><td><p><a href="#id53"><span class="problematic" id="id61">Ctrl__</span></a></p></td>
+<tr class="row-even"><td><p><a href="#id61"><span class="problematic" id="id69">Ctrl__</span></a></p></td>
 <td></td>
 <td></td>
 <td></td>
@@ -3853,10 +3481,10 @@
 </table>
 </details></section>
 <section id="lamp-pnl1-ep00-ep9128-0021">
-<h2>LAMP_PNL1_EP00_EP9128-0021<a class="headerlink" href="#lamp-pnl1-ep00-ep9128-0021" title="Permalink to this heading"></a></h2>
+<h2>LAMP_PNL1_EP00_EP9128-0021<a class="headerlink" href="#lamp-pnl1-ep00-ep9128-0021" title="Link to this heading"></a></h2>
 <details>
-     <summary>EtherCAT</summary><table class="docutils align-center" id="id11">
-<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id11" title="Permalink to this table"></a></caption>
+     <summary>EtherCAT</summary><table class="docutils align-center" id="id10">
+<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id10" title="Link to this table"></a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Name</p></th>
 <th class="head"><p>Data</p></th>
@@ -3873,10 +3501,10 @@
 </table>
 </details></section>
 <section id="lamp-pnl1-ep01-ep2338-0002">
-<h2>LAMP_PNL1_EP01_EP2338-0002<a class="headerlink" href="#lamp-pnl1-ep01-ep2338-0002" title="Permalink to this heading"></a></h2>
+<h2>LAMP_PNL1_EP01_EP2338-0002<a class="headerlink" href="#lamp-pnl1-ep01-ep2338-0002" title="Link to this heading"></a></h2>
 <details>
-     <summary>EtherCAT (16 PDOs)</summary><table class="docutils align-center" id="id12">
-<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id12" title="Permalink to this table"></a></caption>
+     <summary>EtherCAT (16 PDOs)</summary><table class="docutils align-center" id="id11">
+<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id11" title="Link to this table"></a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Name</p></th>
 <th class="head"><p>Data</p></th>
@@ -4209,10 +3837,10 @@
 </table>
 </details></section>
 <section id="lamp-pnl1-ep02-ep2624-0002">
-<h2>LAMP_PNL1_EP02_EP2624-0002<a class="headerlink" href="#lamp-pnl1-ep02-ep2624-0002" title="Permalink to this heading"></a></h2>
+<h2>LAMP_PNL1_EP02_EP2624-0002<a class="headerlink" href="#lamp-pnl1-ep02-ep2624-0002" title="Link to this heading"></a></h2>
 <details>
-     <summary>EtherCAT (4 PDOs)</summary><table class="docutils align-center" id="id13">
-<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id13" title="Permalink to this table"></a></caption>
+     <summary>EtherCAT (4 PDOs)</summary><table class="docutils align-center" id="id12">
+<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id12" title="Link to this table"></a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Name</p></th>
 <th class="head"><p>Data</p></th>
@@ -4311,10 +3939,10 @@
 </table>
 </details></section>
 <section id="lamp-pnl1-ep03-ep6002-0002">
-<h2>LAMP_PNL1_EP03_EP6002-0002<a class="headerlink" href="#lamp-pnl1-ep03-ep6002-0002" title="Permalink to this heading"></a></h2>
+<h2>LAMP_PNL1_EP03_EP6002-0002<a class="headerlink" href="#lamp-pnl1-ep03-ep6002-0002" title="Link to this heading"></a></h2>
 <details>
-     <summary>EtherCAT (8 PDOs)</summary><table class="docutils align-center" id="id14">
-<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id14" title="Permalink to this table"></a></caption>
+     <summary>EtherCAT (8 PDOs)</summary><table class="docutils align-center" id="id13">
+<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id13" title="Link to this table"></a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Name</p></th>
 <th class="head"><p>Data</p></th>
@@ -5725,10 +5353,10 @@
 </table>
 </details></section>
 <section id="lamp-pnl1-ep04-ep2338-0002">
-<h2>LAMP_PNL1_EP04_EP2338-0002<a class="headerlink" href="#lamp-pnl1-ep04-ep2338-0002" title="Permalink to this heading"></a></h2>
+<h2>LAMP_PNL1_EP04_EP2338-0002<a class="headerlink" href="#lamp-pnl1-ep04-ep2338-0002" title="Link to this heading"></a></h2>
 <details>
-     <summary>EtherCAT (16 PDOs)</summary><table class="docutils align-center" id="id15">
-<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id15" title="Permalink to this table"></a></caption>
+     <summary>EtherCAT (16 PDOs)</summary><table class="docutils align-center" id="id14">
+<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id14" title="Link to this table"></a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Name</p></th>
 <th class="head"><p>Data</p></th>
@@ -6061,10 +5689,10 @@
 </table>
 </details></section>
 <section id="lamp-pnl1-ep05-ep2624-0002">
-<h2>LAMP_PNL1_EP05_EP2624-0002<a class="headerlink" href="#lamp-pnl1-ep05-ep2624-0002" title="Permalink to this heading"></a></h2>
+<h2>LAMP_PNL1_EP05_EP2624-0002<a class="headerlink" href="#lamp-pnl1-ep05-ep2624-0002" title="Link to this heading"></a></h2>
 <details>
-     <summary>EtherCAT (4 PDOs)</summary><table class="docutils align-center" id="id16">
-<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id16" title="Permalink to this table"></a></caption>
+     <summary>EtherCAT (4 PDOs)</summary><table class="docutils align-center" id="id15">
+<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id15" title="Link to this table"></a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Name</p></th>
 <th class="head"><p>Data</p></th>
@@ -6163,10 +5791,10 @@
 </table>
 </details></section>
 <section id="lamp-pnl1-ep06-ep6002-0002">
-<h2>LAMP_PNL1_EP06_EP6002-0002<a class="headerlink" href="#lamp-pnl1-ep06-ep6002-0002" title="Permalink to this heading"></a></h2>
+<h2>LAMP_PNL1_EP06_EP6002-0002<a class="headerlink" href="#lamp-pnl1-ep06-ep6002-0002" title="Link to this heading"></a></h2>
 <details>
-     <summary>EtherCAT (8 PDOs)</summary><table class="docutils align-center" id="id17">
-<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id17" title="Permalink to this table"></a></caption>
+     <summary>EtherCAT (8 PDOs)</summary><table class="docutils align-center" id="id16">
+<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id16" title="Link to this table"></a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Name</p></th>
 <th class="head"><p>Data</p></th>
@@ -7577,10 +7205,10 @@
 </table>
 </details></section>
 <section id="lamp-pnl1-ep07-ep2338-0002">
-<h2>LAMP_PNL1_EP07_EP2338-0002<a class="headerlink" href="#lamp-pnl1-ep07-ep2338-0002" title="Permalink to this heading"></a></h2>
+<h2>LAMP_PNL1_EP07_EP2338-0002<a class="headerlink" href="#lamp-pnl1-ep07-ep2338-0002" title="Link to this heading"></a></h2>
 <details>
-     <summary>EtherCAT (16 PDOs)</summary><table class="docutils align-center" id="id18">
-<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id18" title="Permalink to this table"></a></caption>
+     <summary>EtherCAT (16 PDOs)</summary><table class="docutils align-center" id="id17">
+<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id17" title="Link to this table"></a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Name</p></th>
 <th class="head"><p>Data</p></th>
@@ -7913,10 +7541,10 @@
 </table>
 </details></section>
 <section id="lamp-pnl1-ep08-ep2624-0002">
-<h2>LAMP_PNL1_EP08_EP2624-0002<a class="headerlink" href="#lamp-pnl1-ep08-ep2624-0002" title="Permalink to this heading"></a></h2>
+<h2>LAMP_PNL1_EP08_EP2624-0002<a class="headerlink" href="#lamp-pnl1-ep08-ep2624-0002" title="Link to this heading"></a></h2>
 <details>
-     <summary>EtherCAT (4 PDOs)</summary><table class="docutils align-center" id="id19">
-<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id19" title="Permalink to this table"></a></caption>
+     <summary>EtherCAT (4 PDOs)</summary><table class="docutils align-center" id="id18">
+<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id18" title="Link to this table"></a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Name</p></th>
 <th class="head"><p>Data</p></th>
@@ -8015,10 +7643,10 @@
 </table>
 </details></section>
 <section id="lamp-pnl1-ep09-ep6002-0002">
-<h2>LAMP_PNL1_EP09_EP6002-0002<a class="headerlink" href="#lamp-pnl1-ep09-ep6002-0002" title="Permalink to this heading"></a></h2>
+<h2>LAMP_PNL1_EP09_EP6002-0002<a class="headerlink" href="#lamp-pnl1-ep09-ep6002-0002" title="Link to this heading"></a></h2>
 <details>
-     <summary>EtherCAT (8 PDOs)</summary><table class="docutils align-center" id="id20">
-<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id20" title="Permalink to this table"></a></caption>
+     <summary>EtherCAT (8 PDOs)</summary><table class="docutils align-center" id="id19">
+<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id19" title="Link to this table"></a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Name</p></th>
 <th class="head"><p>Data</p></th>
@@ -9429,10 +9057,10 @@
 </table>
 </details></section>
 <section id="lamp-pnl1-ep10-ep2338-0002">
-<h2>LAMP_PNL1_EP10_EP2338-0002<a class="headerlink" href="#lamp-pnl1-ep10-ep2338-0002" title="Permalink to this heading"></a></h2>
+<h2>LAMP_PNL1_EP10_EP2338-0002<a class="headerlink" href="#lamp-pnl1-ep10-ep2338-0002" title="Link to this heading"></a></h2>
 <details>
-     <summary>EtherCAT (16 PDOs)</summary><table class="docutils align-center" id="id21">
-<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id21" title="Permalink to this table"></a></caption>
+     <summary>EtherCAT (16 PDOs)</summary><table class="docutils align-center" id="id20">
+<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id20" title="Link to this table"></a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Name</p></th>
 <th class="head"><p>Data</p></th>
@@ -9765,10 +9393,10 @@
 </table>
 </details></section>
 <section id="lamp-pnl1-ep11-ep2624-0002">
-<h2>LAMP_PNL1_EP11_EP2624-0002<a class="headerlink" href="#lamp-pnl1-ep11-ep2624-0002" title="Permalink to this heading"></a></h2>
+<h2>LAMP_PNL1_EP11_EP2624-0002<a class="headerlink" href="#lamp-pnl1-ep11-ep2624-0002" title="Link to this heading"></a></h2>
 <details>
-     <summary>EtherCAT (4 PDOs)</summary><table class="docutils align-center" id="id22">
-<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id22" title="Permalink to this table"></a></caption>
+     <summary>EtherCAT (4 PDOs)</summary><table class="docutils align-center" id="id21">
+<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id21" title="Link to this table"></a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Name</p></th>
 <th class="head"><p>Data</p></th>
@@ -9867,10 +9495,10 @@
 </table>
 </details></section>
 <section id="lamp-pnl1-ep12-ep6002-0002">
-<h2>LAMP_PNL1_EP12_EP6002-0002<a class="headerlink" href="#lamp-pnl1-ep12-ep6002-0002" title="Permalink to this heading"></a></h2>
+<h2>LAMP_PNL1_EP12_EP6002-0002<a class="headerlink" href="#lamp-pnl1-ep12-ep6002-0002" title="Link to this heading"></a></h2>
 <details>
-     <summary>EtherCAT (8 PDOs)</summary><table class="docutils align-center" id="id23">
-<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id23" title="Permalink to this table"></a></caption>
+     <summary>EtherCAT (8 PDOs)</summary><table class="docutils align-center" id="id22">
+<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id22" title="Link to this table"></a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Name</p></th>
 <th class="head"><p>Data</p></th>
@@ -11281,10 +10909,10 @@
 </table>
 </details></section>
 <section id="lamp-pnl2-ep13-ep2338-0002">
-<h2>LAMP_PNL2_EP13_EP2338-0002<a class="headerlink" href="#lamp-pnl2-ep13-ep2338-0002" title="Permalink to this heading"></a></h2>
+<h2>LAMP_PNL2_EP13_EP2338-0002<a class="headerlink" href="#lamp-pnl2-ep13-ep2338-0002" title="Link to this heading"></a></h2>
 <details>
-     <summary>EtherCAT (16 PDOs)</summary><table class="docutils align-center" id="id24">
-<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id24" title="Permalink to this table"></a></caption>
+     <summary>EtherCAT (16 PDOs)</summary><table class="docutils align-center" id="id23">
+<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id23" title="Link to this table"></a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Name</p></th>
 <th class="head"><p>Data</p></th>
@@ -11617,10 +11245,10 @@
 </table>
 </details></section>
 <section id="lamp-pnl2-ep14-ep2624-0002">
-<h2>LAMP_PNL2_EP14_EP2624-0002<a class="headerlink" href="#lamp-pnl2-ep14-ep2624-0002" title="Permalink to this heading"></a></h2>
+<h2>LAMP_PNL2_EP14_EP2624-0002<a class="headerlink" href="#lamp-pnl2-ep14-ep2624-0002" title="Link to this heading"></a></h2>
 <details>
-     <summary>EtherCAT (4 PDOs)</summary><table class="docutils align-center" id="id25">
-<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id25" title="Permalink to this table"></a></caption>
+     <summary>EtherCAT (4 PDOs)</summary><table class="docutils align-center" id="id24">
+<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id24" title="Link to this table"></a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Name</p></th>
 <th class="head"><p>Data</p></th>
@@ -11719,10 +11347,10 @@
 </table>
 </details></section>
 <section id="lamp-pnl2-ep15-ep6002-0002">
-<h2>LAMP_PNL2_EP15_EP6002-0002<a class="headerlink" href="#lamp-pnl2-ep15-ep6002-0002" title="Permalink to this heading"></a></h2>
+<h2>LAMP_PNL2_EP15_EP6002-0002<a class="headerlink" href="#lamp-pnl2-ep15-ep6002-0002" title="Link to this heading"></a></h2>
 <details>
-     <summary>EtherCAT (8 PDOs)</summary><table class="docutils align-center" id="id26">
-<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id26" title="Permalink to this table"></a></caption>
+     <summary>EtherCAT (8 PDOs)</summary><table class="docutils align-center" id="id25">
+<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id25" title="Link to this table"></a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Name</p></th>
 <th class="head"><p>Data</p></th>
@@ -13133,10 +12761,10 @@
 </table>
 </details></section>
 <section id="lamp-pnl2-ep16-ep2338-0002">
-<h2>LAMP_PNL2_EP16_EP2338-0002<a class="headerlink" href="#lamp-pnl2-ep16-ep2338-0002" title="Permalink to this heading"></a></h2>
+<h2>LAMP_PNL2_EP16_EP2338-0002<a class="headerlink" href="#lamp-pnl2-ep16-ep2338-0002" title="Link to this heading"></a></h2>
 <details>
-     <summary>EtherCAT (16 PDOs)</summary><table class="docutils align-center" id="id27">
-<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id27" title="Permalink to this table"></a></caption>
+     <summary>EtherCAT (16 PDOs)</summary><table class="docutils align-center" id="id26">
+<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id26" title="Link to this table"></a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Name</p></th>
 <th class="head"><p>Data</p></th>
@@ -13469,10 +13097,10 @@
 </table>
 </details></section>
 <section id="lamp-pnl2-ep17-ep2624-0002">
-<h2>LAMP_PNL2_EP17_EP2624-0002<a class="headerlink" href="#lamp-pnl2-ep17-ep2624-0002" title="Permalink to this heading"></a></h2>
+<h2>LAMP_PNL2_EP17_EP2624-0002<a class="headerlink" href="#lamp-pnl2-ep17-ep2624-0002" title="Link to this heading"></a></h2>
 <details>
-     <summary>EtherCAT (4 PDOs)</summary><table class="docutils align-center" id="id28">
-<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id28" title="Permalink to this table"></a></caption>
+     <summary>EtherCAT (4 PDOs)</summary><table class="docutils align-center" id="id27">
+<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id27" title="Link to this table"></a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Name</p></th>
 <th class="head"><p>Data</p></th>
@@ -13571,10 +13199,10 @@
 </table>
 </details></section>
 <section id="lamp-pnl2-ep18-ep6002-0002">
-<h2>LAMP_PNL2_EP18_EP6002-0002<a class="headerlink" href="#lamp-pnl2-ep18-ep6002-0002" title="Permalink to this heading"></a></h2>
+<h2>LAMP_PNL2_EP18_EP6002-0002<a class="headerlink" href="#lamp-pnl2-ep18-ep6002-0002" title="Link to this heading"></a></h2>
 <details>
-     <summary>EtherCAT (8 PDOs)</summary><table class="docutils align-center" id="id29">
-<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id29" title="Permalink to this table"></a></caption>
+     <summary>EtherCAT (8 PDOs)</summary><table class="docutils align-center" id="id28">
+<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id28" title="Link to this table"></a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Name</p></th>
 <th class="head"><p>Data</p></th>
@@ -14985,10 +14613,10 @@
 </table>
 </details></section>
 <section id="lamp-pnl2-ep19-ep3174-0002">
-<h2>LAMP_PNL2_EP19_EP3174-0002<a class="headerlink" href="#lamp-pnl2-ep19-ep3174-0002" title="Permalink to this heading"></a></h2>
+<h2>LAMP_PNL2_EP19_EP3174-0002<a class="headerlink" href="#lamp-pnl2-ep19-ep3174-0002" title="Link to this heading"></a></h2>
 <details>
-     <summary>EtherCAT (8 PDOs)</summary><table class="docutils align-center" id="id30">
-<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id30" title="Permalink to this table"></a></caption>
+     <summary>EtherCAT (8 PDOs)</summary><table class="docutils align-center" id="id29">
+<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id29" title="Link to this table"></a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Name</p></th>
 <th class="head"><p>Data</p></th>
@@ -15077,13 +14705,13 @@
 <td><p>#x6000</p></td>
 <td><p>BIT</p></td>
 </tr>
-<tr class="row-odd"><td><p><a href="#id53"><span class="problematic" id="id62">Status__</span></a></p></td>
+<tr class="row-odd"><td><p><a href="#id61"><span class="problematic" id="id70">Status__</span></a></p></td>
 <td></td>
 <td></td>
 <td></td>
 <td><p>ARRAY [0..0] OF BIT</p></td>
 </tr>
-<tr class="row-even"><td><p><a href="#id53"><span class="problematic" id="id63">Status__</span></a></p></td>
+<tr class="row-even"><td><p><a href="#id61"><span class="problematic" id="id71">Status__</span></a></p></td>
 <td></td>
 <td></td>
 <td></td>
@@ -15175,13 +14803,13 @@
 <td><p>#x6010</p></td>
 <td><p>BIT</p></td>
 </tr>
-<tr class="row-odd"><td><p><a href="#id53"><span class="problematic" id="id64">Status__</span></a></p></td>
+<tr class="row-odd"><td><p><a href="#id61"><span class="problematic" id="id72">Status__</span></a></p></td>
 <td></td>
 <td></td>
 <td></td>
 <td><p>ARRAY [0..0] OF BIT</p></td>
 </tr>
-<tr class="row-even"><td><p><a href="#id53"><span class="problematic" id="id65">Status__</span></a></p></td>
+<tr class="row-even"><td><p><a href="#id61"><span class="problematic" id="id73">Status__</span></a></p></td>
 <td></td>
 <td></td>
 <td></td>
@@ -15273,13 +14901,13 @@
 <td><p>#x6020</p></td>
 <td><p>BIT</p></td>
 </tr>
-<tr class="row-odd"><td><p><a href="#id53"><span class="problematic" id="id66">Status__</span></a></p></td>
+<tr class="row-odd"><td><p><a href="#id61"><span class="problematic" id="id74">Status__</span></a></p></td>
 <td></td>
 <td></td>
 <td></td>
 <td><p>ARRAY [0..0] OF BIT</p></td>
 </tr>
-<tr class="row-even"><td><p><a href="#id53"><span class="problematic" id="id67">Status__</span></a></p></td>
+<tr class="row-even"><td><p><a href="#id61"><span class="problematic" id="id75">Status__</span></a></p></td>
 <td></td>
 <td></td>
 <td></td>
@@ -15371,13 +14999,13 @@
 <td><p>#x6030</p></td>
 <td><p>BIT</p></td>
 </tr>
-<tr class="row-odd"><td><p><a href="#id53"><span class="problematic" id="id68">Status__</span></a></p></td>
+<tr class="row-odd"><td><p><a href="#id61"><span class="problematic" id="id76">Status__</span></a></p></td>
 <td></td>
 <td></td>
 <td></td>
 <td><p>ARRAY [0..0] OF BIT</p></td>
 </tr>
-<tr class="row-even"><td><p><a href="#id53"><span class="problematic" id="id69">Status__</span></a></p></td>
+<tr class="row-even"><td><p><a href="#id61"><span class="problematic" id="id77">Status__</span></a></p></td>
 <td></td>
 <td></td>
 <td></td>
@@ -15430,10 +15058,10 @@
 </table>
 </details></section>
 <section id="lamp-pnl2-ep20-ep3174-0002">
-<h2>LAMP_PNL2_EP20_EP3174-0002<a class="headerlink" href="#lamp-pnl2-ep20-ep3174-0002" title="Permalink to this heading"></a></h2>
+<h2>LAMP_PNL2_EP20_EP3174-0002<a class="headerlink" href="#lamp-pnl2-ep20-ep3174-0002" title="Link to this heading"></a></h2>
 <details>
-     <summary>EtherCAT (8 PDOs)</summary><table class="docutils align-center" id="id31">
-<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id31" title="Permalink to this table"></a></caption>
+     <summary>EtherCAT (8 PDOs)</summary><table class="docutils align-center" id="id30">
+<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id30" title="Link to this table"></a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Name</p></th>
 <th class="head"><p>Data</p></th>
@@ -15522,13 +15150,13 @@
 <td><p>#x6000</p></td>
 <td><p>BIT</p></td>
 </tr>
-<tr class="row-odd"><td><p><a href="#id53"><span class="problematic" id="id70">Status__</span></a></p></td>
+<tr class="row-odd"><td><p><a href="#id61"><span class="problematic" id="id78">Status__</span></a></p></td>
 <td></td>
 <td></td>
 <td></td>
 <td><p>ARRAY [0..0] OF BIT</p></td>
 </tr>
-<tr class="row-even"><td><p><a href="#id53"><span class="problematic" id="id71">Status__</span></a></p></td>
+<tr class="row-even"><td><p><a href="#id61"><span class="problematic" id="id79">Status__</span></a></p></td>
 <td></td>
 <td></td>
 <td></td>
@@ -15620,13 +15248,13 @@
 <td><p>#x6010</p></td>
 <td><p>BIT</p></td>
 </tr>
-<tr class="row-odd"><td><p><a href="#id53"><span class="problematic" id="id72">Status__</span></a></p></td>
+<tr class="row-odd"><td><p><a href="#id61"><span class="problematic" id="id80">Status__</span></a></p></td>
 <td></td>
 <td></td>
 <td></td>
 <td><p>ARRAY [0..0] OF BIT</p></td>
 </tr>
-<tr class="row-even"><td><p><a href="#id53"><span class="problematic" id="id73">Status__</span></a></p></td>
+<tr class="row-even"><td><p><a href="#id61"><span class="problematic" id="id81">Status__</span></a></p></td>
 <td></td>
 <td></td>
 <td></td>
@@ -15718,13 +15346,13 @@
 <td><p>#x6020</p></td>
 <td><p>BIT</p></td>
 </tr>
-<tr class="row-odd"><td><p><a href="#id53"><span class="problematic" id="id74">Status__</span></a></p></td>
+<tr class="row-odd"><td><p><a href="#id61"><span class="problematic" id="id82">Status__</span></a></p></td>
 <td></td>
 <td></td>
 <td></td>
 <td><p>ARRAY [0..0] OF BIT</p></td>
 </tr>
-<tr class="row-even"><td><p><a href="#id53"><span class="problematic" id="id75">Status__</span></a></p></td>
+<tr class="row-even"><td><p><a href="#id61"><span class="problematic" id="id83">Status__</span></a></p></td>
 <td></td>
 <td></td>
 <td></td>
@@ -15816,13 +15444,13 @@
 <td><p>#x6030</p></td>
 <td><p>BIT</p></td>
 </tr>
-<tr class="row-odd"><td><p><a href="#id53"><span class="problematic" id="id76">Status__</span></a></p></td>
+<tr class="row-odd"><td><p><a href="#id61"><span class="problematic" id="id84">Status__</span></a></p></td>
 <td></td>
 <td></td>
 <td></td>
 <td><p>ARRAY [0..0] OF BIT</p></td>
 </tr>
-<tr class="row-even"><td><p><a href="#id53"><span class="problematic" id="id77">Status__</span></a></p></td>
+<tr class="row-even"><td><p><a href="#id61"><span class="problematic" id="id85">Status__</span></a></p></td>
 <td></td>
 <td></td>
 <td></td>
@@ -15875,10 +15503,10 @@
 </table>
 </details></section>
 <section id="lamp-pnl2-ep21-ep3174-0002">
-<h2>LAMP_PNL2_EP21_EP3174-0002<a class="headerlink" href="#lamp-pnl2-ep21-ep3174-0002" title="Permalink to this heading"></a></h2>
+<h2>LAMP_PNL2_EP21_EP3174-0002<a class="headerlink" href="#lamp-pnl2-ep21-ep3174-0002" title="Link to this heading"></a></h2>
 <details>
-     <summary>EtherCAT (8 PDOs)</summary><table class="docutils align-center" id="id32">
-<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id32" title="Permalink to this table"></a></caption>
+     <summary>EtherCAT (8 PDOs)</summary><table class="docutils align-center" id="id31">
+<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id31" title="Link to this table"></a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Name</p></th>
 <th class="head"><p>Data</p></th>
@@ -15967,13 +15595,13 @@
 <td><p>#x6000</p></td>
 <td><p>BIT</p></td>
 </tr>
-<tr class="row-odd"><td><p><a href="#id53"><span class="problematic" id="id78">Status__</span></a></p></td>
+<tr class="row-odd"><td><p><a href="#id61"><span class="problematic" id="id86">Status__</span></a></p></td>
 <td></td>
 <td></td>
 <td></td>
 <td><p>ARRAY [0..0] OF BIT</p></td>
 </tr>
-<tr class="row-even"><td><p><a href="#id53"><span class="problematic" id="id79">Status__</span></a></p></td>
+<tr class="row-even"><td><p><a href="#id61"><span class="problematic" id="id87">Status__</span></a></p></td>
 <td></td>
 <td></td>
 <td></td>
@@ -16065,13 +15693,13 @@
 <td><p>#x6010</p></td>
 <td><p>BIT</p></td>
 </tr>
-<tr class="row-odd"><td><p><a href="#id53"><span class="problematic" id="id80">Status__</span></a></p></td>
+<tr class="row-odd"><td><p><a href="#id61"><span class="problematic" id="id88">Status__</span></a></p></td>
 <td></td>
 <td></td>
 <td></td>
 <td><p>ARRAY [0..0] OF BIT</p></td>
 </tr>
-<tr class="row-even"><td><p><a href="#id53"><span class="problematic" id="id81">Status__</span></a></p></td>
+<tr class="row-even"><td><p><a href="#id61"><span class="problematic" id="id89">Status__</span></a></p></td>
 <td></td>
 <td></td>
 <td></td>
@@ -16163,13 +15791,13 @@
 <td><p>#x6020</p></td>
 <td><p>BIT</p></td>
 </tr>
-<tr class="row-odd"><td><p><a href="#id53"><span class="problematic" id="id82">Status__</span></a></p></td>
+<tr class="row-odd"><td><p><a href="#id61"><span class="problematic" id="id90">Status__</span></a></p></td>
 <td></td>
 <td></td>
 <td></td>
 <td><p>ARRAY [0..0] OF BIT</p></td>
 </tr>
-<tr class="row-even"><td><p><a href="#id53"><span class="problematic" id="id83">Status__</span></a></p></td>
+<tr class="row-even"><td><p><a href="#id61"><span class="problematic" id="id91">Status__</span></a></p></td>
 <td></td>
 <td></td>
 <td></td>
@@ -16261,13 +15889,13 @@
 <td><p>#x6030</p></td>
 <td><p>BIT</p></td>
 </tr>
-<tr class="row-odd"><td><p><a href="#id53"><span class="problematic" id="id84">Status__</span></a></p></td>
+<tr class="row-odd"><td><p><a href="#id61"><span class="problematic" id="id92">Status__</span></a></p></td>
 <td></td>
 <td></td>
 <td></td>
 <td><p>ARRAY [0..0] OF BIT</p></td>
 </tr>
-<tr class="row-even"><td><p><a href="#id53"><span class="problematic" id="id85">Status__</span></a></p></td>
+<tr class="row-even"><td><p><a href="#id61"><span class="problematic" id="id93">Status__</span></a></p></td>
 <td></td>
 <td></td>
 <td></td>
@@ -16320,10 +15948,10 @@
 </table>
 </details></section>
 <section id="lamp-pnl2-ep22-ep2624-0002">
-<h2>LAMP_PNL2_EP22_EP2624-0002<a class="headerlink" href="#lamp-pnl2-ep22-ep2624-0002" title="Permalink to this heading"></a></h2>
+<h2>LAMP_PNL2_EP22_EP2624-0002<a class="headerlink" href="#lamp-pnl2-ep22-ep2624-0002" title="Link to this heading"></a></h2>
 <details>
-     <summary>EtherCAT (4 PDOs)</summary><table class="docutils align-center" id="id33">
-<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id33" title="Permalink to this table"></a></caption>
+     <summary>EtherCAT (4 PDOs)</summary><table class="docutils align-center" id="id32">
+<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id32" title="Link to this table"></a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Name</p></th>
 <th class="head"><p>Data</p></th>
@@ -16422,10 +16050,10 @@
 </table>
 </details></section>
 <section id="lamp-pnl2-ep23-ep3174-0002">
-<h2>LAMP_PNL2_EP23_EP3174-0002<a class="headerlink" href="#lamp-pnl2-ep23-ep3174-0002" title="Permalink to this heading"></a></h2>
+<h2>LAMP_PNL2_EP23_EP3174-0002<a class="headerlink" href="#lamp-pnl2-ep23-ep3174-0002" title="Link to this heading"></a></h2>
 <details>
-     <summary>EtherCAT (8 PDOs)</summary><table class="docutils align-center" id="id34">
-<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id34" title="Permalink to this table"></a></caption>
+     <summary>EtherCAT (8 PDOs)</summary><table class="docutils align-center" id="id33">
+<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id33" title="Link to this table"></a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Name</p></th>
 <th class="head"><p>Data</p></th>
@@ -16514,13 +16142,13 @@
 <td><p>#x6000</p></td>
 <td><p>BIT</p></td>
 </tr>
-<tr class="row-odd"><td><p><a href="#id53"><span class="problematic" id="id86">Status__</span></a></p></td>
+<tr class="row-odd"><td><p><a href="#id61"><span class="problematic" id="id94">Status__</span></a></p></td>
 <td></td>
 <td></td>
 <td></td>
 <td><p>ARRAY [0..0] OF BIT</p></td>
 </tr>
-<tr class="row-even"><td><p><a href="#id53"><span class="problematic" id="id87">Status__</span></a></p></td>
+<tr class="row-even"><td><p><a href="#id61"><span class="problematic" id="id95">Status__</span></a></p></td>
 <td></td>
 <td></td>
 <td></td>
@@ -16612,13 +16240,13 @@
 <td><p>#x6010</p></td>
 <td><p>BIT</p></td>
 </tr>
-<tr class="row-odd"><td><p><a href="#id53"><span class="problematic" id="id88">Status__</span></a></p></td>
+<tr class="row-odd"><td><p><a href="#id61"><span class="problematic" id="id96">Status__</span></a></p></td>
 <td></td>
 <td></td>
 <td></td>
 <td><p>ARRAY [0..0] OF BIT</p></td>
 </tr>
-<tr class="row-even"><td><p><a href="#id53"><span class="problematic" id="id89">Status__</span></a></p></td>
+<tr class="row-even"><td><p><a href="#id61"><span class="problematic" id="id97">Status__</span></a></p></td>
 <td></td>
 <td></td>
 <td></td>
@@ -16710,13 +16338,13 @@
 <td><p>#x6020</p></td>
 <td><p>BIT</p></td>
 </tr>
-<tr class="row-odd"><td><p><a href="#id53"><span class="problematic" id="id90">Status__</span></a></p></td>
+<tr class="row-odd"><td><p><a href="#id61"><span class="problematic" id="id98">Status__</span></a></p></td>
 <td></td>
 <td></td>
 <td></td>
 <td><p>ARRAY [0..0] OF BIT</p></td>
 </tr>
-<tr class="row-even"><td><p><a href="#id53"><span class="problematic" id="id91">Status__</span></a></p></td>
+<tr class="row-even"><td><p><a href="#id61"><span class="problematic" id="id99">Status__</span></a></p></td>
 <td></td>
 <td></td>
 <td></td>
@@ -16808,13 +16436,13 @@
 <td><p>#x6030</p></td>
 <td><p>BIT</p></td>
 </tr>
-<tr class="row-odd"><td><p><a href="#id53"><span class="problematic" id="id92">Status__</span></a></p></td>
+<tr class="row-odd"><td><p><a href="#id61"><span class="problematic" id="id100">Status__</span></a></p></td>
 <td></td>
 <td></td>
 <td></td>
 <td><p>ARRAY [0..0] OF BIT</p></td>
 </tr>
-<tr class="row-even"><td><p><a href="#id53"><span class="problematic" id="id93">Status__</span></a></p></td>
+<tr class="row-even"><td><p><a href="#id61"><span class="problematic" id="id101">Status__</span></a></p></td>
 <td></td>
 <td></td>
 <td></td>
@@ -16867,10 +16495,10 @@
 </table>
 </details></section>
 <section id="term-36-ep9128-1021">
-<h2>Term 36 (EP9128-1021)<a class="headerlink" href="#term-36-ep9128-1021" title="Permalink to this heading"></a></h2>
+<h2>Term 36 (EP9128-1021)<a class="headerlink" href="#term-36-ep9128-1021" title="Link to this heading"></a></h2>
 <details>
-     <summary>EtherCAT</summary><table class="docutils align-center" id="id35">
-<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id35" title="Permalink to this table"></a></caption>
+     <summary>EtherCAT</summary><table class="docutils align-center" id="id34">
+<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id34" title="Link to this table"></a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Name</p></th>
 <th class="head"><p>Data</p></th>
@@ -16887,10 +16515,10 @@
 </table>
 </details></section>
 <section id="term-37-ep9128-2021">
-<h2>Term 37 (EP9128-2021)<a class="headerlink" href="#term-37-ep9128-2021" title="Permalink to this heading"></a></h2>
+<h2>Term 37 (EP9128-2021)<a class="headerlink" href="#term-37-ep9128-2021" title="Link to this heading"></a></h2>
 <details>
-     <summary>EtherCAT</summary><table class="docutils align-center" id="id36">
-<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id36" title="Permalink to this table"></a></caption>
+     <summary>EtherCAT</summary><table class="docutils align-center" id="id35">
+<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id35" title="Link to this table"></a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Name</p></th>
 <th class="head"><p>Data</p></th>
@@ -16906,11 +16534,11 @@
 </tbody>
 </table>
 </details></section>
-<section id="lamp-plc-e03-el9184">
-<h2>LAMP_PLC_E03_EL9184<a class="headerlink" href="#lamp-plc-e03-el9184" title="Permalink to this heading"></a></h2>
+<section id="lamp-plc-e04-el6695">
+<h2>LAMP_PLC_E04_EL6695<a class="headerlink" href="#lamp-plc-e04-el6695" title="Link to this heading"></a></h2>
 <details>
-     <summary>EtherCAT</summary><table class="docutils align-center" id="id37">
-<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id37" title="Permalink to this table"></a></caption>
+     <summary>EtherCAT (6 PDOs)</summary><table class="docutils align-center" id="id36">
+<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id36" title="Link to this table"></a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Name</p></th>
 <th class="head"><p>Data</p></th>
@@ -16918,19 +16546,340 @@
 </thead>
 <tbody>
 <tr class="row-even"><td><p>Name</p></td>
-<td><p>LAMP_PLC_E03_EL9184</p></td>
+<td><p>LAMP_PLC_E04_EL6695</p></td>
 </tr>
 <tr class="row-odd"><td><p>ID</p></td>
-<td><p>38</p></td>
+<td><p>40</p></td>
+</tr>
+<tr class="row-even"><td><p>BootStrapData</p></td>
+<td><p>0010140200141402</p></td>
+</tr>
+<tr class="row-odd"><td><p>SyncMan</p></td>
+<td><p>0010000426000100010000008000da050004001026010000</p></td>
+</tr>
+<tr class="row-even"><td><p>SyncMan</p></td>
+<td><p>0016000422000100020000008000da050004001622010000</p></td>
+</tr>
+<tr class="row-odd"><td><p>SyncMan</p></td>
+<td><p>001c14006400010003000000000000000000001c64010000</p></td>
+</tr>
+<tr class="row-even"><td><p>SyncMan</p></td>
+<td><p>008e0d002000010004000000000000000200008e20010000</p></td>
+</tr>
+<tr class="row-odd"><td><p>Fmmu</p></td>
+<td><p>0000000000000000001c00020100000001000000000000000000000000000000</p></td>
+</tr>
+<tr class="row-even"><td><p>Fmmu</p></td>
+<td><p>0000000000000000008e00010100000002000000000000000000000000000000</p></td>
+</tr>
+<tr class="row-odd"><td><p>Fmmu</p></td>
+<td><p>00000000000000000d0800010100000003000000000000000000000000000000</p></td>
+</tr>
+<tr class="row-even"><td><p>CoeProfile</p></td>
+<td><p>5001</p></td>
+</tr>
+</tbody>
+</table>
+<p>PDO SYNC Inputs (Index #x1a01, Flags #x0010, SyncMan 3)</p>
+<table class="docutils align-center">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Comment</p></th>
+<th class="head"><p>BitLen</p></th>
+<th class="head"><p>Index</p></th>
+<th class="head"><p>Type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>None</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>ARRAY [0..11] OF BIT</p></td>
+</tr>
+<tr class="row-odd"><td><p>TxPDO toggle</p></td>
+<td><p>Bit toggles when new data from other side received</p></td>
+<td></td>
+<td><p>#x1801</p></td>
+<td><p>BIT</p></td>
+</tr>
+<tr class="row-even"><td><p>TxPDO state</p></td>
+<td><p>0: Other side is in OP state &gt;0: Error</p></td>
+<td></td>
+<td><p>#x1801</p></td>
+<td><p>BIT</p></td>
+</tr>
+<tr class="row-odd"><td><p>None</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>ARRAY [0..0] OF BIT</p></td>
+</tr>
+<tr class="row-even"><td><p>External device not connected</p></td>
+<td><p>0: External device connected 1: External device not connected</p></td>
+<td></td>
+<td><p>#x10f4</p></td>
+<td><p>BIT</p></td>
+</tr>
+</tbody>
+</table>
+<p>PDO SYNC Inputs (Index #x1a02, Flags #x0010, SyncMan )</p>
+<table class="docutils align-center">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Comment</p></th>
+<th class="head"><p>BitLen</p></th>
+<th class="head"><p>Index</p></th>
+<th class="head"><p>Type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Sync Mode</p></td>
+<td><p>0: no Syncronisation 1: Secondary side is Sync Master 2: Primary side is Sync Master</p></td>
+<td></td>
+<td><p>#x10f4</p></td>
+<td><p>BIT2</p></td>
+</tr>
+<tr class="row-odd"><td><p>None</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>ARRAY [0..9] OF BIT</p></td>
+</tr>
+<tr class="row-even"><td><p>TxPDO toggle</p></td>
+<td><p>Bit toggles when new data from other side received</p></td>
+<td></td>
+<td><p>#x1802</p></td>
+<td><p>BIT</p></td>
+</tr>
+<tr class="row-odd"><td><p>TxPDO state</p></td>
+<td><p>0: Other side is in OP state &gt;0: Error</p></td>
+<td></td>
+<td><p>#x1802</p></td>
+<td><p>BIT</p></td>
+</tr>
+<tr class="row-even"><td><p>Timestamp update toggle</p></td>
+<td><p>Bit toggles when new timestamp data available</p></td>
+<td></td>
+<td><p>#x10f4</p></td>
+<td><p>BIT</p></td>
+</tr>
+<tr class="row-odd"><td><p>External device not connected</p></td>
+<td><p>0: External device connected 1: External device not connected</p></td>
+<td></td>
+<td><p>#x10f4</p></td>
+<td><p>BIT</p></td>
+</tr>
+<tr class="row-even"><td><p>Internal time stamp</p></td>
+<td></td>
+<td></td>
+<td><p>#x10f4</p></td>
+<td><p>ULINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>External time stamp</p></td>
+<td></td>
+<td></td>
+<td><p>#x10f4</p></td>
+<td><p>ULINT</p></td>
+</tr>
+<tr class="row-even"><td><p>None</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>UDINT</p></td>
+</tr>
+</tbody>
+</table>
+<p>PDO SYNC Inputs (Index #x1a03, Flags #x0010, SyncMan )</p>
+<table class="docutils align-center">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Comment</p></th>
+<th class="head"><p>BitLen</p></th>
+<th class="head"><p>Index</p></th>
+<th class="head"><p>Type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Sync Mode</p></td>
+<td><p>0: no Syncronisation 1: Secondary side is Sync Master 2: Primary side is Sync Master</p></td>
+<td></td>
+<td><p>#x10f4</p></td>
+<td><p>BIT2</p></td>
+</tr>
+<tr class="row-odd"><td><p>None</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>ARRAY [0..9] OF BIT</p></td>
+</tr>
+<tr class="row-even"><td><p>TxPDO toggle</p></td>
+<td><p>Bit toggles when new data from other side received</p></td>
+<td></td>
+<td><p>#x1803</p></td>
+<td><p>BIT</p></td>
+</tr>
+<tr class="row-odd"><td><p>TxPDO state</p></td>
+<td><p>0: Other side is in OP state &gt;0: Error</p></td>
+<td></td>
+<td><p>#x1803</p></td>
+<td><p>BIT</p></td>
+</tr>
+<tr class="row-even"><td><p>Timestamp update toggle</p></td>
+<td><p>Bit toggles when new timestamp data available</p></td>
+<td></td>
+<td><p>#x10f4</p></td>
+<td><p>BIT</p></td>
+</tr>
+<tr class="row-odd"><td><p>External device not connected</p></td>
+<td><p>0: External device connected 1: External device not connected</p></td>
+<td></td>
+<td><p>#x10f4</p></td>
+<td><p>BIT</p></td>
+</tr>
+<tr class="row-even"><td><p>Internal time stamp</p></td>
+<td></td>
+<td></td>
+<td><p>#x10f4</p></td>
+<td><p>UDINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>External time stamp</p></td>
+<td></td>
+<td></td>
+<td><p>#x10f4</p></td>
+<td><p>UDINT</p></td>
+</tr>
+<tr class="row-even"><td><p>None</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>UDINT</p></td>
+</tr>
+</tbody>
+</table>
+<p>PDO FOE Info (Index #x1a05, Flags #x0020, SyncMan )</p>
+<table class="docutils align-center">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Comment</p></th>
+<th class="head"><p>BitLen</p></th>
+<th class="head"><p>Index</p></th>
+<th class="head"><p>Type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Data Bytes Pending</p></td>
+<td></td>
+<td></td>
+<td><p>#xf650</p></td>
+<td><p>UINT</p></td>
+</tr>
+</tbody>
+</table>
+<p>PDO IO Inputs (Index #x1a08, Flags #x0020, SyncMan 3)</p>
+<table class="docutils align-center">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Comment</p></th>
+<th class="head"><p>BitLen</p></th>
+<th class="head"><p>Index</p></th>
+<th class="head"><p>Type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>HUTCH_PLC_NAME</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>STRING(8)</p></td>
+</tr>
+<tr class="row-odd"><td><p>TMO_ROUGH1_VRC_01_OPEN_LS</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>BOOL</p></td>
+</tr>
+<tr class="row-even"><td><p>TMO_ROUGH2_VRC_01_OPEN_LS</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>BOOL</p></td>
+</tr>
+</tbody>
+</table>
+<p>PDO IO Outputs (Index #x1608, Flags #x0020, SyncMan 2)</p>
+<table class="docutils align-center">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Comment</p></th>
+<th class="head"><p>BitLen</p></th>
+<th class="head"><p>Index</p></th>
+<th class="head"><p>Type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ENDSTATION_PLC_NAME</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>STRING(8)</p></td>
+</tr>
+<tr class="row-odd"><td><p>IP1_ROUGH_VRC_01_OPEN_LS</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>BOOL</p></td>
+</tr>
+<tr class="row-even"><td><p>IP1_ROUGH_VRC_02_OPEN_LS</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>BOOL</p></td>
+</tr>
+<tr class="row-odd"><td><p>IP1_ROUGH_VRC_03_OPEN_LS</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>BOOL</p></td>
+</tr>
+<tr class="row-even"><td><p>IP1_TURBOS_ALL_AtSpd</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>BOOL</p></td>
+</tr>
+<tr class="row-odd"><td><p>IP1_MAIN_xAT_VAC</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>BOOL</p></td>
+</tr>
+<tr class="row-even"><td><p>IP1_MAIN_xPRESS_OK</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>BOOL</p></td>
+</tr>
+<tr class="row-odd"><td><p>IP1_MAIN_rPRESS</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>REAL</p></td>
+</tr>
+<tr class="row-even"><td><p>IP1_HV_SAFETY_ENABLE</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>BOOL</p></td>
 </tr>
 </tbody>
 </table>
 </details></section>
 <section id="lamp-plc-e09-el2794">
-<h2>LAMP_PLC_E09_EL2794<a class="headerlink" href="#lamp-plc-e09-el2794" title="Permalink to this heading"></a></h2>
+<h2>LAMP_PLC_E09_EL2794<a class="headerlink" href="#lamp-plc-e09-el2794" title="Link to this heading"></a></h2>
 <details>
-     <summary>EtherCAT (4 PDOs)</summary><table class="docutils align-center" id="id38">
-<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id38" title="Permalink to this table"></a></caption>
+     <summary>EtherCAT (4 PDOs)</summary><table class="docutils align-center" id="id37">
+<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id37" title="Link to this table"></a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Name</p></th>
 <th class="head"><p>Data</p></th>
@@ -17028,11 +16977,11 @@
 </tbody>
 </table>
 </details></section>
-<section id="lamp-plc-e10-el1008">
-<h2>LAMP_PLC_E10_EL1008<a class="headerlink" href="#lamp-plc-e10-el1008" title="Permalink to this heading"></a></h2>
+<section id="lamp-plc-motion-el6695-0002">
+<h2>LAMP_PLC_MOTION_EL6695-0002<a class="headerlink" href="#lamp-plc-motion-el6695-0002" title="Link to this heading"></a></h2>
 <details>
-     <summary>EtherCAT (8 PDOs)</summary><table class="docutils align-center" id="id39">
-<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id39" title="Permalink to this table"></a></caption>
+     <summary>EtherCAT (7 PDOs)</summary><table class="docutils align-center" id="id38">
+<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id38" title="Link to this table"></a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Name</p></th>
 <th class="head"><p>Data</p></th>
@@ -17040,20 +16989,41 @@
 </thead>
 <tbody>
 <tr class="row-even"><td><p>Name</p></td>
-<td><p>LAMP_PLC_E10_EL1008</p></td>
+<td><p>LAMP_PLC_MOTION_EL6695-0002</p></td>
 </tr>
 <tr class="row-odd"><td><p>ID</p></td>
 <td><p>48</p></td>
 </tr>
+<tr class="row-even"><td><p>BootStrapData</p></td>
+<td><p>0010140200141402</p></td>
+</tr>
+<tr class="row-odd"><td><p>SyncMan</p></td>
+<td><p>0010000426000100010000008000da050004001026010000</p></td>
+</tr>
 <tr class="row-even"><td><p>SyncMan</p></td>
-<td><p>001001000000010004000000000000000100001000010000</p></td>
+<td><p>0016000422000100020000008000da050004001622010000</p></td>
+</tr>
+<tr class="row-odd"><td><p>SyncMan</p></td>
+<td><p>001c01006400010003000000000000000000001c64010000</p></td>
+</tr>
+<tr class="row-even"><td><p>SyncMan</p></td>
+<td><p>008e03002000010004000000000000000200008e20010000</p></td>
 </tr>
 <tr class="row-odd"><td><p>Fmmu</p></td>
-<td><p>0000000000000000001000010100000002000000000000000000000000000000</p></td>
+<td><p>0000000000000000001c00020100000001000000000000000000000000000000</p></td>
+</tr>
+<tr class="row-even"><td><p>Fmmu</p></td>
+<td><p>0000000000000000008e00010100000002000000000000000000000000000000</p></td>
+</tr>
+<tr class="row-odd"><td><p>Fmmu</p></td>
+<td><p>00000000000000000d0800010100000003000000000000000000000000000000</p></td>
+</tr>
+<tr class="row-even"><td><p>CoeProfile</p></td>
+<td><p>5001</p></td>
 </tr>
 </tbody>
 </table>
-<p>PDO Channel 1 (Index #x1a00, Flags #x0011, SyncMan 0)</p>
+<p>PDO SYNC Inputs (Index #x1a01, Flags #x0010, SyncMan 3)</p>
 <table class="docutils align-center">
 <thead>
 <tr class="row-odd"><th class="head"><p>Name</p></th>
@@ -17064,15 +17034,254 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>Input</p></td>
+<tr class="row-even"><td><p>None</p></td>
 <td></td>
+<td><p>12</p></td>
 <td></td>
+<td><p>ARRAY [0..11] OF BIT</p></td>
+</tr>
+<tr class="row-odd"><td><p>TxPDO-Toggle</p></td>
+<td></td>
+<td><p>1</p></td>
+<td><p>#x1801</p></td>
+<td><p>BIT</p></td>
+</tr>
+<tr class="row-even"><td><p>TxPDO-State</p></td>
+<td></td>
+<td><p>1</p></td>
+<td><p>#x1801</p></td>
+<td><p>BIT</p></td>
+</tr>
+<tr class="row-odd"><td><p>None</p></td>
+<td></td>
+<td><p>1</p></td>
+<td></td>
+<td><p>ARRAY [0..0] OF BIT</p></td>
+</tr>
+<tr class="row-even"><td><p>External device not connected</p></td>
+<td><p>0: External device connected 1: External device not connected</p></td>
+<td><p>1</p></td>
+<td><p>#x10f4</p></td>
+<td><p>BIT</p></td>
+</tr>
+</tbody>
+</table>
+<p>PDO SYNC Inputs (Index #x1a02, Flags #x0010, SyncMan )</p>
+<table class="docutils align-center">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Comment</p></th>
+<th class="head"><p>BitLen</p></th>
+<th class="head"><p>Index</p></th>
+<th class="head"><p>Type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Sync Mode</p></td>
+<td></td>
+<td><p>2</p></td>
+<td><p>#x10f4</p></td>
+<td><p>BIT2</p></td>
+</tr>
+<tr class="row-odd"><td><p>None</p></td>
+<td></td>
+<td><p>10</p></td>
+<td></td>
+<td><p>ARRAY [0..9] OF BIT</p></td>
+</tr>
+<tr class="row-even"><td><p>TxPDO-Toggle</p></td>
+<td></td>
+<td><p>1</p></td>
+<td><p>#x1802</p></td>
+<td><p>BIT</p></td>
+</tr>
+<tr class="row-odd"><td><p>TxPDO-State</p></td>
+<td></td>
+<td><p>1</p></td>
+<td><p>#x1802</p></td>
+<td><p>BIT</p></td>
+</tr>
+<tr class="row-even"><td><p>Time stamp update toggle</p></td>
+<td></td>
+<td><p>1</p></td>
+<td><p>#x10f4</p></td>
+<td><p>BIT</p></td>
+</tr>
+<tr class="row-odd"><td><p>External device not connected</p></td>
+<td></td>
+<td><p>1</p></td>
+<td><p>#x10f4</p></td>
+<td><p>BIT</p></td>
+</tr>
+<tr class="row-even"><td><p>Internal time stamp</p></td>
+<td></td>
+<td><p>64</p></td>
+<td><p>#x10f4</p></td>
+<td><p>ULINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>External time stamp</p></td>
+<td></td>
+<td><p>64</p></td>
+<td><p>#x10f4</p></td>
+<td><p>ULINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Reserved</p></td>
+<td></td>
+<td><p>32</p></td>
+<td><p>#x10f4</p></td>
+<td><p>UDINT</p></td>
+</tr>
+</tbody>
+</table>
+<p>PDO SYNC Inputs (Index #x1a03, Flags #x0010, SyncMan )</p>
+<table class="docutils align-center">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Comment</p></th>
+<th class="head"><p>BitLen</p></th>
+<th class="head"><p>Index</p></th>
+<th class="head"><p>Type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Sync Mode</p></td>
+<td></td>
+<td><p>2</p></td>
+<td><p>#x10f4</p></td>
+<td><p>BIT2</p></td>
+</tr>
+<tr class="row-odd"><td><p>None</p></td>
+<td></td>
+<td><p>10</p></td>
+<td></td>
+<td><p>ARRAY [0..9] OF BIT</p></td>
+</tr>
+<tr class="row-even"><td><p>TxPDO-Toggle</p></td>
+<td></td>
+<td><p>1</p></td>
+<td><p>#x1803</p></td>
+<td><p>BIT</p></td>
+</tr>
+<tr class="row-odd"><td><p>TxPDO-State</p></td>
+<td></td>
+<td><p>1</p></td>
+<td><p>#x1803</p></td>
+<td><p>BIT</p></td>
+</tr>
+<tr class="row-even"><td><p>Time stamp update toggle</p></td>
+<td></td>
+<td><p>1</p></td>
+<td><p>#x10f4</p></td>
+<td><p>BIT</p></td>
+</tr>
+<tr class="row-odd"><td><p>External device not connected</p></td>
+<td></td>
+<td><p>1</p></td>
+<td><p>#x10f4</p></td>
+<td><p>BIT</p></td>
+</tr>
+<tr class="row-even"><td><p>Internal time stamp</p></td>
+<td></td>
+<td><p>32</p></td>
+<td><p>#x10f4</p></td>
+<td><p>UDINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>External time stamp</p></td>
+<td></td>
+<td><p>32</p></td>
+<td><p>#x10f4</p></td>
+<td><p>UDINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Reserved</p></td>
+<td></td>
+<td><p>32</p></td>
+<td><p>#x10f4</p></td>
+<td><p>UDINT</p></td>
+</tr>
+</tbody>
+</table>
+<p>PDO Active TxPDOs-Map (Index #x1a04, Flags #x0000, SyncMan )</p>
+<table class="docutils align-center">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Comment</p></th>
+<th class="head"><p>BitLen</p></th>
+<th class="head"><p>Index</p></th>
+<th class="head"><p>Type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>u16Count</p></td>
+<td></td>
+<td><p>16</p></td>
+<td><p>#xf640</p></td>
+<td><p>UINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>PDO 1-8</p></td>
+<td></td>
+<td><p>16</p></td>
+<td><p>#xf630</p></td>
+<td><p>UINT</p></td>
+</tr>
+<tr class="row-even"><td><p>PDO 9-16</p></td>
+<td></td>
+<td><p>16</p></td>
+<td><p>#xf630</p></td>
+<td><p>UINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>PDO 17-24</p></td>
+<td></td>
+<td><p>16</p></td>
+<td><p>#xf630</p></td>
+<td><p>UINT</p></td>
+</tr>
+<tr class="row-even"><td><p>PDO 25-32</p></td>
+<td></td>
+<td><p>16</p></td>
+<td><p>#xf630</p></td>
+<td><p>UINT</p></td>
+</tr>
+</tbody>
+</table>
+<p>PDO FOE Info (Index #x1a05, Flags #x0020, SyncMan )</p>
+<table class="docutils align-center">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Comment</p></th>
+<th class="head"><p>BitLen</p></th>
+<th class="head"><p>Index</p></th>
+<th class="head"><p>Type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Bytes to Read</p></td>
+<td></td>
+<td><p>16</p></td>
+<td><p>#xf650</p></td>
+<td><p>UINT</p></td>
+</tr>
+</tbody>
+</table>
+<p>PDO IO Inputs (Index #x1a08, Flags #x0020, SyncMan 3)</p>
+<table class="docutils align-center">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Comment</p></th>
+<th class="head"><p>BitLen</p></th>
+<th class="head"><p>Index</p></th>
+<th class="head"><p>Type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>LAMP_GJY_OUT</p></td>
+<td></td>
+<td><p>8</p></td>
 <td><p>#x6000</p></td>
-<td><p>BIT</p></td>
+<td><p>BOOL</p></td>
 </tr>
 </tbody>
 </table>
-<p>PDO Channel 2 (Index #x1a01, Flags #x0011, SyncMan 0)</p>
+<p>PDO IO Outputs (Index #x1608, Flags #x0020, SyncMan 2)</p>
 <table class="docutils align-center">
 <thead>
 <tr class="row-odd"><th class="head"><p>Name</p></th>
@@ -17083,134 +17292,20 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>Input</p></td>
+<tr class="row-even"><td><p>LAMP_GJ_VRC_01_OPEN_LS</p></td>
 <td></td>
-<td></td>
-<td><p>#x6010</p></td>
-<td><p>BIT</p></td>
-</tr>
-</tbody>
-</table>
-<p>PDO Channel 3 (Index #x1a02, Flags #x0011, SyncMan 0)</p>
-<table class="docutils align-center">
-<thead>
-<tr class="row-odd"><th class="head"><p>Name</p></th>
-<th class="head"><p>Comment</p></th>
-<th class="head"><p>BitLen</p></th>
-<th class="head"><p>Index</p></th>
-<th class="head"><p>Type</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Input</p></td>
-<td></td>
-<td></td>
-<td><p>#x6020</p></td>
-<td><p>BIT</p></td>
-</tr>
-</tbody>
-</table>
-<p>PDO Channel 4 (Index #x1a03, Flags #x0011, SyncMan 0)</p>
-<table class="docutils align-center">
-<thead>
-<tr class="row-odd"><th class="head"><p>Name</p></th>
-<th class="head"><p>Comment</p></th>
-<th class="head"><p>BitLen</p></th>
-<th class="head"><p>Index</p></th>
-<th class="head"><p>Type</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Input</p></td>
-<td></td>
-<td></td>
-<td><p>#x6030</p></td>
-<td><p>BIT</p></td>
-</tr>
-</tbody>
-</table>
-<p>PDO Channel 5 (Index #x1a04, Flags #x0011, SyncMan 0)</p>
-<table class="docutils align-center">
-<thead>
-<tr class="row-odd"><th class="head"><p>Name</p></th>
-<th class="head"><p>Comment</p></th>
-<th class="head"><p>BitLen</p></th>
-<th class="head"><p>Index</p></th>
-<th class="head"><p>Type</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Input</p></td>
-<td></td>
-<td></td>
-<td><p>#x6040</p></td>
-<td><p>BIT</p></td>
-</tr>
-</tbody>
-</table>
-<p>PDO Channel 6 (Index #x1a05, Flags #x0011, SyncMan 0)</p>
-<table class="docutils align-center">
-<thead>
-<tr class="row-odd"><th class="head"><p>Name</p></th>
-<th class="head"><p>Comment</p></th>
-<th class="head"><p>BitLen</p></th>
-<th class="head"><p>Index</p></th>
-<th class="head"><p>Type</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Input</p></td>
-<td></td>
-<td></td>
-<td><p>#x6050</p></td>
-<td><p>BIT</p></td>
-</tr>
-</tbody>
-</table>
-<p>PDO Channel 7 (Index #x1a06, Flags #x0011, SyncMan 0)</p>
-<table class="docutils align-center">
-<thead>
-<tr class="row-odd"><th class="head"><p>Name</p></th>
-<th class="head"><p>Comment</p></th>
-<th class="head"><p>BitLen</p></th>
-<th class="head"><p>Index</p></th>
-<th class="head"><p>Type</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Input</p></td>
-<td></td>
-<td></td>
-<td><p>#x6060</p></td>
-<td><p>BIT</p></td>
-</tr>
-</tbody>
-</table>
-<p>PDO Channel 8 (Index #x1a07, Flags #x0011, SyncMan 0)</p>
-<table class="docutils align-center">
-<thead>
-<tr class="row-odd"><th class="head"><p>Name</p></th>
-<th class="head"><p>Comment</p></th>
-<th class="head"><p>BitLen</p></th>
-<th class="head"><p>Index</p></th>
-<th class="head"><p>Type</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Input</p></td>
-<td></td>
-<td></td>
-<td><p>#x6070</p></td>
-<td><p>BIT</p></td>
+<td><p>8</p></td>
+<td><p>#x7000</p></td>
+<td><p>BOOL</p></td>
 </tr>
 </tbody>
 </table>
 </details></section>
-<section id="lamp-plc-e10a-el1008">
-<h2>LAMP_PLC_E10A_EL1008<a class="headerlink" href="#lamp-plc-e10a-el1008" title="Permalink to this heading"></a></h2>
+<section id="lamp-plc-e10-ek1122">
+<h2>LAMP_PLC_E10_EK1122<a class="headerlink" href="#lamp-plc-e10-ek1122" title="Link to this heading"></a></h2>
 <details>
-     <summary>EtherCAT (8 PDOs)</summary><table class="docutils align-center" id="id40">
-<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id40" title="Permalink to this table"></a></caption>
+     <summary>EtherCAT</summary><table class="docutils align-center" id="id39">
+<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id39" title="Link to this table"></a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Name</p></th>
 <th class="head"><p>Data</p></th>
@@ -17218,177 +17313,19 @@
 </thead>
 <tbody>
 <tr class="row-even"><td><p>Name</p></td>
-<td><p>LAMP_PLC_E10A_EL1008</p></td>
+<td><p>LAMP_PLC_E10_EK1122</p></td>
 </tr>
 <tr class="row-odd"><td><p>ID</p></td>
-<td><p>50</p></td>
-</tr>
-<tr class="row-even"><td><p>SyncMan</p></td>
-<td><p>001001000000010004000000000000000100001000010000</p></td>
-</tr>
-<tr class="row-odd"><td><p>Fmmu</p></td>
-<td><p>0000000000000000001000010100000002000000000000000000000000000000</p></td>
-</tr>
-</tbody>
-</table>
-<p>PDO Channel 1 (Index #x1a00, Flags #x0011, SyncMan 0)</p>
-<table class="docutils align-center">
-<thead>
-<tr class="row-odd"><th class="head"><p>Name</p></th>
-<th class="head"><p>Comment</p></th>
-<th class="head"><p>BitLen</p></th>
-<th class="head"><p>Index</p></th>
-<th class="head"><p>Type</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Input</p></td>
-<td></td>
-<td></td>
-<td><p>#x6000</p></td>
-<td><p>BIT</p></td>
-</tr>
-</tbody>
-</table>
-<p>PDO Channel 2 (Index #x1a01, Flags #x0011, SyncMan 0)</p>
-<table class="docutils align-center">
-<thead>
-<tr class="row-odd"><th class="head"><p>Name</p></th>
-<th class="head"><p>Comment</p></th>
-<th class="head"><p>BitLen</p></th>
-<th class="head"><p>Index</p></th>
-<th class="head"><p>Type</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Input</p></td>
-<td></td>
-<td></td>
-<td><p>#x6010</p></td>
-<td><p>BIT</p></td>
-</tr>
-</tbody>
-</table>
-<p>PDO Channel 3 (Index #x1a02, Flags #x0011, SyncMan 0)</p>
-<table class="docutils align-center">
-<thead>
-<tr class="row-odd"><th class="head"><p>Name</p></th>
-<th class="head"><p>Comment</p></th>
-<th class="head"><p>BitLen</p></th>
-<th class="head"><p>Index</p></th>
-<th class="head"><p>Type</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Input</p></td>
-<td></td>
-<td></td>
-<td><p>#x6020</p></td>
-<td><p>BIT</p></td>
-</tr>
-</tbody>
-</table>
-<p>PDO Channel 4 (Index #x1a03, Flags #x0011, SyncMan 0)</p>
-<table class="docutils align-center">
-<thead>
-<tr class="row-odd"><th class="head"><p>Name</p></th>
-<th class="head"><p>Comment</p></th>
-<th class="head"><p>BitLen</p></th>
-<th class="head"><p>Index</p></th>
-<th class="head"><p>Type</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Input</p></td>
-<td></td>
-<td></td>
-<td><p>#x6030</p></td>
-<td><p>BIT</p></td>
-</tr>
-</tbody>
-</table>
-<p>PDO Channel 5 (Index #x1a04, Flags #x0011, SyncMan 0)</p>
-<table class="docutils align-center">
-<thead>
-<tr class="row-odd"><th class="head"><p>Name</p></th>
-<th class="head"><p>Comment</p></th>
-<th class="head"><p>BitLen</p></th>
-<th class="head"><p>Index</p></th>
-<th class="head"><p>Type</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Input</p></td>
-<td></td>
-<td></td>
-<td><p>#x6040</p></td>
-<td><p>BIT</p></td>
-</tr>
-</tbody>
-</table>
-<p>PDO Channel 6 (Index #x1a05, Flags #x0011, SyncMan 0)</p>
-<table class="docutils align-center">
-<thead>
-<tr class="row-odd"><th class="head"><p>Name</p></th>
-<th class="head"><p>Comment</p></th>
-<th class="head"><p>BitLen</p></th>
-<th class="head"><p>Index</p></th>
-<th class="head"><p>Type</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Input</p></td>
-<td></td>
-<td></td>
-<td><p>#x6050</p></td>
-<td><p>BIT</p></td>
-</tr>
-</tbody>
-</table>
-<p>PDO Channel 7 (Index #x1a06, Flags #x0011, SyncMan 0)</p>
-<table class="docutils align-center">
-<thead>
-<tr class="row-odd"><th class="head"><p>Name</p></th>
-<th class="head"><p>Comment</p></th>
-<th class="head"><p>BitLen</p></th>
-<th class="head"><p>Index</p></th>
-<th class="head"><p>Type</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Input</p></td>
-<td></td>
-<td></td>
-<td><p>#x6060</p></td>
-<td><p>BIT</p></td>
-</tr>
-</tbody>
-</table>
-<p>PDO Channel 8 (Index #x1a07, Flags #x0011, SyncMan 0)</p>
-<table class="docutils align-center">
-<thead>
-<tr class="row-odd"><th class="head"><p>Name</p></th>
-<th class="head"><p>Comment</p></th>
-<th class="head"><p>BitLen</p></th>
-<th class="head"><p>Index</p></th>
-<th class="head"><p>Type</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Input</p></td>
-<td></td>
-<td></td>
-<td><p>#x6070</p></td>
-<td><p>BIT</p></td>
+<td><p>49</p></td>
 </tr>
 </tbody>
 </table>
 </details></section>
 <section id="lamp-plc-e13-ek1122">
-<h2>LAMP_PLC_E13_EK1122<a class="headerlink" href="#lamp-plc-e13-ek1122" title="Permalink to this heading"></a></h2>
+<h2>LAMP_PLC_E13_EK1122<a class="headerlink" href="#lamp-plc-e13-ek1122" title="Link to this heading"></a></h2>
 <details>
-     <summary>EtherCAT</summary><table class="docutils align-center" id="id41">
-<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id41" title="Permalink to this table"></a></caption>
+     <summary>EtherCAT</summary><table class="docutils align-center" id="id40">
+<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id40" title="Link to this table"></a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Name</p></th>
 <th class="head"><p>Data</p></th>
@@ -17404,31 +17341,11 @@
 </tbody>
 </table>
 </details></section>
-<section id="lamp-plc-e15-el9011">
-<h2>LAMP_PLC_E15_EL9011<a class="headerlink" href="#lamp-plc-e15-el9011" title="Permalink to this heading"></a></h2>
-<details>
-     <summary>EtherCAT</summary><table class="docutils align-center" id="id42">
-<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id42" title="Permalink to this table"></a></caption>
-<thead>
-<tr class="row-odd"><th class="head"><p>Name</p></th>
-<th class="head"><p>Data</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Name</p></td>
-<td><p>LAMP_PLC_E15_EL9011</p></td>
-</tr>
-<tr class="row-odd"><td><p>ID</p></td>
-<td><p>59</p></td>
-</tr>
-</tbody>
-</table>
-</details></section>
 <section id="lamp-pnl2-ep24-ep2624-0002">
-<h2>LAMP_PNL2_EP24_EP2624-0002<a class="headerlink" href="#lamp-pnl2-ep24-ep2624-0002" title="Permalink to this heading"></a></h2>
+<h2>LAMP_PNL2_EP24_EP2624-0002<a class="headerlink" href="#lamp-pnl2-ep24-ep2624-0002" title="Link to this heading"></a></h2>
 <details>
-     <summary>EtherCAT (4 PDOs)</summary><table class="docutils align-center" id="id43">
-<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id43" title="Permalink to this table"></a></caption>
+     <summary>EtherCAT (4 PDOs)</summary><table class="docutils align-center" id="id41">
+<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id41" title="Link to this table"></a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Name</p></th>
 <th class="head"><p>Data</p></th>
@@ -17527,10 +17444,10 @@
 </table>
 </details></section>
 <section id="lamp-pnl2-ep25-ep2338-0002">
-<h2>LAMP_PNL2_EP25_EP2338-0002<a class="headerlink" href="#lamp-pnl2-ep25-ep2338-0002" title="Permalink to this heading"></a></h2>
+<h2>LAMP_PNL2_EP25_EP2338-0002<a class="headerlink" href="#lamp-pnl2-ep25-ep2338-0002" title="Link to this heading"></a></h2>
 <details>
-     <summary>EtherCAT (16 PDOs)</summary><table class="docutils align-center" id="id44">
-<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id44" title="Permalink to this table"></a></caption>
+     <summary>EtherCAT (16 PDOs)</summary><table class="docutils align-center" id="id42">
+<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id42" title="Link to this table"></a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Name</p></th>
 <th class="head"><p>Data</p></th>
@@ -17863,10 +17780,10 @@
 </table>
 </details></section>
 <section id="lamp-pnl2-ep26-ep2338-0002">
-<h2>LAMP_PNL2_EP26_EP2338-0002<a class="headerlink" href="#lamp-pnl2-ep26-ep2338-0002" title="Permalink to this heading"></a></h2>
+<h2>LAMP_PNL2_EP26_EP2338-0002<a class="headerlink" href="#lamp-pnl2-ep26-ep2338-0002" title="Link to this heading"></a></h2>
 <details>
-     <summary>EtherCAT (16 PDOs)</summary><table class="docutils align-center" id="id45">
-<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id45" title="Permalink to this table"></a></caption>
+     <summary>EtherCAT (16 PDOs)</summary><table class="docutils align-center" id="id43">
+<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id43" title="Link to this table"></a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Name</p></th>
 <th class="head"><p>Data</p></th>
@@ -18199,10 +18116,10 @@
 </table>
 </details></section>
 <section id="ktof-pnl1-ep00-ep1111">
-<h2>KTOF_PNL1_EP00_EP1111<a class="headerlink" href="#ktof-pnl1-ep00-ep1111" title="Permalink to this heading"></a></h2>
+<h2>KTOF_PNL1_EP00_EP1111<a class="headerlink" href="#ktof-pnl1-ep00-ep1111" title="Link to this heading"></a></h2>
 <details>
-     <summary>EtherCAT (1 PDOs)</summary><table class="docutils align-center" id="id46">
-<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id46" title="Permalink to this table"></a></caption>
+     <summary>EtherCAT (1 PDOs)</summary><table class="docutils align-center" id="id44">
+<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id44" title="Link to this table"></a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Name</p></th>
 <th class="head"><p>Data</p></th>
@@ -18262,10 +18179,10 @@
 </table>
 </details></section>
 <section id="ktof-pnl1-ep01-ep2338-0002">
-<h2>KTOF_PNL1_EP01_EP2338-0002<a class="headerlink" href="#ktof-pnl1-ep01-ep2338-0002" title="Permalink to this heading"></a></h2>
+<h2>KTOF_PNL1_EP01_EP2338-0002<a class="headerlink" href="#ktof-pnl1-ep01-ep2338-0002" title="Link to this heading"></a></h2>
 <details>
-     <summary>EtherCAT (16 PDOs)</summary><table class="docutils align-center" id="id47">
-<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id47" title="Permalink to this table"></a></caption>
+     <summary>EtherCAT (16 PDOs)</summary><table class="docutils align-center" id="id45">
+<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id45" title="Link to this table"></a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Name</p></th>
 <th class="head"><p>Data</p></th>
@@ -18598,10 +18515,10 @@
 </table>
 </details></section>
 <section id="ktof-pnl1-ep02-ep2624-0002">
-<h2>KTOF_PNL1_EP02_EP2624-0002<a class="headerlink" href="#ktof-pnl1-ep02-ep2624-0002" title="Permalink to this heading"></a></h2>
+<h2>KTOF_PNL1_EP02_EP2624-0002<a class="headerlink" href="#ktof-pnl1-ep02-ep2624-0002" title="Link to this heading"></a></h2>
 <details>
-     <summary>EtherCAT (4 PDOs)</summary><table class="docutils align-center" id="id48">
-<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id48" title="Permalink to this table"></a></caption>
+     <summary>EtherCAT (4 PDOs)</summary><table class="docutils align-center" id="id46">
+<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id46" title="Link to this table"></a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Name</p></th>
 <th class="head"><p>Data</p></th>
@@ -18700,10 +18617,10 @@
 </table>
 </details></section>
 <section id="ktof-pnl1-ep03-ep6002-0002">
-<h2>KTOF_PNL1_EP03_EP6002-0002<a class="headerlink" href="#ktof-pnl1-ep03-ep6002-0002" title="Permalink to this heading"></a></h2>
+<h2>KTOF_PNL1_EP03_EP6002-0002<a class="headerlink" href="#ktof-pnl1-ep03-ep6002-0002" title="Link to this heading"></a></h2>
 <details>
-     <summary>EtherCAT (8 PDOs)</summary><table class="docutils align-center" id="id49">
-<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id49" title="Permalink to this table"></a></caption>
+     <summary>EtherCAT (8 PDOs)</summary><table class="docutils align-center" id="id47">
+<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id47" title="Link to this table"></a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Name</p></th>
 <th class="head"><p>Data</p></th>
@@ -20114,10 +20031,10 @@
 </table>
 </details></section>
 <section id="lamp-dct-01-ep9224-0023">
-<h2>LAMP_DCT_01_EP9224-0023<a class="headerlink" href="#lamp-dct-01-ep9224-0023" title="Permalink to this heading"></a></h2>
+<h2>LAMP_DCT_01_EP9224-0023<a class="headerlink" href="#lamp-dct-01-ep9224-0023" title="Link to this heading"></a></h2>
 <details>
-     <summary>EtherCAT (22 PDOs)</summary><table class="docutils align-center" id="id50">
-<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id50" title="Permalink to this table"></a></caption>
+     <summary>EtherCAT (22 PDOs)</summary><table class="docutils align-center" id="id48">
+<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id48" title="Link to this table"></a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Name</p></th>
 <th class="head"><p>Data</p></th>
@@ -20888,7 +20805,7 @@
 <td><p>#x6040</p></td>
 <td><p>BIT</p></td>
 </tr>
-<tr class="row-odd"><td><p><a href="#id53"><span class="problematic" id="id94">Status__</span></a></p></td>
+<tr class="row-odd"><td><p><a href="#id61"><span class="problematic" id="id102">Status__</span></a></p></td>
 <td></td>
 <td></td>
 <td></td>
@@ -21289,7 +21206,7 @@
 <td><p>#x7040</p></td>
 <td><p>BIT</p></td>
 </tr>
-<tr class="row-even"><td><p><a href="#id53"><span class="problematic" id="id95">Control__</span></a></p></td>
+<tr class="row-even"><td><p><a href="#id61"><span class="problematic" id="id103">Control__</span></a></p></td>
 <td></td>
 <td></td>
 <td></td>
@@ -21299,10 +21216,10 @@
 </table>
 </details></section>
 <section id="lamp-plc-e14-ek1122">
-<h2>LAMP_PLC_E14_EK1122<a class="headerlink" href="#lamp-plc-e14-ek1122" title="Permalink to this heading"></a></h2>
+<h2>LAMP_PLC_E14_EK1122<a class="headerlink" href="#lamp-plc-e14-ek1122" title="Link to this heading"></a></h2>
 <details>
-     <summary>EtherCAT</summary><table class="docutils align-center" id="id51">
-<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id51" title="Permalink to this table"></a></caption>
+     <summary>EtherCAT</summary><table class="docutils align-center" id="id49">
+<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id49" title="Link to this table"></a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Name</p></th>
 <th class="head"><p>Data</p></th>
@@ -21319,10 +21236,10 @@
 </table>
 </details></section>
 <section id="vcn-1-vat590">
-<h2>VCN_1_VAT590<a class="headerlink" href="#vcn-1-vat590" title="Permalink to this heading"></a></h2>
+<h2>VCN_1_VAT590<a class="headerlink" href="#vcn-1-vat590" title="Link to this heading"></a></h2>
 <details>
-     <summary>EtherCAT (2 PDOs)</summary><table class="docutils align-center" id="id52">
-<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id52" title="Permalink to this table"></a></caption>
+     <summary>EtherCAT (2 PDOs)</summary><table class="docutils align-center" id="id50">
+<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id50" title="Link to this table"></a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Name</p></th>
 <th class="head"><p>Data</p></th>
@@ -21333,7 +21250,7 @@
 <td><p>VCN_1_VAT590</p></td>
 </tr>
 <tr class="row-odd"><td><p>ID</p></td>
-<td><p>109</p></td>
+<td><p>95</p></td>
 </tr>
 <tr class="row-even"><td><p>SyncMan</p></td>
 <td><p>001c14012600010001000000140114011401001c26010000</p></td>
@@ -21586,20 +21503,4026 @@
 </tbody>
 </table>
 </details></section>
+<section id="lamp-gj-ek1100">
+<h2>LAMP_GJ_EK1100<a class="headerlink" href="#lamp-gj-ek1100" title="Link to this heading"></a></h2>
+<details>
+     <summary>EtherCAT</summary><table class="docutils align-center" id="id51">
+<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id51" title="Link to this table"></a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Data</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Name</p></td>
+<td><p>LAMP_GJ_EK1100</p></td>
+</tr>
+<tr class="row-odd"><td><p>ID</p></td>
+<td><p>96</p></td>
+</tr>
+</tbody>
+</table>
+</details></section>
+<section id="lamp-gj-e01-el1004">
+<h2>LAMP_GJ_E01_EL1004<a class="headerlink" href="#lamp-gj-e01-el1004" title="Link to this heading"></a></h2>
+<details>
+     <summary>EtherCAT (4 PDOs)</summary><table class="docutils align-center" id="id52">
+<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id52" title="Link to this table"></a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Data</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Name</p></td>
+<td><p>LAMP_GJ_E01_EL1004</p></td>
+</tr>
+<tr class="row-odd"><td><p>ID</p></td>
+<td><p>97</p></td>
+</tr>
+<tr class="row-even"><td><p>SyncMan</p></td>
+<td><p>001001000000010004000000000000000100001000010000</p></td>
+</tr>
+<tr class="row-odd"><td><p>Fmmu</p></td>
+<td><p>0000000000000000001000010100000002000000000000000000000000000000</p></td>
+</tr>
+</tbody>
+</table>
+<p>PDO Channel 1 (Index #x1a00, Flags #x0011, SyncMan 0)</p>
+<table class="docutils align-center">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Comment</p></th>
+<th class="head"><p>BitLen</p></th>
+<th class="head"><p>Index</p></th>
+<th class="head"><p>Type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Input</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>BIT</p></td>
+</tr>
+</tbody>
+</table>
+<p>PDO Channel 2 (Index #x1a01, Flags #x0011, SyncMan 0)</p>
+<table class="docutils align-center">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Comment</p></th>
+<th class="head"><p>BitLen</p></th>
+<th class="head"><p>Index</p></th>
+<th class="head"><p>Type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Input</p></td>
+<td></td>
+<td></td>
+<td><p>#x6010</p></td>
+<td><p>BIT</p></td>
+</tr>
+</tbody>
+</table>
+<p>PDO Channel 3 (Index #x1a02, Flags #x0011, SyncMan 0)</p>
+<table class="docutils align-center">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Comment</p></th>
+<th class="head"><p>BitLen</p></th>
+<th class="head"><p>Index</p></th>
+<th class="head"><p>Type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Input</p></td>
+<td></td>
+<td></td>
+<td><p>#x6020</p></td>
+<td><p>BIT</p></td>
+</tr>
+</tbody>
+</table>
+<p>PDO Channel 4 (Index #x1a03, Flags #x0011, SyncMan 0)</p>
+<table class="docutils align-center">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Comment</p></th>
+<th class="head"><p>BitLen</p></th>
+<th class="head"><p>Index</p></th>
+<th class="head"><p>Type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Input</p></td>
+<td></td>
+<td></td>
+<td><p>#x6030</p></td>
+<td><p>BIT</p></td>
+</tr>
+</tbody>
+</table>
+</details></section>
+<section id="lamp-gj-e02-el2004">
+<h2>LAMP_GJ_E02_EL2004<a class="headerlink" href="#lamp-gj-e02-el2004" title="Link to this heading"></a></h2>
+<details>
+     <summary>EtherCAT (4 PDOs)</summary><table class="docutils align-center" id="id53">
+<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id53" title="Link to this table"></a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Data</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Name</p></td>
+<td><p>LAMP_GJ_E02_EL2004</p></td>
+</tr>
+<tr class="row-odd"><td><p>ID</p></td>
+<td><p>98</p></td>
+</tr>
+<tr class="row-even"><td><p>SyncMan</p></td>
+<td><p>000f01004400010003000000000000000000000f44090000</p></td>
+</tr>
+<tr class="row-odd"><td><p>Fmmu</p></td>
+<td><p>0000000000000000000f00020100000001000000000000000000000000000000</p></td>
+</tr>
+</tbody>
+</table>
+<p>PDO Channel 1 (Index #x1600, Flags #x0011, SyncMan 0)</p>
+<table class="docutils align-center">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Comment</p></th>
+<th class="head"><p>BitLen</p></th>
+<th class="head"><p>Index</p></th>
+<th class="head"><p>Type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Output</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>BIT</p></td>
+</tr>
+</tbody>
+</table>
+<p>PDO Channel 2 (Index #x1601, Flags #x0011, SyncMan 0)</p>
+<table class="docutils align-center">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Comment</p></th>
+<th class="head"><p>BitLen</p></th>
+<th class="head"><p>Index</p></th>
+<th class="head"><p>Type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Output</p></td>
+<td></td>
+<td></td>
+<td><p>#x7010</p></td>
+<td><p>BIT</p></td>
+</tr>
+</tbody>
+</table>
+<p>PDO Channel 3 (Index #x1602, Flags #x0011, SyncMan 0)</p>
+<table class="docutils align-center">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Comment</p></th>
+<th class="head"><p>BitLen</p></th>
+<th class="head"><p>Index</p></th>
+<th class="head"><p>Type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Output</p></td>
+<td></td>
+<td></td>
+<td><p>#x7020</p></td>
+<td><p>BIT</p></td>
+</tr>
+</tbody>
+</table>
+<p>PDO Channel 4 (Index #x1603, Flags #x0011, SyncMan 0)</p>
+<table class="docutils align-center">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Comment</p></th>
+<th class="head"><p>BitLen</p></th>
+<th class="head"><p>Index</p></th>
+<th class="head"><p>Type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Output</p></td>
+<td></td>
+<td></td>
+<td><p>#x7030</p></td>
+<td><p>BIT</p></td>
+</tr>
+</tbody>
+</table>
+</details></section>
+<section id="lamp-gj-e03-el1004">
+<h2>LAMP_GJ_E03_EL1004<a class="headerlink" href="#lamp-gj-e03-el1004" title="Link to this heading"></a></h2>
+<details>
+     <summary>EtherCAT (4 PDOs)</summary><table class="docutils align-center" id="id54">
+<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id54" title="Link to this table"></a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Data</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Name</p></td>
+<td><p>LAMP_GJ_E03_EL1004</p></td>
+</tr>
+<tr class="row-odd"><td><p>ID</p></td>
+<td><p>99</p></td>
+</tr>
+<tr class="row-even"><td><p>SyncMan</p></td>
+<td><p>001001000000010004000000000000000100001000010000</p></td>
+</tr>
+<tr class="row-odd"><td><p>Fmmu</p></td>
+<td><p>0000000000000000001000010100000002000000000000000000000000000000</p></td>
+</tr>
+</tbody>
+</table>
+<p>PDO Channel 1 (Index #x1a00, Flags #x0011, SyncMan 0)</p>
+<table class="docutils align-center">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Comment</p></th>
+<th class="head"><p>BitLen</p></th>
+<th class="head"><p>Index</p></th>
+<th class="head"><p>Type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Input</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>BIT</p></td>
+</tr>
+</tbody>
+</table>
+<p>PDO Channel 2 (Index #x1a01, Flags #x0011, SyncMan 0)</p>
+<table class="docutils align-center">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Comment</p></th>
+<th class="head"><p>BitLen</p></th>
+<th class="head"><p>Index</p></th>
+<th class="head"><p>Type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Input</p></td>
+<td></td>
+<td></td>
+<td><p>#x6010</p></td>
+<td><p>BIT</p></td>
+</tr>
+</tbody>
+</table>
+<p>PDO Channel 3 (Index #x1a02, Flags #x0011, SyncMan 0)</p>
+<table class="docutils align-center">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Comment</p></th>
+<th class="head"><p>BitLen</p></th>
+<th class="head"><p>Index</p></th>
+<th class="head"><p>Type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Input</p></td>
+<td></td>
+<td></td>
+<td><p>#x6020</p></td>
+<td><p>BIT</p></td>
+</tr>
+</tbody>
+</table>
+<p>PDO Channel 4 (Index #x1a03, Flags #x0011, SyncMan 0)</p>
+<table class="docutils align-center">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Comment</p></th>
+<th class="head"><p>BitLen</p></th>
+<th class="head"><p>Index</p></th>
+<th class="head"><p>Type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Input</p></td>
+<td></td>
+<td></td>
+<td><p>#x6030</p></td>
+<td><p>BIT</p></td>
+</tr>
+</tbody>
+</table>
+</details></section>
+<section id="lamp-gj-e03a-el2004">
+<h2>LAMP_GJ_E03A_EL2004<a class="headerlink" href="#lamp-gj-e03a-el2004" title="Link to this heading"></a></h2>
+<details>
+     <summary>EtherCAT (4 PDOs)</summary><table class="docutils align-center" id="id55">
+<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id55" title="Link to this table"></a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Data</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Name</p></td>
+<td><p>LAMP_GJ_E03A_EL2004</p></td>
+</tr>
+<tr class="row-odd"><td><p>ID</p></td>
+<td><p>100</p></td>
+</tr>
+<tr class="row-even"><td><p>SyncMan</p></td>
+<td><p>000f01004400010003000000000000000000000f44090000</p></td>
+</tr>
+<tr class="row-odd"><td><p>Fmmu</p></td>
+<td><p>0000000000000000000f00020100000001000000000000000000000000000000</p></td>
+</tr>
+</tbody>
+</table>
+<p>PDO Channel 1 (Index #x1600, Flags #x0011, SyncMan 0)</p>
+<table class="docutils align-center">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Comment</p></th>
+<th class="head"><p>BitLen</p></th>
+<th class="head"><p>Index</p></th>
+<th class="head"><p>Type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Output</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>BIT</p></td>
+</tr>
+</tbody>
+</table>
+<p>PDO Channel 2 (Index #x1601, Flags #x0011, SyncMan 0)</p>
+<table class="docutils align-center">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Comment</p></th>
+<th class="head"><p>BitLen</p></th>
+<th class="head"><p>Index</p></th>
+<th class="head"><p>Type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Output</p></td>
+<td></td>
+<td></td>
+<td><p>#x7010</p></td>
+<td><p>BIT</p></td>
+</tr>
+</tbody>
+</table>
+<p>PDO Channel 3 (Index #x1602, Flags #x0011, SyncMan 0)</p>
+<table class="docutils align-center">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Comment</p></th>
+<th class="head"><p>BitLen</p></th>
+<th class="head"><p>Index</p></th>
+<th class="head"><p>Type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Output</p></td>
+<td></td>
+<td></td>
+<td><p>#x7020</p></td>
+<td><p>BIT</p></td>
+</tr>
+</tbody>
+</table>
+<p>PDO Channel 4 (Index #x1603, Flags #x0011, SyncMan 0)</p>
+<table class="docutils align-center">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Comment</p></th>
+<th class="head"><p>BitLen</p></th>
+<th class="head"><p>Index</p></th>
+<th class="head"><p>Type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Output</p></td>
+<td></td>
+<td></td>
+<td><p>#x7030</p></td>
+<td><p>BIT</p></td>
+</tr>
+</tbody>
+</table>
+</details></section>
+<section id="lamp-gj-e04-el6021">
+<h2>LAMP_GJ_E04_EL6021<a class="headerlink" href="#lamp-gj-e04-el6021" title="Link to this heading"></a></h2>
+<details>
+     <summary>EtherCAT (12 PDOs)</summary><table class="docutils align-center" id="id56">
+<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id56" title="Link to this table"></a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Data</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Name</p></td>
+<td><p>LAMP_GJ_E04_EL6021</p></td>
+</tr>
+<tr class="row-odd"><td><p>ID</p></td>
+<td><p>101</p></td>
+</tr>
+<tr class="row-even"><td><p>BootStrapData</p></td>
+<td><p>0010f400f410f400</p></td>
+</tr>
+<tr class="row-odd"><td><p>SyncMan</p></td>
+<td><p>0018f6002600010001000000f600f600f600001826010000</p></td>
+</tr>
+<tr class="row-even"><td><p>SyncMan</p></td>
+<td><p>f618f6002200010002000000f600f600f600f61822010000</p></td>
+</tr>
+<tr class="row-odd"><td><p>SyncMan</p></td>
+<td><p>001018002400010003000000000000001800001024010000</p></td>
+</tr>
+<tr class="row-even"><td><p>SyncMan</p></td>
+<td><p>001418002000010004000000000000001800001420010000</p></td>
+</tr>
+<tr class="row-odd"><td><p>Fmmu</p></td>
+<td><p>0000000000000000001000020100000001000000000000000000000000000000</p></td>
+</tr>
+<tr class="row-even"><td><p>Fmmu</p></td>
+<td><p>0000000000000000001400010100000002000000000000000000000000000000</p></td>
+</tr>
+<tr class="row-odd"><td><p>CoeProfile</p></td>
+<td><p>39326601</p></td>
+</tr>
+<tr class="row-even"><td><p>CoeProfile</p></td>
+<td><p>5001</p></td>
+</tr>
+</tbody>
+</table>
+<p>PDO TxPDO-Map Inputs (Index #x1a00, Flags #x0010, SyncMan )</p>
+<table class="docutils align-center">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Comment</p></th>
+<th class="head"><p>BitLen</p></th>
+<th class="head"><p>Index</p></th>
+<th class="head"><p>Type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Status</p></td>
+<td></td>
+<td></td>
+<td><p>#x3101</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data In 0</p></td>
+<td></td>
+<td></td>
+<td><p>#x3101</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data In 1</p></td>
+<td></td>
+<td></td>
+<td><p>#x3101</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data In 2</p></td>
+<td></td>
+<td></td>
+<td><p>#x3101</p></td>
+<td><p>USINT</p></td>
+</tr>
+</tbody>
+</table>
+<p>PDO TxPDO-Map Inputs (Index #x1a01, Flags #x0010, SyncMan )</p>
+<table class="docutils align-center">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Comment</p></th>
+<th class="head"><p>BitLen</p></th>
+<th class="head"><p>Index</p></th>
+<th class="head"><p>Type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Status</p></td>
+<td></td>
+<td></td>
+<td><p>#x3102</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data In 0</p></td>
+<td></td>
+<td></td>
+<td><p>#x3102</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data In 1</p></td>
+<td></td>
+<td></td>
+<td><p>#x3102</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data In 2</p></td>
+<td></td>
+<td></td>
+<td><p>#x3102</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data In 3</p></td>
+<td></td>
+<td></td>
+<td><p>#x3102</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data In 4</p></td>
+<td></td>
+<td></td>
+<td><p>#x3102</p></td>
+<td><p>USINT</p></td>
+</tr>
+</tbody>
+</table>
+<p>PDO TxPDO-Map Inputs (Index #x1a02, Flags #x0010, SyncMan )</p>
+<table class="docutils align-center">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Comment</p></th>
+<th class="head"><p>BitLen</p></th>
+<th class="head"><p>Index</p></th>
+<th class="head"><p>Type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Status</p></td>
+<td></td>
+<td></td>
+<td><p>#x3103</p></td>
+<td><p>UINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data In 0</p></td>
+<td></td>
+<td></td>
+<td><p>#x3103</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data In 1</p></td>
+<td></td>
+<td></td>
+<td><p>#x3103</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data In 2</p></td>
+<td></td>
+<td></td>
+<td><p>#x3103</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data In 3</p></td>
+<td></td>
+<td></td>
+<td><p>#x3103</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data In 4</p></td>
+<td></td>
+<td></td>
+<td><p>#x3103</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data In 5</p></td>
+<td></td>
+<td></td>
+<td><p>#x3103</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data In 6</p></td>
+<td></td>
+<td></td>
+<td><p>#x3103</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data In 7</p></td>
+<td></td>
+<td></td>
+<td><p>#x3103</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data In 8</p></td>
+<td></td>
+<td></td>
+<td><p>#x3103</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data In 9</p></td>
+<td></td>
+<td></td>
+<td><p>#x3103</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data In 10</p></td>
+<td></td>
+<td></td>
+<td><p>#x3103</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data In 11</p></td>
+<td></td>
+<td></td>
+<td><p>#x3103</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data In 12</p></td>
+<td></td>
+<td></td>
+<td><p>#x3103</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data In 13</p></td>
+<td></td>
+<td></td>
+<td><p>#x3103</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data In 14</p></td>
+<td></td>
+<td></td>
+<td><p>#x3103</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data In 15</p></td>
+<td></td>
+<td></td>
+<td><p>#x3103</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data In 16</p></td>
+<td></td>
+<td></td>
+<td><p>#x3103</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data In 17</p></td>
+<td></td>
+<td></td>
+<td><p>#x3103</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data In 18</p></td>
+<td></td>
+<td></td>
+<td><p>#x3103</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data In 19</p></td>
+<td></td>
+<td></td>
+<td><p>#x3103</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data In 20</p></td>
+<td></td>
+<td></td>
+<td><p>#x3103</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data In 21</p></td>
+<td></td>
+<td></td>
+<td><p>#x3103</p></td>
+<td><p>USINT</p></td>
+</tr>
+</tbody>
+</table>
+<p>PDO COM TxPDO-Map Inputs (Index #x1a04, Flags #x0010, SyncMan 3)</p>
+<table class="docutils align-center">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Comment</p></th>
+<th class="head"><p>BitLen</p></th>
+<th class="head"><p>Index</p></th>
+<th class="head"><p>Type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Status__Transmit accepted</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>BIT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Status__Receive request</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>BIT</p></td>
+</tr>
+<tr class="row-even"><td><p>Status__Init accepted</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>BIT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Status__Buffer full</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>BIT</p></td>
+</tr>
+<tr class="row-even"><td><p>Status__Parity error</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>BIT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Status__Framing error</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>BIT</p></td>
+</tr>
+<tr class="row-even"><td><p>Status__Overrun error</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>BIT</p></td>
+</tr>
+<tr class="row-odd"><td><p><a href="#id61"><span class="problematic" id="id104">Status__</span></a></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>ARRAY [0..0] OF BIT</p></td>
+</tr>
+<tr class="row-even"><td><p>Status__Input length</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data In 0</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data In 1</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data In 2</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data In 3</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data In 4</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data In 5</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data In 6</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data In 7</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data In 8</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data In 9</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data In 10</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data In 11</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data In 12</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data In 13</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data In 14</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data In 15</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data In 16</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data In 17</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data In 18</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data In 19</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data In 20</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data In 21</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+</tbody>
+</table>
+<p>PDO COM ext. inputs (Index #x1a05, Flags #x0010, SyncMan )</p>
+<table class="docutils align-center">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Comment</p></th>
+<th class="head"><p>BitLen</p></th>
+<th class="head"><p>Index</p></th>
+<th class="head"><p>Type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Status__Transmit accepted</p></td>
+<td></td>
+<td></td>
+<td><p>#x6001</p></td>
+<td><p>BIT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Status__Receive request</p></td>
+<td></td>
+<td></td>
+<td><p>#x6001</p></td>
+<td><p>BIT</p></td>
+</tr>
+<tr class="row-even"><td><p>Status__Init accepted</p></td>
+<td></td>
+<td></td>
+<td><p>#x6001</p></td>
+<td><p>BIT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Status__Buffer full</p></td>
+<td></td>
+<td></td>
+<td><p>#x6001</p></td>
+<td><p>BIT</p></td>
+</tr>
+<tr class="row-even"><td><p>Status__Parity error</p></td>
+<td></td>
+<td></td>
+<td><p>#x6001</p></td>
+<td><p>BIT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Status__Framing error</p></td>
+<td></td>
+<td></td>
+<td><p>#x6001</p></td>
+<td><p>BIT</p></td>
+</tr>
+<tr class="row-even"><td><p>Status__Overrun error</p></td>
+<td></td>
+<td></td>
+<td><p>#x6001</p></td>
+<td><p>BIT</p></td>
+</tr>
+<tr class="row-odd"><td><p><a href="#id61"><span class="problematic" id="id105">Status__</span></a></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>ARRAY [0..0] OF BIT</p></td>
+</tr>
+<tr class="row-even"><td><p>Status__Input length</p></td>
+<td></td>
+<td></td>
+<td><p>#x6001</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data In 0</p></td>
+<td></td>
+<td></td>
+<td><p>#x6001</p></td>
+<td><p>UINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data In 1</p></td>
+<td></td>
+<td></td>
+<td><p>#x6001</p></td>
+<td><p>UINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data In 2</p></td>
+<td></td>
+<td></td>
+<td><p>#x6001</p></td>
+<td><p>UINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data In 3</p></td>
+<td></td>
+<td></td>
+<td><p>#x6001</p></td>
+<td><p>UINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data In 4</p></td>
+<td></td>
+<td></td>
+<td><p>#x6001</p></td>
+<td><p>UINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data In 5</p></td>
+<td></td>
+<td></td>
+<td><p>#x6001</p></td>
+<td><p>UINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data In 6</p></td>
+<td></td>
+<td></td>
+<td><p>#x6001</p></td>
+<td><p>UINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data In 7</p></td>
+<td></td>
+<td></td>
+<td><p>#x6001</p></td>
+<td><p>UINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data In 8</p></td>
+<td></td>
+<td></td>
+<td><p>#x6001</p></td>
+<td><p>UINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data In 9</p></td>
+<td></td>
+<td></td>
+<td><p>#x6001</p></td>
+<td><p>UINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data In 10</p></td>
+<td></td>
+<td></td>
+<td><p>#x6001</p></td>
+<td><p>UINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data In 11</p></td>
+<td></td>
+<td></td>
+<td><p>#x6001</p></td>
+<td><p>UINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data In 12</p></td>
+<td></td>
+<td></td>
+<td><p>#x6001</p></td>
+<td><p>UINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data In 13</p></td>
+<td></td>
+<td></td>
+<td><p>#x6001</p></td>
+<td><p>UINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data In 14</p></td>
+<td></td>
+<td></td>
+<td><p>#x6001</p></td>
+<td><p>UINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data In 15</p></td>
+<td></td>
+<td></td>
+<td><p>#x6001</p></td>
+<td><p>UINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data In 16</p></td>
+<td></td>
+<td></td>
+<td><p>#x6001</p></td>
+<td><p>UINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data In 17</p></td>
+<td></td>
+<td></td>
+<td><p>#x6001</p></td>
+<td><p>UINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data In 18</p></td>
+<td></td>
+<td></td>
+<td><p>#x6001</p></td>
+<td><p>UINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data In 19</p></td>
+<td></td>
+<td></td>
+<td><p>#x6001</p></td>
+<td><p>UINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data In 20</p></td>
+<td></td>
+<td></td>
+<td><p>#x6001</p></td>
+<td><p>UINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data In 21</p></td>
+<td></td>
+<td></td>
+<td><p>#x6001</p></td>
+<td><p>UINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data In 22</p></td>
+<td></td>
+<td></td>
+<td><p>#x6001</p></td>
+<td><p>UINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data In 23</p></td>
+<td></td>
+<td></td>
+<td><p>#x6001</p></td>
+<td><p>UINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data In 24</p></td>
+<td></td>
+<td></td>
+<td><p>#x6001</p></td>
+<td><p>UINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data In 25</p></td>
+<td></td>
+<td></td>
+<td><p>#x6001</p></td>
+<td><p>UINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data In 26</p></td>
+<td></td>
+<td></td>
+<td><p>#x6001</p></td>
+<td><p>UINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data In 27</p></td>
+<td></td>
+<td></td>
+<td><p>#x6001</p></td>
+<td><p>UINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data In 28</p></td>
+<td></td>
+<td></td>
+<td><p>#x6001</p></td>
+<td><p>UINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data In 29</p></td>
+<td></td>
+<td></td>
+<td><p>#x6001</p></td>
+<td><p>UINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data In 30</p></td>
+<td></td>
+<td></td>
+<td><p>#x6001</p></td>
+<td><p>UINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data In 31</p></td>
+<td></td>
+<td></td>
+<td><p>#x6001</p></td>
+<td><p>UINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data In 32</p></td>
+<td></td>
+<td></td>
+<td><p>#x6001</p></td>
+<td><p>UINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data In 33</p></td>
+<td></td>
+<td></td>
+<td><p>#x6001</p></td>
+<td><p>UINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data In 34</p></td>
+<td></td>
+<td></td>
+<td><p>#x6001</p></td>
+<td><p>UINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data In 35</p></td>
+<td></td>
+<td></td>
+<td><p>#x6001</p></td>
+<td><p>UINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data In 36</p></td>
+<td></td>
+<td></td>
+<td><p>#x6001</p></td>
+<td><p>UINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data In 37</p></td>
+<td></td>
+<td></td>
+<td><p>#x6001</p></td>
+<td><p>UINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data In 38</p></td>
+<td></td>
+<td></td>
+<td><p>#x6001</p></td>
+<td><p>UINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data In 39</p></td>
+<td></td>
+<td></td>
+<td><p>#x6001</p></td>
+<td><p>UINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data In 40</p></td>
+<td></td>
+<td></td>
+<td><p>#x6001</p></td>
+<td><p>UINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data In 41</p></td>
+<td></td>
+<td></td>
+<td><p>#x6001</p></td>
+<td><p>UINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data In 42</p></td>
+<td></td>
+<td></td>
+<td><p>#x6001</p></td>
+<td><p>UINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data In 43</p></td>
+<td></td>
+<td></td>
+<td><p>#x6001</p></td>
+<td><p>UINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data In 44</p></td>
+<td></td>
+<td></td>
+<td><p>#x6001</p></td>
+<td><p>UINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data In 45</p></td>
+<td></td>
+<td></td>
+<td><p>#x6001</p></td>
+<td><p>UINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data In 46</p></td>
+<td></td>
+<td></td>
+<td><p>#x6001</p></td>
+<td><p>UINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data In 47</p></td>
+<td></td>
+<td></td>
+<td><p>#x6001</p></td>
+<td><p>UINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data In 48</p></td>
+<td></td>
+<td></td>
+<td><p>#x6001</p></td>
+<td><p>UINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data In 49</p></td>
+<td></td>
+<td></td>
+<td><p>#x6001</p></td>
+<td><p>UINT</p></td>
+</tr>
+</tbody>
+</table>
+<p>PDO COM TxPDO-Map Input 98 Byte (Index #x1a06, Flags #x0010, SyncMan )</p>
+<table class="docutils align-center">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Comment</p></th>
+<th class="head"><p>BitLen</p></th>
+<th class="head"><p>Index</p></th>
+<th class="head"><p>Type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Status__Transmit accepted</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>BIT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Status__Receive request</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>BIT</p></td>
+</tr>
+<tr class="row-even"><td><p>Status__Init accepted</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>BIT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Status__Buffer full</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>BIT</p></td>
+</tr>
+<tr class="row-even"><td><p>Status__Parity error</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>BIT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Status__Framing error</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>BIT</p></td>
+</tr>
+<tr class="row-even"><td><p>Status__Overrun error</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>BIT</p></td>
+</tr>
+<tr class="row-odd"><td><p><a href="#id61"><span class="problematic" id="id106">Status__</span></a></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>ARRAY [0..0] OF BIT</p></td>
+</tr>
+<tr class="row-even"><td><p>Status__Input length</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data In 0</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data In 1</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data In 2</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data In 3</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data In 4</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data In 5</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data In 6</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data In 7</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data In 8</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data In 9</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data In 10</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data In 11</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data In 12</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data In 13</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data In 14</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data In 15</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data In 16</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data In 17</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data In 18</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data In 19</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data In 20</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data In 21</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data In 22</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data In 23</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data In 24</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data In 25</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data In 26</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data In 27</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data In 28</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data In 29</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data In 30</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data In 31</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data In 32</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data In 33</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data In 34</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data In 35</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data In 36</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data In 37</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data In 38</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data In 39</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data In 40</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data In 41</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data In 42</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data In 43</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data In 44</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data In 45</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data In 46</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data In 47</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data In 48</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data In 49</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data In 50</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data In 51</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data In 52</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data In 53</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data In 54</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data In 55</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data In 56</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data In 57</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data In 58</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data In 59</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data In 60</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data In 61</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data In 62</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data In 63</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data In 64</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data In 65</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data In 66</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data In 67</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data In 68</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data In 69</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data In 70</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data In 71</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data In 72</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data In 73</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data In 74</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data In 75</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data In 76</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data In 77</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data In 78</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data In 79</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data In 80</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data In 81</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data In 82</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data In 83</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data In 84</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data In 85</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data In 86</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data In 87</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data In 88</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data In 89</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data In 90</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data In 91</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data In 92</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data In 93</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data In 94</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data In 95</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data In 96</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data In 97</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>USINT</p></td>
+</tr>
+</tbody>
+</table>
+<p>PDO RxPDO-Map Outputs (Index #x1600, Flags #x0010, SyncMan )</p>
+<table class="docutils align-center">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Comment</p></th>
+<th class="head"><p>BitLen</p></th>
+<th class="head"><p>Index</p></th>
+<th class="head"><p>Type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Ctrl</p></td>
+<td></td>
+<td></td>
+<td><p>#x3001</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Out 0</p></td>
+<td></td>
+<td></td>
+<td><p>#x3001</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Out 1</p></td>
+<td></td>
+<td></td>
+<td><p>#x3001</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Out 2</p></td>
+<td></td>
+<td></td>
+<td><p>#x3001</p></td>
+<td><p>USINT</p></td>
+</tr>
+</tbody>
+</table>
+<p>PDO RxPDO-Map Outputs (Index #x1601, Flags #x0010, SyncMan )</p>
+<table class="docutils align-center">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Comment</p></th>
+<th class="head"><p>BitLen</p></th>
+<th class="head"><p>Index</p></th>
+<th class="head"><p>Type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Ctrl</p></td>
+<td></td>
+<td></td>
+<td><p>#x3002</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Out 0</p></td>
+<td></td>
+<td></td>
+<td><p>#x3002</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Out 1</p></td>
+<td></td>
+<td></td>
+<td><p>#x3002</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Out 2</p></td>
+<td></td>
+<td></td>
+<td><p>#x3002</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Out 3</p></td>
+<td></td>
+<td></td>
+<td><p>#x3002</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Out 4</p></td>
+<td></td>
+<td></td>
+<td><p>#x3002</p></td>
+<td><p>USINT</p></td>
+</tr>
+</tbody>
+</table>
+<p>PDO RxPDO-Map Outputs (Index #x1602, Flags #x0010, SyncMan )</p>
+<table class="docutils align-center">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Comment</p></th>
+<th class="head"><p>BitLen</p></th>
+<th class="head"><p>Index</p></th>
+<th class="head"><p>Type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Ctrl</p></td>
+<td></td>
+<td></td>
+<td><p>#x3003</p></td>
+<td><p>UINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Out 0</p></td>
+<td></td>
+<td></td>
+<td><p>#x3003</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Out 1</p></td>
+<td></td>
+<td></td>
+<td><p>#x3003</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Out 2</p></td>
+<td></td>
+<td></td>
+<td><p>#x3003</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Out 3</p></td>
+<td></td>
+<td></td>
+<td><p>#x3003</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Out 4</p></td>
+<td></td>
+<td></td>
+<td><p>#x3003</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Out 5</p></td>
+<td></td>
+<td></td>
+<td><p>#x3003</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Out 6</p></td>
+<td></td>
+<td></td>
+<td><p>#x3003</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Out 7</p></td>
+<td></td>
+<td></td>
+<td><p>#x3003</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Out 8</p></td>
+<td></td>
+<td></td>
+<td><p>#x3003</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Out 9</p></td>
+<td></td>
+<td></td>
+<td><p>#x3003</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Out 10</p></td>
+<td></td>
+<td></td>
+<td><p>#x3003</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Out 11</p></td>
+<td></td>
+<td></td>
+<td><p>#x3003</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Out 12</p></td>
+<td></td>
+<td></td>
+<td><p>#x3003</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Out 13</p></td>
+<td></td>
+<td></td>
+<td><p>#x3003</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Out 14</p></td>
+<td></td>
+<td></td>
+<td><p>#x3003</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Out 15</p></td>
+<td></td>
+<td></td>
+<td><p>#x3003</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Out 16</p></td>
+<td></td>
+<td></td>
+<td><p>#x3003</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Out 17</p></td>
+<td></td>
+<td></td>
+<td><p>#x3003</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Out 18</p></td>
+<td></td>
+<td></td>
+<td><p>#x3003</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Out 19</p></td>
+<td></td>
+<td></td>
+<td><p>#x3003</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Out 20</p></td>
+<td></td>
+<td></td>
+<td><p>#x3003</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Out 21</p></td>
+<td></td>
+<td></td>
+<td><p>#x3003</p></td>
+<td><p>USINT</p></td>
+</tr>
+</tbody>
+</table>
+<p>PDO COM RxPDO-Map Outputs (Index #x1604, Flags #x0010, SyncMan 2)</p>
+<table class="docutils align-center">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Comment</p></th>
+<th class="head"><p>BitLen</p></th>
+<th class="head"><p>Index</p></th>
+<th class="head"><p>Type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Ctrl__Transmit request</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>BIT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Ctrl__Receive accepted</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>BIT</p></td>
+</tr>
+<tr class="row-even"><td><p>Ctrl__Init request</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>BIT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Ctrl__Send continues</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>BIT</p></td>
+</tr>
+<tr class="row-even"><td><p><a href="#id61"><span class="problematic" id="id107">Ctrl__</span></a></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>ARRAY [0..3] OF BIT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Ctrl__Output length</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Out 0</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Out 1</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Out 2</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Out 3</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Out 4</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Out 5</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Out 6</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Out 7</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Out 8</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Out 9</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Out 10</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Out 11</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Out 12</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Out 13</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Out 14</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Out 15</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Out 16</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Out 17</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Out 18</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Out 19</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Out 20</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Out 21</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+</tbody>
+</table>
+<p>PDO COM ext. outputs (Index #x1605, Flags #x0010, SyncMan )</p>
+<table class="docutils align-center">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Comment</p></th>
+<th class="head"><p>BitLen</p></th>
+<th class="head"><p>Index</p></th>
+<th class="head"><p>Type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Ctrl__Transmit request</p></td>
+<td></td>
+<td></td>
+<td><p>#x7001</p></td>
+<td><p>BIT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Ctrl__Receive accepted</p></td>
+<td></td>
+<td></td>
+<td><p>#x7001</p></td>
+<td><p>BIT</p></td>
+</tr>
+<tr class="row-even"><td><p>Ctrl__Init request</p></td>
+<td></td>
+<td></td>
+<td><p>#x7001</p></td>
+<td><p>BIT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Ctrl__Send continuous</p></td>
+<td></td>
+<td></td>
+<td><p>#x7001</p></td>
+<td><p>BIT</p></td>
+</tr>
+<tr class="row-even"><td><p><a href="#id61"><span class="problematic" id="id108">Ctrl__</span></a></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>ARRAY [0..3] OF BIT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Ctrl__Output length</p></td>
+<td></td>
+<td></td>
+<td><p>#x7001</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Out 0</p></td>
+<td></td>
+<td></td>
+<td><p>#x7001</p></td>
+<td><p>UINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Out 1</p></td>
+<td></td>
+<td></td>
+<td><p>#x7001</p></td>
+<td><p>UINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Out 2</p></td>
+<td></td>
+<td></td>
+<td><p>#x7001</p></td>
+<td><p>UINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Out 3</p></td>
+<td></td>
+<td></td>
+<td><p>#x7001</p></td>
+<td><p>UINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Out 4</p></td>
+<td></td>
+<td></td>
+<td><p>#x7001</p></td>
+<td><p>UINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Out 5</p></td>
+<td></td>
+<td></td>
+<td><p>#x7001</p></td>
+<td><p>UINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Out 6</p></td>
+<td></td>
+<td></td>
+<td><p>#x7001</p></td>
+<td><p>UINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Out 7</p></td>
+<td></td>
+<td></td>
+<td><p>#x7001</p></td>
+<td><p>UINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Out 8</p></td>
+<td></td>
+<td></td>
+<td><p>#x7001</p></td>
+<td><p>UINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Out 9</p></td>
+<td></td>
+<td></td>
+<td><p>#x7001</p></td>
+<td><p>UINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Out 10</p></td>
+<td></td>
+<td></td>
+<td><p>#x7001</p></td>
+<td><p>UINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Out 11</p></td>
+<td></td>
+<td></td>
+<td><p>#x7001</p></td>
+<td><p>UINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Out 12</p></td>
+<td></td>
+<td></td>
+<td><p>#x7001</p></td>
+<td><p>UINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Out 13</p></td>
+<td></td>
+<td></td>
+<td><p>#x7001</p></td>
+<td><p>UINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Out 14</p></td>
+<td></td>
+<td></td>
+<td><p>#x7001</p></td>
+<td><p>UINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Out 15</p></td>
+<td></td>
+<td></td>
+<td><p>#x7001</p></td>
+<td><p>UINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Out 16</p></td>
+<td></td>
+<td></td>
+<td><p>#x7001</p></td>
+<td><p>UINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Out 17</p></td>
+<td></td>
+<td></td>
+<td><p>#x7001</p></td>
+<td><p>UINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Out 18</p></td>
+<td></td>
+<td></td>
+<td><p>#x7001</p></td>
+<td><p>UINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Out 19</p></td>
+<td></td>
+<td></td>
+<td><p>#x7001</p></td>
+<td><p>UINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Out 20</p></td>
+<td></td>
+<td></td>
+<td><p>#x7001</p></td>
+<td><p>UINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Out 21</p></td>
+<td></td>
+<td></td>
+<td><p>#x7001</p></td>
+<td><p>UINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Out 22</p></td>
+<td></td>
+<td></td>
+<td><p>#x7001</p></td>
+<td><p>UINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Out 23</p></td>
+<td></td>
+<td></td>
+<td><p>#x7001</p></td>
+<td><p>UINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Out 24</p></td>
+<td></td>
+<td></td>
+<td><p>#x7001</p></td>
+<td><p>UINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Out 25</p></td>
+<td></td>
+<td></td>
+<td><p>#x7001</p></td>
+<td><p>UINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Out 26</p></td>
+<td></td>
+<td></td>
+<td><p>#x7001</p></td>
+<td><p>UINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Out 27</p></td>
+<td></td>
+<td></td>
+<td><p>#x7001</p></td>
+<td><p>UINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Out 28</p></td>
+<td></td>
+<td></td>
+<td><p>#x7001</p></td>
+<td><p>UINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Out 29</p></td>
+<td></td>
+<td></td>
+<td><p>#x7001</p></td>
+<td><p>UINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Out 30</p></td>
+<td></td>
+<td></td>
+<td><p>#x7001</p></td>
+<td><p>UINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Out 31</p></td>
+<td></td>
+<td></td>
+<td><p>#x7001</p></td>
+<td><p>UINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Out 32</p></td>
+<td></td>
+<td></td>
+<td><p>#x7001</p></td>
+<td><p>UINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Out 33</p></td>
+<td></td>
+<td></td>
+<td><p>#x7001</p></td>
+<td><p>UINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Out 34</p></td>
+<td></td>
+<td></td>
+<td><p>#x7001</p></td>
+<td><p>UINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Out 35</p></td>
+<td></td>
+<td></td>
+<td><p>#x7001</p></td>
+<td><p>UINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Out 36</p></td>
+<td></td>
+<td></td>
+<td><p>#x7001</p></td>
+<td><p>UINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Out 37</p></td>
+<td></td>
+<td></td>
+<td><p>#x7001</p></td>
+<td><p>UINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Out 38</p></td>
+<td></td>
+<td></td>
+<td><p>#x7001</p></td>
+<td><p>UINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Out 39</p></td>
+<td></td>
+<td></td>
+<td><p>#x7001</p></td>
+<td><p>UINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Out 40</p></td>
+<td></td>
+<td></td>
+<td><p>#x7001</p></td>
+<td><p>UINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Out 41</p></td>
+<td></td>
+<td></td>
+<td><p>#x7001</p></td>
+<td><p>UINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Out 42</p></td>
+<td></td>
+<td></td>
+<td><p>#x7001</p></td>
+<td><p>UINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Out 43</p></td>
+<td></td>
+<td></td>
+<td><p>#x7001</p></td>
+<td><p>UINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Out 44</p></td>
+<td></td>
+<td></td>
+<td><p>#x7001</p></td>
+<td><p>UINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Out 45</p></td>
+<td></td>
+<td></td>
+<td><p>#x7001</p></td>
+<td><p>UINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Out 46</p></td>
+<td></td>
+<td></td>
+<td><p>#x7001</p></td>
+<td><p>UINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Out 47</p></td>
+<td></td>
+<td></td>
+<td><p>#x7001</p></td>
+<td><p>UINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Out 48</p></td>
+<td></td>
+<td></td>
+<td><p>#x7001</p></td>
+<td><p>UINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Out 49</p></td>
+<td></td>
+<td></td>
+<td><p>#x7001</p></td>
+<td><p>UINT</p></td>
+</tr>
+</tbody>
+</table>
+<p>PDO COM RxPDO-Map Output 98 Byte (Index #x1606, Flags #x0010, SyncMan )</p>
+<table class="docutils align-center">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Comment</p></th>
+<th class="head"><p>BitLen</p></th>
+<th class="head"><p>Index</p></th>
+<th class="head"><p>Type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Ctrl__Transmit request</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>BIT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Ctrl__Receive accepted</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>BIT</p></td>
+</tr>
+<tr class="row-even"><td><p>Ctrl__Init request</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>BIT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Ctrl__Send continues</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>BIT</p></td>
+</tr>
+<tr class="row-even"><td><p><a href="#id61"><span class="problematic" id="id109">Ctrl__</span></a></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>ARRAY [0..3] OF BIT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Ctrl__Output length</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Out 0</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Out 1</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Out 2</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Out 3</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Out 4</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Out 5</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Out 6</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Out 7</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Out 8</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Out 9</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Out 10</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Out 11</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Out 12</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Out 13</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Out 14</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Out 15</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Out 16</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Out 17</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Out 18</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Out 19</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Out 20</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Out 21</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Out 22</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Out 23</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Out 24</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Out 25</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Out 26</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Out 27</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Out 28</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Out 29</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Out 30</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Out 31</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Out 32</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Out 33</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Out 34</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Out 35</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Out 36</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Out 37</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Out 38</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Out 39</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Out 40</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Out 41</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Out 42</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Out 43</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Out 44</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Out 45</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Out 46</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Out 47</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Out 48</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Out 49</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Out 50</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Out 51</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Out 52</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Out 53</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Out 54</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Out 55</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Out 56</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Out 57</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Out 58</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Out 59</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Out 60</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Out 61</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Out 62</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Out 63</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Out 64</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Out 65</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Out 66</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Out 67</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Out 68</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Out 69</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Out 70</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Out 71</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Out 72</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Out 73</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Out 74</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Out 75</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Out 76</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Out 77</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Out 78</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Out 79</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Out 80</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Out 81</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Out 82</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Out 83</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Out 84</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Out 85</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Out 86</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Out 87</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Out 88</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Out 89</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Out 90</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Out 91</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Out 92</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Out 93</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Out 94</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Out 95</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Out 96</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Out 97</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>USINT</p></td>
+</tr>
+</tbody>
+</table>
+</details></section>
+<section id="lamp-gj-e05-el1004">
+<h2>LAMP_GJ_E05_EL1004<a class="headerlink" href="#lamp-gj-e05-el1004" title="Link to this heading"></a></h2>
+<details>
+     <summary>EtherCAT (4 PDOs)</summary><table class="docutils align-center" id="id57">
+<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id57" title="Link to this table"></a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Data</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Name</p></td>
+<td><p>LAMP_GJ_E05_EL1004</p></td>
+</tr>
+<tr class="row-odd"><td><p>ID</p></td>
+<td><p>102</p></td>
+</tr>
+<tr class="row-even"><td><p>SyncMan</p></td>
+<td><p>001001000000010004000000000000000100001000010000</p></td>
+</tr>
+<tr class="row-odd"><td><p>Fmmu</p></td>
+<td><p>0000000000000000001000010100000002000000000000000000000000000000</p></td>
+</tr>
+</tbody>
+</table>
+<p>PDO Channel 1 (Index #x1a00, Flags #x0011, SyncMan 0)</p>
+<table class="docutils align-center">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Comment</p></th>
+<th class="head"><p>BitLen</p></th>
+<th class="head"><p>Index</p></th>
+<th class="head"><p>Type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Input</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>BIT</p></td>
+</tr>
+</tbody>
+</table>
+<p>PDO Channel 2 (Index #x1a01, Flags #x0011, SyncMan 0)</p>
+<table class="docutils align-center">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Comment</p></th>
+<th class="head"><p>BitLen</p></th>
+<th class="head"><p>Index</p></th>
+<th class="head"><p>Type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Input</p></td>
+<td></td>
+<td></td>
+<td><p>#x6010</p></td>
+<td><p>BIT</p></td>
+</tr>
+</tbody>
+</table>
+<p>PDO Channel 3 (Index #x1a02, Flags #x0011, SyncMan 0)</p>
+<table class="docutils align-center">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Comment</p></th>
+<th class="head"><p>BitLen</p></th>
+<th class="head"><p>Index</p></th>
+<th class="head"><p>Type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Input</p></td>
+<td></td>
+<td></td>
+<td><p>#x6020</p></td>
+<td><p>BIT</p></td>
+</tr>
+</tbody>
+</table>
+<p>PDO Channel 4 (Index #x1a03, Flags #x0011, SyncMan 0)</p>
+<table class="docutils align-center">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Comment</p></th>
+<th class="head"><p>BitLen</p></th>
+<th class="head"><p>Index</p></th>
+<th class="head"><p>Type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Input</p></td>
+<td></td>
+<td></td>
+<td><p>#x6030</p></td>
+<td><p>BIT</p></td>
+</tr>
+</tbody>
+</table>
+</details></section>
+<section id="lamp-gj-e06-el2794">
+<h2>LAMP_GJ_E06_EL2794<a class="headerlink" href="#lamp-gj-e06-el2794" title="Link to this heading"></a></h2>
+<details>
+     <summary>EtherCAT (4 PDOs)</summary><table class="docutils align-center" id="id58">
+<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id58" title="Link to this table"></a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Data</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Name</p></td>
+<td><p>LAMP_GJ_E06_EL2794</p></td>
+</tr>
+<tr class="row-odd"><td><p>ID</p></td>
+<td><p>103</p></td>
+</tr>
+<tr class="row-even"><td><p>SyncMan</p></td>
+<td><p>000f01004400010003000000000000000000000f44090000</p></td>
+</tr>
+<tr class="row-odd"><td><p>Fmmu</p></td>
+<td><p>0000000000000000000f00020100000001000000000000000000000000000000</p></td>
+</tr>
+</tbody>
+</table>
+<p>PDO Channel 1 (Index #x1600, Flags #x0011, SyncMan 0)</p>
+<table class="docutils align-center">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Comment</p></th>
+<th class="head"><p>BitLen</p></th>
+<th class="head"><p>Index</p></th>
+<th class="head"><p>Type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Output</p></td>
+<td></td>
+<td></td>
+<td><p>#x7000</p></td>
+<td><p>BIT</p></td>
+</tr>
+</tbody>
+</table>
+<p>PDO Channel 2 (Index #x1601, Flags #x0011, SyncMan 0)</p>
+<table class="docutils align-center">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Comment</p></th>
+<th class="head"><p>BitLen</p></th>
+<th class="head"><p>Index</p></th>
+<th class="head"><p>Type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Output</p></td>
+<td></td>
+<td></td>
+<td><p>#x7010</p></td>
+<td><p>BIT</p></td>
+</tr>
+</tbody>
+</table>
+<p>PDO Channel 3 (Index #x1602, Flags #x0011, SyncMan 0)</p>
+<table class="docutils align-center">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Comment</p></th>
+<th class="head"><p>BitLen</p></th>
+<th class="head"><p>Index</p></th>
+<th class="head"><p>Type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Output</p></td>
+<td></td>
+<td></td>
+<td><p>#x7020</p></td>
+<td><p>BIT</p></td>
+</tr>
+</tbody>
+</table>
+<p>PDO Channel 4 (Index #x1603, Flags #x0011, SyncMan 0)</p>
+<table class="docutils align-center">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Comment</p></th>
+<th class="head"><p>BitLen</p></th>
+<th class="head"><p>Index</p></th>
+<th class="head"><p>Type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Output</p></td>
+<td></td>
+<td></td>
+<td><p>#x7030</p></td>
+<td><p>BIT</p></td>
+</tr>
+</tbody>
+</table>
+</details></section>
+<section id="lamp-gj-e09-el3174-0002">
+<h2>LAMP_GJ_E09_EL3174-0002<a class="headerlink" href="#lamp-gj-e09-el3174-0002" title="Link to this heading"></a></h2>
+<details>
+     <summary>EtherCAT (8 PDOs)</summary><table class="docutils align-center" id="id59">
+<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id59" title="Link to this table"></a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Data</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Name</p></td>
+<td><p>LAMP_GJ_E09_EL3174-0002</p></td>
+</tr>
+<tr class="row-odd"><td><p>ID</p></td>
+<td><p>104</p></td>
+</tr>
+<tr class="row-even"><td><p>BootStrapData</p></td>
+<td><p>0010f400f410f400</p></td>
+</tr>
+<tr class="row-odd"><td><p>SyncMan</p></td>
+<td><p>001080002600010001000000800080008000001026010000</p></td>
+</tr>
+<tr class="row-even"><td><p>SyncMan</p></td>
+<td><p>801080002200010002000000800080008000801022010000</p></td>
+</tr>
+<tr class="row-odd"><td><p>SyncMan</p></td>
+<td><p>001100000400000003000000000000000000001104000000</p></td>
+</tr>
+<tr class="row-even"><td><p>SyncMan</p></td>
+<td><p>801110002000010004000000000000001000801120010000</p></td>
+</tr>
+<tr class="row-odd"><td><p>Fmmu</p></td>
+<td><p>0000000000000000801100010100000002000000000000000000000000000000</p></td>
+</tr>
+<tr class="row-even"><td><p>Fmmu</p></td>
+<td><p>00000000000000000d0800010100000003000000000000000000000000000000</p></td>
+</tr>
+<tr class="row-odd"><td><p>CoeProfile</p></td>
+<td><p>19665801</p></td>
+</tr>
+<tr class="row-even"><td><p>CoeProfile</p></td>
+<td><p>19665801</p></td>
+</tr>
+<tr class="row-odd"><td><p>CoeProfile</p></td>
+<td><p>19665801</p></td>
+</tr>
+<tr class="row-even"><td><p>CoeProfile</p></td>
+<td><p>19665801</p></td>
+</tr>
+</tbody>
+</table>
+<p>PDO AI Standard Channel 1 (Index #x1a00, Flags #x0010, SyncMan 3)</p>
+<table class="docutils align-center">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Comment</p></th>
+<th class="head"><p>BitLen</p></th>
+<th class="head"><p>Index</p></th>
+<th class="head"><p>Type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Status__Underrange</p></td>
+<td><p>Bit set when upper value limit exceeded</p></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>BIT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Status__Overrange</p></td>
+<td><p>Bit set when lower value limit exceeded</p></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>BIT</p></td>
+</tr>
+<tr class="row-even"><td><p>Status__Limit 1</p></td>
+<td><p>Bit0: Value greater than Limit1 Bit1: Value smaller than Limit1</p></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>BIT2</p></td>
+</tr>
+<tr class="row-odd"><td><p>Status__Limit 2</p></td>
+<td><p>Bit0: Value greater than Limit2 Bit1: Value smaller than Limit2</p></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>BIT2</p></td>
+</tr>
+<tr class="row-even"><td><p>Status__Error</p></td>
+<td><p>Bit set when Over- or Underrange</p></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>BIT</p></td>
+</tr>
+<tr class="row-odd"><td><p><a href="#id61"><span class="problematic" id="id110">Status__</span></a></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>ARRAY [0..0] OF BIT</p></td>
+</tr>
+<tr class="row-even"><td><p><a href="#id61"><span class="problematic" id="id111">Status__</span></a></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>ARRAY [0..4] OF BIT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Status__Sync error</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>BIT</p></td>
+</tr>
+<tr class="row-even"><td><p>Status__TxPDO State</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>BIT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Status__TxPDO Toggle</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>BIT</p></td>
+</tr>
+<tr class="row-even"><td><p>Value</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>INT</p></td>
+</tr>
+</tbody>
+</table>
+<p>PDO AI Compact Channel 1 (Index #x1a01, Flags #x0010, SyncMan )</p>
+<table class="docutils align-center">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Comment</p></th>
+<th class="head"><p>BitLen</p></th>
+<th class="head"><p>Index</p></th>
+<th class="head"><p>Type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Value</p></td>
+<td></td>
+<td></td>
+<td><p>#x6000</p></td>
+<td><p>INT</p></td>
+</tr>
+</tbody>
+</table>
+<p>PDO AI Standard Channel 2 (Index #x1a02, Flags #x0010, SyncMan 3)</p>
+<table class="docutils align-center">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Comment</p></th>
+<th class="head"><p>BitLen</p></th>
+<th class="head"><p>Index</p></th>
+<th class="head"><p>Type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Status__Underrange</p></td>
+<td><p>Bit set when upper value limit exceeded</p></td>
+<td></td>
+<td><p>#x6010</p></td>
+<td><p>BIT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Status__Overrange</p></td>
+<td><p>Bit set when lower value limit exceeded</p></td>
+<td></td>
+<td><p>#x6010</p></td>
+<td><p>BIT</p></td>
+</tr>
+<tr class="row-even"><td><p>Status__Limit 1</p></td>
+<td><p>Bit0: Value greater than Limit1 Bit1: Value smaller than Limit1</p></td>
+<td></td>
+<td><p>#x6010</p></td>
+<td><p>BIT2</p></td>
+</tr>
+<tr class="row-odd"><td><p>Status__Limit 2</p></td>
+<td><p>Bit0: Value greater than Limit2 Bit1: Value smaller than Limit2</p></td>
+<td></td>
+<td><p>#x6010</p></td>
+<td><p>BIT2</p></td>
+</tr>
+<tr class="row-even"><td><p>Status__Error</p></td>
+<td><p>Bit set when Over- or Underrange</p></td>
+<td></td>
+<td><p>#x6010</p></td>
+<td><p>BIT</p></td>
+</tr>
+<tr class="row-odd"><td><p><a href="#id61"><span class="problematic" id="id112">Status__</span></a></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>ARRAY [0..0] OF BIT</p></td>
+</tr>
+<tr class="row-even"><td><p><a href="#id61"><span class="problematic" id="id113">Status__</span></a></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>ARRAY [0..4] OF BIT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Status__Sync error</p></td>
+<td></td>
+<td></td>
+<td><p>#x6010</p></td>
+<td><p>BIT</p></td>
+</tr>
+<tr class="row-even"><td><p>Status__TxPDO State</p></td>
+<td></td>
+<td></td>
+<td><p>#x6010</p></td>
+<td><p>BIT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Status__TxPDO Toggle</p></td>
+<td></td>
+<td></td>
+<td><p>#x6010</p></td>
+<td><p>BIT</p></td>
+</tr>
+<tr class="row-even"><td><p>Value</p></td>
+<td></td>
+<td></td>
+<td><p>#x6010</p></td>
+<td><p>INT</p></td>
+</tr>
+</tbody>
+</table>
+<p>PDO AI Compact Channel 2 (Index #x1a03, Flags #x0010, SyncMan )</p>
+<table class="docutils align-center">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Comment</p></th>
+<th class="head"><p>BitLen</p></th>
+<th class="head"><p>Index</p></th>
+<th class="head"><p>Type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Value</p></td>
+<td></td>
+<td></td>
+<td><p>#x6010</p></td>
+<td><p>INT</p></td>
+</tr>
+</tbody>
+</table>
+<p>PDO AI Standard Channel 3 (Index #x1a04, Flags #x0010, SyncMan 3)</p>
+<table class="docutils align-center">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Comment</p></th>
+<th class="head"><p>BitLen</p></th>
+<th class="head"><p>Index</p></th>
+<th class="head"><p>Type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Status__Underrange</p></td>
+<td><p>Bit set when upper value limit exceeded</p></td>
+<td></td>
+<td><p>#x6020</p></td>
+<td><p>BIT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Status__Overrange</p></td>
+<td><p>Bit set when lower value limit exceeded</p></td>
+<td></td>
+<td><p>#x6020</p></td>
+<td><p>BIT</p></td>
+</tr>
+<tr class="row-even"><td><p>Status__Limit 1</p></td>
+<td><p>Bit0: Value greater than Limit1 Bit1: Value smaller than Limit1</p></td>
+<td></td>
+<td><p>#x6020</p></td>
+<td><p>BIT2</p></td>
+</tr>
+<tr class="row-odd"><td><p>Status__Limit 2</p></td>
+<td><p>Bit0: Value greater than Limit2 Bit1: Value smaller than Limit2</p></td>
+<td></td>
+<td><p>#x6020</p></td>
+<td><p>BIT2</p></td>
+</tr>
+<tr class="row-even"><td><p>Status__Error</p></td>
+<td><p>Bit set when Over- or Underrange</p></td>
+<td></td>
+<td><p>#x6020</p></td>
+<td><p>BIT</p></td>
+</tr>
+<tr class="row-odd"><td><p><a href="#id61"><span class="problematic" id="id114">Status__</span></a></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>ARRAY [0..0] OF BIT</p></td>
+</tr>
+<tr class="row-even"><td><p><a href="#id61"><span class="problematic" id="id115">Status__</span></a></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>ARRAY [0..4] OF BIT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Status__Sync error</p></td>
+<td></td>
+<td></td>
+<td><p>#x6020</p></td>
+<td><p>BIT</p></td>
+</tr>
+<tr class="row-even"><td><p>Status__TxPDO State</p></td>
+<td></td>
+<td></td>
+<td><p>#x6020</p></td>
+<td><p>BIT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Status__TxPDO Toggle</p></td>
+<td></td>
+<td></td>
+<td><p>#x6020</p></td>
+<td><p>BIT</p></td>
+</tr>
+<tr class="row-even"><td><p>Value</p></td>
+<td></td>
+<td></td>
+<td><p>#x6020</p></td>
+<td><p>INT</p></td>
+</tr>
+</tbody>
+</table>
+<p>PDO AI Compact Channel 3 (Index #x1a05, Flags #x0010, SyncMan )</p>
+<table class="docutils align-center">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Comment</p></th>
+<th class="head"><p>BitLen</p></th>
+<th class="head"><p>Index</p></th>
+<th class="head"><p>Type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Value</p></td>
+<td></td>
+<td></td>
+<td><p>#x6020</p></td>
+<td><p>INT</p></td>
+</tr>
+</tbody>
+</table>
+<p>PDO AI Standard Channel 4 (Index #x1a06, Flags #x0010, SyncMan 3)</p>
+<table class="docutils align-center">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Comment</p></th>
+<th class="head"><p>BitLen</p></th>
+<th class="head"><p>Index</p></th>
+<th class="head"><p>Type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Status__Underrange</p></td>
+<td><p>Bit set when upper value limit exceeded</p></td>
+<td></td>
+<td><p>#x6030</p></td>
+<td><p>BIT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Status__Overrange</p></td>
+<td><p>Bit set when lower value limit exceeded</p></td>
+<td></td>
+<td><p>#x6030</p></td>
+<td><p>BIT</p></td>
+</tr>
+<tr class="row-even"><td><p>Status__Limit 1</p></td>
+<td><p>Bit0: Value greater than Limit1 Bit1: Value smaller than Limit1</p></td>
+<td></td>
+<td><p>#x6030</p></td>
+<td><p>BIT2</p></td>
+</tr>
+<tr class="row-odd"><td><p>Status__Limit 2</p></td>
+<td><p>Bit0: Value greater than Limit2 Bit1: Value smaller than Limit2</p></td>
+<td></td>
+<td><p>#x6030</p></td>
+<td><p>BIT2</p></td>
+</tr>
+<tr class="row-even"><td><p>Status__Error</p></td>
+<td><p>Bit set when Over- or Underrange</p></td>
+<td></td>
+<td><p>#x6030</p></td>
+<td><p>BIT</p></td>
+</tr>
+<tr class="row-odd"><td><p><a href="#id61"><span class="problematic" id="id116">Status__</span></a></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>ARRAY [0..0] OF BIT</p></td>
+</tr>
+<tr class="row-even"><td><p><a href="#id61"><span class="problematic" id="id117">Status__</span></a></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>ARRAY [0..4] OF BIT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Status__Sync error</p></td>
+<td></td>
+<td></td>
+<td><p>#x6030</p></td>
+<td><p>BIT</p></td>
+</tr>
+<tr class="row-even"><td><p>Status__TxPDO State</p></td>
+<td></td>
+<td></td>
+<td><p>#x6030</p></td>
+<td><p>BIT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Status__TxPDO Toggle</p></td>
+<td></td>
+<td></td>
+<td><p>#x6030</p></td>
+<td><p>BIT</p></td>
+</tr>
+<tr class="row-even"><td><p>Value</p></td>
+<td></td>
+<td></td>
+<td><p>#x6030</p></td>
+<td><p>INT</p></td>
+</tr>
+</tbody>
+</table>
+<p>PDO AI Compact Channel 4 (Index #x1a07, Flags #x0010, SyncMan )</p>
+<table class="docutils align-center">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Comment</p></th>
+<th class="head"><p>BitLen</p></th>
+<th class="head"><p>Index</p></th>
+<th class="head"><p>Type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Value</p></td>
+<td></td>
+<td></td>
+<td><p>#x6030</p></td>
+<td><p>INT</p></td>
+</tr>
+</tbody>
+</table>
+</details></section>
+<section id="lamp-gj-el9011">
+<h2>LAMP_GJ_EL9011<a class="headerlink" href="#lamp-gj-el9011" title="Link to this heading"></a></h2>
+<details>
+     <summary>EtherCAT</summary><table class="docutils align-center" id="id60">
+<caption><span class="caption-text">Basic Settings</span><a class="headerlink" href="#id60" title="Link to this table"></a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Data</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Name</p></td>
+<td><p>LAMP_GJ_EL9011</p></td>
+</tr>
+<tr class="row-odd"><td><p>ID</p></td>
+<td><p>105</p></td>
+</tr>
+</tbody>
+</table>
+</details></section>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="plc-lamp-vac_ethercat.html" class="btn btn-neutral float-left" title="Box Hierarchy" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="plc-lamp-vac_ethercat.html" class="btn btn-neutral float-left" title="EtherCAT Terminals" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="plc-lamp-vac_links.html" class="btn btn-neutral float-right" title="Links" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2023, SLAC National Accelerator Laboratory.</p>
+    <p>&#169; Copyright 2025, SLAC National Accelerator Laboratory.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
