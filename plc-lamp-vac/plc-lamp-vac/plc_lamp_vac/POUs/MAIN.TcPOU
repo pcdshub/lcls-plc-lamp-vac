@@ -3,8 +3,8 @@
   <POU Name="MAIN" Id="{10e78606-31f0-4232-96b0-d270d72b55f0}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM MAIN
 VAR
-	fbLogHandler : FB_LogHandler;
-	
+    fbLogHandler : FB_LogHandler;
+
 //TMO Interface
 xEcatBridge_COM_ERROR : BOOL;
 (*
@@ -17,7 +17,7 @@ b_TurboPumpRunningFlag : BOOL;
 TurboPumpTOF : TOF;
 TurboPumpDelayTime : TIME := T#30s;
 b_PumpRunning : BOOL;
-	
+
 END_VAR]]></Declaration>
     <Implementation>
       <ST><![CDATA[fbLogHandler();
@@ -32,29 +32,29 @@ DIAGNOSTICS();
 xEcatBridge_COM_ERROR := (xEcatBridge_TxPDO_state OR xEcatBridge_External_device_not_connected OR xEcatBridge_WcState);
 
 xOnBeamline := (xEcatBridge_COM_ERROR = FALSE) AND (sHUTCH_PLC_NAME = 'TMO');
-	
+
 (*TurboPump running Flag with 30 second Turn Off delay.*)
-b_TurboPumpRunningFlag := (LAMP_GJ2_PTM_01.iq_stPtm.i_xAtSpd)  AND 
-(*	
+b_TurboPumpRunningFlag := (LAMP_GJ2_PTM_01.iq_stPtm.i_xAtSpd)  AND
+(*
     (LAMP_GJ2_PTM_02.iq_stPtm.eState = E_PumpState.pumpRUNNING) AND
-	(LAMP_GJ2_PTM_03.iq_stPtm.eState = E_PumpState.pumpRUNNING) AND
-	(LAMP_GJ2_PTM_04.iq_stPtm.eState = E_PumpState.pumpRUNNING) AND    
+    (LAMP_GJ2_PTM_03.iq_stPtm.eState = E_PumpState.pumpRUNNING) AND
+    (LAMP_GJ2_PTM_04.iq_stPtm.eState = E_PumpState.pumpRUNNING) AND
 *)
 (*	(LAMP_C1_PTM_01.iq_stPtm.eState = E_PumpState.pumpRUNNING) AND  *)
-	(LAMP_C2_PTM_01.iq_stPtm.i_xAtSpd) AND 
-	(LAMP_C2_PTM_02.iq_stPtm.i_xAtSpd) AND
-	(LAMP_C2_PTM_03.iq_stPtm.i_xAtSpd) AND
-	(LAMP_C2_PTM_04.iq_stPtm.i_xAtSpd) AND
-(*	
-	(LAMP_CATCH_PTM_01.iq_stPtm.eState = E_PumpState.pumpRUNNING) AND 
-	(LAMP_CATCH_PTM_02.iq_stPtm.eState = E_PumpState.pumpRUNNING) AND
-	(LAMP_GJ1_PTM_01.iq_stPtm.eState = E_PumpState.pumpRUNNING) AND
-	(LAMP_GJ1_PTM_02.iq_stPtm.eState = E_PumpState.pumpRUNNING) AND
-	(LAMP_GJ1_PTM_03.iq_stPtm.eState = E_PumpState.pumpRUNNING) AND
-	(LAMP_GJ1_PTM_04.iq_stPtm.eState = E_PumpState.pumpRUNNING) AND   
+    (LAMP_C2_PTM_01.iq_stPtm.i_xAtSpd) AND
+    (LAMP_C2_PTM_02.iq_stPtm.i_xAtSpd) AND
+    (LAMP_C2_PTM_03.iq_stPtm.i_xAtSpd) AND
+    (LAMP_C2_PTM_04.iq_stPtm.i_xAtSpd) AND
+(*
+    (LAMP_CATCH_PTM_01.iq_stPtm.eState = E_PumpState.pumpRUNNING) AND
+    (LAMP_CATCH_PTM_02.iq_stPtm.eState = E_PumpState.pumpRUNNING) AND
+    (LAMP_GJ1_PTM_01.iq_stPtm.eState = E_PumpState.pumpRUNNING) AND
+    (LAMP_GJ1_PTM_02.iq_stPtm.eState = E_PumpState.pumpRUNNING) AND
+    (LAMP_GJ1_PTM_03.iq_stPtm.eState = E_PumpState.pumpRUNNING) AND
+    (LAMP_GJ1_PTM_04.iq_stPtm.eState = E_PumpState.pumpRUNNING) AND
 *)
-	(LAMP_ROUGH_PTM_01.iq_stPtm.i_xAtSpd);
-//	(KTOF_PTM_01.iq_stPtm.eState = E_PumpState.pumpRUNNING);	
+    (LAMP_ROUGH_PTM_01.iq_stPtm.i_xAtSpd);
+//	(KTOF_PTM_01.iq_stPtm.eState = E_PumpState.pumpRUNNING);
 TurboPumpTOF(IN:= b_TurboPumpRunningFlag, PT := TurboPumpDelayTime);
 xIP1_TURBOS_ALL_AtSpd:= TurboPumpTOF.Q;
 
@@ -62,482 +62,482 @@ xIP1_TURBOS_ALL_AtSpd:= TurboPumpTOF.Q;
 xHighVoltageSafteyLoopEnable:= (LAMP_C2_GCC_01.IG.rPRESS <= rHighVoltageMinPressure) AND (LAMP_C2_GCC_01.IG.xPRESS_OK = TRUE);
 
 (*PIRANI Gauges*)
-	LAMP_C2_GPI_01(PG=>);
-	//LAMP_CATCH_GPI_01(PG=>); which is not installed
-(*	
-	LAMP_GJ2_GPI_01(PG=>);
-	LAMP_GJ1_GPI_01(PG=>);  
+    LAMP_C2_GPI_01(PG=>);
+    //LAMP_CATCH_GPI_01(PG=>); which is not installed
+(*
+    LAMP_GJ2_GPI_01(PG=>);
+    LAMP_GJ1_GPI_01(PG=>);
 *)
 
 (*uPIRANI Gauges*)
-	LAMP_ROUGH_GPI_01(PG=>);
-	LAMP_ROUGH_GPI_01.M_SetBits(32767);
-	LAMP_ROUGH_GPI_02(PG=>);
-	LAMP_ROUGH_GPI_02.M_SetBits(32767);
-	LAMP_ROUGH_GPI_03(PG=>);
-	LAMP_ROUGH_GPI_03.M_SetBits(32767);
-	LAMP_ROUGH_GPI_04(PG=>);
-	LAMP_ROUGH_GPI_04.M_SetBits(32767);	
+    LAMP_ROUGH_GPI_01(PG=>);
+    LAMP_ROUGH_GPI_01.M_SetBits(32767);
+    LAMP_ROUGH_GPI_02(PG=>);
+    LAMP_ROUGH_GPI_02.M_SetBits(32767);
+    LAMP_ROUGH_GPI_03(PG=>);
+    LAMP_ROUGH_GPI_03.M_SetBits(32767);
+    LAMP_ROUGH_GPI_04(PG=>);
+    LAMP_ROUGH_GPI_04.M_SetBits(32767);
 
 (*Cold Cathode Gauges*)
-	LAMP_C2_GCC_01(PG:=LAMP_C2_GPI_01.PG,IG=>,bEP:=TRUE);
-(*	
-	LAMP_CATCH_GCC_01(PG:=LAMP_C2_GPI_01.PG,IG=>,bEP:=TRUE);
-	LAMP_CATCH_GCC_02(PG:=LAMP_C2_GPI_01.PG,IG=>,bEP:=TRUE);  
-	LAMP_GJ1_GCC_01(PG:=LAMP_GJ1_GPI_01.PG,IG=>,bEP:=TRUE);
-	LAMP_GJ2_GCC_01(PG:=LAMP_GJ2_GPI_01.PG,IG=>,bEP:=TRUE);    
+    LAMP_C2_GCC_01(PG:=LAMP_C2_GPI_01.PG,IG=>,bEP:=TRUE);
+(*
+    LAMP_CATCH_GCC_01(PG:=LAMP_C2_GPI_01.PG,IG=>,bEP:=TRUE);
+    LAMP_CATCH_GCC_02(PG:=LAMP_C2_GPI_01.PG,IG=>,bEP:=TRUE);
+    LAMP_GJ1_GCC_01(PG:=LAMP_GJ1_GPI_01.PG,IG=>,bEP:=TRUE);
+    LAMP_GJ2_GCC_01(PG:=LAMP_GJ2_GPI_01.PG,IG=>,bEP:=TRUE);
 *)
-	
+
 (*Variable Leak Valve*)
     LAMP_VCN_01(bExtIlkOK:= TRUE, IG := LAMP_C2_GCC_01.IG);
-	
+
 (*Hot Cathode Gauges*)
-	LAMP_C1_GHC_01(PG:=LAMP_C2_GPI_01.PG,IG=>);
-	
+    LAMP_C1_GHC_01(PG:=LAMP_C2_GPI_01.PG,IG=>);
+
 (*TURBO Pumps
 *In general, if turbo pump setpoints are above the pirani guage readings or there is no downstream open path to a roughing pump, the turbo pump will close.
 *)
-	LAMP_GJ2_PTM_01(
-	i_xExtILKOk:= F_Turbo_NC_NO_Valve_Logic(
-					i_stTurbo:= LAMP_GJ2_PTM_01.iq_stPtm, 
-					i_stISG:= LAMP_C2_GPI_01.PG, 
-					i_stBSG:= LAMP_ROUGH_GPI_02.PG, 
-					iq_stValve_NO:= LAMP_ROUGH_VRC_02.iq_stValve, 
-					iq_stValve_NC:= LAMP_ROUGH_VRC_01.iq_stValve, 
-					iq_stValve_NC_second:= LAMP_ROUGH_VRC_03.iq_stValve,
-					EcatBridge_Error_Present:= xEcatBridge_COM_ERROR,
+    LAMP_GJ2_PTM_01(
+    i_xExtILKOk:= F_Turbo_NC_NO_Valve_Logic(
+                    i_stTurbo:= LAMP_GJ2_PTM_01.iq_stPtm,
+                    i_stISG:= LAMP_C2_GPI_01.PG,
+                    i_stBSG:= LAMP_ROUGH_GPI_02.PG,
+                    iq_stValve_NO:= LAMP_ROUGH_VRC_02.iq_stValve,
+                    iq_stValve_NC:= LAMP_ROUGH_VRC_01.iq_stValve,
+                    iq_stValve_NC_second:= LAMP_ROUGH_VRC_03.iq_stValve,
+                    EcatBridge_Error_Present:= xEcatBridge_COM_ERROR,
 //					ads_Error_Present:= (ITF_TMO_ROUGH1_VRC_01.bError OR ITF_TMO_ROUGH2_VRC_01.bError),
-					iq_stRoughRoughValve_NC_xOpnLS:= xTMO_ROUGH1_VRC_01_OPEN_LS,
-					iq_stRoughRoughValve_NC_second_xOpenLS:= xTMO_ROUGH2_VRC_01_OPEN_LS,
+                    iq_stRoughRoughValve_NC_xOpnLS:= xTMO_ROUGH1_VRC_01_OPEN_LS,
+                    iq_stRoughRoughValve_NC_second_xOpenLS:= xTMO_ROUGH2_VRC_01_OPEN_LS,
 //					x_onBeamline:= xOnBeamline,
                     x_onBeamline:= True),
-	iq_stPtm=> );
+    iq_stPtm=> );
 
-(*	
-	LAMP_GJ2_PTM_02(
-	i_xExtILKOk:= F_Turbo_NC_NO_Valve_Logic(
-					i_stTurbo:= LAMP_GJ2_PTM_02.iq_stPtm, 
-					i_stISG:= LAMP_GJ2_GPI_01.PG, 
-					i_stBSG:= LAMP_ROUGH_GPI_04.PG, 
-					iq_stValve_NO:= LAMP_ROUGH_VRC_02.iq_stValve, 
-					iq_stValve_NC:= LAMP_ROUGH_VRC_03.iq_stValve, 
-					iq_stValve_NC_second:= LAMP_ROUGH_VRC_01.iq_stValve,
-					EcatBridge_Error_Present:= xEcatBridge_COM_ERROR,
+(*
+    LAMP_GJ2_PTM_02(
+    i_xExtILKOk:= F_Turbo_NC_NO_Valve_Logic(
+                    i_stTurbo:= LAMP_GJ2_PTM_02.iq_stPtm,
+                    i_stISG:= LAMP_GJ2_GPI_01.PG,
+                    i_stBSG:= LAMP_ROUGH_GPI_04.PG,
+                    iq_stValve_NO:= LAMP_ROUGH_VRC_02.iq_stValve,
+                    iq_stValve_NC:= LAMP_ROUGH_VRC_03.iq_stValve,
+                    iq_stValve_NC_second:= LAMP_ROUGH_VRC_01.iq_stValve,
+                    EcatBridge_Error_Present:= xEcatBridge_COM_ERROR,
 //					ads_Error_Present:= (ITF_TMO_ROUGH1_VRC_01.bError OR ITF_TMO_ROUGH2_VRC_01.bError),
-					iq_stRoughRoughValve_NC_xOpnLS:= xTMO_ROUGH2_VRC_01_OPEN_LS,
-					iq_stRoughRoughValve_NC_second_xOpenLS:=xTMO_ROUGH1_VRC_01_OPEN_LS,
-					x_onBeamline:= xOnBeamline), 
-	iq_stPtm=> );
-	
-	LAMP_GJ2_PTM_03(
-	i_xExtILKOk:= F_Turbo_NC_NO_Valve_Logic(
-					i_stTurbo:= LAMP_GJ2_PTM_03.iq_stPtm, 
-					i_stISG:= LAMP_GJ2_GPI_01.PG, 
-					i_stBSG:= LAMP_ROUGH_GPI_04.PG, 
-					iq_stValve_NO:= LAMP_ROUGH_VRC_02.iq_stValve, 
-					iq_stValve_NC:= LAMP_ROUGH_VRC_03.iq_stValve, 
-					iq_stValve_NC_second:= LAMP_ROUGH_VRC_01.iq_stValve,
-					EcatBridge_Error_Present:= xEcatBridge_COM_ERROR,
-//					ads_Error_Present:= (ITF_TMO_ROUGH1_VRC_01.bError OR ITF_TMO_ROUGH2_VRC_01.bError),
-					iq_stRoughRoughValve_NC_xOpnLS:= xTMO_ROUGH2_VRC_01_OPEN_LS,
-					iq_stRoughRoughValve_NC_second_xOpenLS:=xTMO_ROUGH1_VRC_01_OPEN_LS,
-					x_onBeamline:= xOnBeamline), 
-	iq_stPtm=> );
-	
-	LAMP_GJ2_PTM_04(
-	i_xExtILKOk:= F_Turbo_NC_NO_Valve_Logic(
-					i_stTurbo:= LAMP_GJ2_PTM_04.iq_stPtm, 
-					i_stISG:= LAMP_GJ2_GPI_01.PG, 
-					i_stBSG:= LAMP_ROUGH_GPI_04.PG, 
-					iq_stValve_NO:= LAMP_ROUGH_VRC_02.iq_stValve, 
-					iq_stValve_NC:= LAMP_ROUGH_VRC_03.iq_stValve, 
-					iq_stValve_NC_second:= LAMP_ROUGH_VRC_01.iq_stValve,
-					EcatBridge_Error_Present:= xEcatBridge_COM_ERROR,
-//					ads_Error_Present:= (ITF_TMO_ROUGH1_VRC_01.bError OR ITF_TMO_ROUGH2_VRC_01.bError),
-					iq_stRoughRoughValve_NC_xOpnLS:= xTMO_ROUGH2_VRC_01_OPEN_LS,
-					iq_stRoughRoughValve_NC_second_xOpenLS:=xTMO_ROUGH1_VRC_01_OPEN_LS,
-					x_onBeamline:= xOnBeamline), 
-	iq_stPtm=> );
-	
-	LAMP_C1_PTM_01(
-	i_xExtILKOk:= F_Turbo_NC_NO_Valve_Logic(
-					i_stTurbo:= LAMP_C1_PTM_01.iq_stPtm, 
-					i_stISG:= LAMP_C2_GPI_01.PG, 
-					i_stBSG:= LAMP_ROUGH_GPI_02.PG, 
-					iq_stValve_NO:= LAMP_ROUGH_VRC_02.iq_stValve, 
-					iq_stValve_NC:= LAMP_ROUGH_VRC_01.iq_stValve, 
-					iq_stValve_NC_second:= LAMP_ROUGH_VRC_03.iq_stValve,
-					EcatBridge_Error_Present:= xEcatBridge_COM_ERROR,
-//					ads_Error_Present:= (ITF_TMO_ROUGH1_VRC_01.bError OR ITF_TMO_ROUGH2_VRC_01.bError),
-					iq_stRoughRoughValve_NC_xOpnLS:= xTMO_ROUGH1_VRC_01_OPEN_LS,
-					iq_stRoughRoughValve_NC_second_xOpenLS:=xTMO_ROUGH2_VRC_01_OPEN_LS,
-					x_onBeamline:= xOnBeamline), 
-	iq_stPtm=> );
-*)
-	
-	LAMP_C2_PTM_01(
-	i_xExtILKOk:= F_Turbo_NC_NO_Valve_Logic(
-					i_stTurbo:= LAMP_C2_PTM_01.iq_stPtm, 
-					i_stISG:= LAMP_C2_GPI_01.PG, 
-					i_stBSG:= LAMP_ROUGH_GPI_02.PG, 
-					iq_stValve_NO:= LAMP_ROUGH_VRC_02.iq_stValve, 
-					iq_stValve_NC:= LAMP_ROUGH_VRC_01.iq_stValve, 
-					iq_stValve_NC_second:= LAMP_ROUGH_VRC_03.iq_stValve,
-					EcatBridge_Error_Present:= xEcatBridge_COM_ERROR,
-//					ads_Error_Present:= (ITF_TMO_ROUGH1_VRC_01.bError OR ITF_TMO_ROUGH2_VRC_01.bError),
-					iq_stRoughRoughValve_NC_xOpnLS:= xTMO_ROUGH1_VRC_01_OPEN_LS,
-					iq_stRoughRoughValve_NC_second_xOpenLS:= xTMO_ROUGH2_VRC_01_OPEN_LS,
-//					x_onBeamline:= xOnBeamline,
-                     x_onBeamline:= True), 
-	iq_stPtm=> );
-	
-	LAMP_C2_PTM_02(
-	i_xExtILKOk:= F_Turbo_NC_NO_Valve_Logic(
-					i_stTurbo:= LAMP_C2_PTM_02.iq_stPtm, 
-					i_stISG:= LAMP_C2_GPI_01.PG, 
-					i_stBSG:= LAMP_ROUGH_GPI_02.PG, 
-					iq_stValve_NO:= LAMP_ROUGH_VRC_02.iq_stValve, 
-					iq_stValve_NC:= LAMP_ROUGH_VRC_01.iq_stValve, 
-					iq_stValve_NC_second:= LAMP_ROUGH_VRC_03.iq_stValve,
-					EcatBridge_Error_Present:= xEcatBridge_COM_ERROR,
-//					ads_Error_Present:= (ITF_TMO_ROUGH1_VRC_01.bError OR ITF_TMO_ROUGH2_VRC_01.bError),
-					iq_stRoughRoughValve_NC_xOpnLS:= xTMO_ROUGH1_VRC_01_OPEN_LS,
-					iq_stRoughRoughValve_NC_second_xOpenLS:=xTMO_ROUGH2_VRC_01_OPEN_LS,
-//					x_onBeamline:= xOnBeamline,
-                    x_onBeamline:= True), 
-	iq_stPtm=> );
-	
-	LAMP_C2_PTM_03(
-	i_xExtILKOk:= F_Turbo_NC_NO_Valve_Logic(
-					i_stTurbo:= LAMP_C2_PTM_03.iq_stPtm, 
-					i_stISG:= LAMP_C2_GPI_01.PG, 
-					i_stBSG:= LAMP_ROUGH_GPI_02.PG, 
-					iq_stValve_NO:= LAMP_ROUGH_VRC_02.iq_stValve, 
-					iq_stValve_NC:= LAMP_ROUGH_VRC_01.iq_stValve, 
-					iq_stValve_NC_second:= LAMP_ROUGH_VRC_03.iq_stValve,
-					EcatBridge_Error_Present:= xEcatBridge_COM_ERROR,
-//					ads_Error_Present:= (ITF_TMO_ROUGH1_VRC_01.bError OR ITF_TMO_ROUGH2_VRC_01.bError),
-					iq_stRoughRoughValve_NC_xOpnLS:= xTMO_ROUGH1_VRC_01_OPEN_LS,
-					iq_stRoughRoughValve_NC_second_xOpenLS:=xTMO_ROUGH2_VRC_01_OPEN_LS,
-//					x_onBeamline:= xOnBeamline,
-                    x_onBeamline:= True), 
-	iq_stPtm=> );
-	
-	LAMP_C2_PTM_04(
-	i_xExtILKOk:= F_Turbo_NC_NO_Valve_Logic(
-					i_stTurbo:= LAMP_C2_PTM_04.iq_stPtm, 
-					i_stISG:= LAMP_C2_GPI_01.PG, 
-					i_stBSG:= LAMP_ROUGH_GPI_02.PG, 
-					iq_stValve_NO:= LAMP_ROUGH_VRC_02.iq_stValve, 
-					iq_stValve_NC:= LAMP_ROUGH_VRC_01.iq_stValve, 
-					iq_stValve_NC_second:= LAMP_ROUGH_VRC_03.iq_stValve,
-					EcatBridge_Error_Present:= xEcatBridge_COM_ERROR,
-//					ads_Error_Present:= (ITF_TMO_ROUGH1_VRC_01.bError OR ITF_TMO_ROUGH2_VRC_01.bError),
-					iq_stRoughRoughValve_NC_xOpnLS:= xTMO_ROUGH1_VRC_01_OPEN_LS,
-					iq_stRoughRoughValve_NC_second_xOpenLS:=xTMO_ROUGH2_VRC_01_OPEN_LS,
-//					x_onBeamline:= xOnBeamline,
-                    x_onBeamline:= True), 
-	iq_stPtm=> );
+                    iq_stRoughRoughValve_NC_xOpnLS:= xTMO_ROUGH2_VRC_01_OPEN_LS,
+                    iq_stRoughRoughValve_NC_second_xOpenLS:=xTMO_ROUGH1_VRC_01_OPEN_LS,
+                    x_onBeamline:= xOnBeamline),
+    iq_stPtm=> );
 
-(*	
-	LAMP_CATCH_PTM_01(
-	i_xExtILKOk:= F_Turbo_NC_NO_Valve_Logic(
-					i_stTurbo:= LAMP_CATCH_PTM_01.iq_stPtm, 
-					i_stISG:= LAMP_C2_GPI_01.PG, 
-					i_stBSG:= LAMP_ROUGH_GPI_02.PG, 
-					iq_stValve_NO:= LAMP_ROUGH_VRC_02.iq_stValve, 
-					iq_stValve_NC:= LAMP_ROUGH_VRC_01.iq_stValve, 
-					iq_stValve_NC_second:= LAMP_ROUGH_VRC_03.iq_stValve,
-					EcatBridge_Error_Present:= xEcatBridge_COM_Error,
+    LAMP_GJ2_PTM_03(
+    i_xExtILKOk:= F_Turbo_NC_NO_Valve_Logic(
+                    i_stTurbo:= LAMP_GJ2_PTM_03.iq_stPtm,
+                    i_stISG:= LAMP_GJ2_GPI_01.PG,
+                    i_stBSG:= LAMP_ROUGH_GPI_04.PG,
+                    iq_stValve_NO:= LAMP_ROUGH_VRC_02.iq_stValve,
+                    iq_stValve_NC:= LAMP_ROUGH_VRC_03.iq_stValve,
+                    iq_stValve_NC_second:= LAMP_ROUGH_VRC_01.iq_stValve,
+                    EcatBridge_Error_Present:= xEcatBridge_COM_ERROR,
 //					ads_Error_Present:= (ITF_TMO_ROUGH1_VRC_01.bError OR ITF_TMO_ROUGH2_VRC_01.bError),
-					iq_stRoughRoughValve_NC_xOpnLS:= xTMO_ROUGH1_VRC_01_OPEN_LS,
-					iq_stRoughRoughValve_NC_second_xOpenLS:=xTMO_ROUGH2_VRC_01_OPEN_LS,
-					x_onBeamline:= xOnBeamline), 
-	iq_stPtm=> );
-	
-	LAMP_CATCH_PTM_02(
-	i_xExtILKOk:= F_Turbo_NC_NO_Valve_Logic(
-					i_stTurbo:= LAMP_CATCH_PTM_02.iq_stPtm, 
-					i_stISG:= LAMP_C2_GPI_01.PG, 
-					i_stBSG:= LAMP_ROUGH_GPI_02.PG, 
-					iq_stValve_NO:= LAMP_ROUGH_VRC_02.iq_stValve, 
-					iq_stValve_NC:= LAMP_ROUGH_VRC_01.iq_stValve, 
-					iq_stValve_NC_second:= LAMP_ROUGH_VRC_03.iq_stValve,
-					EcatBridge_Error_Present:= xEcatBridge_COM_Error,
-//					ads_Error_Present:= (ITF_TMO_ROUGH1_VRC_01.bError OR ITF_TMO_ROUGH2_VRC_01.bError),
-					iq_stRoughRoughValve_NC_xOpnLS:= xTMO_ROUGH1_VRC_01_OPEN_LS,
-					iq_stRoughRoughValve_NC_second_xOpenLS:=xTMO_ROUGH2_VRC_01_OPEN_LS,
-					x_onBeamline:= xOnBeamline), 
-	iq_stPtm=> );
-	
-	LAMP_GJ1_PTM_01(
-	i_xExtILKOk:= F_Turbo_NC_NO_Valve_Logic(
-					i_stTurbo:= LAMP_GJ1_PTM_01.iq_stPtm, 
-					i_stISG:= LAMP_GJ1_GPI_01.PG, 
-					i_stBSG:= LAMP_ROUGH_GPI_04.PG, 
-					iq_stValve_NO:= LAMP_ROUGH_VRC_02.iq_stValve, 
-					iq_stValve_NC:= LAMP_ROUGH_VRC_03.iq_stValve, 
-					iq_stValve_NC_second:= LAMP_ROUGH_VRC_01.iq_stValve,
-					EcatBridge_Error_Present:= xEcatBridge_COM_ERROR,
-//					ads_Error_Present:= (ITF_TMO_ROUGH1_VRC_01.bError OR ITF_TMO_ROUGH2_VRC_01.bError),
-					iq_stRoughRoughValve_NC_xOpnLS:= xTMO_ROUGH2_VRC_01_OPEN_LS,
-					iq_stRoughRoughValve_NC_second_xOpenLS:=xTMO_ROUGH1_VRC_01_OPEN_LS,
-					x_onBeamline:= xOnBeamline), 
-	iq_stPtm=> );
-	
-	LAMP_GJ1_PTM_02(
-	i_xExtILKOk:= F_Turbo_NC_NO_Valve_Logic(
-					i_stTurbo:= LAMP_GJ1_PTM_02.iq_stPtm, 
-					i_stISG:= LAMP_GJ1_GPI_01.PG, 
-					i_stBSG:= LAMP_ROUGH_GPI_04.PG, 
-					iq_stValve_NO:= LAMP_ROUGH_VRC_02.iq_stValve, 
-					iq_stValve_NC:= LAMP_ROUGH_VRC_03.iq_stValve, 
-					iq_stValve_NC_second:= LAMP_ROUGH_VRC_01.iq_stValve,
-					EcatBridge_Error_Present:= xEcatBridge_COM_ERROR,
-//					ads_Error_Present:= (ITF_TMO_ROUGH1_VRC_01.bError OR ITF_TMO_ROUGH2_VRC_01.bError),
-					iq_stRoughRoughValve_NC_xOpnLS:= xTMO_ROUGH2_VRC_01_OPEN_LS,
-					iq_stRoughRoughValve_NC_second_xOpenLS:=xTMO_ROUGH1_VRC_01_OPEN_LS,
-					x_onBeamline:= xOnBeamline), 
-	iq_stPtm=> );
-	
-	LAMP_GJ1_PTM_03(
-	i_xExtILKOk:= F_Turbo_NC_NO_Valve_Logic(
-					i_stTurbo:= LAMP_GJ1_PTM_03.iq_stPtm, 
-					i_stISG:= LAMP_GJ1_GPI_01.PG, 
-					i_stBSG:= LAMP_ROUGH_GPI_04.PG, 
-					iq_stValve_NO:= LAMP_ROUGH_VRC_02.iq_stValve, 
-					iq_stValve_NC:= LAMP_ROUGH_VRC_03.iq_stValve, 
-					iq_stValve_NC_second:= LAMP_ROUGH_VRC_01.iq_stValve,
-					EcatBridge_Error_Present:= xEcatBridge_COM_ERROR,
-//					ads_Error_Present:= (ITF_TMO_ROUGH1_VRC_01.bError OR ITF_TMO_ROUGH2_VRC_01.bError),
-					iq_stRoughRoughValve_NC_xOpnLS:= xTMO_ROUGH2_VRC_01_OPEN_LS,
-					iq_stRoughRoughValve_NC_second_xOpenLS:=xTMO_ROUGH1_VRC_01_OPEN_LS,
-					x_onBeamline:= xOnBeamline), 
-	iq_stPtm=> );
-	
-	LAMP_GJ1_PTM_04(
-	i_xExtILKOk:= F_Turbo_NC_NO_Valve_Logic(
-					i_stTurbo:= LAMP_GJ1_PTM_04.iq_stPtm, 
-					i_stISG:= LAMP_GJ1_GPI_01.PG, 
-					i_stBSG:= LAMP_ROUGH_GPI_04.PG, 
-					iq_stValve_NO:= LAMP_ROUGH_VRC_02.iq_stValve, 
-					iq_stValve_NC:= LAMP_ROUGH_VRC_03.iq_stValve, 
-					iq_stValve_NC_second:= LAMP_ROUGH_VRC_01.iq_stValve,
-					EcatBridge_Error_Present:= xEcatBridge_COM_ERROR,
-//					ads_Error_Present:= (ITF_TMO_ROUGH1_VRC_01.bError OR ITF_TMO_ROUGH2_VRC_01.bError),
-					iq_stRoughRoughValve_NC_xOpnLS:= xTMO_ROUGH2_VRC_01_OPEN_LS,
-					iq_stRoughRoughValve_NC_second_xOpenLS:=xTMO_ROUGH1_VRC_01_OPEN_LS,
-					x_onBeamline:= xOnBeamline), 
-	iq_stPtm=> );
-*)
-	
-	LAMP_ROUGH_PTM_01(
-	i_xExtILKOk:= F_Turbo_NC_NO_Valve_Logic(
-					i_stTurbo:= LAMP_ROUGH_PTM_01.iq_stPtm, 
-					i_stISG:= LAMP_C2_GPI_01.PG, 
-					i_stBSG:= LAMP_ROUGH_GPI_02.PG, 
-					iq_stValve_NO:= LAMP_ROUGH_VRC_02.iq_stValve, 
-					iq_stValve_NC:= LAMP_ROUGH_VRC_01.iq_stValve, 
-					iq_stValve_NC_second:= LAMP_ROUGH_VRC_03.iq_stValve,
-					EcatBridge_Error_Present:= xEcatBridge_COM_ERROR,
-//					ads_Error_Present:= (ITF_TMO_ROUGH1_VRC_01.bError OR ITF_TMO_ROUGH2_VRC_01.bError),
-					iq_stRoughRoughValve_NC_xOpnLS:= xTMO_ROUGH1_VRC_01_OPEN_LS,
-					iq_stRoughRoughValve_NC_second_xOpenLS:=xTMO_ROUGH2_VRC_01_OPEN_LS,
-//					x_onBeamline:= xOnBeamline,
-                    x_onBeamline:= True), 
-	iq_stPtm=> );
+                    iq_stRoughRoughValve_NC_xOpnLS:= xTMO_ROUGH2_VRC_01_OPEN_LS,
+                    iq_stRoughRoughValve_NC_second_xOpenLS:=xTMO_ROUGH1_VRC_01_OPEN_LS,
+                    x_onBeamline:= xOnBeamline),
+    iq_stPtm=> );
 
-(*	
-	KTOF_PTM_01(
-	i_xExtILKOk:= F_Turbo_NC_NO_Valve_Logic(
-					i_stTurbo:= KTOF_PTM_01.iq_stPtm, 
-					i_stISG:= LAMP_C2_GPI_01.PG, 
-					i_stBSG:= LAMP_ROUGH_GPI_02.PG, 
-					iq_stValve_NO:= LAMP_ROUGH_VRC_02.iq_stValve, 
-					iq_stValve_NC:= LAMP_ROUGH_VRC_01.iq_stValve, 
-					iq_stValve_NC_second:= LAMP_ROUGH_VRC_03.iq_stValve,
-					EcatBridge_Error_Present:= xEcatBridge_COM_ERROR,
+    LAMP_GJ2_PTM_04(
+    i_xExtILKOk:= F_Turbo_NC_NO_Valve_Logic(
+                    i_stTurbo:= LAMP_GJ2_PTM_04.iq_stPtm,
+                    i_stISG:= LAMP_GJ2_GPI_01.PG,
+                    i_stBSG:= LAMP_ROUGH_GPI_04.PG,
+                    iq_stValve_NO:= LAMP_ROUGH_VRC_02.iq_stValve,
+                    iq_stValve_NC:= LAMP_ROUGH_VRC_03.iq_stValve,
+                    iq_stValve_NC_second:= LAMP_ROUGH_VRC_01.iq_stValve,
+                    EcatBridge_Error_Present:= xEcatBridge_COM_ERROR,
 //					ads_Error_Present:= (ITF_TMO_ROUGH1_VRC_01.bError OR ITF_TMO_ROUGH2_VRC_01.bError),
-					iq_stRoughRoughValve_NC_xOpnLS:= xTMO_ROUGH1_VRC_01_OPEN_LS,
-					iq_stRoughRoughValve_NC_second_xOpenLS:=xTMO_ROUGH2_VRC_01_OPEN_LS,
-					x_onBeamline:= xOnBeamline), 
-	iq_stPtm=> );
+                    iq_stRoughRoughValve_NC_xOpnLS:= xTMO_ROUGH2_VRC_01_OPEN_LS,
+                    iq_stRoughRoughValve_NC_second_xOpenLS:=xTMO_ROUGH1_VRC_01_OPEN_LS,
+                    x_onBeamline:= xOnBeamline),
+    iq_stPtm=> );
+
+    LAMP_C1_PTM_01(
+    i_xExtILKOk:= F_Turbo_NC_NO_Valve_Logic(
+                    i_stTurbo:= LAMP_C1_PTM_01.iq_stPtm,
+                    i_stISG:= LAMP_C2_GPI_01.PG,
+                    i_stBSG:= LAMP_ROUGH_GPI_02.PG,
+                    iq_stValve_NO:= LAMP_ROUGH_VRC_02.iq_stValve,
+                    iq_stValve_NC:= LAMP_ROUGH_VRC_01.iq_stValve,
+                    iq_stValve_NC_second:= LAMP_ROUGH_VRC_03.iq_stValve,
+                    EcatBridge_Error_Present:= xEcatBridge_COM_ERROR,
+//					ads_Error_Present:= (ITF_TMO_ROUGH1_VRC_01.bError OR ITF_TMO_ROUGH2_VRC_01.bError),
+                    iq_stRoughRoughValve_NC_xOpnLS:= xTMO_ROUGH1_VRC_01_OPEN_LS,
+                    iq_stRoughRoughValve_NC_second_xOpenLS:=xTMO_ROUGH2_VRC_01_OPEN_LS,
+                    x_onBeamline:= xOnBeamline),
+    iq_stPtm=> );
 *)
-	
+
+    LAMP_C2_PTM_01(
+    i_xExtILKOk:= F_Turbo_NC_NO_Valve_Logic(
+                    i_stTurbo:= LAMP_C2_PTM_01.iq_stPtm,
+                    i_stISG:= LAMP_C2_GPI_01.PG,
+                    i_stBSG:= LAMP_ROUGH_GPI_02.PG,
+                    iq_stValve_NO:= LAMP_ROUGH_VRC_02.iq_stValve,
+                    iq_stValve_NC:= LAMP_ROUGH_VRC_01.iq_stValve,
+                    iq_stValve_NC_second:= LAMP_ROUGH_VRC_03.iq_stValve,
+                    EcatBridge_Error_Present:= xEcatBridge_COM_ERROR,
+//					ads_Error_Present:= (ITF_TMO_ROUGH1_VRC_01.bError OR ITF_TMO_ROUGH2_VRC_01.bError),
+                    iq_stRoughRoughValve_NC_xOpnLS:= xTMO_ROUGH1_VRC_01_OPEN_LS,
+                    iq_stRoughRoughValve_NC_second_xOpenLS:= xTMO_ROUGH2_VRC_01_OPEN_LS,
+//					x_onBeamline:= xOnBeamline,
+                     x_onBeamline:= True),
+    iq_stPtm=> );
+
+    LAMP_C2_PTM_02(
+    i_xExtILKOk:= F_Turbo_NC_NO_Valve_Logic(
+                    i_stTurbo:= LAMP_C2_PTM_02.iq_stPtm,
+                    i_stISG:= LAMP_C2_GPI_01.PG,
+                    i_stBSG:= LAMP_ROUGH_GPI_02.PG,
+                    iq_stValve_NO:= LAMP_ROUGH_VRC_02.iq_stValve,
+                    iq_stValve_NC:= LAMP_ROUGH_VRC_01.iq_stValve,
+                    iq_stValve_NC_second:= LAMP_ROUGH_VRC_03.iq_stValve,
+                    EcatBridge_Error_Present:= xEcatBridge_COM_ERROR,
+//					ads_Error_Present:= (ITF_TMO_ROUGH1_VRC_01.bError OR ITF_TMO_ROUGH2_VRC_01.bError),
+                    iq_stRoughRoughValve_NC_xOpnLS:= xTMO_ROUGH1_VRC_01_OPEN_LS,
+                    iq_stRoughRoughValve_NC_second_xOpenLS:=xTMO_ROUGH2_VRC_01_OPEN_LS,
+//					x_onBeamline:= xOnBeamline,
+                    x_onBeamline:= True),
+    iq_stPtm=> );
+
+    LAMP_C2_PTM_03(
+    i_xExtILKOk:= F_Turbo_NC_NO_Valve_Logic(
+                    i_stTurbo:= LAMP_C2_PTM_03.iq_stPtm,
+                    i_stISG:= LAMP_C2_GPI_01.PG,
+                    i_stBSG:= LAMP_ROUGH_GPI_02.PG,
+                    iq_stValve_NO:= LAMP_ROUGH_VRC_02.iq_stValve,
+                    iq_stValve_NC:= LAMP_ROUGH_VRC_01.iq_stValve,
+                    iq_stValve_NC_second:= LAMP_ROUGH_VRC_03.iq_stValve,
+                    EcatBridge_Error_Present:= xEcatBridge_COM_ERROR,
+//					ads_Error_Present:= (ITF_TMO_ROUGH1_VRC_01.bError OR ITF_TMO_ROUGH2_VRC_01.bError),
+                    iq_stRoughRoughValve_NC_xOpnLS:= xTMO_ROUGH1_VRC_01_OPEN_LS,
+                    iq_stRoughRoughValve_NC_second_xOpenLS:=xTMO_ROUGH2_VRC_01_OPEN_LS,
+//					x_onBeamline:= xOnBeamline,
+                    x_onBeamline:= True),
+    iq_stPtm=> );
+
+    LAMP_C2_PTM_04(
+    i_xExtILKOk:= F_Turbo_NC_NO_Valve_Logic(
+                    i_stTurbo:= LAMP_C2_PTM_04.iq_stPtm,
+                    i_stISG:= LAMP_C2_GPI_01.PG,
+                    i_stBSG:= LAMP_ROUGH_GPI_02.PG,
+                    iq_stValve_NO:= LAMP_ROUGH_VRC_02.iq_stValve,
+                    iq_stValve_NC:= LAMP_ROUGH_VRC_01.iq_stValve,
+                    iq_stValve_NC_second:= LAMP_ROUGH_VRC_03.iq_stValve,
+                    EcatBridge_Error_Present:= xEcatBridge_COM_ERROR,
+//					ads_Error_Present:= (ITF_TMO_ROUGH1_VRC_01.bError OR ITF_TMO_ROUGH2_VRC_01.bError),
+                    iq_stRoughRoughValve_NC_xOpnLS:= xTMO_ROUGH1_VRC_01_OPEN_LS,
+                    iq_stRoughRoughValve_NC_second_xOpenLS:=xTMO_ROUGH2_VRC_01_OPEN_LS,
+//					x_onBeamline:= xOnBeamline,
+                    x_onBeamline:= True),
+    iq_stPtm=> );
+
+(*
+    LAMP_CATCH_PTM_01(
+    i_xExtILKOk:= F_Turbo_NC_NO_Valve_Logic(
+                    i_stTurbo:= LAMP_CATCH_PTM_01.iq_stPtm,
+                    i_stISG:= LAMP_C2_GPI_01.PG,
+                    i_stBSG:= LAMP_ROUGH_GPI_02.PG,
+                    iq_stValve_NO:= LAMP_ROUGH_VRC_02.iq_stValve,
+                    iq_stValve_NC:= LAMP_ROUGH_VRC_01.iq_stValve,
+                    iq_stValve_NC_second:= LAMP_ROUGH_VRC_03.iq_stValve,
+                    EcatBridge_Error_Present:= xEcatBridge_COM_Error,
+//					ads_Error_Present:= (ITF_TMO_ROUGH1_VRC_01.bError OR ITF_TMO_ROUGH2_VRC_01.bError),
+                    iq_stRoughRoughValve_NC_xOpnLS:= xTMO_ROUGH1_VRC_01_OPEN_LS,
+                    iq_stRoughRoughValve_NC_second_xOpenLS:=xTMO_ROUGH2_VRC_01_OPEN_LS,
+                    x_onBeamline:= xOnBeamline),
+    iq_stPtm=> );
+
+    LAMP_CATCH_PTM_02(
+    i_xExtILKOk:= F_Turbo_NC_NO_Valve_Logic(
+                    i_stTurbo:= LAMP_CATCH_PTM_02.iq_stPtm,
+                    i_stISG:= LAMP_C2_GPI_01.PG,
+                    i_stBSG:= LAMP_ROUGH_GPI_02.PG,
+                    iq_stValve_NO:= LAMP_ROUGH_VRC_02.iq_stValve,
+                    iq_stValve_NC:= LAMP_ROUGH_VRC_01.iq_stValve,
+                    iq_stValve_NC_second:= LAMP_ROUGH_VRC_03.iq_stValve,
+                    EcatBridge_Error_Present:= xEcatBridge_COM_Error,
+//					ads_Error_Present:= (ITF_TMO_ROUGH1_VRC_01.bError OR ITF_TMO_ROUGH2_VRC_01.bError),
+                    iq_stRoughRoughValve_NC_xOpnLS:= xTMO_ROUGH1_VRC_01_OPEN_LS,
+                    iq_stRoughRoughValve_NC_second_xOpenLS:=xTMO_ROUGH2_VRC_01_OPEN_LS,
+                    x_onBeamline:= xOnBeamline),
+    iq_stPtm=> );
+
+    LAMP_GJ1_PTM_01(
+    i_xExtILKOk:= F_Turbo_NC_NO_Valve_Logic(
+                    i_stTurbo:= LAMP_GJ1_PTM_01.iq_stPtm,
+                    i_stISG:= LAMP_GJ1_GPI_01.PG,
+                    i_stBSG:= LAMP_ROUGH_GPI_04.PG,
+                    iq_stValve_NO:= LAMP_ROUGH_VRC_02.iq_stValve,
+                    iq_stValve_NC:= LAMP_ROUGH_VRC_03.iq_stValve,
+                    iq_stValve_NC_second:= LAMP_ROUGH_VRC_01.iq_stValve,
+                    EcatBridge_Error_Present:= xEcatBridge_COM_ERROR,
+//					ads_Error_Present:= (ITF_TMO_ROUGH1_VRC_01.bError OR ITF_TMO_ROUGH2_VRC_01.bError),
+                    iq_stRoughRoughValve_NC_xOpnLS:= xTMO_ROUGH2_VRC_01_OPEN_LS,
+                    iq_stRoughRoughValve_NC_second_xOpenLS:=xTMO_ROUGH1_VRC_01_OPEN_LS,
+                    x_onBeamline:= xOnBeamline),
+    iq_stPtm=> );
+
+    LAMP_GJ1_PTM_02(
+    i_xExtILKOk:= F_Turbo_NC_NO_Valve_Logic(
+                    i_stTurbo:= LAMP_GJ1_PTM_02.iq_stPtm,
+                    i_stISG:= LAMP_GJ1_GPI_01.PG,
+                    i_stBSG:= LAMP_ROUGH_GPI_04.PG,
+                    iq_stValve_NO:= LAMP_ROUGH_VRC_02.iq_stValve,
+                    iq_stValve_NC:= LAMP_ROUGH_VRC_03.iq_stValve,
+                    iq_stValve_NC_second:= LAMP_ROUGH_VRC_01.iq_stValve,
+                    EcatBridge_Error_Present:= xEcatBridge_COM_ERROR,
+//					ads_Error_Present:= (ITF_TMO_ROUGH1_VRC_01.bError OR ITF_TMO_ROUGH2_VRC_01.bError),
+                    iq_stRoughRoughValve_NC_xOpnLS:= xTMO_ROUGH2_VRC_01_OPEN_LS,
+                    iq_stRoughRoughValve_NC_second_xOpenLS:=xTMO_ROUGH1_VRC_01_OPEN_LS,
+                    x_onBeamline:= xOnBeamline),
+    iq_stPtm=> );
+
+    LAMP_GJ1_PTM_03(
+    i_xExtILKOk:= F_Turbo_NC_NO_Valve_Logic(
+                    i_stTurbo:= LAMP_GJ1_PTM_03.iq_stPtm,
+                    i_stISG:= LAMP_GJ1_GPI_01.PG,
+                    i_stBSG:= LAMP_ROUGH_GPI_04.PG,
+                    iq_stValve_NO:= LAMP_ROUGH_VRC_02.iq_stValve,
+                    iq_stValve_NC:= LAMP_ROUGH_VRC_03.iq_stValve,
+                    iq_stValve_NC_second:= LAMP_ROUGH_VRC_01.iq_stValve,
+                    EcatBridge_Error_Present:= xEcatBridge_COM_ERROR,
+//					ads_Error_Present:= (ITF_TMO_ROUGH1_VRC_01.bError OR ITF_TMO_ROUGH2_VRC_01.bError),
+                    iq_stRoughRoughValve_NC_xOpnLS:= xTMO_ROUGH2_VRC_01_OPEN_LS,
+                    iq_stRoughRoughValve_NC_second_xOpenLS:=xTMO_ROUGH1_VRC_01_OPEN_LS,
+                    x_onBeamline:= xOnBeamline),
+    iq_stPtm=> );
+
+    LAMP_GJ1_PTM_04(
+    i_xExtILKOk:= F_Turbo_NC_NO_Valve_Logic(
+                    i_stTurbo:= LAMP_GJ1_PTM_04.iq_stPtm,
+                    i_stISG:= LAMP_GJ1_GPI_01.PG,
+                    i_stBSG:= LAMP_ROUGH_GPI_04.PG,
+                    iq_stValve_NO:= LAMP_ROUGH_VRC_02.iq_stValve,
+                    iq_stValve_NC:= LAMP_ROUGH_VRC_03.iq_stValve,
+                    iq_stValve_NC_second:= LAMP_ROUGH_VRC_01.iq_stValve,
+                    EcatBridge_Error_Present:= xEcatBridge_COM_ERROR,
+//					ads_Error_Present:= (ITF_TMO_ROUGH1_VRC_01.bError OR ITF_TMO_ROUGH2_VRC_01.bError),
+                    iq_stRoughRoughValve_NC_xOpnLS:= xTMO_ROUGH2_VRC_01_OPEN_LS,
+                    iq_stRoughRoughValve_NC_second_xOpenLS:=xTMO_ROUGH1_VRC_01_OPEN_LS,
+                    x_onBeamline:= xOnBeamline),
+    iq_stPtm=> );
+*)
+
+    LAMP_ROUGH_PTM_01(
+    i_xExtILKOk:= F_Turbo_NC_NO_Valve_Logic(
+                    i_stTurbo:= LAMP_ROUGH_PTM_01.iq_stPtm,
+                    i_stISG:= LAMP_C2_GPI_01.PG,
+                    i_stBSG:= LAMP_ROUGH_GPI_02.PG,
+                    iq_stValve_NO:= LAMP_ROUGH_VRC_02.iq_stValve,
+                    iq_stValve_NC:= LAMP_ROUGH_VRC_01.iq_stValve,
+                    iq_stValve_NC_second:= LAMP_ROUGH_VRC_03.iq_stValve,
+                    EcatBridge_Error_Present:= xEcatBridge_COM_ERROR,
+//					ads_Error_Present:= (ITF_TMO_ROUGH1_VRC_01.bError OR ITF_TMO_ROUGH2_VRC_01.bError),
+                    iq_stRoughRoughValve_NC_xOpnLS:= xTMO_ROUGH1_VRC_01_OPEN_LS,
+                    iq_stRoughRoughValve_NC_second_xOpenLS:=xTMO_ROUGH2_VRC_01_OPEN_LS,
+//					x_onBeamline:= xOnBeamline,
+                    x_onBeamline:= True),
+    iq_stPtm=> );
+
+(*
+    KTOF_PTM_01(
+    i_xExtILKOk:= F_Turbo_NC_NO_Valve_Logic(
+                    i_stTurbo:= KTOF_PTM_01.iq_stPtm,
+                    i_stISG:= LAMP_C2_GPI_01.PG,
+                    i_stBSG:= LAMP_ROUGH_GPI_02.PG,
+                    iq_stValve_NO:= LAMP_ROUGH_VRC_02.iq_stValve,
+                    iq_stValve_NC:= LAMP_ROUGH_VRC_01.iq_stValve,
+                    iq_stValve_NC_second:= LAMP_ROUGH_VRC_03.iq_stValve,
+                    EcatBridge_Error_Present:= xEcatBridge_COM_ERROR,
+//					ads_Error_Present:= (ITF_TMO_ROUGH1_VRC_01.bError OR ITF_TMO_ROUGH2_VRC_01.bError),
+                    iq_stRoughRoughValve_NC_xOpnLS:= xTMO_ROUGH1_VRC_01_OPEN_LS,
+                    iq_stRoughRoughValve_NC_second_xOpenLS:=xTMO_ROUGH2_VRC_01_OPEN_LS,
+                    x_onBeamline:= xOnBeamline),
+    iq_stPtm=> );
+*)
+
 (*Serial Communication*)
 (*Assign adresses to the pfeiffer controllers connected to this serial terminal*)
 st_Pfeiffer_CTRL_LAMP_C2_PTM_01[1].iSerialAddress :=1;
 st_Pfeiffer_CTRL_LAMP_C2_PTM_01[1].xEnableComm := TRUE;
-(* Instanitate the Function block for serial communication with Pfeiffer*)	
+(* Instanitate the Function block for serial communication with Pfeiffer*)
 fb_PfeifferCom_LAMP_C2_PTM_01(astPfeifferControl := st_Pfeiffer_CTRL_LAMP_C2_PTM_01,
-			   				  astPfeifferStatus:= st_Pfeiffer_RBK_LAMP_C2_PTM_01,
-							  SerialRXBuffer:= SerialRXBuffer_LAMP_C2_PTM_01,
-							  SerialTXBuffer:= SerialTXBuffer_LAMP_C2_PTM_01);
+                                 astPfeifferStatus:= st_Pfeiffer_RBK_LAMP_C2_PTM_01,
+                              SerialRXBuffer:= SerialRXBuffer_LAMP_C2_PTM_01,
+                              SerialTXBuffer:= SerialTXBuffer_LAMP_C2_PTM_01);
 (* Copy Status Pv's into the PTM structure*)
 LAMP_C2_PTM_01.M_Serial_IO(st_Pfeiffer_RBK:= st_Pfeiffer_RBK_LAMP_C2_PTM_01[1], st_Pfeiffer_CTRL:= st_Pfeiffer_CTRL_LAMP_C2_PTM_01[1]);
 
 st_Pfeiffer_CTRL_LAMP_C2_PTM_02[1].iSerialAddress :=1;
 st_Pfeiffer_CTRL_LAMP_C2_PTM_02[1].xEnableComm := TRUE;
 fb_PfeifferCom_LAMP_C2_PTM_02(astPfeifferControl := st_Pfeiffer_CTRL_LAMP_C2_PTM_02,
-			   				  astPfeifferStatus:= st_Pfeiffer_RBK_LAMP_C2_PTM_02,
-							  SerialRXBuffer:= SerialRXBuffer_LAMP_C2_PTM_02,
-							  SerialTXBuffer:= SerialTXBuffer_LAMP_C2_PTM_02);
+                                 astPfeifferStatus:= st_Pfeiffer_RBK_LAMP_C2_PTM_02,
+                              SerialRXBuffer:= SerialRXBuffer_LAMP_C2_PTM_02,
+                              SerialTXBuffer:= SerialTXBuffer_LAMP_C2_PTM_02);
 LAMP_C2_PTM_02.M_Serial_IO(st_Pfeiffer_RBK:= st_Pfeiffer_RBK_LAMP_C2_PTM_02[1], st_Pfeiffer_CTRL:= st_Pfeiffer_CTRL_LAMP_C2_PTM_02[1]);
 
 st_Pfeiffer_CTRL_LAMP_C2_PTM_03[1].iSerialAddress :=1;
 st_Pfeiffer_CTRL_LAMP_C2_PTM_03[1].xEnableComm := TRUE;
 fb_PfeifferCom_LAMP_C2_PTM_03(astPfeifferControl := st_Pfeiffer_CTRL_LAMP_C2_PTM_03,
-			   				  astPfeifferStatus:= st_Pfeiffer_RBK_LAMP_C2_PTM_03,
-							  SerialRXBuffer:= SerialRXBuffer_LAMP_C2_PTM_03,
-							  SerialTXBuffer:= SerialTXBuffer_LAMP_C2_PTM_03);
+                                 astPfeifferStatus:= st_Pfeiffer_RBK_LAMP_C2_PTM_03,
+                              SerialRXBuffer:= SerialRXBuffer_LAMP_C2_PTM_03,
+                              SerialTXBuffer:= SerialTXBuffer_LAMP_C2_PTM_03);
 LAMP_C2_PTM_03.M_Serial_IO(st_Pfeiffer_RBK:= st_Pfeiffer_RBK_LAMP_C2_PTM_03[1], st_Pfeiffer_CTRL:= st_Pfeiffer_CTRL_LAMP_C2_PTM_03[1]);
 
 st_Pfeiffer_CTRL_LAMP_C2_PTM_04[1].iSerialAddress :=1;
 st_Pfeiffer_CTRL_LAMP_C2_PTM_04[1].xEnableComm := TRUE;
 fb_PfeifferCom_LAMP_C2_PTM_04(astPfeifferControl := st_Pfeiffer_CTRL_LAMP_C2_PTM_04,
-			   				  astPfeifferStatus:= st_Pfeiffer_RBK_LAMP_C2_PTM_04,
-							  SerialRXBuffer:= SerialRXBuffer_LAMP_C2_PTM_04,
-							  SerialTXBuffer:= SerialTXBuffer_LAMP_C2_PTM_04);
+                                 astPfeifferStatus:= st_Pfeiffer_RBK_LAMP_C2_PTM_04,
+                              SerialRXBuffer:= SerialRXBuffer_LAMP_C2_PTM_04,
+                              SerialTXBuffer:= SerialTXBuffer_LAMP_C2_PTM_04);
 LAMP_C2_PTM_04.M_Serial_IO(st_Pfeiffer_RBK:= st_Pfeiffer_RBK_LAMP_C2_PTM_04[1], st_Pfeiffer_CTRL:= st_Pfeiffer_CTRL_LAMP_C2_PTM_04[1]);
 
 (*
 st_Pfeiffer_CTRL_LAMP_GJ1_PTM_01[1].iSerialAddress :=1;
 st_Pfeiffer_CTRL_LAMP_GJ1_PTM_01[1].xEnableComm := TRUE;
 fb_PfeifferCom_LAMP_GJ1_PTM_01(astPfeifferControl := st_Pfeiffer_CTRL_LAMP_GJ1_PTM_01,
-			   				  astPfeifferStatus:= st_Pfeiffer_RBK_LAMP_GJ1_PTM_01,
-							  SerialRXBuffer:= SerialRXBuffer_LAMP_GJ1_PTM_01,
-							  SerialTXBuffer:= SerialTXBuffer_LAMP_GJ1_PTM_01);
+                                 astPfeifferStatus:= st_Pfeiffer_RBK_LAMP_GJ1_PTM_01,
+                              SerialRXBuffer:= SerialRXBuffer_LAMP_GJ1_PTM_01,
+                              SerialTXBuffer:= SerialTXBuffer_LAMP_GJ1_PTM_01);
 LAMP_GJ1_PTM_01.M_Serial_IO(st_Pfeiffer_RBK:= st_Pfeiffer_RBK_LAMP_GJ1_PTM_01[1], st_Pfeiffer_CTRL:= st_Pfeiffer_CTRL_LAMP_GJ1_PTM_01[1]);
 
 st_Pfeiffer_CTRL_LAMP_GJ1_PTM_02[1].iSerialAddress :=1;
 st_Pfeiffer_CTRL_LAMP_GJ1_PTM_02[1].xEnableComm := TRUE;
 fb_PfeifferCom_LAMP_GJ1_PTM_02(astPfeifferControl := st_Pfeiffer_CTRL_LAMP_GJ1_PTM_02,
-			   				  astPfeifferStatus:= st_Pfeiffer_RBK_LAMP_GJ1_PTM_02,
-							  SerialRXBuffer:= SerialRXBuffer_LAMP_GJ1_PTM_02,
-							  SerialTXBuffer:= SerialTXBuffer_LAMP_GJ1_PTM_02);
+                                 astPfeifferStatus:= st_Pfeiffer_RBK_LAMP_GJ1_PTM_02,
+                              SerialRXBuffer:= SerialRXBuffer_LAMP_GJ1_PTM_02,
+                              SerialTXBuffer:= SerialTXBuffer_LAMP_GJ1_PTM_02);
 LAMP_GJ1_PTM_02.M_Serial_IO(st_Pfeiffer_RBK:= st_Pfeiffer_RBK_LAMP_GJ1_PTM_02[1], st_Pfeiffer_CTRL:= st_Pfeiffer_CTRL_LAMP_GJ1_PTM_02[1]);
 
 st_Pfeiffer_CTRL_LAMP_GJ1_PTM_03[1].iSerialAddress :=1;
 st_Pfeiffer_CTRL_LAMP_GJ1_PTM_03[1].xEnableComm := TRUE;
 fb_PfeifferCom_LAMP_GJ1_PTM_03(astPfeifferControl := st_Pfeiffer_CTRL_LAMP_GJ1_PTM_03,
-			   				  astPfeifferStatus:= st_Pfeiffer_RBK_LAMP_GJ1_PTM_03,
-							  SerialRXBuffer:= SerialRXBuffer_LAMP_GJ1_PTM_03,
-							  SerialTXBuffer:= SerialTXBuffer_LAMP_GJ1_PTM_03);
+                                 astPfeifferStatus:= st_Pfeiffer_RBK_LAMP_GJ1_PTM_03,
+                              SerialRXBuffer:= SerialRXBuffer_LAMP_GJ1_PTM_03,
+                              SerialTXBuffer:= SerialTXBuffer_LAMP_GJ1_PTM_03);
 LAMP_GJ1_PTM_03.M_Serial_IO(st_Pfeiffer_RBK:= st_Pfeiffer_RBK_LAMP_GJ1_PTM_03[1], st_Pfeiffer_CTRL:= st_Pfeiffer_CTRL_LAMP_GJ1_PTM_03[1]);
 
 st_Pfeiffer_CTRL_LAMP_GJ1_PTM_04[1].iSerialAddress :=1;
 st_Pfeiffer_CTRL_LAMP_GJ1_PTM_04[1].xEnableComm := TRUE;
 fb_PfeifferCom_LAMP_GJ1_PTM_04(astPfeifferControl := st_Pfeiffer_CTRL_LAMP_GJ1_PTM_04,
-			   				  astPfeifferStatus:= st_Pfeiffer_RBK_LAMP_GJ1_PTM_04,
-							  SerialRXBuffer:= SerialRXBuffer_LAMP_GJ1_PTM_04,
-							  SerialTXBuffer:= SerialTXBuffer_LAMP_GJ1_PTM_04);
+                                 astPfeifferStatus:= st_Pfeiffer_RBK_LAMP_GJ1_PTM_04,
+                              SerialRXBuffer:= SerialRXBuffer_LAMP_GJ1_PTM_04,
+                              SerialTXBuffer:= SerialTXBuffer_LAMP_GJ1_PTM_04);
 LAMP_GJ1_PTM_04.M_Serial_IO(st_Pfeiffer_RBK:= st_Pfeiffer_RBK_LAMP_GJ1_PTM_04[1], st_Pfeiffer_CTRL:= st_Pfeiffer_CTRL_LAMP_GJ1_PTM_04[1]);
 *)
 
 st_Pfeiffer_CTRL_LAMP_ROUGH_PTM_01[1].iSerialAddress :=1;
 st_Pfeiffer_CTRL_LAMP_ROUGH_PTM_01[1].xEnableComm := TRUE;
 fb_PfeifferCom_LAMP_ROUGH_PTM_01(astPfeifferControl := st_Pfeiffer_CTRL_LAMP_ROUGH_PTM_01,
-			   				  astPfeifferStatus:= st_Pfeiffer_RBK_LAMP_ROUGH_PTM_01,
-							  SerialRXBuffer:= SerialRXBuffer_LAMP_ROUGH_PTM_01,
-							  SerialTXBuffer:= SerialTXBuffer_LAMP_ROUGH_PTM_01);
+                                 astPfeifferStatus:= st_Pfeiffer_RBK_LAMP_ROUGH_PTM_01,
+                              SerialRXBuffer:= SerialRXBuffer_LAMP_ROUGH_PTM_01,
+                              SerialTXBuffer:= SerialTXBuffer_LAMP_ROUGH_PTM_01);
 LAMP_ROUGH_PTM_01.M_Serial_IO(st_Pfeiffer_RBK:= st_Pfeiffer_RBK_LAMP_ROUGH_PTM_01[1], st_Pfeiffer_CTRL:= st_Pfeiffer_CTRL_LAMP_ROUGH_PTM_01[1]);
 
 (*
 st_Pfeiffer_CTRL_LAMP_C1_PTM_01[1].iSerialAddress :=1;
 st_Pfeiffer_CTRL_LAMP_C1_PTM_01[1].xEnableComm := TRUE;
 fb_PfeifferCom_LAMP_C1_PTM_01(astPfeifferControl := st_Pfeiffer_CTRL_LAMP_C1_PTM_01,
-			   				  astPfeifferStatus:= st_Pfeiffer_RBK_LAMP_C1_PTM_01,
-							  SerialRXBuffer:= SerialRXBuffer_LAMP_C1_PTM_01,
-							  SerialTXBuffer:= SerialTXBuffer_LAMP_C1_PTM_01);
+                                 astPfeifferStatus:= st_Pfeiffer_RBK_LAMP_C1_PTM_01,
+                              SerialRXBuffer:= SerialRXBuffer_LAMP_C1_PTM_01,
+                              SerialTXBuffer:= SerialTXBuffer_LAMP_C1_PTM_01);
 LAMP_C1_PTM_01.M_Serial_IO(st_Pfeiffer_RBK:= st_Pfeiffer_RBK_LAMP_C1_PTM_01[1], st_Pfeiffer_CTRL:= st_Pfeiffer_CTRL_LAMP_C1_PTM_01[1]);
 
 st_Pfeiffer_CTRL_LAMP_CATCH_PTM_01[1].iSerialAddress :=1;
 st_Pfeiffer_CTRL_LAMP_CATCH_PTM_01[1].xEnableComm := TRUE;
 fb_PfeifferCom_LAMP_CATCH_PTM_01(astPfeifferControl := st_Pfeiffer_CTRL_LAMP_CATCH_PTM_01,
-			   				  astPfeifferStatus:= st_Pfeiffer_RBK_LAMP_CATCH_PTM_01,
-							  SerialRXBuffer:= SerialRXBuffer_LAMP_CATCH_PTM_01,
-							  SerialTXBuffer:= SerialTXBuffer_LAMP_CATCH_PTM_01);
+                                 astPfeifferStatus:= st_Pfeiffer_RBK_LAMP_CATCH_PTM_01,
+                              SerialRXBuffer:= SerialRXBuffer_LAMP_CATCH_PTM_01,
+                              SerialTXBuffer:= SerialTXBuffer_LAMP_CATCH_PTM_01);
 LAMP_CATCH_PTM_01.M_Serial_IO(st_Pfeiffer_RBK:= st_Pfeiffer_RBK_LAMP_CATCH_PTM_01[1], st_Pfeiffer_CTRL:= st_Pfeiffer_CTRL_LAMP_CATCH_PTM_01[1]);
 
 st_Pfeiffer_CTRL_LAMP_CATCH_PTM_02[1].iSerialAddress :=1;
 st_Pfeiffer_CTRL_LAMP_CATCH_PTM_02[1].xEnableComm := TRUE;
 fb_PfeifferCom_LAMP_CATCH_PTM_02(astPfeifferControl := st_Pfeiffer_CTRL_LAMP_CATCH_PTM_02,
-			   				  astPfeifferStatus:= st_Pfeiffer_RBK_LAMP_CATCH_PTM_02,
-							  SerialRXBuffer:= SerialRXBuffer_LAMP_CATCH_PTM_02,
-							  SerialTXBuffer:= SerialTXBuffer_LAMP_CATCH_PTM_02);
+                                 astPfeifferStatus:= st_Pfeiffer_RBK_LAMP_CATCH_PTM_02,
+                              SerialRXBuffer:= SerialRXBuffer_LAMP_CATCH_PTM_02,
+                              SerialTXBuffer:= SerialTXBuffer_LAMP_CATCH_PTM_02);
 LAMP_CATCH_PTM_02.M_Serial_IO(st_Pfeiffer_RBK:= st_Pfeiffer_RBK_LAMP_CATCH_PTM_02[1], st_Pfeiffer_CTRL:= st_Pfeiffer_CTRL_LAMP_CATCH_PTM_02[1]);
 
 st_Pfeiffer_CTRL_KTOF_PTM_01[1].iSerialAddress :=1;
 st_Pfeiffer_CTRL_KTOF_PTM_01[1].xEnableComm := TRUE;
 fb_PfeifferCom_KTOF_PTM_01(astPfeifferControl := st_Pfeiffer_CTRL_KTOF_PTM_01,
-			   				  astPfeifferStatus:= st_Pfeiffer_RBK_KTOF_PTM_01,
-							  SerialRXBuffer:= SerialRXBuffer_KTOF_PTM_01,
-							  SerialTXBuffer:= SerialTXBuffer_KTOF_PTM_01);
+                                 astPfeifferStatus:= st_Pfeiffer_RBK_KTOF_PTM_01,
+                              SerialRXBuffer:= SerialRXBuffer_KTOF_PTM_01,
+                              SerialTXBuffer:= SerialTXBuffer_KTOF_PTM_01);
 //KTOF_PTM_01.M_Serial_IO(st_Pfeiffer_CTRL_KTOF_PTM_01[1],st_Pfeiffer_RBK_KTOF_PTM_01[1]);
 KTOF_PTM_01.M_Serial_IO(st_Pfeiffer_RBK:= st_Pfeiffer_RBK_KTOF_PTM_01[1], st_Pfeiffer_CTRL:= st_Pfeiffer_CTRL_KTOF_PTM_01[1]);
 *)
 
 //Leybolds
-fb_TD20Com_LAMP_GJ2_PTM_01(SerialRXBuffer:= SerialRXBuffer_LAMP_GJ2_PTM_01, 
-						   SerialTXBuffer:= SerialTXBuffer_LAMP_GJ2_PTM_01, 
-						   astTD20Status=> st_TD20_RBK_LAMP_GJ2_PTM_01);
+fb_TD20Com_LAMP_GJ2_PTM_01(SerialRXBuffer:= SerialRXBuffer_LAMP_GJ2_PTM_01,
+                           SerialTXBuffer:= SerialTXBuffer_LAMP_GJ2_PTM_01,
+                           astTD20Status=> st_TD20_RBK_LAMP_GJ2_PTM_01);
 LAMP_GJ2_PTM_01.M_Serial_IO(i_st_TD20_RBK:= st_TD20_RBK_LAMP_GJ2_PTM_01);
 
 (*
-fb_TD20Com_LAMP_GJ2_PTM_02(SerialRXBuffer:= SerialRXBuffer_LAMP_GJ2_PTM_02, 
-						   SerialTXBuffer:= SerialTXBuffer_LAMP_GJ2_PTM_02, 
-						   astTD20Status=> st_TD20_RBK_LAMP_GJ2_PTM_02);
+fb_TD20Com_LAMP_GJ2_PTM_02(SerialRXBuffer:= SerialRXBuffer_LAMP_GJ2_PTM_02,
+                           SerialTXBuffer:= SerialTXBuffer_LAMP_GJ2_PTM_02,
+                           astTD20Status=> st_TD20_RBK_LAMP_GJ2_PTM_02);
 LAMP_GJ2_PTM_02.M_Serial_IO(i_st_TD20_RBK:= st_TD20_RBK_LAMP_GJ2_PTM_02);
 
-fb_TD20Com_LAMP_GJ2_PTM_03(SerialRXBuffer:= SerialRXBuffer_LAMP_GJ2_PTM_03, 
-						   SerialTXBuffer:= SerialTXBuffer_LAMP_GJ2_PTM_03, 
-						   astTD20Status=> st_TD20_RBK_LAMP_GJ2_PTM_03);
+fb_TD20Com_LAMP_GJ2_PTM_03(SerialRXBuffer:= SerialRXBuffer_LAMP_GJ2_PTM_03,
+                           SerialTXBuffer:= SerialTXBuffer_LAMP_GJ2_PTM_03,
+                           astTD20Status=> st_TD20_RBK_LAMP_GJ2_PTM_03);
 LAMP_GJ2_PTM_03.M_Serial_IO(i_st_TD20_RBK:= st_TD20_RBK_LAMP_GJ2_PTM_03);
 
-fb_TD20Com_LAMP_GJ2_PTM_04(SerialRXBuffer:= SerialRXBuffer_LAMP_GJ2_PTM_04, 
-						   SerialTXBuffer:= SerialTXBuffer_LAMP_GJ2_PTM_04, 
-						   astTD20Status=> st_TD20_RBK_LAMP_GJ2_PTM_04);
+fb_TD20Com_LAMP_GJ2_PTM_04(SerialRXBuffer:= SerialRXBuffer_LAMP_GJ2_PTM_04,
+                           SerialTXBuffer:= SerialTXBuffer_LAMP_GJ2_PTM_04,
+                           astTD20Status=> st_TD20_RBK_LAMP_GJ2_PTM_04);
 LAMP_GJ2_PTM_04.M_Serial_IO(i_st_TD20_RBK:= st_TD20_RBK_LAMP_GJ2_PTM_04);
 *)
 
 (*Vacuum Gate Valve*)
-	IF(xOnBeamline) THEN //If OnBeamline then stay open.
-		LAMP_ROUGH_VRC_01.M_Set_OPN_SW(TRUE);
-		LAMP_ROUGH_VRC_01(
-		i_xExtILK_OK:= TRUE,
-		i_xOverrideMode:= xSystemOverrideMode_LAMP,
-		iq_stValve=> );
-	ELSE
-		LAMP_ROUGH_VRC_01(//LAMP:ROUGH:VRC:01 can open when the pressure across the valve is below 10 torr
-		i_xExtILK_OK:= (ABS(LAMP_ROUGH_GPI_01.PG.rPRESS - LAMP_ROUGH_GPI_02.PG.rPRESS)<10.0),
-		i_xOverrideMode:= xSystemOverrideMode_LAMP, 
-		iq_stValve=> );
-	END_IF
-(*	
-	LAMP_ROUGH_VRC_02(//LAMP:ROUGH:VRC:02 closes when the pressure in the the C2, GJ1, and GJ2 chambers are all below 10 torr.
-	i_xExtILK_OK:= NOT((LAMP_GJ1_GPI_01.PG.rPRESS >10.0) OR (LAMP_GJ2_GPI_01.PG.rPRESS > 10.0) OR (LAMP_C2_GPI_01.PG.rPRESS > 10.0)) , 
-	i_xOverrideMode:= xSystemOverrideMode_LAMP, 
-	iq_stValve=> );
-*)	
+    IF(xOnBeamline) THEN //If OnBeamline then stay open.
+        LAMP_ROUGH_VRC_01.M_Set_OPN_SW(TRUE);
+        LAMP_ROUGH_VRC_01(
+        i_xExtILK_OK:= TRUE,
+        i_xOverrideMode:= xSystemOverrideMode_LAMP,
+        iq_stValve=> );
+    ELSE
+        LAMP_ROUGH_VRC_01(//LAMP:ROUGH:VRC:01 can open when the pressure across the valve is below 10 torr
+        i_xExtILK_OK:= (ABS(LAMP_ROUGH_GPI_01.PG.rPRESS - LAMP_ROUGH_GPI_02.PG.rPRESS)<10.0),
+        i_xOverrideMode:= xSystemOverrideMode_LAMP,
+        iq_stValve=> );
+    END_IF
+(*
+    LAMP_ROUGH_VRC_02(//LAMP:ROUGH:VRC:02 closes when the pressure in the the C2, GJ1, and GJ2 chambers are all below 10 torr.
+    i_xExtILK_OK:= NOT((LAMP_GJ1_GPI_01.PG.rPRESS >10.0) OR (LAMP_GJ2_GPI_01.PG.rPRESS > 10.0) OR (LAMP_C2_GPI_01.PG.rPRESS > 10.0)) ,
+    i_xOverrideMode:= xSystemOverrideMode_LAMP,
+    iq_stValve=> );
+*)
     LAMP_ROUGH_VRC_02(//LAMP:ROUGH:VRC:02 close when the pressure in the C2, GJ1, GJ2 chambers are all below 10 torr.)
-	i_xExtILK_OK:= NOT((LAMP_ROUGH_GPI_01.PG.rPRESS > 10.0 ) OR (LAMP_ROUGH_GPI_02.PG.rPRESS > 10.0) ), 
-	i_xOverrideMode:= xSystemOverrideMode_LAMP,
- 	iq_stValve=> );
+    i_xExtILK_OK:= NOT((LAMP_ROUGH_GPI_01.PG.rPRESS > 10.0 ) OR (LAMP_ROUGH_GPI_02.PG.rPRESS > 10.0) ),
+    i_xOverrideMode:= xSystemOverrideMode_LAMP,
+     iq_stValve=> );
 
-	IF(xOnBeamline) THEN //If OnBeamline then stay open.
-		LAMP_ROUGH_VRC_03.M_Set_OPN_SW(TRUE);
-		LAMP_ROUGH_VRC_03(
-		i_xExtILK_OK:= TRUE,
-		i_xOverrideMode:= xSystemOverrideMode_LAMP,
-		iq_stValve=> );
-	
-	ELSE
-		LAMP_ROUGH_VRC_03(//LAMP:ROUGH:VRC:03 can open when the pressure across the valve is below 10 torr
-		i_xExtILK_OK:= (ABS(LAMP_ROUGH_GPI_03.PG.rPRESS - LAMP_ROUGH_GPI_04.PG.rPRESS)<10.0),
-		i_xOverrideMode:= xSystemOverrideMode_LAMP, 
-		iq_stValve=> );
-	END_IF
-    
+    IF(xOnBeamline) THEN //If OnBeamline then stay open.
+        LAMP_ROUGH_VRC_03.M_Set_OPN_SW(TRUE);
+        LAMP_ROUGH_VRC_03(
+        i_xExtILK_OK:= TRUE,
+        i_xOverrideMode:= xSystemOverrideMode_LAMP,
+        iq_stValve=> );
+
+    ELSE
+        LAMP_ROUGH_VRC_03(//LAMP:ROUGH:VRC:03 can open when the pressure across the valve is below 10 torr
+        i_xExtILK_OK:= (ABS(LAMP_ROUGH_GPI_03.PG.rPRESS - LAMP_ROUGH_GPI_04.PG.rPRESS)<10.0),
+        i_xOverrideMode:= xSystemOverrideMode_LAMP,
+        iq_stValve=> );
+    END_IF
+
 (*Update EtherCAT Bridge Outputs*)
 xIP1_ROUGH_VRC_01_OPEN_LS := LAMP_ROUGH_VRC_01.M_IsOpen();
 xIP1_ROUGH_VRC_02_OPEN_LS := LAMP_ROUGH_VRC_02.M_IsOpen();
