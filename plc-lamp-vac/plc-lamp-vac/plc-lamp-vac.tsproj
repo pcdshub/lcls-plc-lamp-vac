@@ -1658,6 +1658,13 @@ Link this to your VAT590 WcState variable under WcState]]>
 							<Type>DINT</Type>
 						</Var>
 						<Var>
+							<Name>GVL_Devices.LAMP_VCN_01.o_nRawPressure</Name>
+							<Comment>
+								<![CDATA[ Raw pressure output, eliminate need for external connection of AI, ranges 0 to 1000000 (or 0.0 to 10V) (1E-12 Torr to 1E-2 Torr)]]>
+							</Comment>
+							<Type>DINT</Type>
+						</Var>
+						<Var>
 							<Name>GVL_Devices.LAMP_VCN_01.o_eCtrlModeSP</Name>
 							<Comment>
 								<![CDATA[ Valve control mode setpoint]]>
@@ -2104,6 +2111,7 @@ Link this to your VAT590 WcState variable under WcState]]>
 				<Link VarA="PlcTask Inputs^GVL_Devices.LAMP_VCN_01.i_stVat590PlcDriveRef^nSlaveAddr" VarB="InfoData^AdsAddr^port" AutoLink="true"/>
 				<Link VarA="PlcTask Outputs^GVL_Devices.LAMP_VCN_01.o_eCtrlModeSP" VarB="DO RxPDO-Map^Control mode setpoint" AutoLink="true"/>
 				<Link VarA="PlcTask Outputs^GVL_Devices.LAMP_VCN_01.o_nRawPositionSP" VarB="DO RxPDO-Map^Position setpoint" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_Devices.LAMP_VCN_01.o_nRawPressure" VarB="DO RxPDO-Map^External digital pressure sensor 1" AutoLink="true"/>
 				<Link VarA="PlcTask Outputs^GVL_Devices.LAMP_VCN_01.o_nRawPressureSP" VarB="DO RxPDO-Map^Pressure setpoint" AutoLink="true"/>
 				<Link VarA="PlcTask Outputs^GVL_Devices.LAMP_VCN_01.o_stGenCtrlSP" VarB="DO RxPDO-Map^General control setpoint" AutoLink="true"/>
 			</OwnerB>
