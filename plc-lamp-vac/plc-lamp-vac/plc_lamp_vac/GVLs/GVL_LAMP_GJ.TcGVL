@@ -2,6 +2,60 @@
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
   <GVL Name="GVL_LAMP_GJ" Id="{db708946-e289-42ed-8f83-dc3a9cd90a11}">
     <Declaration><![CDATA[VAR_GLOBAL
+	// VALVES
+	{attribute 'pytmc' :=' pv:LAMP:GJ:VRC:01 '}
+    {attribute 'TcLinkTo' := 	'.i_xOpnLS	:=	TIIB[LAMP_GJ_E01_EL1004]^Channel 1^Input;
+                                 .i_xClsLS	:=	TIIB[LAMP_GJ_E01_EL1004]^Channel 2^Input;
+                                .q_xOPN_DO	:=	TIIB[LAMP_GJ_E02_EL2004]^Channel 1^Output;
+                                .q_xCLS_DO	:=	TIIB[LAMP_GJ_E02_EL2004]^Channel 4^Output'}
+    fb_GJ_VRC_01 : FB_VRC_DA;
+	
+	{attribute 'pytmc' :=' pv:LAMP:GJ:VRC:02 '}
+    {attribute 'TcLinkTo' := 	'.i_xOpnLS	:=	TIIB[LAMP_GJ_E03_EL1004]^Channel 3^Input;
+                                 .i_xClsLS	:=	TIIB[LAMP_GJ_E03_EL1004]^Channel 4^Input;
+                                 .q_xOPN_DO	:=	TIIB[LAMP_GJ_E03A_EL2004]^Channel 1^Output'}
+
+    fb_GJ_VRC_02 : FB_VRC;
+	
+	{attribute 'pytmc' :=' pv:LAMP:ROUGH:VRC:04 '}
+    {attribute 'TcLinkTo' := 	'.i_xOpnLS	:=	TIIB[LAMP_GJ_E01_EL1004]^Channel 3^Input;
+                                 .i_xClsLS	:=	TIIB[LAMP_GJ_E01_EL1004]^Channel 4^Input;
+                                 .q_xOPN_DO	:=	TIIB[LAMP_GJ_E02_EL2004]^Channel 2^Output'}
+
+    fb_ROUGH_VRC_04 : FB_VRC;
+	
+	{attribute 'pytmc' :=' pv:LAMP:ROUGH:VRC:05 '}
+    {attribute 'TcLinkTo' := 	'.i_xOpnLS	:=	TIIB[LAMP_GJ_E03_EL1004]^Channel 1^Input;
+                                 .i_xClsLS	:=	TIIB[LAMP_GJ_E03_EL1004]^Channel 2^Input;
+                                 .q_xOPN_DO	:=	TIIB[LAMP_GJ_E02_EL2004]^Channel 3^Output'}
+
+    fb_ROUGH_VRC_05 : FB_VRC;
+	
+	// GAUGES
+	{attribute 'pytmc' := 'pv:LAMP:GJ:GCC:01'}
+	{attribute 'TcLinkTo' := 	'.i_PRESS_R := TIIB[LAMP_GJ_E09_EL3174-0002]^AI Standard Channel 1^Value;
+								.q_xHV_DIS := TIIB[LAMP_GJ_E06_EL2794]^Channel 3^Output'}
+	fb_GJ_GCC_01 : FB_MX7M;
+
+	{attribute 'pytmc' := 'pv:LAMP:GJ:GPI:01'}
+	{attribute 'TcLinkTo' := 	'.i_PRESS_R := TIIB[LAMP_GJ_E09_EL3174-0002]^AI Standard Channel 3^Value'}
+	fb_GJ_GPI_01 : FB_CVM201;
+	
+	{attribute 'pytmc' := 'pv: LAMP:ROUGH:GPI:05'}
+	{attribute 'TcLinkTo' := 	'.i_iPRESS_R	:=	TIIB[LAMP_GJ_E09_EL3174-0002]^AI Standard Channel 2^Value
+    '}
+    fb_ROUGH_GPI_05 : FB_9XX;
+	
+	//PUMPS	
+	{attribute 'pytmc' := 'pv:LAMP:GJ:PTM:01'}
+	{attribute 'TcLinkTo' := 	'.i_xAtSpd			:=	TIIB[LAMP_GJ_E05_EL1004]^Channel 1^Input;
+                                 .i_xFaultNC		:=	TIIB[LAMP_GJ_E05_EL1004]^Channel 2^Input;
+                                 .q_RunDO			:=	TIIB[LAMP_GJ_E06_EL2794]^Channel 1^Output;
+                                 .q_xReset 			:=	TIIB[LAMP_GJ_E06_EL2794]^Channel 2^Output
+    '}
+    fb_GJ_PTM_01 : FB_PTM_Pfeiffer;
+	
+	
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>
