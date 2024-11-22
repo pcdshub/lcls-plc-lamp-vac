@@ -23,6 +23,10 @@
     <Compile Include="GVLs\GVL_Devices.TcGVL">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="GVLs\GVL_LAMP_GJ.TcGVL">
+      <SubType>Code</SubType>
+      <LinkAlways>true</LinkAlways>
+    </Compile>
     <Compile Include="GVLs\GVL_PLC_Interfaces.TcGVL">
       <SubType>Code</SubType>
     </Compile>
