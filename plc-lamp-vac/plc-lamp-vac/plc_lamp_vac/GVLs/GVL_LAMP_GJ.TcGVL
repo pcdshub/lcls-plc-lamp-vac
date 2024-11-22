@@ -33,17 +33,16 @@
 	
 	// GAUGES
 	{attribute 'pytmc' := 'pv:LAMP:GJ:GCC:01'}
-	{attribute 'TcLinkTo' := 	'.i_PRESS_R := TIIB[LAMP_GJ_E09_EL3174-0002]^AI Standard Channel 1^Value;
+	{attribute 'TcLinkTo' := 	'.i_iPRESS_R := TIIB[LAMP_GJ_E09_EL3174-0002]^AI Standard Channel 1^Value;
 								.q_xHV_DIS := TIIB[LAMP_GJ_E06_EL2794]^Channel 3^Output'}
 	fb_GJ_GCC_01 : FB_MX7M;
 
 	{attribute 'pytmc' := 'pv:LAMP:GJ:GPI:01'}
-	{attribute 'TcLinkTo' := 	'.i_PRESS_R := TIIB[LAMP_GJ_E09_EL3174-0002]^AI Standard Channel 3^Value'}
+	{attribute 'TcLinkTo' := 	'.i_iPRESS_R := TIIB[LAMP_GJ_E09_EL3174-0002]^AI Standard Channel 3^Value'}
 	fb_GJ_GPI_01 : FB_CVM201;
 	
 	{attribute 'pytmc' := 'pv: LAMP:ROUGH:GPI:05'}
-	{attribute 'TcLinkTo' := 	'.i_iPRESS_R	:=	TIIB[LAMP_GJ_E09_EL3174-0002]^AI Standard Channel 2^Value
-    '}
+	{attribute 'TcLinkTo' := 	'.i_iPRESS_R	:=	TIIB[LAMP_GJ_E09_EL3174-0002]^AI Standard Channel 2^Value'}
     fb_ROUGH_GPI_05 : FB_9XX;
 	
 	//PUMPS	

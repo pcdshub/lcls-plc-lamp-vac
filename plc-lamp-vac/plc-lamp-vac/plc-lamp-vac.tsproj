@@ -2212,6 +2212,8 @@ Link this to your VAT590 WcState variable under WcState]]>
 				<Link VarA="PlcTask Outputs^GVL_LAMP_GJ.fb_GJ_PTM_01.q_xReset" VarB="Channel 2^Output" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^LAMP_PLC_E0_EK1200^LAMP_PLC_E14_EK1122^LAMP_GJ_EK1100^LAMP_GJ_E09_EL3174-0002">
+				<Link VarA="PlcTask Inputs^GVL_LAMP_GJ.fb_GJ_GCC_01.i_iPRESS_R" VarB="AI Standard Channel 1^Value" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_LAMP_GJ.fb_GJ_GPI_01.i_iPRESS_R" VarB="AI Standard Channel 3^Value" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^GVL_LAMP_GJ.fb_ROUGH_GPI_05.i_iPRESS_R" VarB="AI Standard Channel 2^Value" AutoLink="true"/>
 			</OwnerB>
 		</OwnerA>
