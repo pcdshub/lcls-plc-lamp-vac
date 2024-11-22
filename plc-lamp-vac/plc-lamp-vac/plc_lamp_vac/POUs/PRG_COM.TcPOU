@@ -188,14 +188,14 @@ fbSerialLineControl_LAMP_GJ2_PTM_04(
 
 //LAMP GJ PTM 01
 fbSerialLineControl_LAMP_GJ_PTM_01(
-	Mode:= SERIALLINEMODE_EL6_22B,
-	pComIn:= ADR(LAMP_GJ_PTM_01_stComIn),
-	pComOut:= ADR(LAMP_GJ_PTM_01_stComOut),
-	SizeComIn:= SIZEOF(LAMP_GJ_PTM_01_stComIn),
-	TxBuffer:= SerialTXBuffer_LAMP_GJ_PTM_01,
-	RxBuffer:= SerialRXBuffer_LAMP_GJ_PTM_01,
-	Error=>,
-	ErrorID=>);
+    Mode:= SERIALLINEMODE_EL6_22B,
+    pComIn:= ADR(LAMP_GJ_PTM_01_stComIn),
+    pComOut:= ADR(LAMP_GJ_PTM_01_stComOut),
+    SizeComIn:= SIZEOF(LAMP_GJ_PTM_01_stComIn),
+    TxBuffer:= SerialTXBuffer_LAMP_GJ_PTM_01,
+    RxBuffer:= SerialRXBuffer_LAMP_GJ_PTM_01,
+    Error=>,
+    ErrorID=>);
 ]]></ST>
     </Implementation>
   </POU>
