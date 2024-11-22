@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <POU Name="PRG_LAMP_GJ" Id="{bf6f42c3-c3eb-494b-8f31-8f7f0a20a54b}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM PRG_LAMP_GJ
+VAR
+	{attribute 'pytmc' :=' pv:LAMP:GJ:OVERRIDE'}
+	xSystemOverrideMode_LAMP_GJ : BOOL := FALSE;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[// VALVES
+fb_GJ_VRC_01(i_OPN_OK:=TRUE,
+			i_CLS_OK:=TRUE,
+			ibCntrlHold:=FALSE,
+			i_xOverrideMode:=xSystemOverrideMode_LAMP_GJ,
+			iq_stValve=>);
+	
+fb_GJ_VRC_02(i_xExtILK_OK:=TRUE,
+			i_xOverrideMode:=xSystemOverrideMode_LAMP_GJ,
+			iq_stValve=>);
+
+fb_ROUGH_VRC_04(i_xExtILK_OK:=TRUE,
+				i_xOverrideMode:=xSystemOverrideMode_LAMP_GJ,
+				iq_stValve=>);
+	
+fb_ROUGH_VRC_05(i_xExtILK_OK:=TRUE,
+				i_xOverrideMode:=xSystemOverrideMode_LAMP_GJ,
+				iq_stValve=>);
+
+// GAUGES
+fb_GJ_GPI_01.M_SetBits(30518);
+fb_GJ_GPI_01();
+
+fb_GJ_GCC_01.M_SetBits(30518);
+fb_GJ_GCC_01(PG:=fb_GJ_GPI_01.PG, IG=>);
+
+fb_ROUGH_GPI_05.M_SetBits(32767);
+fb_ROUGH_GPI_05();
+
+
+//PUMPS
+fb_GJ_PTM_01(i_xExtIlkOK:=TRUE,
+			iq_stPTM=>);
+			
+]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>
