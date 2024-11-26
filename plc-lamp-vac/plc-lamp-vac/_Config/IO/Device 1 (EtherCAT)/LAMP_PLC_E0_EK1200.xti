@@ -31,7 +31,7 @@
 		<Box File="LAMP_PLC_E09_EL2794.xti" Id="47">
 			<EtherCAT PortABoxInfo="#x01000008"/>
 		</Box>
-		<Box File="Term 49 (EK1122).xti" Id="49">
+		<Box File="LAMP_PLC_E10_EK1122.xti" Id="49">
 			<EtherCAT PortABoxInfo="#x0100002f"/>
 		</Box>
 		<Box File="LAMP_PLC_E11_EL6002.xti" Id="9">
