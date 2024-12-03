@@ -3,7 +3,7 @@
   <POU Name="PRG_LAMP_GJ" Id="{bf6f42c3-c3eb-494b-8f31-8f7f0a20a54b}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM PRG_LAMP_GJ
 VAR
-    {attribute 'pytmc' :=' pv:LAMP:GJ:OVERRIDE'}
+    {attribute 'pytmc' :=' pv:LAMP:GJ:VAC:OVERRIDE'}
     xSystemOverrideMode_LAMP_GJ : BOOL := FALSE;
 END_VAR
 ]]></Declaration>
