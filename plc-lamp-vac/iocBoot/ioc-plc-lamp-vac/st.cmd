@@ -1,11 +1,11 @@
-#!/reg/g/pcds/epics/ioc/common/ads-ioc/R0.6.1/bin/rhel7-x86_64/adsIoc
+#!c:/Repos/ads-ioc/R0.6.1///bin/rhel7-x86_64/adsIoc
 ################### AUTO-GENERATED DO NOT EDIT ###################
 #
 #         Project: plc-lamp-vac.tsproj
 #        PLC name: plc_lamp_vac (plc_lamp_vac Instance)
-# Generated using: pytmc 2.16.0
-# Project version: V1.0.1-35-g781918c
-#    Project hash: 781918c0f7ec3d167c96af7588524973769d43c3
+# Generated using: pytmc 2.15.2.dev0+g73bd2d9.d20230727
+# Project version: unknown
+#    Project hash: unknown
 #     PLC IP/host: 172.21.132.34
 #      PLC Net ID: 172.21.132.34.1.1
 #  ** Production mode IOC **
@@ -13,10 +13,10 @@
 #
 # Libraries:
 #
-#   LCLS General: * -> 2.4.2 (SLAC)
-#   LCLS Vacuum: * -> 2.3.3 (SLAC - LCLS)
-#   LCLSVacuumSerialDriverLib: * -> 0.0.0 (SLAC - LCLS)
-#   PMPS: * -> 2.2.1 (SLAC - LCLS)
+#   LCLS General: * -> 2.11.0 (SLAC)
+#   LCLS Vacuum: * -> 2.3.5 (SLAC - LCLS)
+#   LCLSVacuumSerialDriverLib: * -> 1.3.2 (SLAC - LCLS)
+#   PMPS: * -> 3.3.0 (SLAC - LCLS)
 #   Tc2_SerialCom: * -> 3.3.7.0 (Beckhoff Automation GmbH)
 #   Tc2_Standard: * -> 3.3.3.0 (Beckhoff Automation GmbH)
 #   Tc2_System: * -> 3.4.24.0 (Beckhoff Automation GmbH)
@@ -27,7 +27,7 @@
 
 epicsEnvSet("ADS_IOC_TOP", "$(TOP)" )
 
-epicsEnvSet("ENGINEER", "tongju" )
+epicsEnvSet("ENGINEER", "" )
 epicsEnvSet("LOCATION", "PLC:LAMP:VAC" )
 epicsEnvSet("IOCSH_PS1", "$(IOC)> " )
 epicsEnvSet("ACF_FILE", "$(ADS_IOC_TOP)/iocBoot/templates/unrestricted.acf")
@@ -43,14 +43,14 @@ epicsEnvSet("ASYN_PORT",        "ASYN_PLC")
 epicsEnvSet("IPADDR",           "172.21.132.34")
 epicsEnvSet("AMSID",            "172.21.132.34.1.1")
 epicsEnvSet("AMS_PORT",         "851")
-epicsEnvSet("ADS_MAX_PARAMS",   "1552")
+epicsEnvSet("ADS_MAX_PARAMS",   "1758")
 epicsEnvSet("ADS_SAMPLE_MS",    "50")
 epicsEnvSet("ADS_MAX_DELAY_MS", "100")
 epicsEnvSet("ADS_TIMEOUT_MS",   "1000")
 epicsEnvSet("ADS_TIME_SOURCE",  "0")
 
 # Add a route to the PLC automatically:
-system("${ADS_IOC_TOP}/scripts/add_route.sh 172.21.132.34 ^172.*")
+system("${ADS_IOC_TOP}/scripts/add_route.sh 172.21.132.34 ^172.*$")
 
 # adsAsynPortDriverConfigure(portName, ipaddr, amsaddr, amsport,
 #    asynParamTableSize, priority, noAutoConnect, defaultSampleTimeMS,
@@ -89,16 +89,16 @@ dbLoadRecords("TwinCAT_TaskInfo.db", "PORT=$(ASYN_PORT),PREFIX=PLC:LAMP:VAC,IDX=
 dbLoadRecords("TwinCAT_TaskInfo.db", "PORT=$(ASYN_PORT),PREFIX=PLC:LAMP:VAC,IDX=2")
 dbLoadRecords("TwinCAT_AppInfo.db", "PORT=$(ASYN_PORT), PREFIX=PLC:LAMP:VAC")
 
-dbLoadRecords("TwinCAT_Project.db", "PREFIX=PLC:LAMP:VAC,PROJECT=plc-lamp-vac.tsproj,HASH=781918c,VERSION=V1.0.1-35-g781918c,PYTMC=2.16.0,PLC_HOST=172.21.132.34")
+dbLoadRecords("TwinCAT_Project.db", "PREFIX=PLC:LAMP:VAC,PROJECT=plc-lamp-vac.tsproj,HASH=unknown,VERSION=unknown,PYTMC=2.15.2.dev0+g73bd2d9.d20230727,PLC_HOST=172.21.132.34")
 
-#   LCLS General: * -> 2.4.2 (SLAC)
-dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:LAMP:VAC,DEPENDENCY=LCLS_General,VERSION=2.4.2,VENDOR=SLAC")
-#   LCLS Vacuum: * -> 2.3.3 (SLAC - LCLS)
-dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:LAMP:VAC,DEPENDENCY=LCLS_Vacuum,VERSION=2.3.3,VENDOR=SLAC - LCLS")
-#   LCLSVacuumSerialDriverLib: * -> 0.0.0 (SLAC - LCLS)
-dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:LAMP:VAC,DEPENDENCY=LCLSVacuumSerialDriverLib,VERSION=0.0.0,VENDOR=SLAC - LCLS")
-#   PMPS: * -> 2.2.1 (SLAC - LCLS)
-dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:LAMP:VAC,DEPENDENCY=PMPS,VERSION=2.2.1,VENDOR=SLAC - LCLS")
+#   LCLS General: * -> 2.11.0 (SLAC)
+dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:LAMP:VAC,DEPENDENCY=LCLS_General,VERSION=2.11.0,VENDOR=SLAC")
+#   LCLS Vacuum: * -> 2.3.5 (SLAC - LCLS)
+dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:LAMP:VAC,DEPENDENCY=LCLS_Vacuum,VERSION=2.3.5,VENDOR=SLAC - LCLS")
+#   LCLSVacuumSerialDriverLib: * -> 1.3.2 (SLAC - LCLS)
+dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:LAMP:VAC,DEPENDENCY=LCLSVacuumSerialDriverLib,VERSION=1.3.2,VENDOR=SLAC - LCLS")
+#   PMPS: * -> 3.3.0 (SLAC - LCLS)
+dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:LAMP:VAC,DEPENDENCY=PMPS,VERSION=3.3.0,VENDOR=SLAC - LCLS")
 #   Tc2_SerialCom: * -> 3.3.7.0 (Beckhoff Automation GmbH)
 dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:LAMP:VAC,DEPENDENCY=Tc2_SerialCom,VERSION=3.3.7.0,VENDOR=Beckhoff Automation GmbH")
 #   Tc2_Standard: * -> 3.3.3.0 (Beckhoff Automation GmbH)
@@ -113,8 +113,8 @@ cd "$(IOC_TOP)"
 ## PLC Project Database files ##
 dbLoadRecords("plc_lamp_vac.db", "PORT=$(ASYN_PORT),PREFIX=PLC:LAMP:VAC:,IOCNAME=$(IOC),IOC=$(IOC)")
 
-# Total records: 552
-callbackSetQueueSize(3104)
+# Total records: 758
+callbackSetQueueSize(3516)
 
 # Autosave and archive settings:
 save_restoreSet_status_prefix("PLC:LAMP:VAC:")
