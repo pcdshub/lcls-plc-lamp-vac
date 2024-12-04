@@ -7,13 +7,13 @@
                                  .i_xClsLS	:=	TIIB[LAMP_GJ_E01_EL1004]^Channel 2^Input;
                                 .q_xOPN_DO	:=	TIIB[LAMP_GJ_E02_EL2004]^Channel 1^Output;
                                 .q_xCLS_DO	:=	TIIB[LAMP_GJ_E02_EL2004]^Channel 4^Output'}
-    {attribute 'pytmc' :=' pv:LAMP:GJ:VRC:01 '}
+    {attribute 'pytmc' :=' pv: LAMP:GJ:VRC:01 '}
     fb_GJ_VRC_01 : FB_VRC_DA;
 
     {attribute 'TcLinkTo' := 	'.i_xOpnLS	:=	TIIB[LAMP_GJ_E03_EL1004]^Channel 3^Input;
                                  .i_xClsLS	:=	TIIB[LAMP_GJ_E03_EL1004]^Channel 4^Input;
                                  .q_xOPN_DO	:=	TIIB[LAMP_GJ_E03A_EL2004]^Channel 1^Output'}
-    {attribute 'pytmc' :=' pv:LAMP:GJ:VRC:02 '}
+    {attribute 'pytmc' :=' pv: LAMP:GJ:VRC:02 '}
     fb_GJ_VRC_02 : FB_VRC;
 
     {attribute 'pytmc' :=' pv: LAMP:ROUGH:VRC:04'}
