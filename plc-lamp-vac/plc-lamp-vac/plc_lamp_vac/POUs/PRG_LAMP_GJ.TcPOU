@@ -42,6 +42,15 @@ fb_ROUGH_GPI_05();
 fb_GJ_PTM_01(i_xExtIlkOK:=TRUE,
             iq_stPTM=>);
 
+st_Pfeiffer_CTRL_LAMP_GJ_PTM_01[1].iSerialAddress :=1;
+st_Pfeiffer_CTRL_LAMP_GJ_PTM_01[1].xEnableComm := TRUE;
+fb_PfeifferCom_LAMP_GJ_PTM_01(astPfeifferControl := st_Pfeiffer_CTRL_LAMP_GJ_PTM_01,
+                                 astPfeifferStatus:= st_Pfeiffer_RBK_LAMP_GJ_PTM_01,
+                              SerialRXBuffer:= SerialRXBuffer_LAMP_GJ_PTM_01,
+                              SerialTXBuffer:= SerialTXBuffer_LAMP_GJ_PTM_01);
+							  
+fb_GJ_PTM_01.M_Serial_IO(st_Pfeiffer_RBK:=  st_Pfeiffer_RBK_LAMP_GJ_PTM_01[1], st_Pfeiffer_CTRL:= st_Pfeiffer_CTRL_LAMP_GJ_PTM_01[1]);
+
 ]]></ST>
     </Implementation>
   </POU>

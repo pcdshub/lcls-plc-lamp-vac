@@ -719,8 +719,8 @@
 					<ManualSelect Instances="250">{103F30C9-DF25-439E-837B-9DF80CB9356C}</ManualSelect>
 					<ManualSelect>{E008E3C8-6BD9-491C-B673-DC45CC7AA4F1}</ManualSelect>
 					<TargetSelect TargetId="2">{3EBB9639-5FF3-42B6-8847-35C70DC013C8}</TargetSelect>
-					<TargetSelect TargetId="2">{66689887-CCBD-452C-AC9A-039D997C6E66}</TargetSelect>
 					<TargetSelect TargetId="2">{BCA6EE0A-9CE1-4D3F-98CA-413ABC0D94FD}</TargetSelect>
+					<TargetSelect TargetId="2">{66689887-CCBD-452C-AC9A-039D997C6E66}</TargetSelect>
 					<TargetSelect TargetId="2">{103F30C9-DF25-439E-837B-9DF80CB9356C}</TargetSelect>
 					<TargetSelect TargetId="2">{E008E3C8-6BD9-491C-B673-DC45CC7AA4F1}</TargetSelect>
 					<LicenseDevice DongleHardwareId="2" DongleDevice="#x03020003" DongleSystemId="{CFC38D4A-478D-28CA-F8F1-81EBA37BAFA7}"/>
@@ -996,7 +996,7 @@ SERIAL IO]]>
 							<Type GUID="{D9DAFD65-FA08-472F-9051-B1368FC550D2}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
 						</Var>
 						<Var>
-							<Name>GVL_COM.LAMP_GJ_PTM_01_stComIn</Name>
+							<Name>GVL_LAMP_GJ.LAMP_GJ_PTM_01_stComIn</Name>
 							<Comment>
 								<![CDATA[SERIAL IO]]>
 							</Comment>
@@ -1030,7 +1030,7 @@ SERIAL IO]]>
 							<Type GUID="{AA772DB4-D3ED-4677-B98F-79288C47B454}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
 						</Var>
 						<Var>
-							<Name>GVL_COM.LAMP_GJ_PTM_01_stComOut</Name>
+							<Name>GVL_LAMP_GJ.LAMP_GJ_PTM_01_stComOut</Name>
 							<Type GUID="{AA772DB4-D3ED-4677-B98F-79288C47B454}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
 						</Var>
 					</Vars>
@@ -1075,6 +1075,101 @@ ETHERCAT BRRIDGE COM STATUS
 							<Comment>
 								<![CDATA[0 = Data valid, 1 = Data invalid]]>
 							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_PLC_Interfaces.xTMO_ROUGH1_VRC_01_OPEN_LS</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_PLC_Interfaces.xTMO_ROUGH2_VRC_01_OPEN_LS</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_LAMP_GJ.fb_GJ_VRC_01.i_xOpnLS</Name>
+							<Comment>
+								<![CDATA[IO]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_LAMP_GJ.fb_GJ_VRC_01.i_xClsLS</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_LAMP_GJ.fb_GJ_VRC_02.i_xOpnLS</Name>
+							<Comment>
+								<![CDATA[IO]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_LAMP_GJ.fb_GJ_VRC_02.i_xClsLS</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_LAMP_GJ.fb_ROUGH_VRC_04.i_xOpnLS</Name>
+							<Comment>
+								<![CDATA[IO]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_LAMP_GJ.fb_ROUGH_VRC_04.i_xClsLS</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_LAMP_GJ.fb_ROUGH_VRC_05.i_xOpnLS</Name>
+							<Comment>
+								<![CDATA[IO]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_LAMP_GJ.fb_ROUGH_VRC_05.i_xClsLS</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_LAMP_GJ.fb_GJ_GCC_01.i_iPRESS_R</Name>
+							<Comment>
+								<![CDATA[Pressure reading // 'TcLinkTo' (EL3174-0002 or EP3174-0002)^Input]]>
+							</Comment>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_LAMP_GJ.fb_GJ_GPI_01.i_iPRESS_R</Name>
+							<Comment>
+								<![CDATA[ input Pressure // Link to analog Input]]>
+							</Comment>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_LAMP_GJ.fb_ROUGH_GPI_05.i_iPRESS_R</Name>
+							<Comment>
+								<![CDATA[ input Pressure // Link to analog Input]]>
+							</Comment>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_LAMP_GJ.fb_GJ_PTM_01.i_xAtSpd</Name>
+							<Comment>
+								<![CDATA[ Normaml operation when true]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_LAMP_GJ.fb_GJ_PTM_01.i_xFaultNC</Name>
+							<Comment>
+								<![CDATA[ Error]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_LAMP_GJ.fb_GJ_PTM_01.i_xWarn</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_LAMP_GJ.fb_GJ_PTM_01.i_xRemote</Name>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
@@ -1389,110 +1484,88 @@ Link this to your VAT590 WcState variable under WcState]]>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_PLC_Interfaces.xTMO_ROUGH1_VRC_01_OPEN_LS</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_PLC_Interfaces.xTMO_ROUGH2_VRC_01_OPEN_LS</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
 							<Name>GVL_PLC_Interfaces.sHUTCH_PLC_NAME</Name>
 							<Comment>
 								<![CDATA[ I/O Inputs from TMO Beamline]]>
 							</Comment>
 							<Type>STRING(8)</Type>
 						</Var>
-						<Var>
-							<Name>GVL_LAMP_GJ.fb_GJ_VRC_01.i_xOpnLS</Name>
-							<Comment>
-								<![CDATA[IO]]>
-							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_LAMP_GJ.fb_GJ_VRC_01.i_xClsLS</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_LAMP_GJ.fb_GJ_VRC_02.i_xOpnLS</Name>
-							<Comment>
-								<![CDATA[IO]]>
-							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_LAMP_GJ.fb_GJ_VRC_02.i_xClsLS</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_LAMP_GJ.fb_ROUGH_VRC_04.i_xOpnLS</Name>
-							<Comment>
-								<![CDATA[IO]]>
-							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_LAMP_GJ.fb_ROUGH_VRC_04.i_xClsLS</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_LAMP_GJ.fb_ROUGH_VRC_05.i_xOpnLS</Name>
-							<Comment>
-								<![CDATA[IO]]>
-							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_LAMP_GJ.fb_ROUGH_VRC_05.i_xClsLS</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_LAMP_GJ.fb_GJ_GCC_01.i_iPRESS_R</Name>
-							<Comment>
-								<![CDATA[Pressure reading // 'TcLinkTo' (EL3174-0002 or EP3174-0002)^Input]]>
-							</Comment>
-							<Type>INT</Type>
-						</Var>
-						<Var>
-							<Name>GVL_LAMP_GJ.fb_GJ_GPI_01.i_iPRESS_R</Name>
-							<Comment>
-								<![CDATA[ input Pressure // Link to analog Input]]>
-							</Comment>
-							<Type>INT</Type>
-						</Var>
-						<Var>
-							<Name>GVL_LAMP_GJ.fb_ROUGH_GPI_05.i_iPRESS_R</Name>
-							<Comment>
-								<![CDATA[ input Pressure // Link to analog Input]]>
-							</Comment>
-							<Type>INT</Type>
-						</Var>
-						<Var>
-							<Name>GVL_LAMP_GJ.fb_GJ_PTM_01.i_xAtSpd</Name>
-							<Comment>
-								<![CDATA[ Normaml operation when true]]>
-							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_LAMP_GJ.fb_GJ_PTM_01.i_xFaultNC</Name>
-							<Comment>
-								<![CDATA[ Error]]>
-							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_LAMP_GJ.fb_GJ_PTM_01.i_xWarn</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_LAMP_GJ.fb_GJ_PTM_01.i_xRemote</Name>
-							<Type>BOOL</Type>
-						</Var>
 					</Vars>
 					<Vars VarGrpType="2">
 						<Name>PlcTask Outputs</Name>
+						<Var>
+							<Name>GVL_PLC_Interfaces.xIP1_ROUGH_VRC_01_OPEN_LS</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_PLC_Interfaces.xIP1_ROUGH_VRC_02_OPEN_LS</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_LAMP_GJ.fb_GJ_VRC_01.q_xOPN_DO</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_LAMP_GJ.fb_GJ_VRC_01.q_xCLS_DO</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_LAMP_GJ.fb_GJ_VRC_02.q_xOPN_DO</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_LAMP_GJ.fb_ROUGH_VRC_04.q_xOPN_DO</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_LAMP_GJ.fb_ROUGH_VRC_05.q_xOPN_DO</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_LAMP_GJ.fb_GJ_GCC_01.q_xHV_DIS</Name>
+							<Comment>
+								<![CDATA[Enable High Voltage when True // 'TcLinkTo' (EL2624 or EP2624-0002)^Output]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_LAMP_GJ.fb_GJ_PTM_01.q_RunDO</Name>
+							<Comment>
+								<![CDATA[ Start/Stop for TC110 link this output to the Pumping station bit]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_LAMP_GJ.fb_GJ_PTM_01.q_PumpingStation</Name>
+							<Comment>
+								<![CDATA[ Start/Stop interlock]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_LAMP_GJ.fb_GJ_PTM_01.q_xRemote</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_LAMP_GJ.fb_GJ_PTM_01.q_xReset</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_PLC_Interfaces.xIP1_ROUGH_VRC_03_OPEN_LS</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_PLC_Interfaces.xIP1_TURBOS_ALL_AtSpd</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_PLC_Interfaces.xIP1_MAIN_xAT_VAC</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_PLC_Interfaces.xIP1_MAIN_xPRESS_OK</Name>
+							<Type>BOOL</Type>
+						</Var>
 						<Var>
 							<Name>GVL_Devices.LAMP_GJ2_PTM_01.q_RunDO</Name>
 							<Comment>
@@ -1672,41 +1745,6 @@ Link this to your VAT590 WcState variable under WcState]]>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_PLC_Interfaces.sENDSTATION_PLC_NAME</Name>
-							<Comment>
-								<![CDATA[I/O Outputs to TMO Beamline]]>
-							</Comment>
-							<Type>STRING(8)</Type>
-						</Var>
-						<Var>
-							<Name>GVL_PLC_Interfaces.xIP1_ROUGH_VRC_01_OPEN_LS</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_PLC_Interfaces.xIP1_ROUGH_VRC_02_OPEN_LS</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_PLC_Interfaces.xIP1_ROUGH_VRC_03_OPEN_LS</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_PLC_Interfaces.xIP1_TURBOS_ALL_AtSpd</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_PLC_Interfaces.xIP1_MAIN_xAT_VAC</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_PLC_Interfaces.xIP1_MAIN_xPRESS_OK</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_PLC_Interfaces.rIP1_MAIN_rPRESS</Name>
-							<Type>REAL</Type>
-						</Var>
-						<Var>
 							<Name>GVL_PLC_Interfaces.xIP1_HV_SAFETY_ENABLE</Name>
 							<Type>BOOL</Type>
 						</Var>
@@ -1718,53 +1756,15 @@ Link this to your VAT590 WcState variable under WcState]]>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_LAMP_GJ.fb_GJ_VRC_01.q_xOPN_DO</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_LAMP_GJ.fb_GJ_VRC_01.q_xCLS_DO</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_LAMP_GJ.fb_GJ_VRC_02.q_xOPN_DO</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_LAMP_GJ.fb_ROUGH_VRC_04.q_xOPN_DO</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_LAMP_GJ.fb_ROUGH_VRC_05.q_xOPN_DO</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_LAMP_GJ.fb_GJ_GCC_01.q_xHV_DIS</Name>
+							<Name>GVL_PLC_Interfaces.sENDSTATION_PLC_NAME</Name>
 							<Comment>
-								<![CDATA[Enable High Voltage when True // 'TcLinkTo' (EL2624 or EP2624-0002)^Output]]>
+								<![CDATA[I/O Outputs to TMO Beamline]]>
 							</Comment>
-							<Type>BOOL</Type>
+							<Type>STRING(8)</Type>
 						</Var>
 						<Var>
-							<Name>GVL_LAMP_GJ.fb_GJ_PTM_01.q_RunDO</Name>
-							<Comment>
-								<![CDATA[ Start/Stop for TC110 link this output to the Pumping station bit]]>
-							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_LAMP_GJ.fb_GJ_PTM_01.q_PumpingStation</Name>
-							<Comment>
-								<![CDATA[ Start/Stop interlock]]>
-							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_LAMP_GJ.fb_GJ_PTM_01.q_xRemote</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_LAMP_GJ.fb_GJ_PTM_01.q_xReset</Name>
-							<Type>BOOL</Type>
+							<Name>GVL_PLC_Interfaces.rIP1_MAIN_rPRESS</Name>
+							<Type>REAL</Type>
 						</Var>
 					</Vars>
 					<Vars VarGrpType="8">
@@ -1802,6 +1802,62 @@ Link this to your VAT590 WcState variable under WcState]]>
 							<OwnerB Name="TIID^Device 1 (EtherCAT)^LAMP_PLC_E0_EK1200^LAMP_PLC_E14_EK1122^LAMP_GJ_EK1100^LAMP_GJ_E05_EL1004">
 								<Link VarA="GVL_LAMP_GJ.PA1K4_IP1_PTM_02.i_xAtSpd" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 1^Input" AutoLink="true" Size="1" RestoreInfo="ANotFound"/>
 								<Link VarA="GVL_LAMP_GJ.PA1K4_IP1_PTM_02.i_xFaultNC" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 2^Input" AutoLink="true" Size="1" RestoreInfo="ANotFound"/>
+							</OwnerB>
+						</OwnerA>
+					</UnrestoredVarLinks>
+					<UnrestoredVarLinks ImportTime="2024-12-10T11:34:04">
+						<OwnerA Name="OutputSrc" Prefix="TIPC^plc_lamp_vac^plc_lamp_vac Instance" Type="2">
+							<OwnerB Name="TIID^Device 1 (EtherCAT)^LAMP_PLC_E0_EK1200^LAMP_PLC_E14_EK1122^LAMP_GJ_EK1100^LAMP_GJ_E04_EL6021">
+								<Link VarA="GVL_COM.LAMP_GJ_PTM_01_stComOut^Ctrl" TypeA="WORD" InOutA="1" ParentTypeA="EL6outData22B" GuidA="{18071995-0000-0000-0000-000000000004}" VarB="COM RxPDO-Map Outputs^Ctrl" AutoLink="true" RestoreInfo="ANotFound"/>
+								<Link VarA="GVL_COM.LAMP_GJ_PTM_01_stComOut^D[0]" TypeA="BYTE" InOutA="1" ParentTypeA="EL6outData22B" GuidA="{18071995-0000-0000-0000-000000000001}" VarB="COM RxPDO-Map Outputs^Data Out 0" AutoLink="true" RestoreInfo="ANotFound"/>
+								<Link VarA="GVL_COM.LAMP_GJ_PTM_01_stComOut^D[10]" TypeA="BYTE" InOutA="1" ParentTypeA="EL6outData22B" GuidA="{18071995-0000-0000-0000-000000000001}" VarB="COM RxPDO-Map Outputs^Data Out 10" AutoLink="true" RestoreInfo="ANotFound"/>
+								<Link VarA="GVL_COM.LAMP_GJ_PTM_01_stComOut^D[11]" TypeA="BYTE" InOutA="1" ParentTypeA="EL6outData22B" GuidA="{18071995-0000-0000-0000-000000000001}" VarB="COM RxPDO-Map Outputs^Data Out 11" AutoLink="true" RestoreInfo="ANotFound"/>
+								<Link VarA="GVL_COM.LAMP_GJ_PTM_01_stComOut^D[12]" TypeA="BYTE" InOutA="1" ParentTypeA="EL6outData22B" GuidA="{18071995-0000-0000-0000-000000000001}" VarB="COM RxPDO-Map Outputs^Data Out 12" AutoLink="true" RestoreInfo="ANotFound"/>
+								<Link VarA="GVL_COM.LAMP_GJ_PTM_01_stComOut^D[13]" TypeA="BYTE" InOutA="1" ParentTypeA="EL6outData22B" GuidA="{18071995-0000-0000-0000-000000000001}" VarB="COM RxPDO-Map Outputs^Data Out 13" AutoLink="true" RestoreInfo="ANotFound"/>
+								<Link VarA="GVL_COM.LAMP_GJ_PTM_01_stComOut^D[14]" TypeA="BYTE" InOutA="1" ParentTypeA="EL6outData22B" GuidA="{18071995-0000-0000-0000-000000000001}" VarB="COM RxPDO-Map Outputs^Data Out 14" AutoLink="true" RestoreInfo="ANotFound"/>
+								<Link VarA="GVL_COM.LAMP_GJ_PTM_01_stComOut^D[15]" TypeA="BYTE" InOutA="1" ParentTypeA="EL6outData22B" GuidA="{18071995-0000-0000-0000-000000000001}" VarB="COM RxPDO-Map Outputs^Data Out 15" AutoLink="true" RestoreInfo="ANotFound"/>
+								<Link VarA="GVL_COM.LAMP_GJ_PTM_01_stComOut^D[16]" TypeA="BYTE" InOutA="1" ParentTypeA="EL6outData22B" GuidA="{18071995-0000-0000-0000-000000000001}" VarB="COM RxPDO-Map Outputs^Data Out 16" AutoLink="true" RestoreInfo="ANotFound"/>
+								<Link VarA="GVL_COM.LAMP_GJ_PTM_01_stComOut^D[17]" TypeA="BYTE" InOutA="1" ParentTypeA="EL6outData22B" GuidA="{18071995-0000-0000-0000-000000000001}" VarB="COM RxPDO-Map Outputs^Data Out 17" AutoLink="true" RestoreInfo="ANotFound"/>
+								<Link VarA="GVL_COM.LAMP_GJ_PTM_01_stComOut^D[18]" TypeA="BYTE" InOutA="1" ParentTypeA="EL6outData22B" GuidA="{18071995-0000-0000-0000-000000000001}" VarB="COM RxPDO-Map Outputs^Data Out 18" AutoLink="true" RestoreInfo="ANotFound"/>
+								<Link VarA="GVL_COM.LAMP_GJ_PTM_01_stComOut^D[19]" TypeA="BYTE" InOutA="1" ParentTypeA="EL6outData22B" GuidA="{18071995-0000-0000-0000-000000000001}" VarB="COM RxPDO-Map Outputs^Data Out 19" AutoLink="true" RestoreInfo="ANotFound"/>
+								<Link VarA="GVL_COM.LAMP_GJ_PTM_01_stComOut^D[1]" TypeA="BYTE" InOutA="1" ParentTypeA="EL6outData22B" GuidA="{18071995-0000-0000-0000-000000000001}" VarB="COM RxPDO-Map Outputs^Data Out 1" AutoLink="true" RestoreInfo="ANotFound"/>
+								<Link VarA="GVL_COM.LAMP_GJ_PTM_01_stComOut^D[20]" TypeA="BYTE" InOutA="1" ParentTypeA="EL6outData22B" GuidA="{18071995-0000-0000-0000-000000000001}" VarB="COM RxPDO-Map Outputs^Data Out 20" AutoLink="true" RestoreInfo="ANotFound"/>
+								<Link VarA="GVL_COM.LAMP_GJ_PTM_01_stComOut^D[21]" TypeA="BYTE" InOutA="1" ParentTypeA="EL6outData22B" GuidA="{18071995-0000-0000-0000-000000000001}" VarB="COM RxPDO-Map Outputs^Data Out 21" AutoLink="true" RestoreInfo="ANotFound"/>
+								<Link VarA="GVL_COM.LAMP_GJ_PTM_01_stComOut^D[2]" TypeA="BYTE" InOutA="1" ParentTypeA="EL6outData22B" GuidA="{18071995-0000-0000-0000-000000000001}" VarB="COM RxPDO-Map Outputs^Data Out 2" AutoLink="true" RestoreInfo="ANotFound"/>
+								<Link VarA="GVL_COM.LAMP_GJ_PTM_01_stComOut^D[3]" TypeA="BYTE" InOutA="1" ParentTypeA="EL6outData22B" GuidA="{18071995-0000-0000-0000-000000000001}" VarB="COM RxPDO-Map Outputs^Data Out 3" AutoLink="true" RestoreInfo="ANotFound"/>
+								<Link VarA="GVL_COM.LAMP_GJ_PTM_01_stComOut^D[4]" TypeA="BYTE" InOutA="1" ParentTypeA="EL6outData22B" GuidA="{18071995-0000-0000-0000-000000000001}" VarB="COM RxPDO-Map Outputs^Data Out 4" AutoLink="true" RestoreInfo="ANotFound"/>
+								<Link VarA="GVL_COM.LAMP_GJ_PTM_01_stComOut^D[5]" TypeA="BYTE" InOutA="1" ParentTypeA="EL6outData22B" GuidA="{18071995-0000-0000-0000-000000000001}" VarB="COM RxPDO-Map Outputs^Data Out 5" AutoLink="true" RestoreInfo="ANotFound"/>
+								<Link VarA="GVL_COM.LAMP_GJ_PTM_01_stComOut^D[6]" TypeA="BYTE" InOutA="1" ParentTypeA="EL6outData22B" GuidA="{18071995-0000-0000-0000-000000000001}" VarB="COM RxPDO-Map Outputs^Data Out 6" AutoLink="true" RestoreInfo="ANotFound"/>
+								<Link VarA="GVL_COM.LAMP_GJ_PTM_01_stComOut^D[7]" TypeA="BYTE" InOutA="1" ParentTypeA="EL6outData22B" GuidA="{18071995-0000-0000-0000-000000000001}" VarB="COM RxPDO-Map Outputs^Data Out 7" AutoLink="true" RestoreInfo="ANotFound"/>
+								<Link VarA="GVL_COM.LAMP_GJ_PTM_01_stComOut^D[8]" TypeA="BYTE" InOutA="1" ParentTypeA="EL6outData22B" GuidA="{18071995-0000-0000-0000-000000000001}" VarB="COM RxPDO-Map Outputs^Data Out 8" AutoLink="true" RestoreInfo="ANotFound"/>
+								<Link VarA="GVL_COM.LAMP_GJ_PTM_01_stComOut^D[9]" TypeA="BYTE" InOutA="1" ParentTypeA="EL6outData22B" GuidA="{18071995-0000-0000-0000-000000000001}" VarB="COM RxPDO-Map Outputs^Data Out 9" AutoLink="true" RestoreInfo="ANotFound"/>
+							</OwnerB>
+						</OwnerA>
+						<OwnerA Name="InputDst" Prefix="TIPC^plc_lamp_vac^plc_lamp_vac Instance" Type="1">
+							<OwnerB Name="TIID^Device 1 (EtherCAT)^LAMP_PLC_E0_EK1200^LAMP_PLC_E14_EK1122^LAMP_GJ_EK1100^LAMP_GJ_E04_EL6021">
+								<Link VarA="GVL_COM.LAMP_GJ_PTM_01_stComIn^D[0]" TypeA="BYTE" InOutA="0" ParentTypeA="EL6inData22B" GuidA="{18071995-0000-0000-0000-000000000001}" VarB="COM TxPDO-Map Inputs^Data In 0" AutoLink="true" RestoreInfo="ANotFound"/>
+								<Link VarA="GVL_COM.LAMP_GJ_PTM_01_stComIn^D[10]" TypeA="BYTE" InOutA="0" ParentTypeA="EL6inData22B" GuidA="{18071995-0000-0000-0000-000000000001}" VarB="COM TxPDO-Map Inputs^Data In 10" AutoLink="true" RestoreInfo="ANotFound"/>
+								<Link VarA="GVL_COM.LAMP_GJ_PTM_01_stComIn^D[11]" TypeA="BYTE" InOutA="0" ParentTypeA="EL6inData22B" GuidA="{18071995-0000-0000-0000-000000000001}" VarB="COM TxPDO-Map Inputs^Data In 11" AutoLink="true" RestoreInfo="ANotFound"/>
+								<Link VarA="GVL_COM.LAMP_GJ_PTM_01_stComIn^D[12]" TypeA="BYTE" InOutA="0" ParentTypeA="EL6inData22B" GuidA="{18071995-0000-0000-0000-000000000001}" VarB="COM TxPDO-Map Inputs^Data In 12" AutoLink="true" RestoreInfo="ANotFound"/>
+								<Link VarA="GVL_COM.LAMP_GJ_PTM_01_stComIn^D[13]" TypeA="BYTE" InOutA="0" ParentTypeA="EL6inData22B" GuidA="{18071995-0000-0000-0000-000000000001}" VarB="COM TxPDO-Map Inputs^Data In 13" AutoLink="true" RestoreInfo="ANotFound"/>
+								<Link VarA="GVL_COM.LAMP_GJ_PTM_01_stComIn^D[14]" TypeA="BYTE" InOutA="0" ParentTypeA="EL6inData22B" GuidA="{18071995-0000-0000-0000-000000000001}" VarB="COM TxPDO-Map Inputs^Data In 14" AutoLink="true" RestoreInfo="ANotFound"/>
+								<Link VarA="GVL_COM.LAMP_GJ_PTM_01_stComIn^D[15]" TypeA="BYTE" InOutA="0" ParentTypeA="EL6inData22B" GuidA="{18071995-0000-0000-0000-000000000001}" VarB="COM TxPDO-Map Inputs^Data In 15" AutoLink="true" RestoreInfo="ANotFound"/>
+								<Link VarA="GVL_COM.LAMP_GJ_PTM_01_stComIn^D[16]" TypeA="BYTE" InOutA="0" ParentTypeA="EL6inData22B" GuidA="{18071995-0000-0000-0000-000000000001}" VarB="COM TxPDO-Map Inputs^Data In 16" AutoLink="true" RestoreInfo="ANotFound"/>
+								<Link VarA="GVL_COM.LAMP_GJ_PTM_01_stComIn^D[17]" TypeA="BYTE" InOutA="0" ParentTypeA="EL6inData22B" GuidA="{18071995-0000-0000-0000-000000000001}" VarB="COM TxPDO-Map Inputs^Data In 17" AutoLink="true" RestoreInfo="ANotFound"/>
+								<Link VarA="GVL_COM.LAMP_GJ_PTM_01_stComIn^D[18]" TypeA="BYTE" InOutA="0" ParentTypeA="EL6inData22B" GuidA="{18071995-0000-0000-0000-000000000001}" VarB="COM TxPDO-Map Inputs^Data In 18" AutoLink="true" RestoreInfo="ANotFound"/>
+								<Link VarA="GVL_COM.LAMP_GJ_PTM_01_stComIn^D[19]" TypeA="BYTE" InOutA="0" ParentTypeA="EL6inData22B" GuidA="{18071995-0000-0000-0000-000000000001}" VarB="COM TxPDO-Map Inputs^Data In 19" AutoLink="true" RestoreInfo="ANotFound"/>
+								<Link VarA="GVL_COM.LAMP_GJ_PTM_01_stComIn^D[1]" TypeA="BYTE" InOutA="0" ParentTypeA="EL6inData22B" GuidA="{18071995-0000-0000-0000-000000000001}" VarB="COM TxPDO-Map Inputs^Data In 1" AutoLink="true" RestoreInfo="ANotFound"/>
+								<Link VarA="GVL_COM.LAMP_GJ_PTM_01_stComIn^D[20]" TypeA="BYTE" InOutA="0" ParentTypeA="EL6inData22B" GuidA="{18071995-0000-0000-0000-000000000001}" VarB="COM TxPDO-Map Inputs^Data In 20" AutoLink="true" RestoreInfo="ANotFound"/>
+								<Link VarA="GVL_COM.LAMP_GJ_PTM_01_stComIn^D[21]" TypeA="BYTE" InOutA="0" ParentTypeA="EL6inData22B" GuidA="{18071995-0000-0000-0000-000000000001}" VarB="COM TxPDO-Map Inputs^Data In 21" AutoLink="true" RestoreInfo="ANotFound"/>
+								<Link VarA="GVL_COM.LAMP_GJ_PTM_01_stComIn^D[2]" TypeA="BYTE" InOutA="0" ParentTypeA="EL6inData22B" GuidA="{18071995-0000-0000-0000-000000000001}" VarB="COM TxPDO-Map Inputs^Data In 2" AutoLink="true" RestoreInfo="ANotFound"/>
+								<Link VarA="GVL_COM.LAMP_GJ_PTM_01_stComIn^D[3]" TypeA="BYTE" InOutA="0" ParentTypeA="EL6inData22B" GuidA="{18071995-0000-0000-0000-000000000001}" VarB="COM TxPDO-Map Inputs^Data In 3" AutoLink="true" RestoreInfo="ANotFound"/>
+								<Link VarA="GVL_COM.LAMP_GJ_PTM_01_stComIn^D[4]" TypeA="BYTE" InOutA="0" ParentTypeA="EL6inData22B" GuidA="{18071995-0000-0000-0000-000000000001}" VarB="COM TxPDO-Map Inputs^Data In 4" AutoLink="true" RestoreInfo="ANotFound"/>
+								<Link VarA="GVL_COM.LAMP_GJ_PTM_01_stComIn^D[5]" TypeA="BYTE" InOutA="0" ParentTypeA="EL6inData22B" GuidA="{18071995-0000-0000-0000-000000000001}" VarB="COM TxPDO-Map Inputs^Data In 5" AutoLink="true" RestoreInfo="ANotFound"/>
+								<Link VarA="GVL_COM.LAMP_GJ_PTM_01_stComIn^D[6]" TypeA="BYTE" InOutA="0" ParentTypeA="EL6inData22B" GuidA="{18071995-0000-0000-0000-000000000001}" VarB="COM TxPDO-Map Inputs^Data In 6" AutoLink="true" RestoreInfo="ANotFound"/>
+								<Link VarA="GVL_COM.LAMP_GJ_PTM_01_stComIn^D[7]" TypeA="BYTE" InOutA="0" ParentTypeA="EL6inData22B" GuidA="{18071995-0000-0000-0000-000000000001}" VarB="COM TxPDO-Map Inputs^Data In 7" AutoLink="true" RestoreInfo="ANotFound"/>
+								<Link VarA="GVL_COM.LAMP_GJ_PTM_01_stComIn^D[8]" TypeA="BYTE" InOutA="0" ParentTypeA="EL6inData22B" GuidA="{18071995-0000-0000-0000-000000000001}" VarB="COM TxPDO-Map Inputs^Data In 8" AutoLink="true" RestoreInfo="ANotFound"/>
+								<Link VarA="GVL_COM.LAMP_GJ_PTM_01_stComIn^D[9]" TypeA="BYTE" InOutA="0" ParentTypeA="EL6inData22B" GuidA="{18071995-0000-0000-0000-000000000001}" VarB="COM TxPDO-Map Inputs^Data In 9" AutoLink="true" RestoreInfo="ANotFound"/>
+								<Link VarA="GVL_COM.LAMP_GJ_PTM_01_stComIn^Status" TypeA="WORD" InOutA="0" ParentTypeA="EL6inData22B" GuidA="{18071995-0000-0000-0000-000000000004}" VarB="COM TxPDO-Map Inputs^Status" AutoLink="true" RestoreInfo="ANotFound"/>
 							</OwnerB>
 						</OwnerA>
 					</UnrestoredVarLinks>
@@ -2219,52 +2275,52 @@ Link this to your VAT590 WcState variable under WcState]]>
 				<Link VarA="PlcTask Inputs^GVL_LAMP_GJ.fb_ROUGH_VRC_05.i_xOpnLS" VarB="Channel 1^Input" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^LAMP_PLC_E0_EK1200^LAMP_PLC_E14_EK1122^LAMP_GJ_EK1100^LAMP_GJ_E04_EL6021">
-				<Link VarA="ComTask Inputs^GVL_COM.LAMP_GJ_PTM_01_stComIn^D[0]" VarB="COM TxPDO-Map Inputs^Data In 0" AutoLink="true"/>
-				<Link VarA="ComTask Inputs^GVL_COM.LAMP_GJ_PTM_01_stComIn^D[10]" VarB="COM TxPDO-Map Inputs^Data In 10" AutoLink="true"/>
-				<Link VarA="ComTask Inputs^GVL_COM.LAMP_GJ_PTM_01_stComIn^D[11]" VarB="COM TxPDO-Map Inputs^Data In 11" AutoLink="true"/>
-				<Link VarA="ComTask Inputs^GVL_COM.LAMP_GJ_PTM_01_stComIn^D[12]" VarB="COM TxPDO-Map Inputs^Data In 12" AutoLink="true"/>
-				<Link VarA="ComTask Inputs^GVL_COM.LAMP_GJ_PTM_01_stComIn^D[13]" VarB="COM TxPDO-Map Inputs^Data In 13" AutoLink="true"/>
-				<Link VarA="ComTask Inputs^GVL_COM.LAMP_GJ_PTM_01_stComIn^D[14]" VarB="COM TxPDO-Map Inputs^Data In 14" AutoLink="true"/>
-				<Link VarA="ComTask Inputs^GVL_COM.LAMP_GJ_PTM_01_stComIn^D[15]" VarB="COM TxPDO-Map Inputs^Data In 15" AutoLink="true"/>
-				<Link VarA="ComTask Inputs^GVL_COM.LAMP_GJ_PTM_01_stComIn^D[16]" VarB="COM TxPDO-Map Inputs^Data In 16" AutoLink="true"/>
-				<Link VarA="ComTask Inputs^GVL_COM.LAMP_GJ_PTM_01_stComIn^D[17]" VarB="COM TxPDO-Map Inputs^Data In 17" AutoLink="true"/>
-				<Link VarA="ComTask Inputs^GVL_COM.LAMP_GJ_PTM_01_stComIn^D[18]" VarB="COM TxPDO-Map Inputs^Data In 18" AutoLink="true"/>
-				<Link VarA="ComTask Inputs^GVL_COM.LAMP_GJ_PTM_01_stComIn^D[19]" VarB="COM TxPDO-Map Inputs^Data In 19" AutoLink="true"/>
-				<Link VarA="ComTask Inputs^GVL_COM.LAMP_GJ_PTM_01_stComIn^D[1]" VarB="COM TxPDO-Map Inputs^Data In 1" AutoLink="true"/>
-				<Link VarA="ComTask Inputs^GVL_COM.LAMP_GJ_PTM_01_stComIn^D[20]" VarB="COM TxPDO-Map Inputs^Data In 20" AutoLink="true"/>
-				<Link VarA="ComTask Inputs^GVL_COM.LAMP_GJ_PTM_01_stComIn^D[21]" VarB="COM TxPDO-Map Inputs^Data In 21" AutoLink="true"/>
-				<Link VarA="ComTask Inputs^GVL_COM.LAMP_GJ_PTM_01_stComIn^D[2]" VarB="COM TxPDO-Map Inputs^Data In 2" AutoLink="true"/>
-				<Link VarA="ComTask Inputs^GVL_COM.LAMP_GJ_PTM_01_stComIn^D[3]" VarB="COM TxPDO-Map Inputs^Data In 3" AutoLink="true"/>
-				<Link VarA="ComTask Inputs^GVL_COM.LAMP_GJ_PTM_01_stComIn^D[4]" VarB="COM TxPDO-Map Inputs^Data In 4" AutoLink="true"/>
-				<Link VarA="ComTask Inputs^GVL_COM.LAMP_GJ_PTM_01_stComIn^D[5]" VarB="COM TxPDO-Map Inputs^Data In 5" AutoLink="true"/>
-				<Link VarA="ComTask Inputs^GVL_COM.LAMP_GJ_PTM_01_stComIn^D[6]" VarB="COM TxPDO-Map Inputs^Data In 6" AutoLink="true"/>
-				<Link VarA="ComTask Inputs^GVL_COM.LAMP_GJ_PTM_01_stComIn^D[7]" VarB="COM TxPDO-Map Inputs^Data In 7" AutoLink="true"/>
-				<Link VarA="ComTask Inputs^GVL_COM.LAMP_GJ_PTM_01_stComIn^D[8]" VarB="COM TxPDO-Map Inputs^Data In 8" AutoLink="true"/>
-				<Link VarA="ComTask Inputs^GVL_COM.LAMP_GJ_PTM_01_stComIn^D[9]" VarB="COM TxPDO-Map Inputs^Data In 9" AutoLink="true"/>
-				<Link VarA="ComTask Inputs^GVL_COM.LAMP_GJ_PTM_01_stComIn^Status" VarB="COM TxPDO-Map Inputs^Status" AutoLink="true"/>
-				<Link VarA="ComTask Outputs^GVL_COM.LAMP_GJ_PTM_01_stComOut^Ctrl" VarB="COM RxPDO-Map Outputs^Ctrl" AutoLink="true"/>
-				<Link VarA="ComTask Outputs^GVL_COM.LAMP_GJ_PTM_01_stComOut^D[0]" VarB="COM RxPDO-Map Outputs^Data Out 0" AutoLink="true"/>
-				<Link VarA="ComTask Outputs^GVL_COM.LAMP_GJ_PTM_01_stComOut^D[10]" VarB="COM RxPDO-Map Outputs^Data Out 10" AutoLink="true"/>
-				<Link VarA="ComTask Outputs^GVL_COM.LAMP_GJ_PTM_01_stComOut^D[11]" VarB="COM RxPDO-Map Outputs^Data Out 11" AutoLink="true"/>
-				<Link VarA="ComTask Outputs^GVL_COM.LAMP_GJ_PTM_01_stComOut^D[12]" VarB="COM RxPDO-Map Outputs^Data Out 12" AutoLink="true"/>
-				<Link VarA="ComTask Outputs^GVL_COM.LAMP_GJ_PTM_01_stComOut^D[13]" VarB="COM RxPDO-Map Outputs^Data Out 13" AutoLink="true"/>
-				<Link VarA="ComTask Outputs^GVL_COM.LAMP_GJ_PTM_01_stComOut^D[14]" VarB="COM RxPDO-Map Outputs^Data Out 14" AutoLink="true"/>
-				<Link VarA="ComTask Outputs^GVL_COM.LAMP_GJ_PTM_01_stComOut^D[15]" VarB="COM RxPDO-Map Outputs^Data Out 15" AutoLink="true"/>
-				<Link VarA="ComTask Outputs^GVL_COM.LAMP_GJ_PTM_01_stComOut^D[16]" VarB="COM RxPDO-Map Outputs^Data Out 16" AutoLink="true"/>
-				<Link VarA="ComTask Outputs^GVL_COM.LAMP_GJ_PTM_01_stComOut^D[17]" VarB="COM RxPDO-Map Outputs^Data Out 17" AutoLink="true"/>
-				<Link VarA="ComTask Outputs^GVL_COM.LAMP_GJ_PTM_01_stComOut^D[18]" VarB="COM RxPDO-Map Outputs^Data Out 18" AutoLink="true"/>
-				<Link VarA="ComTask Outputs^GVL_COM.LAMP_GJ_PTM_01_stComOut^D[19]" VarB="COM RxPDO-Map Outputs^Data Out 19" AutoLink="true"/>
-				<Link VarA="ComTask Outputs^GVL_COM.LAMP_GJ_PTM_01_stComOut^D[1]" VarB="COM RxPDO-Map Outputs^Data Out 1" AutoLink="true"/>
-				<Link VarA="ComTask Outputs^GVL_COM.LAMP_GJ_PTM_01_stComOut^D[20]" VarB="COM RxPDO-Map Outputs^Data Out 20" AutoLink="true"/>
-				<Link VarA="ComTask Outputs^GVL_COM.LAMP_GJ_PTM_01_stComOut^D[21]" VarB="COM RxPDO-Map Outputs^Data Out 21" AutoLink="true"/>
-				<Link VarA="ComTask Outputs^GVL_COM.LAMP_GJ_PTM_01_stComOut^D[2]" VarB="COM RxPDO-Map Outputs^Data Out 2" AutoLink="true"/>
-				<Link VarA="ComTask Outputs^GVL_COM.LAMP_GJ_PTM_01_stComOut^D[3]" VarB="COM RxPDO-Map Outputs^Data Out 3" AutoLink="true"/>
-				<Link VarA="ComTask Outputs^GVL_COM.LAMP_GJ_PTM_01_stComOut^D[4]" VarB="COM RxPDO-Map Outputs^Data Out 4" AutoLink="true"/>
-				<Link VarA="ComTask Outputs^GVL_COM.LAMP_GJ_PTM_01_stComOut^D[5]" VarB="COM RxPDO-Map Outputs^Data Out 5" AutoLink="true"/>
-				<Link VarA="ComTask Outputs^GVL_COM.LAMP_GJ_PTM_01_stComOut^D[6]" VarB="COM RxPDO-Map Outputs^Data Out 6" AutoLink="true"/>
-				<Link VarA="ComTask Outputs^GVL_COM.LAMP_GJ_PTM_01_stComOut^D[7]" VarB="COM RxPDO-Map Outputs^Data Out 7" AutoLink="true"/>
-				<Link VarA="ComTask Outputs^GVL_COM.LAMP_GJ_PTM_01_stComOut^D[8]" VarB="COM RxPDO-Map Outputs^Data Out 8" AutoLink="true"/>
-				<Link VarA="ComTask Outputs^GVL_COM.LAMP_GJ_PTM_01_stComOut^D[9]" VarB="COM RxPDO-Map Outputs^Data Out 9" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_LAMP_GJ.LAMP_GJ_PTM_01_stComIn^D[0]" VarB="COM TxPDO-Map Inputs^Data In 0" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_LAMP_GJ.LAMP_GJ_PTM_01_stComIn^D[10]" VarB="COM TxPDO-Map Inputs^Data In 10" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_LAMP_GJ.LAMP_GJ_PTM_01_stComIn^D[11]" VarB="COM TxPDO-Map Inputs^Data In 11" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_LAMP_GJ.LAMP_GJ_PTM_01_stComIn^D[12]" VarB="COM TxPDO-Map Inputs^Data In 12" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_LAMP_GJ.LAMP_GJ_PTM_01_stComIn^D[13]" VarB="COM TxPDO-Map Inputs^Data In 13" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_LAMP_GJ.LAMP_GJ_PTM_01_stComIn^D[14]" VarB="COM TxPDO-Map Inputs^Data In 14" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_LAMP_GJ.LAMP_GJ_PTM_01_stComIn^D[15]" VarB="COM TxPDO-Map Inputs^Data In 15" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_LAMP_GJ.LAMP_GJ_PTM_01_stComIn^D[16]" VarB="COM TxPDO-Map Inputs^Data In 16" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_LAMP_GJ.LAMP_GJ_PTM_01_stComIn^D[17]" VarB="COM TxPDO-Map Inputs^Data In 17" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_LAMP_GJ.LAMP_GJ_PTM_01_stComIn^D[18]" VarB="COM TxPDO-Map Inputs^Data In 18" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_LAMP_GJ.LAMP_GJ_PTM_01_stComIn^D[19]" VarB="COM TxPDO-Map Inputs^Data In 19" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_LAMP_GJ.LAMP_GJ_PTM_01_stComIn^D[1]" VarB="COM TxPDO-Map Inputs^Data In 1" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_LAMP_GJ.LAMP_GJ_PTM_01_stComIn^D[20]" VarB="COM TxPDO-Map Inputs^Data In 20" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_LAMP_GJ.LAMP_GJ_PTM_01_stComIn^D[21]" VarB="COM TxPDO-Map Inputs^Data In 21" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_LAMP_GJ.LAMP_GJ_PTM_01_stComIn^D[2]" VarB="COM TxPDO-Map Inputs^Data In 2" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_LAMP_GJ.LAMP_GJ_PTM_01_stComIn^D[3]" VarB="COM TxPDO-Map Inputs^Data In 3" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_LAMP_GJ.LAMP_GJ_PTM_01_stComIn^D[4]" VarB="COM TxPDO-Map Inputs^Data In 4" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_LAMP_GJ.LAMP_GJ_PTM_01_stComIn^D[5]" VarB="COM TxPDO-Map Inputs^Data In 5" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_LAMP_GJ.LAMP_GJ_PTM_01_stComIn^D[6]" VarB="COM TxPDO-Map Inputs^Data In 6" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_LAMP_GJ.LAMP_GJ_PTM_01_stComIn^D[7]" VarB="COM TxPDO-Map Inputs^Data In 7" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_LAMP_GJ.LAMP_GJ_PTM_01_stComIn^D[8]" VarB="COM TxPDO-Map Inputs^Data In 8" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_LAMP_GJ.LAMP_GJ_PTM_01_stComIn^D[9]" VarB="COM TxPDO-Map Inputs^Data In 9" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_LAMP_GJ.LAMP_GJ_PTM_01_stComIn^Status" VarB="COM TxPDO-Map Inputs^Status" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_LAMP_GJ.LAMP_GJ_PTM_01_stComOut^Ctrl" VarB="COM RxPDO-Map Outputs^Ctrl" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_LAMP_GJ.LAMP_GJ_PTM_01_stComOut^D[0]" VarB="COM RxPDO-Map Outputs^Data Out 0" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_LAMP_GJ.LAMP_GJ_PTM_01_stComOut^D[10]" VarB="COM RxPDO-Map Outputs^Data Out 10" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_LAMP_GJ.LAMP_GJ_PTM_01_stComOut^D[11]" VarB="COM RxPDO-Map Outputs^Data Out 11" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_LAMP_GJ.LAMP_GJ_PTM_01_stComOut^D[12]" VarB="COM RxPDO-Map Outputs^Data Out 12" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_LAMP_GJ.LAMP_GJ_PTM_01_stComOut^D[13]" VarB="COM RxPDO-Map Outputs^Data Out 13" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_LAMP_GJ.LAMP_GJ_PTM_01_stComOut^D[14]" VarB="COM RxPDO-Map Outputs^Data Out 14" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_LAMP_GJ.LAMP_GJ_PTM_01_stComOut^D[15]" VarB="COM RxPDO-Map Outputs^Data Out 15" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_LAMP_GJ.LAMP_GJ_PTM_01_stComOut^D[16]" VarB="COM RxPDO-Map Outputs^Data Out 16" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_LAMP_GJ.LAMP_GJ_PTM_01_stComOut^D[17]" VarB="COM RxPDO-Map Outputs^Data Out 17" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_LAMP_GJ.LAMP_GJ_PTM_01_stComOut^D[18]" VarB="COM RxPDO-Map Outputs^Data Out 18" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_LAMP_GJ.LAMP_GJ_PTM_01_stComOut^D[19]" VarB="COM RxPDO-Map Outputs^Data Out 19" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_LAMP_GJ.LAMP_GJ_PTM_01_stComOut^D[1]" VarB="COM RxPDO-Map Outputs^Data Out 1" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_LAMP_GJ.LAMP_GJ_PTM_01_stComOut^D[20]" VarB="COM RxPDO-Map Outputs^Data Out 20" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_LAMP_GJ.LAMP_GJ_PTM_01_stComOut^D[21]" VarB="COM RxPDO-Map Outputs^Data Out 21" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_LAMP_GJ.LAMP_GJ_PTM_01_stComOut^D[2]" VarB="COM RxPDO-Map Outputs^Data Out 2" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_LAMP_GJ.LAMP_GJ_PTM_01_stComOut^D[3]" VarB="COM RxPDO-Map Outputs^Data Out 3" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_LAMP_GJ.LAMP_GJ_PTM_01_stComOut^D[4]" VarB="COM RxPDO-Map Outputs^Data Out 4" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_LAMP_GJ.LAMP_GJ_PTM_01_stComOut^D[5]" VarB="COM RxPDO-Map Outputs^Data Out 5" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_LAMP_GJ.LAMP_GJ_PTM_01_stComOut^D[6]" VarB="COM RxPDO-Map Outputs^Data Out 6" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_LAMP_GJ.LAMP_GJ_PTM_01_stComOut^D[7]" VarB="COM RxPDO-Map Outputs^Data Out 7" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_LAMP_GJ.LAMP_GJ_PTM_01_stComOut^D[8]" VarB="COM RxPDO-Map Outputs^Data Out 8" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_LAMP_GJ.LAMP_GJ_PTM_01_stComOut^D[9]" VarB="COM RxPDO-Map Outputs^Data Out 9" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^LAMP_PLC_E0_EK1200^LAMP_PLC_E14_EK1122^LAMP_GJ_EK1100^LAMP_GJ_E05_EL1004">
 				<Link VarA="PlcTask Inputs^GVL_LAMP_GJ.fb_GJ_PTM_01.i_xAtSpd" VarB="Channel 1^Input" AutoLink="true"/>
