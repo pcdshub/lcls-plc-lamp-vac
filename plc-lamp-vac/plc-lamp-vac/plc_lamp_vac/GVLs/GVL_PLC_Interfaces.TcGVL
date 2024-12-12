@@ -87,7 +87,13 @@ VAR_GLOBAL
         io:i
     '}
     xHighVoltageSafteyLoopEnable AT %Q* : BOOL := FALSE; (*When Enables the High voltage Saftey loop is closed and HV can start.*)
-
+	
+	
+	{attribute 'TcLinkTo' :=  'TIIB[LAMP_PLC_MOTION_EL6695-0002]^IO Inputs^LAMP_GJY_OUT'}
+    xLAMP_GJY_OUT AT %I* : BOOL;
+	
+	{attribute 'TcLinkTo' :=  'TIIB[LAMP_PLC_MOTION_EL6695-0002]^IO Outputs^LAMP_GJ_VRC_01_OPEN_LS'}
+    xLAMP_GJ_VRC_01_OPN_LS AT %Q* : BOOL;
 END_VAR
 //comment]]></Declaration>
   </GVL>

@@ -1086,90 +1086,7 @@ ETHERCAT BRRIDGE COM STATUS
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_LAMP_GJ.fb_GJ_VRC_01.i_xOpnLS</Name>
-							<Comment>
-								<![CDATA[IO]]>
-							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_LAMP_GJ.fb_GJ_VRC_01.i_xClsLS</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_LAMP_GJ.fb_GJ_VRC_02.i_xOpnLS</Name>
-							<Comment>
-								<![CDATA[IO]]>
-							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_LAMP_GJ.fb_GJ_VRC_02.i_xClsLS</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_LAMP_GJ.fb_ROUGH_VRC_04.i_xOpnLS</Name>
-							<Comment>
-								<![CDATA[IO]]>
-							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_LAMP_GJ.fb_ROUGH_VRC_04.i_xClsLS</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_LAMP_GJ.fb_ROUGH_VRC_05.i_xOpnLS</Name>
-							<Comment>
-								<![CDATA[IO]]>
-							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_LAMP_GJ.fb_ROUGH_VRC_05.i_xClsLS</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_LAMP_GJ.fb_GJ_GCC_01.i_iPRESS_R</Name>
-							<Comment>
-								<![CDATA[Pressure reading // 'TcLinkTo' (EL3174-0002 or EP3174-0002)^Input]]>
-							</Comment>
-							<Type>INT</Type>
-						</Var>
-						<Var>
-							<Name>GVL_LAMP_GJ.fb_GJ_GPI_01.i_iPRESS_R</Name>
-							<Comment>
-								<![CDATA[ input Pressure // Link to analog Input]]>
-							</Comment>
-							<Type>INT</Type>
-						</Var>
-						<Var>
-							<Name>GVL_LAMP_GJ.fb_ROUGH_GPI_05.i_iPRESS_R</Name>
-							<Comment>
-								<![CDATA[ input Pressure // Link to analog Input]]>
-							</Comment>
-							<Type>INT</Type>
-						</Var>
-						<Var>
-							<Name>GVL_LAMP_GJ.fb_GJ_PTM_01.i_xAtSpd</Name>
-							<Comment>
-								<![CDATA[ Normaml operation when true]]>
-							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_LAMP_GJ.fb_GJ_PTM_01.i_xFaultNC</Name>
-							<Comment>
-								<![CDATA[ Error]]>
-							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_LAMP_GJ.fb_GJ_PTM_01.i_xWarn</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_LAMP_GJ.fb_GJ_PTM_01.i_xRemote</Name>
+							<Name>GVL_PLC_Interfaces.xLAMP_GJY_OUT</Name>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
@@ -1490,6 +1407,93 @@ Link this to your VAT590 WcState variable under WcState]]>
 							</Comment>
 							<Type>STRING(8)</Type>
 						</Var>
+						<Var>
+							<Name>GVL_LAMP_GJ.LAMP_GJ_VRC_02.i_xOpnLS</Name>
+							<Comment>
+								<![CDATA[IO]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_LAMP_GJ.LAMP_GJ_VRC_02.i_xClsLS</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_LAMP_GJ.LAMP_GJ_VRC_01.i_xOpnLS</Name>
+							<Comment>
+								<![CDATA[IO]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_LAMP_GJ.LAMP_GJ_VRC_01.i_xClsLS</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_LAMP_GJ.LAMP_ROUGH_VRC_04.i_xOpnLS</Name>
+							<Comment>
+								<![CDATA[IO]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_LAMP_GJ.LAMP_ROUGH_VRC_04.i_xClsLS</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_LAMP_GJ.LAMP_ROUGH_VRC_05.i_xOpnLS</Name>
+							<Comment>
+								<![CDATA[IO]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_LAMP_GJ.LAMP_ROUGH_VRC_05.i_xClsLS</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_LAMP_GJ.LAMP_GJ_GCC_01.i_iPRESS_R</Name>
+							<Comment>
+								<![CDATA[Pressure reading // 'TcLinkTo' (EL3174-0002 or EP3174-0002)^Input]]>
+							</Comment>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_LAMP_GJ.LAMP_GJ_GPI_01.i_iPRESS_R</Name>
+							<Comment>
+								<![CDATA[ input Pressure // Link to analog Input]]>
+							</Comment>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_LAMP_GJ.LAMP_ROUGH_GPI_05.i_iPRESS_R</Name>
+							<Comment>
+								<![CDATA[ input Pressure // Link to analog Input]]>
+							</Comment>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_LAMP_GJ.LAMP_GJ_PTM_01.i_xAtSpd</Name>
+							<Comment>
+								<![CDATA[ Normaml operation when true]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_LAMP_GJ.LAMP_GJ_PTM_01.i_xFaultNC</Name>
+							<Comment>
+								<![CDATA[ Error]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_LAMP_GJ.LAMP_GJ_PTM_01.i_xWarn</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_LAMP_GJ.LAMP_GJ_PTM_01.i_xRemote</Name>
+							<Type>BOOL</Type>
+						</Var>
 					</Vars>
 					<Vars VarGrpType="2">
 						<Name>PlcTask Outputs</Name>
@@ -1502,52 +1506,7 @@ Link this to your VAT590 WcState variable under WcState]]>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_LAMP_GJ.fb_GJ_VRC_01.q_xOPN_DO</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_LAMP_GJ.fb_GJ_VRC_01.q_xCLS_DO</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_LAMP_GJ.fb_GJ_VRC_02.q_xOPN_DO</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_LAMP_GJ.fb_ROUGH_VRC_04.q_xOPN_DO</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_LAMP_GJ.fb_ROUGH_VRC_05.q_xOPN_DO</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_LAMP_GJ.fb_GJ_GCC_01.q_xHV_DIS</Name>
-							<Comment>
-								<![CDATA[Enable High Voltage when True // 'TcLinkTo' (EL2624 or EP2624-0002)^Output]]>
-							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_LAMP_GJ.fb_GJ_PTM_01.q_RunDO</Name>
-							<Comment>
-								<![CDATA[ Start/Stop for TC110 link this output to the Pumping station bit]]>
-							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_LAMP_GJ.fb_GJ_PTM_01.q_PumpingStation</Name>
-							<Comment>
-								<![CDATA[ Start/Stop interlock]]>
-							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_LAMP_GJ.fb_GJ_PTM_01.q_xRemote</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_LAMP_GJ.fb_GJ_PTM_01.q_xReset</Name>
+							<Name>GVL_PLC_Interfaces.xLAMP_GJ_VRC_01_OPN_LS</Name>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
@@ -1766,6 +1725,59 @@ Link this to your VAT590 WcState variable under WcState]]>
 							<Name>GVL_PLC_Interfaces.rIP1_MAIN_rPRESS</Name>
 							<Type>REAL</Type>
 						</Var>
+						<Var>
+							<Name>GVL_PMPS.g_FastFaultOutput1.q_xFastFaultOut</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_LAMP_GJ.LAMP_GJ_VRC_02.q_xOPN_DO</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_LAMP_GJ.LAMP_GJ_VRC_01.q_xOPN_DO</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_LAMP_GJ.LAMP_GJ_VRC_01.q_xCLS_DO</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_LAMP_GJ.LAMP_ROUGH_VRC_04.q_xOPN_DO</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_LAMP_GJ.LAMP_ROUGH_VRC_05.q_xOPN_DO</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_LAMP_GJ.LAMP_GJ_GCC_01.q_xHV_DIS</Name>
+							<Comment>
+								<![CDATA[Enable High Voltage when True // 'TcLinkTo' (EL2624 or EP2624-0002)^Output]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_LAMP_GJ.LAMP_GJ_PTM_01.q_RunDO</Name>
+							<Comment>
+								<![CDATA[ Start/Stop for TC110 link this output to the Pumping station bit]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_LAMP_GJ.LAMP_GJ_PTM_01.q_PumpingStation</Name>
+							<Comment>
+								<![CDATA[ Start/Stop interlock]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_LAMP_GJ.LAMP_GJ_PTM_01.q_xRemote</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_LAMP_GJ.LAMP_GJ_PTM_01.q_xReset</Name>
+							<Type>BOOL</Type>
+						</Var>
 					</Vars>
 					<Vars VarGrpType="8">
 						<Name>PlcTask Retains</Name>
@@ -1902,6 +1914,10 @@ Link this to your VAT590 WcState variable under WcState]]>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^LAMP_PLC_E0_EK1200^LAMP_PLC_E09_EL2794">
 				<Link VarA="PlcTask Outputs^GVL_PLC_Interfaces.xHighVoltageSafteyLoopEnable" VarB="Channel 1^Output" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^LAMP_PLC_E0_EK1200^LAMP_PLC_E10_EK1122^LAMP_PLC_MOTION_EL6695-0002">
+				<Link VarA="PlcTask Inputs^GVL_PLC_Interfaces.xLAMP_GJY_OUT" VarB="IO Inputs^LAMP_GJY_OUT" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_PLC_Interfaces.xLAMP_GJ_VRC_01_OPN_LS" VarB="IO Outputs^LAMP_GJ_VRC_01_OPEN_LS" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^LAMP_PLC_E0_EK1200^LAMP_PLC_E11_EL6002">
 				<Link VarA="ComTask Inputs^GVL_COM.stComIn_LAMP_GJ2_PTM_01^D[0]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 0" AutoLink="true"/>
@@ -2254,25 +2270,25 @@ Link this to your VAT590 WcState variable under WcState]]>
 				<Link VarA="PlcTask Outputs^GVL_Devices.LAMP_ROUGH_VRC_03.q_xOPN_DO" VarB="Channel 11^Output" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^LAMP_PLC_E0_EK1200^LAMP_PLC_E14_EK1122^LAMP_GJ_EK1100^LAMP_GJ_E01_EL1004">
-				<Link VarA="PlcTask Inputs^GVL_LAMP_GJ.fb_GJ_VRC_01.i_xClsLS" VarB="Channel 2^Input" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_LAMP_GJ.fb_GJ_VRC_01.i_xOpnLS" VarB="Channel 1^Input" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_LAMP_GJ.fb_ROUGH_VRC_04.i_xClsLS" VarB="Channel 4^Input" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_LAMP_GJ.fb_ROUGH_VRC_04.i_xOpnLS" VarB="Channel 3^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_LAMP_GJ.LAMP_GJ_VRC_01.i_xClsLS" VarB="Channel 2^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_LAMP_GJ.LAMP_GJ_VRC_01.i_xOpnLS" VarB="Channel 1^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_LAMP_GJ.LAMP_ROUGH_VRC_04.i_xClsLS" VarB="Channel 4^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_LAMP_GJ.LAMP_ROUGH_VRC_04.i_xOpnLS" VarB="Channel 3^Input" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^LAMP_PLC_E0_EK1200^LAMP_PLC_E14_EK1122^LAMP_GJ_EK1100^LAMP_GJ_E02_EL2004">
-				<Link VarA="PlcTask Outputs^GVL_LAMP_GJ.fb_GJ_VRC_01.q_xCLS_DO" VarB="Channel 4^Output" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_LAMP_GJ.fb_GJ_VRC_01.q_xOPN_DO" VarB="Channel 1^Output" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_LAMP_GJ.fb_ROUGH_VRC_04.q_xOPN_DO" VarB="Channel 2^Output" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_LAMP_GJ.fb_ROUGH_VRC_05.q_xOPN_DO" VarB="Channel 3^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_LAMP_GJ.LAMP_GJ_VRC_01.q_xCLS_DO" VarB="Channel 4^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_LAMP_GJ.LAMP_GJ_VRC_01.q_xOPN_DO" VarB="Channel 1^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_LAMP_GJ.LAMP_ROUGH_VRC_04.q_xOPN_DO" VarB="Channel 2^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_LAMP_GJ.LAMP_ROUGH_VRC_05.q_xOPN_DO" VarB="Channel 3^Output" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^LAMP_PLC_E0_EK1200^LAMP_PLC_E14_EK1122^LAMP_GJ_EK1100^LAMP_GJ_E03A_EL2004">
-				<Link VarA="PlcTask Outputs^GVL_LAMP_GJ.fb_GJ_VRC_02.q_xOPN_DO" VarB="Channel 1^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_LAMP_GJ.LAMP_GJ_VRC_02.q_xOPN_DO" VarB="Channel 1^Output" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^LAMP_PLC_E0_EK1200^LAMP_PLC_E14_EK1122^LAMP_GJ_EK1100^LAMP_GJ_E03_EL1004">
-				<Link VarA="PlcTask Inputs^GVL_LAMP_GJ.fb_GJ_VRC_02.i_xClsLS" VarB="Channel 4^Input" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_LAMP_GJ.fb_GJ_VRC_02.i_xOpnLS" VarB="Channel 3^Input" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_LAMP_GJ.fb_ROUGH_VRC_05.i_xClsLS" VarB="Channel 2^Input" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_LAMP_GJ.fb_ROUGH_VRC_05.i_xOpnLS" VarB="Channel 1^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_LAMP_GJ.LAMP_GJ_VRC_02.i_xClsLS" VarB="Channel 4^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_LAMP_GJ.LAMP_GJ_VRC_02.i_xOpnLS" VarB="Channel 3^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_LAMP_GJ.LAMP_ROUGH_VRC_05.i_xClsLS" VarB="Channel 2^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_LAMP_GJ.LAMP_ROUGH_VRC_05.i_xOpnLS" VarB="Channel 1^Input" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^LAMP_PLC_E0_EK1200^LAMP_PLC_E14_EK1122^LAMP_GJ_EK1100^LAMP_GJ_E04_EL6021">
 				<Link VarA="ComTask Inputs^GVL_LAMP_GJ.LAMP_GJ_PTM_01_stComIn^D[0]" VarB="COM TxPDO-Map Inputs^Data In 0" AutoLink="true"/>
@@ -2323,18 +2339,18 @@ Link this to your VAT590 WcState variable under WcState]]>
 				<Link VarA="ComTask Outputs^GVL_LAMP_GJ.LAMP_GJ_PTM_01_stComOut^D[9]" VarB="COM RxPDO-Map Outputs^Data Out 9" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^LAMP_PLC_E0_EK1200^LAMP_PLC_E14_EK1122^LAMP_GJ_EK1100^LAMP_GJ_E05_EL1004">
-				<Link VarA="PlcTask Inputs^GVL_LAMP_GJ.fb_GJ_PTM_01.i_xAtSpd" VarB="Channel 1^Input" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_LAMP_GJ.fb_GJ_PTM_01.i_xFaultNC" VarB="Channel 2^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_LAMP_GJ.LAMP_GJ_PTM_01.i_xAtSpd" VarB="Channel 1^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_LAMP_GJ.LAMP_GJ_PTM_01.i_xFaultNC" VarB="Channel 2^Input" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^LAMP_PLC_E0_EK1200^LAMP_PLC_E14_EK1122^LAMP_GJ_EK1100^LAMP_GJ_E06_EL2794">
-				<Link VarA="PlcTask Outputs^GVL_LAMP_GJ.fb_GJ_GCC_01.q_xHV_DIS" VarB="Channel 3^Output" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_LAMP_GJ.fb_GJ_PTM_01.q_RunDO" VarB="Channel 1^Output" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_LAMP_GJ.fb_GJ_PTM_01.q_xReset" VarB="Channel 2^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_LAMP_GJ.LAMP_GJ_GCC_01.q_xHV_DIS" VarB="Channel 3^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_LAMP_GJ.LAMP_GJ_PTM_01.q_RunDO" VarB="Channel 1^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_LAMP_GJ.LAMP_GJ_PTM_01.q_xReset" VarB="Channel 2^Output" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^LAMP_PLC_E0_EK1200^LAMP_PLC_E14_EK1122^LAMP_GJ_EK1100^LAMP_GJ_E09_EL3174-0002">
-				<Link VarA="PlcTask Inputs^GVL_LAMP_GJ.fb_GJ_GCC_01.i_iPRESS_R" VarB="AI Standard Channel 1^Value" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_LAMP_GJ.fb_GJ_GPI_01.i_iPRESS_R" VarB="AI Standard Channel 3^Value" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_LAMP_GJ.fb_ROUGH_GPI_05.i_iPRESS_R" VarB="AI Standard Channel 2^Value" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_LAMP_GJ.LAMP_GJ_GCC_01.i_iPRESS_R" VarB="AI Standard Channel 1^Value" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_LAMP_GJ.LAMP_GJ_GPI_01.i_iPRESS_R" VarB="AI Standard Channel 3^Value" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_LAMP_GJ.LAMP_ROUGH_GPI_05.i_iPRESS_R" VarB="AI Standard Channel 2^Value" AutoLink="true"/>
 			</OwnerB>
 		</OwnerA>
 	</Mappings>

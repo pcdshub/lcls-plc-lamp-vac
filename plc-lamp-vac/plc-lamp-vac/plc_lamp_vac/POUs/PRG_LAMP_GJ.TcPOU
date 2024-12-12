@@ -5,42 +5,102 @@
 VAR
     {attribute 'pytmc' :=' pv:LAMP:GJ:VAC:OVERRIDE'}
     xSystemOverrideMode_LAMP_GJ : BOOL := FALSE;
+	
+	ROUGH_VRC_04_EXT_ILK_OK: BOOL;
+	ROUGH_VRC_05_EXT_ILK_OK: BOOL;
+	
+	LAMP_GJ_VRC_01_OPN_OK: BOOL;
+	LAMP_GJ_VRC_01_CLS_OK: BOOL;
+	
+	LAMP_MAN_OUT: BOOL; // WILL BE USED W/ LAMP MOTION
+	
+	LAMP_GJ_01_EXT_INL_OK: BOOL;
+	LAMP_GJ_PTM_01_PATH_1: BOOL;
+	LAMP_GJ_PTM_01_PATH_2: BOOL;
+	LAMP_GJ_PTM_01_PATH_3: BOOL;
 END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[// VALVES
-fb_GJ_VRC_01(i_OPN_OK:=TRUE,
-            i_CLS_OK:=TRUE,
+
+LAMP_GJ_VRC_01_OPN_OK:= (LAMP_C2_GCC_01.PG.rPRESS < 1E-6) 
+						AND(LAMP_GJ_GCC_01.PG.rPRESS < 1E-6);
+							
+LAMP_GJ_VRC_01_CLS_OK:= (NOT LAMP_GJ_VRC_01_OPN_OK)
+						AND LAMP_MAN_OUT;
+
+LAMP_GJ_VRC_01(i_OPN_OK:=LAMP_GJ_VRC_01_OPN_OK,
+            i_CLS_OK:=LAMP_GJ_VRC_01_CLS_OK,
             ibCntrlHold:=FALSE,
             i_xOverrideMode:=xSystemOverrideMode_LAMP_GJ,
             iq_stValve=>);
+			
+xLAMP_GJ_VRC_01_OPN_LS := LAMP_GJ_VRC_01.M_IsOpen();
 
-fb_GJ_VRC_02(i_xExtILK_OK:=TRUE,
+LAMP_GJ_VRC_02(i_xExtILK_OK:=TRUE,
             i_xOverrideMode:=xSystemOverrideMode_LAMP_GJ,
             iq_stValve=>);
 
-fb_ROUGH_VRC_04(i_xExtILK_OK:=TRUE,
-                i_xOverrideMode:=xSystemOverrideMode_LAMP_GJ,
-                iq_stValve=>);
+ROUGH_VRC_04_EXT_ILK_OK := LAMP_ROUGH_VRC_05.M_IsClosed();
+			
+LAMP_ROUGH_VRC_04(i_stUSG:=LAMP_ROUGH_GPI_05.PG,
+	i_stDSG:=LAMP_ROUGH_GPI_02.PG,
+	i_xEPS_OK:=TRUE,
+	i_xPMPS_OK:=TRUE,
+	i_xExt_OK := ROUGH_VRC_04_EXT_ILK_OK,
+	i_xOverrideMode:= xSystemOverrideMode_LAMP,
+	io_fbFFHWO:= g_FastFaultOutput1 ,
+	fbArbiter:= g_fbArbiter1,
+	i_sDevName:= 'LAMP_ROUGH_VRC_04',
+	iq_stValve=>);
+	
 
-fb_ROUGH_VRC_05(i_xExtILK_OK:=TRUE,
-                i_xOverrideMode:=xSystemOverrideMode_LAMP_GJ,
-                iq_stValve=>);
-
+ROUGH_VRC_05_EXT_ILK_OK := LAMP_ROUGH_VRC_04.M_IsClosed();	
+	
+LAMP_ROUGH_VRC_05(i_stUSG:=LAMP_ROUGH_GPI_05.PG,
+	i_stDSG:=LAMP_ROUGH_GPI_05.PG,
+	i_xEPS_OK:=TRUE,
+	i_xPMPS_OK:=TRUE,
+	i_xExt_OK := ROUGH_VRC_05_EXT_ILK_OK,
+	i_xOverrideMode:= xSystemOverrideMode_LAMP,
+	io_fbFFHWO:= g_FastFaultOutput1 ,
+	fbArbiter:= g_fbArbiter1,
+	i_sDevName:= 'LAMP_ROUGH_VRC_05',
+	iq_stValve=>);
+		
+	
 // GAUGES
-fb_GJ_GPI_01.M_SetBits(30518);
-fb_GJ_GPI_01();
+LAMP_GJ_GPI_01.M_SetBits(30518);
+LAMP_GJ_GPI_01();
 
-fb_GJ_GCC_01.M_SetBits(30518);
-fb_GJ_GCC_01(PG:=fb_GJ_GPI_01.PG, IG=>);
+LAMP_GJ_GCC_01.M_SetBits(30518);
+LAMP_GJ_GCC_01(PG:=LAMP_GJ_GPI_01.PG, IG=>);
 
-fb_ROUGH_GPI_05.M_SetBits(32767);
-fb_ROUGH_GPI_05();
+LAMP_ROUGH_GPI_05.M_SetBits(32767);
+LAMP_ROUGH_GPI_05();
 
 
 //PUMPS
-fb_GJ_PTM_01(i_xExtIlkOK:=TRUE,
-            iq_stPTM=>);
+
+LAMP_GJ_PTM_01_PATH_1:=(LAMP_ROUGH_VRC_04.M_IsOpen() 
+						AND LAMP_ROUGH_VRC_01.M_IsOpen()
+						AND xTMO_ROUGH1_VRC_01_OPEN_LS);
+						
+LAMP_GJ_PTM_01_PATH_2:=(LAMP_ROUGH_VRC_05.M_IsOpen()
+						AND LAMP_ROUGH_VRC_03.M_IsOpen()
+						AND xTMO_ROUGH2_VRC_01_OPEN_LS);
+						
+LAMP_GJ_PTM_01_PATH_3:=(LAMP_ROUGH_VRC_05.M_IsOpen()
+						AND LAMP_ROUGH_VRC_02.M_IsOpen()
+						AND LAMP_ROUGH_VRC_01.M_IsOpen()
+						AND xTMO_ROUGH1_VRC_01_OPEN_LS);
+						
+LAMP_GJ_01_EXT_INL_OK:= NOT MAIN.xEcatBridge_COM_ERROR 
+						AND (LAMP_GJ_PTM_01_PATH_1
+							OR LAMP_GJ_PTM_01_PATH_2
+							OR LAMP_GJ_PTM_01_PATH_3);
+
+LAMP_GJ_PTM_01(i_xExtIlkOK:= LAMP_GJ_01_EXT_INL_OK, iq_stPTM=>);
 
 st_Pfeiffer_CTRL_LAMP_GJ_PTM_01[1].iSerialAddress :=1;
 st_Pfeiffer_CTRL_LAMP_GJ_PTM_01[1].xEnableComm := TRUE;
@@ -49,7 +109,8 @@ fb_PfeifferCom_LAMP_GJ_PTM_01(astPfeifferControl := st_Pfeiffer_CTRL_LAMP_GJ_PTM
                               SerialRXBuffer:= SerialRXBuffer_LAMP_GJ_PTM_01,
                               SerialTXBuffer:= SerialTXBuffer_LAMP_GJ_PTM_01);
 							  
-fb_GJ_PTM_01.M_Serial_IO(st_Pfeiffer_RBK:=  st_Pfeiffer_RBK_LAMP_GJ_PTM_01[1], st_Pfeiffer_CTRL:= st_Pfeiffer_CTRL_LAMP_GJ_PTM_01[1]);
+LAMP_GJ_PTM_01.M_Serial_IO(st_Pfeiffer_RBK:= st_Pfeiffer_RBK_LAMP_GJ_PTM_01[1],
+							st_Pfeiffer_CTRL:= st_Pfeiffer_CTRL_LAMP_GJ_PTM_01[1]);
 
 ]]></ST>
     </Implementation>
