@@ -94,6 +94,9 @@ VAR_GLOBAL
 	
 	{attribute 'TcLinkTo' :=  'TIIB[LAMP_PLC_MOTION_EL6695-0002]^IO Outputs^LAMP_GJ_VRC_01_OPEN_LS'}
     xLAMP_GJ_VRC_01_OPN_LS AT %Q* : BOOL;
+	
+	{attribute 'TcLinkTo' :=  'TIIB[LAMP_PLC_MOTION_EL6695-0002]^SYNC Inputs^External device not connected'}
+	xEcat_External_Vac2Mot_device_not_connected AT %I* : BOOL;
 END_VAR
 //comment]]></Declaration>
   </GVL>
