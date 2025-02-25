@@ -16,6 +16,7 @@ VAR
 	LAMP_GJ_PTM_01_PATH_1: BOOL;
 	LAMP_GJ_PTM_01_PATH_2: BOOL;
 	LAMP_GJ_PTM_01_PATH_3: BOOL;
+	LAMP_GJ_VRC_02_EXT_ILK_OK: BOOL;
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -33,12 +34,16 @@ LAMP_GJ_VRC_01(i_OPN_OK:=LAMP_GJ_VRC_01_OPN_OK,
             i_xOverrideMode:=xSystemOverrideMode_LAMP_GJ,
             iq_stValve=>);
 			
-xLAMP_GJ_VRC_01_OPN_LS := LAMP_GJ_VRC_01.M_IsOpen();
+xLAMP_GJ_VRC_01_OPN_LS := LAMP_GJ_VRC_01.M_IsOpen(); // Send Valve Status to Motion
 
-LAMP_GJ_VRC_02(i_xExtILK_OK:=TRUE,
+
+LAMP_GJ_VRC_02_EXT_ILK_OK := LAMP_ROUGH_VRC_02.M_IsClosed() AND LAMP_ROUGH_VRC_05.M_IsClosed();
+
+LAMP_GJ_VRC_02(i_xExtILK_OK:=LAMP_GJ_VRC_02_EXT_ILK_OK,
             i_xOverrideMode:=xSystemOverrideMode_LAMP_GJ,
             iq_stValve=>);
 
+			
 ROUGH_VRC_04_EXT_ILK_OK := LAMP_ROUGH_VRC_05.M_IsClosed();
 			
 LAMP_ROUGH_VRC_04(i_stUSG:=LAMP_ROUGH_GPI_02.PG,
@@ -93,6 +98,7 @@ LAMP_GJ_PTM_01_PATH_3:=(LAMP_ROUGH_VRC_05.M_IsOpen()
 						AND LAMP_ROUGH_VRC_02.M_IsOpen()
 						AND LAMP_ROUGH_VRC_01.M_IsOpen()
 						AND (xTMO_ROUGH1_VRC_01_OPEN_LS OR NOT xOnBeamline));
+
 						
 LAMP_GJ_01_EXT_INL_OK:= (NOT MAIN.xEcatBridge_COM_ERROR OR NOT xOnBeamline)
 						AND (LAMP_GJ_PTM_01_PATH_1
@@ -111,7 +117,15 @@ fb_PfeifferCom_LAMP_GJ_PTM_01(astPfeifferControl := st_Pfeiffer_CTRL_LAMP_GJ_PTM
 LAMP_GJ_PTM_01.M_Serial_IO(st_Pfeiffer_RBK:= st_Pfeiffer_RBK_LAMP_GJ_PTM_01[1],
 							st_Pfeiffer_CTRL:= st_Pfeiffer_CTRL_LAMP_GJ_PTM_01[1]);
 
-]]></ST>
+
+							
+IF NOT xTMO_ROUGH1_VRC_01_OPEN_LS THEN
+	LAMP_C2_PTM_01.M_Run(False);
+	LAMP_C2_PTM_02.M_Run(False);
+	LAMP_C2_PTM_03.M_Run(False);
+	LAMP_C2_PTM_04.M_Run(False);
+	LAMP_GJ_PTM_01.M_Run(False);
+END_IF]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>
