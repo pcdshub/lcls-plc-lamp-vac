@@ -116,17 +116,14 @@ fb_PfeifferCom_LAMP_GJ_PTM_01(astPfeifferControl := st_Pfeiffer_CTRL_LAMP_GJ_PTM
 							  
 LAMP_GJ_PTM_01.M_Serial_IO(st_Pfeiffer_RBK:= st_Pfeiffer_RBK_LAMP_GJ_PTM_01[1],
 							st_Pfeiffer_CTRL:= st_Pfeiffer_CTRL_LAMP_GJ_PTM_01[1]);
-
-
-(*						
+					
 IF NOT xTMO_ROUGH1_VRC_01_OPEN_LS THEN
 	LAMP_C2_PTM_01.M_Run(False);
 	LAMP_C2_PTM_02.M_Run(False);
 	LAMP_C2_PTM_03.M_Run(False);
 	LAMP_C2_PTM_04.M_Run(False);
 	LAMP_GJ_PTM_01.M_Run(False);
-END_IF
-*)]]></ST>
+END_IF]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>
