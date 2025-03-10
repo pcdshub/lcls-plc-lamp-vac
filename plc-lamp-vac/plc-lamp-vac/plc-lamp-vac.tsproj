@@ -1071,21 +1071,6 @@ ETHERCAT BRRIDGE COM STATUS
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_PLC_Interfaces.xEcatBridge_WcState</Name>
-							<Comment>
-								<![CDATA[0 = Data valid, 1 = Data invalid]]>
-							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_PLC_Interfaces.xTMO_ROUGH1_VRC_01_OPEN_LS</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_PLC_Interfaces.xTMO_ROUGH2_VRC_01_OPEN_LS</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
 							<Name>GVL_Devices.LAMP_GJ2_PTM_01.i_xAtSpd</Name>
 							<Comment>
 								<![CDATA[ Normaml operation when true]]>
@@ -1397,6 +1382,21 @@ Link this to your VAT590 WcState variable under WcState]]>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
+							<Name>GVL_PLC_Interfaces.xEcatBridge_WcState</Name>
+							<Comment>
+								<![CDATA[0 = Data valid, 1 = Data invalid]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_PLC_Interfaces.xTMO_ROUGH1_VRC_01_OPEN_LS</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_PLC_Interfaces.xTMO_ROUGH2_VRC_01_OPEN_LS</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
 							<Name>GVL_LAMP_GJ.LAMP_GJ_VRC_01.i_xOpnLS</Name>
 							<Comment>
 								<![CDATA[IO]]>
@@ -1501,10 +1501,6 @@ Link this to your VAT590 WcState variable under WcState]]>
 					</Vars>
 					<Vars VarGrpType="2">
 						<Name>PlcTask Outputs</Name>
-						<Var>
-							<Name>GVL_PLC_Interfaces.xIP1_ROUGH_VRC_01_OPEN_LS</Name>
-							<Type>BOOL</Type>
-						</Var>
 						<Var>
 							<Name>GVL_Devices.LAMP_GJ2_PTM_01.q_RunDO</Name>
 							<Comment>
@@ -1684,27 +1680,15 @@ Link this to your VAT590 WcState variable under WcState]]>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
+							<Name>GVL_PLC_Interfaces.xIP1_ROUGH_VRC_01_OPEN_LS</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
 							<Name>GVL_PLC_Interfaces.xIP1_ROUGH_VRC_02_OPEN_LS</Name>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
 							<Name>GVL_PLC_Interfaces.xIP1_ROUGH_VRC_03_OPEN_LS</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_PLC_Interfaces.xIP1_TURBOS_ALL_AtSpd</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_PLC_Interfaces.xIP1_MAIN_xAT_VAC</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_PLC_Interfaces.xIP1_MAIN_xPRESS_OK</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_PLC_Interfaces.xIP1_HV_SAFETY_ENABLE</Name>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
@@ -1762,6 +1746,22 @@ Link this to your VAT590 WcState variable under WcState]]>
 								<![CDATA[I/O Outputs to TMO Beamline]]>
 							</Comment>
 							<Type>STRING(8)</Type>
+						</Var>
+						<Var>
+							<Name>GVL_PLC_Interfaces.xIP1_TURBOS_ALL_AtSpd</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_PLC_Interfaces.xIP1_MAIN_xAT_VAC</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_PLC_Interfaces.xIP1_MAIN_xPRESS_OK</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_PLC_Interfaces.xIP1_HV_SAFETY_ENABLE</Name>
+							<Type>BOOL</Type>
 						</Var>
 						<Var>
 							<Name>GVL_PLC_Interfaces.xHighVoltageSafteyLoopEnable</Name>
