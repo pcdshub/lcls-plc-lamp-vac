@@ -6017,36 +6017,6 @@ record(bo, "LAMP:VCN:01:ZERO") {
   info(archive, "VAL")
 }
 
-record(mbbi, "LAMP:VCN:01:PRES_SENS_RBV") {
-  # GVL_Devices.LAMP_VCN_01.stVcnVat590.ePressureSensor
-  field(DESC, "GVL_Devices.LAMP_VCN...0.ePressureSensor")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Devices.LAMP_VCN_01.stVcnVat590.ePressureSensor?")
-  field(ZRVL, "0")
-  field(ONVL, "1")
-  field(ZRST, "NOT_DEFINED")
-  field(ONST, "MKS500")
-  info(autosaveFields_pass0, "DESC DISS EISV ELSV FFSV FRSV FTSV FVSV NISV ONSV SIMS SVSV SXSV TESV THSV TTSV TVSV TWSV UDFS UNSV ZRSV")
-  info(archive, "VAL")
-}
-
-record(mbbo, "LAMP:VCN:01:PRES_SENS") {
-  # GVL_Devices.LAMP_VCN_01.stVcnVat590.ePressureSensor
-  field(DESC, "GVL_Devices.LAMP_VCN...0.ePressureSensor")
-  field(DTYP, "asynInt32")
-  field(UDFS, "0")
-  field(ZRVL, "0")
-  field(ONVL, "1")
-  field(ZRST, "NOT_DEFINED")
-  field(ONST, "MKS500")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Devices.LAMP_VCN_01.stVcnVat590.ePressureSensor=")
-  info(autosaveFields_pass0, "COSV DESC DISS EISV ELSV FFSV FRSV FTSV FVSV NISV ONSV SIMS SVSV SXSV TESV THSV TTSV TVSV TWSV UDFS UNSV VAL ZRSV")
-  info(archive, "VAL")
-}
-
 record(mbbi, "LAMP:VCN:01:REM_CTRL_RBV") {
   # GVL_Devices.LAMP_VCN_01.stVcnVat590.eRemoteControl
   field(DESC, "GVL_Devices.LAMP_VCN...90.eRemoteControl")
@@ -7236,6 +7206,2765 @@ record(mbbi, "LAMP:VCN:01:GEN_STATUS:REM_CTRL_RBV") {
   info(archive, "VAL")
 }
 
+record(mbbi, "LAMP:GJ:GCC:01:STATE_RBV") {
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_GCC_01.IG.eState")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_GJ_GCC_01.IG.eState?")
+  field(ZRVL, "0")
+  field(ONVL, "1")
+  field(TWVL, "2")
+  field(THVL, "3")
+  field(FRVL, "4")
+  field(FVVL, "5")
+  field(SXVL, "6")
+  field(SVVL, "7")
+  field(ZRST, "Off")
+  field(ONST, "GaugeDisconnected")
+  field(TWST, "OoR")
+  field(THST, "PressInvalid")
+  field(FRST, "Starting")
+  field(FVST, "Valid")
+  field(SXST, "ValidHi")
+  field(SVST, "ValidLo")
+  info(autosaveFields_pass0, "DESC DISS EISV ELSV FFSV FRSV FTSV FVSV NISV ONSV SIMS SVSV SXSV TESV THSV TTSV TVSV TWSV UDFS UNSV ZRSV")
+  info(archive, "VAL")
+}
+
+record(longin, "LAMP:GJ:GCC:01:AutoOn_timer_RBV") {
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_GCC_01.IG.iAutoOnTimer")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_GJ_GCC_01.IG.iAutoOnTimer?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "LAMP:GJ:GCC:01:PRESS_AI_RBV") {
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_GCC_01.IG.i_iPRESS_R")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_GJ_GCC_01.IG.i_iPRESS_R?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(bi, "LAMP:GJ:GCC:01:DISC_ACTIVE_RBV") {
+  # GVL_LAMP_GJ.fb_GJ_GCC_01.IG.i_xDisc_Active
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_GC...IG.i_xDisc_Active")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_GJ_GCC_01.IG.i_xDisc_Active?")
+  field(ZNAM, "NO DISC")
+  field(ONAM, "DISC ACTIVE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "LAMP:GJ:GCC:01:HV_ON_RBV") {
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_GCC_01.IG.i_xHV_ON")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_GJ_GCC_01.IG.i_xHV_ON?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "LAMP:GJ:GCC:01:HV_DIS_DO_RBV") {
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_GCC_01.IG.q_xHV_DIS")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_GJ_GCC_01.IG.q_xHV_DIS?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(ai, "LAMP:GJ:GCC:01:SP_HYS_RBV") {
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_GCC_01.IG.rHYS_PR")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_GJ_GCC_01.IG.rHYS_PR?")
+  field(PREC, "2")
+  field(EGU, "TORR")
+  field(HOPR, "1000")
+  field(LOPR, "0")
+  info(autosaveFields, "DESC VAL")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(ao, "LAMP:GJ:GCC:01:SP_HYS") {
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_GCC_01.IG.rHYS_PR")
+  field(PINI, "1")
+  field(DTYP, "asynFloat64")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_LAMP_GJ.fb_GJ_GCC_01.IG.rHYS_PR=")
+  field(PREC, "2")
+  field(EGU, "TORR")
+  field(HOPR, "1000")
+  field(LOPR, "0")
+  info(autosaveFields, "DESC VAL")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
+record(ai, "LAMP:GJ:GCC:01:PRESS_RBV") {
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_GCC_01.IG.rPRESS")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_GJ_GCC_01.IG.rPRESS?")
+  field(PREC, "2")
+  field(EGU, "TORR")
+  field(HOPR, "1000")
+  field(LOPR, "0")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(ai, "LAMP:GJ:GCC:01:PRO_SP_RBV") {
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_GCC_01.IG.rPRO_SP")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_GJ_GCC_01.IG.rPRO_SP?")
+  field(PREC, "2")
+  field(EGU, "TORR")
+  field(HOPR, "1000")
+  field(LOPR, "0")
+  info(autosaveFields, "DESC VAL")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(ao, "LAMP:GJ:GCC:01:PRO_SP") {
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_GCC_01.IG.rPRO_SP")
+  field(PINI, "1")
+  field(DTYP, "asynFloat64")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_LAMP_GJ.fb_GJ_GCC_01.IG.rPRO_SP=")
+  field(PREC, "2")
+  field(EGU, "TORR")
+  field(HOPR, "1000")
+  field(LOPR, "0")
+  info(autosaveFields, "DESC VAL")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
+record(ai, "LAMP:GJ:GCC:01:VAC_SP_RBV") {
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_GCC_01.IG.rVAC_SP")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_GJ_GCC_01.IG.rVAC_SP?")
+  field(PREC, "2")
+  field(EGU, "TORR")
+  field(HOPR, "1000")
+  field(LOPR, "0")
+  info(autosaveFields, "DESC VAL")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(ao, "LAMP:GJ:GCC:01:VAC_SP") {
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_GCC_01.IG.rVAC_SP")
+  field(PINI, "1")
+  field(DTYP, "asynFloat64")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_LAMP_GJ.fb_GJ_GCC_01.IG.rVAC_SP=")
+  field(PREC, "2")
+  field(EGU, "TORR")
+  field(HOPR, "1000")
+  field(LOPR, "0")
+  info(autosaveFields, "DESC VAL")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "LAMP:GJ:GCC:01:AT_VAC_RBV") {
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_GCC_01.IG.xAT_VAC")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_GJ_GCC_01.IG.xAT_VAC?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "LAMP:GJ:GCC:01:Auto_On_RBV") {
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_GCC_01.IG.xAutoOn")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_GJ_GCC_01.IG.xAutoOn?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bo, "LAMP:GJ:GCC:01:Auto_On") {
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_GCC_01.IG.xAutoOn")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_LAMP_GJ.fb_GJ_GCC_01.IG.xAutoOn=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "LAMP:GJ:GCC:01:HV_SW_RBV") {
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_GCC_01.IG.xHV_SW")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_GJ_GCC_01.IG.xHV_SW?")
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bo, "LAMP:GJ:GCC:01:HV_SW") {
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_GCC_01.IG.xHV_SW")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_LAMP_GJ.fb_GJ_GCC_01.IG.xHV_SW=")
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "LAMP:GJ:GCC:01:ILK_OK_RBV") {
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_GCC_01.IG.xILKOk")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_GJ_GCC_01.IG.xILKOk?")
+  field(ZNAM, "NOT OK")
+  field(ONAM, "OK")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "LAMP:GJ:GCC:01:LOGGER_RBV") {
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_GCC_01.IG.xLog")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_GJ_GCC_01.IG.xLog?")
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bo, "LAMP:GJ:GCC:01:LOGGER") {
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_GCC_01.IG.xLog")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_LAMP_GJ.fb_GJ_GCC_01.IG.xLog=")
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "LAMP:GJ:GCC:01:PRESS_OK_RBV") {
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_GCC_01.IG.xPRESS_OK")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_GJ_GCC_01.IG.xPRESS_OK?")
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(mbbi, "LAMP:GJ:GPI:01:STATE_RBV") {
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_GPI_01.PG.eState")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_GJ_GPI_01.PG.eState?")
+  field(ZRVL, "0")
+  field(ONVL, "1")
+  field(TWVL, "2")
+  field(THVL, "3")
+  field(FRVL, "4")
+  field(FVVL, "5")
+  field(SXVL, "6")
+  field(SVVL, "7")
+  field(ZRST, "Off")
+  field(ONST, "GaugeDisconnected")
+  field(TWST, "OoR")
+  field(THST, "PressInvalid")
+  field(FRST, "Starting")
+  field(FVST, "Valid")
+  field(SXST, "ValidHi")
+  field(SVST, "ValidLo")
+  info(autosaveFields_pass0, "DESC DISS EISV ELSV FFSV FRSV FTSV FVSV NISV ONSV SIMS SVSV SXSV TESV THSV TTSV TVSV TWSV UDFS UNSV ZRSV")
+  info(archive, "VAL")
+}
+
+record(longin, "LAMP:GJ:GPI:01:AutoOn_timer_RBV") {
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_GPI_01.PG.iAutoOnTimer")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_GJ_GPI_01.PG.iAutoOnTimer?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "LAMP:GJ:GPI:01:PRESS_AI_RBV") {
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_GPI_01.PG.i_iPRESS_R")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_GJ_GPI_01.PG.i_iPRESS_R?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(bi, "LAMP:GJ:GPI:01:DISC_ACTIVE_RBV") {
+  # GVL_LAMP_GJ.fb_GJ_GPI_01.PG.i_xDisc_Active
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_GP...PG.i_xDisc_Active")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_GJ_GPI_01.PG.i_xDisc_Active?")
+  field(ZNAM, "NO DISC")
+  field(ONAM, "DISC ACTIVE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "LAMP:GJ:GPI:01:HV_ON_RBV") {
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_GPI_01.PG.i_xHV_ON")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_GJ_GPI_01.PG.i_xHV_ON?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "LAMP:GJ:GPI:01:HV_DIS_DO_RBV") {
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_GPI_01.PG.q_xHV_DIS")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_GJ_GPI_01.PG.q_xHV_DIS?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(ai, "LAMP:GJ:GPI:01:SP_HYS_RBV") {
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_GPI_01.PG.rHYS_PR")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_GJ_GPI_01.PG.rHYS_PR?")
+  field(PREC, "2")
+  field(EGU, "TORR")
+  field(HOPR, "1000")
+  field(LOPR, "0")
+  info(autosaveFields, "DESC VAL")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(ao, "LAMP:GJ:GPI:01:SP_HYS") {
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_GPI_01.PG.rHYS_PR")
+  field(PINI, "1")
+  field(DTYP, "asynFloat64")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_LAMP_GJ.fb_GJ_GPI_01.PG.rHYS_PR=")
+  field(PREC, "2")
+  field(EGU, "TORR")
+  field(HOPR, "1000")
+  field(LOPR, "0")
+  info(autosaveFields, "DESC VAL")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
+record(ai, "LAMP:GJ:GPI:01:PRESS_RBV") {
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_GPI_01.PG.rPRESS")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_GJ_GPI_01.PG.rPRESS?")
+  field(PREC, "2")
+  field(EGU, "TORR")
+  field(HOPR, "1000")
+  field(LOPR, "0")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(ai, "LAMP:GJ:GPI:01:PRO_SP_RBV") {
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_GPI_01.PG.rPRO_SP")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_GJ_GPI_01.PG.rPRO_SP?")
+  field(PREC, "2")
+  field(EGU, "TORR")
+  field(HOPR, "1000")
+  field(LOPR, "0")
+  info(autosaveFields, "DESC VAL")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(ao, "LAMP:GJ:GPI:01:PRO_SP") {
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_GPI_01.PG.rPRO_SP")
+  field(PINI, "1")
+  field(DTYP, "asynFloat64")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_LAMP_GJ.fb_GJ_GPI_01.PG.rPRO_SP=")
+  field(PREC, "2")
+  field(EGU, "TORR")
+  field(HOPR, "1000")
+  field(LOPR, "0")
+  info(autosaveFields, "DESC VAL")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
+record(ai, "LAMP:GJ:GPI:01:VAC_SP_RBV") {
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_GPI_01.PG.rVAC_SP")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_GJ_GPI_01.PG.rVAC_SP?")
+  field(PREC, "2")
+  field(EGU, "TORR")
+  field(HOPR, "1000")
+  field(LOPR, "0")
+  info(autosaveFields, "DESC VAL")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(ao, "LAMP:GJ:GPI:01:VAC_SP") {
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_GPI_01.PG.rVAC_SP")
+  field(PINI, "1")
+  field(DTYP, "asynFloat64")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_LAMP_GJ.fb_GJ_GPI_01.PG.rVAC_SP=")
+  field(PREC, "2")
+  field(EGU, "TORR")
+  field(HOPR, "1000")
+  field(LOPR, "0")
+  info(autosaveFields, "DESC VAL")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "LAMP:GJ:GPI:01:AT_VAC_RBV") {
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_GPI_01.PG.xAT_VAC")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_GJ_GPI_01.PG.xAT_VAC?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "LAMP:GJ:GPI:01:Auto_On_RBV") {
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_GPI_01.PG.xAutoOn")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_GJ_GPI_01.PG.xAutoOn?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bo, "LAMP:GJ:GPI:01:Auto_On") {
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_GPI_01.PG.xAutoOn")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_LAMP_GJ.fb_GJ_GPI_01.PG.xAutoOn=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "LAMP:GJ:GPI:01:HV_SW_RBV") {
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_GPI_01.PG.xHV_SW")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_GJ_GPI_01.PG.xHV_SW?")
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bo, "LAMP:GJ:GPI:01:HV_SW") {
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_GPI_01.PG.xHV_SW")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_LAMP_GJ.fb_GJ_GPI_01.PG.xHV_SW=")
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "LAMP:GJ:GPI:01:ILK_OK_RBV") {
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_GPI_01.PG.xILKOk")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_GJ_GPI_01.PG.xILKOk?")
+  field(ZNAM, "NOT OK")
+  field(ONAM, "OK")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "LAMP:GJ:GPI:01:LOGGER_RBV") {
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_GPI_01.PG.xLog")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_GJ_GPI_01.PG.xLog?")
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bo, "LAMP:GJ:GPI:01:LOGGER") {
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_GPI_01.PG.xLog")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_LAMP_GJ.fb_GJ_GPI_01.PG.xLog=")
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "LAMP:GJ:GPI:01:PRESS_OK_RBV") {
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_GPI_01.PG.xPRESS_OK")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_GJ_GPI_01.PG.xPRESS_OK?")
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(mbbi, "LAMP:GJ:PTM:01:STATE_RBV") {
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_PTM_01.iq_stPTM.eState")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_GJ_PTM_01.iq_stPTM.eState?")
+  field(ZRVL, "0")
+  field(ONVL, "1")
+  field(TWVL, "2")
+  field(THVL, "3")
+  field(FRVL, "4")
+  field(ZRST, "STOPPED")
+  field(ONST, "STARTING")
+  field(TWST, "RUNNING")
+  field(THST, "FAULT")
+  field(FRST, "STOPPING")
+  info(autosaveFields_pass0, "DESC DISS EISV ELSV FFSV FRSV FTSV FVSV NISV ONSV SIMS SVSV SXSV TESV THSV TTSV TVSV TWSV UDFS UNSV ZRSV")
+  info(archive, "VAL")
+}
+
+record(longin, "LAMP:GJ:PTM:01:SET_SPEED_RBV") {
+  # GVL_LAMP_GJ.fb_GJ_PTM_01.iq_stPTM.i_dSetSpd
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_PT...q_stPTM.i_dSetSpd")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_GJ_PTM_01.iq_stPTM.i_dSetSpd?")
+  field(EGU, "Hz")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longout, "LAMP:GJ:PTM:01:SET_SPEED") {
+  # GVL_LAMP_GJ.fb_GJ_PTM_01.iq_stPTM.i_dSetSpd
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_PT...q_stPTM.i_dSetSpd")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_LAMP_GJ.fb_GJ_PTM_01.iq_stPTM.i_dSetSpd=")
+  field(EGU, "Hz")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "LAMP:GJ:PTM:01:TempBearing_RBV") {
+  # GVL_LAMP_GJ.fb_GJ_PTM_01.iq_stPTM.i_diBrngTemp
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_PT...tPTM.i_diBrngTemp")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_GJ_PTM_01.iq_stPTM.i_diBrngTemp?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "LAMP:GJ:PTM:01:TempPump_RBV") {
+  # GVL_LAMP_GJ.fb_GJ_PTM_01.iq_stPTM.i_diBtmTemp
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_PT...stPTM.i_diBtmTemp")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_GJ_PTM_01.iq_stPTM.i_diBtmTemp?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "LAMP:GJ:PTM:01:SPEED_RBV") {
+  # GVL_LAMP_GJ.fb_GJ_PTM_01.iq_stPTM.i_diCurSpd
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_PT..._stPTM.i_diCurSpd")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_GJ_PTM_01.iq_stPTM.i_diCurSpd?")
+  field(EGU, "Hz")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "LAMP:GJ:PTM:01:TempElec_RBV") {
+  # GVL_LAMP_GJ.fb_GJ_PTM_01.iq_stPTM.i_diElecTemp
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_PT...tPTM.i_diElecTemp")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_GJ_PTM_01.iq_stPTM.i_diElecTemp?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "LAMP:GJ:PTM:01:TempMotor_RBV") {
+  # GVL_LAMP_GJ.fb_GJ_PTM_01.iq_stPTM.i_diMtrTemp
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_PT...stPTM.i_diMtrTemp")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_GJ_PTM_01.iq_stPTM.i_diMtrTemp?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "LAMP:GJ:PTM:01:PWR_RBV") {
+  # GVL_LAMP_GJ.fb_GJ_PTM_01.iq_stPTM.i_diPwr
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_PT....iq_stPTM.i_diPwr")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_GJ_PTM_01.iq_stPTM.i_diPwr?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "LAMP:GJ:PTM:01:ErrorCode_RBV") {
+  # GVL_LAMP_GJ.fb_GJ_PTM_01.iq_stPTM.i_iErrorCode
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_PT...tPTM.i_iErrorCode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_GJ_PTM_01.iq_stPTM.i_iErrorCode?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "LAMP:GJ:PTM:01:WarningCode_RBV") {
+  # GVL_LAMP_GJ.fb_GJ_PTM_01.iq_stPTM.i_iWarningCode
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_PT...TM.i_iWarningCode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_GJ_PTM_01.iq_stPTM.i_iWarningCode?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(ai, "LAMP:GJ:PTM:01:CURR_MON_RBV") {
+  # GVL_LAMP_GJ.fb_GJ_PTM_01.iq_stPTM.i_rCurrentMon
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_PT...PTM.i_rCurrentMon")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_GJ_PTM_01.iq_stPTM.i_rCurrentMon?")
+  field(PREC, "2")
+  field(EGU, "A")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(ai, "LAMP:GJ:PTM:01:TEMP_MON_RBV") {
+  # GVL_LAMP_GJ.fb_GJ_PTM_01.iq_stPTM.i_rTempMon
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_PT..._stPTM.i_rTempMon")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_GJ_PTM_01.iq_stPTM.i_rTempMon?")
+  field(PREC, "2")
+  field(EGU, "C")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "LAMP:GJ:PTM:01:Power_RBV") {
+  # GVL_LAMP_GJ.fb_GJ_PTM_01.iq_stPTM.i_uiPowerPctRbk
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_PT...M.i_uiPowerPctRbk")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_GJ_PTM_01.iq_stPTM.i_uiPowerPctRbk?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(bi, "LAMP:GJ:PTM:01:ALARM_RBV") {
+  # GVL_LAMP_GJ.fb_GJ_PTM_01.iq_stPTM.i_xALARM
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_PT...iq_stPTM.i_xALARM")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_GJ_PTM_01.iq_stPTM.i_xALARM?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "LAMP:GJ:PTM:01:ACCEL_RBV") {
+  # GVL_LAMP_GJ.fb_GJ_PTM_01.iq_stPTM.i_xAccel
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_PT...iq_stPTM.i_xAccel")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_GJ_PTM_01.iq_stPTM.i_xAccel?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "LAMP:GJ:PTM:01:AT_SPD_RBV") {
+  # GVL_LAMP_GJ.fb_GJ_PTM_01.iq_stPTM.i_xAtSpd
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_PT...iq_stPTM.i_xAtSpd")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_GJ_PTM_01.iq_stPTM.i_xAtSpd?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "AT SPEED")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "LAMP:GJ:PTM:01:FAULT_RBV") {
+  # GVL_LAMP_GJ.fb_GJ_PTM_01.iq_stPTM.i_xFault
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_PT...iq_stPTM.i_xFault")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_GJ_PTM_01.iq_stPTM.i_xFault?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "LAMP:GJ:PTM:01:TempFault_RBV") {
+  # GVL_LAMP_GJ.fb_GJ_PTM_01.iq_stPTM.i_xTempFault
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_PT...tPTM.i_xTempFault")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_GJ_PTM_01.iq_stPTM.i_xTempFault?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "LAMP:GJ:PTM:01:WARN_RBV") {
+  # GVL_LAMP_GJ.fb_GJ_PTM_01.iq_stPTM.i_xWarn
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_PT....iq_stPTM.i_xWarn")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_GJ_PTM_01.iq_stPTM.i_xWarn?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "LAMP:GJ:PTM:01:RUN_DO_RBV") {
+  # GVL_LAMP_GJ.fb_GJ_PTM_01.iq_stPTM.q_RunDO
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_PT....iq_stPTM.q_RunDO")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_GJ_PTM_01.iq_stPTM.q_RunDO?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "LAMP:GJ:PTM:01:SET_SPEED_MODE_RBV") {
+  # GVL_LAMP_GJ.fb_GJ_PTM_01.iq_stPTM.q_bSetSpd
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_PT...q_stPTM.q_bSetSpd")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_GJ_PTM_01.iq_stPTM.q_bSetSpd?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bo, "LAMP:GJ:PTM:01:SET_SPEED_MODE") {
+  # GVL_LAMP_GJ.fb_GJ_PTM_01.iq_stPTM.q_bSetSpd
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_PT...q_stPTM.q_bSetSpd")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_LAMP_GJ.fb_GJ_PTM_01.iq_stPTM.q_bSetSpd=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "LAMP:GJ:PTM:01:RESET_RBV") {
+  # GVL_LAMP_GJ.fb_GJ_PTM_01.iq_stPTM.q_xReset
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_PT...iq_stPTM.q_xReset")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_GJ_PTM_01.iq_stPTM.q_xReset?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(ai, "LAMP:GJ:PTM:01:BP_SP_RBV") {
+  # GVL_LAMP_GJ.fb_GJ_PTM_01.iq_stPTM.rBackingPressureSP
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_PT...BackingPressureSP")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_GJ_PTM_01.iq_stPTM.rBackingPressureSP?")
+  field(PREC, "2")
+  field(EGU, "TORR")
+  field(HOPR, "1000")
+  field(LOPR, "0")
+  info(autosaveFields, "DESC VAL")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(ao, "LAMP:GJ:PTM:01:BP_SP") {
+  # GVL_LAMP_GJ.fb_GJ_PTM_01.iq_stPTM.rBackingPressureSP
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_PT...BackingPressureSP")
+  field(PINI, "1")
+  field(DTYP, "asynFloat64")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_LAMP_GJ.fb_GJ_PTM_01.iq_stPTM.rBackingPressureSP=")
+  field(PREC, "2")
+  field(EGU, "TORR")
+  field(HOPR, "1000")
+  field(LOPR, "0")
+  info(autosaveFields, "DESC VAL")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
+record(ai, "LAMP:GJ:PTM:01:IP_SP_RBV") {
+  # GVL_LAMP_GJ.fb_GJ_PTM_01.iq_stPTM.rInletPressureSP
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_PT....rInletPressureSP")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_GJ_PTM_01.iq_stPTM.rInletPressureSP?")
+  field(PREC, "2")
+  field(EGU, "TORR")
+  field(HOPR, "1000")
+  field(LOPR, "0")
+  info(autosaveFields, "DESC VAL")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(ao, "LAMP:GJ:PTM:01:IP_SP") {
+  # GVL_LAMP_GJ.fb_GJ_PTM_01.iq_stPTM.rInletPressureSP
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_PT....rInletPressureSP")
+  field(PINI, "1")
+  field(DTYP, "asynFloat64")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_LAMP_GJ.fb_GJ_PTM_01.iq_stPTM.rInletPressureSP=")
+  field(PREC, "2")
+  field(EGU, "TORR")
+  field(HOPR, "1000")
+  field(LOPR, "0")
+  info(autosaveFields, "DESC VAL")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "LAMP:GJ:PTM:01:ILK_OK_RBV") {
+  # GVL_LAMP_GJ.fb_GJ_PTM_01.iq_stPTM.xExtRunOk
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_PT...q_stPTM.xExtRunOk")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_GJ_PTM_01.iq_stPTM.xExtRunOk?")
+  field(ZNAM, "ILK ACTIVE")
+  field(ONAM, "ILK OK")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "LAMP:GJ:PTM:01:LOGGER_RBV") {
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_PTM_01.iq_stPTM.xLog")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_GJ_PTM_01.iq_stPTM.xLog?")
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "LAMP:GJ:PTM:01:RST_SW_RBV") {
+  # GVL_LAMP_GJ.fb_GJ_PTM_01.iq_stPTM.xResetSW
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_PT...iq_stPTM.xResetSW")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_GJ_PTM_01.iq_stPTM.xResetSW?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bo, "LAMP:GJ:PTM:01:RST_SW") {
+  # GVL_LAMP_GJ.fb_GJ_PTM_01.iq_stPTM.xResetSW
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_PT...iq_stPTM.xResetSW")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_LAMP_GJ.fb_GJ_PTM_01.iq_stPTM.xResetSW=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "LAMP:GJ:PTM:01:RUN_SW_RBV") {
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_PTM_01.iq_stPTM.xRunSW")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_GJ_PTM_01.iq_stPTM.xRunSW?")
+  field(ZNAM, "STOP")
+  field(ONAM, "RUN")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bo, "LAMP:GJ:PTM:01:RUN_SW") {
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_PTM_01.iq_stPTM.xRunSW")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_LAMP_GJ.fb_GJ_PTM_01.iq_stPTM.xRunSW=")
+  field(ZNAM, "STOP")
+  field(ONAM, "RUN")
+  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "LAMP:GJ:VRC:01:ERROR_RBV") {
+  # GVL_LAMP_GJ.fb_GJ_VRC_01.iq_stValve.bErrorPresent
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_VR...lve.bErrorPresent")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_GJ_VRC_01.iq_stValve.bErrorPresent?")
+  field(ZNAM, "NO ERROR")
+  field(ONAM, "ERROR PRESENT")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bo, "LAMP:GJ:VRC:01:ERROR") {
+  # GVL_LAMP_GJ.fb_GJ_VRC_01.iq_stValve.bErrorPresent
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_VR...lve.bErrorPresent")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_LAMP_GJ.fb_GJ_VRC_01.iq_stValve.bErrorPresent=")
+  field(ZNAM, "NO ERROR")
+  field(ONAM, "ERROR PRESENT")
+  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(mbbi, "LAMP:GJ:VRC:01:POS_STATE_RBV") {
+  # GVL_LAMP_GJ.fb_GJ_VRC_01.iq_stValve.eState
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_VR...iq_stValve.eState")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_GJ_VRC_01.iq_stValve.eState?")
+  field(ZRVL, "0")
+  field(ONVL, "1")
+  field(TWVL, "2")
+  field(THVL, "3")
+  field(FRVL, "4")
+  field(ZRST, "OPEN")
+  field(ONST, "CLOSED")
+  field(TWST, "MOVING")
+  field(THST, "INVALID")
+  field(FRST, "OPEN_F")
+  info(autosaveFields_pass0, "DESC DISS EISV ELSV FFSV FRSV FTSV FVSV NISV ONSV SIMS SVSV SXSV TESV THSV TTSV TVSV TWSV UDFS UNSV ZRSV")
+  info(archive, "VAL")
+}
+
+record(mbbi, "LAMP:GJ:VRC:01:STATE_RBV") {
+  # GVL_LAMP_GJ.fb_GJ_VRC_01.iq_stValve.eVGC_State
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_VR...tValve.eVGC_State")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_GJ_VRC_01.iq_stValve.eVGC_State?")
+  field(ZRVL, "0")
+  field(ONVL, "1")
+  field(TWVL, "2")
+  field(THVL, "3")
+  field(FRVL, "4")
+  field(FVVL, "5")
+  field(SXVL, "6")
+  field(SVVL, "7")
+  field(EIVL, "8")
+  field(NIVL, "9")
+  field(ZRST, "Vented")
+  field(ONST, "At Vacuum")
+  field(TWST, "Differential Pressure")
+  field(THST, "Lost Vacuum")
+  field(FRST, "Ext Fault")
+  field(FVST, "AT Vacuum")
+  field(SXST, "Triggered")
+  field(SVST, "Vacuum Fault")
+  field(EIST, "Close Timeout")
+  field(NIST, "Open Timeout")
+  info(autosaveFields_pass0, "DESC DISS EISV ELSV FFSV FRSV FTSV FVSV NISV ONSV SIMS SVSV SXSV TESV THSV TTSV TVSV TWSV UDFS UNSV ZRSV")
+  info(archive, "VAL")
+}
+
+record(bi, "LAMP:GJ:VRC:01:CLS_DI_RBV") {
+  # GVL_LAMP_GJ.fb_GJ_VRC_01.iq_stValve.i_xClsLS
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_VR..._stValve.i_xClsLS")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_GJ_VRC_01.iq_stValve.i_xClsLS?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "CLOSE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "LAMP:GJ:VRC:01:OPN_DI_RBV") {
+  # GVL_LAMP_GJ.fb_GJ_VRC_01.iq_stValve.i_xOpnLS
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_VR..._stValve.i_xOpnLS")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_GJ_VRC_01.iq_stValve.i_xOpnLS?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "OPEN")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "LAMP:GJ:VRC:01:ALM_RST_RBV") {
+  # GVL_LAMP_GJ.fb_GJ_VRC_01.iq_stValve.pv_xAlmRst
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_VR...tValve.pv_xAlmRst")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_GJ_VRC_01.iq_stValve.pv_xAlmRst?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bo, "LAMP:GJ:VRC:01:ALM_RST") {
+  # GVL_LAMP_GJ.fb_GJ_VRC_01.iq_stValve.pv_xAlmRst
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_VR...tValve.pv_xAlmRst")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_LAMP_GJ.fb_GJ_VRC_01.iq_stValve.pv_xAlmRst=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "LAMP:GJ:VRC:01:CLS_SW_RBV") {
+  # GVL_LAMP_GJ.fb_GJ_VRC_01.iq_stValve.pv_xCLS_SW
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_VR...tValve.pv_xCLS_SW")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_GJ_VRC_01.iq_stValve.pv_xCLS_SW?")
+  field(ZNAM, "OPEN")
+  field(ONAM, "CLOSE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bo, "LAMP:GJ:VRC:01:CLS_SW") {
+  # GVL_LAMP_GJ.fb_GJ_VRC_01.iq_stValve.pv_xCLS_SW
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_VR...tValve.pv_xCLS_SW")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_LAMP_GJ.fb_GJ_VRC_01.iq_stValve.pv_xCLS_SW=")
+  field(ZNAM, "OPEN")
+  field(ONAM, "CLOSE")
+  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "LAMP:GJ:VRC:01:OPN_SW_RBV") {
+  # GVL_LAMP_GJ.fb_GJ_VRC_01.iq_stValve.pv_xOPN_SW
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_VR...tValve.pv_xOPN_SW")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_GJ_VRC_01.iq_stValve.pv_xOPN_SW?")
+  field(ZNAM, "CLOSE")
+  field(ONAM, "OPEN")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bo, "LAMP:GJ:VRC:01:OPN_SW") {
+  # GVL_LAMP_GJ.fb_GJ_VRC_01.iq_stValve.pv_xOPN_SW
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_VR...tValve.pv_xOPN_SW")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_LAMP_GJ.fb_GJ_VRC_01.iq_stValve.pv_xOPN_SW=")
+  field(ZNAM, "CLOSE")
+  field(ONAM, "OPEN")
+  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "LAMP:GJ:VRC:01:FORCE_CLS_RBV") {
+  # GVL_LAMP_GJ.fb_GJ_VRC_01.iq_stValve.pv_xOvrdCls
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_VR...Valve.pv_xOvrdCls")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_GJ_VRC_01.iq_stValve.pv_xOvrdCls?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "FORCE CLOSE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bo, "LAMP:GJ:VRC:01:FORCE_CLS") {
+  # GVL_LAMP_GJ.fb_GJ_VRC_01.iq_stValve.pv_xOvrdCls
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_VR...Valve.pv_xOvrdCls")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_LAMP_GJ.fb_GJ_VRC_01.iq_stValve.pv_xOvrdCls=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "FORCE CLOSE")
+  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "LAMP:GJ:VRC:01:FORCE_OPN_RBV") {
+  # GVL_LAMP_GJ.fb_GJ_VRC_01.iq_stValve.pv_xOvrdOpn
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_VR...Valve.pv_xOvrdOpn")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_GJ_VRC_01.iq_stValve.pv_xOvrdOpn?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "FORCE OPEN")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bo, "LAMP:GJ:VRC:01:FORCE_OPN") {
+  # GVL_LAMP_GJ.fb_GJ_VRC_01.iq_stValve.pv_xOvrdOpn
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_VR...Valve.pv_xOvrdOpn")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_LAMP_GJ.fb_GJ_VRC_01.iq_stValve.pv_xOvrdOpn=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "FORCE OPEN")
+  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "LAMP:GJ:VRC:01:CLS_DO_RBV") {
+  # GVL_LAMP_GJ.fb_GJ_VRC_01.iq_stValve.q_xCLS_DO
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_VR...stValve.q_xCLS_DO")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_GJ_VRC_01.iq_stValve.q_xCLS_DO?")
+  field(ZNAM, "OPEN")
+  field(ONAM, "CLOSE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bo, "LAMP:GJ:VRC:01:CLS_DO") {
+  # GVL_LAMP_GJ.fb_GJ_VRC_01.iq_stValve.q_xCLS_DO
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_VR...stValve.q_xCLS_DO")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_LAMP_GJ.fb_GJ_VRC_01.iq_stValve.q_xCLS_DO=")
+  field(ZNAM, "OPEN")
+  field(ONAM, "CLOSE")
+  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "LAMP:GJ:VRC:01:OPN_DO_RBV") {
+  # GVL_LAMP_GJ.fb_GJ_VRC_01.iq_stValve.q_xOPN_DO
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_VR...stValve.q_xOPN_DO")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_GJ_VRC_01.iq_stValve.q_xOPN_DO?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(waveform, "LAMP:GJ:VRC:01:ErrMsg_RBV") {
+  # GVL_LAMP_GJ.fb_GJ_VRC_01.iq_stValve.sErrorMessage
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_VR...lve.sErrorMessage")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_GJ_VRC_01.iq_stValve.sErrorMessage?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(waveform, "LAMP:GJ:VRC:01:ErrMsg") {
+  # GVL_LAMP_GJ.fb_GJ_VRC_01.iq_stValve.sErrorMessage
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_VR...lve.sErrorMessage")
+  field(DTYP, "asynInt8ArrayOut")
+  field(UDFS, "0")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL_LAMP_GJ.fb_GJ_VRC_01.iq_stValve.sErrorMessage=")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "LAMP:GJ:VRC:01:CLS_OK_RBV") {
+  # GVL_LAMP_GJ.fb_GJ_VRC_01.iq_stValve.xCLS_OK
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_VR...q_stValve.xCLS_OK")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_GJ_VRC_01.iq_stValve.xCLS_OK?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "LAMP:GJ:VRC:01:EXT_ILK_OK_RBV") {
+  # GVL_LAMP_GJ.fb_GJ_VRC_01.iq_stValve.xEXT_OK
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_VR...q_stValve.xEXT_OK")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_GJ_VRC_01.iq_stValve.xEXT_OK?")
+  field(ZNAM, "NOT OK")
+  field(ONAM, "OK")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "LAMP:GJ:VRC:01:LOGGER_RBV") {
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_VRC_01.iq_stValve.xLog")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_GJ_VRC_01.iq_stValve.xLog?")
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bo, "LAMP:GJ:VRC:01:LOGGER") {
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_VRC_01.iq_stValve.xLog")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_LAMP_GJ.fb_GJ_VRC_01.iq_stValve.xLog=")
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "LAMP:GJ:VRC:01:OPN_OK_RBV") {
+  # GVL_LAMP_GJ.fb_GJ_VRC_01.iq_stValve.xOPN_OK
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_VR...q_stValve.xOPN_OK")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_GJ_VRC_01.iq_stValve.xOPN_OK?")
+  field(ZNAM, "OPN ILK NOT OK")
+  field(ONAM, "OPN ILK OK")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "LAMP:GJ:VRC:01:OVRD_ON_RBV") {
+  # GVL_LAMP_GJ.fb_GJ_VRC_01.iq_stValve.xOverrideMode
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_VR...lve.xOverrideMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_GJ_VRC_01.iq_stValve.xOverrideMode?")
+  field(ZNAM, "Override OFF")
+  field(ONAM, "Override ON")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bo, "LAMP:GJ:VRC:01:OVRD_ON") {
+  # GVL_LAMP_GJ.fb_GJ_VRC_01.iq_stValve.xOverrideMode
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_VR...lve.xOverrideMode")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_LAMP_GJ.fb_GJ_VRC_01.iq_stValve.xOverrideMode=")
+  field(ZNAM, "Override OFF")
+  field(ONAM, "Override ON")
+  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "LAMP:GJ:VRC:02:ERROR_RBV") {
+  # GVL_LAMP_GJ.fb_GJ_VRC_02.iq_stValve.bErrorPresent
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_VR...lve.bErrorPresent")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_GJ_VRC_02.iq_stValve.bErrorPresent?")
+  field(ZNAM, "NO ERROR")
+  field(ONAM, "ERROR PRESENT")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bo, "LAMP:GJ:VRC:02:ERROR") {
+  # GVL_LAMP_GJ.fb_GJ_VRC_02.iq_stValve.bErrorPresent
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_VR...lve.bErrorPresent")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_LAMP_GJ.fb_GJ_VRC_02.iq_stValve.bErrorPresent=")
+  field(ZNAM, "NO ERROR")
+  field(ONAM, "ERROR PRESENT")
+  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(mbbi, "LAMP:GJ:VRC:02:POS_STATE_RBV") {
+  # GVL_LAMP_GJ.fb_GJ_VRC_02.iq_stValve.eState
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_VR...iq_stValve.eState")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_GJ_VRC_02.iq_stValve.eState?")
+  field(ZRVL, "0")
+  field(ONVL, "1")
+  field(TWVL, "2")
+  field(THVL, "3")
+  field(FRVL, "4")
+  field(ZRST, "OPEN")
+  field(ONST, "CLOSED")
+  field(TWST, "MOVING")
+  field(THST, "INVALID")
+  field(FRST, "OPEN_F")
+  info(autosaveFields_pass0, "DESC DISS EISV ELSV FFSV FRSV FTSV FVSV NISV ONSV SIMS SVSV SXSV TESV THSV TTSV TVSV TWSV UDFS UNSV ZRSV")
+  info(archive, "VAL")
+}
+
+record(mbbi, "LAMP:GJ:VRC:02:STATE_RBV") {
+  # GVL_LAMP_GJ.fb_GJ_VRC_02.iq_stValve.eVGC_State
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_VR...tValve.eVGC_State")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_GJ_VRC_02.iq_stValve.eVGC_State?")
+  field(ZRVL, "0")
+  field(ONVL, "1")
+  field(TWVL, "2")
+  field(THVL, "3")
+  field(FRVL, "4")
+  field(FVVL, "5")
+  field(SXVL, "6")
+  field(SVVL, "7")
+  field(EIVL, "8")
+  field(NIVL, "9")
+  field(ZRST, "Vented")
+  field(ONST, "At Vacuum")
+  field(TWST, "Differential Pressure")
+  field(THST, "Lost Vacuum")
+  field(FRST, "Ext Fault")
+  field(FVST, "AT Vacuum")
+  field(SXST, "Triggered")
+  field(SVST, "Vacuum Fault")
+  field(EIST, "Close Timeout")
+  field(NIST, "Open Timeout")
+  info(autosaveFields_pass0, "DESC DISS EISV ELSV FFSV FRSV FTSV FVSV NISV ONSV SIMS SVSV SXSV TESV THSV TTSV TVSV TWSV UDFS UNSV ZRSV")
+  info(archive, "VAL")
+}
+
+record(bi, "LAMP:GJ:VRC:02:CLS_DI_RBV") {
+  # GVL_LAMP_GJ.fb_GJ_VRC_02.iq_stValve.i_xClsLS
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_VR..._stValve.i_xClsLS")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_GJ_VRC_02.iq_stValve.i_xClsLS?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "CLOSE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "LAMP:GJ:VRC:02:OPN_DI_RBV") {
+  # GVL_LAMP_GJ.fb_GJ_VRC_02.iq_stValve.i_xOpnLS
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_VR..._stValve.i_xOpnLS")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_GJ_VRC_02.iq_stValve.i_xOpnLS?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "OPEN")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "LAMP:GJ:VRC:02:ALM_RST_RBV") {
+  # GVL_LAMP_GJ.fb_GJ_VRC_02.iq_stValve.pv_xAlmRst
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_VR...tValve.pv_xAlmRst")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_GJ_VRC_02.iq_stValve.pv_xAlmRst?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bo, "LAMP:GJ:VRC:02:ALM_RST") {
+  # GVL_LAMP_GJ.fb_GJ_VRC_02.iq_stValve.pv_xAlmRst
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_VR...tValve.pv_xAlmRst")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_LAMP_GJ.fb_GJ_VRC_02.iq_stValve.pv_xAlmRst=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "LAMP:GJ:VRC:02:OPN_SW_RBV") {
+  # GVL_LAMP_GJ.fb_GJ_VRC_02.iq_stValve.pv_xOPN_SW
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_VR...tValve.pv_xOPN_SW")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_GJ_VRC_02.iq_stValve.pv_xOPN_SW?")
+  field(ZNAM, "CLOSE")
+  field(ONAM, "OPEN")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bo, "LAMP:GJ:VRC:02:OPN_SW") {
+  # GVL_LAMP_GJ.fb_GJ_VRC_02.iq_stValve.pv_xOPN_SW
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_VR...tValve.pv_xOPN_SW")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_LAMP_GJ.fb_GJ_VRC_02.iq_stValve.pv_xOPN_SW=")
+  field(ZNAM, "CLOSE")
+  field(ONAM, "OPEN")
+  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "LAMP:GJ:VRC:02:FORCE_OPN_RBV") {
+  # GVL_LAMP_GJ.fb_GJ_VRC_02.iq_stValve.pv_xOvrdOpn
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_VR...Valve.pv_xOvrdOpn")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_GJ_VRC_02.iq_stValve.pv_xOvrdOpn?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "FORCE OPEN")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bo, "LAMP:GJ:VRC:02:FORCE_OPN") {
+  # GVL_LAMP_GJ.fb_GJ_VRC_02.iq_stValve.pv_xOvrdOpn
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_VR...Valve.pv_xOvrdOpn")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_LAMP_GJ.fb_GJ_VRC_02.iq_stValve.pv_xOvrdOpn=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "FORCE OPEN")
+  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "LAMP:GJ:VRC:02:OPN_DO_RBV") {
+  # GVL_LAMP_GJ.fb_GJ_VRC_02.iq_stValve.q_xOPN_DO
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_VR...stValve.q_xOPN_DO")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_GJ_VRC_02.iq_stValve.q_xOPN_DO?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(waveform, "LAMP:GJ:VRC:02:ErrMsg_RBV") {
+  # GVL_LAMP_GJ.fb_GJ_VRC_02.iq_stValve.sErrorMessage
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_VR...lve.sErrorMessage")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_GJ_VRC_02.iq_stValve.sErrorMessage?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(waveform, "LAMP:GJ:VRC:02:ErrMsg") {
+  # GVL_LAMP_GJ.fb_GJ_VRC_02.iq_stValve.sErrorMessage
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_VR...lve.sErrorMessage")
+  field(DTYP, "asynInt8ArrayOut")
+  field(UDFS, "0")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL_LAMP_GJ.fb_GJ_VRC_02.iq_stValve.sErrorMessage=")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "LAMP:GJ:VRC:02:CLS_OK_RBV") {
+  # GVL_LAMP_GJ.fb_GJ_VRC_02.iq_stValve.xCLS_OK
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_VR...q_stValve.xCLS_OK")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_GJ_VRC_02.iq_stValve.xCLS_OK?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "LAMP:GJ:VRC:02:EXT_ILK_OK_RBV") {
+  # GVL_LAMP_GJ.fb_GJ_VRC_02.iq_stValve.xEXT_OK
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_VR...q_stValve.xEXT_OK")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_GJ_VRC_02.iq_stValve.xEXT_OK?")
+  field(ZNAM, "NOT OK")
+  field(ONAM, "OK")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "LAMP:GJ:VRC:02:LOGGER_RBV") {
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_VRC_02.iq_stValve.xLog")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_GJ_VRC_02.iq_stValve.xLog?")
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bo, "LAMP:GJ:VRC:02:LOGGER") {
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_VRC_02.iq_stValve.xLog")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_LAMP_GJ.fb_GJ_VRC_02.iq_stValve.xLog=")
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "LAMP:GJ:VRC:02:OPN_OK_RBV") {
+  # GVL_LAMP_GJ.fb_GJ_VRC_02.iq_stValve.xOPN_OK
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_VR...q_stValve.xOPN_OK")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_GJ_VRC_02.iq_stValve.xOPN_OK?")
+  field(ZNAM, "OPN ILK NOT OK")
+  field(ONAM, "OPN ILK OK")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "LAMP:GJ:VRC:02:OVRD_ON_RBV") {
+  # GVL_LAMP_GJ.fb_GJ_VRC_02.iq_stValve.xOverrideMode
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_VR...lve.xOverrideMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_GJ_VRC_02.iq_stValve.xOverrideMode?")
+  field(ZNAM, "Override OFF")
+  field(ONAM, "Override ON")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bo, "LAMP:GJ:VRC:02:OVRD_ON") {
+  # GVL_LAMP_GJ.fb_GJ_VRC_02.iq_stValve.xOverrideMode
+  field(DESC, "GVL_LAMP_GJ.fb_GJ_VR...lve.xOverrideMode")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_LAMP_GJ.fb_GJ_VRC_02.iq_stValve.xOverrideMode=")
+  field(ZNAM, "Override OFF")
+  field(ONAM, "Override ON")
+  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(mbbi, "LAMP:ROUGH:GPI:05:STATE_RBV") {
+  field(DESC, "GVL_LAMP_GJ.fb_ROUGH_GPI_05.PG.eState")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_ROUGH_GPI_05.PG.eState?")
+  field(ZRVL, "0")
+  field(ONVL, "1")
+  field(TWVL, "2")
+  field(THVL, "3")
+  field(FRVL, "4")
+  field(FVVL, "5")
+  field(SXVL, "6")
+  field(SVVL, "7")
+  field(ZRST, "Off")
+  field(ONST, "GaugeDisconnected")
+  field(TWST, "OoR")
+  field(THST, "PressInvalid")
+  field(FRST, "Starting")
+  field(FVST, "Valid")
+  field(SXST, "ValidHi")
+  field(SVST, "ValidLo")
+  info(autosaveFields_pass0, "DESC DISS EISV ELSV FFSV FRSV FTSV FVSV NISV ONSV SIMS SVSV SXSV TESV THSV TTSV TVSV TWSV UDFS UNSV ZRSV")
+  info(archive, "VAL")
+}
+
+record(longin, "LAMP:ROUGH:GPI:05:AutoOn_timer_RBV") {
+  # GVL_LAMP_GJ.fb_ROUGH_GPI_05.PG.iAutoOnTimer
+  field(DESC, "GVL_LAMP_GJ.fb_ROUGH...5.PG.iAutoOnTimer")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_ROUGH_GPI_05.PG.iAutoOnTimer?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(longin, "LAMP:ROUGH:GPI:05:PRESS_AI_RBV") {
+  # GVL_LAMP_GJ.fb_ROUGH_GPI_05.PG.i_iPRESS_R
+  field(DESC, "GVL_LAMP_GJ.fb_ROUGH..._05.PG.i_iPRESS_R")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_ROUGH_GPI_05.PG.i_iPRESS_R?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(bi, "LAMP:ROUGH:GPI:05:DISC_ACTIVE_RBV") {
+  # GVL_LAMP_GJ.fb_ROUGH_GPI_05.PG.i_xDisc_Active
+  field(DESC, "GVL_LAMP_GJ.fb_ROUGH...PG.i_xDisc_Active")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_ROUGH_GPI_05.PG.i_xDisc_Active?")
+  field(ZNAM, "NO DISC")
+  field(ONAM, "DISC ACTIVE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "LAMP:ROUGH:GPI:05:HV_ON_RBV") {
+  field(DESC, "GVL_LAMP_GJ.fb_ROUGH_GPI_05.PG.i_xHV_ON")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_ROUGH_GPI_05.PG.i_xHV_ON?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "LAMP:ROUGH:GPI:05:HV_DIS_DO_RBV") {
+  field(DESC, "GVL_LAMP_GJ.fb_ROUGH_GPI_05.PG.q_xHV_DIS")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_ROUGH_GPI_05.PG.q_xHV_DIS?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(ai, "LAMP:ROUGH:GPI:05:SP_HYS_RBV") {
+  field(DESC, "GVL_LAMP_GJ.fb_ROUGH_GPI_05.PG.rHYS_PR")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_ROUGH_GPI_05.PG.rHYS_PR?")
+  field(PREC, "2")
+  field(EGU, "TORR")
+  field(HOPR, "1000")
+  field(LOPR, "0")
+  info(autosaveFields, "DESC VAL")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(ao, "LAMP:ROUGH:GPI:05:SP_HYS") {
+  field(DESC, "GVL_LAMP_GJ.fb_ROUGH_GPI_05.PG.rHYS_PR")
+  field(PINI, "1")
+  field(DTYP, "asynFloat64")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_LAMP_GJ.fb_ROUGH_GPI_05.PG.rHYS_PR=")
+  field(PREC, "2")
+  field(EGU, "TORR")
+  field(HOPR, "1000")
+  field(LOPR, "0")
+  info(autosaveFields, "DESC VAL")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
+record(ai, "LAMP:ROUGH:GPI:05:PRESS_RBV") {
+  field(DESC, "GVL_LAMP_GJ.fb_ROUGH_GPI_05.PG.rPRESS")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_ROUGH_GPI_05.PG.rPRESS?")
+  field(PREC, "2")
+  field(EGU, "TORR")
+  field(HOPR, "1000")
+  field(LOPR, "0")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(ai, "LAMP:ROUGH:GPI:05:PRO_SP_RBV") {
+  field(DESC, "GVL_LAMP_GJ.fb_ROUGH_GPI_05.PG.rPRO_SP")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_ROUGH_GPI_05.PG.rPRO_SP?")
+  field(PREC, "2")
+  field(EGU, "TORR")
+  field(HOPR, "1000")
+  field(LOPR, "0")
+  info(autosaveFields, "DESC VAL")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(ao, "LAMP:ROUGH:GPI:05:PRO_SP") {
+  field(DESC, "GVL_LAMP_GJ.fb_ROUGH_GPI_05.PG.rPRO_SP")
+  field(PINI, "1")
+  field(DTYP, "asynFloat64")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_LAMP_GJ.fb_ROUGH_GPI_05.PG.rPRO_SP=")
+  field(PREC, "2")
+  field(EGU, "TORR")
+  field(HOPR, "1000")
+  field(LOPR, "0")
+  info(autosaveFields, "DESC VAL")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
+record(ai, "LAMP:ROUGH:GPI:05:VAC_SP_RBV") {
+  field(DESC, "GVL_LAMP_GJ.fb_ROUGH_GPI_05.PG.rVAC_SP")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_ROUGH_GPI_05.PG.rVAC_SP?")
+  field(PREC, "2")
+  field(EGU, "TORR")
+  field(HOPR, "1000")
+  field(LOPR, "0")
+  info(autosaveFields, "DESC VAL")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(ao, "LAMP:ROUGH:GPI:05:VAC_SP") {
+  field(DESC, "GVL_LAMP_GJ.fb_ROUGH_GPI_05.PG.rVAC_SP")
+  field(PINI, "1")
+  field(DTYP, "asynFloat64")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_LAMP_GJ.fb_ROUGH_GPI_05.PG.rVAC_SP=")
+  field(PREC, "2")
+  field(EGU, "TORR")
+  field(HOPR, "1000")
+  field(LOPR, "0")
+  info(autosaveFields, "DESC VAL")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "LAMP:ROUGH:GPI:05:AT_VAC_RBV") {
+  field(DESC, "GVL_LAMP_GJ.fb_ROUGH_GPI_05.PG.xAT_VAC")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_ROUGH_GPI_05.PG.xAT_VAC?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "LAMP:ROUGH:GPI:05:Auto_On_RBV") {
+  field(DESC, "GVL_LAMP_GJ.fb_ROUGH_GPI_05.PG.xAutoOn")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_ROUGH_GPI_05.PG.xAutoOn?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bo, "LAMP:ROUGH:GPI:05:Auto_On") {
+  field(DESC, "GVL_LAMP_GJ.fb_ROUGH_GPI_05.PG.xAutoOn")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_LAMP_GJ.fb_ROUGH_GPI_05.PG.xAutoOn=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "LAMP:ROUGH:GPI:05:HV_SW_RBV") {
+  field(DESC, "GVL_LAMP_GJ.fb_ROUGH_GPI_05.PG.xHV_SW")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_ROUGH_GPI_05.PG.xHV_SW?")
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bo, "LAMP:ROUGH:GPI:05:HV_SW") {
+  field(DESC, "GVL_LAMP_GJ.fb_ROUGH_GPI_05.PG.xHV_SW")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_LAMP_GJ.fb_ROUGH_GPI_05.PG.xHV_SW=")
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "LAMP:ROUGH:GPI:05:ILK_OK_RBV") {
+  field(DESC, "GVL_LAMP_GJ.fb_ROUGH_GPI_05.PG.xILKOk")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_ROUGH_GPI_05.PG.xILKOk?")
+  field(ZNAM, "NOT OK")
+  field(ONAM, "OK")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "LAMP:ROUGH:GPI:05:LOGGER_RBV") {
+  field(DESC, "GVL_LAMP_GJ.fb_ROUGH_GPI_05.PG.xLog")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_ROUGH_GPI_05.PG.xLog?")
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bo, "LAMP:ROUGH:GPI:05:LOGGER") {
+  field(DESC, "GVL_LAMP_GJ.fb_ROUGH_GPI_05.PG.xLog")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_LAMP_GJ.fb_ROUGH_GPI_05.PG.xLog=")
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "LAMP:ROUGH:GPI:05:PRESS_OK_RBV") {
+  field(DESC, "GVL_LAMP_GJ.fb_ROUGH_GPI_05.PG.xPRESS_OK")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_ROUGH_GPI_05.PG.xPRESS_OK?")
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "LAMP:ROUGH:VRC:04:ERROR_RBV") {
+  # GVL_LAMP_GJ.fb_ROUGH_VRC_04.iq_stValve.bErrorPresent
+  field(DESC, "GVL_LAMP_GJ.fb_ROUGH...lve.bErrorPresent")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_ROUGH_VRC_04.iq_stValve.bErrorPresent?")
+  field(ZNAM, "NO ERROR")
+  field(ONAM, "ERROR PRESENT")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bo, "LAMP:ROUGH:VRC:04:ERROR") {
+  # GVL_LAMP_GJ.fb_ROUGH_VRC_04.iq_stValve.bErrorPresent
+  field(DESC, "GVL_LAMP_GJ.fb_ROUGH...lve.bErrorPresent")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_LAMP_GJ.fb_ROUGH_VRC_04.iq_stValve.bErrorPresent=")
+  field(ZNAM, "NO ERROR")
+  field(ONAM, "ERROR PRESENT")
+  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(mbbi, "LAMP:ROUGH:VRC:04:POS_STATE_RBV") {
+  # GVL_LAMP_GJ.fb_ROUGH_VRC_04.iq_stValve.eState
+  field(DESC, "GVL_LAMP_GJ.fb_ROUGH...iq_stValve.eState")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_ROUGH_VRC_04.iq_stValve.eState?")
+  field(ZRVL, "0")
+  field(ONVL, "1")
+  field(TWVL, "2")
+  field(THVL, "3")
+  field(FRVL, "4")
+  field(ZRST, "OPEN")
+  field(ONST, "CLOSED")
+  field(TWST, "MOVING")
+  field(THST, "INVALID")
+  field(FRST, "OPEN_F")
+  info(autosaveFields_pass0, "DESC DISS EISV ELSV FFSV FRSV FTSV FVSV NISV ONSV SIMS SVSV SXSV TESV THSV TTSV TVSV TWSV UDFS UNSV ZRSV")
+  info(archive, "VAL")
+}
+
+record(mbbi, "LAMP:ROUGH:VRC:04:STATE_RBV") {
+  # GVL_LAMP_GJ.fb_ROUGH_VRC_04.iq_stValve.eVGC_State
+  field(DESC, "GVL_LAMP_GJ.fb_ROUGH...tValve.eVGC_State")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_ROUGH_VRC_04.iq_stValve.eVGC_State?")
+  field(ZRVL, "0")
+  field(ONVL, "1")
+  field(TWVL, "2")
+  field(THVL, "3")
+  field(FRVL, "4")
+  field(FVVL, "5")
+  field(SXVL, "6")
+  field(SVVL, "7")
+  field(EIVL, "8")
+  field(NIVL, "9")
+  field(ZRST, "Vented")
+  field(ONST, "At Vacuum")
+  field(TWST, "Differential Pressure")
+  field(THST, "Lost Vacuum")
+  field(FRST, "Ext Fault")
+  field(FVST, "AT Vacuum")
+  field(SXST, "Triggered")
+  field(SVST, "Vacuum Fault")
+  field(EIST, "Close Timeout")
+  field(NIST, "Open Timeout")
+  info(autosaveFields_pass0, "DESC DISS EISV ELSV FFSV FRSV FTSV FVSV NISV ONSV SIMS SVSV SXSV TESV THSV TTSV TVSV TWSV UDFS UNSV ZRSV")
+  info(archive, "VAL")
+}
+
+record(bi, "LAMP:ROUGH:VRC:04:CLS_DI_RBV") {
+  # GVL_LAMP_GJ.fb_ROUGH_VRC_04.iq_stValve.i_xClsLS
+  field(DESC, "GVL_LAMP_GJ.fb_ROUGH..._stValve.i_xClsLS")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_ROUGH_VRC_04.iq_stValve.i_xClsLS?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "CLOSE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "LAMP:ROUGH:VRC:04:OPN_DI_RBV") {
+  # GVL_LAMP_GJ.fb_ROUGH_VRC_04.iq_stValve.i_xOpnLS
+  field(DESC, "GVL_LAMP_GJ.fb_ROUGH..._stValve.i_xOpnLS")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_ROUGH_VRC_04.iq_stValve.i_xOpnLS?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "OPEN")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "LAMP:ROUGH:VRC:04:ALM_RST_RBV") {
+  # GVL_LAMP_GJ.fb_ROUGH_VRC_04.iq_stValve.pv_xAlmRst
+  field(DESC, "GVL_LAMP_GJ.fb_ROUGH...tValve.pv_xAlmRst")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_ROUGH_VRC_04.iq_stValve.pv_xAlmRst?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bo, "LAMP:ROUGH:VRC:04:ALM_RST") {
+  # GVL_LAMP_GJ.fb_ROUGH_VRC_04.iq_stValve.pv_xAlmRst
+  field(DESC, "GVL_LAMP_GJ.fb_ROUGH...tValve.pv_xAlmRst")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_LAMP_GJ.fb_ROUGH_VRC_04.iq_stValve.pv_xAlmRst=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "LAMP:ROUGH:VRC:04:OPN_SW_RBV") {
+  # GVL_LAMP_GJ.fb_ROUGH_VRC_04.iq_stValve.pv_xOPN_SW
+  field(DESC, "GVL_LAMP_GJ.fb_ROUGH...tValve.pv_xOPN_SW")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_ROUGH_VRC_04.iq_stValve.pv_xOPN_SW?")
+  field(ZNAM, "CLOSE")
+  field(ONAM, "OPEN")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bo, "LAMP:ROUGH:VRC:04:OPN_SW") {
+  # GVL_LAMP_GJ.fb_ROUGH_VRC_04.iq_stValve.pv_xOPN_SW
+  field(DESC, "GVL_LAMP_GJ.fb_ROUGH...tValve.pv_xOPN_SW")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_LAMP_GJ.fb_ROUGH_VRC_04.iq_stValve.pv_xOPN_SW=")
+  field(ZNAM, "CLOSE")
+  field(ONAM, "OPEN")
+  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "LAMP:ROUGH:VRC:04:FORCE_OPN_RBV") {
+  # GVL_LAMP_GJ.fb_ROUGH_VRC_04.iq_stValve.pv_xOvrdOpn
+  field(DESC, "GVL_LAMP_GJ.fb_ROUGH...Valve.pv_xOvrdOpn")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_ROUGH_VRC_04.iq_stValve.pv_xOvrdOpn?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "FORCE OPEN")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bo, "LAMP:ROUGH:VRC:04:FORCE_OPN") {
+  # GVL_LAMP_GJ.fb_ROUGH_VRC_04.iq_stValve.pv_xOvrdOpn
+  field(DESC, "GVL_LAMP_GJ.fb_ROUGH...Valve.pv_xOvrdOpn")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_LAMP_GJ.fb_ROUGH_VRC_04.iq_stValve.pv_xOvrdOpn=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "FORCE OPEN")
+  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "LAMP:ROUGH:VRC:04:OPN_DO_RBV") {
+  # GVL_LAMP_GJ.fb_ROUGH_VRC_04.iq_stValve.q_xOPN_DO
+  field(DESC, "GVL_LAMP_GJ.fb_ROUGH...stValve.q_xOPN_DO")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_ROUGH_VRC_04.iq_stValve.q_xOPN_DO?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(waveform, "LAMP:ROUGH:VRC:04:ErrMsg_RBV") {
+  # GVL_LAMP_GJ.fb_ROUGH_VRC_04.iq_stValve.sErrorMessage
+  field(DESC, "GVL_LAMP_GJ.fb_ROUGH...lve.sErrorMessage")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_ROUGH_VRC_04.iq_stValve.sErrorMessage?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(waveform, "LAMP:ROUGH:VRC:04:ErrMsg") {
+  # GVL_LAMP_GJ.fb_ROUGH_VRC_04.iq_stValve.sErrorMessage
+  field(DESC, "GVL_LAMP_GJ.fb_ROUGH...lve.sErrorMessage")
+  field(DTYP, "asynInt8ArrayOut")
+  field(UDFS, "0")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL_LAMP_GJ.fb_ROUGH_VRC_04.iq_stValve.sErrorMessage=")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "LAMP:ROUGH:VRC:04:CLS_OK_RBV") {
+  # GVL_LAMP_GJ.fb_ROUGH_VRC_04.iq_stValve.xCLS_OK
+  field(DESC, "GVL_LAMP_GJ.fb_ROUGH...q_stValve.xCLS_OK")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_ROUGH_VRC_04.iq_stValve.xCLS_OK?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "LAMP:ROUGH:VRC:04:EXT_ILK_OK_RBV") {
+  # GVL_LAMP_GJ.fb_ROUGH_VRC_04.iq_stValve.xEXT_OK
+  field(DESC, "GVL_LAMP_GJ.fb_ROUGH...q_stValve.xEXT_OK")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_ROUGH_VRC_04.iq_stValve.xEXT_OK?")
+  field(ZNAM, "NOT OK")
+  field(ONAM, "OK")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "LAMP:ROUGH:VRC:04:LOGGER_RBV") {
+  # GVL_LAMP_GJ.fb_ROUGH_VRC_04.iq_stValve.xLog
+  field(DESC, "GVL_LAMP_GJ.fb_ROUGH...4.iq_stValve.xLog")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_ROUGH_VRC_04.iq_stValve.xLog?")
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bo, "LAMP:ROUGH:VRC:04:LOGGER") {
+  # GVL_LAMP_GJ.fb_ROUGH_VRC_04.iq_stValve.xLog
+  field(DESC, "GVL_LAMP_GJ.fb_ROUGH...4.iq_stValve.xLog")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_LAMP_GJ.fb_ROUGH_VRC_04.iq_stValve.xLog=")
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "LAMP:ROUGH:VRC:04:OPN_OK_RBV") {
+  # GVL_LAMP_GJ.fb_ROUGH_VRC_04.iq_stValve.xOPN_OK
+  field(DESC, "GVL_LAMP_GJ.fb_ROUGH...q_stValve.xOPN_OK")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_ROUGH_VRC_04.iq_stValve.xOPN_OK?")
+  field(ZNAM, "OPN ILK NOT OK")
+  field(ONAM, "OPN ILK OK")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "LAMP:ROUGH:VRC:04:OVRD_ON_RBV") {
+  # GVL_LAMP_GJ.fb_ROUGH_VRC_04.iq_stValve.xOverrideMode
+  field(DESC, "GVL_LAMP_GJ.fb_ROUGH...lve.xOverrideMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_ROUGH_VRC_04.iq_stValve.xOverrideMode?")
+  field(ZNAM, "Override OFF")
+  field(ONAM, "Override ON")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bo, "LAMP:ROUGH:VRC:04:OVRD_ON") {
+  # GVL_LAMP_GJ.fb_ROUGH_VRC_04.iq_stValve.xOverrideMode
+  field(DESC, "GVL_LAMP_GJ.fb_ROUGH...lve.xOverrideMode")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_LAMP_GJ.fb_ROUGH_VRC_04.iq_stValve.xOverrideMode=")
+  field(ZNAM, "Override OFF")
+  field(ONAM, "Override ON")
+  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "LAMP:ROUGH:VRC:05:ERROR_RBV") {
+  # GVL_LAMP_GJ.fb_ROUGH_VRC_05.iq_stValve.bErrorPresent
+  field(DESC, "GVL_LAMP_GJ.fb_ROUGH...lve.bErrorPresent")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_ROUGH_VRC_05.iq_stValve.bErrorPresent?")
+  field(ZNAM, "NO ERROR")
+  field(ONAM, "ERROR PRESENT")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bo, "LAMP:ROUGH:VRC:05:ERROR") {
+  # GVL_LAMP_GJ.fb_ROUGH_VRC_05.iq_stValve.bErrorPresent
+  field(DESC, "GVL_LAMP_GJ.fb_ROUGH...lve.bErrorPresent")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_LAMP_GJ.fb_ROUGH_VRC_05.iq_stValve.bErrorPresent=")
+  field(ZNAM, "NO ERROR")
+  field(ONAM, "ERROR PRESENT")
+  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(mbbi, "LAMP:ROUGH:VRC:05:POS_STATE_RBV") {
+  # GVL_LAMP_GJ.fb_ROUGH_VRC_05.iq_stValve.eState
+  field(DESC, "GVL_LAMP_GJ.fb_ROUGH...iq_stValve.eState")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_ROUGH_VRC_05.iq_stValve.eState?")
+  field(ZRVL, "0")
+  field(ONVL, "1")
+  field(TWVL, "2")
+  field(THVL, "3")
+  field(FRVL, "4")
+  field(ZRST, "OPEN")
+  field(ONST, "CLOSED")
+  field(TWST, "MOVING")
+  field(THST, "INVALID")
+  field(FRST, "OPEN_F")
+  info(autosaveFields_pass0, "DESC DISS EISV ELSV FFSV FRSV FTSV FVSV NISV ONSV SIMS SVSV SXSV TESV THSV TTSV TVSV TWSV UDFS UNSV ZRSV")
+  info(archive, "VAL")
+}
+
+record(mbbi, "LAMP:ROUGH:VRC:05:STATE_RBV") {
+  # GVL_LAMP_GJ.fb_ROUGH_VRC_05.iq_stValve.eVGC_State
+  field(DESC, "GVL_LAMP_GJ.fb_ROUGH...tValve.eVGC_State")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_ROUGH_VRC_05.iq_stValve.eVGC_State?")
+  field(ZRVL, "0")
+  field(ONVL, "1")
+  field(TWVL, "2")
+  field(THVL, "3")
+  field(FRVL, "4")
+  field(FVVL, "5")
+  field(SXVL, "6")
+  field(SVVL, "7")
+  field(EIVL, "8")
+  field(NIVL, "9")
+  field(ZRST, "Vented")
+  field(ONST, "At Vacuum")
+  field(TWST, "Differential Pressure")
+  field(THST, "Lost Vacuum")
+  field(FRST, "Ext Fault")
+  field(FVST, "AT Vacuum")
+  field(SXST, "Triggered")
+  field(SVST, "Vacuum Fault")
+  field(EIST, "Close Timeout")
+  field(NIST, "Open Timeout")
+  info(autosaveFields_pass0, "DESC DISS EISV ELSV FFSV FRSV FTSV FVSV NISV ONSV SIMS SVSV SXSV TESV THSV TTSV TVSV TWSV UDFS UNSV ZRSV")
+  info(archive, "VAL")
+}
+
+record(bi, "LAMP:ROUGH:VRC:05:CLS_DI_RBV") {
+  # GVL_LAMP_GJ.fb_ROUGH_VRC_05.iq_stValve.i_xClsLS
+  field(DESC, "GVL_LAMP_GJ.fb_ROUGH..._stValve.i_xClsLS")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_ROUGH_VRC_05.iq_stValve.i_xClsLS?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "CLOSE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "LAMP:ROUGH:VRC:05:OPN_DI_RBV") {
+  # GVL_LAMP_GJ.fb_ROUGH_VRC_05.iq_stValve.i_xOpnLS
+  field(DESC, "GVL_LAMP_GJ.fb_ROUGH..._stValve.i_xOpnLS")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_ROUGH_VRC_05.iq_stValve.i_xOpnLS?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "OPEN")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "LAMP:ROUGH:VRC:05:ALM_RST_RBV") {
+  # GVL_LAMP_GJ.fb_ROUGH_VRC_05.iq_stValve.pv_xAlmRst
+  field(DESC, "GVL_LAMP_GJ.fb_ROUGH...tValve.pv_xAlmRst")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_ROUGH_VRC_05.iq_stValve.pv_xAlmRst?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bo, "LAMP:ROUGH:VRC:05:ALM_RST") {
+  # GVL_LAMP_GJ.fb_ROUGH_VRC_05.iq_stValve.pv_xAlmRst
+  field(DESC, "GVL_LAMP_GJ.fb_ROUGH...tValve.pv_xAlmRst")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_LAMP_GJ.fb_ROUGH_VRC_05.iq_stValve.pv_xAlmRst=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "LAMP:ROUGH:VRC:05:OPN_SW_RBV") {
+  # GVL_LAMP_GJ.fb_ROUGH_VRC_05.iq_stValve.pv_xOPN_SW
+  field(DESC, "GVL_LAMP_GJ.fb_ROUGH...tValve.pv_xOPN_SW")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_ROUGH_VRC_05.iq_stValve.pv_xOPN_SW?")
+  field(ZNAM, "CLOSE")
+  field(ONAM, "OPEN")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bo, "LAMP:ROUGH:VRC:05:OPN_SW") {
+  # GVL_LAMP_GJ.fb_ROUGH_VRC_05.iq_stValve.pv_xOPN_SW
+  field(DESC, "GVL_LAMP_GJ.fb_ROUGH...tValve.pv_xOPN_SW")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_LAMP_GJ.fb_ROUGH_VRC_05.iq_stValve.pv_xOPN_SW=")
+  field(ZNAM, "CLOSE")
+  field(ONAM, "OPEN")
+  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "LAMP:ROUGH:VRC:05:FORCE_OPN_RBV") {
+  # GVL_LAMP_GJ.fb_ROUGH_VRC_05.iq_stValve.pv_xOvrdOpn
+  field(DESC, "GVL_LAMP_GJ.fb_ROUGH...Valve.pv_xOvrdOpn")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_ROUGH_VRC_05.iq_stValve.pv_xOvrdOpn?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "FORCE OPEN")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bo, "LAMP:ROUGH:VRC:05:FORCE_OPN") {
+  # GVL_LAMP_GJ.fb_ROUGH_VRC_05.iq_stValve.pv_xOvrdOpn
+  field(DESC, "GVL_LAMP_GJ.fb_ROUGH...Valve.pv_xOvrdOpn")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_LAMP_GJ.fb_ROUGH_VRC_05.iq_stValve.pv_xOvrdOpn=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "FORCE OPEN")
+  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "LAMP:ROUGH:VRC:05:OPN_DO_RBV") {
+  # GVL_LAMP_GJ.fb_ROUGH_VRC_05.iq_stValve.q_xOPN_DO
+  field(DESC, "GVL_LAMP_GJ.fb_ROUGH...stValve.q_xOPN_DO")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_ROUGH_VRC_05.iq_stValve.q_xOPN_DO?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(waveform, "LAMP:ROUGH:VRC:05:ErrMsg_RBV") {
+  # GVL_LAMP_GJ.fb_ROUGH_VRC_05.iq_stValve.sErrorMessage
+  field(DESC, "GVL_LAMP_GJ.fb_ROUGH...lve.sErrorMessage")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_ROUGH_VRC_05.iq_stValve.sErrorMessage?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(waveform, "LAMP:ROUGH:VRC:05:ErrMsg") {
+  # GVL_LAMP_GJ.fb_ROUGH_VRC_05.iq_stValve.sErrorMessage
+  field(DESC, "GVL_LAMP_GJ.fb_ROUGH...lve.sErrorMessage")
+  field(DTYP, "asynInt8ArrayOut")
+  field(UDFS, "0")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL_LAMP_GJ.fb_ROUGH_VRC_05.iq_stValve.sErrorMessage=")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "LAMP:ROUGH:VRC:05:CLS_OK_RBV") {
+  # GVL_LAMP_GJ.fb_ROUGH_VRC_05.iq_stValve.xCLS_OK
+  field(DESC, "GVL_LAMP_GJ.fb_ROUGH...q_stValve.xCLS_OK")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_ROUGH_VRC_05.iq_stValve.xCLS_OK?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "LAMP:ROUGH:VRC:05:EXT_ILK_OK_RBV") {
+  # GVL_LAMP_GJ.fb_ROUGH_VRC_05.iq_stValve.xEXT_OK
+  field(DESC, "GVL_LAMP_GJ.fb_ROUGH...q_stValve.xEXT_OK")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_ROUGH_VRC_05.iq_stValve.xEXT_OK?")
+  field(ZNAM, "NOT OK")
+  field(ONAM, "OK")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "LAMP:ROUGH:VRC:05:LOGGER_RBV") {
+  # GVL_LAMP_GJ.fb_ROUGH_VRC_05.iq_stValve.xLog
+  field(DESC, "GVL_LAMP_GJ.fb_ROUGH...5.iq_stValve.xLog")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_ROUGH_VRC_05.iq_stValve.xLog?")
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bo, "LAMP:ROUGH:VRC:05:LOGGER") {
+  # GVL_LAMP_GJ.fb_ROUGH_VRC_05.iq_stValve.xLog
+  field(DESC, "GVL_LAMP_GJ.fb_ROUGH...5.iq_stValve.xLog")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_LAMP_GJ.fb_ROUGH_VRC_05.iq_stValve.xLog=")
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "LAMP:ROUGH:VRC:05:OPN_OK_RBV") {
+  # GVL_LAMP_GJ.fb_ROUGH_VRC_05.iq_stValve.xOPN_OK
+  field(DESC, "GVL_LAMP_GJ.fb_ROUGH...q_stValve.xOPN_OK")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_ROUGH_VRC_05.iq_stValve.xOPN_OK?")
+  field(ZNAM, "OPN ILK NOT OK")
+  field(ONAM, "OPN ILK OK")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "LAMP:ROUGH:VRC:05:OVRD_ON_RBV") {
+  # GVL_LAMP_GJ.fb_ROUGH_VRC_05.iq_stValve.xOverrideMode
+  field(DESC, "GVL_LAMP_GJ.fb_ROUGH...lve.xOverrideMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_LAMP_GJ.fb_ROUGH_VRC_05.iq_stValve.xOverrideMode?")
+  field(ZNAM, "Override OFF")
+  field(ONAM, "Override ON")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+}
+
+record(bo, "LAMP:ROUGH:VRC:05:OVRD_ON") {
+  # GVL_LAMP_GJ.fb_ROUGH_VRC_05.iq_stValve.xOverrideMode
+  field(DESC, "GVL_LAMP_GJ.fb_ROUGH...lve.xOverrideMode")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_LAMP_GJ.fb_ROUGH_VRC_05.iq_stValve.xOverrideMode=")
+  field(ZNAM, "Override OFF")
+  field(ONAM, "Override ON")
+  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
 record(bi, "$(PREFIX)LCLSGeneral:GlobalLogTrickleTrip_RBV") {
   field(DESC, "Tripped by overall log count")
   field(SCAN, "I/O Intr")
@@ -7420,6 +10149,184 @@ record(waveform, "$(PREFIX)0RateBeamCnst:Veto_RBV") {
   info(archive, "monitor 1: VAL")
 }
 
+record(ai, "$(PREFIX)0RateBeamCnst:Apt:01:Height_RBV") {
+  field(DESC, "0-rate beam constant")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.cst0RateBeam.astApertures[1].Height?")
+  field(PREC, "3")
+  field(EGU, "mm")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "monitor 1: VAL")
+}
+
+record(ai, "$(PREFIX)0RateBeamCnst:Apt:01:Width_RBV") {
+  field(DESC, "0-rate beam constant")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.cst0RateBeam.astApertures[1].Width?")
+  field(PREC, "3")
+  field(EGU, "mm")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "monitor 1: VAL")
+}
+
+record(bi, "$(PREFIX)0RateBeamCnst:Apt:01:OK_RBV") {
+  field(DESC, "0-rate beam constant")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.cst0RateBeam.astApertures[1].xOK?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "monitor 1: VAL")
+}
+
+record(ai, "$(PREFIX)0RateBeamCnst:Apt:02:Height_RBV") {
+  field(DESC, "0-rate beam constant")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.cst0RateBeam.astApertures[2].Height?")
+  field(PREC, "3")
+  field(EGU, "mm")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "monitor 1: VAL")
+}
+
+record(ai, "$(PREFIX)0RateBeamCnst:Apt:02:Width_RBV") {
+  field(DESC, "0-rate beam constant")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.cst0RateBeam.astApertures[2].Width?")
+  field(PREC, "3")
+  field(EGU, "mm")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "monitor 1: VAL")
+}
+
+record(bi, "$(PREFIX)0RateBeamCnst:Apt:02:OK_RBV") {
+  field(DESC, "0-rate beam constant")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.cst0RateBeam.astApertures[2].xOK?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "monitor 1: VAL")
+}
+
+record(ai, "$(PREFIX)0RateBeamCnst:Apt:03:Height_RBV") {
+  field(DESC, "0-rate beam constant")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.cst0RateBeam.astApertures[3].Height?")
+  field(PREC, "3")
+  field(EGU, "mm")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "monitor 1: VAL")
+}
+
+record(ai, "$(PREFIX)0RateBeamCnst:Apt:03:Width_RBV") {
+  field(DESC, "0-rate beam constant")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.cst0RateBeam.astApertures[3].Width?")
+  field(PREC, "3")
+  field(EGU, "mm")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "monitor 1: VAL")
+}
+
+record(bi, "$(PREFIX)0RateBeamCnst:Apt:03:OK_RBV") {
+  field(DESC, "0-rate beam constant")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.cst0RateBeam.astApertures[3].xOK?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "monitor 1: VAL")
+}
+
+record(ai, "$(PREFIX)0RateBeamCnst:Apt:04:Height_RBV") {
+  field(DESC, "0-rate beam constant")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.cst0RateBeam.astApertures[4].Height?")
+  field(PREC, "3")
+  field(EGU, "mm")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "monitor 1: VAL")
+}
+
+record(ai, "$(PREFIX)0RateBeamCnst:Apt:04:Width_RBV") {
+  field(DESC, "0-rate beam constant")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.cst0RateBeam.astApertures[4].Width?")
+  field(PREC, "3")
+  field(EGU, "mm")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "monitor 1: VAL")
+}
+
+record(bi, "$(PREFIX)0RateBeamCnst:Apt:04:OK_RBV") {
+  field(DESC, "0-rate beam constant")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.cst0RateBeam.astApertures[4].xOK?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "monitor 1: VAL")
+}
+
+record(longin, "$(PREFIX)0RateBeamCnst:BeamClassRanges_RBV") {
+  field(DESC, "0-rate beam constant")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.cst0RateBeam.nBCRange?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "monitor 1: VAL")
+}
+
+record(longin, "$(PREFIX)0RateBeamCnst:BeamClass_RBV") {
+  field(DESC, "0-rate beam constant")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.cst0RateBeam.nBeamClass?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "monitor 1: VAL")
+}
+
 record(longin, "$(PREFIX)0RateBeamCnst:Cohort_RBV") {
   field(DESC, "Cohort inc on each arb cycle")
   field(SCAN, "I/O Intr")
@@ -7427,6 +10334,17 @@ record(longin, "$(PREFIX)0RateBeamCnst:Cohort_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.cst0RateBeam.nCohortInt?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "monitor 1: VAL")
+}
+
+record(longin, "$(PREFIX)0RateBeamCnst:MachineMode_RBV") {
+  field(DESC, "0-rate beam constant")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.cst0RateBeam.nMachineMode?")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
   info(archive, "monitor 1: VAL")
 }
@@ -7457,7 +10375,20 @@ record(ai, "$(PREFIX)0RateBeamCnst:Transmission_RBV") {
   info(archive, "monitor 1: VAL")
 }
 
-record(longin, "$(PREFIX)0RateBeamCnst:PhotonEnergyRanges_RBV") {
+record(ai, "$(PREFIX)0RateBeamCnst:PhotonEnergy_RBV") {
+  field(DESC, "0-rate beam constant")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.cst0RateBeam.neV?")
+  field(PREC, "3")
+  field(EGU, "eV")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "monitor 1: VAL")
+}
+
+record(longin, "$(PREFIX)0RateBeamCnst:eVRanges_RBV") {
   field(DESC, "0-rate beam constant")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -7497,6 +10428,184 @@ record(waveform, "$(PREFIX)FullBeamCnst:Veto_RBV") {
   info(archive, "monitor 1: VAL")
 }
 
+record(ai, "$(PREFIX)FullBeamCnst:Apt:01:Height_RBV") {
+  field(DESC, "Full beam constant")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.cstFullBeam.astApertures[1].Height?")
+  field(PREC, "3")
+  field(EGU, "mm")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "monitor 1: VAL")
+}
+
+record(ai, "$(PREFIX)FullBeamCnst:Apt:01:Width_RBV") {
+  field(DESC, "Full beam constant")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.cstFullBeam.astApertures[1].Width?")
+  field(PREC, "3")
+  field(EGU, "mm")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "monitor 1: VAL")
+}
+
+record(bi, "$(PREFIX)FullBeamCnst:Apt:01:OK_RBV") {
+  field(DESC, "Full beam constant")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.cstFullBeam.astApertures[1].xOK?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "monitor 1: VAL")
+}
+
+record(ai, "$(PREFIX)FullBeamCnst:Apt:02:Height_RBV") {
+  field(DESC, "Full beam constant")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.cstFullBeam.astApertures[2].Height?")
+  field(PREC, "3")
+  field(EGU, "mm")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "monitor 1: VAL")
+}
+
+record(ai, "$(PREFIX)FullBeamCnst:Apt:02:Width_RBV") {
+  field(DESC, "Full beam constant")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.cstFullBeam.astApertures[2].Width?")
+  field(PREC, "3")
+  field(EGU, "mm")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "monitor 1: VAL")
+}
+
+record(bi, "$(PREFIX)FullBeamCnst:Apt:02:OK_RBV") {
+  field(DESC, "Full beam constant")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.cstFullBeam.astApertures[2].xOK?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "monitor 1: VAL")
+}
+
+record(ai, "$(PREFIX)FullBeamCnst:Apt:03:Height_RBV") {
+  field(DESC, "Full beam constant")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.cstFullBeam.astApertures[3].Height?")
+  field(PREC, "3")
+  field(EGU, "mm")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "monitor 1: VAL")
+}
+
+record(ai, "$(PREFIX)FullBeamCnst:Apt:03:Width_RBV") {
+  field(DESC, "Full beam constant")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.cstFullBeam.astApertures[3].Width?")
+  field(PREC, "3")
+  field(EGU, "mm")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "monitor 1: VAL")
+}
+
+record(bi, "$(PREFIX)FullBeamCnst:Apt:03:OK_RBV") {
+  field(DESC, "Full beam constant")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.cstFullBeam.astApertures[3].xOK?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "monitor 1: VAL")
+}
+
+record(ai, "$(PREFIX)FullBeamCnst:Apt:04:Height_RBV") {
+  field(DESC, "Full beam constant")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.cstFullBeam.astApertures[4].Height?")
+  field(PREC, "3")
+  field(EGU, "mm")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "monitor 1: VAL")
+}
+
+record(ai, "$(PREFIX)FullBeamCnst:Apt:04:Width_RBV") {
+  field(DESC, "Full beam constant")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.cstFullBeam.astApertures[4].Width?")
+  field(PREC, "3")
+  field(EGU, "mm")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "monitor 1: VAL")
+}
+
+record(bi, "$(PREFIX)FullBeamCnst:Apt:04:OK_RBV") {
+  field(DESC, "Full beam constant")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.cstFullBeam.astApertures[4].xOK?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "monitor 1: VAL")
+}
+
+record(longin, "$(PREFIX)FullBeamCnst:BeamClassRanges_RBV") {
+  field(DESC, "Full beam constant")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.cstFullBeam.nBCRange?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "monitor 1: VAL")
+}
+
+record(longin, "$(PREFIX)FullBeamCnst:BeamClass_RBV") {
+  field(DESC, "Full beam constant")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.cstFullBeam.nBeamClass?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "monitor 1: VAL")
+}
+
 record(longin, "$(PREFIX)FullBeamCnst:Cohort_RBV") {
   field(DESC, "Cohort inc on each arb cycle")
   field(SCAN, "I/O Intr")
@@ -7504,6 +10613,17 @@ record(longin, "$(PREFIX)FullBeamCnst:Cohort_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.cstFullBeam.nCohortInt?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "monitor 1: VAL")
+}
+
+record(longin, "$(PREFIX)FullBeamCnst:MachineMode_RBV") {
+  field(DESC, "Full beam constant")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.cstFullBeam.nMachineMode?")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
   info(archive, "monitor 1: VAL")
 }
@@ -7534,7 +10654,20 @@ record(ai, "$(PREFIX)FullBeamCnst:Transmission_RBV") {
   info(archive, "monitor 1: VAL")
 }
 
-record(longin, "$(PREFIX)FullBeamCnst:PhotonEnergyRanges_RBV") {
+record(ai, "$(PREFIX)FullBeamCnst:PhotonEnergy_RBV") {
+  field(DESC, "Full beam constant")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.cstFullBeam.neV?")
+  field(PREC, "3")
+  field(EGU, "eV")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "monitor 1: VAL")
+}
+
+record(longin, "$(PREFIX)FullBeamCnst:eVRanges_RBV") {
   field(DESC, "Full beam constant")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -7636,6 +10769,198 @@ record(waveform, "$(PREFIX)CurrentBP:Veto_RBV") {
   info(archive, "monitor 1: VAL")
 }
 
+record(ai, "$(PREFIX)CurrentBP:Apt:01:Height_RBV") {
+  # PMPS_GVL.stCurrentBeamParameters.astApertures[1].Height
+  field(DESC, "PMPS_GVL.stCurrentBe...ertures[1].Height")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.stCurrentBeamParameters.astApertures[1].Height?")
+  field(PREC, "3")
+  field(EGU, "mm")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "monitor 1: VAL")
+}
+
+record(ai, "$(PREFIX)CurrentBP:Apt:01:Width_RBV") {
+  # PMPS_GVL.stCurrentBeamParameters.astApertures[1].Width
+  field(DESC, "PMPS_GVL.stCurrentBe...pertures[1].Width")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.stCurrentBeamParameters.astApertures[1].Width?")
+  field(PREC, "3")
+  field(EGU, "mm")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "monitor 1: VAL")
+}
+
+record(bi, "$(PREFIX)CurrentBP:Apt:01:OK_RBV") {
+  # PMPS_GVL.stCurrentBeamParameters.astApertures[1].xOK
+  field(DESC, "PMPS_GVL.stCurrentBe...tApertures[1].xOK")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.stCurrentBeamParameters.astApertures[1].xOK?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "monitor 1: VAL")
+}
+
+record(ai, "$(PREFIX)CurrentBP:Apt:02:Height_RBV") {
+  # PMPS_GVL.stCurrentBeamParameters.astApertures[2].Height
+  field(DESC, "PMPS_GVL.stCurrentBe...ertures[2].Height")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.stCurrentBeamParameters.astApertures[2].Height?")
+  field(PREC, "3")
+  field(EGU, "mm")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "monitor 1: VAL")
+}
+
+record(ai, "$(PREFIX)CurrentBP:Apt:02:Width_RBV") {
+  # PMPS_GVL.stCurrentBeamParameters.astApertures[2].Width
+  field(DESC, "PMPS_GVL.stCurrentBe...pertures[2].Width")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.stCurrentBeamParameters.astApertures[2].Width?")
+  field(PREC, "3")
+  field(EGU, "mm")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "monitor 1: VAL")
+}
+
+record(bi, "$(PREFIX)CurrentBP:Apt:02:OK_RBV") {
+  # PMPS_GVL.stCurrentBeamParameters.astApertures[2].xOK
+  field(DESC, "PMPS_GVL.stCurrentBe...tApertures[2].xOK")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.stCurrentBeamParameters.astApertures[2].xOK?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "monitor 1: VAL")
+}
+
+record(ai, "$(PREFIX)CurrentBP:Apt:03:Height_RBV") {
+  # PMPS_GVL.stCurrentBeamParameters.astApertures[3].Height
+  field(DESC, "PMPS_GVL.stCurrentBe...ertures[3].Height")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.stCurrentBeamParameters.astApertures[3].Height?")
+  field(PREC, "3")
+  field(EGU, "mm")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "monitor 1: VAL")
+}
+
+record(ai, "$(PREFIX)CurrentBP:Apt:03:Width_RBV") {
+  # PMPS_GVL.stCurrentBeamParameters.astApertures[3].Width
+  field(DESC, "PMPS_GVL.stCurrentBe...pertures[3].Width")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.stCurrentBeamParameters.astApertures[3].Width?")
+  field(PREC, "3")
+  field(EGU, "mm")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "monitor 1: VAL")
+}
+
+record(bi, "$(PREFIX)CurrentBP:Apt:03:OK_RBV") {
+  # PMPS_GVL.stCurrentBeamParameters.astApertures[3].xOK
+  field(DESC, "PMPS_GVL.stCurrentBe...tApertures[3].xOK")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.stCurrentBeamParameters.astApertures[3].xOK?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "monitor 1: VAL")
+}
+
+record(ai, "$(PREFIX)CurrentBP:Apt:04:Height_RBV") {
+  # PMPS_GVL.stCurrentBeamParameters.astApertures[4].Height
+  field(DESC, "PMPS_GVL.stCurrentBe...ertures[4].Height")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.stCurrentBeamParameters.astApertures[4].Height?")
+  field(PREC, "3")
+  field(EGU, "mm")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "monitor 1: VAL")
+}
+
+record(ai, "$(PREFIX)CurrentBP:Apt:04:Width_RBV") {
+  # PMPS_GVL.stCurrentBeamParameters.astApertures[4].Width
+  field(DESC, "PMPS_GVL.stCurrentBe...pertures[4].Width")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.stCurrentBeamParameters.astApertures[4].Width?")
+  field(PREC, "3")
+  field(EGU, "mm")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "monitor 1: VAL")
+}
+
+record(bi, "$(PREFIX)CurrentBP:Apt:04:OK_RBV") {
+  # PMPS_GVL.stCurrentBeamParameters.astApertures[4].xOK
+  field(DESC, "PMPS_GVL.stCurrentBe...tApertures[4].xOK")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.stCurrentBeamParameters.astApertures[4].xOK?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "monitor 1: VAL")
+}
+
+record(longin, "$(PREFIX)CurrentBP:BeamClassRanges_RBV") {
+  # PMPS_GVL.stCurrentBeamParameters.nBCRange
+  field(DESC, "PMPS_GVL.stCurrentBe...rameters.nBCRange")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.stCurrentBeamParameters.nBCRange?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "monitor 1: VAL")
+}
+
+record(longin, "$(PREFIX)CurrentBP:BeamClass_RBV") {
+  # PMPS_GVL.stCurrentBeamParameters.nBeamClass
+  field(DESC, "PMPS_GVL.stCurrentBe...meters.nBeamClass")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.stCurrentBeamParameters.nBeamClass?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "monitor 1: VAL")
+}
+
 record(longin, "$(PREFIX)CurrentBP:Cohort_RBV") {
   field(DESC, "Cohort inc on each arb cycle")
   field(SCAN, "I/O Intr")
@@ -7643,6 +10968,18 @@ record(longin, "$(PREFIX)CurrentBP:Cohort_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.stCurrentBeamParameters.nCohortInt?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "monitor 1: VAL")
+}
+
+record(longin, "$(PREFIX)CurrentBP:MachineMode_RBV") {
+  # PMPS_GVL.stCurrentBeamParameters.nMachineMode
+  field(DESC, "PMPS_GVL.stCurrentBe...ters.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.stCurrentBeamParameters.nMachineMode?")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
   info(archive, "monitor 1: VAL")
 }
@@ -7673,7 +11010,20 @@ record(ai, "$(PREFIX)CurrentBP:Transmission_RBV") {
   info(archive, "monitor 1: VAL")
 }
 
-record(longin, "$(PREFIX)CurrentBP:PhotonEnergyRanges_RBV") {
+record(ai, "$(PREFIX)CurrentBP:PhotonEnergy_RBV") {
+  field(DESC, "PMPS_GVL.stCurrentBeamParameters.neV")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.stCurrentBeamParameters.neV?")
+  field(PREC, "3")
+  field(EGU, "eV")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "monitor 1: VAL")
+}
+
+record(longin, "$(PREFIX)CurrentBP:eVRanges_RBV") {
   # PMPS_GVL.stCurrentBeamParameters.neVRange
   field(DESC, "PMPS_GVL.stCurrentBe...rameters.neVRange")
   field(SCAN, "I/O Intr")
@@ -7715,6 +11065,198 @@ record(waveform, "$(PREFIX)RequestedBP:Veto_RBV") {
   info(archive, "monitor 1: VAL")
 }
 
+record(ai, "$(PREFIX)RequestedBP:Apt:01:Height_RBV") {
+  # PMPS_GVL.stRequestedBeamParameters.astApertures[1].Height
+  field(DESC, "PMPS_GVL.stRequested...ertures[1].Height")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.stRequestedBeamParameters.astApertures[1].Height?")
+  field(PREC, "3")
+  field(EGU, "mm")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "monitor 1: VAL")
+}
+
+record(ai, "$(PREFIX)RequestedBP:Apt:01:Width_RBV") {
+  # PMPS_GVL.stRequestedBeamParameters.astApertures[1].Width
+  field(DESC, "PMPS_GVL.stRequested...pertures[1].Width")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.stRequestedBeamParameters.astApertures[1].Width?")
+  field(PREC, "3")
+  field(EGU, "mm")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "monitor 1: VAL")
+}
+
+record(bi, "$(PREFIX)RequestedBP:Apt:01:OK_RBV") {
+  # PMPS_GVL.stRequestedBeamParameters.astApertures[1].xOK
+  field(DESC, "PMPS_GVL.stRequested...tApertures[1].xOK")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.stRequestedBeamParameters.astApertures[1].xOK?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "monitor 1: VAL")
+}
+
+record(ai, "$(PREFIX)RequestedBP:Apt:02:Height_RBV") {
+  # PMPS_GVL.stRequestedBeamParameters.astApertures[2].Height
+  field(DESC, "PMPS_GVL.stRequested...ertures[2].Height")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.stRequestedBeamParameters.astApertures[2].Height?")
+  field(PREC, "3")
+  field(EGU, "mm")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "monitor 1: VAL")
+}
+
+record(ai, "$(PREFIX)RequestedBP:Apt:02:Width_RBV") {
+  # PMPS_GVL.stRequestedBeamParameters.astApertures[2].Width
+  field(DESC, "PMPS_GVL.stRequested...pertures[2].Width")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.stRequestedBeamParameters.astApertures[2].Width?")
+  field(PREC, "3")
+  field(EGU, "mm")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "monitor 1: VAL")
+}
+
+record(bi, "$(PREFIX)RequestedBP:Apt:02:OK_RBV") {
+  # PMPS_GVL.stRequestedBeamParameters.astApertures[2].xOK
+  field(DESC, "PMPS_GVL.stRequested...tApertures[2].xOK")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.stRequestedBeamParameters.astApertures[2].xOK?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "monitor 1: VAL")
+}
+
+record(ai, "$(PREFIX)RequestedBP:Apt:03:Height_RBV") {
+  # PMPS_GVL.stRequestedBeamParameters.astApertures[3].Height
+  field(DESC, "PMPS_GVL.stRequested...ertures[3].Height")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.stRequestedBeamParameters.astApertures[3].Height?")
+  field(PREC, "3")
+  field(EGU, "mm")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "monitor 1: VAL")
+}
+
+record(ai, "$(PREFIX)RequestedBP:Apt:03:Width_RBV") {
+  # PMPS_GVL.stRequestedBeamParameters.astApertures[3].Width
+  field(DESC, "PMPS_GVL.stRequested...pertures[3].Width")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.stRequestedBeamParameters.astApertures[3].Width?")
+  field(PREC, "3")
+  field(EGU, "mm")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "monitor 1: VAL")
+}
+
+record(bi, "$(PREFIX)RequestedBP:Apt:03:OK_RBV") {
+  # PMPS_GVL.stRequestedBeamParameters.astApertures[3].xOK
+  field(DESC, "PMPS_GVL.stRequested...tApertures[3].xOK")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.stRequestedBeamParameters.astApertures[3].xOK?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "monitor 1: VAL")
+}
+
+record(ai, "$(PREFIX)RequestedBP:Apt:04:Height_RBV") {
+  # PMPS_GVL.stRequestedBeamParameters.astApertures[4].Height
+  field(DESC, "PMPS_GVL.stRequested...ertures[4].Height")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.stRequestedBeamParameters.astApertures[4].Height?")
+  field(PREC, "3")
+  field(EGU, "mm")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "monitor 1: VAL")
+}
+
+record(ai, "$(PREFIX)RequestedBP:Apt:04:Width_RBV") {
+  # PMPS_GVL.stRequestedBeamParameters.astApertures[4].Width
+  field(DESC, "PMPS_GVL.stRequested...pertures[4].Width")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.stRequestedBeamParameters.astApertures[4].Width?")
+  field(PREC, "3")
+  field(EGU, "mm")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "monitor 1: VAL")
+}
+
+record(bi, "$(PREFIX)RequestedBP:Apt:04:OK_RBV") {
+  # PMPS_GVL.stRequestedBeamParameters.astApertures[4].xOK
+  field(DESC, "PMPS_GVL.stRequested...tApertures[4].xOK")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.stRequestedBeamParameters.astApertures[4].xOK?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "monitor 1: VAL")
+}
+
+record(longin, "$(PREFIX)RequestedBP:BeamClassRanges_RBV") {
+  # PMPS_GVL.stRequestedBeamParameters.nBCRange
+  field(DESC, "PMPS_GVL.stRequested...rameters.nBCRange")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.stRequestedBeamParameters.nBCRange?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "monitor 1: VAL")
+}
+
+record(longin, "$(PREFIX)RequestedBP:BeamClass_RBV") {
+  # PMPS_GVL.stRequestedBeamParameters.nBeamClass
+  field(DESC, "PMPS_GVL.stRequested...meters.nBeamClass")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.stRequestedBeamParameters.nBeamClass?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "monitor 1: VAL")
+}
+
 record(longin, "$(PREFIX)RequestedBP:Cohort_RBV") {
   field(DESC, "Cohort inc on each arb cycle")
   field(SCAN, "I/O Intr")
@@ -7722,6 +11264,18 @@ record(longin, "$(PREFIX)RequestedBP:Cohort_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.stRequestedBeamParameters.nCohortInt?")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  info(archive, "monitor 1: VAL")
+}
+
+record(longin, "$(PREFIX)RequestedBP:MachineMode_RBV") {
+  # PMPS_GVL.stRequestedBeamParameters.nMachineMode
+  field(DESC, "PMPS_GVL.stRequested...ters.nMachineMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.stRequestedBeamParameters.nMachineMode?")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
   info(archive, "monitor 1: VAL")
 }
@@ -7752,7 +11306,20 @@ record(ai, "$(PREFIX)RequestedBP:Transmission_RBV") {
   info(archive, "monitor 1: VAL")
 }
 
-record(longin, "$(PREFIX)RequestedBP:PhotonEnergyRanges_RBV") {
+record(ai, "$(PREFIX)RequestedBP:PhotonEnergy_RBV") {
+  field(DESC, "PMPS_GVL.stRequestedBeamParameters.neV")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.stRequestedBeamParameters.neV?")
+  field(PREC, "3")
+  field(EGU, "eV")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "monitor 1: VAL")
+}
+
+record(longin, "$(PREFIX)RequestedBP:eVRanges_RBV") {
   # PMPS_GVL.stRequestedBeamParameters.neVRange
   field(DESC, "PMPS_GVL.stRequested...rameters.neVRange")
   field(SCAN, "I/O Intr")

@@ -31,6 +31,7 @@ DIAGNOSTICS();
 //xEcatBridge_COM_ERROR := True means that there is an EtherCAT Bridge Communication Error.
 xEcatBridge_COM_ERROR := (xEcatBridge_TxPDO_state OR xEcatBridge_External_device_not_connected OR xEcatBridge_WcState);
 
+
 xOnBeamline := (xEcatBridge_COM_ERROR = FALSE) AND (sHUTCH_PLC_NAME = 'TMO');
 
 (*TurboPump running Flag with 30 second Turn Off delay.*)
@@ -98,7 +99,17 @@ xHighVoltageSafteyLoopEnable:= (LAMP_C2_GCC_01.IG.rPRESS <= rHighVoltageMinPress
 *In general, if turbo pump setpoints are above the pirani guage readings or there is no downstream open path to a roughing pump, the turbo pump will close.
 *)
     LAMP_GJ2_PTM_01(
-    i_xExtILKOk:= F_Turbo_NC_NO_Valve_Logic(
+		i_xExtILKOk:=  F_Turbo_NC_NO_Valve_Logic_LL(
+                    i_stTurbo:= LAMP_C2_PTM_01.iq_stPtm,
+                    i_stISG:= LAMP_C2_GPI_01.PG,
+                    i_stBSG:= LAMP_ROUGH_GPI_02.PG,
+                    iq_stValve_NC:= LAMP_ROUGH_VRC_01.iq_stValve,
+                    EcatBridge_Error_Present:= xEcatBridge_COM_ERROR,
+//					ads_Error_Present:= (ITF_TMO_ROUGH1_VRC_01.bError OR ITF_TMO_ROUGH2_VRC_01.bError),
+                    iq_stRoughRoughValve_NC_xOpnLS:= xTMO_ROUGH1_VRC_01_OPEN_LS,
+					x_onBeamline:= xOnBeamline),
+		// 2/10/2025 Per Scientet request we changed this interlock
+   (* i_xExtILKOk:= F_Turbo_NC_NO_Valve_Logic(
                     i_stTurbo:= LAMP_GJ2_PTM_01.iq_stPtm,
                     i_stISG:= LAMP_C2_GPI_01.PG,
                     i_stBSG:= LAMP_ROUGH_GPI_02.PG,
@@ -110,7 +121,7 @@ xHighVoltageSafteyLoopEnable:= (LAMP_C2_GCC_01.IG.rPRESS <= rHighVoltageMinPress
                     iq_stRoughRoughValve_NC_xOpnLS:= xTMO_ROUGH1_VRC_01_OPEN_LS,
                     iq_stRoughRoughValve_NC_second_xOpenLS:= xTMO_ROUGH2_VRC_01_OPEN_LS,
 //					x_onBeamline:= xOnBeamline,
-                    x_onBeamline:= True),
+                    x_onBeamline:= True),*)
     iq_stPtm=> );
 
 (*
@@ -173,71 +184,61 @@ xHighVoltageSafteyLoopEnable:= (LAMP_C2_GCC_01.IG.rPRESS <= rHighVoltageMinPress
                     iq_stRoughRoughValve_NC_second_xOpenLS:=xTMO_ROUGH2_VRC_01_OPEN_LS,
                     x_onBeamline:= xOnBeamline),
     iq_stPtm=> );
+
 *)
 
     LAMP_C2_PTM_01(
-    i_xExtILKOk:= F_Turbo_NC_NO_Valve_Logic(
+    i_xExtILKOk:= F_Turbo_NC_NO_Valve_Logic_LL(
                     i_stTurbo:= LAMP_C2_PTM_01.iq_stPtm,
                     i_stISG:= LAMP_C2_GPI_01.PG,
                     i_stBSG:= LAMP_ROUGH_GPI_02.PG,
-                    iq_stValve_NO:= LAMP_ROUGH_VRC_02.iq_stValve,
                     iq_stValve_NC:= LAMP_ROUGH_VRC_01.iq_stValve,
-                    iq_stValve_NC_second:= LAMP_ROUGH_VRC_03.iq_stValve,
                     EcatBridge_Error_Present:= xEcatBridge_COM_ERROR,
 //					ads_Error_Present:= (ITF_TMO_ROUGH1_VRC_01.bError OR ITF_TMO_ROUGH2_VRC_01.bError),
                     iq_stRoughRoughValve_NC_xOpnLS:= xTMO_ROUGH1_VRC_01_OPEN_LS,
-                    iq_stRoughRoughValve_NC_second_xOpenLS:= xTMO_ROUGH2_VRC_01_OPEN_LS,
-//					x_onBeamline:= xOnBeamline,
-                     x_onBeamline:= True),
+					x_onBeamline:= xOnBeamline),
+//                     x_onBeamline:= True),
     iq_stPtm=> );
 
     LAMP_C2_PTM_02(
-    i_xExtILKOk:= F_Turbo_NC_NO_Valve_Logic(
+    i_xExtILKOk:= F_Turbo_NC_NO_Valve_Logic_LL(
                     i_stTurbo:= LAMP_C2_PTM_02.iq_stPtm,
                     i_stISG:= LAMP_C2_GPI_01.PG,
                     i_stBSG:= LAMP_ROUGH_GPI_02.PG,
-                    iq_stValve_NO:= LAMP_ROUGH_VRC_02.iq_stValve,
                     iq_stValve_NC:= LAMP_ROUGH_VRC_01.iq_stValve,
-                    iq_stValve_NC_second:= LAMP_ROUGH_VRC_03.iq_stValve,
                     EcatBridge_Error_Present:= xEcatBridge_COM_ERROR,
 //					ads_Error_Present:= (ITF_TMO_ROUGH1_VRC_01.bError OR ITF_TMO_ROUGH2_VRC_01.bError),
                     iq_stRoughRoughValve_NC_xOpnLS:= xTMO_ROUGH1_VRC_01_OPEN_LS,
-                    iq_stRoughRoughValve_NC_second_xOpenLS:=xTMO_ROUGH2_VRC_01_OPEN_LS,
-//					x_onBeamline:= xOnBeamline,
-                    x_onBeamline:= True),
+					x_onBeamline:= xOnBeamline),
+//                    x_onBeamline:= True),
     iq_stPtm=> );
 
     LAMP_C2_PTM_03(
-    i_xExtILKOk:= F_Turbo_NC_NO_Valve_Logic(
+    i_xExtILKOk:= F_Turbo_NC_NO_Valve_Logic_LL(
                     i_stTurbo:= LAMP_C2_PTM_03.iq_stPtm,
                     i_stISG:= LAMP_C2_GPI_01.PG,
                     i_stBSG:= LAMP_ROUGH_GPI_02.PG,
-                    iq_stValve_NO:= LAMP_ROUGH_VRC_02.iq_stValve,
                     iq_stValve_NC:= LAMP_ROUGH_VRC_01.iq_stValve,
-                    iq_stValve_NC_second:= LAMP_ROUGH_VRC_03.iq_stValve,
                     EcatBridge_Error_Present:= xEcatBridge_COM_ERROR,
 //					ads_Error_Present:= (ITF_TMO_ROUGH1_VRC_01.bError OR ITF_TMO_ROUGH2_VRC_01.bError),
                     iq_stRoughRoughValve_NC_xOpnLS:= xTMO_ROUGH1_VRC_01_OPEN_LS,
-                    iq_stRoughRoughValve_NC_second_xOpenLS:=xTMO_ROUGH2_VRC_01_OPEN_LS,
-//					x_onBeamline:= xOnBeamline,
-                    x_onBeamline:= True),
+					x_onBeamline:= xOnBeamline),
+//                    x_onBeamline:= True),
     iq_stPtm=> );
 
     LAMP_C2_PTM_04(
-    i_xExtILKOk:= F_Turbo_NC_NO_Valve_Logic(
+    i_xExtILKOk:= F_Turbo_NC_NO_Valve_Logic_LL(
                     i_stTurbo:= LAMP_C2_PTM_04.iq_stPtm,
                     i_stISG:= LAMP_C2_GPI_01.PG,
                     i_stBSG:= LAMP_ROUGH_GPI_02.PG,
-                    iq_stValve_NO:= LAMP_ROUGH_VRC_02.iq_stValve,
                     iq_stValve_NC:= LAMP_ROUGH_VRC_01.iq_stValve,
-                    iq_stValve_NC_second:= LAMP_ROUGH_VRC_03.iq_stValve,
                     EcatBridge_Error_Present:= xEcatBridge_COM_ERROR,
 //					ads_Error_Present:= (ITF_TMO_ROUGH1_VRC_01.bError OR ITF_TMO_ROUGH2_VRC_01.bError),
                     iq_stRoughRoughValve_NC_xOpnLS:= xTMO_ROUGH1_VRC_01_OPEN_LS,
-                    iq_stRoughRoughValve_NC_second_xOpenLS:=xTMO_ROUGH2_VRC_01_OPEN_LS,
-//					x_onBeamline:= xOnBeamline,
-                    x_onBeamline:= True),
+					x_onBeamline:= xOnBeamline),
+//                    x_onBeamline:= True),
     iq_stPtm=> );
+
 
 (*
     LAMP_CATCH_PTM_01(
@@ -343,8 +344,8 @@ xHighVoltageSafteyLoopEnable:= (LAMP_C2_GCC_01.IG.rPRESS <= rHighVoltageMinPress
 //					ads_Error_Present:= (ITF_TMO_ROUGH1_VRC_01.bError OR ITF_TMO_ROUGH2_VRC_01.bError),
                     iq_stRoughRoughValve_NC_xOpnLS:= xTMO_ROUGH1_VRC_01_OPEN_LS,
                     iq_stRoughRoughValve_NC_second_xOpenLS:=xTMO_ROUGH2_VRC_01_OPEN_LS,
-//					x_onBeamline:= xOnBeamline,
-                    x_onBeamline:= True),
+					x_onBeamline:= xOnBeamline),
+//                    x_onBeamline:= True),
     iq_stPtm=> );
 
 (*
@@ -398,6 +399,7 @@ fb_PfeifferCom_LAMP_C2_PTM_04(astPfeifferControl := st_Pfeiffer_CTRL_LAMP_C2_PTM
                                  astPfeifferStatus:= st_Pfeiffer_RBK_LAMP_C2_PTM_04,
                               SerialRXBuffer:= SerialRXBuffer_LAMP_C2_PTM_04,
                               SerialTXBuffer:= SerialTXBuffer_LAMP_C2_PTM_04);
+							  
 LAMP_C2_PTM_04.M_Serial_IO(st_Pfeiffer_RBK:= st_Pfeiffer_RBK_LAMP_C2_PTM_04[1], st_Pfeiffer_CTRL:= st_Pfeiffer_CTRL_LAMP_C2_PTM_04[1]);
 
 (*
@@ -509,7 +511,7 @@ LAMP_GJ2_PTM_04.M_Serial_IO(i_st_TD20_RBK:= st_TD20_RBK_LAMP_GJ2_PTM_04);
         iq_stValve=> );
     ELSE
         LAMP_ROUGH_VRC_01(//LAMP:ROUGH:VRC:01 can open when the pressure across the valve is below 10 torr
-        i_xExtILK_OK:= (ABS(LAMP_ROUGH_GPI_01.PG.rPRESS - LAMP_ROUGH_GPI_02.PG.rPRESS)<10.0),
+        i_xExtILK_OK:= (ABS(LAMP_ROUGH_GPI_01.PG.rPRESS - LAMP_ROUGH_GPI_02.PG.rPRESS)<2000.0),
         i_xOverrideMode:= xSystemOverrideMode_LAMP,
         iq_stValve=> );
     END_IF
@@ -533,7 +535,7 @@ LAMP_GJ2_PTM_04.M_Serial_IO(i_st_TD20_RBK:= st_TD20_RBK_LAMP_GJ2_PTM_04);
 
     ELSE
         LAMP_ROUGH_VRC_03(//LAMP:ROUGH:VRC:03 can open when the pressure across the valve is below 10 torr
-        i_xExtILK_OK:= (ABS(LAMP_ROUGH_GPI_03.PG.rPRESS - LAMP_ROUGH_GPI_04.PG.rPRESS)<10.0),
+        i_xExtILK_OK:= (ABS(LAMP_ROUGH_GPI_03.PG.rPRESS - LAMP_ROUGH_GPI_04.PG.rPRESS)<2000.0),
         i_xOverrideMode:= xSystemOverrideMode_LAMP,
         iq_stValve=> );
     END_IF
@@ -546,7 +548,11 @@ xIP1_ROUGH_VRC_03_OPEN_LS := LAMP_ROUGH_VRC_03.M_IsOpen();
 xIP1_MAIN_xAT_VAC         := LAMP_C2_GCC_01.IG.xAT_VAC;
 xIP1_MAIN_xPRESS_OK       := LAMP_C2_GCC_01.IG.xPRESS_OK;
 rIP1_MAIN_rPRESS          := LAMP_C2_GCC_01.IG.rPRESS;
-xIP1_HV_SAFETY_ENABLE     := xHighVoltageSafteyLoopEnable;]]></ST>
+xIP1_HV_SAFETY_ENABLE     := xHighVoltageSafteyLoopEnable;
+
+
+PRG_LAMP_GJ();
+]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>

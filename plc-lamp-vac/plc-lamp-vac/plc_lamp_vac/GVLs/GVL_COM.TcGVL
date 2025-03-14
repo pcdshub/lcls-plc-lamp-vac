@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.2">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
   <GVL Name="GVL_COM" Id="{6812f3ef-c0f4-4e5e-b5ac-fd2f3185cd2f}">
     <Declaration><![CDATA[//{attribute 'qualified_only'}
 (* Commented out are vacuum components unused by Lamp MBES system *)
@@ -244,7 +244,7 @@ VAR_GLOBAL
                                  .D[18]:=TIIB[LAMP_PNL1_EP06_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 18;
                                  .D[19]:=TIIB[LAMP_PNL1_EP06_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 19;
                                  .D[20]:=TIIB[LAMP_PNL1_EP06_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 20;
-                                 .D[21]:=TIIB[LAMP_PNL1_EP06_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 21;
+                                 .D[21]:=TIIB[LAMP_PNL1_EP06_EP6002-0002]^COM TxPDO-Map Inputs Channel 2^Data In 21
     '}
     stComIn_LAMP_C2_PTM_04		AT %I*	:	EL6inData22B;
 
@@ -270,7 +270,7 @@ VAR_GLOBAL
                                  .D[18]:=TIIB[LAMP_PNL1_EP06_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 18;
                                  .D[19]:=TIIB[LAMP_PNL1_EP06_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 19;
                                  .D[20]:=TIIB[LAMP_PNL1_EP06_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 20;
-                                 .D[21]:=TIIB[LAMP_PNL1_EP06_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 21;
+                                 .D[21]:=TIIB[LAMP_PNL1_EP06_EP6002-0002]^COM RxPDO-Map Outputs Channel 2^Data Out 21
     '}
     stComOut_LAMP_C2_PTM_04		AT %Q*	:	EL6outData22B;
 (*
@@ -970,6 +970,8 @@ VAR_GLOBAL
     '}
     stComOut_LAMP_GJ2_PTM_04		AT %Q*	:	EL6outData22B;
 *)
+
+
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>
