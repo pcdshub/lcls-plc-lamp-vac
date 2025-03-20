@@ -6,13 +6,13 @@ VAR_INPUT
     i_stTurbo : ST_PTM; // Turbo Pump
     i_stISG : ST_VG; //Gauge measuring inlet Pressure e.g Pirani
     i_stBSG : ST_VG; //Gauge measureing backing pressure
-    
+
     iq_stValve_NC : ST_VRC; //Normally Closed Valve directly sharing turbo pump vaccum volume.
-    
+
     EcatBridge_Error_Present	:	BOOL; // Ecat Bridge Communication: Watchdog and Ecat Bridge Read Error Bit
 //	ads_Error_Present     :      BOOL;  // ADS Communication: Watchdog and ADS Read Error Bit
     iq_stRoughRoughValve_NC_xOpnLS: BOOL; //Normally Closed Valve Downstream of iq_stValve_NC in Beamline Roughing Line.
- 
+
     x_onBeamline :	BOOL; //Whether the  Turbopump/Endstation is mounted on the beamline or not.
 END_VAR
 VAR

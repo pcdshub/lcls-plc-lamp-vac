@@ -53,19 +53,19 @@
     '}
     {attribute 'pytmc' := 'pv: LAMP:GJ:PTM:01'}
     LAMP_GJ_PTM_01 : FB_PTM_Pfeiffer;
-	
-	// LAMP GJ PTM 01
-	// Serial Terminal
-	st_Pfeiffer_CTRL_LAMP_GJ_PTM_01			: ARRAY[1..20] OF ST_PfeifferControl;
+
+    // LAMP GJ PTM 01
+    // Serial Terminal
+    st_Pfeiffer_CTRL_LAMP_GJ_PTM_01			: ARRAY[1..20] OF ST_PfeifferControl;
     st_Pfeiffer_RBK_LAMP_GJ_PTM_01			: ARRAY[1..20] OF ST_PfeifferStatus;
     fb_PfeifferCom_LAMP_GJ_PTM_01 			: FB_PFEIFFER_COM;
 
-	fbSerialLineControl_LAMP_GJ_PTM_01: SerialLineControl;
-	SerialRXBuffer_LAMP_GJ_PTM_01 : ComBuffer;
-	SerialTXBuffer_LAMP_GJ_PTM_01 : ComBuffer;
+    fbSerialLineControl_LAMP_GJ_PTM_01: SerialLineControl;
+    SerialRXBuffer_LAMP_GJ_PTM_01 : ComBuffer;
+    SerialTXBuffer_LAMP_GJ_PTM_01 : ComBuffer;
 
-	//SERIAL IO
-	{attribute	'TcLinkTo'	:=	'.Status:= TIIB[LAMP_GJ_E04_EL6021]^COM TxPDO-Map Inputs^Status;
+    //SERIAL IO
+    {attribute	'TcLinkTo'	:=	'.Status:= TIIB[LAMP_GJ_E04_EL6021]^COM TxPDO-Map Inputs^Status;
                                  .D[0]:=TIIB[LAMP_GJ_E04_EL6021]^COM TxPDO-Map Inputs^Data In 0;
                                  .D[1]:=TIIB[LAMP_GJ_E04_EL6021]^COM TxPDO-Map Inputs^Data In 1;
                                  .D[2]:=TIIB[LAMP_GJ_E04_EL6021]^COM TxPDO-Map Inputs^Data In 2;
@@ -88,9 +88,9 @@
                                  .D[19]:=TIIB[LAMP_GJ_E04_EL6021]^COM TxPDO-Map Inputs^Data In 19;
                                  .D[20]:=TIIB[LAMP_GJ_E04_EL6021]^COM TxPDO-Map Inputs^Data In 20;
                                  .D[21]:=TIIB[LAMP_GJ_E04_EL6021]^COM TxPDO-Map Inputs^Data In 21'}
- 	LAMP_GJ_PTM_01_stComIn		AT %I*	:	EL6inData22B;
+     LAMP_GJ_PTM_01_stComIn		AT %I*	:	EL6inData22B;
 
-	{attribute	'TcLinkTo'	:=	'.Ctrl:=TIIB[LAMP_GJ_E04_EL6021]^COM RxPDO-Map Outputs^Ctrl;
+    {attribute	'TcLinkTo'	:=	'.Ctrl:=TIIB[LAMP_GJ_E04_EL6021]^COM RxPDO-Map Outputs^Ctrl;
                                  .D[0]:=TIIB[LAMP_GJ_E04_EL6021]^COM RxPDO-Map Outputs^Data Out 0;
                                  .D[1]:=TIIB[LAMP_GJ_E04_EL6021]^COM RxPDO-Map Outputs^Data Out 1;
                                  .D[2]:=TIIB[LAMP_GJ_E04_EL6021]^COM RxPDO-Map Outputs^Data Out 2;
@@ -113,8 +113,8 @@
                                  .D[19]:=TIIB[LAMP_GJ_E04_EL6021]^COM RxPDO-Map Outputs^Data Out 19;
                                  .D[20]:=TIIB[LAMP_GJ_E04_EL6021]^COM RxPDO-Map Outputs^Data Out 20;
                                  .D[21]:=TIIB[LAMP_GJ_E04_EL6021]^COM RxPDO-Map Outputs^Data Out 21'}
- 	LAMP_GJ_PTM_01_stComOut		AT %Q*	:	EL6outData22B;
-	
+     LAMP_GJ_PTM_01_stComOut		AT %Q*	:	EL6outData22B;
+
 
 END_VAR]]></Declaration>
   </GVL>

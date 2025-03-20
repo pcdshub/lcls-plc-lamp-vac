@@ -1892,9 +1892,8 @@ Link this to your VAT590 WcState variable under WcState]]>
 		<MappingInfo Identifier="{00000000-2001-0850-0020-500810000403}" Id="#x02030010"/>
 		<MappingInfo Identifier="{00000000-2002-0850-0120-500831000403}" Id="#x02030020"/>
 		<OwnerA Name="TIPC^plc_lamp_vac^plc_lamp_vac Instance">
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^LAMP_PLC_E0_EK1200^LAMP_PLC_E04_EL6692">
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^LAMP_PLC_E0_EK1200^LAMP_PLC_E04_EL6695">
 				<Link VarA="PlcTask Inputs^GVL_PLC_Interfaces.sHUTCH_PLC_NAME" VarB="IO Inputs^HUTCH_PLC_NAME" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_PLC_Interfaces.xEcatBridge_External_device_not_connected" VarB="SYNC Inputs^External device not connected"/>
 				<Link VarA="PlcTask Inputs^GVL_PLC_Interfaces.xEcatBridge_TxPDO_state" VarB="SYNC Inputs^TxPDO state" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^GVL_PLC_Interfaces.xEcatBridge_WcState" VarB="WcState^WcState" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^GVL_PLC_Interfaces.xTMO_ROUGH1_VRC_01_OPEN_LS" VarB="IO Inputs^TMO_ROUGH1_VRC_01_OPEN_LS" AutoLink="true"/>

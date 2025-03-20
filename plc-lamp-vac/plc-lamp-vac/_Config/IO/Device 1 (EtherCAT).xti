@@ -36,7 +36,7 @@
 		<Box File="LAMP_PLC_E0_EK1200.xti" Id="1">
 			<EtherCAT PortABoxInfo="#x00ffffff"/>
 		</Box>
-		<EtherCAT EnableVirtualSwitch="true" MaxSwitchPorts="3" MaxSwitchFrames="140">
+		<EtherCAT EnableVirtualSwitch="true" MaxSwitchPorts="4" MaxSwitchFrames="160">
 			<SyncUnit Name="VCN" NoDeleteIfUnused="true"/>
 			<SyncUnit Name="EP9224" NoDeleteIfUnused="true"/>
 		</EtherCAT>
