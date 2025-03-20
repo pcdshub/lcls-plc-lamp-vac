@@ -22,7 +22,7 @@ END_VAR
       <ST><![CDATA[IF (x_onBeamline) THEN
     F_Turbo_NC_NO_Valve_Logic_LL := (i_stISG.xPRESS_OK AND i_stISG.rPRESS < i_stTurbo.rInletPressureSP) AND
                                     (i_stBSG.xPRESS_OK AND i_stBSG.rPRESS < i_stTurbo.rBackingPressureSP) AND
-                                 ((iq_stValve_NC.i_xOpnLS AND iq_stRoughRoughValve_NC_xOpnLS) OR (NOT EcatBridge_Error_Present));
+                                 (iq_stValve_NC.i_xOpnLS AND iq_stRoughRoughValve_NC_xOpnLS) AND (NOT EcatBridge_Error_Present);
 ELSE
     F_Turbo_NC_NO_Valve_Logic_LL := (i_stISG.xPRESS_OK AND i_stISG.rPRESS < i_stTurbo.rInletPressureSP) AND
                            (i_stBSG.xPRESS_OK AND i_stBSG.rPRESS < i_stTurbo.rBackingPressureSP) AND (iq_stValve_NC.i_xOpnLS);
