@@ -100,7 +100,7 @@ xHighVoltageSafteyLoopEnable:= (LAMP_C2_GCC_01.IG.rPRESS <= rHighVoltageMinPress
 *)
     LAMP_GJ2_PTM_01(
         i_xExtILKOk:=  F_Turbo_NC_NO_Valve_Logic_LL(
-                    i_stTurbo:= LAMP_C2_PTM_01.iq_stPtm,
+                    i_stTurbo:= LAMP_GJ2_PTM_01.iq_stPtm,
                     i_stISG:= LAMP_C2_GPI_01.PG,
                     i_stBSG:= LAMP_ROUGH_GPI_02.PG,
                     iq_stValve_NC:= LAMP_ROUGH_VRC_01.iq_stValve,
