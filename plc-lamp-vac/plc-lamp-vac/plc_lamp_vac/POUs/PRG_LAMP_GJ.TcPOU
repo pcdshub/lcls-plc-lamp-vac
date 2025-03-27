@@ -18,14 +18,14 @@ VAR
     LAMP_GJ_PTM_01_PATH_3: BOOL;
     LAMP_GJ_VRC_02_EXT_ILK_OK: BOOL;
 
-    LAMP_GJ_VRC_INK_GAUGE_PRESS : REAL := 1E-6;
+    LAMP_GJ_VRC_INK_GAUGE_PRESS : REAL := 1E-5;
     END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[// VALVES
 
 LAMP_GJ_VRC_01_OPN_OK:= (LAMP_C2_GCC_01.IG.rPRESS < LAMP_GJ_VRC_INK_GAUGE_PRESS)
-                        AND(LAMP_GJ_GCC_01.IG.rPRESS < LAMP_GJ_VRC_INK_GAUGE_PRESS);
+                        AND(LAMP_GJ_GCC_01.IG.rPRESS < LAMP_GJ_VRC_INK_GAUGE_PRESS) AND LAMP_GJ_GCC_01.IG.xPRESS_OK;
 
     LAMP_GJ_VRC_01_CLS_OK:= (xLAMP_GJY_OUT AND
                             (NOT xEcat_External_Vac2Mot_device_not_connected));
