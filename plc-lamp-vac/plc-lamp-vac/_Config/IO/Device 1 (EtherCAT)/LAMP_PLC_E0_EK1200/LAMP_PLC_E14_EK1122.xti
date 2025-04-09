@@ -7,6 +7,9 @@
 		<Name>__FILENAME__</Name>
 		<ImageId>1000</ImageId>
 		<EtherCAT SlaveType="1" PdiType="#x0d00" CycleMBoxPollingTime="0" VendorId="#x00000002" ProductCode="#x04622c52" RevisionNo="#x00120000" PortPhys="4883" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="EK1122 2 port EtherCAT junction" Desc="EK1122"/>
+		<Box File="VCN_1_VAT590.xti" Id="95">
+			<EtherCAT PortABoxInfo="#x0300005c"/>
+		</Box>
 		<Box File="LAMP_GJ_EK1100.xti" Id="96">
 			<EtherCAT PortABoxInfo="#x0100005c"/>
 		</Box>

@@ -3,7 +3,7 @@
 	<ImageDatas>
 		<ImageData Id="1000">424dd6020000000000003600000028000000100000000e0000000100180000000000a0020000232e0000232e00000000000000000001000000000000000000000000000000000000000000000000ffffffffffffffffffffffffffffffffffffffffffffffff00000000ff0000ff0000ff0000ff0000ff0000ff00000000ffffffffffffffffffffffffffffffffffffffffffffffffffffff00000000ff0000ff0000ff0000ff00000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff00000000ff0000ff0000ff0000ff00000000ffffff000000ffffffffffffffffffffffffffffffffffffffffffffffffffffff00000000ff0000ff00000000ffffffffffff000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff000000000000ffffffffffffffffff000000000000000000000000000000000000000000ffffffffffffffffffffffff0000000000000000ff0000ff0000ff000000000000000000000000000000000000000000ffffffffffffffffffffffff0000000000000000ff0000ff0000ff000000000000000000000000000000000000000000ffffffffffffffffffffffff000000000000ffffffffffffffffff000000000000000000000000000000000000000000ffffffffffffffffff00000000ff0000ff00000000ffffffffffff000000ffffffffffff000000ffffffffffffffffffffffffffffff00000000ff0000ff0000ff0000ff00000000ffffff000000ffffffffffff000000000000000000000000ffffffffffff00000000ff0000ff0000ff0000ff00000000ffffffffffffffffffffffffffffffffffffffffffffffffffffff00000000ff0000ff0000ff0000ff0000ff0000ff00000000ffffffffffffffffffffffffffffffffffffffffffffffff000000000000000000000000000000000000000000000000ffffffffffffffffffffffffffffffffffffffffffffffff</ImageData>
 	</ImageDatas>
-	<Box Id="109" BoxType="9099" BoxFlags="#x00000020">
+	<Box Id="95" BoxType="9099" BoxFlags="#x00000020">
 		<Name>__FILENAME__</Name>
 		<ImageId>1000</ImageId>
 		<EtherCAT SlaveType="2" PdiType="#x0208" MboxDataLinkLayer="true" CycleMBoxPolling="true" CoeType="35" VendorId="#x00000549" ProductCode="#x0000170c" RevisionNo="#x00010000" InfoDataAddr="true" TimeoutMailbox2="6000" PortPhys="17" IdentificationAdo="308" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="590 - All-metal variable leak valve" Desc="590">
@@ -13,7 +13,6 @@
 			<SyncMan>00162f002000010004000000000000000000001620010000</SyncMan>
 			<Fmmu>0000000000000000001000020100000001000000000000000000000000000000</Fmmu>
 			<Fmmu>0000000000000000001600010100000002000000000000000000000000000000</Fmmu>
-			<SuName>VCN</SuName>
 			<Pdo Name="DI TxPDO-Map" Index="#x1a00" Flags="#x0010" SyncMan="3">
 				<Entry Name="Pressure" Index="#x2001">
 					<Type>DINT</Type>
