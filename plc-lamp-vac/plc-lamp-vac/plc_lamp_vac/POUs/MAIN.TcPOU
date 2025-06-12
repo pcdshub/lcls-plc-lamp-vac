@@ -99,16 +99,16 @@ xHighVoltageSafteyLoopEnable:= (LAMP_C2_GCC_01.IG.rPRESS <= rHighVoltageMinPress
 *In general, if turbo pump setpoints are above the pirani guage readings or there is no downstream open path to a roughing pump, the turbo pump will close.
 *)
     LAMP_GJ2_PTM_01(
-		i_xExtILKOk:=  F_Turbo_NC_NO_Valve_Logic_LL(
-                    i_stTurbo:= LAMP_C2_PTM_01.iq_stPtm,
+        i_xExtILKOk:=  F_Turbo_NC_NO_Valve_Logic_LL(
+                    i_stTurbo:= LAMP_GJ2_PTM_01.iq_stPtm,
                     i_stISG:= LAMP_C2_GPI_01.PG,
                     i_stBSG:= LAMP_ROUGH_GPI_02.PG,
                     iq_stValve_NC:= LAMP_ROUGH_VRC_01.iq_stValve,
                     EcatBridge_Error_Present:= xEcatBridge_COM_ERROR,
 //					ads_Error_Present:= (ITF_TMO_ROUGH1_VRC_01.bError OR ITF_TMO_ROUGH2_VRC_01.bError),
                     iq_stRoughRoughValve_NC_xOpnLS:= xTMO_ROUGH1_VRC_01_OPEN_LS,
-					x_onBeamline:= xOnBeamline),
-		// 2/10/2025 Per Scientet request we changed this interlock
+                    x_onBeamline:= xOnBeamline),
+        // 2/10/2025 Per Scientet request we changed this interlock
    (* i_xExtILKOk:= F_Turbo_NC_NO_Valve_Logic(
                     i_stTurbo:= LAMP_GJ2_PTM_01.iq_stPtm,
                     i_stISG:= LAMP_C2_GPI_01.PG,
@@ -196,7 +196,7 @@ xHighVoltageSafteyLoopEnable:= (LAMP_C2_GCC_01.IG.rPRESS <= rHighVoltageMinPress
                     EcatBridge_Error_Present:= xEcatBridge_COM_ERROR,
 //					ads_Error_Present:= (ITF_TMO_ROUGH1_VRC_01.bError OR ITF_TMO_ROUGH2_VRC_01.bError),
                     iq_stRoughRoughValve_NC_xOpnLS:= xTMO_ROUGH1_VRC_01_OPEN_LS,
-					x_onBeamline:= xOnBeamline),
+                    x_onBeamline:= xOnBeamline),
 //                     x_onBeamline:= True),
     iq_stPtm=> );
 
@@ -209,7 +209,7 @@ xHighVoltageSafteyLoopEnable:= (LAMP_C2_GCC_01.IG.rPRESS <= rHighVoltageMinPress
                     EcatBridge_Error_Present:= xEcatBridge_COM_ERROR,
 //					ads_Error_Present:= (ITF_TMO_ROUGH1_VRC_01.bError OR ITF_TMO_ROUGH2_VRC_01.bError),
                     iq_stRoughRoughValve_NC_xOpnLS:= xTMO_ROUGH1_VRC_01_OPEN_LS,
-					x_onBeamline:= xOnBeamline),
+                    x_onBeamline:= xOnBeamline),
 //                    x_onBeamline:= True),
     iq_stPtm=> );
 
@@ -222,7 +222,7 @@ xHighVoltageSafteyLoopEnable:= (LAMP_C2_GCC_01.IG.rPRESS <= rHighVoltageMinPress
                     EcatBridge_Error_Present:= xEcatBridge_COM_ERROR,
 //					ads_Error_Present:= (ITF_TMO_ROUGH1_VRC_01.bError OR ITF_TMO_ROUGH2_VRC_01.bError),
                     iq_stRoughRoughValve_NC_xOpnLS:= xTMO_ROUGH1_VRC_01_OPEN_LS,
-					x_onBeamline:= xOnBeamline),
+                    x_onBeamline:= xOnBeamline),
 //                    x_onBeamline:= True),
     iq_stPtm=> );
 
@@ -235,7 +235,7 @@ xHighVoltageSafteyLoopEnable:= (LAMP_C2_GCC_01.IG.rPRESS <= rHighVoltageMinPress
                     EcatBridge_Error_Present:= xEcatBridge_COM_ERROR,
 //					ads_Error_Present:= (ITF_TMO_ROUGH1_VRC_01.bError OR ITF_TMO_ROUGH2_VRC_01.bError),
                     iq_stRoughRoughValve_NC_xOpnLS:= xTMO_ROUGH1_VRC_01_OPEN_LS,
-					x_onBeamline:= xOnBeamline),
+                    x_onBeamline:= xOnBeamline),
 //                    x_onBeamline:= True),
     iq_stPtm=> );
 
@@ -344,7 +344,7 @@ xHighVoltageSafteyLoopEnable:= (LAMP_C2_GCC_01.IG.rPRESS <= rHighVoltageMinPress
 //					ads_Error_Present:= (ITF_TMO_ROUGH1_VRC_01.bError OR ITF_TMO_ROUGH2_VRC_01.bError),
                     iq_stRoughRoughValve_NC_xOpnLS:= xTMO_ROUGH1_VRC_01_OPEN_LS,
                     iq_stRoughRoughValve_NC_second_xOpenLS:=xTMO_ROUGH2_VRC_01_OPEN_LS,
-					x_onBeamline:= xOnBeamline),
+                    x_onBeamline:= xOnBeamline),
 //                    x_onBeamline:= True),
     iq_stPtm=> );
 
@@ -399,7 +399,7 @@ fb_PfeifferCom_LAMP_C2_PTM_04(astPfeifferControl := st_Pfeiffer_CTRL_LAMP_C2_PTM
                                  astPfeifferStatus:= st_Pfeiffer_RBK_LAMP_C2_PTM_04,
                               SerialRXBuffer:= SerialRXBuffer_LAMP_C2_PTM_04,
                               SerialTXBuffer:= SerialTXBuffer_LAMP_C2_PTM_04);
-							  
+
 LAMP_C2_PTM_04.M_Serial_IO(st_Pfeiffer_RBK:= st_Pfeiffer_RBK_LAMP_C2_PTM_04[1], st_Pfeiffer_CTRL:= st_Pfeiffer_CTRL_LAMP_C2_PTM_04[1]);
 
 (*
